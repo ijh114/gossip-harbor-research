@@ -2323,9 +2323,9 @@
       "title": "원본 초기판에서104 생성기까지의 정적 경로",
       "summary": "초기101 두 개를 합치고c#102·c#103에 차례로 합성하면104를 만들 수 있다.",
       "details": [
-        "0부터 센 인덱스22→29→30→31에서 결과는102→103→104다.",
-        "합성 목표의4방향 충격은pb만 제거하여c#상태를 남긴다. 거미줄을 직접 제거하지 않는다.",
-        "이는 코드 규칙을 적용한 경로이며 실기 튜토리얼 입력 로그가 아니다."
+        "원본 Merge1은0기준22→29→30→31에서102→103→104를 만든다.",
+        "Click1은31의 생성기를3회 사용한다. 주변 탐색 순서에 따라201을30→29→22로 놓고, Merge2는22→29→23으로203을 만든다.",
+        "웹 튜토리얼은 이 첫8단계를 적용한다. 실기 입력 로그나 전체 온보딩 재현은 아니다."
       ],
       "sources": [
         {
@@ -2357,10 +2357,64 @@
           "method": "static decompiled Lua and parsed packaged table cross-check",
           "note": "cobweb cannot move, can be matching merge target; chest exception",
           "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMerge1.lua",
+          "line_start": 1,
+          "line_end": 64,
+          "sha256": "eb130c53c1d199c7e975bd6c284e7677c3fba66b757a27ec77f252a41dbef1e8",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "1: local Step = {\n2:   Tip = \"1\",\n3:   Merge1 = \"2\",\n4:   Merge2 = \"3\",\n5:   Merge3 = \"4\"\n6: }\n7: local arrStepList = {}\n8: for k, v in pairs(Step) do\n9:   arrStepList[tonumber(v)] = k\n10: end\n11: \n12: local function nextStep(step)\n13:   local nextStepKey = arrStepList[tonumber(step) + 1]\n14:   if nextStepKey ~= nil then\n15:     return Step[nextStepKey]\n16:   end\n17:   return nil\n18: end\n19: \n20: local EStep2TextKey = {\n21:   [Step.Tip] = \"tutorial_merge_basic_1\",\n22:   [Step.Merge1] = \"tutorial_merge_basic_2\",\n23:   [Step.Merge2] = \"tutorial_merge_basic_3\"\n24: }\n25: local EFireStep2TextKey = {\n26:   [Step.Tip] = \"tutorial_merge_basic_fire_1\",\n27:   [Step.Merge1] = \"tutorial_merge_basic_fire_2\",\n28:   [Step.Merge2] = \"tutorial_merge_basic_fire_3\"\n29: }\n30: local EStep2TextAnchorPercent = {\n31:   [Step.Tip] = 50,\n32:   [Step.Merge1] = 36,\n33:   [Step.Merge2] = 36\n34: }\n35: local EStep2BoardGesturePos = {\n36:   [Step.Merge1] = {\n37:     from = BoardPosition.Create(2, 4),\n38:     to = BoardPosition.Create(2, 5)\n39:   },\n40:   [Step.Merge2] = {\n41:     from = BoardPosition.Create(2, 5),\n42:     to = BoardPosition.Create(3, 5)\n43:   },\n44:   [Step.Merge3] = {\n45:     from = BoardPosition.Create(3, 5),\n46:     to = BoardPosition.Create(4, 5)\n47:   }\n48: }\n49: local EStep2BoardMaskPos = {\n50:   [Step.Merge1] = {\n51:     from = BoardPosition.Create(2, 4),\n52:     to = BoardPosition.Create(2, 5)\n53:   },\n54:   [Step.Merge2] = {\n55:     from = BoardPosition.Create(2, 5),\n56:     to = BoardPosition.Create(3, 5)\n57:   },\n58:   [Step.Merge3] = {\n59:     from = BoardPosition.Create(3, 5),\n60:     to = BoardPosition.Create(4, 5)\n61:   }\n62: }\n63: local Executer = setmetatable({}, TutorialExecuter)\n64: Executer.__index = Executer",
+          "id": "progression:tutorial_merge1"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMerge1.lua",
+          "line_start": 91,
+          "line_end": 134,
+          "sha256": "eb130c53c1d199c7e975bd6c284e7677c3fba66b757a27ec77f252a41dbef1e8",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "91: function Executer:OnItemMerged()\n92:   if self.m_strOngoingDatas ~= Step.Tip then\n93:     self:_NextStep()\n94:   end\n95: end\n96: \n97: function Executer:_NextStep()\n98:   self.m_strOngoingDatas = nextStep(self.m_strOngoingDatas)\n99:   if self.m_strOngoingDatas ~= nil then\n100:     self:LogTutorial(self.m_strOngoingDatas)\n101:     self:_SaveOngoingDatas()\n102:     self:_ExecuteDrag()\n103:   else\n104:     GM.TutorialModel:ClearTempDatas()\n105:     self:Finish(self.m_gesture)\n106:   end\n107: end\n108: \n109: function Executer:_ExecuteDrag()\n110:   if self.m_gesture ~= nil then\n111:     TutorialHelper.HideGesture(self.m_gesture)\n112:     self.m_gesture = nil\n113:   end\n114:   GM.TutorialModel:SetForceSourceBoardPosition(EStep2BoardGesturePos[self.m_strOngoingDatas].from)\n115:   GM.TutorialModel:SetForceTargetBoardPosition(EStep2BoardGesturePos[self.m_strOngoingDatas].to)\n116:   self.m_gesture = TutorialHelper.DragOnItems(EStep2BoardGesturePos[self.m_strOngoingDatas].from, EStep2BoardGesturePos[self.m_strOngoingDatas].to)\n117:   if self.m_strOngoingDatas == Step.Merge3 then\n118:     TutorialHelper.SetMaskAlphaOnce(0)\n119:   end\n120:   TutorialHelper.MaskOnItemBoard(EStep2BoardMaskPos[self.m_strOngoingDatas].from, EStep2BoardMaskPos[self.m_strOngoingDatas].to)\n121:   if self:_GetDialogKey() ~= nil then\n122:     TutorialHelper.ShowDialog(GM.GameTextModel:GetText(self:_GetDialogKey()), EStep2TextAnchorPercent[self.m_strOngoingDatas])\n123:   else\n124:     TutorialHelper.HideDialog()\n125:   end\n126: end\n127: \n128: function Executer:_GetDialogKey()\n129:   return GM.ConfigModel:IsNewUserTimeline() and EFireStep2TextKey[self.m_strOngoingDatas] or EStep2TextKey[self.m_strOngoingDatas]\n130: end\n131: \n132: return function(tutorialId, strDatas)\n133:   return TutorialExecuter.CreateExecuter(Executer, tutorialId, strDatas)\n134: end",
+          "id": "progression:tutorial_merge1_enforcement"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterClick1.lua",
+          "line_start": 1,
+          "line_end": 81,
+          "sha256": "de04f8ea0e0a5083c95c9cf64416ed27508d07ed7b79a013a113a77d0d81c922",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "1: local Step = {\n2:   Click1 = \"1\",\n3:   Click2 = \"2\",\n4:   Click3 = \"3\"\n5: }\n6: local arrStepList = {}\n7: for k, v in pairs(Step) do\n8:   arrStepList[tonumber(v)] = k\n9: end\n10: \n11: local function nextStep(step)\n12:   local nextStepKey = arrStepList[tonumber(step) + 1]\n13:   if nextStepKey ~= nil then\n14:     return Step[nextStepKey]\n15:   end\n16:   return nil\n17: end\n18: \n19: local textKey = \"tutorial_spawn_basic_1\"\n20: local textAnchorPercent = 36\n21: local tapPos = BoardPosition.Create(4, 5)\n22: local maskArea = {\n23:   from = BoardPosition.Create(2, 4),\n24:   to = BoardPosition.Create(4, 6)\n25: }\n26: local Executer = setmetatable({}, TutorialExecuter)\n27: Executer.__index = Executer\n28: \n29: function Executer:OnStart()\n30:   EventDispatcher.AddListener(EEventType.GameModeChangeFinished, self, self.OnGameModeChangeFinished)\n31:   EventDispatcher.AddListener(EEventType.ItemSpread, self, self.OnItemSpread)\n32:   self:OnGameModeChangeFinished()\n33: end\n34: \n35: function Executer:OnGameModeChangeFinished()\n36:   if GM.MapLayer == nil or GM.SceneManager:GetGameMode() ~= EGameMode.Main then\n37:     return\n38:   end\n39:   self:SetStrongTutorial(true)\n40:   self:_InitClick()\n41: end\n42: \n43: function Executer:_InitClick()\n44:   if self.m_bInit then\n45:     return\n46:   end\n47:   self.m_bInit = true\n48:   if StringUtil.IsNilOrEmpty(self.m_strOngoingDatas) then\n49:     self.m_strOngoingDatas = nextStep(0)\n50:     self:LogTutorial(self.m_strOngoingDatas)\n51:     self:_SaveOngoingDatas()\n52:   end\n53:   TutorialHelper.MaskOnItemBoard(maskArea.from, maskArea.to)\n54:   TutorialHelper.ShowDialog(GM.GameTextModel:GetText(self:_GetDialogKey()), textAnchorPercent)\n55:   self.m_gesture = TutorialHelper.TapOnBoard(tapPos)\n56:   GM.TutorialModel:SetForceSourceBoardPosition(tapPos)\n57:   GM.TutorialModel:SetForceTargetBoardPosition(tapPos)\n58: end\n59: \n60: function Executer:OnItemSpread()\n61:   self:_NextStep()\n62: end\n63: \n64: function Executer:_NextStep()\n65:   self.m_strOngoingDatas = nextStep(self.m_strOngoingDatas)\n66:   if self.m_strOngoingDatas ~= nil then\n67:     self:LogTutorial(self.m_strOngoingDatas)\n68:     self:_SaveOngoingDatas()\n69:   else\n70:     GM.TutorialModel:ClearTempDatas()\n71:     self:Finish(self.m_gesture)\n72:   end\n73: end\n74: \n75: function Executer:_GetDialogKey()\n76:   return GM.ConfigModel:IsNewUserTimeline() and \"tutorial_spawn_basic_fire_1\" or textKey\n77: end\n78: \n79: return function(tutorialId, strDatas)\n80:   return TutorialExecuter.CreateExecuter(Executer, tutorialId, strDatas)\n81: end",
+          "id": "progression:tutorial_click1"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMerge2.lua",
+          "line_start": 1,
+          "line_end": 94,
+          "sha256": "94c8cfe89dfe2879279268f1878c49c739dd3bc1e8bbd9d42ca4121aa5ca2117",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "1: local Step = {Merge1 = \"1\", Merge2 = \"2\"}\n2: local arrStepList = {}\n3: for k, v in pairs(Step) do\n4:   arrStepList[tonumber(v)] = k\n5: end\n6: \n7: local function nextStep(step)\n8:   local nextStepKey = arrStepList[tonumber(step) + 1]\n9:   if nextStepKey ~= nil then\n10:     return Step[nextStepKey]\n11:   end\n12:   return nil\n13: end\n14: \n15: local EStep2TextKey = {}\n16: local EStep2TextAnchorPercent = {}\n17: local EStep2BoardGesturePos = {\n18:   [Step.Merge1] = {\n19:     from = BoardPosition.Create(2, 4),\n20:     to = BoardPosition.Create(2, 5)\n21:   },\n22:   [Step.Merge2] = {\n23:     from = BoardPosition.Create(2, 5),\n24:     to = BoardPosition.Create(3, 4)\n25:   }\n26: }\n27: local EStep2BoardMaskPos = {\n28:   [Step.Merge1] = {\n29:     from = BoardPosition.Create(2, 4),\n30:     to = BoardPosition.Create(4, 6)\n31:   },\n32:   [Step.Merge2] = {\n33:     from = BoardPosition.Create(2, 4),\n34:     to = BoardPosition.Create(4, 6)\n35:   }\n36: }\n37: local Executer = setmetatable({}, TutorialExecuter)\n38: Executer.__index = Executer\n39: \n40: function Executer:OnStart()\n41:   EventDispatcher.AddListener(EEventType.GameModeChangeFinished, self, self.OnGameModeChangeFinished)\n42:   EventDispatcher.AddListener(EEventType.ItemMerged, self, self.OnItemMerged)\n43:   self:OnGameModeChangeFinished()\n44: end\n45: \n46: function Executer:OnGameModeChangeFinished()\n47:   if GM.MapLayer == nil or GM.SceneManager:GetGameMode() ~= EGameMode.Main then\n48:     return\n49:   end\n50:   self:SetStrongTutorial(true)\n51:   if StringUtil.IsNilOrEmpty(self.m_strOngoingDatas) then\n52:     self.m_strOngoingDatas = nextStep(0)\n53:     self:LogTutorial(self.m_strOngoingDatas)\n54:     self:_SaveOngoingDatas()\n55:   end\n56:   self:_ExecuteDrag()\n57: end\n58: \n59: function Executer:OnItemMerged()\n60:   self:_NextStep()\n61: end\n62: \n63: function Executer:_NextStep()\n64:   self.m_strOngoingDatas = nextStep(self.m_strOngoingDatas)\n65:   if self.m_strOngoingDatas ~= nil then\n66:     self:LogTutorial(self.m_strOngoingDatas)\n67:     self:_SaveOngoingDatas()\n68:     self:_ExecuteDrag()\n69:   else\n70:     GM.TutorialModel:ClearTempDatas()\n71:     self:Finish(self.m_gesture)\n72:   end\n73: end\n74: \n75: function Executer:_ExecuteDrag()\n76:   if self.m_gesture ~= nil then\n77:     TutorialHelper.HideGesture(self.m_gesture)\n78:     self.m_gesture = nil\n79:   end\n80:   GM.TutorialModel:SetForceSourceBoardPosition(EStep2BoardGesturePos[self.m_strOngoingDatas].from)\n81:   GM.TutorialModel:SetForceTargetBoardPosition(EStep2BoardGesturePos[self.m_strOngoingDatas].to)\n82:   self.m_gesture = TutorialHelper.DragOnItems(EStep2BoardGesturePos[self.m_strOngoingDatas].from, EStep2BoardGesturePos[self.m_strOngoingDatas].to)\n83:   TutorialHelper.SetMaskAlphaOnce(0)\n84:   TutorialHelper.MaskOnItemBoard(EStep2BoardMaskPos[self.m_strOngoingDatas].from, EStep2BoardMaskPos[self.m_strOngoingDatas].to)\n85:   if EStep2TextKey[self.m_strOngoingDatas] ~= nil then\n86:     TutorialHelper.ShowDialog(GM.GameTextModel:GetText(EStep2TextKey[self.m_strOngoingDatas]), EStep2TextAnchorPercent[self.m_strOngoingDatas])\n87:   else\n88:     TutorialHelper.HideDialog()\n89:   end\n90: end\n91: \n92: return function(tutorialId, strDatas)\n93:   return TutorialExecuter.CreateExecuter(Executer, tutorialId, strDatas)\n94: end",
+          "id": "progression:tutorial_merge2"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseItemLayerModel.lua",
+          "line_start": 25,
+          "line_end": 42,
+          "sha256": "23f9b04044efd534c06d9632895abf54939c0ff15eb75ab5a124959ceb91c0ad",
+          "sha256_scope": "complete reconstructed static Lua source bytes",
+          "method": "static packaged source/config trace; no live game execution",
+          "note": "Default spread search delegates to original spread-position iterator; empty board cells required",
+          "id": "spread-placement"
         }
       ],
       "unknowns": [
-        "튜토리얼 강제 입력·시각 강조·실기 순서"
+        "실기 튜토리얼의 입력·연출 시간, 이후 튜토리얼 전체"
       ]
     },
     {
@@ -2427,9 +2481,9 @@
       "title": "맵 과제는 연출 시작과 비용·보상 확정이 분리된다",
       "summary": "골드 충족으로 연출을 시작하고 OnTimelineFinished에서 소비·보상·다음 과제를 확정한다.",
       "details": [
-        "기본 Day1 첫6개 비용26/16/24/46/25/24, 합161이다. 모두EXP15이며 네 번째에1301×1이 추가된다.",
-        "웹은 기본 분기·배율1·6개 과제만 적용한다. fire변형과 서버 비용 보정을 섞지 않는다.",
-        "첫6개로Lv3/EXP15가 된다. 이후 Lv4 고정 주문은 명시적인 EXP 실험 도우미로 비교하며 자연 진행 완성을 주장하지 않는다."
+        "기본 MainTask 첫15개 비용 합477골드/225EXP.9번째2_2 완료 시Lv4,15개 완료 시Lv5/EXP15다.",
+        "웹은 기본 분기·배율1을 적용한다. fire변형·서버 비용·실제 타임라인은 미확인이다.",
+        "고정주문1–13 기본보상198골드와Lv4까지 기본비용265골드 사이에67골드 차이가 있다. 동적 주문/재화수집/판매 등을 빼고 자연 성장 완주를 주장할 수 없다."
       ],
       "sources": [
         {
@@ -2471,10 +2525,185 @@
           "method": "static source/config trace; no game execution",
           "evidence_id": null,
           "excerpt": "56: \n57: function LevelModel:CanLevelUp()\n58:   if self:IfReachMaxLevel(self:GetCurrentLevel()) then\n59:     return false\n60:   end\n61:   return GM.PropertyDataManager:GetPropertyNum(EPropertyType.Experience) >= self:GetLevelUpCost()\n62: end\n63: \n64: function LevelModel:GetLevelUpCost(uCurLevel)\n65:   uCurLevel = uCurLevel or self:GetCurrentLevel()\n66:   local config = GM.ConfigModel:GetLocalConfig(LocalConfigKey.Level)\n67:   if 1 <= uCurLevel and uCurLevel <= #config then\n68:     return config[uCurLevel].cost\n69:   end\n70:   return 0\n71: end\n72: \n73: function LevelModel:GetLevelUpRewards(uCurLevel)\n74:   uCurLevel = uCurLevel or self:GetCurrentLevel()\n75:   local config = GM.ConfigModel:GetLocalConfig(LocalConfigKey.Level)\n76:   if uCurLevel < 1 or uCurLevel > #config then\n77:     return {}\n78:   end\n79:   return ConfigUtil.GetCurrencyFromArrStr(config[uCurLevel].rewards) or {}\n80: end\n81: \n82: function LevelModel:DoLevelUp()\n83:   Log.Assert(self:CanLevelUp(), \"LevelModel:DoLevelUp\")\n84:   while self:CanLevelUp() and GM.PropertyDataManager:Consume(EPropertyType.Experience, self:GetLevelUpCost(), EBIType.LevelUp, self.m_curLevel) do\n85:     local formattedRewards = self:GetLevelUpRewards()\n86:     self.m_curLevel = self.m_curLevel + 1\n87:     GM.UserModel:Set(EUserSyncDataKey.UserLevel, self.m_curLevel)\n88:     GM.SyncModel:UpdateProgressLastModifiedTime()\n89:     if GLOBAL_APP then\n90:       CSFirebaseManager:LogLevelUpEvent(self.m_curLevel)\n91:     end\n92:     GM.OperBIManager:TrackLevelUpEvent(self.m_curLevel)\n93:     RewardApi.AcquireRewardsLogic(formattedRewards, EPropertySource.Give, EBIType.LevelUp, EGameMode.Main, CacheItemType.Type2)\n94:     GM.BIManager:LogAction(EBIType.LevelUp, self.m_curLevel + 1)\n95:     EventDispatcher.DispatchEvent(EEventType.LevelUp, {\n96:       level = self.m_curLevel\n97:     })\n98:   end\n99:   self:SyncCSLevel()"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 2,
+          "line_end": 11,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "2:   {\n3:     day = 1,\n4:     id = 1,\n5:     area = 1,\n6:     cost = 26,\n7:     rewards = {\"exp-15\"},\n8:     edit_pos = \"38.7,250,-390.6\",\n9:     detail_icon = \"colton\",\n10:     name = \"casinio_task_1_1\"\n11:   },",
+          "id": "progression:task:1_1"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 12,
+          "line_end": 21,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "12:   {\n13:     day = 1,\n14:     id = 2,\n15:     area = 1,\n16:     cost = 16,\n17:     rewards = {\"exp-15\"},\n18:     edit_pos = \"45.2,225,-353.6\",\n19:     detail_icon = \"sam\",\n20:     name = \"casinio_task_1_2\"\n21:   },",
+          "id": "progression:task:1_2"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 22,
+          "line_end": 30,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "22:   {\n23:     day = 1,\n24:     id = 3,\n25:     area = 1,\n26:     cost = 24,\n27:     rewards = {\"exp-15\"},\n28:     detail_icon = \"mark\",\n29:     name = \"task_1_3\"\n30:   },",
+          "id": "progression:task:1_3"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 31,
+          "line_end": 41,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "31:   {\n32:     day = 1,\n33:     id = 4,\n34:     area = 1,\n35:     cost = 46,\n36:     rewards = {\"exp-15\", \"1301-1\"},\n37:     edit_pos = \"30.4,175,-266\",\n38:     list_icon = \"SwimmingRing01\",\n39:     detail_icon = \"norman\",\n40:     name = \"task_1_4\"\n41:   },",
+          "id": "progression:task:1_4"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 42,
+          "line_end": 50,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "42:   {\n43:     day = 1,\n44:     id = 5,\n45:     area = 1,\n46:     cost = 25,\n47:     rewards = {\"exp-15\"},\n48:     detail_icon = \"norman\",\n49:     name = \"task_1_5\"\n50:   },",
+          "id": "progression:task:1_5"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 51,
+          "line_end": 60,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "51:   {\n52:     day = 1,\n53:     id = 6,\n54:     area = 1,\n55:     cost = 24,\n56:     rewards = {\"exp-15\"},\n57:     edit_pos = \"42.24,280,-443.9\",\n58:     detail_icon = \"sam\",\n59:     name = \"task_1_6\"\n60:   },",
+          "id": "progression:task:1_6"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 61,
+          "line_end": 75,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "61:   {\n62:     day = 1,\n63:     id = 7,\n64:     area = 1,\n65:     cost = 24,\n66:     rewards = {\n67:       \"2701-1\",\n68:       \"exp-15\",\n69:       \"1501-1\"\n70:     },\n71:     edit_pos = \"-58,180,-368.5\",\n72:     list_icon = \"RedChest01\",\n73:     detail_icon = \"colton\",\n74:     name = \"casinio_task_1_7\"\n75:   },",
+          "id": "progression:task:1_7"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 76,
+          "line_end": 85,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "76:   {\n77:     day = 2,\n78:     id = 1,\n79:     area = 2,\n80:     cost = 26,\n81:     rewards = {\"exp-15\", \"903-1\"},\n82:     edit_pos = \"-39.6,195,-307\",\n83:     detail_icon = \"harrison\",\n84:     name = \"task_2_1\"\n85:   },",
+          "id": "progression:task:2_1"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 86,
+          "line_end": 94,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "86:   {\n87:     day = 2,\n88:     id = 2,\n89:     area = 2,\n90:     cost = 54,\n91:     rewards = {\"exp-15\"},\n92:     detail_icon = \"olivia\",\n93:     name = \"task_2_2\"\n94:   },",
+          "id": "progression:task:2_2"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 95,
+          "line_end": 105,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "95:   {\n96:     day = 2,\n97:     id = 3,\n98:     area = 2,\n99:     cost = 26,\n100:     rewards = {\"exp-15\", \"1502-1\"},\n101:     edit_pos = \"10.20,288.90,-362.50\",\n102:     list_icon = \"DogHouse02\",\n103:     detail_icon = \"carmen\",\n104:     name = \"task_2_3\"\n105:   },",
+          "id": "progression:task:2_3"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 106,
+          "line_end": 114,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "106:   {\n107:     day = 2,\n108:     id = 4,\n109:     area = 2,\n110:     cost = 26,\n111:     rewards = {\"exp-15\"},\n112:     detail_icon = \"carmen\",\n113:     name = \"task_2_4\"\n114:   },",
+          "id": "progression:task:2_4"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 115,
+          "line_end": 124,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "115:   {\n116:     day = 2,\n117:     id = 5,\n118:     area = 2,\n119:     cost = 54,\n120:     rewards = {\"exp-15\", \"101-1\"},\n121:     list_icon = \"GroceryBag01\",\n122:     detail_icon = \"lori\",\n123:     name = \"task_2_5\"\n124:   },",
+          "id": "progression:task:2_5"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 125,
+          "line_end": 134,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "125:   {\n126:     day = 2,\n127:     id = 6,\n128:     area = 2,\n129:     cost = 26,\n130:     rewards = {\"exp-15\", \"603-1\"},\n131:     edit_pos = \"-2.90,184.60,-235.01\",\n132:     detail_icon = \"sam\",\n133:     name = \"task_2_6\"\n134:   },",
+          "id": "progression:task:2_6"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 135,
+          "line_end": 149,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "135:   {\n136:     day = 2,\n137:     id = 7,\n138:     area = 2,\n139:     cost = 54,\n140:     rewards = {\n141:       \"2701-1\",\n142:       \"exp-15\",\n143:       \"1503-1\"\n144:     },\n145:     edit_pos = \"11.60,259.70,-290.60\",\n146:     list_icon = \"RedChest01\",\n147:     detail_icon = \"colton\",\n148:     name = \"casinio_task_2_7\"\n149:   },",
+          "id": "progression:task:2_7"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 150,
+          "line_end": 158,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "kind": "reconstructed-static-lua",
+          "method": "static packaged source trace; no runtime/LDPlayer observation",
+          "excerpt": "150:   {\n151:     day = 3,\n152:     id = 1,\n153:     area = 2,\n154:     cost = 26,\n155:     rewards = {\"exp-15\"},\n156:     detail_icon = \"quinn\",\n157:     name = \"task_3_1\"\n158:   },",
+          "id": "progression:task:3_1"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig_fire.lua",
+          "line_start": 1,
+          "line_end": 54,
+          "sha256": "55eb21eb4c3effb3ec95fa075eb5413cf987f03d40b5d9e971689ed689876fa7",
+          "sha256_scope": "complete reconstructed static Lua source file",
+          "method": "static source/config trace; no game execution",
+          "evidence_id": null,
+          "excerpt": "1: return {\n2:   {\n3:     day = 1,\n4:     id = \"1_pre_1\",\n5:     area = 1,\n6:     cost = 24,\n7:     rewards = {\"exp-15\"},\n8:     edit_pos = \"38.7,250,-390.6\",\n9:     detail_icon = \"Quinn\",\n10:     name = \"task_1_1_pre_fire_1\"\n11:   },\n12:   {\n13:     day = 1,\n14:     id = \"1_pre_2\",\n15:     area = 1,\n16:     cost = 16,\n17:     rewards = {\"exp-15\"},\n18:     edit_pos = \"45.2,225,-353.6\",\n19:     detail_icon = \"Quinn\",\n20:     name = \"task_1_1_pre_fire_2\"\n21:   },\n22:   {\n23:     day = 1,\n24:     id = 1,\n25:     area = 1,\n26:     cost = 26,\n27:     rewards = {\"exp-15\"},\n28:     edit_pos = \"38.7,250,-390.6\",\n29:     detail_icon = \"colton\",\n30:     name = \"casinio_task_1_1\"\n31:   },\n32:   {\n33:     day = 1,\n34:     id = 2,\n35:     area = 1,\n36:     cost = 46,\n37:     rewards = {\"exp-15\"},\n38:     edit_pos = \"45.2,225,-353.6\",\n39:     detail_icon = \"sam\",\n40:     name = \"casinio_task_1_2\"\n41:   },\n42:   {\n43:     day = 1,\n44:     id = 3,\n45:     area = 1,\n46:     cost = 25,\n47:     rewards = {\"exp-15\"},\n48:     detail_icon = \"mark\",\n49:     name = \"task_1_3\"\n50:   },\n51:   {\n52:     day = 1,\n53:     id = 4,\n54:     area = 1,"
         }
       ],
       "unknowns": [
-        "현재 서버 비용 보정·실제 장면·추가 퀘스트/EXP유입"
+        "서버 비용 보정·실제 장면·복수슬롯과 랜덤주문의 실제 성장 흐름"
       ]
     },
     {
@@ -2489,7 +2718,7 @@
       "summary": "기존과 동일한14개를 재사용하고 신규PNG51개를 보강했다.",
       "details": [
         "Type→명시 Image→ImageFileConfig→bundle container→Sprite를 정확히 연결했다.",
-        "이전의 다른6타입과 합쳐 기본 타입 이미지71개가 연결된다. 선택 범위 밖은 이름/ID로 표시한다.",
+        "선정6체인65종과 다른 기본 타입의 기존 연결을 유지하고, 별도 특수21타입 중17타입을 새로 연결해 기본 타입 이미지88개가 되었다.",
         "Sprite는 정적 자산이며 실제 화면·활성 variant 관측이 아니다."
       ],
       "sources": [
@@ -2504,20 +2733,228 @@
       "unknowns": [
         "기본552종 전체 이미지·이벤트 변형·원격 자산"
       ]
+    },
+    {
+      "id": "SIM-C006",
+      "kind": "code",
+      "domain": "economy",
+      "domains": [
+        "mechanics",
+        "interaction"
+      ],
+      "category": "웹 시뮬레이션 · 정적 규칙",
+      "title": "재화 조각은 합성과 수집의 보상 시점이 다르다",
+      "summary": "일반 합성의 결과 체인레벨8 이상이면 빈칸에 코인2401을 만든다. EXP를 즉시 주지 않는다.",
+      "details": [
+        "Coin2401–2405 수집량2/6/14/30/62골드, Gem2501–2504는1/3/7/15젬, Energy2601–2605는2/6/15/40/100에너지다.",
+        "탭 수집은 아이템을 제거한 뒤 보상을 한 번 준다.2401 두 개를2402로 합성해도 수집 전에는 골드를 더하지 않는다.",
+        "고레벨 결과의 합성 보너스도 즉시 골드가 아니라 수집 가능한2401이다. 액티비티·버블 생성 보정은 웹에서 제외했다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+          "line_start": 1,
+          "line_end": 5828,
+          "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "552 base item declarations; packaged variants and server selection not resolved"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemCollectable.lua",
+          "line_start": 10,
+          "line_end": 97,
+          "sha256": "40a4e14428b1fbf1c2e0a656b489e4614980145a64709bef3a18efa1f4b49896",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "consume item first, dispatch skip or grant reward logic; tips/cards have confirmation branches"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+          "line_start": 518,
+          "line_end": 523,
+          "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "after other optional bonus generation: if empty position and result chain level >= threshold, generate Coin01"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/SystemConfig.lua",
+          "line_start": 1,
+          "line_end": 6,
+          "sha256": "68b6e58d4aeb9b60782d38a2381c2e40d89c59565c47ca96fa5f3a6b12744883",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "SpreadCoinMinChainLevel base value8"
+        }
+      ],
+      "unknowns": [
+        "활성 이벤트 보너스·전체 보상 래퍼·수집 시 서버 상태"
+      ]
+    },
+    {
+      "id": "SIM-C007",
+      "kind": "code",
+      "domain": "interaction",
+      "domains": [
+        "mechanics",
+        "economy"
+      ],
+      "category": "웹 시뮬레이션 · 정적 규칙",
+      "title": "가위·무지개·모래시계는 서로 다른 처리 경로를 쓴다",
+      "summary": "도구 대상 플래그와 확인 시 재검사를 보존해야 아이템·재화가 잘못 소비되지 않는다.",
+      "details": [
+        "무지개는 허용 타입을 다음 단계로 바꾸지만 일반 합성 코인 보너스를 실행하지 않는다.",
+        "가위는 이전 단계 아이템2개를 만들고 횟수1을 쓴다. 보드가 가득 차면 금지하며 가위끼리 횟수 합산은 예외다.",
+        "time_skip_1–5는600/1200/2400/4800/9600초를 현재 진행 중 생성기 타이머에서 뺀다. 세계 시간이나 에너지를 그만큼 진행하지 않는다.",
+        "웹 도구 준비 버튼은 연구용 입력이다. 원작에서의 획득 시점이나 상점 지급을 증명하지 않는다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemModel.lua",
+          "line_start": 11,
+          "line_end": 29,
+          "sha256": "5bdded307eba2913754b8b25e9abb4ebcf4217d398723d16a3d367b1138916ec",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "target flags copied from its own item configuration"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemModel.lua",
+          "line_start": 137,
+          "line_end": 151,
+          "sha256": "5bdded307eba2913754b8b25e9abb4ebcf4217d398723d16a3d367b1138916ec",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "scissors-on-scissors exception; split requires non-full board"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+          "line_start": 352,
+          "line_end": 424,
+          "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "confirmation, rainbow replacement; scissors combine counts or split into two prior-level items"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSplit.lua",
+          "line_start": 1,
+          "line_end": 31,
+          "sha256": "cb73c0d13f1d34758003ea683cf038638592e601de83afcf7d90a42bf2cf12c2",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "one use by default, decrement/save; stackable uses"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+          "line_start": 289,
+          "line_end": 296,
+          "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "dispatch OnTimeSkip to every remaining board item"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+          "line_start": 196,
+          "line_end": 213,
+          "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "only if active start timer: subtract duration and immediately update"
+        }
+      ],
+      "unknowns": [
+        "원작 획득 시점·상점 판매·도구 연출과 사운드"
+      ]
+    },
+    {
+      "id": "SIM-C008",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "mechanics",
+        "economy",
+        "puzzle-fx"
+      ],
+      "category": "웹 시뮬레이션 · 정적 규칙",
+      "title": "버블의 만료는 즉시 골드 지급이 아니다",
+      "summary": "기본60초가 지나면 같은 칸의 버블을 코인2401로 교체한다.",
+      "details": [
+        "구매는 내부 타입의 기본 BubblePrice/Price를 확인하고 젬이 충분할 때만 차감·해제한다.",
+        "웹에서는 명시적으로 연구 배치한 버블만 만든다. 자연 생성 확률·할인·튜토리얼 가격·서버 기간은 적용하지 않았다.",
+        "만료 후 코인은 다시 수집해야2골드를 얻는다. 기존버블을 일반 주문·판매·합성 아이템으로 쓰지 않는다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemBubble.lua",
+          "line_start": 1,
+          "line_end": 161,
+          "sha256": "64538f4f1f56aec6b4b52e2479e93eb27375996c1ac22810dabeb29eef690e0c",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "default60s, buy using gems, timeout replacement Coin01; countdown can be overridden"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/ItemPropertyConfig.lua",
+          "line_start": 1,
+          "line_end": 1550,
+          "sha256": "1f5344ec92669b63473bd4c2c85d8b84caf38c855e297a73149fb11ca2d3094e",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "164 packaged item-price rows; base BubblePrice or fallback Price; variants remain"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 490,
+          "line_end": 491,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "ItemBubbleDuration from general/server configuration"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+          "line_start": 529,
+          "line_end": 590,
+          "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "read-only recovered Lua / parsed packaged table cross-check",
+          "evidence_id": null,
+          "note": "function gate, duplicate suppression, order/purchase100% override, dynamic multipliers, roll"
+        }
+      ],
+      "unknowns": [
+        "현재 서버 확률·할인·기간·튜토리얼 별도 가격"
+      ]
     }
   ],
   "work": [
     {
       "step": "웹 보드·고정 주문",
       "state": "partial",
-      "done": "552타입합성/판매 identity,선정생성기16종,소진풀/충전,원본초기판,고정주문16개",
-      "remaining": "smart/튜토리얼/부스트/랜덤주문·전체도구기믹·병렬슬롯"
+      "done": "원본 첫8단계 튜토리얼, 주변 산출 위치, 드래그·탭·키보드, 생성기16종·고정16주문·재화수집·특수도구",
+      "remaining": "복수 주문 슬롯·랜덤 주문·smart/부스트·전체 튜토리얼·이벤트 보정"
     },
     {
       "step": "맵·성장 연결",
       "state": "partial",
-      "done": "기본첫6과제의골드/EXP/레벨보상,시작/확정분리",
-      "remaining": "실제스토리/장식/카메라·서버비용·이후과제.6과제이후레벨은도우미실험"
+      "done": "기본15과제,실제 한글 이름/골드/EXP/레벨보상,시작/확정 분리,집 변화 웹 모식도",
+      "remaining": "실제 집/스토리/카메라·서버비용·동적 주문으로 보충되는 자연 성장"
     },
     {
       "step": "플레이→상점·오퍼",
@@ -2528,8 +2965,8 @@
     {
       "step": "웹 저장·복귀",
       "state": "done",
-      "done": "revision/schema/상태검증,손상저장보존,이전실험백업,JSON이동,경과시간/소진풀/RNG/충전복원",
-      "remaining": "최대7일은웹정책.서버동기화·여러탭동시편집은지원하지않음"
+      "done": "스키마 검증·손상저장 보존·원본 백업 후 호환 revision 이전·JSON 이동·실시간/재접속 회복",
+      "remaining": "7일 상한은 웹 정책. 서버 동기화·여러 탭 동시 편집은 미지원"
     },
     {
       "step": "BM 노출 조건",
@@ -2546,8 +2983,8 @@
     {
       "step": "APK 이미지·UI 자산",
       "state": "partial",
-      "done": "원본Sprite75PNG·기본타입71연결,선정6체인65종정확매핑. UI트리11종·정적clip26개",
-      "remaining": "현재 활성 레이아웃/실제 재생·원격 자산은 미관측"
+      "done": "고유 APK Sprite117PNG, 기본 타입88개와 게임 UI25개 연결, UI프리팹11종·정적클립26개",
+      "remaining": "전체552기본타입 이미지·활성 고객/장면·원격자산·실제 애니메이션 타이밍"
     },
     {
       "step": "플레이 영상·스크린샷",

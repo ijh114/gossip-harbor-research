@@ -93,7 +93,7 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   assert.match(w.document.querySelector('#bm-rule-result').textContent,/신규 번들 생성 불가/);
   const bmCost=w.document.querySelector('[data-bm-key="generationCost"]');bmCost.value='2';bmCost.dispatchEvent(new w.Event('input',{bubbles:true}));
   assert.match(w.document.querySelector('#bm-rule-result').textContent,/신규 번들 생성 가능/);
-  await go('experience');assert.ok(w.document.querySelector('.source-play-start'));click('[data-play="start"]');
+  await go('experience');assert.ok(w.document.querySelector('.game-title'));click('[data-play-mode="source"]');assert.ok(w.document.querySelector('.source-play-start'));click('[data-play="scenario"][data-value="open"]');click('[data-play="start"]');
   assert.equal(w.document.querySelectorAll('.source-play-cell').length,63);click('[data-play="cell"][data-value="0"]');click('[data-play="generate"]');
   assert.ok(w.document.querySelectorAll('.source-play-cell.occupied').length>=3);
   click('[data-play="aid-energy"]');click('[data-play="generate"]');assert.ok(w.document.querySelector('#play-dialog[open]'));
@@ -102,7 +102,7 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   assert.match(w.document.querySelector('#play-dialog').textContent,/에너지 번들/);click('[data-play="close-offer"]');
   click('[data-play="aid-coins"]');click('[data-play="home"]');
   for(let i=0;i<6;i++){click('[data-play="quest-start"]');click('[data-play="quest-finish"]');}
-  assert.match(w.document.querySelector('.source-map-progress').textContent,/6 \/ 6/);
+  assert.match(w.document.querySelector('.source-map-progress').textContent,/6 \/ 15/);
   click('[data-play="main"]');click('[data-play="shop"]');click('[data-play="chain-start"]');
   for(let i=0;i<6;i++)click('[data-play="chain-claim"]');assert.equal(w.document.querySelector('[data-play="chain-claim"]').disabled,true);
   click('[data-play="close-shop"]');click('[data-play="save"]');

@@ -48,12 +48,12 @@ function queue(s,config,data){
  const queued=rows(s.queue);
  return `<section class="source-play-queue"><div><h2>보상 대기열</h2><span>${queued.length}건 대기</span></div>${queued.length?`<ul>${queued.slice(0,4).map(reward=>{const type=typeof reward==='object'?reward.type:reward;return `<li>${itemImage(config,data,type)}<span>${escape(itemName(config,type))}${typeof reward==='object'&&number(reward.count)>1?' ×'+format(reward.count):''}</span></li>`;}).join('')}</ul>`:'<p>맵·레벨 보상이 생기면 여기에서 확인합니다.</p>'}${action('queue','지원하는 보상1개 배치',{disabled:queued.length===0})}</section>`;
 }
-function home(s,config){
+export function home(s,config){
  const quests=rows(config.quests),done=Math.min(quests.length,Math.max(0,number(s.questsDone))),current=quests[done],pending=s.pendingQuest!==undefined&&s.pendingQuest!==null;
  return `<div class="source-play-home"><div class="source-home-title"><div><h2>주문 골드로 맵 진행하기</h2><p>선정한 내장 퀘스트의 순서·기본 비용·EXP를 적용합니다. 화면은 진행 상태를 보여주는 웹 모식도입니다.</p></div>${action('main','퍼즐로 돌아가기')}</div><div class="source-map-progress"><span>완료 ${done} / ${quests.length}</span><progress max="${quests.length||1}" value="${done}" aria-label="선정 퀘스트 완료 수"></progress></div><ol class="source-map-track">${quests.map((quest,index)=>`<li class="${index<done?'done':index===done?'current':'locked'}"${index===done?' aria-current="step"':''}><span>${index<done?'완료':index===done?'현재':'대기'}</span><strong>${escape(quest.name || quest.id)}</strong><small>골드 ${format(quest.cost)} · EXP +${format(quest.exp)}</small></li>`).join('')}</ol><section class="source-current-quest">${current?`<div><h3>${escape(current.name||current.id)}</h3><p>기본 비용 <strong>${format(current.cost)}골드</strong> · EXP +${format(current.exp)}</p>${rows(current.rewards).length?`<p class="source-play-hint">추가 보상 ${current.rewards.map(reward=>`Type ${escape(reward.type)} ×${format(reward.count)}`).join(' · ')}</p>`:''}<p class="source-play-hint">서버 비용 보정은 배율1로 둔 실험입니다. 장면 완료 시 골드를 차감하고 보상·다음 과제를 확정합니다.</p></div>${pending?action('quest-finish','장면 완료 · 비용과 보상 확정',{primary:true}):action('quest-start','이 과제 시작',{primary:true,disabled:number(s.wallet?.coins)<number(current.cost)})}`:'<div><h3>선정 퀘스트를 모두 마쳤습니다</h3><p>다음 과제·지역·스토리는 이번 실험 범위에 포함하지 않았습니다.</p></div>'}</section></div>`;
 }
 const CHAIN=[{cost:20,label:'에너지 100'},{cost:0,label:'초록 카드팩'},{cost:0,label:'에너지 15'},{cost:40,label:'에너지 100'},{cost:0,label:'파란 카드팩'},{cost:0,label:'에너지 20'},{cost:80,label:'에너지 100 · 미구매'}];
-function modal(s,config,data){
+export function modal(s,config,data){
  if(!s.modal)return '';
  const w=s.wallet||{};
  let title='',body='',close='';
@@ -71,7 +71,7 @@ function modal(s,config,data){
  }else{return '';}
  return `<dialog id="play-dialog" class="source-play-dialog" aria-labelledby="source-play-dialog-title"><div class="source-dialog-heading"><h2 id="source-play-dialog-title">${escape(title)}</h2>${action(close,'닫기')}</div><div class="source-dialog-content">${body}</div></dialog>`;
 }
-function boundaries(config){
+export function boundaries(config){
  return `<details class="source-play-boundaries"><summary>적용한 근거와 실험 범위</summary><ul>${rows(config.boundary).map(text=>`<li>${escape(text)}</li>`).join('')}</ul><p>이벤트·패스·앨범의 전체 서버 설정과 현재 상품 배정은 포함하지 않습니다. 실험 결과는 원작 실플레이 검증과 별도로 읽습니다.</p>${rows(config.sources).length?`<details><summary>설정 출처 ${rows(config.sources).length}건</summary><ul>${rows(config.sources).map(source=>`<li><code>${escape(typeof source==='string'?source:source.path||source.id||'설정 출처')}</code>${typeof source==='object'&&source.line_start!=null?` · L${escape(source.line_start)}${source.line_end!=null?'–L'+escape(source.line_end):''}`:''}</li>`).join('')}</ul></details>`:''}</details>`;
 }
 

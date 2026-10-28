@@ -6,9 +6,9 @@ import {createPlayController} from './play-controller.mjs';
 
 export function createStudio({getData,getRoute,render,toast,download}){
  let walkthrough=createWalkthrough(),running=new Map();
- let playMode='source';
+ let playMode='game';
  const sourcePlay=createPlayController({getData,render,download});
- const playPage=()=>`<nav class="studio-tabs" aria-label="게임 시뮬레이션 모드"><button class="button" data-play-mode="source" aria-pressed="${playMode==='source'}">APK 설정 기반 플레이</button><button class="button" data-play-mode="prototype" aria-pressed="${playMode==='prototype'}">기존 흐름 시연</button></nav>`+(playMode==='source'?sourcePlay.render():renderExperience(walkthrough,getData()));
+ const playPage=()=>`<nav class="studio-tabs" aria-label="게임 시뮬레이션 모드"><button class="button" data-play-mode="game" aria-pressed="${playMode==='game'}">게임 플레이</button><button class="button" data-play-mode="source" aria-pressed="${playMode==='source'}">APK 설정 기반 플레이</button><button class="button" data-play-mode="prototype" aria-pressed="${playMode==='prototype'}">기존 흐름 시연</button></nav>`+(playMode!=='prototype'?sourcePlay.render(playMode):renderExperience(walkthrough,getData()));
  const itemFilters={query:'',table:'ItemModelConfig',role:'all',page:1};
  const uiFilters={query:'',category:'all',page:1};
  const captureFilters={category:'all',kind:'all'};
@@ -67,6 +67,6 @@ export function createStudio({getData,getRoute,render,toast,download}){
  document.querySelector('#close-media').addEventListener('click',closeMedia);
  mediaDialog.addEventListener('close',clearMedia);
  mediaDialog.addEventListener('cancel',clearMedia);
- function afterRender(){for(const [id,timer]of running){clearTimeout(timer);}running.clear();}
- return {renderPage:id=>pages[id]?.()||'',afterRender,afterMount(){if(getRoute()==='experience'&&playMode==='source')sourcePlay.afterMount();}};
+ function afterRender(){sourcePlay.beforeRender();for(const [id,timer]of running){clearTimeout(timer);}running.clear();}
+ return {renderPage:id=>pages[id]?.()||'',afterRender,afterMount(){if(getRoute()==='experience'&&playMode!=='prototype')sourcePlay.afterMount();}};
 }

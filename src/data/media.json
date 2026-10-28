@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetVersion": "4.10.5",
-  "description": "APK정적 Sprite75개(기본 타입71개 연결)와 버전 미확인 과거 캡처20개를 구분합니다. 같은 PNG의 여러 키 참조는 고유 이미지 수와 다릅니다.",
+  "description": "APK 정적 Sprite 117개, 기본 타입 88개와 게임 UI 25개 연결. 버전 미확인 과거 캡처 20개를 구분합니다. 같은 PNG의 여러 키 참조는 고유 이미지 수와 다릅니다.",
   "entries": [
     {
       "key": "asset:Coffee01",
@@ -2928,6 +2928,1360 @@
         "line_start": 303,
         "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
       }
+    },
+    {
+      "key": "ui-play:board_bg1",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-board_bg1.png",
+      "alt": "board_bg1 · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 4950001929946829004",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "5f5373568acde63a7d951ec53576e91c6f791a7bee6cd4dc7b244bd4373345f6",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "4950001929946829004",
+        "type": "Sprite",
+        "name": "board_bg1",
+        "object_source_sha256": "34d4ef0f6b8e46a9e2902d235ee2098c7fec8e4cd7088c39107edd7281271ae5"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/Board/board_bg1.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:order_counter",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-order_counter.png",
+      "alt": "order_counter · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4641121522208090245",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "0728f7767169650da3505100969f6ffea8c5ea796a16288df5045cc11c610c9b",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4641121522208090245",
+        "type": "Sprite",
+        "name": "order_counter",
+        "object_source_sha256": "e169f0296fbf490e4e3aa0d4518a48a6bb3d1ba2abb74d74a2c4dc021580b682"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 151.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/Board/order_counter.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:info_bg_normal",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-info_bg_normal.png",
+      "alt": "info_bg_normal · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -6999080337651919091",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3ca141bd9dcdf4eabdb22f066235c0991600d184031603074294826c10c1377d",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-6999080337651919091",
+        "type": "Sprite",
+        "name": "info_bg_normal",
+        "object_source_sha256": "d11c6e72104d66e4425b43552b54cb8cb49164acc1a807a4790ae9cfd518869a"
+      },
+      "spriteBorder": {
+        "x": 36.0,
+        "y": 51.0,
+        "z": 37.0,
+        "w": 40.0
+      },
+      "sourceContainers": [
+        "Assets/Board/Board/InfoBar/info_bg_normal.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:info_title_normal",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-info_title_normal.png",
+      "alt": "info_title_normal · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1271678879748280068",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "ecb0e80f60b3c6539a891475cc021865f4a7c281b92b4977f6745e9a9f1fe5c3",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "1271678879748280068",
+        "type": "Sprite",
+        "name": "info_title_normal",
+        "object_source_sha256": "d84de8807a618becdb4da052186617f6c5524c9329b8a1fa19661a336d7bcc85"
+      },
+      "spriteBorder": {
+        "x": 39.0,
+        "y": 0.0,
+        "z": 41.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/Board/InfoBar/info_title_normal.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:icon_storage",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-icon_storage.png",
+      "alt": "icon_storage · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id 7279454855734371029",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "36ff3c56e8f879aa589968e6f862fb1765e60e0d6159b966abf12b3d2f1e0c40",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "7279454855734371029",
+        "type": "Sprite",
+        "name": "icon_storage",
+        "object_source_sha256": "221f052ca57d7b839857aed8896aaeb6a79cd0f13632f0cbb0110d6db285a787"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/icon_storage.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:icon_shop",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-icon_shop.png",
+      "alt": "icon_shop · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id -5292117805443558232",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "0c3c953f7890c7fee78439633e2db729ddeb9c811b4ab03acbef1f0f2aa02a91",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "-5292117805443558232",
+        "type": "Sprite",
+        "name": "icon_shop",
+        "object_source_sha256": "e32b847ab83d004e363304a609ae4ab9c8c96cd63a26a39e6b516d1fc14e40bf"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/icon_shop.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:icon_home_screen",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-icon_home_screen.png",
+      "alt": "icon_home_screen · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id 6932224125860168159",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "2b3a4e5a08a8c91a1c2362c17bf65ba7006e74814d2f5b21c0cb270ccb1fc95e",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "6932224125860168159",
+        "type": "Sprite",
+        "name": "icon_home_screen",
+        "object_source_sha256": "a527e6605ccbfc926962e16515010bb4f7fe172090a054802d36ee284a32c47c"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/icon_home_screen.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:avatar_quinn",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-avatar_quinn.png",
+      "alt": "avatar_quinn · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-atlas_assets_assets/ui/avatar_e9f03e612dcf2997eeb4597db38c69cf.bundle · Sprite path_id -3174083511795636394",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "0eff596f9b439af7a9c80f5710f9f118af3e4cb6564cb54dcf11a9f42fa93377",
+      "identity": {
+        "bundle": "ui-atlas_assets_assets/ui/avatar_e9f03e612dcf2997eeb4597db38c69cf.bundle",
+        "bundle_sha256": "7834ab460102440dd8f03aafa7bd60be85df1cd12a8f404c3006df18ba3c1aaf",
+        "serialized_file": "CAB-26c32fb621dd5fb2e873222dc2b992ad",
+        "path_id": "-3174083511795636394",
+        "type": "Sprite",
+        "name": "avatar_quinn",
+        "object_source_sha256": "244a9990789dd0a984b625852419389e27902712347b3b705fe2dd582688b52f"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/UI/Avatar/UesrAvatarDefault/avatar_quinn.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone. Portraits substitute only a static face icon, not customer bust art or animation."
+    },
+    {
+      "key": "ui-play:avatar_olivia",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-avatar_olivia.png",
+      "alt": "avatar_olivia · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-atlas_assets_assets/ui/avatar_e9f03e612dcf2997eeb4597db38c69cf.bundle · Sprite path_id -880513624815923443",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3ebaf558d143328dda914b646e15b75338bfa7917d28de3b00b5d81fe5e8a86c",
+      "identity": {
+        "bundle": "ui-atlas_assets_assets/ui/avatar_e9f03e612dcf2997eeb4597db38c69cf.bundle",
+        "bundle_sha256": "7834ab460102440dd8f03aafa7bd60be85df1cd12a8f404c3006df18ba3c1aaf",
+        "serialized_file": "CAB-26c32fb621dd5fb2e873222dc2b992ad",
+        "path_id": "-880513624815923443",
+        "type": "Sprite",
+        "name": "avatar_olivia",
+        "object_source_sha256": "39fc768dd2121e6d1dcdebac7d9c3aa776212564d9df44c7ec7d7694eddab118"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/UI/Avatar/UesrAvatarDefault/avatar_olivia.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone. Portraits substitute only a static face icon, not customer bust art or animation."
+    },
+    {
+      "key": "ui-play:avatar_colton",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-avatar_colton.png",
+      "alt": "avatar_colton · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-atlas_assets_assets/ui/avatar_e9f03e612dcf2997eeb4597db38c69cf.bundle · Sprite path_id 2299204977044500049",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "58ae059180884300315db7eb90a1d49b4f1a0ff1537080feb995f9496fc947df",
+      "identity": {
+        "bundle": "ui-atlas_assets_assets/ui/avatar_e9f03e612dcf2997eeb4597db38c69cf.bundle",
+        "bundle_sha256": "7834ab460102440dd8f03aafa7bd60be85df1cd12a8f404c3006df18ba3c1aaf",
+        "serialized_file": "CAB-26c32fb621dd5fb2e873222dc2b992ad",
+        "path_id": "2299204977044500049",
+        "type": "Sprite",
+        "name": "avatar_colton",
+        "object_source_sha256": "0c10a161b3a25ef0a6144a004de5f184ed45e6273300811e5bdd64344cfd941f"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/UI/Avatar/UesrAvatarDefault/avatar_colton.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone. Portraits substitute only a static face icon, not customer bust art or animation."
+    },
+    {
+      "key": "ui-play:temp_storage_arrow",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-temp_storage_arrow.png",
+      "alt": "temp_storage_arrow · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1218950976995175252",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "763a92807e9e150279130979296d3d629502a6f6fef545e545e63d638298b9cf",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "1218950976995175252",
+        "type": "Sprite",
+        "name": "temp_storage_arrow",
+        "object_source_sha256": "949dbcbbb09642ca6363a666a05fb97cb28eccf8b96bd165f87269b05fbaece7"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/Board/CacheQueue/temp_storage_arrow.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:checkerboard_cache_queue_bg",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-checkerboard_cache_queue_bg.png",
+      "alt": "checkerboard_cache_queue_bg · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 22094419875548156",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "c763249a3429725d33589a7897e601346089fae57ba19e31da260bfc76419daa",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "22094419875548156",
+        "type": "Sprite",
+        "name": "checkerboard_cache_queue_bg",
+        "object_source_sha256": "0a7133e3a42d5e5275f102d98bc70ab8e044997de9a02421d9bb31ac43ebfa27"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/Prefab/BoardEntryBase/UI/checkerboard_cache_queue_bg.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:hud_property_bg",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-hud_property_bg.png",
+      "alt": "hud_property_bg · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id 7367565186877376061",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "ebffc4ba2f074fc8f3e0eb7765e88b5b9150d499dc85f7aecca4a0940361fa50",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "7367565186877376061",
+        "type": "Sprite",
+        "name": "hud_property_bg",
+        "object_source_sha256": "a83df7136110b7df59effad340457b484b00076761cf784b29e5c3794e1f38e8"
+      },
+      "spriteBorder": {
+        "x": 41.0,
+        "y": 7.0,
+        "z": 52.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/hud_property_bg.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:hud_property_plus",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-hud_property_plus.png",
+      "alt": "hud_property_plus · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id 6989284531729267406",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "90c47673319d1d0f3cc27f47a03d9c93b29a5e438cb33c35e33251f8aa865dd3",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "6989284531729267406",
+        "type": "Sprite",
+        "name": "hud_property_plus",
+        "object_source_sha256": "d910934e8f2c03f87cf4c7e7095223f74838b11447b74eccfb85c038a5e88a43"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/hud_property_plus.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:clock1",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-clock1.png",
+      "alt": "clock1 · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id -2903192648067097656",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "bcc8c508b006379c28cf794097390ece1c05b2c8309302387cb98fc4a2bbfe56",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "-2903192648067097656",
+        "type": "Sprite",
+        "name": "clock1",
+        "object_source_sha256": "ff6a87254abedceadea78350093717666f0bc1b4cdaf7b42ccc60128e603207f"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/clock1.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:times_boost_bg",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-times_boost_bg.png",
+      "alt": "times_boost_bg · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 2559266044511342706",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "7ac39d107a09fb2a3e20a5566c53fc92ecc06d0d0fa65ecfaab875d4927d99b4",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "2559266044511342706",
+        "type": "Sprite",
+        "name": "times_boost_bg",
+        "object_source_sha256": "6ac913e1bc127f876f4fdb8e8c5849f38fd4d7593b88d0a6038733f82ebe1789"
+      },
+      "spriteBorder": {
+        "x": 60.0,
+        "y": 0.0,
+        "z": 60.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/BaseUIBoard/UI/times_boost_bg.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:times_boost_bg3",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-times_boost_bg3.png",
+      "alt": "times_boost_bg3 · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3325275127723313920",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "91625fae32e7f13f8b81bb8e4600eca2246a8a6e87fb14b747ea538d3f72ef4c",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3325275127723313920",
+        "type": "Sprite",
+        "name": "times_boost_bg3",
+        "object_source_sha256": "444a8cdc6e1933b278c51aac14bad4b4ba14338fb184e686a58553616aca3d9e"
+      },
+      "spriteBorder": {
+        "x": 60.0,
+        "y": 0.0,
+        "z": 60.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/BaseUIBoard/UI/times_boost_bg3.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:times_boost_bg4",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-times_boost_bg4.png",
+      "alt": "times_boost_bg4 · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1369766699599999559",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "6152e4966f4bbf13d0eaa4c772df8c1da4e6d52365ce7f61feb6feedc86725d0",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "1369766699599999559",
+        "type": "Sprite",
+        "name": "times_boost_bg4",
+        "object_source_sha256": "13f830c11b06d3f18086cfe0ecf5ef84ea63d3e6580c3c6216c231cdfd8fb68e"
+      },
+      "spriteBorder": {
+        "x": 60.0,
+        "y": 0.0,
+        "z": 60.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/BaseUIBoard/UI/times_boost_bg4.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:order_price_bg",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-order_price_bg.png",
+      "alt": "order_price_bg · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -8890569069072035225",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "1aebafd01104a79ca2d6cea533f3350ace24d3a622b3bc8d571683c9cda2d3c2",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-8890569069072035225",
+        "type": "Sprite",
+        "name": "order_price_bg",
+        "object_source_sha256": "3e76d9ea20b285c0a3c6fb9793c27f82e3b6f8237fb1d7631c5eb813f0545162"
+      },
+      "spriteBorder": {
+        "x": 18.0,
+        "y": 23.0,
+        "z": 18.0,
+        "w": 23.0
+      },
+      "sourceContainers": [
+        "Assets/Board/Board/order_price_bg.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:avatar_board_round",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-avatar_board_round.png",
+      "alt": "avatar_board_round · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-atlas-windows_assets_assets/ui/window/common_cb9a2a9a04a50ed5eeb83ad0071cc208.bundle · Sprite path_id -5171321615625877048",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "8d906c25e44240eb997d459126a6878038dbb1878b47d54a7cb6bc42df5eb7f5",
+      "identity": {
+        "bundle": "ui-atlas-windows_assets_assets/ui/window/common_cb9a2a9a04a50ed5eeb83ad0071cc208.bundle",
+        "bundle_sha256": "f559e88ba143f19b30c1ceee6ecc7fbaa192b25e4bfec26a7050c12e3d0a881f",
+        "serialized_file": "CAB-ba3751044308519541927491135d3295",
+        "path_id": "-5171321615625877048",
+        "type": "Sprite",
+        "name": "avatar_board_round",
+        "object_source_sha256": "901410b1025df12e06a7827c6141055e8c719a88807b6cbbe4ca63dead05013f"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/UI/Window/Common/avatar_board_round.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone. Portraits substitute only a static face icon, not customer bust art or animation."
+    },
+    {
+      "key": "item:ItemModelConfig:2402",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-Coin02.png",
+      "alt": "Coin02 · Type 2402 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -2212093844653848358",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "8779569bb363b488a3d2058824744d792133d415c17b0bb036b6e9fd03969593",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-2212093844653848358",
+        "type": "Sprite",
+        "name": "Coin02",
+        "object_source_sha256": "9630c83d92ad26bba0aee57d3da05dbe205a1cdaf1728306c4dd621688babe2e"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/Coin02.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 917,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "Coin02"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:2403",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-Coin03.png",
+      "alt": "Coin03 · Type 2403 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -3049780629376440193",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "8198345e0e32bdf88dd571dc062f8aa659f58dfff18610f1d434aa9aedc5fe29",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-3049780629376440193",
+        "type": "Sprite",
+        "name": "Coin03",
+        "object_source_sha256": "30d21330c8cc59a0b69ed5a8eb9b4fcd0551260444d54e19a86d45ddfc5a3e28"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/Coin03.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 921,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "Coin03"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:2404",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-Coin04.png",
+      "alt": "Coin04 · Type 2404 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -704930075863171389",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3091955ef22972f6474b4e27fa28d734050265a751f38397b43aef8a5dd0ffc8",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-704930075863171389",
+        "type": "Sprite",
+        "name": "Coin04",
+        "object_source_sha256": "07d053185321e402da327e00cb6fea06966c7c13de643b2f0dcd072c681e41b4"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/Coin04.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 925,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "Coin04"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:2405",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-Coin05.png",
+      "alt": "Coin05 · Type 2405 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4205710721885861835",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "8f91bac9b5fd129ef49f8081db40c826a52ce559225bfe528f3bbbfc2d5cede6",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4205710721885861835",
+        "type": "Sprite",
+        "name": "Coin05",
+        "object_source_sha256": "e6b8ff19bd97fb695ae5be980b3490a4b45132c81f23c591e255f59c7d4ce96d"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/Coin05.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 929,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "Coin05"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:2502",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-Gem02.png",
+      "alt": "Gem02 · Type 2502 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4205011943025943380",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "c88dfb02bf8c76f6ef2d0684f1d0bdfc15fcdb74069d80dbe5d7bb1ab6d3a5e1",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4205011943025943380",
+        "type": "Sprite",
+        "name": "Gem02",
+        "object_source_sha256": "8d311cd981f632aecac3a4cad01633b4e84647cf3ff7b437c3067becfaca07b5"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/Gem02.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 937,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "Gem02"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:2503",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-Gem03.png",
+      "alt": "Gem03 · Type 2503 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3669784945808395034",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "5913fc265b9819f0b8b2ce3c99288d13b60b4654123e2759cbee8ab9637c2441",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3669784945808395034",
+        "type": "Sprite",
+        "name": "Gem03",
+        "object_source_sha256": "1475da5a9d130d52ecb5563e7807858e4d097d78da2c4441ba20a2a815144f99"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/Gem03.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 941,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "Gem03"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:2504",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-Gem04.png",
+      "alt": "Gem04 · Type 2504 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -1929287085356623341",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "191a14f89cfe3ad3c2874e8f67251c044345194971d97cc9feaf9bd545405fa4",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-1929287085356623341",
+        "type": "Sprite",
+        "name": "Gem04",
+        "object_source_sha256": "4718b4e867058bc4ae400cd96c9e65f507fe5c215a4c6f9ca67494e8cb11d3ec"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/Gem04.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 945,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "Gem04"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:2603",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-Energy03.png",
+      "alt": "Energy03 · Type 2603 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 434194618293967845",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "d8744492f2bb7f05ff5a069ffb20bf36f8e56c92cc14919311e78ca7dce2a948",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "434194618293967845",
+        "type": "Sprite",
+        "name": "Energy03",
+        "object_source_sha256": "18b7b058c0ec286ed32596afea5d3d845b36c5484eb4c4f41699b33cd9e4fb13"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/Energy03.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 957,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "Energy03"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:2604",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-Energy04.png",
+      "alt": "Energy04 · Type 2604 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7784508767501825534",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "5656c750ed98419a171f145f8e3e8f2b525cf92837b9ee1b04c2c0abdf083e44",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "7784508767501825534",
+        "type": "Sprite",
+        "name": "Energy04",
+        "object_source_sha256": "9285c860c500aa0ec6a6c4ef440c0bf0c5d944edbe131bce87ca0d02239629e3"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/Energy04.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 961,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "Energy04"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:2605",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-Energy05.png",
+      "alt": "Energy05 · Type 2605 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4732450644194152180",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3e56a7903f737c5a70c0f29027228077f4716d9f4874385066c5a5f1a38be86b",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4732450644194152180",
+        "type": "Sprite",
+        "name": "Energy05",
+        "object_source_sha256": "1614ee8e39de5a747c619326166bd744e01da3e92f85978b44118faf210038a6"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/Energy05.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 965,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "Energy05"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:time_skip_1",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-time_skip_1.png",
+      "alt": "time_skip_1 · Type time_skip_1 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5172776586136651539",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3a95bc14959e2c4fc77228685588238411fb1fd43ac1f18a0972da3d5b6f2fa1",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "5172776586136651539",
+        "type": "Sprite",
+        "name": "time_skip_1",
+        "object_source_sha256": "ec4af5ee04b26e0649a1ca335d5dd3a335f43fd05fdd3fb9d9a6a350a01e06ef"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/time_skip_1.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 1183,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "time_skip_1"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:time_skip_2",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-time_skip_2.png",
+      "alt": "time_skip_2 · Type time_skip_2 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1946561204657768639",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "8a45ea10444d29bbf7e94246640ead7e2a94b619cf994d4e739d3608673a0674",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "1946561204657768639",
+        "type": "Sprite",
+        "name": "time_skip_2",
+        "object_source_sha256": "ffb10c5f95f8392996f07bb4ee9035263a1fd624b3b352887e1cdc1b6f1c627a"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/time_skip_2.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 1190,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "time_skip_2"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:time_skip_3",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-time_skip_3.png",
+      "alt": "time_skip_3 · Type time_skip_3 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -6548711642689035496",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "a0d263fa6d5f46e94333ebb3ca71da6d1239c7b4fd7fe111a8a32957febc241d",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-6548711642689035496",
+        "type": "Sprite",
+        "name": "time_skip_3",
+        "object_source_sha256": "2b5385ccd35b10350c894b8603aacc08e81227cac850ec4b64e9050831e0588a"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/time_skip_3.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 1197,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "time_skip_3"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:time_skip_4",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-time_skip_4.png",
+      "alt": "time_skip_4 · Type time_skip_4 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 6479435884196317343",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "d8227ee52bd5a0fd43faafbc67cca65396ac508d6ec8ea12567bc160f2ef60ed",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "6479435884196317343",
+        "type": "Sprite",
+        "name": "time_skip_4",
+        "object_source_sha256": "9b68a126ebde30a5075cd5d8a687a531de612e756f06f9de4491244e0a2c4a19"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/time_skip_4.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 1204,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "time_skip_4"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:time_skip_5",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-time_skip_5.png",
+      "alt": "time_skip_5 · Type time_skip_5 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5483409564795541684",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3a19ee79a4d8b9cad408d43e1a3588a795133184f48d48816ea9904ee4af0086",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "5483409564795541684",
+        "type": "Sprite",
+        "name": "time_skip_5",
+        "object_source_sha256": "4fdb20cf967050ea1fb857b729dc29cb07d757dc909c1bd9a89545724cf2e180"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/time_skip_5.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 1211,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "time_skip_5"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:level_up_piece_1",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-level_up_piece_1.png",
+      "alt": "level_up_piece_1 · Type level_up_piece_1 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4141815654688426063",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "d1244c31a8ac4d7640b8b10e744731992b0881423737b78a74ff3a3865005aa1",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4141815654688426063",
+        "type": "Sprite",
+        "name": "level_up_piece_1",
+        "object_source_sha256": "04a03436d91decb61091709fd4916b91a6a978207219379ef15cfedec2c324fc"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/level_up_piece_1.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 1133,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "level_up_piece_1"
+        ]
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:level_down_piece_1",
+      "kind": "image",
+      "src": "./assets/media/apk-play-item-level_down_piece_1.png",
+      "alt": "level_down_piece_1 · Type level_down_piece_1 APK Sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1874462593635924693",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "34c8ad3024c652ac5ff61e34f61cc6a33713fac26370e512bdff633d61ec0f25",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "1874462593635924693",
+        "type": "Sprite",
+        "name": "level_down_piece_1",
+        "object_source_sha256": "2c326b2226a5872b3747ef4b6775199d87344dc721589f9bd0e6c2a666059748"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Board/ItemMain/Item/level_down_piece_1.png"
+      ],
+      "notes": "Exact base ItemViewConfig Image -> ImageFileConfig fileKey -> local container PPtr -> Sprite. Static original item image; current server variant and runtime appearance unverified.",
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 1140,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+        "declaredImage": [
+          "level_down_piece_1"
+        ]
+      }
+    },
+    {
+      "key": "ui-play:icon_inventory",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-icon_inventory.png",
+      "alt": "icon_inventory · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id -1365908481320051933",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "9e58b1b0808ca613baec46a209e73efdf9c8873c0958fa69e25d375f1dcb758c",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "-1365908481320051933",
+        "type": "Sprite",
+        "name": "icon_inventory",
+        "object_source_sha256": "d937db7fbdb427fd936ef0822147b019ec3371afa425790d293bb8ffc21450ef"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/icon_inventory.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:icon_task",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-icon_task.png",
+      "alt": "icon_task · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id 2226189576833004041",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "44f81a2c289cae1cf6fc95e6eb9652ea9568c232bf290618e887d6a81ad8630c",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "2226189576833004041",
+        "type": "Sprite",
+        "name": "icon_task",
+        "object_source_sha256": "fa3953509b5155c9e1c3e17057f8753c081e6584a9fa611b4865cef4dd54218c"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/icon_task.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:icon_build",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-icon_build.png",
+      "alt": "icon_build · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id 3584841899598245121",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "93abc53a8d5c63e585c0268bb3fa4afc041a3c67d29224073e8e001f658af4c8",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "3584841899598245121",
+        "type": "Sprite",
+        "name": "icon_build",
+        "object_source_sha256": "a143c611b00b7ce695ed483b491563986dda3c23d7bc09481169a2e184c39f94"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/icon_build.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:icon_transition_button",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-icon_transition_button.png",
+      "alt": "icon_transition_button · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id 447428840381884636",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3353be4ae6659aa78aa5a2e81914acc6b9ed745f7d432309b6401cb1dc35e522",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "447428840381884636",
+        "type": "Sprite",
+        "name": "icon_transition_button",
+        "object_source_sha256": "1ae3b9ed0a34d8f69582065bed59857977504f7232a2f8486608a2c2455ea93f"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/icon_transition_button.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
+    },
+    {
+      "key": "ui-play:icon_cook",
+      "kind": "image",
+      "src": "./assets/media/apk-play-ui-icon_cook.png",
+      "alt": "icon_cook · APK UI 원본 Sprite",
+      "source": "Gossip Harbor 4.10.5 · ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle · Sprite path_id -1608426571052429223",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "668b02b8ff9ed0989bf062e76e116b0831fc4b43b48ba9e3e3172b793eb06207",
+      "identity": {
+        "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+        "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+        "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+        "path_id": "-1608426571052429223",
+        "type": "Sprite",
+        "name": "icon_cook",
+        "object_source_sha256": "a55c08ee11023811d6c2ead3b9f8600221569a03194054e17fdd8aa0508ce603"
+      },
+      "spriteBorder": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      },
+      "sourceContainers": [
+        "Assets/Hud/BaseSceneView/icon_cook.png"
+      ],
+      "notes": "Selected APK UI Sprite; active gameplay use is not established by name alone."
     }
   ]
 }

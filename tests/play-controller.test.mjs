@@ -24,3 +24,19 @@ test('corrupt saved data remains untouched until an explicit new experiment safe
  controller.handle('reset');assert.equal(w.localStorage.getItem(SAVE_KEY+'-previous'),raw);
  assert.equal(validPlay(JSON.parse(w.localStorage.getItem(SAVE_KEY)).state,config),true);
 }));
+
+test('reviewed previous projection migrates without losing board, wallet, progress or the raw backup',()=>harness((w,create)=>{
+ const s=createPlay(config);s.stage='play';s.wallet.coins=84;s.questsDone=4;s.xp=15;
+ delete s.bubbles;delete s.toolPending;
+ writeSession(w.localStorage,s,{revision:config.compatibleRevisions[0],now:Date.now(),validate:x=>validPlay(x,config)});
+ const original=w.localStorage.getItem(SAVE_KEY);create().render('game');
+ const saved=JSON.parse(w.localStorage.getItem(SAVE_KEY));
+ assert.equal(saved.revision,config.revision);assert.equal(saved.state.wallet.coins,84);assert.equal(saved.state.questsDone,4);
+ assert.deepEqual(saved.state.board,s.board);assert.equal(w.localStorage.getItem(SAVE_KEY+'-previous'),original);
+}));
+
+test('unknown projection is never overwritten by visiting or saving the game view',()=>harness((w,create)=>{
+ const s=createPlay(config);writeSession(w.localStorage,s,{revision:'unknown-projection',now:Date.now()});
+ const original=w.localStorage.getItem(SAVE_KEY),controller=create();controller.render('game');controller.handle('save');
+ assert.equal(w.localStorage.getItem(SAVE_KEY),original);assert.equal(w.localStorage.getItem(SAVE_KEY+'-previous'),null);
+}));
