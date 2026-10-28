@@ -27,5 +27,5 @@ if(new Set(visual.items.map(x=>x.key)).size!==visual.items.length)throw new Erro
 if(media.targetVersion!==data.meta.version||!Array.isArray(media.entries))throw new Error('Invalid media manifest');
 if(new Set(media.entries.map(x=>x.key)).size!==media.entries.length)throw new Error('Duplicate media key');
 for(const entry of media.entries){if(!validMedia(entry))throw new Error('Invalid curated media entry: '+entry.key);await stat(path.join('dist',entry.src));if(entry.poster)await stat(path.join('dist',entry.poster));}
-console.log(`Verified ${visual.items.length} item declarations, ${visual.ui.length} UI mappings, ${media.entries.filter(x=>x.origin==='packaged-sprite').length} packaged-image references, ${media.entries.filter(x=>x.origin!=='packaged-sprite').length} runtime captures.`);
+console.log(`Verified ${visual.items.length} item declarations, ${visual.ui.length} UI mappings, ${media.entries.filter(x=>x.origin==='packaged-sprite').length} packaged-image references, ${media.entries.filter(x=>x.origin==='observed-user-capture').length} historical capture derivatives.`);
 console.log(`Verified ${DOMAIN_DEFS.length} research chapters, ${data.facts.length} sourced findings, ${data.products.length} product defaults, relative asset paths and publish boundary.`);

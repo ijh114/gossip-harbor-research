@@ -1,6 +1,6 @@
 # 이미지·GIF·영상 연결 안내
 
-현재 `src/data/media.json`의 실제 캡처 항목은 비어 있다. 갤러리의 웹 모식도와 연결 시뮬레이션은 원작 영상이 아니다. 제공될 파일을 검토한 뒤 이 manifest에 연결하면 같은 소스로 GitHub Pages와 Cloudflare Pages에 게시된다. 로컬 디스크 경로를 웹 URL에 그대로 넣지 않는다.
+`src/data/media.json`에 APK 정적 이미지와 과거 사용자 캡처를 각각 등록했다. `#captures`에서 주제/형식 필터와 실제 화면을 볼 수 있다. 갤러리의 웹 모식도와 독립 시뮬레이션은 원작 영상과 별도로 표시한다. 같은 소스로 GitHub Pages와 Cloudflare Pages에 게시하며 로컬 디스크 경로를 웹 URL에 넣지 않는다.
 
 ## 등록 구조
 
@@ -31,6 +31,7 @@
 | UI 동작 | `effect:window`, `hud`, `queue`, `tutorial`, `mask`, `counter` 앞에 `effect:` | UI 연출 카드 |
 | UI 컴포넌트 | `ui:프리팹이름:인덱스` | 화면 카드의 프리팹·캡처 연결에 표시되는 전체 키 |
 | 게임 장면 | `screen:loading`, `title`, `tutorial`, `main`, `play`, `home` 앞에 `screen:` | 게임 시뮬레이션의 원작 화면 비교 자료 |
+| 독립 관측 자료 | `capture:energy-chain`, `reward-queue`, `boost`, `upgrade` 앞에 `capture:` | 실제 화면 갤러리. 이름이 비슷한 모식도와 자동 연결하지 않음 |
 
 ## 조사 연결
 
@@ -42,4 +43,10 @@
 
 ## APK 정적 이미지
 
-추가된 원본 PNG24개는 `origin: packaged-sprite`로 구분하며 `sha256`과 Sprite객체/번들 출처를 보존합니다. `asset:이름`24개와 명시적인 기본타입20개가 같은 파일을 참조하여 총44키입니다. 이는 화면 캡처나44개 고유 이미지가 아닙니다. 영상 분석은 사용자 요청으로 보류 중입니다.
+추가된 원본 PNG24개는 `origin: packaged-sprite`로 구분하며 `sha256`과 Sprite객체/번들 출처를 보존합니다. `asset:이름`24개와 명시적인 기본타입20개가 같은 파일을 참조하여 총44키입니다. 이는 화면 캡처나44개 고유 이미지가 아닙니다.
+
+## 사용자 제공 캡처
+
+영상 보류는 해제되었다. `origin: observed-user-capture`, `version: null`, `capturedAt: null`로 과거 화면임을 표시한다. `originalSha256`은 원본, `sha256`은 공개 파생본을 식별한다. 영상의 `sourceRange`는 발췌 시작/종료이며 `transform`은 크롭·크기·24fps·무음·원속도를 기록한다. 정확한 입력 시각이나 원작 프레임 시간을 측정한 값이 아니다.
+
+원본/정리본은 하드링크이므로 직접 편집하지 않는다. 공개용 파생본에서 상단 계정 식별 워터마크와 OS 알림을 제외하고, 결제 화면 전체·개인정보·로컬 경로·검토용 연락 시트를 배포하지 않는다. 보상 대기열은 UI 팝업 FIFO와 다르고 체인의 무료 보상 잠금은 퍼즐 봉인 해제와 다르므로 대응하지 않는 `effect:*`키를 쓰지 않는다.

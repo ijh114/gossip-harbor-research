@@ -80,6 +80,14 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   await go('interface');assert.equal(w.document.querySelectorAll('.ui-registry-card').length,24);
   await go('interface-structure');click('[data-ui-region="overlay"]');assert.match(w.document.querySelector('#region-inspector').textContent,/정렬 간격 10/);
   await go('interface-motion');assert.equal(w.document.querySelectorAll('.motion-card').length,6);
+  await go('captures');assert.equal(w.document.querySelectorAll('.capture-card').length,20);
+  click('[data-capture-kind="video"]');assert.equal(w.document.querySelectorAll('.capture-card').length,3);
+  click('[data-capture-category="BM"]');assert.equal(w.document.querySelectorAll('.capture-card').length,1);
+  click('.capture-card [data-media-key="capture:energy-chain"]');
+  assert.ok(w.document.querySelector('#media-content video'));assert.equal(w.document.querySelector('#media-content video').autoplay,false);
+  click('#close-media');assert.equal(w.document.querySelector('#media-content').children.length,0);
+  click('[data-evidence="HIST-BM001"]');assert.match(w.document.querySelector('#evidence-content').textContent,/버전\/촬영일 미확인/);
+  assert.match(w.document.querySelector('#evidence-content').textContent,/5\.50초/);click('#close-evidence');
   await go('bm-validation');assert.match(w.document.querySelector('#bm-rule-result').textContent,/신규 번들 생성 가능/);
   const bmEnergy=w.document.querySelector('[data-bm-key="energy"]');bmEnergy.value='1';bmEnergy.dispatchEvent(new w.Event('input',{bubbles:true}));
   assert.match(w.document.querySelector('#bm-rule-result').textContent,/신규 번들 생성 불가/);

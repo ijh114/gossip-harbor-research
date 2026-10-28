@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetVersion": "4.10.5",
   "date": "2026-10-28",
-  "scope": "정적 후속 조사. 사용자 지시로 모든 영상 검토/추출 보류. 실제 서버 응답·실기 노출은 미관측.",
+  "scope": "APK 4.10.5 정적 후속 조사 + 버전 미확인 사용자 캡처의 독립 관측. LDPlayer 설치 버전 확인 후 검은 화면으로 사용자 요청 중단. 현행 서버 규칙·실기 플레이 검증 완료 아님.",
   "findings": [
     {
       "id": "BM-G001",
@@ -1701,13 +1701,581 @@
       ],
       "kind": "config",
       "category": "APK UI·이미지 실물"
+    },
+    {
+      "id": "HIST-BM001",
+      "kind": "capture",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "ui"
+      ],
+      "category": "제공 캡처 · BM 관측",
+      "title": "보석 구매 뒤 무료 보상이 순차 해제되는 에너지 체인",
+      "summary": "관측 구간에서 에너지100/보석20 → 무료 초록 카드팩 → 무료 에너지15 → 에너지100/보석40 → 무료 파란 카드팩 → 무료 에너지20이 진행되고, 보석80 단계가 대기했다.",
+      "details": [
+        "5.50초 HUD: 에너지2·보석719·코인244. 19.00초 HUD: 에너지237·보석659·코인244.",
+        "수령한 행에 체크가 표시되고 다음 행이 위로 이동한다. 뒤쪽 무료 행은 자물쇠를 유지한다.",
+        "보석 감소60=20+40, 에너지 증가235=100+15+100+20. 17~19초 보석80 행은 남아 있다."
+      ],
+      "interpretation": [
+        "유료(보석) 진행과 무료 보상을 결합한 순차 판매 상태로 모델링할 근거다. 구매·수령 입력은 전후 상태를 통한 해석이다.",
+        "제목의 무한은 무제한 에너지 효과가 입증됐다는 뜻이 아니다."
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "sources": [
+        {
+          "path": "가십하버 영상 및 스샷/Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+          "source_id": "GH-V0030",
+          "sha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "video-nine-distributed-frames+targeted-0.5-second-frames",
+          "seek_seconds": [
+            5.5,
+            6,
+            8.5,
+            9.5,
+            12.5,
+            14,
+            15.5,
+            17,
+            19
+          ],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "00:06.00 · 무한 에너지 창의 첫 행은 에너지 100/보석 20, 다음은 잠긴 무료 초록 카드팩·에너지 15다. 00:07.00 첫 행 체크 뒤 00:08.50 카드팩 체크가 보이고, 00:09.50 에너지 15 무료 버튼은 잠금이 풀린 상태다.\n00:11.50 · 에너지 100/보석 40이 첫 행이며 아래 파란 카드팩·에너지 20은 잠겨 있다. 00:12.50 보석은 659로, 00:14.00 에너지는 217로 표시되고 파란 카드팩 행에 체크가 보인다. 00:15.50 에너지 20 행에도 체크가 나타난다.\n00:17.00~00:19.00 · 에너지 237·보석 659·코인 244가 보인다. 에너지 100/보석 80 행은 구매되지 않고 남아 있다가 창이 닫힌다. 시작 00:05.50 대비 보석 60 감소·에너지 235 증가가 두 구매(20+40)와 무료 에너지(15+20)의 표시 합계와 일치한다."
+        }
+      ],
+      "sourceIds": [
+        "GH-V0030"
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "HIST-BM002",
+      "kind": "capture",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "events",
+        "ui"
+      ],
+      "category": "제공 캡처 · BM 관측",
+      "title": "에너지 도전의 목표 달성과 유료 수령권은 별개 상태",
+      "summary": "골드 목표를 달성한 초록 보상행에도 자물쇠가 있고 유료 해제 가격이 남아 있다. 별도 수령 장면에서는 가격이 사라지고 수령 완료 도장이 나타난다.",
+      "details": [
+        "V0091 0.60~6.99초: 최대 에너지2500·₩16,000, 초록 수령행과 잠금 아이콘, 미달성 목표가 함께 보인다.",
+        "V0097 24.37초: 구매 버튼이 없는 창에서 에너지150 수령 완료 도장과 다른 수령 버튼이 보인다."
+      ],
+      "interpretation": [
+        "진행도(progress)와 유료 수령권(entitlement)을 분리한 UI 상태 모델을 설계할 근거다. 두 파일은 동일 세션 연속성을 가정하지 않는다."
+      ],
+      "unknowns": [
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "sources": [
+        {
+          "path": "가십하버 영상 및 스샷/Screen_Recording_20260412_164902_Gossip Harbor(1).mp4",
+          "source_id": "GH-V0091",
+          "sha256": "c63e0afceaf5ab5252b6b422ae9bc91934aa20d71e232094d0413020d08e21b0",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "video-nine-distributed-frames",
+          "seek_seconds": [
+            0.6,
+            1.5,
+            6.99
+          ],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "00:00.60 · 에너지 도전에 최대 에너지 2500·₩16,000 해제 가격과 잠금 보상들이 표시된다.\n00:01.50~00:06.99 · 골드 수집 진행도 932와 여러 목표 구간을 스크롤하며 에너지 75~500 등의 보상 칸을 보여 준다."
+        },
+        {
+          "path": "가십하버 영상 및 스샷/Screen_Recording_20260415_192248_Gossip Harbor(1).mp4",
+          "source_id": "GH-V0097",
+          "sha256": "2f2142b05ec16736d1f8fe18e8a0fbbd261c51ed0ed3eb4f5499016afb7e0aba",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "video-nine-distributed-frames",
+          "seek_seconds": [
+            24.37
+          ],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "00:03.00~00:13.12 · 에너지 도전 ₩16,000 구매 흐름 뒤 Google Play 결제 완료 화면이 보인다.\n00:18.75~00:29.99 · 구매 버튼이 사라지고 여러 에너지 보상 수령 상태가 차례로 표시된다.\n00:34.87 · 에너지1251과 수집 진행도5151의 후반 목표 구간이 보인다."
+        }
+      ],
+      "sourceIds": [
+        "GH-V0091",
+        "GH-V0097"
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "HIST-BM003",
+      "kind": "capture",
+      "domain": "bm",
+      "domains": [
+        "ui"
+      ],
+      "category": "제공 캡처 · BM 관측",
+      "title": "보상탑은 같은 가격 단계를 반복한 뒤 상위 가격으로 이동한다",
+      "summary": "정상을 향해 V0123 내부에서 ₩6,500 시작 가격과 체크된 보상이 보이고, 후반에는 체크 영역이 늘며 ₩16,000으로 바뀐다.",
+      "details": [
+        "3.79초 시작 ₩6,500. 44.07초 다음 층 보상 강조·기존 층 체크 증가·시작 ₩16,000.",
+        "V0125에는 ₩16,000부터 시작한 뒤 후반 ₩49,000 화면이 별도로 기록되어 있다."
+      ],
+      "interpretation": [
+        "지급/체크 상태와 현재 층 가격을 따로 가진 단계형 판매로 모델링할 수 있다."
+      ],
+      "unknowns": [
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "sources": [
+        {
+          "path": "가십하버 영상 및 스샷/Screen_Recording_20260905_113927_Gossip Harbor.mp4",
+          "source_id": "GH-V0123",
+          "sha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "video-nine-distributed-frames",
+          "seek_seconds": [
+            3.79,
+            23.7,
+            44.07
+          ],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "00:03.79 · 정상을 향해 보상탑에 시작 ₩6,500 가격이 보인다.\n00:16.59 · Google Play 결제 완료 이후00:23.70에 같은 ₩6,500 다음 단계가 표시된다.\n00:30.80 이후 · 두 번째 결제 처리 뒤 체크된 보상이 늘고 후속 시작 가격은 ₩16,000으로 나타난다."
+        },
+        {
+          "path": "가십하버 영상 및 스샷/Screen_Recording_20260905_121248_Gossip Harbor.mp4",
+          "source_id": "GH-V0125",
+          "sha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "video-nine-distributed-frames",
+          "seek_seconds": [
+            0,
+            19.78,
+            91.98
+          ],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "00:00.00 · 정상을 향해 시작 ₩16,000과 일부 이미 체크된 보상이 보인다.\n00:07.91~01:19.12 · 여러 차례 Google Play 처리 화면과 상자1·에너지600·보석200 등의 중간 보상이 나타난다.\n01:04.28~01:37.42 · 후속 가격은 ₩49,000으로 보이고 체크 영역·상단 재화가 증가한다."
+        }
+      ],
+      "sourceIds": [
+        "GH-V0123",
+        "GH-V0125"
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "HIST-BM004",
+      "kind": "capture",
+      "domain": "bm",
+      "domains": [
+        "events"
+      ],
+      "category": "제공 캡처 · BM 관측",
+      "title": "같은 조류 관찰자 테마에 복수 가격·보상 변형이 관측된다",
+      "summary": "테마명이 같아도 ₩14,000·₩24,000·₩60,000과 서로 다른 보석/에너지/상자/카드 구성이 보인다.",
+      "details": [
+        "S0002: 보석500·에너지200·₩14,000·3h50m.",
+        "S0003: 보석700·에너지600·₩24,000·3h5m.",
+        "S0258: 보석2000·에너지800·₩60,000·3h56m."
+      ],
+      "interpretation": [
+        "하나의 테마를 하나의 고정 SKU·가격으로 합치면 실제 화면 차이를 잃는다. 변형별 표본을 따로 보관해야 한다."
+      ],
+      "unknowns": [
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "sources": [
+        {
+          "path": "가십하버 영상 및 스샷/22918.jpeg",
+          "source_id": "GH-S0002",
+          "sha256": "06722ba764fab84173f9962679e60195942a7b4da0b7a869a6d241c39cf4ae43",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "screenshot-contact-sheet",
+          "seek_seconds": [],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "‘조류 관찰자 패키지’와 3h 50m 남은 시간이 보인다.\n보석·에너지·상자·카드 형태 상품 아래 ₩14,000 구매 버튼이 있다."
+        },
+        {
+          "path": "가십하버 영상 및 스샷/22998.jpeg",
+          "source_id": "GH-S0003",
+          "sha256": "d436f7ae2c9b95cdf34c870284210c9db7308874624523a1b6dca3f18730349a",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "screenshot-contact-sheet",
+          "seek_seconds": [],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "조류 관찰자 테마의 묶음 상품에 ₩24,000 가격이 보인다.\n3h 5m 타이머와 보석·에너지·보상 아이콘이 나란히 배치된다."
+        },
+        {
+          "path": "가십하버 영상 및 스샷/Screenshot_20260321_170556_Gossip Harbor.jpg",
+          "source_id": "GH-S0258",
+          "sha256": "f26e0b17537d1d5f7f15651d01ab2a2a3c4cffd0daeff3347afd2ce85dfd71ed",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "screenshot-contact-sheet",
+          "seek_seconds": [],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "3h 56m 조류 관찰자 상품에 보석 2000·에너지 800과 ₩60,000 가격이 보인다."
+        }
+      ],
+      "sourceIds": [
+        "GH-S0002",
+        "GH-S0003",
+        "GH-S0258"
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "HIST-BM005",
+      "kind": "capture",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "map",
+        "ui"
+      ],
+      "category": "제공 캡처 · BM 관측",
+      "title": "레벨 보상 직후 같은 레벨을 제목에 쓴 한정 상품이 등장한 사례",
+      "summary": "V0107의 레벨113 보상 화면 뒤 레벨113 초특가 상품과 약1시간 타이머가 이어진다.",
+      "details": [
+        "0초 레벨113 보상·수령 버튼,1.27초 상자 보상 연출.",
+        "3.16~7.91초: 113레벨 초특가 패키지·₩49,000·59분대 타이머."
+      ],
+      "interpretation": [
+        "성장 마일스톤과 연결된 판매 타이밍 후보로 인용할 수 있다."
+      ],
+      "unknowns": [
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "sources": [
+        {
+          "path": "가십하버 영상 및 스샷/Screen_Recording_20260419_112118_Gossip Harbor.mp4",
+          "source_id": "GH-V0107",
+          "sha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "video-nine-distributed-frames",
+          "seek_seconds": [
+            0,
+            1.27,
+            3.16,
+            5.54,
+            7.91
+          ],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "00:00.00~00:01.27 · 113레벨 보상 상자2종 수령 상태가 나타난다.\n00:03.16~00:07.91 · 113레벨 초특가 패키지 ₩49,000과 약1시간 타이머가 보인다.\n00:10.28 · 만능 젬 12레벨 설명에 다른 아이템으로 드래그하면 레벨이 향상되며 생성기에는 사용 불가하다고 표시된다."
+        }
+      ],
+      "sourceIds": [
+        "GH-V0107"
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "HIST-BM006",
+      "kind": "capture",
+      "domain": "bm",
+      "domains": [
+        "events",
+        "ui"
+      ],
+      "category": "제공 캡처 · BM 관측",
+      "title": "특선 카드 상품은 신규 카드 보장과 세트 완성 후보 우선을 설명한다",
+      "summary": "1/3 특선 카드 화면은 세 신규 카드 중 하나 보장·무작위 획득·세트 완성 카드가 있으면 그중 하나 선택이라는 규칙을 명시한다.",
+      "details": [
+        "S0148: ₩24,000, 구매 가능1/1, 세 가지 신규 카드 중 한 가지 보장.",
+        "하단 문구: 세 카드 중 하나 무작위, 세트 완성 카드 라벨이 있으면 그중 하나를 획득."
+      ],
+      "interpretation": [
+        "상품의 보장 범위와 우선 대상 집합을 UI 설명 규칙으로 인용할 수 있다."
+      ],
+      "unknowns": [
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "sources": [
+        {
+          "path": "가십하버 영상 및 스샷/Screenshot_20260207_204303_Gossip Harbor.jpg",
+          "source_id": "GH-S0148",
+          "sha256": "2cb6ef8a671085af6335e976152643e44bc565844a472b58112374957016e97c",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "screenshot-full-image",
+          "seek_seconds": [],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "‘1/3 특선 카드’는 표시된 신규 카드 세 종류 중 하나를 반드시 획득한다고 안내하며 ₩24,000·구매 가능 1/1이 보인다.\n하단은 세 카드 중 하나를 무작위로 획득하며 ‘세트 완성 카드’가 있으면 그중 하나를 획득한다고 설명한다."
+        },
+        {
+          "path": "가십하버 영상 및 스샷/Screen_Recording_20260828_071857_Gossip Harbor.mp4",
+          "source_id": "GH-V0121",
+          "sha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "video-nine-distributed-frames",
+          "seek_seconds": [
+            0,
+            26.5
+          ],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "00:00.00 · 특선 카드1/3 창에 세 신규 카드 중1개 보장 문구와 ₩24,000 가격이 보인다.\n00:08.15~00:26.50 · Google Play 구매/처리 중 화면 뒤 보상 상자와 신규 카드1장 표시로 이어진다.\n00:37.92 · 추가 카드팩 결과와 본 보드 복귀 상태가 보인다."
+        }
+      ],
+      "sourceIds": [
+        "GH-S0148",
+        "GH-V0121"
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "HIST-BM007",
+      "kind": "capture",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "difficulty",
+        "interaction"
+      ],
+      "category": "제공 캡처 · BM 관측",
+      "title": "낮은 에너지 상태 뒤 순차 충전 상품이 보이는 영상 사례",
+      "summary": "V0047은 보드 생성·합성으로 해석되는 배열 변화와 에너지41→1 뒤 에너지100/보석40 순차 상품 창을 보여 준다.",
+      "details": [
+        "19.99~31.98초 보드 배열·생성기 주변 연출 변화와 에너지 감소.",
+        "37.18초 무한 에너지 창: 에너지100/보석40, 잠긴 무료 책·에너지20 후속 행."
+      ],
+      "interpretation": [
+        "에너지 부족 근처의 상품 노출 사례다. APK gate 비교를 위한 관측 후보이며 정확한 호출 원인은 확정하지 않는다."
+      ],
+      "unknowns": [
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "sources": [
+        {
+          "path": "가십하버 영상 및 스샷/Screen_Recording_20260402_022124_Gossip Harbor.mp4",
+          "source_id": "GH-V0047",
+          "sha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "video-nine-distributed-frames",
+          "seek_seconds": [
+            25.98,
+            31.98,
+            37.18
+          ],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "00:08.00 · 집 화면에 코인23/450 작업 말풍선이 보이고 00:13.99에는 머지 보드로 전환된다.\n00:19.99~00:31.98 · 보드 아이템 배열과 생성기 주변 연출이 바뀌며 상단 에너지가41에서1로 감소한다. 00:25.98에는 아이템을 감싼 투명 버블도 보인다.\n00:37.18 · 무한 에너지 팝업에 에너지100/젬40, 잠긴 무료 책·에너지20 항목이 표시된다."
+        }
+      ],
+      "sourceIds": [
+        "GH-V0047"
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "HIST-BM008",
+      "kind": "capture",
+      "domain": "bm",
+      "domains": [
+        "events",
+        "economy",
+        "ui"
+      ],
+      "category": "제공 캡처 · BM 관측",
+      "title": "카드팩 두 배 피버는 주문 행동에 한시적 보상 배율을 붙인다",
+      "summary": "설명 화면과 활성 보드 화면에 주문 완료 시 카드팩2배와29m56s 타이머가 보인다.",
+      "details": [
+        "S0127 설명: 지금부터 주문을 완료하면 카드팩2배 획득.",
+        "S0128: 보드 상단 카드팩×2 아이콘과29m56s, 주문 카드팩·피버 안내."
+      ],
+      "interpretation": [
+        "기존 주문 루프에 제한시간 보상 배율을 얹어 플레이 세션을 유도하는 구조로 분석할 수 있다."
+      ],
+      "unknowns": [
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "sources": [
+        {
+          "path": "가십하버 영상 및 스샷/Screenshot_20260205_210708_Gossip Harbor.jpg",
+          "source_id": "GH-S0127",
+          "sha256": "052a8159635bf2f8de9a55050fd397d232dbbd3c85b133ed3ea060146284c757",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "screenshot-contact-sheet",
+          "seek_seconds": [],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "‘카드팩 피버!’는 지금부터 주문 완료 시 카드팩을 2배로 획득할 수 있다고 안내한다."
+        },
+        {
+          "path": "가십하버 영상 및 스샷/Screenshot_20260205_210717_Gossip Harbor.jpg",
+          "source_id": "GH-S0128",
+          "sha256": "b080b971a616ae1d65c76664c07e5bdcaa18076dbb74b5c3049d5b9e7193b006",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "screenshot-contact-sheet",
+          "seek_seconds": [],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "보드 위에 카드팩 ×2 아이콘과 29m 56s 타이머, 주문 완료 시 2배 획득 안내가 겹친다."
+        }
+      ],
+      "sourceIds": [
+        "GH-S0127",
+        "GH-S0128"
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "HIST-BM009",
+      "kind": "capture",
+      "domain": "bm",
+      "domains": [
+        "puzzle",
+        "difficulty",
+        "economy"
+      ],
+      "category": "제공 캡처 · BM 관측",
+      "title": "여덟 배 부스터와 할인 버블을 같은 보드에서 관측했다",
+      "summary": "S0377은 우측 상단×8 부스터와 아이템 버블 두 개의% 배지를 동시에 보여 준다.",
+      "details": [
+        "×8 배율 버튼 표시.",
+        "음식 아이템을 감싼 버블 두 개에 분홍% 배지."
+      ],
+      "interpretation": [
+        "4배까지만 시뮬레이션한다면 현재 자료 범위를 모두 덮는다고 설명할 수 없다. 할인 버블과 고배율 소모의 결합은 별도 검증 항목이다."
+      ],
+      "unknowns": [
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "sources": [
+        {
+          "path": "가십하버 영상 및 스샷/가십하버_20260904_033900.jpg",
+          "source_id": "GH-S0377",
+          "sha256": "8f05219a1384b908e8b56d576c8cb41fe96acff5f0953c29319d7f44f3994ea8",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "screenshot-contact-sheet",
+          "seek_seconds": [],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "음식 아이템이 들어간 버블 두 개에 분홍 % 배지가 붙고, 상단 부스터는 ×8로 표시된다.\n손님 주문의 일부 아이템에는 초록 체크, 보드 오른쪽에는 생성기들이 세로로 배치된다."
+        },
+        {
+          "path": "가십하버 영상 및 스샷/Screen_Recording_20260412_091637_Gossip Harbor.mp4",
+          "source_id": "GH-V0088",
+          "sha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+          "sha256_scope": "catalogued original media bytes; selected derivatives rechecked",
+          "method": "video-nine-distributed-frames",
+          "seek_seconds": [
+            3.83,
+            8.75
+          ],
+          "version": null,
+          "captured_at": null,
+          "evidence_id": null,
+          "excerpt": "00:03.83 · 에너지 부스터가 비활성화됐다는 안내가 뜨며 우측 배율은 x1로 보인다.\n00:07.11~00:08.75 · 배율 x2 뒤 x4가 나타나고 4배 에너지 부스터 활성 안내가 뜬다."
+        }
+      ],
+      "sourceIds": [
+        "GH-S0377",
+        "GH-V0088"
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "RUN-001",
+      "kind": "runtime",
+      "domain": "ui",
+      "domains": [
+        "bm"
+      ],
+      "category": "실행 환경 확인",
+      "title": "4.10.5 설치는 확인했으나 플레이 검증은 중단했다",
+      "summary": "LDPlayer-2에서 versionName 4.10.5 / versionCode 311과 Google Play 설치 출처를 확인했다. 시작 연출 뒤 검은 화면에서 진행되지 않아 사용자 요청으로 LDPlayer 분석을 중단했다.",
+      "details": [
+        "ADB 37.0.1의 dumpsys package 결과로 설치 버전을 확인했다. 기존 설치는 arm64-v8a이며 제공 XAPK의 armeabi-v7a split과 바이트 동일성을 확인하지 않았다.",
+        "가십하버 시작 연출과 이후 검은 화면을 창 캡처로 관측했다. 호환성·렌더링·서버 연결 중 무엇이 원인인지는 확정하지 않았다.",
+        "제공 APK를 검증용 인스턴스에 추가 설치하거나 사용자 데이터 초기화·실제 결제는 하지 않았다. 설치 확인을 튜토리얼·상점 노출 검증 완료로 집계하지 않는다."
+      ],
+      "unknowns": [
+        "로딩 완료·튜토리얼·플레이·상점 실제 노출",
+        "기기 호환성 및 검은 화면의 원인",
+        "제공 XAPK와 기존 설치 APK의 서명·바이트 동일성"
+      ],
+      "sources": [
+        {
+          "path": "analysis/runtime/2026-10-28/installed-package-rea.json",
+          "sha256": "3168423f00a9ff1780f29711fc1600f112f3692621cf59df991b8699763514da",
+          "sha256_scope": "private complete REA Evidence JSON",
+          "method": "REA inspect_adb_package + bounded ADB ABI read + CUA window observation",
+          "evidence_id": "ev_40d150cfa0399c88b8a210e5edfd87976591642f9782d347bd03dd25243bc928",
+          "excerpt": "package=com.mergegames.gossipharbor\nversion_name=4.10.5\nversion_code=311\ninstaller_package_name=com.android.vending\n실기 플레이: 검은 화면 이후 미관측, 사용자 요청 중단"
+        }
+      ]
     }
   ],
   "work": [
     {
       "step": "BM 노출 조건",
       "state": "partial",
-      "done": "서버 원문 필드·단위, 부스트 부족 판정, ChainEnergy, 노출횟수/쿨다운, 설정 캐시/variant·가격 경로 보강",
+      "done": "서버 원문 필드·단위, 부스트 부족 판정, ChainEnergy, 노출횟수/쿨다운, 설정 캐시/variant·가격 경로 보강; 공유 영상에서 순차 판매·에너지 도전·레벨 연계 화면 관측 추가",
       "remaining": "실계정 입력값·실노출·빈도 검증"
     },
     {
@@ -1724,15 +2292,15 @@
     },
     {
       "step": "플레이 영상·스크린샷",
-      "state": "held",
-      "done": "사용자 요청으로 분석과 추출 중단",
-      "remaining": "다운로드 완료 후 사용자가 재개를 요청할 때까지 보류"
+      "state": "partial",
+      "done": "사용자 보류 해제. 공유 카탈로그 고유453개(이미지340·영상113) 참조, BM9개 관측과 선별 미디어 연결",
+      "remaining": "모든 영상 연속 재생·오디오 검토, 전체 프레임 단위 타이밍·버전 일치 검증은 남음"
     },
     {
       "step": "실기 실행·광고·결제",
-      "state": "waiting",
-      "done": "기존 adb 확인: 연결 기기 없음",
-      "remaining": "선택된 실기 환경과 관측자료 필요. 실제 결제 수행 안 함"
+      "state": "held",
+      "done": "LDPlayer-2의4.10.5/311 설치 확인, 시작 화면 뒤 검은 화면 관측. 사용자 요청으로 LDPlayer 검증 중단",
+      "remaining": "호환 기기에서 튜토리얼·게임플레이·BM 노출 검증. 실제 광고·결제 미수행"
     },
     {
       "step": "원작 경제·매출 효과",
@@ -2737,5 +3305,17 @@
       "editorImported": false,
       "scope": "독립 실험 규칙의 언어간 동등 입력 비교. 원작 런타임 동등성 아님."
     }
+  },
+  "captureReview": {
+    "sourceCatalog": "analysis/media-review/catalog.json",
+    "uniqueFiles": 453,
+    "images": 340,
+    "videos": 113,
+    "otherGameFiles": 6,
+    "method": "기존 이미지 전수·영상 각9개 분산 프레임 정리 참조. 선정 자료만 추가 직접 확인·구간 추출.",
+    "version": null,
+    "capturedAt": null,
+    "liveVerification": "held-user-request-black-screen",
+    "coverage": "전체95.08분 연속 재생·오디오 검토를 뜻하지 않음. 타게임6개는 가십하버 근거에서 제외."
   }
 }

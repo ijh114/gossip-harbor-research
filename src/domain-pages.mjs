@@ -1,6 +1,6 @@
 import {DOMAIN_DEFS,domainStats,selectDomainFacts,baseMergeUnits} from './domain-model.mjs';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const labels={code:'코드 확인',config:'내장 설정',text:'설명문',inference:'분석 추론'};
+const labels={code:'코드 확인',config:'내장 설정',text:'설명문',capture:'제공 캡처 관측',runtime:'실행 환경 확인',inference:'분석 추론'};
 const list=v=>Array.isArray(v)?v:v?[v]:[];
 const badge=(kind,text)=>`<span class="badge ${escape(kind)}">${escape(text||labels[kind]||kind)}</span>`;
 const sourceButton=id=>`<button class="source-button" data-evidence="${escape(id)}">근거 보기 ↗</button>`;
@@ -57,7 +57,7 @@ export function renderDomainPage(id,data,filters={}){
  return `<div class="page-intro"><div><h1>${escape(def.title)}</h1><p class="domain-subtitle">${escape(def.subtitle)}</p><p>${escape(def.intro)}</p></div><button class="button" data-download-domain="${id}">이 페이지 JSON ↓</button></div>
  <div class="domain-breadcrumbs"><a href="#overview">연구 개요</a><span>/</span><span>${escape(def.title)}</span><span class="mono domain-count">${stats.total} FINDINGS / ${stats.sources} FILES</span></div>
  <section class="domain-summary"><h2 id="chapter-summary-title">핵심 요약</h2><div class="domain-summary-grid">${def.questions.map((q,i)=>`<div><h3>${escape(q)}</h3><p>${escape((page.answers||[])[i]||'아래 정적 근거와 남은 질문을 함께 확인하세요.')}</p></div>`).join('')}</div></section>
- <div class="domain-boundary"><strong>근거 범위</strong><span>제공 패키지 4.10.5 · ${stats.code}개 코드 / ${stats.config}개 설정 / ${stats.text}개 설명문 / ${stats.inference}개 추론. 실제 플레이·프레임 캡처·현행 서버 배정은 미관측.</span></div>
+ <div class="domain-boundary"><strong>근거 범위</strong><span>제공 APK 4.10.5: ${stats.code}개 코드 / ${stats.config}개 설정 / ${stats.text}개 설명문. 별도 근거: ${stats.capture}개 과거 캡처 / ${stats.runtime}개 실행 환경 / ${stats.inference}개 추론. 캡처 버전·현행 서버 배정은 미확인입니다. <a href="#captures">실제 화면과 관측 범위 보기 →</a></span></div>
  ${page.sections?.length?`<nav class="chapter-jumps" aria-label="이 페이지 분석 항목">${page.sections.map(s=>`<a href="#${id}?section=${encodeURIComponent(s.id)}" data-domain-jump="${escape(s.id)}">${escape(s.title)} <span>↓</span></a>`).join('')}</nav>`:''}
  ${id==='difficulty'?mergeExperiment():''}
  <div class="domain-visuals">${list(page.visuals).map(v=>v.type==='day-browser'?`<section class="domain-visual panel"><div class="panel-head"><h2>${escape(v.title)}</h2>${badge('config')}</div><div class="panel-body">${renderDayBrowser(v,data)}<div class="visual-sources">${sourceLinks(v.sourceIds,data.facts)}</div></div></section>`:renderVisual(v,data.facts)).join('')}</div>

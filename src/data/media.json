@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetVersion": "4.10.5",
-  "description": "검토한 APK 정적 이미지와 실제 캡처를 origin으로 구분합니다. 현재 영상/캡처 분석은 사용자 요청으로 보류이며 실제 캡처 등록은0건입니다.",
+  "description": "APK4.10.5 원본 Sprite44개 참조와 버전 미확인 과거 사용자 캡처20개를 origin으로 구분합니다. 파생 이미지17개·무음영상3개이며 실기 플레이 검증 완료를 뜻하지 않습니다.",
   "entries": [
     {
       "key": "asset:Coffee01",
@@ -486,6 +486,1173 @@
       "origin": "packaged-sprite",
       "sha256": "696626ba64ce46c4ee7541dad50afb159aa529cbc189568cc865ff5da1b5a112",
       "notes": "기본 ItemViewConfig의 명시 Image 배열과 연결한 정적 예시. 현재 서버 variant/랜덤 선택 관측 아님."
+    },
+    {
+      "key": "screen:play",
+      "kind": "image",
+      "sourceId": "GH-S0363",
+      "alt": "생성기와 주문 세 명의 메인 머지 보드",
+      "source": "GH-S0363 · Screenshot_20260502_161912_Gossip Harbor.jpg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "29346ee31a5a47220566fda197ee6ba7c8a21a463ad820771f04306346bc0371",
+      "originalName": "Screenshot_20260502_161912_Gossip Harbor.jpg",
+      "observations": [
+        "상단 손님 주문 세 명과 여러 생성기·다수 음식 아이템이 보이며 선택 아이템 하단에는 코인 판매 버튼이 표시된다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음.",
+      "sha256": "3b990a88c0118b6c0beddf45ca538f4d27b38d6388607594af84a78f0a5e8e97",
+      "bytes": 304951,
+      "width": 720,
+      "height": 1524,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 72,
+          "width": 1440,
+          "height": 3048
+        },
+        "scale": {
+          "width": 720,
+          "height": 1524
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+      },
+      "category": "퍼즐",
+      "src": "./assets/media/capture-main-board.jpg",
+      "provenance": {
+        "sourceId": "GH-S0363",
+        "originalSha256": "29346ee31a5a47220566fda197ee6ba7c8a21a463ad820771f04306346bc0371",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 72,
+            "width": 1440,
+            "height": 3048
+          },
+          "scale": {
+            "width": 720,
+            "height": 1524
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:boost",
+      "kind": "image",
+      "sourceId": "GH-S0039",
+      "alt": "에너지 부스터 네 배 전환 안내창",
+      "source": "GH-S0039 · Screenshot_20251231_044052_Gossip Harbor.jpg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "cd9cc9d435ccf9045ebe9bd36a6b6fd8155f64a21862368cf14d8a80bb884419",
+      "originalName": "Screenshot_20251231_044052_Gossip Harbor.jpg",
+      "observations": [
+        "‘에너지 부스터’가 생성 시 에너지 4 소비와 아이템 레벨도 추가로 증가한다는 안내를 표시한다.",
+        "하단의 번개 ×4 버튼으로 부스터를 제시한다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음.",
+      "sha256": "f306aaad499103fe10a79c2a99dd26e52081d745dc0e9e7166a868bc735e58ca",
+      "bytes": 177831,
+      "width": 720,
+      "height": 1508,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 72,
+          "width": 1440,
+          "height": 3016
+        },
+        "scale": {
+          "width": 720,
+          "height": 1508
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+      },
+      "category": "퍼즐",
+      "src": "./assets/media/capture-boost-help.jpg",
+      "provenance": {
+        "sourceId": "GH-S0039",
+        "originalSha256": "cd9cc9d435ccf9045ebe9bd36a6b6fd8155f64a21862368cf14d8a80bb884419",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 72,
+            "width": 1440,
+            "height": 3016
+          },
+          "scale": {
+            "width": 720,
+            "height": 1508
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+        }
+      }
+    },
+    {
+      "key": "effect:window",
+      "kind": "image",
+      "sourceId": "GH-S0041",
+      "alt": "보석 상점의 여섯 가격대 상품 목록",
+      "source": "GH-S0041 · Screenshot_20260102_121009_Gossip Harbor.jpg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "89ff99f7aba3f99bbc6932586e8765c9d674d6cc5c4a4d65d3a641d2cf1cd403",
+      "originalName": "Screenshot_20260102_121009_Gossip Harbor.jpg",
+      "observations": [
+        "상점 ‘젬’ 구역에 보석 100·265·580·1260·3350·7450 상품이 표시된다.",
+        "가격은 ₩2,600부터 ₩140,000까지 여섯 단계로 보인다.",
+        "같은 화면 상단에 젬750·에너지600 등의 묶음과 ₩24,000 구매 버튼이 함께 보인다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음. 정지 상점 화면은 창 열기·닫기의 동작 또는 지속시간을 입증하지 않는다.",
+      "sha256": "10ae95731c50c39114beb03441d237a76e608de7570199be0bd8a12a07523a73",
+      "bytes": 224309,
+      "width": 720,
+      "height": 1508,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 72,
+          "width": 1440,
+          "height": 3016
+        },
+        "scale": {
+          "width": 720,
+          "height": 1508
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+      },
+      "category": "BM",
+      "src": "./assets/media/capture-gem-shop.jpg",
+      "provenance": {
+        "sourceId": "GH-S0041",
+        "originalSha256": "89ff99f7aba3f99bbc6932586e8765c9d674d6cc5c4a4d65d3a641d2cf1cd403",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 72,
+            "width": 1440,
+            "height": 3016
+          },
+          "scale": {
+            "width": 720,
+            "height": 1508
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+        }
+      }
+    },
+    {
+      "key": "effect:bubble",
+      "kind": "image",
+      "sourceId": "GH-S0377",
+      "alt": "할인 버블과 여덟 배 부스터 메인 보드",
+      "source": "GH-S0377 · 가십하버_20260904_033900.jpg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "8f05219a1384b908e8b56d576c8cb41fe96acff5f0953c29319d7f44f3994ea8",
+      "originalName": "가십하버_20260904_033900.jpg",
+      "observations": [
+        "음식 아이템이 들어간 버블 두 개에 분홍 % 배지가 붙고, 상단 부스터는 ×8로 표시된다.",
+        "손님 주문의 일부 아이템에는 초록 체크, 보드 오른쪽에는 생성기들이 세로로 배치된다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음.",
+      "sha256": "7abb68d6d160180c8c5bf7750f466f72e5bc5d31a2f6177f955958e8e04f8eb1",
+      "bytes": 243926,
+      "width": 720,
+      "height": 1524,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 72,
+          "width": 1440,
+          "height": 3048
+        },
+        "scale": {
+          "width": 720,
+          "height": 1524
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+      },
+      "category": "퍼즐",
+      "src": "./assets/media/capture-discount-bubble.jpg",
+      "provenance": {
+        "sourceId": "GH-S0377",
+        "originalSha256": "8f05219a1384b908e8b56d576c8cb41fe96acff5f0953c29319d7f44f3994ea8",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 72,
+            "width": 1440,
+            "height": 3048
+          },
+          "scale": {
+            "width": 720,
+            "height": 1524
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:upgrade",
+      "kind": "image",
+      "sourceId": "GH-S0138",
+      "alt": "다색 보석으로 아이템 레벨업 확인창",
+      "source": "GH-S0138 · Screenshot_20260206_035716_Gossip Harbor.jpg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "1b0368a82713e0d642b8ef415d9eb4105b7ee58e71fd885de0d14847350ead44",
+      "originalName": "Screenshot_20260206_035716_Gossip Harbor.jpg",
+      "observations": [
+        "‘정말로 진행하시겠습니까?’ 창에 다색 보석과 조개 아이템의 결합 예시, 취소·OK 버튼이 보인다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음.",
+      "sha256": "d3c7cfb47a1bbac6905603f03270b7e60dd00751aea66afcffe8f5ec16dcd940",
+      "bytes": 155622,
+      "width": 720,
+      "height": 1508,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 72,
+          "width": 1440,
+          "height": 3016
+        },
+        "scale": {
+          "width": 720,
+          "height": 1508
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+      },
+      "category": "UI",
+      "src": "./assets/media/capture-upgrade-confirm.jpg",
+      "provenance": {
+        "sourceId": "GH-S0138",
+        "originalSha256": "1b0368a82713e0d642b8ef415d9eb4105b7ee58e71fd885de0d14847350ead44",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 72,
+            "width": 1440,
+            "height": 3016
+          },
+          "scale": {
+            "width": 720,
+            "height": 1508
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:item-chain",
+      "kind": "image",
+      "sourceId": "GH-S0317",
+      "alt": "베이글 샌드위치 아이템 계보 정보창",
+      "source": "GH-S0317 · Screenshot_20260411_192841_Gossip Harbor.jpg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "94a714b5c1255614e5e5ab30fc4eba53c043c89a817cbfcf86af869c03cbdb9a",
+      "originalName": "Screenshot_20260411_192841_Gossip Harbor.jpg",
+      "observations": [
+        "‘베이글 샌드위치’ 11레벨 창에 빵·샌드위치 계보와 미발견 물음표 칸, 생산원 장바구니가 표시된다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음.",
+      "sha256": "51951b723d3ef7695d4632516e9ff6e312031e7b6c6fc49b7763b15df7db82dc",
+      "bytes": 160977,
+      "width": 720,
+      "height": 1524,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 72,
+          "width": 1440,
+          "height": 3048
+        },
+        "scale": {
+          "width": 720,
+          "height": 1524
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+      },
+      "category": "UI",
+      "src": "./assets/media/capture-item-chain.jpg",
+      "provenance": {
+        "sourceId": "GH-S0317",
+        "originalSha256": "94a714b5c1255614e5e5ab30fc4eba53c043c89a817cbfcf86af869c03cbdb9a",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 72,
+            "width": 1440,
+            "height": 3048
+          },
+          "scale": {
+            "width": 720,
+            "height": 1524
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:energy-refill",
+      "kind": "image",
+      "sourceId": "GH-S0287",
+      "alt": "에너지 부족 뒤 보석 160 구매창",
+      "source": "GH-S0287 · Screenshot_20260403_231653_Gossip Harbor(1).jpg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "f149dfaf276f611a7edeb60879d4f91173aa0c0f064218cd8d8422d33d23486b",
+      "originalName": "Screenshot_20260403_231653_Gossip Harbor(1).jpg",
+      "observations": [
+        "에너지 구매 +100·보석 160 창이 열려 있으며 배경 에너지는 2로 표시된다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음.",
+      "sha256": "18dec3f4ad592b258b403c80aded6252d817adcde67093eea7982c7866b1865b",
+      "bytes": 161990,
+      "width": 720,
+      "height": 1524,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 72,
+          "width": 1440,
+          "height": 3048
+        },
+        "scale": {
+          "width": 720,
+          "height": 1524
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+      },
+      "category": "BM",
+      "src": "./assets/media/capture-energy-refill.jpg",
+      "provenance": {
+        "sourceId": "GH-S0287",
+        "originalSha256": "f149dfaf276f611a7edeb60879d4f91173aa0c0f064218cd8d8422d33d23486b",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 72,
+            "width": 1440,
+            "height": 3048
+          },
+          "scale": {
+            "width": 720,
+            "height": 1524
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 HUD·본문 보존"
+        }
+      }
+    },
+    {
+      "key": "screen:home",
+      "kind": "image",
+      "sourceId": "GH-V0026",
+      "alt": "정원·건물·등대와 용암 테마 지역의 맵 둘러보기",
+      "source": "GH-V0026 · Screen_Recording_20260202_022603_Gossip Harbor.mp4",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "ca0878b87f33954d0add3ab95e1bd6b8219fc8b662588c3baf2213ef9d9ed6f6",
+      "originalName": "Screen_Recording_20260202_022603_Gossip Harbor.mp4",
+      "observations": [
+        "00:04.47 · 실내 소파 공간에서도 좌우 이벤트 버튼과 하단 이동 버튼이 유지된다.",
+        "00:19.56~00:36.32 · 손상된 지붕과 여러 건물·빈 화단이 서로 다른 화면 위치에 보인다.",
+        "00:44.71 · 등대·배가 있는 해안 뒤 00:55.04 수영장과 용암·드래곤 장식 공간이 보인다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음. 영상에서 요청 시각 44.71초의 첫 디코딩 프레임을 추출함; 정확한 원본 프레임 시각에는 프레임 간격 오차가 있을 수 있음.",
+      "sha256": "c26c8a3540e41e17f132fbcb3fbaa5b44fab9c0bfea0b94135628150c1854e43",
+      "bytes": 167778,
+      "width": 720,
+      "height": 1508,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 54,
+          "width": 1080,
+          "height": 2262
+        },
+        "scale": {
+          "width": 720,
+          "height": 1508
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외"
+      },
+      "category": "맵",
+      "sourceRange": {
+        "frameAtSeconds": 44.71
+      },
+      "src": "./assets/media/capture-lighthouse-map.jpg",
+      "provenance": {
+        "sourceId": "GH-V0026",
+        "originalSha256": "ca0878b87f33954d0add3ab95e1bd6b8219fc8b662588c3baf2213ef9d9ed6f6",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 54,
+            "width": 1080,
+            "height": 2262
+          },
+          "scale": {
+            "width": 720,
+            "height": 1508
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외"
+        }
+      }
+    },
+    {
+      "key": "effect:merge",
+      "kind": "video",
+      "sourceId": "GH-V0089",
+      "alt": "동일 아이템 합성과 주문 완료 보상",
+      "source": "GH-V0089 · Screen_Recording_20260412_091739_Gossip Harbor.mp4",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "74a8c08468079bd2b2c9b4ec05883c8b55aee1675186f857122e150439492642",
+      "originalName": "Screen_Recording_20260412_091739_Gossip Harbor.mp4",
+      "observations": [
+        "발췌 0.30~7.90초에서 보드 위 두 아이템의 합성 발광과 결과 아이템 선택 상태가 보인다.",
+        "이후 주문 완료 버튼과 코인·이벤트 토큰이 HUD 방향으로 이동하는 연출이 보인다. 최종 코인 220 표시는 이 발췌에 포함하지 않는다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음. 원본 약9초 이후의 기기 알림 버블을 피하기 위해 7.90초 전에 끝낸 발췌다. 입력 이벤트 로그나 정확한 연출 지속시간 측정이 아님.",
+      "sha256": "de609c38497a068c8da2efbc59c0788fe1aee87effdfe8dd8003e9529e07d315",
+      "bytes": 952118,
+      "width": 600,
+      "height": 1270,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 54,
+          "width": 1080,
+          "height": 2286
+        },
+        "scale": {
+          "width": 600,
+          "height": 1270
+        },
+        "fps": 24,
+        "audioRemoved": true,
+        "speed": 1,
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 음성 제거·원속도 재인코딩"
+      },
+      "category": "퍼즐",
+      "sourceRange": {
+        "startSeconds": 0.3,
+        "endSeconds": 7.9,
+        "durationSeconds": 7.6
+      },
+      "posterAtSourceSeconds": 2.31,
+      "encodedVerification": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 600,
+            "height": 1270,
+            "r_frame_rate": "24/1"
+          }
+        ],
+        "format": {
+          "duration": "7.583333"
+        }
+      },
+      "src": "./assets/media/capture-merge-and-reward.mp4",
+      "posterSha256": "3323c5896fab07080ad3d732194849029dd90fde74260e0561b4682a00139b5d",
+      "poster": "./assets/media/capture-merge-and-reward-poster.jpg",
+      "provenance": {
+        "sourceId": "GH-V0089",
+        "originalSha256": "74a8c08468079bd2b2c9b4ec05883c8b55aee1675186f857122e150439492642",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 54,
+            "width": 1080,
+            "height": 2286
+          },
+          "scale": {
+            "width": 600,
+            "height": 1270
+          },
+          "fps": 24,
+          "audioRemoved": true,
+          "speed": 1,
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 음성 제거·원속도 재인코딩"
+        }
+      }
+    },
+    {
+      "key": "capture:energy-chain",
+      "kind": "video",
+      "sourceId": "GH-V0030",
+      "alt": "무한 에너지의 보석 단계와 무료 보상 해제",
+      "source": "GH-V0030 · Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "originalName": "Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+      "observations": [
+        "발췌5.80~17.80초에 에너지100/보석20 → 무료 초록 카드팩 → 무료 에너지15 → 에너지100/보석40 → 무료 파란 카드팩 → 무료 에너지20의 체크·행 이동이 보인다.",
+        "끝부분의 다음 에너지100/보석80 행은 그대로 남아 있고 HUD에 에너지237·보석659가 보인다. 이 구간에 보석80 단계 구매는 관측되지 않는다.",
+        "무한은 창 제목이다. 무제한 에너지 효과 또는 전체 가격 사다리의 증거로 일반화하지 않는다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음.",
+      "sha256": "504e02eefb8d082ac65e9d79b18464bb9b4f334fda8e01f140cac16c4beb594f",
+      "bytes": 927249,
+      "width": 600,
+      "height": 1256,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 54,
+          "width": 1080,
+          "height": 2262
+        },
+        "scale": {
+          "width": 600,
+          "height": 1256
+        },
+        "fps": 24,
+        "audioRemoved": true,
+        "speed": 1,
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 음성 제거·원속도 재인코딩"
+      },
+      "category": "BM",
+      "sourceRange": {
+        "startSeconds": 5.8,
+        "endSeconds": 17.8,
+        "durationSeconds": 12
+      },
+      "posterAtSourceSeconds": 9.5,
+      "encodedVerification": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 600,
+            "height": 1256,
+            "r_frame_rate": "24/1"
+          }
+        ],
+        "format": {
+          "duration": "12.000000"
+        }
+      },
+      "src": "./assets/media/capture-chain-energy.mp4",
+      "posterSha256": "c4d6a37469464d7795f3751f86f80765e6c411a18a9889c3ef207f715d6abf09",
+      "poster": "./assets/media/capture-chain-energy-poster.jpg",
+      "provenance": {
+        "sourceId": "GH-V0030",
+        "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 54,
+            "width": 1080,
+            "height": 2262
+          },
+          "scale": {
+            "width": 600,
+            "height": 1256
+          },
+          "fps": 24,
+          "audioRemoved": true,
+          "speed": 1,
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 음성 제거·원속도 재인코딩"
+        }
+      }
+    },
+    {
+      "key": "capture:reward-queue",
+      "kind": "video",
+      "sourceId": "GH-V0114",
+      "alt": "행운 물자 비행기와 대기열 아이템 배치",
+      "source": "GH-V0114 · Screen_Recording_20260501_165613_Gossip Harbor.mp4",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "835b2aed1ad36dd02f25ffbdc9a82edc796e1c78d66c759aacd0e62a399baae7",
+      "originalName": "Screen_Recording_20260501_165613_Gossip Harbor.mp4",
+      "observations": [
+        "발췌 4.50~14.50초에서 좌측 대기열 배지가20에서18로 바뀌고 음식 아이템이 보드 위에 배치되는 모습이 보인다.",
+        "보드 아이템 이동·합성 발광과 가득 찬 보드 안내가 함께 보인다. 입력1회당 지급량이나 비행기 발생 조건은 이 자료로 확정하지 않는다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 화면 표본의 재화·가격을 전 계정 운영값으로 일반화하지 않음.",
+      "sha256": "e44bc1658f3635524910972f136238a238740cee49830390554f31d422f73847",
+      "bytes": 1118383,
+      "width": 600,
+      "height": 1270,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 54,
+          "width": 1080,
+          "height": 2286
+        },
+        "scale": {
+          "width": 600,
+          "height": 1270
+        },
+        "fps": 24,
+        "audioRemoved": true,
+        "speed": 1,
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 음성 제거·원속도 재인코딩"
+      },
+      "category": "퍼즐",
+      "sourceRange": {
+        "startSeconds": 4.5,
+        "endSeconds": 14.5,
+        "durationSeconds": 10
+      },
+      "posterAtSourceSeconds": 5.22,
+      "encodedVerification": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 600,
+            "height": 1270,
+            "r_frame_rate": "24/1"
+          }
+        ],
+        "format": {
+          "duration": "10.000000"
+        }
+      },
+      "src": "./assets/media/capture-reward-queue.mp4",
+      "posterSha256": "03d0619120d4a8158282a47d275cde19dac9c7271663b349140b734513f2e0da",
+      "poster": "./assets/media/capture-reward-queue-poster.jpg",
+      "provenance": {
+        "sourceId": "GH-V0114",
+        "originalSha256": "835b2aed1ad36dd02f25ffbdc9a82edc796e1c78d66c759aacd0e62a399baae7",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 54,
+            "width": 1080,
+            "height": 2286
+          },
+          "scale": {
+            "width": 600,
+            "height": 1270
+          },
+          "fps": 24,
+          "audioRemoved": true,
+          "speed": 1,
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 음성 제거·원속도 재인코딩"
+        }
+      }
+    },
+    {
+      "key": "capture:bird-14000",
+      "kind": "image",
+      "sourceId": "GH-S0002",
+      "alt": "조류 관찰자 · ₩14,000 표본",
+      "source": "GH-S0002 · 22918.jpeg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "06722ba764fab84173f9962679e60195942a7b4da0b7a869a6d241c39cf4ae43",
+      "originalName": "22918.jpeg",
+      "observations": [
+        "같은 조류 관찰자 테마에 보석500·에너지200·상자·카드 아이콘과 ₩14,000이 표시된다.",
+        "남은 시간은3h50m다. 다른 표본과의 차이는 관측이며 변형 결정 조건은 미확인이다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 가격·보상은 해당 화면의 표본이며 현재 또는 전 계정 운영값으로 일반화하지 않음. 정지 화면은 연출 지속시간·입력 조건을 입증하지 않음.",
+      "sha256": "6daa85cd398c87599687e986e968acb777fb08a4b00fcc4b774e26486d262ce0",
+      "bytes": 171137,
+      "width": 720,
+      "height": 1526,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 36,
+          "width": 738,
+          "height": 1564
+        },
+        "scale": {
+          "width": 720,
+          "height": 1526
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+      },
+      "category": "BM",
+      "src": "./assets/media/capture-bird-14000.jpg",
+      "provenance": {
+        "sourceId": "GH-S0002",
+        "originalSha256": "06722ba764fab84173f9962679e60195942a7b4da0b7a869a6d241c39cf4ae43",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 36,
+            "width": 738,
+            "height": 1564
+          },
+          "scale": {
+            "width": 720,
+            "height": 1526
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:bird-24000",
+      "kind": "image",
+      "sourceId": "GH-S0003",
+      "alt": "조류 관찰자 · ₩24,000 표본",
+      "source": "GH-S0003 · 22998.jpeg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "d436f7ae2c9b95cdf34c870284210c9db7308874624523a1b6dca3f18730349a",
+      "originalName": "22998.jpeg",
+      "observations": [
+        "같은 조류 관찰자 테마에 보석700·에너지600·상자·카드 아이콘과 ₩24,000이 표시된다.",
+        "남은 시간은3h5m다. 두 가격이 같은 시점의 선택지였다고 단정하지 않는다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 가격·보상은 해당 화면의 표본이며 현재 또는 전 계정 운영값으로 일반화하지 않음. 정지 화면은 연출 지속시간·입력 조건을 입증하지 않음.",
+      "sha256": "47df65fb709884fe09a1f93eb6c14e431f45853187706f0c5719d986115f4dac",
+      "bytes": 170786,
+      "width": 720,
+      "height": 1526,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 36,
+          "width": 738,
+          "height": 1564
+        },
+        "scale": {
+          "width": 720,
+          "height": 1526
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+      },
+      "category": "BM",
+      "src": "./assets/media/capture-bird-24000.jpg",
+      "provenance": {
+        "sourceId": "GH-S0003",
+        "originalSha256": "d436f7ae2c9b95cdf34c870284210c9db7308874624523a1b6dca3f18730349a",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 36,
+            "width": 738,
+            "height": 1564
+          },
+          "scale": {
+            "width": 720,
+            "height": 1526
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:selected-card",
+      "kind": "image",
+      "sourceId": "GH-S0148",
+      "alt": "신규 카드 보장 상품의 설명 문구",
+      "source": "GH-S0148 · Screenshot_20260207_204303_Gossip Harbor.jpg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "2cb6ef8a671085af6335e976152643e44bc565844a472b58112374957016e97c",
+      "originalName": "Screenshot_20260207_204303_Gossip Harbor.jpg",
+      "observations": [
+        "특선 카드3종 중1종을 반드시 획득한다는 문구와 ₩24,000·구매 가능1/1이 표시된다.",
+        "하단은 무작위 획득 및 세트 완성 카드가 있으면 그중1종을 획득한다고 설명한다. 실제 카드별 확률은 미확인이다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 가격·보상은 해당 화면의 표본이며 현재 또는 전 계정 운영값으로 일반화하지 않음. 정지 화면은 연출 지속시간·입력 조건을 입증하지 않음.",
+      "sha256": "528d0c65d77af6f7d1a9924b97b9addc1a85365f159414c84357db7617995a78",
+      "bytes": 182818,
+      "width": 720,
+      "height": 1508,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 72,
+          "width": 1440,
+          "height": 3016
+        },
+        "scale": {
+          "width": 720,
+          "height": 1508
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+      },
+      "category": "BM",
+      "src": "./assets/media/capture-selected-card.jpg",
+      "provenance": {
+        "sourceId": "GH-S0148",
+        "originalSha256": "2cb6ef8a671085af6335e976152643e44bc565844a472b58112374957016e97c",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 72,
+            "width": 1440,
+            "height": 3016
+          },
+          "scale": {
+            "width": 720,
+            "height": 1508
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:energy-challenge",
+      "kind": "image",
+      "sourceId": "GH-V0091",
+      "alt": "에너지 도전 · 목표와 수령 잠금",
+      "source": "GH-V0091 · Screen_Recording_20260412_164902_Gossip Harbor(1).mp4 · 1.50초 프레임",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "c63e0afceaf5ab5252b6b422ae9bc91934aa20d71e232094d0413020d08e21b0",
+      "originalName": "Screen_Recording_20260412_164902_Gossip Harbor(1).mp4",
+      "observations": [
+        "에너지 도전 창에 최대 에너지2500·₩16,000과 초록 수령 행의 자물쇠가 함께 표시된다.",
+        "932/1200 진행도와900/900 달성 목표에도 자물쇠가 보인다. 이 정지 프레임은 실제 구매·수령을 입증하지 않는다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 가격·보상은 해당 화면의 표본이며 현재 또는 전 계정 운영값으로 일반화하지 않음. 정지 화면은 연출 지속시간·입력 조건을 입증하지 않음.",
+      "sha256": "3105cb0b9b48ddece9b71ae92169c78231ec42148fd7f80f12315743e4956f9b",
+      "bytes": 170199,
+      "width": 720,
+      "height": 1524,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 54,
+          "width": 1080,
+          "height": 2286
+        },
+        "scale": {
+          "width": 720,
+          "height": 1524
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+      },
+      "category": "BM",
+      "sourceRange": {
+        "frameAtSeconds": 1.5
+      },
+      "src": "./assets/media/capture-energy-challenge.jpg",
+      "provenance": {
+        "sourceId": "GH-V0091",
+        "originalSha256": "c63e0afceaf5ab5252b6b422ae9bc91934aa20d71e232094d0413020d08e21b0",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 54,
+            "width": 1080,
+            "height": 2286
+          },
+          "scale": {
+            "width": 720,
+            "height": 1524
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:tower-6500",
+      "kind": "image",
+      "sourceId": "GH-V0123",
+      "alt": "보상탑 · 시작 ₩6,500 표본",
+      "source": "GH-V0123 · Screen_Recording_20260905_113927_Gossip Harbor.mp4 · 3.79초 프레임",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+      "originalName": "Screen_Recording_20260905_113927_Gossip Harbor.mp4",
+      "observations": [
+        "정상을 향해 보상탑 아래 시작 ₩6,500이 표시된다. 기존 보상의 일부에는 체크가 있다.",
+        "같은 영상의44.07초 화면과 비교할 전 상태다. 화면 전환 중 추출되어 버튼이 반투명하다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 가격·보상은 해당 화면의 표본이며 현재 또는 전 계정 운영값으로 일반화하지 않음. 정지 화면은 연출 지속시간·입력 조건을 입증하지 않음.",
+      "sha256": "b67d60d4a6aeae287b5f2fe22c1a6d0cda9899e7a81505256aa29a51972eb1f5",
+      "bytes": 190750,
+      "width": 720,
+      "height": 1524,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 54,
+          "width": 1080,
+          "height": 2286
+        },
+        "scale": {
+          "width": 720,
+          "height": 1524
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+      },
+      "category": "BM",
+      "sourceRange": {
+        "frameAtSeconds": 3.79
+      },
+      "src": "./assets/media/capture-tower-6500.jpg",
+      "provenance": {
+        "sourceId": "GH-V0123",
+        "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 54,
+            "width": 1080,
+            "height": 2286
+          },
+          "scale": {
+            "width": 720,
+            "height": 1524
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:tower-16000",
+      "kind": "image",
+      "sourceId": "GH-V0123",
+      "alt": "보상탑 · 후속 ₩16,000 표본",
+      "source": "GH-V0123 · Screen_Recording_20260905_113927_Gossip Harbor.mp4 · 44.07초 프레임",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+      "originalName": "Screen_Recording_20260905_113927_Gossip Harbor.mp4",
+      "observations": [
+        "같은 영상의 후반 보상탑에 시작 ₩16,000이 표시되고 체크 영역과 강조된 층이 달라진다.",
+        "이 단일 프레임은 결제 횟수·총액 또는 모든 계정의 가격 사다리를 입증하지 않는다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 가격·보상은 해당 화면의 표본이며 현재 또는 전 계정 운영값으로 일반화하지 않음. 정지 화면은 연출 지속시간·입력 조건을 입증하지 않음.",
+      "sha256": "7ed44d8556bdfa8c10941652ee977b11bed79a84d1c65c8bf8d1fc813500b7d2",
+      "bytes": 206311,
+      "width": 720,
+      "height": 1524,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 54,
+          "width": 1080,
+          "height": 2286
+        },
+        "scale": {
+          "width": 720,
+          "height": 1524
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+      },
+      "category": "BM",
+      "sourceRange": {
+        "frameAtSeconds": 44.07
+      },
+      "src": "./assets/media/capture-tower-16000.jpg",
+      "provenance": {
+        "sourceId": "GH-V0123",
+        "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 54,
+            "width": 1080,
+            "height": 2286
+          },
+          "scale": {
+            "width": 720,
+            "height": 1524
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:level-offer",
+      "kind": "image",
+      "sourceId": "GH-V0107",
+      "alt": "113레벨 초특가 · 제한시간 제안",
+      "source": "GH-V0107 · Screen_Recording_20260419_112118_Gossip Harbor.mp4 · 5.54초 프레임",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+      "originalName": "Screen_Recording_20260419_112118_Gossip Harbor.mp4",
+      "observations": [
+        "113레벨 초특가 패키지 제목,59m42s 타이머,267% 가치·1회 한정 문구와 ₩49,000 버튼이 보인다.",
+        "이 화면에서 실제 할인 비교 기준이나 전 계정 고정 노출 조건을 확정하지 않는다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 가격·보상은 해당 화면의 표본이며 현재 또는 전 계정 운영값으로 일반화하지 않음. 정지 화면은 연출 지속시간·입력 조건을 입증하지 않음.",
+      "sha256": "1215031956da3c5ccbfc2549abbc4485621ad3a68ee2febd2fad1245063ed633",
+      "bytes": 180839,
+      "width": 720,
+      "height": 1524,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 54,
+          "width": 1080,
+          "height": 2286
+        },
+        "scale": {
+          "width": 720,
+          "height": 1524
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+      },
+      "category": "BM",
+      "sourceRange": {
+        "frameAtSeconds": 5.54
+      },
+      "src": "./assets/media/capture-level-offer.jpg",
+      "provenance": {
+        "sourceId": "GH-V0107",
+        "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 54,
+            "width": 1080,
+            "height": 2286
+          },
+          "scale": {
+            "width": 720,
+            "height": 1524
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:card-fever",
+      "kind": "image",
+      "sourceId": "GH-S0127",
+      "alt": "카드팩 피버 · 주문 보상 두 배 안내",
+      "source": "GH-S0127 · Screenshot_20260205_210708_Gossip Harbor.jpg",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "052a8159635bf2f8de9a55050fd397d232dbbd3c85b133ed3ea060146284c757",
+      "originalName": "Screenshot_20260205_210708_Gossip Harbor.jpg",
+      "observations": [
+        "지금부터 주문을 완료하면 카드팩을2배로 획득할 수 있다는 안내가 표시된다.",
+        "설명 화면이며 실제 지급 수량·기간·노출 조건은 별도 검증 대상이다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 가격·보상은 해당 화면의 표본이며 현재 또는 전 계정 운영값으로 일반화하지 않음. 정지 화면은 연출 지속시간·입력 조건을 입증하지 않음.",
+      "sha256": "1804c4cd97423b81bb3f6de7ee856a3bb2d7018169690f4ed0d2a6acb9c7bb55",
+      "bytes": 163638,
+      "width": 720,
+      "height": 1508,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 72,
+          "width": 1440,
+          "height": 3016
+        },
+        "scale": {
+          "width": 720,
+          "height": 1508
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+      },
+      "category": "BM",
+      "src": "./assets/media/capture-card-fever.jpg",
+      "provenance": {
+        "sourceId": "GH-S0127",
+        "originalSha256": "052a8159635bf2f8de9a55050fd397d232dbbd3c85b133ed3ea060146284c757",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 72,
+            "width": 1440,
+            "height": 3016
+          },
+          "scale": {
+            "width": 720,
+            "height": 1508
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+        }
+      }
+    },
+    {
+      "key": "capture:low-energy-chain",
+      "kind": "image",
+      "sourceId": "GH-V0047",
+      "alt": "낮은 에너지 상태의 단계 충전창",
+      "source": "GH-V0047 · Screen_Recording_20260402_022124_Gossip Harbor.mp4 · 37.18초 프레임",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+      "originalName": "Screen_Recording_20260402_022124_Gossip Harbor.mp4",
+      "observations": [
+        "무한 에너지 창 뒤 HUD에 에너지1이 보이고 첫 행은 에너지100/보석40이다.",
+        "후속 무료 카드팩과 에너지20 행에는 자물쇠가 있다. 단일 정지 화면만으로 부족 판정의 전체 조건을 확정하지 않는다."
+      ],
+      "notes": "사용자 제공 과거 캡처. 실제 촬영일·앱 버전 미확인. 가격·보상은 해당 화면의 표본이며 현재 또는 전 계정 운영값으로 일반화하지 않음. 정지 화면은 연출 지속시간·입력 조건을 입증하지 않음.",
+      "sha256": "478fa486ca15476128988ea9c46572ec257258964e955d08c68710e5a11537c0",
+      "bytes": 147172,
+      "width": 720,
+      "height": 1524,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 54,
+          "width": 1080,
+          "height": 2286
+        },
+        "scale": {
+          "width": 720,
+          "height": 1524
+        },
+        "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+      },
+      "category": "BM",
+      "sourceRange": {
+        "frameAtSeconds": 37.18
+      },
+      "src": "./assets/media/capture-low-energy-chain.jpg",
+      "provenance": {
+        "sourceId": "GH-V0047",
+        "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 54,
+            "width": 1080,
+            "height": 2286
+          },
+          "scale": {
+            "width": 720,
+            "height": 1524
+          },
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
+        }
+      }
     }
   ]
 }
