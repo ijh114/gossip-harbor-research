@@ -1,6 +1,7 @@
 import {readFile,readdir,stat} from 'node:fs/promises';
 import path from 'node:path';
 import {mergeResearch,DOMAIN_DEFS,selectDomainFacts} from '../src/domain-model.mjs';
+import {validMedia} from '../src/visual-model.mjs';
 const base=JSON.parse(await readFile('dist/data/research.json','utf8'));
 const extension=JSON.parse(await readFile('dist/data/domains.json','utf8'));
 const data=mergeResearch(base,extension);
@@ -18,4 +19,12 @@ for(const m of html.matchAll(/(?:src|href)=["']([^"']+)["']/g)){
 }
 async function audit(dir){for(const n of await readdir(dir)){const p=path.join(dir,n),s=await stat(p);if(s.isDirectory())await audit(p);else if(/\.(apk|xapk|luac|bundle|bin|so|dll)$/i.test(n))throw new Error('Raw app binary is not publishable: '+p);}}
 await audit('dist');
+const visual=JSON.parse(await readFile('dist/data/visual-index.json','utf8'));
+const media=JSON.parse(await readFile('dist/data/media.json','utf8'));
+if(visual.targetVersion!==data.meta.version||visual.items.length!==4270||visual.ui.length!==1644)throw new Error('Visual index scope changed unexpectedly');
+if(new Set(visual.items.map(x=>x.key)).size!==visual.items.length)throw new Error('Duplicate item variant identity');
+if(media.targetVersion!==data.meta.version||!Array.isArray(media.entries))throw new Error('Invalid media manifest');
+if(new Set(media.entries.map(x=>x.key)).size!==media.entries.length)throw new Error('Duplicate media key');
+for(const entry of media.entries){if(!validMedia(entry))throw new Error('Invalid curated media entry: '+entry.key);await stat(path.join('dist',entry.src));if(entry.poster)await stat(path.join('dist',entry.poster));}
+console.log(`Verified ${visual.items.length} item declarations, ${visual.ui.length} UI mappings, ${media.entries.length} sourced capture attachments.`);
 console.log(`Verified ${DOMAIN_DEFS.length} research chapters, ${data.facts.length} sourced findings, ${data.products.length} product defaults, relative asset paths and publish boundary.`);

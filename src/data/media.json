@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "description": "검토한 실제 캡처만 연결합니다. 비어 있는 대상은 캡처 대기로 표시하며 웹 모식도를 원작 화면으로 취급하지 않습니다.",
+  "entries": []
+}

@@ -15,3 +15,11 @@ This is a readability refinement of the existing notebook. Retain its forest gre
 Implementation: `src/reading.css` is the final reading layer over the existing shell/domain styles; `src/reader.mjs` owns search, outlines, disclosures and sharing. Data and simulation rules are unchanged.
 
 Validation scope and remaining visual checks: [readability review](docs/READABILITY-REVIEW.md).
+
+## Visual exploration surfaces
+
+The user's requested structure adds a visual comparison layer while keeping detailed documents in a collapsible Research tree. Puzzle has a type/motion catalog, interaction and difficulty pages. UI has a screen catalog, anatomy and motion pages. Game Simulation owns the connected loading/title/tutorial/main/play/home prototype. Legacy research hashes remain stable.
+
+These surfaces use the existing palette/type and **Operate** mode. The medium is a grid only where visual objects are genuinely compared: item variants, UI components and motion samples. Reading routes keep their linear document layout. Media have a fixed preview area, source labels, explicit play/stop and no automatic GIF playback. Web diagrams remain explicitly separate from original captured media. No original art or live runtime claim may be inferred from a catalog declaration.
+
+The 7×9 connected playthrough uses an independent two-family merge model. Its basic sequence is usable before original captures arrive. Per-stage capture slots and `src/data/media.json` are the extension point; [MEDIA-GUIDE.md](docs/MEDIA-GUIDE.md) specifies keys and required provenance. Publish verified captures only. Modal viewers are for media enlargement/playback and stop on close.

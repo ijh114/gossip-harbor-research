@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {JSDOM} from 'jsdom';
 import {DOMAIN_DEFS} from '../src/domain-model.mjs';
+import {STUDIO_PAGES} from '../src/navigation.mjs';
 // A DOM-level application test; no browser, game runtime or server is launched.
 test('chapter navigation, evidence, source-board selection, day exploration and legacy simulator remain connected',async()=>{
  const html=await readFile(new URL('../src/index.html',import.meta.url),'utf8');
@@ -21,7 +22,7 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
  const tick=()=>new Promise(resolve=>setTimeout(resolve,15));
  const until=async predicate=>{for(let i=0;i<50;i++){if(predicate())return;await tick();}throw new Error('Application state did not settle');};
  const click=selector=>{const node=w.document.querySelector(selector);assert.ok(node,selector);node.click();};
- const go=async id=>{click(`[data-route="${id}"]`);await until(()=>w.document.querySelector('#page-label')?.textContent===(DOMAIN_DEFS.find(d=>d.id===id)?.title||({catalog:'상품 카탈로그',simulator:'시뮬레이션'})[id]));};
+ const go=async id=>{click(`[data-route="${id}"]`);await until(()=>w.document.querySelector('#page-label')?.textContent===(STUDIO_PAGES[id]||DOMAIN_DEFS.find(d=>d.id===id)?.title||({catalog:'상품 카탈로그',simulator:'시뮬레이션'})[id]));};
  try{
   await import('../src/app.js');
   await until(()=>w.document.querySelector('#app-view').getAttribute('aria-busy')==='false');
@@ -65,6 +66,22 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   await go('simulator');await until(()=>w.document.querySelector('#sim-generate-many'));
   click('#sim-generate-many');assert.equal(w.document.querySelectorAll('.board-cell:not(.empty)').length,10);
   click('#sim-buy-energy');assert.match(w.document.querySelector('.sim-info').textContent,/20 젬/);
+  await go('research');assert.ok(w.document.querySelector('.research-list a[href="#economy"]'));
+  assert.ok(w.document.querySelector('[data-nav-group="research"]').open);
+  await go('puzzle');assert.equal(w.document.querySelectorAll('.type-card').length,24);
+  const itemQuery=w.document.querySelector('#item-query');itemQuery.value='106';itemQuery.dispatchEvent(new w.Event('input',{bubbles:true}));
+  assert.ok(w.document.querySelectorAll('.type-card').length<24);assert.equal(w.document.activeElement.id,'item-query');
+  click('[data-demo="merge"]');assert.ok(w.document.querySelector('#demo-merge').classList.contains('playing'));click('[data-demo="merge"]');assert.equal(w.document.querySelector('#demo-merge').classList.contains('playing'),false);
+  await go('puzzle-interaction');click('[data-interaction="blocked"]');assert.match(w.document.querySelector('#interaction-example').textContent,/입력 제한/);
+  await go('puzzle-difficulty');const depth=w.document.querySelector('#visual-depth');depth.value='10';depth.dispatchEvent(new w.Event('input',{bubbles:true}));assert.match(w.document.querySelector('#difficulty-output').textContent,/512/);
+  await go('interface');assert.equal(w.document.querySelectorAll('.ui-registry-card').length,24);
+  await go('interface-structure');click('[data-ui-region="overlay"]');assert.match(w.document.querySelector('#region-inspector').textContent,/정렬 간격 10/);
+  await go('interface-motion');assert.equal(w.document.querySelectorAll('.motion-card').length,6);
+  await go('experience');for(let i=0;i<3;i++)click('[data-walk="load"]');assert.ok(w.document.querySelector('[data-stage="title"]'));
+  click('[data-walk="start"]');click('[data-walk="tutorial-generate"]');click('[data-walk="tutorial-cell"][data-value="0"]');click('[data-walk="tutorial-cell"][data-value="1"]');click('[data-walk="finish-tutorial"]');
+  click('[data-walk="play"]');assert.equal(w.document.querySelectorAll('.play-cell').length,63);click('[data-walk="generate"]');
+  click('[data-walk="home"]');click('[data-walk="renovate"]');assert.match(w.document.querySelector('.experience-feedback').textContent,/골드 40개 필요/);
+  click('[data-walk="reset"]');assert.ok(w.document.querySelector('[data-stage="loading"]'));
   media.matches=true;media.listener();
   assert.equal(w.document.querySelector('#sidebar').inert,true);
   click('#menu-toggle');assert.equal(w.document.querySelector('#menu-toggle').getAttribute('aria-expanded'),'true');

@@ -1,4 +1,5 @@
 import {DOMAIN_DEFS, selectDomainFacts} from './domain-model.mjs';
+import {STUDIO_PAGES,VISUAL_ROUTES} from './navigation.mjs';
 
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const normalize=value=>String(value??'').normalize('NFKC').toLocaleLowerCase();
@@ -9,7 +10,7 @@ export function searchNotebook(data,query){
  const q=normalize(query).trim();if(!q)return {chapters:[],facts:[],products:[]};
  const matches=value=>normalize(value).includes(q);
  return {
-  chapters:DOMAIN_DEFS.filter(d=>matches([d.title,d.subtitle,d.intro].join(' '))),
+  chapters:[...DOMAIN_DEFS,...Object.entries(STUDIO_PAGES).map(([id,title])=>({id,title,subtitle:'시각 탐색·연구 공간'}))].filter(d=>matches([d.title,d.subtitle,d.intro].join(' '))),
   facts:data.facts.filter(f=>matches(JSON.stringify(f))).sort((a,b)=>Number(matches(b.title))-Number(matches(a.title))),
   products:data.products.filter(p=>matches([p.id,p.title,p.kind,p.conditions,p.other].join(' ')))
  };
@@ -56,6 +57,7 @@ export function createReader({getData,getRoute,clearQuery,render,toast}){
   const detailButton=document.querySelector('[data-action="toggle-details"]');detailButton.setAttribute('aria-pressed',String(detailsOpen));detailButton.textContent=detailsOpen?'상세 모두 접기':'상세 모두 펼치기';detailButton.hidden=!view.querySelector('.finding-detail');
   for(const wrap of view.querySelectorAll('.table-wrap')){wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label',wrap.querySelector('caption')?.textContent||'데이터 표. 좌우로 스크롤할 수 있습니다.');}
   document.querySelector('#reading-status').textContent=DOMAIN_DEFS.find(d=>d.id===route)?'요약 → 구조와 수치 → 규칙과 근거':'게임 시스템 연구 위키';
+  if(VISUAL_ROUTES.includes(route)){outline.hidden=true;view.parentElement.classList.add('no-outline');document.querySelector('#reading-status').textContent='시각 탐색 · 웹 시연과 실제 캡처 구분';}
   if(changed)closeSearch();followLocation();
  }
  async function copyLink(finding){

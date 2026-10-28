@@ -1,10 +1,13 @@
 import {DOMAIN_DEFS,DOMAIN_IDS,mergeResearch,selectDomainFacts} from './domain-model.mjs';
 import {renderDomainPage,renderDomainIndex,renderMergeOutput,describeInitialCell,renderStoryDay} from './domain-pages.mjs';
 import {createReader} from './reader.mjs';
+import {STUDIO_PAGES,VISUAL_ROUTES,renderNavigation,syncNavigation} from './navigation.mjs';
+import {createStudio} from './studio.mjs';
 const view = document.querySelector('#app-view');
 const search = document.querySelector('#global-search');
 const dialog = document.querySelector('#evidence-dialog');
-const routeNames = {overview:'연구 개요',...Object.fromEntries(DOMAIN_DEFS.map(d=>[d.id,d.title])),wiki:'전체 근거 위키',catalog:'상품 카탈로그',triggers:'오퍼 트리거 실험',simulator:'시뮬레이션',evidence:'근거 · Unity 이식'};
+const routeNames = {...STUDIO_PAGES,overview:'연구 개요',...Object.fromEntries(DOMAIN_DEFS.map(d=>[d.id,d.title])),wiki:'전체 근거 위키',catalog:'상품 카탈로그',triggers:'오퍼 트리거 실험',simulator:'시뮬레이션',evidence:'근거 · Unity 이식'};
+document.querySelector('#main-nav').innerHTML=renderNavigation();
 const kindNames = {code:'코드 확인',config:'내장 설정',text:'설명문 확인',inference:'분석 추론'};
 const filters = {query:'',kind:'all',category:'all',productKind:'all',sort:'default',page:1};
 let data, engine, engineError = '', route = getRoute(), simState, simMessage, simTab = 'board', activeEvidence, toastTimer;
@@ -12,6 +15,7 @@ let triggerInputs = {level:3,energy:0,price:20,freeAvailable:false,triggerPrice:
 let activityInputs = {level:8,startLevel:5,now:12*3600,start:6*3600,end:48*3600,settle:60*3600,downloaded:true};
 const scopeLabel = '재현 범위: 에너지/오퍼 우선순위 규칙 · 보드/주문은 설계 실험';
 const reader=createReader({getData:()=>data,getRoute:()=>route,clearQuery(){filters.query='';filters.kind='all';filters.category='all';filters.productKind='all';filters.page=1;search.value='';},render:()=>render(),toast:message=>toast(message)});
+const studio=createStudio({getData:()=>data,getRoute:()=>route,render:()=>render(),toast:message=>toast(message),download:(...args)=>download(...args)});
 const number = n => Number(n).toLocaleString('ko-KR');
 const e = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const textOf = value => typeof value === 'string' ? value : value == null ? '' : typeof value === 'object' ? JSON.stringify(value) : String(value);
@@ -22,7 +26,7 @@ const sourceButton = (id, label='근거 보기') => `<button type="button" class
 const arrowIcon = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M4 3h9v9" stroke="currentColor" stroke-width="1.3"/></svg>';
 const infoIcon = '<svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7" stroke="currentColor"/><path d="M9 8v5m0-8v1" stroke="currentColor" stroke-width="1.3"/></svg>';
 
-function getRoute(){ const value = location.hash.slice(1).split('?')[0]; return Object.hasOwn(routeNames, value) ? value : 'overview'; }
+function getRoute(){ const value = location.hash.slice(1).split('?')[0]; return Object.hasOwn(routeNames, value) ? value : 'puzzle'; }
 function intro(eyebrow,title,description,actions=''){ return `<div class="page-intro"><div><h1>${e(title)}</h1><p>${e(description)}</p></div>${actions ? `<div class="intro-actions">${actions}</div>` : ''}</div>`; }
 function notice(content,teal=false){ return `<div class="notice${teal?' teal':''}">${infoIcon}<div>${content}</div></div>`; }
 function empty(message='검색어 또는 분류를 바꿔 보세요.'){ return `<div class="empty-state"><strong>일치하는 항목이 없습니다</strong><p>${e(message)}</p><button class="button small" data-action="clear-filters">검색 초기화</button></div>`; }
@@ -102,9 +106,9 @@ function renderEvidence(){
 
 function render(){
  if(!data)return;route=getRoute();document.querySelector('#page-label').textContent=routeNames[route];document.title=`${routeNames[route]} — Harbor Research`;
- for(const link of document.querySelectorAll('[data-route]')){if(link.dataset.route===route)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');}
+ syncNavigation(route);document.body.dataset.surface=VISUAL_ROUTES.includes(route)?'visual':'research';
  const pages={overview:renderOverview,wiki:renderWiki,catalog:renderCatalog,triggers:renderTriggers,simulator:renderSimulator,evidence:renderEvidence};
- view.innerHTML=DOMAIN_IDS.includes(route)?renderDomainPage(route,data,filters):pages[route]();view.setAttribute('aria-busy','false');
+ studio.afterRender();view.innerHTML=Object.hasOwn(STUDIO_PAGES,route)?studio.renderPage(route):DOMAIN_IDS.includes(route)?renderDomainPage(route,data,filters):pages[route]();view.setAttribute('aria-busy','false');
  reader.afterRender();
 }
 function renderAndFocus(selector){render();if(selector)document.querySelector(selector)?.focus({preventScroll:true});}
@@ -165,15 +169,15 @@ mobileViewport.addEventListener('change',()=>closeSidebar());
 document.querySelector('#close-evidence').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
 document.addEventListener('keydown',event=>{
- if(event.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)&&!dialog.open){event.preventDefault();search.focus();}
+ if(event.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)&&!document.querySelector('dialog[open]')){event.preventDefault();search.focus();}
  if(event.key==='Escape'&&!dialog.open)closeSidebar();
- if(event.key==='Tab'&&mobileViewport.matches&&document.querySelector('#sidebar').classList.contains('open')){const links=[...document.querySelectorAll('#sidebar a')];const first=links[0],last=links.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}
+ if(event.key==='Tab'&&mobileViewport.matches&&document.querySelector('#sidebar').classList.contains('open')){const links=[...document.querySelectorAll('#sidebar a,#sidebar summary')].filter(node=>{let p=node.parentElement;while(p&&p.id!=='sidebar'){if(p.tagName==='DETAILS'&&!p.open&&node!==p.querySelector('summary'))return false;p=p.parentElement;}return true;});const first=links[0],last=links.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}
  if(event.target.matches?.('[data-sim-tab]')&&['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();simTab=event.key==='Home'?'board':event.key==='End'?'activity':simTab==='board'?'activity':'board';renderAndFocus('#sim-tab-'+simTab);}
 });
 
 async function load(){
  const readData=path=>fetch(path).then(response=>{if(!response.ok)throw new Error(`분석 데이터 응답: HTTP ${response.status}`);return response.json();});
- const dataPromise=Promise.all([readData('./data/research.json'),readData('./data/domains.json')]).then(([base,extension])=>mergeResearch(base,extension));
+ const dataPromise=Promise.all([readData('./data/research.json'),readData('./data/domains.json'),readData('./data/visual-index.json'),readData('./data/media.json')]).then(([base,extension,visual,media])=>({...mergeResearch(base,extension),visual,media}));
  const enginePromise=import('./engine.mjs').then(module=>{engine=module;simState=engine.createState();}).catch(error=>{engineError='시뮬레이션 엔진을 불러오지 못했습니다. 위키의 정적 근거는 계속 읽을 수 있습니다.';console.error('Engine load failed:',error);});
  try{data=await dataPromise;if(!Array.isArray(data.facts)||!Array.isArray(data.products))throw new Error('분석 데이터의 형식이 올바르지 않습니다.');const sharedProduct=new URLSearchParams(location.hash.split('?')[1]||'').get('product');if(sharedProduct){filters.query=sharedProduct;search.value=sharedProduct;}render();await enginePromise;if(['simulator','triggers'].includes(route))render();}
  catch(error){view.setAttribute('aria-busy','false');view.innerHTML=`<div class="error-state"><h1>분석 노트를 불러오지 못했습니다</h1><p>${e(error.message)}<br>서버의 <code>./data/research.json</code> 파일과 네트워크 연결을 확인해 주세요.</p><button class="button primary" data-action="reload">다시 불러오기 ↺</button></div>`;}
