@@ -1,7 +1,9 @@
+import {DOMAIN_DEFS,DOMAIN_IDS,mergeResearch,selectDomainFacts} from './domain-model.mjs';
+import {renderDomainPage,renderDomainIndex,renderMergeOutput,describeInitialCell,renderStoryDay} from './domain-pages.mjs';
 const view = document.querySelector('#app-view');
 const search = document.querySelector('#global-search');
 const dialog = document.querySelector('#evidence-dialog');
-const routeNames = {overview:'연구 개요',wiki:'BM 위키',catalog:'상점 카탈로그',triggers:'노출 트리거',simulator:'시뮬레이션',evidence:'근거 · Unity 이식'};
+const routeNames = {overview:'연구 개요',...Object.fromEntries(DOMAIN_DEFS.map(d=>[d.id,d.title])),wiki:'전체 근거 위키',catalog:'상품 카탈로그',triggers:'오퍼 트리거 실험',simulator:'시뮬레이션',evidence:'근거 · Unity 이식'};
 const kindNames = {code:'코드 확인',config:'내장 설정',text:'설명문 확인',inference:'분석 추론'};
 const filters = {query:'',kind:'all',category:'all',productKind:'all',sort:'default',page:1};
 let data, engine, engineError = '', route = getRoute(), simState, simMessage, simTab = 'board', activeEvidence, toastTimer;
@@ -36,8 +38,8 @@ function renderOverview(){
   const counts = Object.fromEntries(Object.keys(kindNames).map(k=>[k,data.facts.filter(f=>f.kind===k).length]));
   const featured = ['BM-C005','energy-chain-priority','BM-C003'].map(id=>data.facts.find(f=>f.id===id)).filter(Boolean);
   const chosen = featured.length>=3 ? featured : data.facts.filter(f=>f.kind==='code'||f.kind==='config').slice(0,3);
-  return `<section class="hero"><div class="hero-copy"><div class="eyebrow">A STUDY OF MERGE & MONETIZATION</div><h1>합성의 흐름 속에서,<br><em>구매의 순간</em>을 읽다.</h1><p>가십하버의 상점, 이벤트, 재화 흐름을 출하 패키지에서 추적합니다. 확인한 규칙은 근거로 남기고, 다음 게임의 설계는 실험으로 검토합니다.</p><div class="hero-footer">${badge('light','REA 정적 분석')}<span class="mono">BUILD ${e(data.meta.version)} / ${e(data.meta.date)}</span></div></div><div class="hero-cover"><img src="./assets/gossip-harbor.png" alt="분석 대상 가십하버 앱 아이콘" width="100" height="100"><strong>Gossip Harbor</strong><span>CASE STUDY / 001</span></div></section>
-  <div class="metrics"><div class="metric"><span class="metric-label">분석한 Lua 모듈</span><strong>${number(data.meta.moduleCount||0)}</strong><small>출하 패키지 정적 복원</small></div><div class="metric"><span class="metric-label">근거를 연결한 분석</span><strong>${number(data.facts.length)}<span style="font:12px var(--font);margin-left:5px">건</span></strong><small>코드 ${counts.code} · 설정 ${counts.config} · 설명 ${counts.text}</small></div><div class="metric"><span class="metric-label">IAP 상품 선언</span><strong>${number(data.products.length)}</strong><small>USD 내장 기본가 · 실판매 목록 아님</small></div><div class="metric"><span class="metric-label">분석 범위</span><strong>4.10.5</strong><small>서버 응답 · 실제 플레이 미관측</small></div></div>
+  return `<section class="hero"><div class="hero-copy"><div class="eyebrow">A STUDY OF GAME SYSTEMS</div><h1>퍼즐에서 맵까지,<br><em>게임의 규칙</em>을 읽다.</h1><p>난이도, 퍼즐 기믹, 조작과 연출, 맵, UI와 BM을 출하 패키지에서 추적합니다. 시스템별 페이지에서 규칙과 근거를 읽고, 다음 게임의 설계로 연결합니다.</p><div class="hero-footer">${badge('light','REA 정적 분석')}<span class="mono">BUILD ${e(data.meta.version)} / ${e(data.meta.date)}</span></div></div><div class="hero-cover"><img src="./assets/gossip-harbor.png" alt="분석 대상 가십하버 앱 아이콘" width="100" height="100"><strong>Gossip Harbor</strong><span>CASE STUDY / 001</span></div></section>
+  ${renderDomainIndex(data)}<div class="metrics"><div class="metric"><span class="metric-label">분석한 Lua 모듈</span><strong>${number(data.meta.moduleCount||0)}</strong><small>출하 패키지 정적 복원</small></div><div class="metric"><span class="metric-label">근거를 연결한 분석</span><strong>${number(data.facts.length)}<span style="font:12px var(--font);margin-left:5px">건</span></strong><small>코드 ${counts.code} · 설정 ${counts.config} · 설명 ${counts.text}</small></div><div class="metric"><span class="metric-label">IAP 상품 선언</span><strong>${number(data.products.length)}</strong><small>USD 내장 기본가 · 실판매 목록 아님</small></div><div class="metric"><span class="metric-label">분석 범위</span><strong>4.10.5</strong><small>서버 응답 · 실제 플레이 미관측</small></div></div>
   <div class="content-grid"><section><div class="section-heading"><h2>먼저 읽어야 할 규칙</h2><a class="text-link" href="#wiki">BM 위키 전체 보기 ↗</a></div><div class="panel"><div class="panel-body">${chosen.map((f,i)=>`<article class="fact-preview"><span class="index">0${i+1}</span><div><h3>${e(f.title)}</h3><p>${e(f.summary)}</p>${badge(f.kind)}</div><button class="icon-button" data-evidence="${e(f.id)}" aria-label="${e(f.title)} 근거 보기">↗</button></article>`).join('')}</div></div><div class="quick-links"><a class="button primary" href="#simulator">규칙을 직접 실험하기 ${arrowIcon}</a><a class="button" href="#triggers">오퍼가 선택되는 순서 보기</a></div></section>
   <section><div class="section-heading"><h2>조사에서 제작으로</h2><span>WORKING SEQUENCE</span></div><div class="panel flow"><div class="flow-step"><span class="flow-marker">1</span><div><h4>패키지 식별과 근거 확보</h4><p>REA · Unity 데이터 · Lua 로직 분석</p>${badge('config','정적 근거 확보')}</div></div><div class="flow-step current"><span class="flow-marker">2</span><div><h4>위키와 규칙 시뮬레이션</h4><p>BM 구조, 노출 조건, 재화의 상태 전이</p>${badge('code','현재 작업 범위')}</div></div><div class="flow-step"><span class="flow-marker">3</span><div><h4>Unity로 규칙 이식</h4><p>도메인 로직 · 데이터 · 콘텐츠 분리</p>${badge('gray','다음 제작 단계')}</div></div><div class="flow-step"><span class="flow-marker">4</span><div><h4>새로운 게임으로 재구성</h4><p>새 이미지와 연출, 독립적인 콘텐츠 제작</p></div></div></div></section></div>
   ${notice('<strong>분석 결과를 읽는 방법</strong><p>내장 설정과 코드에서 확인한 동작은 해당 버전의 정적 사실입니다. 운영 서버의 이벤트 일정, 계정별 상품 배정, 현재 스토어 가격과 매출 효과는 확인되지 않았습니다.</p>')}
@@ -100,7 +102,7 @@ function render(){
  if(!data)return;route=getRoute();document.querySelector('#page-label').textContent=routeNames[route];document.title=`${routeNames[route]} — Harbor Research`;
  for(const link of document.querySelectorAll('[data-route]')){if(link.dataset.route===route)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');}
  const pages={overview:renderOverview,wiki:renderWiki,catalog:renderCatalog,triggers:renderTriggers,simulator:renderSimulator,evidence:renderEvidence};
- view.innerHTML=pages[route]();view.setAttribute('aria-busy','false');
+ view.innerHTML=DOMAIN_IDS.includes(route)?renderDomainPage(route,data,filters):pages[route]();view.setAttribute('aria-busy','false');
 }
 function renderAndFocus(selector){render();if(selector)document.querySelector(selector)?.focus({preventScroll:true});}
 function showEvidence(id){
@@ -116,6 +118,10 @@ function exportState(){if(!simState){toast('시뮬레이션 엔진 준비 후 �
 
 document.addEventListener('click',event=>{
  const target=event.target.closest('button,a');if(!target)return;
+ if(target.dataset.domainKind){filters.kind=target.dataset.domainKind;renderAndFocus(`[data-domain-kind="${target.dataset.domainKind}"]`);return;}
+ if(target.dataset.domainJump){event.preventDefault();document.getElementById('section-'+target.dataset.domainJump)?.scrollIntoView({block:'start'});history.replaceState(null,'',`#${route}?section=${encodeURIComponent(target.dataset.domainJump)}`);return;}
+ if(target.dataset.downloadDomain){const id=target.dataset.downloadDomain;download(`harbor-${id}-analysis.json`,{targetVersion:data.meta.version,scope:data.meta.scope,page:data.domainAnalysis.pages[id],findings:selectDomainFacts(data.facts,id),models:data.domainAnalysis.models,limitations:'정적 근거. 게임 실행·현재 서버 배정·시각적 재생 결과 미관측.'});return;}
+ if(target.hasAttribute('data-initial-cell')){const i=Number(target.dataset.initialCell);for(const cell of view.querySelectorAll('[data-initial-cell]'))cell.setAttribute('aria-pressed',String(cell===target));document.querySelector('#initial-cell-detail').innerHTML=describeInitialCell(i,data);return;}
  if(target.matches('[data-evidence]')){showEvidence(target.dataset.evidence);return;}
  if(target.dataset.kind){filters.kind=target.dataset.kind;render();return;}
  if(target.dataset.simTab){simTab=target.dataset.simTab;renderAndFocus(`#sim-tab-${simTab}`);return;}
@@ -138,15 +144,16 @@ document.addEventListener('click',event=>{
  if(action==='deliver')simMessage=engine.deliverOrder(simState,engine.DEFAULT_RULES);
  if(['generate','generate-many','buy-energy','deliver'].includes(action))renderAndFocus(target.id?'#'+target.id:undefined);
 });
-view.addEventListener('change',event=>{const t=event.target;if(t.id==='category-filter'){filters.category=t.value;render();}if(t.id==='product-kind'){filters.productKind=t.value;filters.page=1;render();}if(t.id==='product-sort'){filters.sort=t.value;filters.page=1;render();}});
+view.addEventListener('change',event=>{const t=event.target;if(t.hasAttribute('data-story-day')){document.querySelector('#story-day-output').innerHTML=renderStoryDay(Number(t.value),data);return;}if(t.id==='category-filter'){filters.category=t.value;render();}if(t.id==='product-kind'){filters.productKind=t.value;filters.page=1;render();}if(t.id==='product-sort'){filters.sort=t.value;filters.page=1;render();}});
 view.addEventListener('input',event=>{
  const t=event.target;
+ if(t.hasAttribute('data-merge-level')){document.querySelector('#merge-output').innerHTML=renderMergeOutput(Number(t.value));return;}
  if(t.dataset.trigger){const value=t.type==='checkbox'?t.checked:Number(t.value);if(typeof value==='number'&&(!Number.isFinite(value)||value<0))return;triggerInputs[t.dataset.trigger]=value;document.querySelector('#trace-result-container').innerHTML=renderTracePanel();}
  if(t.dataset.activity){let value=t.type==='checkbox'?t.checked:Number(t.value);if(typeof value==='number'&&(!Number.isFinite(value)||value<0))return;if(['now','start','end','settle'].includes(t.dataset.activity))value*=3600;activityInputs[t.dataset.activity]=value;document.querySelector('#activity-result-container').innerHTML=renderActivityPanel();}
 });
 view.addEventListener('submit',event=>event.preventDefault());
-search.addEventListener('input',()=>{filters.query=search.value.trim();filters.page=1;if(!['wiki','catalog','evidence'].includes(route)&&filters.query){location.hash='wiki';}else render();});
-window.addEventListener('hashchange',()=>{closeSidebar();render();window.scrollTo({top:0,behavior:'instant'});});
+search.addEventListener('input',()=>{filters.query=search.value.trim();filters.page=1;if(![...DOMAIN_IDS,'wiki','catalog','evidence'].includes(route)&&filters.query){location.hash='wiki';}else render();});
+window.addEventListener('hashchange',()=>{closeSidebar();render();const section=new URLSearchParams(location.hash.split('?')[1]||'').get('section');if(section)document.getElementById('section-'+section)?.scrollIntoView({block:'start'});else window.scrollTo({top:0,behavior:'instant'});});
 document.querySelector('#menu-toggle').addEventListener('click',()=>{const sidebar=document.querySelector('#sidebar');const open=sidebar.classList.toggle('open');sidebar.inert=!open&&mobileViewport.matches;document.querySelector('.app-shell').inert=open&&mobileViewport.matches;document.querySelector('#sidebar-scrim').hidden=!open;document.querySelector('#menu-toggle').setAttribute('aria-expanded',String(open));if(open)sidebar.querySelector('[aria-current="page"]')?.focus();});
 document.querySelector('#sidebar-scrim').addEventListener('click',closeSidebar);
 document.querySelector('.skip-link').addEventListener('click',event=>{event.preventDefault();document.querySelector('#main').focus();});
@@ -162,7 +169,8 @@ document.addEventListener('keydown',event=>{
 });
 
 async function load(){
- const dataPromise=fetch('./data/research.json').then(response=>{if(!response.ok)throw new Error(`분석 데이터 응답: HTTP ${response.status}`);return response.json();});
+ const readData=path=>fetch(path).then(response=>{if(!response.ok)throw new Error(`분석 데이터 응답: HTTP ${response.status}`);return response.json();});
+ const dataPromise=Promise.all([readData('./data/research.json'),readData('./data/domains.json')]).then(([base,extension])=>mergeResearch(base,extension));
  const enginePromise=import('./engine.mjs').then(module=>{engine=module;simState=engine.createState();}).catch(error=>{engineError='시뮬레이션 엔진을 불러오지 못했습니다. 위키의 정적 근거는 계속 읽을 수 있습니다.';console.error('Engine load failed:',error);});
  try{data=await dataPromise;if(!Array.isArray(data.facts)||!Array.isArray(data.products))throw new Error('분석 데이터의 형식이 올바르지 않습니다.');render();await enginePromise;if(['simulator','triggers'].includes(route))render();}
  catch(error){view.setAttribute('aria-busy','false');view.innerHTML=`<div class="error-state"><div class="eyebrow" style="justify-content:center">DATA LOAD FAILED</div><h1>분석 노트를 불러오지 못했습니다</h1><p>${e(error.message)}<br>서버의 <code>./data/research.json</code> 파일과 네트워크 연결을 확인해 주세요.</p><button class="button primary" data-action="reload">다시 불러오기 ↺</button></div>`;}
