@@ -53,7 +53,7 @@ Git 연동 대신 직접 업로드를 쓰는 경우 `.github/workflows/cloudflar
 - 173개 분석 항목: 기존 BM 중심70개 + 난이도·기믹·조작42개 + 퍼즐 연출·UI34개 + 맵·맵 연출27개.
 - 내장 초기7×9/63칸, 주문필터, 스토리292개 day/48종 영역ID와 비용 집계, 타임라인·연출 수치, UI상태·레이어·표시 게이트를 각 페이지에 연결.
 - BM 노출 규칙22개, 글로벌 IAP 선언251개를 근거와 함께 정리.
-- 엔진·분석 데이터·10개 페이지 연결·근거 창·검색·초기보드·스토리순번 탐색의 자동 테스트14개. DOM 검증은 실제 브라우저 렌더링·모바일 시각 검증을 대신하지 않습니다.
+- 엔진·분석 데이터·10개 페이지 연결·근거 창·검색·초기보드·스토리순번 탐색의 자동 테스트16개. DOM 검증은 실제 브라우저 렌더링·모바일 시각 검증을 대신하지 않습니다.
 
 게임 실행·결제·광고 재생·원작 서버 접속은 수행하지 않았습니다. **내장 USD 기본가격은 현재 실판매가가 아닙니다.** 서버 배정·현행 이벤트 일정·가격·개인화·전환율은 미확정입니다. 코드 존재, 설명문 존재, 실행 관측은 서로 다른 근거입니다.
 
@@ -91,3 +91,9 @@ Git 연동 대신 직접 업로드를 쓰는 경우 `.github/workflows/cloudflar
 `src/engine.mjs`는 UI·네트워크와 분리된 상태/규칙 모듈입니다. 향후 Unity에서는 EconomyState, OfferRule, PopupQueue, ContentCatalog를 분리하고 동일 경계 테스트를 이식합니다. 시뮬레이터의 JSON 내보내기는 테스트 상태와 입력값 전달을 위한 형식이며 Unity 프로젝트나 원작 코드 자동 변환을 뜻하지 않습니다.
 
 배포 설정 근거: [GitHub Pages workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [Cloudflare Pages CI](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/).
+
+## 읽기와 탐색
+
+본문 17px의 한글 Pretendard 서체, 큰 글씨 설정, 페이지 목차, 분석 상세 펼치기와 항목별 공유 링크를 제공합니다. 상단 검색에서 분석 페이지·규칙·상품을 함께 찾습니다. `/` 또는 Ctrl/Cmd+K로 검색, ↓로 결과 선택, Enter로 이동, Escape로 닫습니다.
+
+디자인 기준은 [DESIGN.md](DESIGN.md), 점검 범위와 화면 검증 제한은 [가독성 점검](docs/READABILITY-REVIEW.md)에 기록했습니다. 폰트 라이선스는 `src/assets/fonts/OFL.txt`입니다.

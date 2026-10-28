@@ -9,6 +9,7 @@
   <link rel="icon" href="./assets/gossip-harbor.png">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./domains.css">
+  <link rel="stylesheet" href="./reading.css">
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 이동</a>
@@ -21,40 +22,50 @@
     <div class="workspace-name"><span class="status-dot"></span>Gossip Harbor <span class="mono">4.10.5</span></div>
     <div class="nav-label">RESEARCH INDEX</div>
 <nav id="main-nav">
-<a href="#overview" data-route="overview"><span class="nav-num">00</span>연구 개요<span class="nav-arrow">↗</span></a>
-<span class="nav-group">SYSTEM ANALYSIS</span>
-<a href="#difficulty" data-route="difficulty"><span class="nav-num">01</span>난이도 설계<span class="nav-arrow">↗</span></a>
-<a href="#mechanics" data-route="mechanics"><span class="nav-num">02</span>퍼즐 기믹<span class="nav-arrow">↗</span></a>
-<a href="#interaction" data-route="interaction"><span class="nav-num">03</span>유저 상호작용<span class="nav-arrow">↗</span></a>
-<a href="#puzzle-fx" data-route="puzzle-fx"><span class="nav-num">04</span>퍼즐 연출<span class="nav-arrow">↗</span></a>
-<a href="#map" data-route="map"><span class="nav-num">05</span>인게임 맵<span class="nav-arrow">↗</span></a>
-<a href="#map-fx" data-route="map-fx"><span class="nav-num">06</span>맵 연출<span class="nav-arrow">↗</span></a>
-<a href="#ui" data-route="ui"><span class="nav-num">07</span>UI 구조<span class="nav-arrow">↗</span></a>
-<a href="#bm" data-route="bm"><span class="nav-num">08</span>BM 종합<span class="nav-arrow">↗</span></a>
-<a href="#events" data-route="events"><span class="nav-num">09</span>이벤트·운영<span class="nav-arrow">↗</span></a>
-<a href="#economy" data-route="economy"><span class="nav-num">10</span>재화·성장<span class="nav-arrow">↗</span></a>
-<span class="nav-group">EVIDENCE & LAB</span>
-<a href="#wiki" data-route="wiki"><span class="nav-num">↳</span>전체 근거 위키<span class="nav-arrow">↗</span></a>
-<a href="#catalog" data-route="catalog"><span class="nav-num">↳</span>상품 카탈로그<span class="nav-arrow">↗</span></a>
-<a href="#triggers" data-route="triggers"><span class="nav-num">↳</span>오퍼 트리거 실험<span class="nav-arrow">↗</span></a>
-<a href="#simulator" data-route="simulator"><span class="nav-num">↳</span>시뮬레이션<span class="nav-arrow">↗</span></a>
-<a href="#evidence" data-route="evidence"><span class="nav-num">↳</span>근거 · Unity 이식<span class="nav-arrow">↗</span></a>
+<a href="#overview" data-route="overview">연구 개요<span class="nav-arrow">↗</span></a>
+<span class="nav-group">시스템 분석</span>
+<a href="#difficulty" data-route="difficulty">난이도 설계<span class="nav-arrow">↗</span></a>
+<a href="#mechanics" data-route="mechanics">퍼즐 기믹<span class="nav-arrow">↗</span></a>
+<a href="#interaction" data-route="interaction">유저 상호작용<span class="nav-arrow">↗</span></a>
+<a href="#puzzle-fx" data-route="puzzle-fx">퍼즐 연출<span class="nav-arrow">↗</span></a>
+<a href="#map" data-route="map">인게임 맵<span class="nav-arrow">↗</span></a>
+<a href="#map-fx" data-route="map-fx">맵 연출<span class="nav-arrow">↗</span></a>
+<a href="#ui" data-route="ui">UI 구조<span class="nav-arrow">↗</span></a>
+<a href="#bm" data-route="bm">BM 종합<span class="nav-arrow">↗</span></a>
+<a href="#events" data-route="events">이벤트·운영<span class="nav-arrow">↗</span></a>
+<a href="#economy" data-route="economy">재화·성장<span class="nav-arrow">↗</span></a>
+<span class="nav-group">근거와 실험</span>
+<a href="#wiki" data-route="wiki">전체 근거 위키<span class="nav-arrow">↗</span></a>
+<a href="#catalog" data-route="catalog">상품 카탈로그<span class="nav-arrow">↗</span></a>
+<a href="#triggers" data-route="triggers">오퍼 트리거 실험<span class="nav-arrow">↗</span></a>
+<a href="#simulator" data-route="simulator">시뮬레이션<span class="nav-arrow">↗</span></a>
+<a href="#evidence" data-route="evidence">근거 · Unity 이식<span class="nav-arrow">↗</span></a>
 </nav>
     <div class="sidebar-note"><span class="mini-label">ANALYSIS BOUNDARY</span><p>패키지에 담긴 규칙과<br>설계 가정을 구분해 읽습니다.</p><div class="legend"><span><i class="legend-dot observed"></i>확인된 정적 근거</span><span><i class="legend-dot assumption"></i>추론 · 실험 가정</span></div></div>
     <div class="sidebar-bottom"><span class="mono">REA / STATIC STUDY</span><a href="https://github.com/morluto/rea" target="_blank" rel="noopener noreferrer" aria-label="REA GitHub 새 창">REA ↗</a></div>
   </aside>
   <div class="app-shell">
     <header class="topbar">
-      <div class="topbar-start"><button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="메뉴 열기">☰</button><span class="breadcrumb">Notebook <span>/</span> <strong id="page-label">연구 개요</strong></span></div>
-      <label class="global-search"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="전체 시스템·규칙·근거 검색" autocomplete="off"><kbd>/</kbd><span class="sr-only">전체 시스템·규칙·근거 검색</span></label>
+      <div class="topbar-start"><button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="메뉴 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><span class="breadcrumb"><strong id="page-label">연구 개요</strong></span></div>
+      <label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="global-search" type="search" placeholder="시스템·규칙·상품 검색" autocomplete="off" aria-controls="search-results" aria-expanded="false"><kbd>/</kbd><span class="sr-only">전체 시스템·규칙·상품 검색</span></label>
       <span class="top-version"><i class="status-dot"></i>정적 분석 <span class="mono">v4.10.5</span></span>
     </header>
+    <section id="search-results" class="search-results" aria-label="전체 검색 결과" hidden></section>
     <main id="main" tabindex="-1">
-      <div id="app-view" aria-live="polite" aria-busy="true"><div class="loading-state"><span class="loader" aria-hidden="true"></span><h1>분석 노트를 불러오고 있습니다</h1><p>패키지 근거와 시뮬레이션 규칙을 준비합니다.</p></div></div>
+      <div class="reading-tools" id="reading-tools" role="group" aria-label="읽기 설정">
+        <span id="reading-status">게임 시스템 연구 위키</span>
+        <button class="button small" data-action="text-size" aria-pressed="false" title="글씨 크기 설정은 이 브라우저에 저장됩니다">글씨 크게</button>
+        <button class="button small" data-action="toggle-details" aria-pressed="false">상세 모두 펼치기</button>
+        <button class="button small" data-action="copy-page">페이지 링크 복사</button>
+      </div>
+      <div class="reader-layout">
+        <details class="page-outline" id="page-outline" open><summary>이 페이지 목차</summary><nav class="outline-links" id="outline-links" aria-label="현재 페이지 목차"></nav></details>
+        <div id="app-view" aria-busy="true"><div class="loading-state"><span class="loader" aria-hidden="true"></span><h1>분석 노트를 불러오고 있습니다</h1><p>패키지 근거와 시뮬레이션 규칙을 준비합니다.</p></div></div>
+      </div>
       <footer class="page-footer"><span>GOSSIP HARBOR · RESEARCH NOTEBOOK</span><span>정적 근거 ≠ 실제 운영 관측</span></footer>
     </main>
   </div>
-  <dialog id="evidence-dialog" class="evidence-dialog" aria-labelledby="evidence-title"><div class="dialog-head"><span class="mini-label">SOURCE INSPECTOR</span><button class="icon-button" id="close-evidence" aria-label="근거 창 닫기" type="button">×</button></div><div id="evidence-content"></div></dialog>
+  <dialog id="evidence-dialog" class="evidence-dialog" aria-labelledby="evidence-title"><div class="dialog-head"><span class="mini-label">원문 근거</span><button class="icon-button" id="close-evidence" aria-label="근거 창 닫기" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div id="evidence-content"></div></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
   <script type="module" src="./app.js"></script>
 </body>

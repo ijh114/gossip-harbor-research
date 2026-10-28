@@ -14,6 +14,7 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
  w.matchMedia=()=>media;
  w.HTMLDialogElement.prototype.showModal=function(){this.setAttribute('open','');};
  w.HTMLDialogElement.prototype.close=function(){this.removeAttribute('open');};
+ let copied='';Object.defineProperty(w.navigator,'clipboard',{value:{async writeText(value){copied=value;}}});
  const previous={};for(const key of ['window','document','location','history','matchMedia','fetch'])previous[key]=globalThis[key];
  Object.assign(globalThis,{window:w,document:w.document,location:w.location,history:w.history,matchMedia:w.matchMedia,
   fetch:async relative=>({ok:true,json:async()=>JSON.parse(await readFile(new URL('../src/'+relative.replace(/^\.\//,''),import.meta.url),'utf8'))})});
@@ -27,6 +28,19 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   assert.equal(w.document.querySelectorAll('.domain-index-card').length,10);
   for(const def of DOMAIN_DEFS){await go(def.id);assert.equal(w.document.querySelector('#app-view h1').textContent,def.title);assert.ok(w.document.querySelector('.domain-finding'));}
   await go('difficulty');
+  assert.ok(w.document.querySelectorAll('[data-outline-target]').length>2);
+  const detail=w.document.querySelector('.finding-detail');assert.equal(detail.open,false);
+  click('[data-action="toggle-details"]');assert.equal(detail.open,true);
+  assert.equal(w.document.querySelector('[data-action="toggle-details"]').getAttribute('aria-pressed'),'true');
+  click('[data-action="toggle-details"]');assert.equal(detail.open,false);
+  click('[data-action="text-size"]');assert.equal(w.document.body.dataset.textSize,'large');
+  assert.equal(w.localStorage.getItem('harbor-text-size'),'large');
+  click('[data-action="text-size"]');assert.equal(w.document.body.dataset.textSize,'normal');
+  const shared=w.document.querySelector('[data-share-finding]');shared.click();await tick();
+  assert.match(copied,/#difficulty\?finding=/);
+  w.location.hash=copied.split('#')[1];await tick();
+  assert.equal(w.document.activeElement.id,'finding-'+shared.dataset.shareFinding);
+  assert.equal(w.document.activeElement.querySelector('.finding-detail').open,true);
   const range=w.document.querySelector('[data-merge-level]');range.value='10';range.dispatchEvent(new w.Event('input',{bubbles:true}));
   assert.match(w.document.querySelector('#merge-output').textContent,/512/);
   await go('mechanics');assert.equal(w.document.querySelectorAll('[data-initial-cell]').length,63);
@@ -39,6 +53,15 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   await go('catalog');const search=w.document.querySelector('#global-search');search.value='getgem_1';search.dispatchEvent(new w.Event('input',{bubbles:true}));
   assert.equal(w.document.querySelectorAll('tbody tr').length,1);
   search.value='';search.dispatchEvent(new w.Event('input',{bubbles:true}));
+  search.value='PB#';search.dispatchEvent(new w.Event('input',{bubbles:true}));
+  await until(()=>w.document.querySelector('#search-results a[data-search-result]'));
+  assert.equal(w.document.querySelector('#global-search').getAttribute('aria-expanded'),'true');
+  const searchLink=w.document.querySelector('#search-results a[data-search-result]');
+  const findingId=new URLSearchParams(searchLink.hash.split('?')[1]).get('finding');
+  searchLink.click();await until(()=>w.document.activeElement.id==='finding-'+findingId);
+  assert.equal(w.document.querySelector('#search-results').hidden,true);
+  assert.equal(search.value,'');
+  w.document.querySelector('[data-outline-target]').click();assert.ok(w.location.hash.includes('section='));
   await go('simulator');await until(()=>w.document.querySelector('#sim-generate-many'));
   click('#sim-generate-many');assert.equal(w.document.querySelectorAll('.board-cell:not(.empty)').length,10);
   click('#sim-buy-energy');assert.match(w.document.querySelector('.sim-info').textContent,/20 젬/);
