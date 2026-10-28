@@ -25,6 +25,8 @@ npm run dev
 
 ### Cloudflare Pages — Git 연동
 
+공유 주소: [Cloudflare 분석실](https://gossip-harbor-research.pages.dev/). 첫 배포와 분석 데이터 정상 응답을 확인했습니다.
+
 Workers & Pages → Create application → Pages → Connect to Git에서 같은 저장소를 연결합니다.
 
 | 설정 | 값 |
