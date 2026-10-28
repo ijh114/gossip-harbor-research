@@ -43,3 +43,5 @@ main{padding:32px 32px 0;max-width:1540px;min-width:0}.reader-layout{display:gri
 .search-result small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
 .page-outline[open] summary{list-style:disclosure-open}
+
+.domain-summary>h2{font-size:1.375rem;margin:8px 0 20px}.reader-layout.no-outline>#app-view{grid-column:1 / -1}
