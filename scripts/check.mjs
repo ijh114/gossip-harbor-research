@@ -29,3 +29,9 @@ if(new Set(media.entries.map(x=>x.key)).size!==media.entries.length)throw new Er
 for(const entry of media.entries){if(!validMedia(entry))throw new Error('Invalid curated media entry: '+entry.key);await stat(path.join('dist',entry.src));if(entry.poster)await stat(path.join('dist',entry.poster));}
 console.log(`Verified ${visual.items.length} item declarations, ${visual.ui.length} UI mappings, ${media.entries.filter(x=>x.origin==='packaged-sprite').length} packaged-image references, ${media.entries.filter(x=>x.origin==='observed-user-capture').length} historical capture derivatives.`);
 console.log(`Verified ${DOMAIN_DEFS.length} research chapters, ${data.facts.length} sourced findings, ${data.products.length} product defaults, relative asset paths and publish boundary.`);
+const play=JSON.parse(await readFile('dist/data/play-config.json','utf8'));
+if(play.targetVersion!==data.meta.version||play.items.length!==552||play.orders.length!==16||play.quests.length!==6||play.initialBoard.length!==63)throw new Error('Invalid bounded play configuration');
+const types=new Set(play.items.map(x=>x.type));
+for(const item of play.items){if(item.next&&!types.has(item.next)&&!/^rb#/.test(item.next))throw new Error('Unrecognized merge result '+item.next);if(item.generator)for(const drop of item.generator.pool)if(!types.has(drop.type)||!Number.isInteger(drop.weight)||drop.weight<1)throw new Error('Invalid fixed pool');}
+for(const s of play.sources)if(!s.path?.startsWith('analysis/')||!/^[a-f0-9]{64}$/.test(s.sha256))throw new Error('Missing simulation provenance');
+console.log(`Verified552 base types,16 fixed orders,6 default quests and configuration source hashes.`);

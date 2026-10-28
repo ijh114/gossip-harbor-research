@@ -1,0 +1,5359 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "items": [
+    {
+      "type": "101",
+      "name": "GroceryBag01",
+      "next": "102",
+      "sellingPrice": 0,
+      "imageKey": "asset:GroceryBag01"
+    },
+    {
+      "type": "102",
+      "name": "GroceryBag02",
+      "next": "103",
+      "sellingPrice": 0,
+      "imageKey": "asset:GroceryBag02"
+    },
+    {
+      "type": "103",
+      "name": "GroceryBag03",
+      "next": "104",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "104",
+      "name": "GroceryBag04",
+      "next": "105",
+      "sellingPrice": 2,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "201",
+            "weight": 100
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 2,
+        "storageRecoverySeconds": 30,
+        "cost": 1
+      }
+    },
+    {
+      "type": "105",
+      "name": "GroceryBag05",
+      "next": "106",
+      "sellingPrice": 3,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "201",
+            "weight": 35
+          },
+          {
+            "type": "202",
+            "weight": 2
+          },
+          {
+            "type": "301",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 30,
+        "storageRecoverySeconds": 60,
+        "cost": 1
+      }
+    },
+    {
+      "type": "106",
+      "name": "GroceryBag06",
+      "next": "107",
+      "sellingPrice": 4,
+      "imageKey": "asset:GroceryBag06",
+      "generator": {
+        "pool": [
+          {
+            "type": "201",
+            "weight": 34
+          },
+          {
+            "type": "202",
+            "weight": 2
+          },
+          {
+            "type": "203",
+            "weight": 1
+          },
+          {
+            "type": "301",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "107",
+      "name": "GroceryBag07",
+      "next": "108",
+      "sellingPrice": 5,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "201",
+            "weight": 33
+          },
+          {
+            "type": "202",
+            "weight": 3
+          },
+          {
+            "type": "203",
+            "weight": 1
+          },
+          {
+            "type": "301",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "108",
+      "name": "GroceryBag08",
+      "next": "109",
+      "sellingPrice": 6,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "201",
+            "weight": 32
+          },
+          {
+            "type": "202",
+            "weight": 4
+          },
+          {
+            "type": "203",
+            "weight": 1
+          },
+          {
+            "type": "301",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "109",
+      "name": "GroceryBag09",
+      "next": "110",
+      "sellingPrice": 7,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "201",
+            "weight": 31
+          },
+          {
+            "type": "202",
+            "weight": 5
+          },
+          {
+            "type": "203",
+            "weight": 1
+          },
+          {
+            "type": "301",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "110",
+      "name": "GroceryBag10",
+      "next": "111",
+      "sellingPrice": 8,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "201",
+            "weight": 31
+          },
+          {
+            "type": "202",
+            "weight": 4
+          },
+          {
+            "type": "203",
+            "weight": 2
+          },
+          {
+            "type": "301",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "111",
+      "name": "GroceryBag11",
+      "next": null,
+      "sellingPrice": 9,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "201",
+            "weight": 31
+          },
+          {
+            "type": "202",
+            "weight": 4
+          },
+          {
+            "type": "203",
+            "weight": 2
+          },
+          {
+            "type": "301",
+            "weight": 4
+          },
+          {
+            "type": "302",
+            "weight": 1
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "201",
+      "name": "Flour01",
+      "next": "202",
+      "sellingPrice": 0,
+      "imageKey": "asset:Flour01"
+    },
+    {
+      "type": "202",
+      "name": "Flour02",
+      "next": "203",
+      "sellingPrice": 0,
+      "imageKey": "asset:Flour02"
+    },
+    {
+      "type": "203",
+      "name": "Flour03",
+      "next": "204",
+      "sellingPrice": 0,
+      "imageKey": "asset:Flour03"
+    },
+    {
+      "type": "204",
+      "name": "Flour04",
+      "next": "205",
+      "sellingPrice": 0,
+      "imageKey": "asset:Flour04"
+    },
+    {
+      "type": "205",
+      "name": "Flour05",
+      "next": "206",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "206",
+      "name": "Flour06",
+      "next": "207",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "207",
+      "name": "Flour07",
+      "next": "208",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "208",
+      "name": "Flour08",
+      "next": "209",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "209",
+      "name": "Flour09",
+      "next": "210",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "210",
+      "name": "Flour10",
+      "next": "211",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "211",
+      "name": "Flour11",
+      "next": "212",
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "212",
+      "name": "Flour12",
+      "next": "213",
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "213",
+      "name": "Flour13",
+      "next": "214",
+      "sellingPrice": 9,
+      "imageKey": null
+    },
+    {
+      "type": "214",
+      "name": "Flour14",
+      "next": "215",
+      "sellingPrice": 10,
+      "imageKey": null
+    },
+    {
+      "type": "215",
+      "name": "Flour15",
+      "next": null,
+      "sellingPrice": 11,
+      "imageKey": null
+    },
+    {
+      "type": "301",
+      "name": "Potato01",
+      "next": "302",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "302",
+      "name": "Potato02",
+      "next": "303",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "303",
+      "name": "Potato03",
+      "next": "304",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "304",
+      "name": "Potato04",
+      "next": "305",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "305",
+      "name": "Potato05",
+      "next": "306",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "306",
+      "name": "Potato06",
+      "next": "307",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "307",
+      "name": "Potato07",
+      "next": null,
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "401",
+      "name": "CoffeeMachine01",
+      "next": "402",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "402",
+      "name": "CoffeeMachine02",
+      "next": "403",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "403",
+      "name": "CoffeeMachine03",
+      "next": "404",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "404",
+      "name": "CoffeeMachine04",
+      "next": "405",
+      "sellingPrice": 2,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "501",
+            "weight": 100
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 6,
+        "storageRecoverySeconds": 120,
+        "cost": 1
+      }
+    },
+    {
+      "type": "405",
+      "name": "CoffeeMachine05",
+      "next": "406",
+      "sellingPrice": 3,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "501",
+            "weight": 37
+          },
+          {
+            "type": "601",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "406",
+      "name": "CoffeeMachine06",
+      "next": "407",
+      "sellingPrice": 4,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "501",
+            "weight": 34
+          },
+          {
+            "type": "502",
+            "weight": 2
+          },
+          {
+            "type": "503",
+            "weight": 1
+          },
+          {
+            "type": "601",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "407",
+      "name": "CoffeeMachine07",
+      "next": "408",
+      "sellingPrice": 5,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "501",
+            "weight": 33
+          },
+          {
+            "type": "502",
+            "weight": 3
+          },
+          {
+            "type": "503",
+            "weight": 1
+          },
+          {
+            "type": "601",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "408",
+      "name": "CoffeeMachine08",
+      "next": "409",
+      "sellingPrice": 6,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "501",
+            "weight": 32
+          },
+          {
+            "type": "502",
+            "weight": 4
+          },
+          {
+            "type": "503",
+            "weight": 1
+          },
+          {
+            "type": "601",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "409",
+      "name": "CoffeeMachine09",
+      "next": "410",
+      "sellingPrice": 7,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "501",
+            "weight": 31
+          },
+          {
+            "type": "502",
+            "weight": 5
+          },
+          {
+            "type": "503",
+            "weight": 1
+          },
+          {
+            "type": "601",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "410",
+      "name": "CoffeeMachine10",
+      "next": "411",
+      "sellingPrice": 8,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "501",
+            "weight": 31
+          },
+          {
+            "type": "502",
+            "weight": 4
+          },
+          {
+            "type": "503",
+            "weight": 2
+          },
+          {
+            "type": "601",
+            "weight": 5
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "411",
+      "name": "CoffeeMachine11",
+      "next": null,
+      "sellingPrice": 9,
+      "imageKey": null,
+      "generator": {
+        "pool": [
+          {
+            "type": "501",
+            "weight": 31
+          },
+          {
+            "type": "502",
+            "weight": 4
+          },
+          {
+            "type": "503",
+            "weight": 2
+          },
+          {
+            "type": "601",
+            "weight": 4
+          },
+          {
+            "type": "602",
+            "weight": 1
+          }
+        ],
+        "batch": 80,
+        "storage": 240,
+        "cooldownSeconds": 180,
+        "storageRecoverySeconds": 300,
+        "cost": 1
+      }
+    },
+    {
+      "type": "501",
+      "name": "Coffee01",
+      "next": "502",
+      "sellingPrice": 0,
+      "imageKey": "asset:Coffee01"
+    },
+    {
+      "type": "502",
+      "name": "Coffee02",
+      "next": "503",
+      "sellingPrice": 0,
+      "imageKey": "asset:Coffee02"
+    },
+    {
+      "type": "503",
+      "name": "Coffee03",
+      "next": "504",
+      "sellingPrice": 0,
+      "imageKey": "asset:Coffee03"
+    },
+    {
+      "type": "504",
+      "name": "Coffee04",
+      "next": "505",
+      "sellingPrice": 0,
+      "imageKey": "asset:Coffee04"
+    },
+    {
+      "type": "505",
+      "name": "Coffee05",
+      "next": "506",
+      "sellingPrice": 1,
+      "imageKey": "asset:Coffee05"
+    },
+    {
+      "type": "506",
+      "name": "Coffee06",
+      "next": "507",
+      "sellingPrice": 2,
+      "imageKey": "asset:Coffee06"
+    },
+    {
+      "type": "507",
+      "name": "Coffee07",
+      "next": "508",
+      "sellingPrice": 3,
+      "imageKey": "asset:Coffee07"
+    },
+    {
+      "type": "508",
+      "name": "Coffee08",
+      "next": "509",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "509",
+      "name": "Coffee09",
+      "next": "510",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "510",
+      "name": "Coffee10",
+      "next": "511",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "511",
+      "name": "Coffee11",
+      "next": "512",
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "512",
+      "name": "Coffee12",
+      "next": "513",
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "513",
+      "name": "Coffee13",
+      "next": "514",
+      "sellingPrice": 9,
+      "imageKey": null
+    },
+    {
+      "type": "514",
+      "name": "Coffee14",
+      "next": null,
+      "sellingPrice": 10,
+      "imageKey": null
+    },
+    {
+      "type": "601",
+      "name": "Tea01",
+      "next": "602",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "602",
+      "name": "Tea02",
+      "next": "603",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "603",
+      "name": "Tea03",
+      "next": "604",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "604",
+      "name": "Tea04",
+      "next": "605",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "605",
+      "name": "Tea05",
+      "next": "606",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "606",
+      "name": "Tea06",
+      "next": "607",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "607",
+      "name": "Tea07",
+      "next": null,
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "701",
+      "name": "Fishing01",
+      "next": "702",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "702",
+      "name": "Fishing02",
+      "next": "703",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "703",
+      "name": "Fishing03",
+      "next": "704",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "704",
+      "name": "Fishing04",
+      "next": "705",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "705",
+      "name": "Fishing05",
+      "next": "706",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "706",
+      "name": "Fishing06",
+      "next": "707",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "707",
+      "name": "Fishing07",
+      "next": "708",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "708",
+      "name": "Fishing08",
+      "next": "709",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "709",
+      "name": "Fishing09",
+      "next": "710",
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "710",
+      "name": "Fishing10",
+      "next": "711",
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "711",
+      "name": "Fishing11",
+      "next": null,
+      "sellingPrice": 9,
+      "imageKey": null
+    },
+    {
+      "type": "801",
+      "name": "RawFish01",
+      "next": "802",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "802",
+      "name": "RawFish02",
+      "next": "803",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "803",
+      "name": "RawFish03",
+      "next": "804",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "804",
+      "name": "RawFish04",
+      "next": "805",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "805",
+      "name": "RawFish05",
+      "next": null,
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "901",
+      "name": "Seafood01",
+      "next": "902",
+      "sellingPrice": 0,
+      "imageKey": "asset:Seafood01"
+    },
+    {
+      "type": "902",
+      "name": "Seafood02",
+      "next": "903",
+      "sellingPrice": 0,
+      "imageKey": "asset:Seafood02"
+    },
+    {
+      "type": "903",
+      "name": "Seafood03",
+      "next": "904",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "904",
+      "name": "Seafood04",
+      "next": "905",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "905",
+      "name": "Seafood05",
+      "next": "906",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "906",
+      "name": "Seafood06",
+      "next": "907",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "907",
+      "name": "Seafood07",
+      "next": "908",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "908",
+      "name": "Seafood08",
+      "next": "909",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "909",
+      "name": "Seafood09",
+      "next": "910",
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "910",
+      "name": "Seafood10",
+      "next": null,
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "1001",
+      "name": "OrangeTree01",
+      "next": "1002",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1002",
+      "name": "OrangeTree02",
+      "next": "1003",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1003",
+      "name": "OrangeTree03",
+      "next": "1004",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "1004",
+      "name": "OrangeTree04",
+      "next": "1005",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "1005",
+      "name": "OrangeTree05",
+      "next": "1006",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "1006",
+      "name": "OrangeTree06",
+      "next": "1007",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "1007",
+      "name": "OrangeTree07",
+      "next": "1008",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "1008",
+      "name": "OrangeTree08",
+      "next": "1009",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "1009",
+      "name": "OrangeTree09",
+      "next": "1010",
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "1010",
+      "name": "OrangeTree10",
+      "next": null,
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "1101",
+      "name": "Orange01",
+      "next": "1102",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1102",
+      "name": "Orange02",
+      "next": "1103",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1103",
+      "name": "Orange03",
+      "next": "1104",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "1104",
+      "name": "Orange04",
+      "next": "1105",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "1105",
+      "name": "Orange05",
+      "next": "1106",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "1106",
+      "name": "Orange06",
+      "next": "1107",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "1107",
+      "name": "Orange07",
+      "next": null,
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "1201",
+      "name": "PoolStorage01",
+      "next": "1202",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1202",
+      "name": "PoolStorage02",
+      "next": "1203",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1203",
+      "name": "PoolStorage03",
+      "next": "1204",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "1204",
+      "name": "PoolStorage04",
+      "next": "1205",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "1205",
+      "name": "PoolStorage05",
+      "next": "1206",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "1206",
+      "name": "PoolStorage06",
+      "next": "1207",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "1207",
+      "name": "PoolStorage07",
+      "next": "1208",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "1208",
+      "name": "PoolStorage08",
+      "next": "1209",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "1209",
+      "name": "PoolStorage09",
+      "next": "1210",
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "1210",
+      "name": "PoolStorage10",
+      "next": "1211",
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "1211",
+      "name": "PoolStorage11",
+      "next": null,
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "1301",
+      "name": "SwimmingRing01",
+      "next": "1302",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1302",
+      "name": "SwimmingRing02",
+      "next": "1303",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1303",
+      "name": "SwimmingRing03",
+      "next": "1304",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "1304",
+      "name": "SwimmingRing04",
+      "next": "1305",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "1305",
+      "name": "SwimmingRing05",
+      "next": "1306",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "1306",
+      "name": "SwimmingRing06",
+      "next": "1307",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "1307",
+      "name": "SwimmingRing07",
+      "next": "1308",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "1308",
+      "name": "SwimmingRing08",
+      "next": "1309",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "1309",
+      "name": "SwimmingRing09",
+      "next": "1310",
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "1310",
+      "name": "SwimmingRing10",
+      "next": "1311",
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "1311",
+      "name": "SwimmingRing11",
+      "next": null,
+      "sellingPrice": 9,
+      "imageKey": null
+    },
+    {
+      "type": "1401",
+      "name": "DiveGear01",
+      "next": "1402",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1402",
+      "name": "DiveGear02",
+      "next": "1403",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1403",
+      "name": "DiveGear03",
+      "next": "1404",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "1404",
+      "name": "DiveGear04",
+      "next": "1405",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "1405",
+      "name": "DiveGear05",
+      "next": "1406",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "1406",
+      "name": "DiveGear06",
+      "next": "1407",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "1407",
+      "name": "DiveGear07",
+      "next": null,
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "1501",
+      "name": "DogHouse01",
+      "next": "1502",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1502",
+      "name": "DogHouse02",
+      "next": "1503",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1503",
+      "name": "DogHouse03",
+      "next": "1504",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "1504",
+      "name": "DogHouse04",
+      "next": "1505",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "1505",
+      "name": "DogHouse05",
+      "next": "1506",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "1506",
+      "name": "DogHouse06",
+      "next": "1507",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "1507",
+      "name": "DogHouse07",
+      "next": null,
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "1601",
+      "name": "Dog01",
+      "next": "1602",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1602",
+      "name": "Dog02",
+      "next": "1603",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1603",
+      "name": "Dog03",
+      "next": "1604",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1604",
+      "name": "Dog04",
+      "next": "1605",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "1605",
+      "name": "Dog05",
+      "next": "1606",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "1606",
+      "name": "Dog06",
+      "next": "1607",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "1607",
+      "name": "Dog07",
+      "next": "1608",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "1608",
+      "name": "Dog08",
+      "next": "1609",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "1609",
+      "name": "Dog09",
+      "next": "1610",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "1610",
+      "name": "Dog10",
+      "next": null,
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "1701",
+      "name": "Coral01",
+      "next": "1702",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1702",
+      "name": "Coral02",
+      "next": "1703",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1703",
+      "name": "Coral03",
+      "next": "1704",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "1704",
+      "name": "Coral04",
+      "next": "1705",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "1705",
+      "name": "Coral05",
+      "next": "1706",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "1706",
+      "name": "Coral06",
+      "next": "1707",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "1707",
+      "name": "Coral07",
+      "next": "1708",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "1708",
+      "name": "Coral08",
+      "next": "1709",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "1709",
+      "name": "Coral09",
+      "next": "1710",
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "1710",
+      "name": "Coral10",
+      "next": "1711",
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "1711",
+      "name": "Coral11",
+      "next": null,
+      "sellingPrice": 9,
+      "imageKey": null
+    },
+    {
+      "type": "1801",
+      "name": "Seashell01",
+      "next": "1802",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1802",
+      "name": "Seashell02",
+      "next": "1803",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1803",
+      "name": "Seashell03",
+      "next": "1804",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "1804",
+      "name": "Seashell04",
+      "next": "1805",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "1805",
+      "name": "Seashell05",
+      "next": "1806",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "1806",
+      "name": "Seashell06",
+      "next": "1807",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "1807",
+      "name": "Seashell07",
+      "next": "1808",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "1808",
+      "name": "Seashell08",
+      "next": "1809",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "1809",
+      "name": "Seashell09",
+      "next": "1810",
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "1810",
+      "name": "Seashell10",
+      "next": "1811",
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "1811",
+      "name": "Seashell11",
+      "next": "1812",
+      "sellingPrice": 9,
+      "imageKey": null
+    },
+    {
+      "type": "1812",
+      "name": "Seashell12",
+      "next": null,
+      "sellingPrice": 10,
+      "imageKey": null
+    },
+    {
+      "type": "1901",
+      "name": "LegoBox01",
+      "next": "1902",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1902",
+      "name": "LegoBox02",
+      "next": "1903",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "1903",
+      "name": "LegoBox03",
+      "next": "1904",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "1904",
+      "name": "LegoBox04",
+      "next": "1905",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "1905",
+      "name": "LegoBox05",
+      "next": "1906",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "1906",
+      "name": "LegoBox06",
+      "next": null,
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "2001",
+      "name": "LegoBrick01",
+      "next": "2002",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2002",
+      "name": "LegoBrick02",
+      "next": "2003",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2003",
+      "name": "LegoBrick03",
+      "next": "2004",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2004",
+      "name": "LegoBrick04",
+      "next": "2005",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "2005",
+      "name": "LegoBrick05",
+      "next": "2006",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "2006",
+      "name": "LegoBrick06",
+      "next": "2007",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "2007",
+      "name": "LegoBrick07",
+      "next": "2008",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "2008",
+      "name": "LegoBrick08",
+      "next": "2009",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "2009",
+      "name": "LegoBrick09",
+      "next": "2010",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "2010",
+      "name": "LegoBrick10",
+      "next": null,
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "2401",
+      "name": "Coin01",
+      "next": "2402",
+      "sellingPrice": 0,
+      "imageKey": "asset:Coin01"
+    },
+    {
+      "type": "2402",
+      "name": "Coin02",
+      "next": "2403",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2403",
+      "name": "Coin03",
+      "next": "2404",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2404",
+      "name": "Coin04",
+      "next": "2405",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2405",
+      "name": "Coin05",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2501",
+      "name": "Gem01",
+      "next": "2502",
+      "sellingPrice": 0,
+      "imageKey": "asset:Gem01"
+    },
+    {
+      "type": "2502",
+      "name": "Gem02",
+      "next": "2503",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2503",
+      "name": "Gem03",
+      "next": "2504",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2504",
+      "name": "Gem04",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2601",
+      "name": "Energy01",
+      "next": "2602",
+      "sellingPrice": 0,
+      "imageKey": "asset:Energy01"
+    },
+    {
+      "type": "2602",
+      "name": "Energy02",
+      "next": "2603",
+      "sellingPrice": 0,
+      "imageKey": "asset:Energy02"
+    },
+    {
+      "type": "2603",
+      "name": "Energy03",
+      "next": "2604",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2604",
+      "name": "Energy04",
+      "next": "2605",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2605",
+      "name": "Energy05",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2701",
+      "name": "RedChest01",
+      "next": "2702",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2702",
+      "name": "RedChest02",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2801",
+      "name": "GreenChest01",
+      "next": "2802",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2802",
+      "name": "GreenChest02",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "2901",
+      "name": "EnergyChest",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "3001",
+      "name": "FreeChest",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "3101",
+      "name": "CoinChest",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "3201",
+      "name": "PaperBox",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "3301",
+      "name": "Cobweb",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "3401",
+      "name": "Bubble",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "3501",
+      "name": "TutorialChest",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "3601",
+      "name": "StarterChest",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "3701",
+      "name": "DailyChest01",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "3801",
+      "name": "DailyChest02",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "3901",
+      "name": "DailyChest03",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "4001",
+      "name": "MotherSelectChest",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "4101",
+      "name": "NormalSelectChest",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "8301",
+      "name": "Bird01",
+      "next": "8302",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "8302",
+      "name": "Bird02",
+      "next": "8303",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "8303",
+      "name": "Bird03",
+      "next": "8304",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "8304",
+      "name": "Bird04",
+      "next": "8305",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "8305",
+      "name": "Bird05",
+      "next": "8306",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "8306",
+      "name": "Bird06",
+      "next": "8307",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "8307",
+      "name": "Bird07",
+      "next": "8308",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "8308",
+      "name": "Bird08",
+      "next": "8309",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "8309",
+      "name": "Bird09",
+      "next": "8310",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "8310",
+      "name": "Bird10",
+      "next": "8311",
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "8311",
+      "name": "Bird11",
+      "next": "8312",
+      "sellingPrice": 8,
+      "imageKey": null
+    },
+    {
+      "type": "8312",
+      "name": "Bird12",
+      "next": "8313",
+      "sellingPrice": 9,
+      "imageKey": null
+    },
+    {
+      "type": "8313",
+      "name": "Bird13",
+      "next": null,
+      "sellingPrice": 10,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_1_1",
+      "name": "Type sp3_1_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_2_1",
+      "name": "Type sp3_2_1",
+      "next": "sp3_2_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_2_2",
+      "name": "Type sp3_2_2",
+      "next": "sp3_2_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_2_3",
+      "name": "Type sp3_2_3",
+      "next": "sp3_2_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_2_4",
+      "name": "Type sp3_2_4",
+      "next": "sp3_2_5",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_2_5",
+      "name": "Type sp3_2_5",
+      "next": "sp3_2_6",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_2_6",
+      "name": "Type sp3_2_6",
+      "next": "sp3_2_7",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_2_7",
+      "name": "Type sp3_2_7",
+      "next": "sp3_2_8",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_2_8",
+      "name": "Type sp3_2_8",
+      "next": "sp3_2_9",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_2_9",
+      "name": "Type sp3_2_9",
+      "next": "sp3_2_10",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_2_10",
+      "name": "Type sp3_2_10",
+      "next": null,
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_3_1",
+      "name": "Type sp3_3_1",
+      "next": "sp3_3_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_3_2",
+      "name": "Type sp3_3_2",
+      "next": "sp3_3_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_3_3",
+      "name": "Type sp3_3_3",
+      "next": "sp3_3_4",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_3_4",
+      "name": "Type sp3_3_4",
+      "next": "sp3_3_5",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_3_5",
+      "name": "Type sp3_3_5",
+      "next": "sp3_3_6",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "sp3_3_6",
+      "name": "Type sp3_3_6",
+      "next": null,
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "BPsp_gift_1",
+      "name": "Type BPsp_gift_1",
+      "next": "BPsp_gift_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "BPsp_gift_2",
+      "name": "Type BPsp_gift_2",
+      "next": "BPsp_gift_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "BPsp_gift_3",
+      "name": "Type BPsp_gift_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "BPob_gift_1",
+      "name": "Type BPob_gift_1",
+      "next": "BPob_gift_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "BPob_gift_2",
+      "name": "Type BPob_gift_2",
+      "next": "BPob_gift_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "BPob_gift_3",
+      "name": "Type BPob_gift_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "BP_gift_1",
+      "name": "Type BP_gift_1",
+      "next": "BP_gift_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "BP_gift_2",
+      "name": "Type BP_gift_2",
+      "next": "BP_gift_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "BP_gift_3",
+      "name": "Type BP_gift_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "md_hw_gift_1",
+      "name": "Type md_hw_gift_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "md_hw_gift_2",
+      "name": "Type md_hw_gift_2",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_1_1",
+      "name": "Type sp4_1_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_2_1",
+      "name": "Type sp4_2_1",
+      "next": "sp4_2_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_2_2",
+      "name": "Type sp4_2_2",
+      "next": "sp4_2_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_2_3",
+      "name": "Type sp4_2_3",
+      "next": "sp4_2_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_2_4",
+      "name": "Type sp4_2_4",
+      "next": null,
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_3_1",
+      "name": "Type sp4_3_1",
+      "next": "sp4_3_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_3_2",
+      "name": "Type sp4_3_2",
+      "next": "sp4_3_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_3_3",
+      "name": "Type sp4_3_3",
+      "next": "sp4_3_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_3_4",
+      "name": "Type sp4_3_4",
+      "next": "sp4_3_5",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_3_5",
+      "name": "Type sp4_3_5",
+      "next": "sp4_3_6",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_3_6",
+      "name": "Type sp4_3_6",
+      "next": "sp4_3_7",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_3_7",
+      "name": "Type sp4_3_7",
+      "next": "sp4_3_8",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_3_8",
+      "name": "Type sp4_3_8",
+      "next": "sp4_3_9",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_3_9",
+      "name": "Type sp4_3_9",
+      "next": "sp4_3_10",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "sp4_3_10",
+      "name": "Type sp4_3_10",
+      "next": null,
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "ShopNewChest_1",
+      "name": "Type ShopNewChest_1",
+      "next": "ShopNewChest_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "ShopNewChest_2",
+      "name": "Type ShopNewChest_2",
+      "next": "ShopNewChest_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "ShopNewChest_3",
+      "name": "Type ShopNewChest_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_1_1",
+      "name": "Type sp5_1_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_2_1",
+      "name": "Type sp5_2_1",
+      "next": "sp5_2_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_2_2",
+      "name": "Type sp5_2_2",
+      "next": "sp5_2_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_2_3",
+      "name": "Type sp5_2_3",
+      "next": "sp5_2_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_2_4",
+      "name": "Type sp5_2_4",
+      "next": "sp5_2_5",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_2_5",
+      "name": "Type sp5_2_5",
+      "next": "sp5_2_6",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_2_6",
+      "name": "Type sp5_2_6",
+      "next": "sp5_2_7",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_2_7",
+      "name": "Type sp5_2_7",
+      "next": "sp5_2_8",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_2_8",
+      "name": "Type sp5_2_8",
+      "next": "sp5_2_9",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_2_9",
+      "name": "Type sp5_2_9",
+      "next": "sp5_2_10",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "sp5_2_10",
+      "name": "Type sp5_2_10",
+      "next": null,
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "infi_ene_1",
+      "name": "Type infi_ene_1",
+      "next": "infi_ene_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "infi_ene_2",
+      "name": "Type infi_ene_2",
+      "next": "infi_ene_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "infi_ene_3",
+      "name": "Type infi_ene_3",
+      "next": "infi_ene_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "infi_ene_4",
+      "name": "Type infi_ene_4",
+      "next": "infi_ene_5",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "infi_ene_5",
+      "name": "Type infi_ene_5",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "level_up_piece_1",
+      "name": "Type level_up_piece_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "level_down_piece_1",
+      "name": "Type level_down_piece_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "time_skip_1",
+      "name": "Type time_skip_1",
+      "next": "time_skip_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "time_skip_2",
+      "name": "Type time_skip_2",
+      "next": "time_skip_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "time_skip_3",
+      "name": "Type time_skip_3",
+      "next": "time_skip_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "time_skip_4",
+      "name": "Type time_skip_4",
+      "next": "time_skip_5",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "time_skip_5",
+      "name": "Type time_skip_5",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_1_1",
+      "name": "Type sp6_1_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_2_1",
+      "name": "Type sp6_2_1",
+      "next": "sp6_2_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_2_2",
+      "name": "Type sp6_2_2",
+      "next": "sp6_2_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_2_3",
+      "name": "Type sp6_2_3",
+      "next": "sp6_2_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_2_4",
+      "name": "Type sp6_2_4",
+      "next": "sp6_2_5",
+      "sellingPrice": 1,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_2_5",
+      "name": "Type sp6_2_5",
+      "next": "sp6_2_6",
+      "sellingPrice": 2,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_2_6",
+      "name": "Type sp6_2_6",
+      "next": "sp6_2_7",
+      "sellingPrice": 3,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_2_7",
+      "name": "Type sp6_2_7",
+      "next": "sp6_2_8",
+      "sellingPrice": 4,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_2_8",
+      "name": "Type sp6_2_8",
+      "next": "sp6_2_9",
+      "sellingPrice": 5,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_2_9",
+      "name": "Type sp6_2_9",
+      "next": "sp6_2_10",
+      "sellingPrice": 6,
+      "imageKey": null
+    },
+    {
+      "type": "sp6_2_10",
+      "name": "Type sp6_2_10",
+      "next": null,
+      "sellingPrice": 7,
+      "imageKey": null
+    },
+    {
+      "type": "daily_task_chestA_1",
+      "name": "Type daily_task_chestA_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "daily_task_chestB_1",
+      "name": "Type daily_task_chestB_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "daily_task_chestC_1",
+      "name": "Type daily_task_chestC_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "ns_2_1",
+      "name": "Type ns_2_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "ns_3_1",
+      "name": "Type ns_3_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "ns_4_1",
+      "name": "Type ns_4_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "4201",
+      "name": "GeneratorSelectChest",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "truckbox_1",
+      "name": "Type truckbox_1",
+      "next": "truckbox_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "truckbox_2",
+      "name": "Type truckbox_2",
+      "next": "truckbox_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "truckbox_3",
+      "name": "Type truckbox_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "os_1_1",
+      "name": "Type os_1_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "os_2_1",
+      "name": "Type os_2_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "deco_event_gift_s_1",
+      "name": "Type deco_event_gift_s_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "deco_event_gift_b_1",
+      "name": "Type deco_event_gift_b_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "speed_bubble_1",
+      "name": "Type speed_bubble_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "re_ch_1_1_1",
+      "name": "Type re_ch_1_1_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "re_ch_1_2_1",
+      "name": "Type re_ch_1_2_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "re_ch_1_3_1",
+      "name": "Type re_ch_1_3_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "re_ch_2_1_1",
+      "name": "Type re_ch_2_1_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "re_ch_2_2_1",
+      "name": "Type re_ch_2_2_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "re_ch_2_3_1",
+      "name": "Type re_ch_2_3_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "rc_a_1",
+      "name": "Type rc_a_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "rc_b_1",
+      "name": "Type rc_b_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "rc_c_1",
+      "name": "Type rc_c_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "rc_d_1",
+      "name": "Type rc_d_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "rc_e_1",
+      "name": "Type rc_e_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "rc_f_1",
+      "name": "Type rc_f_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "scratch_a_1",
+      "name": "Type scratch_a_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "scratch_b_1",
+      "name": "Type scratch_b_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "gift_olivia_1",
+      "name": "Type gift_olivia_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "gift_quinn_1",
+      "name": "Type gift_quinn_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "gift_harrison_1",
+      "name": "Type gift_harrison_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "Bp_chest_a_1",
+      "name": "Type Bp_chest_a_1",
+      "next": "Bp_chest_a_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "Bp_chest_a_2",
+      "name": "Type Bp_chest_a_2",
+      "next": "Bp_chest_a_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "Bp_chest_a_3",
+      "name": "Type Bp_chest_a_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "Bp_chest_b_1",
+      "name": "Type Bp_chest_b_1",
+      "next": "Bp_chest_b_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "Bp_chest_b_2",
+      "name": "Type Bp_chest_b_2",
+      "next": "Bp_chest_b_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "Bp_chest_b_3",
+      "name": "Type Bp_chest_b_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "Bp_chest_c_1",
+      "name": "Type Bp_chest_c_1",
+      "next": "Bp_chest_c_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "Bp_chest_c_2",
+      "name": "Type Bp_chest_c_2",
+      "next": "Bp_chest_c_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "Bp_chest_c_3",
+      "name": "Type Bp_chest_c_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "re_ch_1_4_1",
+      "name": "Type re_ch_1_4_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "re_ch_spe_1",
+      "name": "Type re_ch_spe_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "gift_sam_1",
+      "name": "Type gift_sam_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "fish_trophy_a_1",
+      "name": "Type fish_trophy_a_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "fish_trophy_b_1",
+      "name": "Type fish_trophy_b_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "fish_trophy_c_1",
+      "name": "Type fish_trophy_c_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "gift_mark_1",
+      "name": "Type gift_mark_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "gift_amala_1",
+      "name": "Type gift_amala_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "temp_1",
+      "name": "Type temp_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "gift_colton_1",
+      "name": "Type gift_colton_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "s5_fly_a_1",
+      "name": "Type s5_fly_a_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "s5_fly_b_1",
+      "name": "Type s5_fly_b_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "s5_fly_c_1",
+      "name": "Type s5_fly_c_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_order_chest_s_1",
+      "name": "Type main_order_chest_s_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_order_chest_m_1",
+      "name": "Type main_order_chest_m_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_order_chest_b_1",
+      "name": "Type main_order_chest_b_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_nugget_1",
+      "name": "Type main_nugget_1",
+      "next": "2401",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_gem_1",
+      "name": "Type main_gem_1",
+      "next": "2501",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "reward_bubble_1",
+      "name": "Type reward_bubble_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_fry_chest_1",
+      "name": "Type main_fry_chest_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_tea_chest_1",
+      "name": "Type main_tea_chest_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_seafood_chest_1",
+      "name": "Type main_seafood_chest_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_orange_chest_1",
+      "name": "Type main_orange_chest_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_dive_chest_1",
+      "name": "Type main_dive_chest_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "gift_lori_1",
+      "name": "Type gift_lori_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "fog_1",
+      "name": "Type fog_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "property_bubble_1",
+      "name": "Type property_bubble_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_anni_cake_a_1",
+      "name": "Type main_anni_cake_a_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_anni_cake_b_1",
+      "name": "Type main_anni_cake_b_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_anni_cake_c_1",
+      "name": "Type main_anni_cake_c_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_anni_cake_d_1",
+      "name": "Type main_anni_cake_d_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_anni_cake_e_1",
+      "name": "Type main_anni_cake_e_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_anni_cake_f_1",
+      "name": "Type main_anni_cake_f_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_energy_1",
+      "name": "Type main_energy_1",
+      "next": "2601",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "gift_ziva_1",
+      "name": "Type gift_ziva_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_hallow_ball_1",
+      "name": "Type main_hallow_ball_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_hallow_book_1",
+      "name": "Type main_hallow_book_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "locked_1",
+      "name": "Type locked_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_crystal_ball_1",
+      "name": "Type main_crystal_ball_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_common_5_1",
+      "name": "Type main_pack_common_5_1",
+      "next": "main_pack_common_5_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_common_5_2",
+      "name": "Type main_pack_common_5_2",
+      "next": "main_pack_common_5_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_common_5_3",
+      "name": "Type main_pack_common_5_3",
+      "next": "rb#pack_common_5",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_ball_1",
+      "name": "Type main_super_ball_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_common_3_1",
+      "name": "Type main_pack_common_3_1",
+      "next": "main_pack_common_3_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_common_3_2",
+      "name": "Type main_pack_common_3_2",
+      "next": "rb#pack_common_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_xmas_cake_a_1",
+      "name": "Type main_xmas_cake_a_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_xmas_cake_b_1",
+      "name": "Type main_xmas_cake_b_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_xmas_cake_c_1",
+      "name": "Type main_xmas_cake_c_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_xmas_cake_d_1",
+      "name": "Type main_xmas_cake_d_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_xmas_cake_e_1",
+      "name": "Type main_xmas_cake_e_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_cs_1_1",
+      "name": "Type main_cs_1_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_cs_2_1",
+      "name": "Type main_cs_2_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_gem_super_1",
+      "name": "Type main_gem_super_1",
+      "next": "main_gem_super_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_gem_super_2",
+      "name": "Type main_gem_super_2",
+      "next": "main_gem_super_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_gem_super_3",
+      "name": "Type main_gem_super_3",
+      "next": "main_gem_super_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_gem_super_4",
+      "name": "Type main_gem_super_4",
+      "next": "main_gem_super_5",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_gem_super_5",
+      "name": "Type main_gem_super_5",
+      "next": "main_gem_super_6",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_gem_super_6",
+      "name": "Type main_gem_super_6",
+      "next": "main_gem_super_7",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_gem_super_7",
+      "name": "Type main_gem_super_7",
+      "next": "main_gem_super_8",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_gem_super_8",
+      "name": "Type main_gem_super_8",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gem_1",
+      "name": "Type main_super_gem_1",
+      "next": "main_super_gem_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gem_2",
+      "name": "Type main_super_gem_2",
+      "next": "main_super_gem_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gem_3",
+      "name": "Type main_super_gem_3",
+      "next": "main_super_gem_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gem_4",
+      "name": "Type main_super_gem_4",
+      "next": "main_super_gem_5",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gem_5",
+      "name": "Type main_super_gem_5",
+      "next": "main_super_gem_6",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gem_6",
+      "name": "Type main_super_gem_6",
+      "next": "main_super_gem_7",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gem_7",
+      "name": "Type main_super_gem_7",
+      "next": "main_super_gem_8",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gem_8",
+      "name": "Type main_super_gem_8",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "gift_carmen_1",
+      "name": "Type gift_carmen_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_energy_1",
+      "name": "Type main_super_energy_1",
+      "next": "main_super_energy_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_energy_2",
+      "name": "Type main_super_energy_2",
+      "next": "main_super_energy_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_energy_3",
+      "name": "Type main_super_energy_3",
+      "next": "main_super_energy_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_energy_4",
+      "name": "Type main_super_energy_4",
+      "next": "main_super_energy_5",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_energy_5",
+      "name": "Type main_super_energy_5",
+      "next": "main_super_energy_6",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_energy_6",
+      "name": "Type main_super_energy_6",
+      "next": "main_super_energy_7",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_energy_7",
+      "name": "Type main_super_energy_7",
+      "next": "main_super_energy_8",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_energy_8",
+      "name": "Type main_super_energy_8",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gold_1",
+      "name": "Type main_super_gold_1",
+      "next": "main_super_gold_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gold_2",
+      "name": "Type main_super_gold_2",
+      "next": "main_super_gold_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gold_3",
+      "name": "Type main_super_gold_3",
+      "next": "main_super_gold_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gold_4",
+      "name": "Type main_super_gold_4",
+      "next": "main_super_gold_5",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gold_5",
+      "name": "Type main_super_gold_5",
+      "next": "main_super_gold_6",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gold_6",
+      "name": "Type main_super_gold_6",
+      "next": "main_super_gold_7",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gold_7",
+      "name": "Type main_super_gold_7",
+      "next": "main_super_gold_8",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_super_gold_8",
+      "name": "Type main_super_gold_8",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_e_chest_new_1",
+      "name": "Type main_e_chest_new_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_e_chest_new2_1",
+      "name": "Type main_e_chest_new2_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_g_chest_new_1",
+      "name": "Type main_g_chest_new_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_t_chest_new_1",
+      "name": "Type main_t_chest_new_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_smart_pot_a_1",
+      "name": "Type main_smart_pot_a_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_smart_pot_b_1",
+      "name": "Type main_smart_pot_b_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_smart_pot_c_1",
+      "name": "Type main_smart_pot_c_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_smart_pot_d_1",
+      "name": "Type main_smart_pot_d_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_smart_pot_e_1",
+      "name": "Type main_smart_pot_e_1",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_laser_5_1",
+      "name": "Type main_pack_laser_5_1",
+      "next": "main_pack_laser_5_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_laser_5_2",
+      "name": "Type main_pack_laser_5_2",
+      "next": "main_pack_laser_5_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_laser_5_3",
+      "name": "Type main_pack_laser_5_3",
+      "next": "rb#pack_laser_5",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_royal_5_1",
+      "name": "Type main_pack_royal_5_1",
+      "next": "main_pack_royal_5_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_royal_5_2",
+      "name": "Type main_pack_royal_5_2",
+      "next": "main_pack_royal_5_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_pack_royal_5_3",
+      "name": "Type main_pack_royal_5_3",
+      "next": "rb#pack_royal_5",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_level_up_piece_1",
+      "name": "Type main_level_up_piece_1",
+      "next": "main_level_up_piece_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_level_up_piece_2",
+      "name": "Type main_level_up_piece_2",
+      "next": "main_level_up_piece_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_level_up_piece_3",
+      "name": "Type main_level_up_piece_3",
+      "next": "rb#level_up_piece_1",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_wheel_annual_token_1",
+      "name": "Type main_wheel_annual_token_1",
+      "next": "main_wheel_annual_token_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_wheel_annual_token_2",
+      "name": "Type main_wheel_annual_token_2",
+      "next": "main_wheel_annual_token_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_wheel_annual_token_3",
+      "name": "Type main_wheel_annual_token_3",
+      "next": "main_wheel_annual_token_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_wheel_annual_token_4",
+      "name": "Type main_wheel_annual_token_4",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_disco_s_1",
+      "name": "Type main_card_item_disco_s_1",
+      "next": "main_card_item_disco_s_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_disco_s_2",
+      "name": "Type main_card_item_disco_s_2",
+      "next": "main_card_item_disco_s_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_disco_s_3",
+      "name": "Type main_card_item_disco_s_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_disco_m_1",
+      "name": "Type main_card_item_disco_m_1",
+      "next": "main_card_item_disco_m_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_disco_m_2",
+      "name": "Type main_card_item_disco_m_2",
+      "next": "main_card_item_disco_m_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_disco_m_3",
+      "name": "Type main_card_item_disco_m_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_disco_b_1",
+      "name": "Type main_card_item_disco_b_1",
+      "next": "main_card_item_disco_b_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_disco_b_2",
+      "name": "Type main_card_item_disco_b_2",
+      "next": "main_card_item_disco_b_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_disco_b_3",
+      "name": "Type main_card_item_disco_b_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_infi_e_s_1",
+      "name": "Type main_card_item_infi_e_s_1",
+      "next": "main_card_item_infi_e_s_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_infi_e_s_2",
+      "name": "Type main_card_item_infi_e_s_2",
+      "next": "main_card_item_infi_e_s_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_infi_e_s_3",
+      "name": "Type main_card_item_infi_e_s_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_infi_e_b_1",
+      "name": "Type main_card_item_infi_e_b_1",
+      "next": "main_card_item_infi_e_b_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_infi_e_b_2",
+      "name": "Type main_card_item_infi_e_b_2",
+      "next": "main_card_item_infi_e_b_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_infi_e_b_3",
+      "name": "Type main_card_item_infi_e_b_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_s_1",
+      "name": "Type main_card_item_raccoon_s_1",
+      "next": "main_card_item_raccoon_s_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_s_2",
+      "name": "Type main_card_item_raccoon_s_2",
+      "next": "main_card_item_raccoon_s_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_s_3",
+      "name": "Type main_card_item_raccoon_s_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_m_1",
+      "name": "Type main_card_item_raccoon_m_1",
+      "next": "main_card_item_raccoon_m_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_m_2",
+      "name": "Type main_card_item_raccoon_m_2",
+      "next": "main_card_item_raccoon_m_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_m_3",
+      "name": "Type main_card_item_raccoon_m_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_b_1",
+      "name": "Type main_card_item_raccoon_b_1",
+      "next": "main_card_item_raccoon_b_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_b_2",
+      "name": "Type main_card_item_raccoon_b_2",
+      "next": "main_card_item_raccoon_b_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_b_3",
+      "name": "Type main_card_item_raccoon_b_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_smart_buff_1",
+      "name": "Type main_card_item_smart_buff_1",
+      "next": "main_card_item_smart_buff_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_smart_buff_2",
+      "name": "Type main_card_item_smart_buff_2",
+      "next": "main_card_item_smart_buff_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_smart_buff_3",
+      "name": "Type main_card_item_smart_buff_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_plane_s_1",
+      "name": "Type main_card_item_plane_s_1",
+      "next": "main_card_item_plane_s_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_plane_s_2",
+      "name": "Type main_card_item_plane_s_2",
+      "next": "main_card_item_plane_s_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_plane_s_3",
+      "name": "Type main_card_item_plane_s_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_plane_m_1",
+      "name": "Type main_card_item_plane_m_1",
+      "next": "main_card_item_plane_m_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_plane_m_2",
+      "name": "Type main_card_item_plane_m_2",
+      "next": "main_card_item_plane_m_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_plane_m_3",
+      "name": "Type main_card_item_plane_m_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_plane_b_1",
+      "name": "Type main_card_item_plane_b_1",
+      "next": "main_card_item_plane_b_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_plane_b_2",
+      "name": "Type main_card_item_plane_b_2",
+      "next": "main_card_item_plane_b_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_plane_b_3",
+      "name": "Type main_card_item_plane_b_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_customer_1",
+      "name": "Type main_card_item_raccoon_customer_1",
+      "next": "main_card_item_raccoon_customer_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_customer_2",
+      "name": "Type main_card_item_raccoon_customer_2",
+      "next": "main_card_item_raccoon_customer_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_raccoon_customer_3",
+      "name": "Type main_card_item_raccoon_customer_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_cannon_s_1",
+      "name": "Type main_card_item_cannon_s_1",
+      "next": "main_card_item_cannon_s_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_cannon_s_2",
+      "name": "Type main_card_item_cannon_s_2",
+      "next": "main_card_item_cannon_s_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_cannon_s_3",
+      "name": "Type main_card_item_cannon_s_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_cannon_b_1",
+      "name": "Type main_card_item_cannon_b_1",
+      "next": "main_card_item_cannon_b_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_cannon_b_2",
+      "name": "Type main_card_item_cannon_b_2",
+      "next": "main_card_item_cannon_b_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_cannon_b_3",
+      "name": "Type main_card_item_cannon_b_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_gem_s_1",
+      "name": "Type main_card_item_gem_s_1",
+      "next": "main_card_item_gem_s_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_gem_s_2",
+      "name": "Type main_card_item_gem_s_2",
+      "next": "main_card_item_gem_s_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_gem_s_3",
+      "name": "Type main_card_item_gem_s_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_gem_m_1",
+      "name": "Type main_card_item_gem_m_1",
+      "next": "main_card_item_gem_m_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_gem_m_2",
+      "name": "Type main_card_item_gem_m_2",
+      "next": "main_card_item_gem_m_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_gem_m_3",
+      "name": "Type main_card_item_gem_m_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_gem_b_1",
+      "name": "Type main_card_item_gem_b_1",
+      "next": "main_card_item_gem_b_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_gem_b_2",
+      "name": "Type main_card_item_gem_b_2",
+      "next": "main_card_item_gem_b_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_gem_b_3",
+      "name": "Type main_card_item_gem_b_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_energy_s_1",
+      "name": "Type main_card_item_energy_s_1",
+      "next": "main_card_item_energy_s_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_energy_s_2",
+      "name": "Type main_card_item_energy_s_2",
+      "next": "main_card_item_energy_s_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_energy_s_3",
+      "name": "Type main_card_item_energy_s_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_energy_m_1",
+      "name": "Type main_card_item_energy_m_1",
+      "next": "main_card_item_energy_m_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_energy_m_2",
+      "name": "Type main_card_item_energy_m_2",
+      "next": "main_card_item_energy_m_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_energy_m_3",
+      "name": "Type main_card_item_energy_m_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_energy_b_1",
+      "name": "Type main_card_item_energy_b_1",
+      "next": "main_card_item_energy_b_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_energy_b_2",
+      "name": "Type main_card_item_energy_b_2",
+      "next": "main_card_item_energy_b_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_energy_b_3",
+      "name": "Type main_card_item_energy_b_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_levelup_1",
+      "name": "Type main_card_item_levelup_1",
+      "next": "main_card_item_levelup_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_levelup_2",
+      "name": "Type main_card_item_levelup_2",
+      "next": "main_card_item_levelup_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_levelup_3",
+      "name": "Type main_card_item_levelup_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_pot_s_1",
+      "name": "Type main_card_item_pot_s_1",
+      "next": "main_card_item_pot_s_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_pot_s_2",
+      "name": "Type main_card_item_pot_s_2",
+      "next": "main_card_item_pot_s_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_pot_s_3",
+      "name": "Type main_card_item_pot_s_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_pot_m_1",
+      "name": "Type main_card_item_pot_m_1",
+      "next": "main_card_item_pot_m_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_pot_m_2",
+      "name": "Type main_card_item_pot_m_2",
+      "next": "main_card_item_pot_m_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_pot_m_3",
+      "name": "Type main_card_item_pot_m_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_pot_b_1",
+      "name": "Type main_card_item_pot_b_1",
+      "next": "main_card_item_pot_b_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_pot_b_2",
+      "name": "Type main_card_item_pot_b_2",
+      "next": "main_card_item_pot_b_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_pot_b_3",
+      "name": "Type main_card_item_pot_b_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_superball_1",
+      "name": "Type main_card_item_superball_1",
+      "next": "main_card_item_superball_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_superball_2",
+      "name": "Type main_card_item_superball_2",
+      "next": "main_card_item_superball_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_card_item_superball_3",
+      "name": "Type main_card_item_superball_3",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_cloud_key_1",
+      "name": "Type main_cloud_key_1",
+      "next": "main_cloud_key_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_cloud_key_2",
+      "name": "Type main_cloud_key_2",
+      "next": "main_cloud_key_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_cloud_key_3",
+      "name": "Type main_cloud_key_3",
+      "next": "main_cloud_key_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_cloud_key_4",
+      "name": "Type main_cloud_key_4",
+      "next": "main_cloud_key_5",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_cloud_key_5",
+      "name": "Type main_cloud_key_5",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_wheel_hallo26_token_1",
+      "name": "Type main_wheel_hallo26_token_1",
+      "next": "main_wheel_hallo26_token_2",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_wheel_hallo26_token_2",
+      "name": "Type main_wheel_hallo26_token_2",
+      "next": "main_wheel_hallo26_token_3",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_wheel_hallo26_token_3",
+      "name": "Type main_wheel_hallo26_token_3",
+      "next": "main_wheel_hallo26_token_4",
+      "sellingPrice": 0,
+      "imageKey": null
+    },
+    {
+      "type": "main_wheel_hallo26_token_4",
+      "name": "Type main_wheel_hallo26_token_4",
+      "next": null,
+      "sellingPrice": 0,
+      "imageKey": null
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "requirements": [
+        {
+          "type": "203",
+          "count": 1
+        }
+      ],
+      "coins": 2,
+      "level": 1,
+      "slots": [
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "requirements": [
+        {
+          "type": "208",
+          "count": 1
+        }
+      ],
+      "coins": 32,
+      "level": 1,
+      "slots": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "requirements": [
+        {
+          "type": "204",
+          "count": 1
+        }
+      ],
+      "coins": 4,
+      "level": 1,
+      "slots": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "requirements": [
+        {
+          "type": "206",
+          "count": 1
+        }
+      ],
+      "coins": 12,
+      "level": 1,
+      "slots": [
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "requirements": [
+        {
+          "type": "304",
+          "count": 1
+        }
+      ],
+      "coins": 14,
+      "level": 2,
+      "slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 6,
+      "requirements": [
+        {
+          "type": "303",
+          "count": 1
+        }
+      ],
+      "coins": 8,
+      "level": 2,
+      "slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 7,
+      "requirements": [
+        {
+          "type": "303",
+          "count": 1
+        },
+        {
+          "type": "206",
+          "count": 1
+        }
+      ],
+      "coins": 20,
+      "level": 2,
+      "slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 8,
+      "requirements": [
+        {
+          "type": "305",
+          "count": 1
+        }
+      ],
+      "coins": 24,
+      "level": 2,
+      "slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 9,
+      "requirements": [
+        {
+          "type": "208",
+          "count": 1
+        }
+      ],
+      "coins": 32,
+      "level": 2,
+      "slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 10,
+      "requirements": [
+        {
+          "type": "205",
+          "count": 1
+        },
+        {
+          "type": "303",
+          "count": 1
+        }
+      ],
+      "coins": 16,
+      "level": 2,
+      "slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 11,
+      "requirements": [
+        {
+          "type": "504",
+          "count": 2
+        }
+      ],
+      "coins": 8,
+      "level": 3,
+      "slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 12,
+      "requirements": [
+        {
+          "type": "205",
+          "count": 1
+        },
+        {
+          "type": "505",
+          "count": 1
+        }
+      ],
+      "coins": 16,
+      "level": 3,
+      "slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 13,
+      "requirements": [
+        {
+          "type": "505",
+          "count": 1
+        },
+        {
+          "type": "503",
+          "count": 1
+        }
+      ],
+      "coins": 10,
+      "level": 3,
+      "slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 14,
+      "requirements": [
+        {
+          "type": "603",
+          "count": 1
+        }
+      ],
+      "coins": 8,
+      "level": 4,
+      "slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 15,
+      "requirements": [
+        {
+          "type": "507",
+          "count": 1
+        },
+        {
+          "type": "204",
+          "count": 1
+        },
+        {
+          "type": "303",
+          "count": 1
+        }
+      ],
+      "coins": 36,
+      "level": 4,
+      "slots": [
+        3
+      ]
+    },
+    {
+      "id": 16,
+      "requirements": [
+        {
+          "type": "206",
+          "count": 1
+        },
+        {
+          "type": "604",
+          "count": 1
+        }
+      ],
+      "coins": 26,
+      "level": 4,
+      "slots": [
+        1,
+        2
+      ]
+    }
+  ],
+  "quests": [
+    {
+      "id": "1_1",
+      "name": "Day1 · 1_1",
+      "cost": 26,
+      "exp": 15,
+      "rewards": []
+    },
+    {
+      "id": "1_2",
+      "name": "Day1 · 1_2",
+      "cost": 16,
+      "exp": 15,
+      "rewards": []
+    },
+    {
+      "id": "1_3",
+      "name": "Day1 · 1_3",
+      "cost": 24,
+      "exp": 15,
+      "rewards": []
+    },
+    {
+      "id": "1_4",
+      "name": "Day1 · 1_4",
+      "cost": 46,
+      "exp": 15,
+      "rewards": [
+        {
+          "type": "1301",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "1_5",
+      "name": "Day1 · 1_5",
+      "cost": 25,
+      "exp": 15,
+      "rewards": []
+    },
+    {
+      "id": "1_6",
+      "name": "Day1 · 1_6",
+      "cost": 24,
+      "exp": 15,
+      "rewards": []
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "exp": 30,
+      "rewards": [
+        {
+          "type": "main_e_chest_new_1",
+          "count": 1
+        },
+        {
+          "type": "main_t_chest_new_1",
+          "count": 1
+        },
+        {
+          "type": "104",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "exp": 45,
+      "rewards": [
+        {
+          "type": "main_g_chest_new_1",
+          "count": 1
+        },
+        {
+          "type": "401",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "exp": 60,
+      "rewards": [
+        {
+          "type": "404",
+          "count": 1
+        },
+        {
+          "type": "main_e_chest_new2_1",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "exp": 75,
+      "rewards": [
+        {
+          "type": "2701",
+          "count": 1
+        },
+        {
+          "type": "main_g_chest_new_1",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "exp": 75,
+      "rewards": [
+        {
+          "type": "2701",
+          "count": 1
+        },
+        {
+          "type": "main_e_chest_new2_1",
+          "count": 1
+        },
+        {
+          "type": "703",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "exp": 90,
+      "rewards": [
+        {
+          "type": "2801",
+          "count": 1
+        },
+        {
+          "type": "2901",
+          "count": 1
+        },
+        {
+          "type": "1001",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "initialBoard": [
+    {
+      "type": "1002",
+      "cover": "box"
+    },
+    {
+      "type": "801",
+      "cover": "box"
+    },
+    {
+      "type": "1601",
+      "cover": "box"
+    },
+    {
+      "type": "603",
+      "cover": "box"
+    },
+    {
+      "type": "1005",
+      "cover": "box"
+    },
+    {
+      "type": "704",
+      "cover": "box"
+    },
+    {
+      "type": "1401",
+      "cover": "box"
+    },
+    {
+      "type": "1301",
+      "cover": "box"
+    },
+    {
+      "type": "207",
+      "cover": "box"
+    },
+    {
+      "type": "304",
+      "cover": "box"
+    },
+    {
+      "type": "503",
+      "cover": "box"
+    },
+    {
+      "type": "1302",
+      "cover": "box"
+    },
+    {
+      "type": "502",
+      "cover": "box"
+    },
+    {
+      "type": "906",
+      "cover": "box"
+    },
+    {
+      "type": "2401",
+      "cover": "box"
+    },
+    {
+      "type": "207",
+      "cover": "box"
+    },
+    {
+      "type": "206",
+      "cover": "box"
+    },
+    {
+      "type": "206",
+      "cover": "box"
+    },
+    {
+      "type": "501",
+      "cover": "box"
+    },
+    {
+      "type": "206",
+      "cover": "box"
+    },
+    {
+      "type": "2404",
+      "cover": "box"
+    },
+    {
+      "type": "204",
+      "cover": "box"
+    },
+    {
+      "type": "101",
+      "cover": null
+    },
+    {
+      "type": "202",
+      "cover": "box"
+    },
+    {
+      "type": "302",
+      "cover": "box"
+    },
+    {
+      "type": "202",
+      "cover": "box"
+    },
+    {
+      "type": "505",
+      "cover": "box"
+    },
+    {
+      "type": "702",
+      "cover": "box"
+    },
+    {
+      "type": "203",
+      "cover": "box"
+    },
+    {
+      "type": "101",
+      "cover": null
+    },
+    {
+      "type": "102",
+      "cover": "web"
+    },
+    {
+      "type": "103",
+      "cover": "box"
+    },
+    {
+      "type": "205",
+      "cover": "box"
+    },
+    {
+      "type": "403",
+      "cover": "box"
+    },
+    {
+      "type": "701",
+      "cover": "box"
+    },
+    {
+      "type": "401",
+      "cover": "box"
+    },
+    {
+      "type": "303",
+      "cover": "box"
+    },
+    {
+      "type": "301",
+      "cover": "box"
+    },
+    {
+      "type": "205",
+      "cover": "box"
+    },
+    {
+      "type": "203",
+      "cover": "box"
+    },
+    {
+      "type": "303",
+      "cover": "box"
+    },
+    {
+      "type": "803",
+      "cover": "box"
+    },
+    {
+      "type": "1603",
+      "cover": "box"
+    },
+    {
+      "type": "1201",
+      "cover": "box"
+    },
+    {
+      "type": "402",
+      "cover": "box"
+    },
+    {
+      "type": "1501",
+      "cover": "box"
+    },
+    {
+      "type": "1001",
+      "cover": "box"
+    },
+    {
+      "type": "1202",
+      "cover": "box"
+    },
+    {
+      "type": "510",
+      "cover": "box"
+    },
+    {
+      "type": "1103",
+      "cover": "box"
+    },
+    {
+      "type": "210",
+      "cover": "box"
+    },
+    {
+      "type": "1104",
+      "cover": "box"
+    },
+    {
+      "type": "1307",
+      "cover": "box"
+    },
+    {
+      "type": "1801",
+      "cover": "box"
+    },
+    {
+      "type": "1701",
+      "cover": "box"
+    },
+    {
+      "type": "907",
+      "cover": "box"
+    },
+    {
+      "type": "1805",
+      "cover": "box"
+    },
+    {
+      "type": "1305",
+      "cover": "box"
+    },
+    {
+      "type": "1702",
+      "cover": "box"
+    },
+    {
+      "type": "209",
+      "cover": "box"
+    },
+    {
+      "type": "1804",
+      "cover": "box"
+    },
+    {
+      "type": "1805",
+      "cover": "box"
+    },
+    {
+      "type": "1405",
+      "cover": "box"
+    }
+  ],
+  "initialReplay": [
+    {
+      "from": 22,
+      "to": 29,
+      "fromXY": [
+        2,
+        4
+      ],
+      "toXY": [
+        2,
+        5
+      ],
+      "result": "102",
+      "reason": "101+101; neighbor paperboxes peel to c# inner code"
+    },
+    {
+      "from": 29,
+      "to": 30,
+      "fromXY": [
+        2,
+        5
+      ],
+      "toXY": [
+        3,
+        5
+      ],
+      "targetBefore": "c#102",
+      "result": "103",
+      "reveals": {
+        "index": 31,
+        "code": "c#103"
+      }
+    },
+    {
+      "from": 30,
+      "to": 31,
+      "fromXY": [
+        3,
+        5
+      ],
+      "toXY": [
+        4,
+        5
+      ],
+      "targetBefore": "c#103",
+      "result": "104",
+      "reason": "first usable grocery generator; static derived path, tutorial force effects excluded"
+    }
+  ],
+  "chainSteps": [
+    {
+      "kind": "gem",
+      "cost": 20,
+      "energy": 100
+    },
+    {
+      "kind": "free-pack",
+      "packAppearance": "green"
+    },
+    {
+      "kind": "free-energy",
+      "energy": 15
+    },
+    {
+      "kind": "gem",
+      "cost": 40,
+      "energy": 100
+    },
+    {
+      "kind": "free-pack",
+      "packAppearance": "blue"
+    },
+    {
+      "kind": "free-energy",
+      "energy": 20
+    },
+    {
+      "kind": "waiting-unpurchased",
+      "cost": 80,
+      "energy": 100
+    }
+  ],
+  "functionGates": {
+    "inventory": 2,
+    "shop": 3,
+    "bubble": 4
+  },
+  "boundary": [
+    "APK4.10.5 내장 기본 설정을 사용하는 연구 실험이며 실기 관측이 아니다.",
+    "552종 합성/판매 identity, 선정 생성기16종과 처음16개 고정 주문을 투영했다. 후속 랜덤 주문은 만들지 않는다.",
+    "생성은 fixed pool 경로만 지원한다. smart/lucky/튜토리얼 강제/부스터/이벤트 보정은 제외한다. 웹 RNG는 원작 RNG가 아니다.",
+    "열린 보드의106/406 배치와 초기 에너지100·젬200·골드0은 연구 시나리오다. 원본 초기 보드는 별도 선택한다.",
+    "산출물을 첫 빈칸에 놓는 순서는 웹 규칙이며 원작 산출 위치 알고리즘을 재현하지 않는다.",
+    "맵은 기본 MainTask 분기의 첫6개이며 비용 배율1을 고정한다. fire변형·서버비용보정·스토리타임라인은 제외한다.",
+    "상점·상황형 오퍼 후보/임계치는 가정 입력이다. 실제 결제·광고·게임 서버에 연결하지 않는다.",
+    "보석 체인은 버전 미확인 과거 관측 시나리오다.80보석 단계 구매와 카드팩 내용은 미확인으로 남긴다.",
+    "저장은 이 브라우저의 연구 상태다. 오프라인 경과 최대7일은 웹 정책이며 현행 서버 규칙이 아니다."
+  ],
+  "sources": [
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+      "line_start": 1,
+      "line_end": 5828,
+      "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "552 base declarations; server-selected variants are not resolved",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemDefinition.lua",
+      "line_start": 1,
+      "line_end": 75,
+      "sha256": "af977ea7680b82cbffc5ae392de2fc47158e9cb570031a498ff6d316f8844051",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "explicit IDs, notably Coffee01=501, Flour01=201, Potato01=301",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/ItemFixedSpreadModel.lua",
+      "line_start": 13,
+      "line_end": 84,
+      "sha256": "3cb04379c38d006bf6eda2c330ca6468a0a8cc05351af9eede8a31f2b77516ad",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "draw with depletion and reset, shared by type",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+      "line_start": 596,
+      "line_end": 703,
+      "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "tutorial/lucky/smart/activity overrides precede or modify fixed generation",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+      "line_start": 31,
+      "line_end": 137,
+      "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "instance state, starts timer after depletion; two reservoirs",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+      "line_start": 397,
+      "line_end": 410,
+      "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "storage==0 selects storage duration, otherwise item duration",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+      "line_start": 960,
+      "line_end": 974,
+      "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "default1; active boost modifies cost/level",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/BoardModelConfig.lua",
+      "line_start": 1,
+      "line_end": 93,
+      "sha256": "c99b95d0466db580d0189173216c1df2e10d433cd41a2073e22e33b3446ee8e3",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "7 columns by9 rows of wrapped codes",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemModelFactory.lua",
+      "line_start": 77,
+      "line_end": 119,
+      "sha256": "b22cf7c302bc5092e28461749bffe4f5541d4d745190d2976d386e85a98549f2",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "one outer component; pb#c#x stores c#x inside paperbox",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemPaperBox.lua",
+      "line_start": 18,
+      "line_end": 29,
+      "sha256": "a5468609f1990ae888dfaa61f62d8c50e608b4cc9aa33bf7ef6b6f06d70d1422",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "shock collapses paperbox if level gate allows",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+      "line_start": 182,
+      "line_end": 210,
+      "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "four-neighbor shock and collapse inner code",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+      "line_start": 235,
+      "line_end": 259,
+      "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "remove source, replace target with merged type, shock target neighbors",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+      "line_start": 309,
+      "line_end": 363,
+      "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "cobweb cannot move, can be matching merge target; chest exception",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/OrderFixedConfig.lua",
+      "line_start": 1,
+      "line_end": 125,
+      "sha256": "15d78e024076a1abcda44c3e817ece7cc266ca9d61ca7d5a613cce91e3c71478",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "16 packaged fixed order rows, base variant",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Order/MainOrderCreator.lua",
+      "line_start": 8,
+      "line_end": 28,
+      "sha256": "f8b609ec2969668dadd4d76c55ba4149c2c3364b099e944aa6b40a4c23cf14a5",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "next ID only; slot and current level must pass",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Order/MainOrder.lua",
+      "line_start": 110,
+      "line_end": 127,
+      "sha256": "6fccb556a1115c1485ebf350168240112cdf4ec3f064584c1746620001a18d01",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "sum Price; RecommendedPrice when baseline flag and field present",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Order/MainOrder.lua",
+      "line_start": 257,
+      "line_end": 269,
+      "sha256": "6fccb556a1115c1485ebf350168240112cdf4ec3f064584c1746620001a18d01",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "ceil price times active gold multiplier",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/OrderItemConfig.lua",
+      "line_start": 1,
+      "line_end": 50,
+      "sha256": "6ceea4e0e76cc24a7376768f116d5fa754ec6404220eb4c2c34304e465ccb5ed",
+      "sha256_scope": "reconstructed static Lua source bytes",
+      "method": "static decompiled Lua and parsed packaged table cross-check",
+      "note": "base prices/diff scores for early requirements",
+      "evidence_id": null
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/LevelConfig.lua",
+      "line_start": 1,
+      "line_end": 53,
+      "sha256": "fd9604b25c40004ef526a1338f7accfaa940cedd3543df9fe395794c75ebb8d4",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "1: return {\n2:   {\n3:     level = 1,\n4:     cost = 30,\n5:     rewards = {\n6:       \"main_e_chest_new_1-1\",\n7:       \"main_t_chest_new_1-1\",\n8:       \"104-1\"\n9:     }\n10:   },\n11:   {\n12:     level = 2,\n13:     cost = 45,\n14:     rewards = {\n15:       \"main_g_chest_new_1-1\",\n16:       \"401-1\"\n17:     }\n18:   },\n19:   {\n20:     level = 3,\n21:     cost = 60,\n22:     rewards = {\n23:       \"404-1\",\n24:       \"main_e_chest_new2_1-1\"\n25:     }\n26:   },\n27:   {\n28:     level = 4,\n29:     cost = 75,\n30:     rewards = {\n31:       \"2701-1\",\n32:       \"main_g_chest_new_1-1\"\n33:     }\n34:   },\n35:   {\n36:     level = 5,\n37:     cost = 75,\n38:     rewards = {\n39:       \"2701-1\",\n40:       \"main_e_chest_new2_1-1\",\n41:       \"703-1\"\n42:     }\n43:   },\n44:   {\n45:     level = 6,\n46:     cost = 90,\n47:     rewards = {\n48:       \"2801-1\",\n49:       \"2901-1\",\n50:       \"1001-1\"\n51:     }\n52:   },\n53:   {"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/UserData/LevelModel.lua",
+      "line_start": 56,
+      "line_end": 99,
+      "sha256": "239a9a899c9ca641723b9fd956cf0407d147e4e2078449408b59eb3c05c3a079",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "56: \n57: function LevelModel:CanLevelUp()\n58:   if self:IfReachMaxLevel(self:GetCurrentLevel()) then\n59:     return false\n60:   end\n61:   return GM.PropertyDataManager:GetPropertyNum(EPropertyType.Experience) >= self:GetLevelUpCost()\n62: end\n63: \n64: function LevelModel:GetLevelUpCost(uCurLevel)\n65:   uCurLevel = uCurLevel or self:GetCurrentLevel()\n66:   local config = GM.ConfigModel:GetLocalConfig(LocalConfigKey.Level)\n67:   if 1 <= uCurLevel and uCurLevel <= #config then\n68:     return config[uCurLevel].cost\n69:   end\n70:   return 0\n71: end\n72: \n73: function LevelModel:GetLevelUpRewards(uCurLevel)\n74:   uCurLevel = uCurLevel or self:GetCurrentLevel()\n75:   local config = GM.ConfigModel:GetLocalConfig(LocalConfigKey.Level)\n76:   if uCurLevel < 1 or uCurLevel > #config then\n77:     return {}\n78:   end\n79:   return ConfigUtil.GetCurrencyFromArrStr(config[uCurLevel].rewards) or {}\n80: end\n81: \n82: function LevelModel:DoLevelUp()\n83:   Log.Assert(self:CanLevelUp(), \"LevelModel:DoLevelUp\")\n84:   while self:CanLevelUp() and GM.PropertyDataManager:Consume(EPropertyType.Experience, self:GetLevelUpCost(), EBIType.LevelUp, self.m_curLevel) do\n85:     local formattedRewards = self:GetLevelUpRewards()\n86:     self.m_curLevel = self.m_curLevel + 1\n87:     GM.UserModel:Set(EUserSyncDataKey.UserLevel, self.m_curLevel)\n88:     GM.SyncModel:UpdateProgressLastModifiedTime()\n89:     if GLOBAL_APP then\n90:       CSFirebaseManager:LogLevelUpEvent(self.m_curLevel)\n91:     end\n92:     GM.OperBIManager:TrackLevelUpEvent(self.m_curLevel)\n93:     RewardApi.AcquireRewardsLogic(formattedRewards, EPropertySource.Give, EBIType.LevelUp, EGameMode.Main, CacheItemType.Type2)\n94:     GM.BIManager:LogAction(EBIType.LevelUp, self.m_curLevel + 1)\n95:     EventDispatcher.DispatchEvent(EEventType.LevelUp, {\n96:       level = self.m_curLevel\n97:     })\n98:   end\n99:   self:SyncCSLevel()"
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/FunctionEnableConfig.lua",
+      "line_start": 1,
+      "line_end": 26,
+      "sha256": "4a924b0ea96d691d4a655912bf9082964072772bca8fca5c9da2f2eec20eb468",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "1: return {\n2:   {\n3:     name = \"inventory\",\n4:     enable = 1,\n5:     param = {\n6:       \"openLevel-2\"\n7:     }\n8:   },\n9:   {\n10:     name = \"shop\",\n11:     enable = 1,\n12:     param = {\n13:       \"openLevel-3\"\n14:     }\n15:   },\n16:   {\n17:     name = \"bubble\",\n18:     enable = 1,\n19:     param = {\n20:       \"openLevel-4\"\n21:     }\n22:   }\n23: }"
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+      "line_start": 2,
+      "line_end": 11,
+      "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "2:   {\n3:     day = 1,\n4:     id = 1,\n5:     area = 1,\n6:     cost = 26,\n7:     rewards = {\"exp-15\"},\n8:     edit_pos = \"38.7,250,-390.6\",\n9:     detail_icon = \"colton\",\n10:     name = \"casinio_task_1_1\"\n11:   },"
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+      "line_start": 12,
+      "line_end": 21,
+      "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "12:   {\n13:     day = 1,\n14:     id = 2,\n15:     area = 1,\n16:     cost = 16,\n17:     rewards = {\"exp-15\"},\n18:     edit_pos = \"45.2,225,-353.6\",\n19:     detail_icon = \"sam\",\n20:     name = \"casinio_task_1_2\"\n21:   },"
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+      "line_start": 22,
+      "line_end": 30,
+      "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "22:   {\n23:     day = 1,\n24:     id = 3,\n25:     area = 1,\n26:     cost = 24,\n27:     rewards = {\"exp-15\"},\n28:     detail_icon = \"mark\",\n29:     name = \"task_1_3\"\n30:   },"
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+      "line_start": 31,
+      "line_end": 41,
+      "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "31:   {\n32:     day = 1,\n33:     id = 4,\n34:     area = 1,\n35:     cost = 46,\n36:     rewards = {\"exp-15\", \"1301-1\"},\n37:     edit_pos = \"30.4,175,-266\",\n38:     list_icon = \"SwimmingRing01\",\n39:     detail_icon = \"norman\",\n40:     name = \"task_1_4\"\n41:   },"
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+      "line_start": 42,
+      "line_end": 50,
+      "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "42:   {\n43:     day = 1,\n44:     id = 5,\n45:     area = 1,\n46:     cost = 25,\n47:     rewards = {\"exp-15\"},\n48:     detail_icon = \"norman\",\n49:     name = \"task_1_5\"\n50:   },"
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+      "line_start": 51,
+      "line_end": 60,
+      "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "51:   {\n52:     day = 1,\n53:     id = 6,\n54:     area = 1,\n55:     cost = 24,\n56:     rewards = {\"exp-15\"},\n57:     edit_pos = \"42.24,280,-443.9\",\n58:     detail_icon = \"sam\",\n59:     name = \"task_1_6\"\n60:   },"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/Task/MainTaskModel.lua",
+      "line_start": 19,
+      "line_end": 43,
+      "sha256": "509c3615766e4fcb48b700c445784fcf752450f5c3a3d2d277a01d935343aa59",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "19: function MainTaskModel:FinishCurTask()\n20:   local data = self.m_curTask\n21:   if GM.PropertyDataManager:GetPropertyNum(EPropertyType.Gold) >= self:GetTaskCost(data) then\n22:     GM.TimelineModel:OnTaskFinished(data)\n23:     return true\n24:   end\n25:   return false\n26: end\n27: \n28: function MainTaskModel:OnTimelineFinished(data)\n29:   GM.PropertyDataManager:Consume(EPropertyType.Gold, self:GetTaskCost(data), EBIType.TaskFinish, data.id)\n30:   local extraRewards\n31:   if PlayerPrefs.GetInt(EPlayerPrefKey.AutoTimeline, 0) ~= 1 then\n32:     RewardApi.AcquireRewardsLogic(self.m_curTask.rewards, EPropertySource.Give, EBIType.TaskFinish, EGameMode.Main, CacheItemType.Type2)\n33:     extraRewards = GM.ActivityManager:GetModel(ActivityType.TaskExtraReward):TryAcquireExtraReward(self.m_curTask)\n34:   end\n35:   local biRewards = {}\n36:   for _, reward in ipairs(self.m_curTask.rewards) do\n37:     local rewardKey = tostring(reward[PROPERTY_TYPE])\n38:     biRewards[rewardKey] = reward[PROPERTY_COUNT]\n39:   end\n40:   GM.BIManager:LogTask(self.m_curTask:GetDBKey(), self:GetTaskCost(self.m_curTask), biRewards)\n41:   self:UnlockNextTask()\n42:   local bTrigger = self:TryTriggerExtraReward(self.m_curTask)\n43:   EventDispatcher.DispatchEvent(EEventType.MainTaskFinished, data)"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/Task/MainTaskModel.lua",
+      "line_start": 59,
+      "line_end": 112,
+      "sha256": "509c3615766e4fcb48b700c445784fcf752450f5c3a3d2d277a01d935343aa59",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "59: function MainTaskModel:UnlockNextTask()\n60:   local day = self.m_curTask.day\n61:   self.m_curTask = self:FindNextTask(day, self.m_curTask.id, self:GetMaxUnlock())\n62:   if self.m_curTask then\n63:     self.m_dbTable:Set(DBKey, DBColumn, self.m_curTask:GetDBKey())\n64:     self.m_dbTable:Set(DBCurCost, DBColumn, self.m_curTask:GetDBKey() .. \"##\" .. self:GetTaskCost(self.m_curTask))\n65:   else\n66:     local dbKey = MainTaskData.ToDBKey(day + 1, 1)\n67:     self.m_dbTable:Set(DBKey, DBColumn, dbKey)\n68:     local taskData = self:GetTaskData(day + 1, 1)\n69:     if taskData then\n70:       self.m_dbTable:Set(DBCurCost, DBColumn, dbKey .. \"##\" .. self:GetTaskCost(taskData))\n71:     end\n72:   end\n73:   GM.SyncModel:UpdateProgressLastModifiedTime()\n74: end\n75: \n76: function MainTaskModel:FindNextTask(day, id, max)\n77:   if not self.m_mapTaskData[day] or day == max.day and id == max.id then\n78:     return nil\n79:   end\n80:   if id == 0 then\n81:     if self.m_mapTaskData[day][1] then\n82:       return self.m_mapTaskData[day][1]\n83:     else\n84:       return nil\n85:     end\n86:   end\n87:   local tasks = self.m_mapTaskOrder[day]\n88:   local currentIndex = 0\n89:   for i, task in ipairs(tasks) do\n90:     if tostring(task.id) == tostring(id) then\n91:       currentIndex = i\n92:       break\n93:     end\n94:   end\n95:   if currentIndex == 0 then\n96:     local idInfo = MainTaskData.GetIdInfo(id)\n97:     if idInfo.idType == EMainTaskIdType.Pre then\n98:       local baseId = idInfo.baseId\n99:       if self.m_mapTaskData[day][baseId] then\n100:         return self.m_mapTaskData[day][baseId]\n101:       else\n102:         Log.Error(\"MainTaskModel:FindNextTask MainTaskConfig Error, the last task of the day cannot be _pre, task\" .. tostring(day) .. \" \" .. tostring(id), LogTag.ConfigCheck)\n103:         return nil\n104:       end\n105:     else\n106:       return nil\n107:     end\n108:   else\n109:     if currentIndex < #tasks then\n110:       return tasks[currentIndex + 1]\n111:     end\n112:     return self:FindNextTask(day + 1, 0, max)"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/Task/MainTaskModel.lua",
+      "line_start": 297,
+      "line_end": 324,
+      "sha256": "509c3615766e4fcb48b700c445784fcf752450f5c3a3d2d277a01d935343aa59",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "297: \n298: function MainTaskModel:LoadFileConfig()\n299:   self.m_mapTaskData = {}\n300:   self.m_dayToAreaIdx = {}\n301:   self.m_mapTaskOrder = {}\n302:   self.m_bHasPreTask = false\n303:   local mainTaskConfig = GM.ConfigModel:GetLocalConfig(LocalConfigKey.MainTask)\n304:   for _, data in ipairs(mainTaskConfig) do\n305:     local taskData = MainTaskData.Create(data)\n306:     if not self.m_mapTaskData[taskData.day] then\n307:       self.m_mapTaskData[taskData.day] = {}\n308:       self.m_mapTaskOrder[taskData.day] = {}\n309:     end\n310:     local isPreMainTask = string.find(taskData.id, MainTaskData.PreStr)\n311:     local isConfigIgnored = not GM.ConfigModel:IsNewUserTimelineConfigEnable() and isPreMainTask\n312:     if not isConfigIgnored then\n313:       self.m_mapTaskData[taskData.day][taskData.id] = taskData\n314:       table.insert(self.m_mapTaskOrder[taskData.day], taskData)\n315:       self.m_dayToAreaIdx[taskData.day] = taskData.area\n316:       self.m_bHasPreTask = self.m_bHasPreTask or isPreMainTask\n317:     end\n318:   end\n319:   for day, tasks in pairs(self.m_mapTaskOrder) do\n320:     table.sort(tasks, function(a, b)\n321:       return a < b\n322:     end)\n323:   end\n324: end"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/Task/MainTaskModel.lua",
+      "line_start": 443,
+      "line_end": 522,
+      "sha256": "509c3615766e4fcb48b700c445784fcf752450f5c3a3d2d277a01d935343aa59",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "443: function MainTaskModel:GetTaskCost(taskData)\n444:   Log.Assert(taskData, \"MainTaskModel:GetTaskCost param taskData is nil\")\n445:   local value = self.m_dbTable:GetValue(DBCurCost, DBColumn)\n446:   if StringUtil.IsNilOrEmpty(value) then\n447:     return self:GetTaskCostWithServerConfig(taskData)\n448:   end\n449:   local list = StringUtil.Split(value, \"##\")\n450:   Log.Assert(#list == 2, \"MainTaskModel:GetTaskCost value error \" .. value)\n451:   if list[1] ~= taskData:GetDBKey() then\n452:     return self:GetTaskCostWithServerConfig(taskData)\n453:   end\n454:   return tonumber(list[2])\n455: end\n456: \n457: function MainTaskModel:GetTaskCostWithServerConfig(taskData, level, gold)\n458:   if taskData.cost == 0 then\n459:     return 0\n460:   end\n461:   local maxDay = self:GetMaxUnlock().day\n462:   if maxDay < 0 then\n463:     return taskData.cost\n464:   end\n465:   local ratio = 1\n466:   local cfg = GM.ConfigModel:GetTaskPriceIncreaseCfg()\n467:   if cfg and maxDay - taskData.day < cfg.dayLast then\n468:     ratio = ratio * cfg.multiple\n469:   end\n470:   level = level or GM.LevelModel:GetCurrentLevel()\n471:   gold = gold or GM.PropertyDataManager:GetPropertyNum(EPropertyType.Gold)\n472:   ratio = ratio * self:_GetTaskGoldCostControlRatio(level, gold)\n473:   return math.ceil(taskData.cost * ratio)\n474: end\n475: \n476: function MainTaskModel:_GetTaskGoldCostControlRatio(level, gold)\n477:   if not level or not gold then\n478:     return 1\n479:   end\n480:   local costControlTag = GM.ConfigModel:GetGeneralConfByType(EGeneralConfType.TaskGoldCostControl, ConfigModel.EGeneralConfigParam.String)\n481:   if StringUtil.IsNilOrEmpty(costControlTag) then\n482:     return 1\n483:   end\n484:   if self.m_mapTaskGoldCostArrLevelBounds == nil then\n485:     GM.BIManager:LogErrorInfo(EBIType.MainTaskGoldControlError, \"config missing all\")\n486:     return 1\n487:   end\n488:   if self.m_mapTaskGoldCostArrLevelBounds[costControlTag] == nil then\n489:     GM.BIManager:LogErrorInfo(EBIType.MainTaskGoldControlError, \"config missing \" .. tostring(costControlTag))\n490:     return 1\n491:   end\n492:   local arrLevelBounds = self.m_mapTaskGoldCostArrLevelBounds[costControlTag]\n493:   local selectedLevelBound\n494:   for i, levelBound in ipairs(arrLevelBounds) do\n495:     if levelBound <= level then\n496:       selectedLevelBound = levelBound\n497:     else\n498:       break\n499:     end\n500:   end\n501:   if selectedLevelBound == nil then\n502:     return 1\n503:   end\n504:   local arrConfig = self.m_mapTaskGoldCostConfig[costControlTag][selectedLevelBound]\n505:   local selectedConfig\n506:   for _, config in ipairs(arrConfig) do\n507:     if gold >= config.gold_min then\n508:       selectedConfig = config\n509:     else\n510:       break\n511:     end\n512:   end\n513:   if selectedConfig == nil then\n514:     return 1\n515:   end\n516:   return selectedConfig.cost_ratio / 100\n517: end\n518: \n519: function MainTaskModel:GetCurAreaIdx()\n520:   local task = self.m_curTask\n521:   task = task or self:GetMaxUnlock()\n522:   return self.m_dayToAreaIdx[task.day] or #self.m_dayToAreaIdx"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+      "line_start": 441,
+      "line_end": 448,
+      "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "441: function ConfigModel:GetTaskPriceIncreaseCfg()\n442:   local nParamTask = self:GetGeneralConfByType(EGeneralConfType.TaskPriceIncrease)\n443:   local fParamGold = self:GetGeneralConfByType(EGeneralConfType.TaskPriceIncrease, ConfigModel.EGeneralConfigParam.Float)\n444:   if not IsNil(nParamTask) and not IsNil(fParamGold) then\n445:     return {dayLast = nParamTask, multiple = fParamGold}\n446:   end\n447:   return\n448: end"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/Task/MainTaskModel.lua",
+      "line_start": 245,
+      "line_end": 250,
+      "sha256": "509c3615766e4fcb48b700c445784fcf752450f5c3a3d2d277a01d935343aa59",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "245: function MainTaskModel:GetOriginalTaskData()\n246:   if GM.ConfigModel:IsNewUserTimeline() then\n247:     return self.m_mapTaskOrder and self.m_mapTaskOrder[1][1]\n248:   else\n249:     return self:GetTaskData(1, 1)\n250:   end"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+      "line_start": 625,
+      "line_end": 631,
+      "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "625: function ConfigModel:IsNewUserTimeline()\n626:   return self:IsNewUserTimelineConfigEnable() and GM.MainTaskModel:HasPreTaskConfig() and (GM:IsNewUser() or not GM.MiscModel:GetHasTriggerDefaultIntroTimeline() and GM.MainTaskModel:IsCurTaskPreOrEmpty())\n627: end\n628: \n629: function ConfigModel:IsNewUserTimelineConfigEnable()\n630:   return self:GetGeneralConfByType(EGeneralConfType.NewUserTimeline) == 1\n631: end"
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig_fire.lua",
+      "line_start": 1,
+      "line_end": 54,
+      "sha256": "55eb21eb4c3effb3ec95fa075eb5413cf987f03d40b5d9e971689ed689876fa7",
+      "sha256_scope": "complete reconstructed static Lua source file",
+      "method": "static source/config trace; no game execution",
+      "evidence_id": null,
+      "excerpt": "1: return {\n2:   {\n3:     day = 1,\n4:     id = \"1_pre_1\",\n5:     area = 1,\n6:     cost = 24,\n7:     rewards = {\"exp-15\"},\n8:     edit_pos = \"38.7,250,-390.6\",\n9:     detail_icon = \"Quinn\",\n10:     name = \"task_1_1_pre_fire_1\"\n11:   },\n12:   {\n13:     day = 1,\n14:     id = \"1_pre_2\",\n15:     area = 1,\n16:     cost = 16,\n17:     rewards = {\"exp-15\"},\n18:     edit_pos = \"45.2,225,-353.6\",\n19:     detail_icon = \"Quinn\",\n20:     name = \"task_1_1_pre_fire_2\"\n21:   },\n22:   {\n23:     day = 1,\n24:     id = 1,\n25:     area = 1,\n26:     cost = 26,\n27:     rewards = {\"exp-15\"},\n28:     edit_pos = \"38.7,250,-390.6\",\n29:     detail_icon = \"colton\",\n30:     name = \"casinio_task_1_1\"\n31:   },\n32:   {\n33:     day = 1,\n34:     id = 2,\n35:     area = 1,\n36:     cost = 46,\n37:     rewards = {\"exp-15\"},\n38:     edit_pos = \"45.2,225,-353.6\",\n39:     detail_icon = \"sam\",\n40:     name = \"casinio_task_1_2\"\n41:   },\n42:   {\n43:     day = 1,\n44:     id = 3,\n45:     area = 1,\n46:     cost = 25,\n47:     rewards = {\"exp-15\"},\n48:     detail_icon = \"mark\",\n49:     name = \"task_1_3\"\n50:   },\n51:   {\n52:     day = 1,\n53:     id = 4,\n54:     area = 1,"
+    }
+  ],
+  "revision": "a28e93912725479df6bfcd2319274a8e834d215de21a03d5e75ce217d64d89bb"
+}

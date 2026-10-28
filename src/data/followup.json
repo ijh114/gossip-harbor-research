@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetVersion": "4.10.5",
   "date": "2026-10-28",
-  "scope": "APK 4.10.5 정적 후속 조사 + 버전 미확인 사용자 캡처의 독립 관측. LDPlayer 설치 버전 확인 후 검은 화면으로 사용자 요청 중단. 현행 서버 규칙·실기 플레이 검증 완료 아님.",
+  "scope": "APK4.10.5 정적 후속 조사와 설정 기반 웹 실험. 과거 사용자 캡처는 버전 미확인 독립 관측. LDPlayer 검증은 사용자 요청 중단. 현행 서버 규칙/완성 게임 재현 아님.",
   "findings": [
     {
       "id": "BM-G001",
@@ -2269,9 +2269,268 @@
           "excerpt": "package=com.mergegames.gossipharbor\nversion_name=4.10.5\nversion_code=311\ninstaller_package_name=com.android.vending\n실기 플레이: 검은 화면 이후 미관측, 사용자 요청 중단"
         }
       ]
+    },
+    {
+      "id": "SIM-C001",
+      "kind": "code",
+      "domain": "mechanics",
+      "domains": [
+        "difficulty",
+        "economy"
+      ],
+      "category": "웹 시뮬레이션 · 정적 규칙",
+      "title": "고정 생성은 타입별 공유 소진 풀이다",
+      "summary": "ItemFixedSpreadModel은 남은 Weight에서 선택한 뒤1을 차감한다. 모두 소진하면 원래 구성으로 돌아간다.",
+      "details": [
+        "106은201×34/202×2/203×1/301×5의42개 주기다. 독립 반복 확률로 해석하지 않는다.",
+        "동일 타입 생성기들이 잔여 구성을 공유한다. 웹 실험은 RNG와 잔여 풀을 함께 저장한다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/ItemFixedSpreadModel.lua",
+          "line_start": 13,
+          "line_end": 84,
+          "sha256": "3cb04379c38d006bf6eda2c330ca6468a0a8cc05351af9eede8a31f2b77516ad",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "static decompiled Lua and parsed packaged table cross-check",
+          "note": "draw with depletion and reset, shared by type",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+          "line_start": 1,
+          "line_end": 5828,
+          "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "static decompiled Lua and parsed packaged table cross-check",
+          "note": "552 base declarations; server-selected variants are not resolved",
+          "evidence_id": null
+        }
+      ],
+      "unknowns": [
+        "smart/lucky·튜토리얼 강제·서버 variant·원작 RNG는 별도"
+      ]
+    },
+    {
+      "id": "SIM-C002",
+      "kind": "code",
+      "domain": "interaction",
+      "domains": [
+        "mechanics",
+        "puzzle-fx"
+      ],
+      "category": "웹 시뮬레이션 · 정적 규칙",
+      "title": "원본 초기판에서104 생성기까지의 정적 경로",
+      "summary": "초기101 두 개를 합치고c#102·c#103에 차례로 합성하면104를 만들 수 있다.",
+      "details": [
+        "0부터 센 인덱스22→29→30→31에서 결과는102→103→104다.",
+        "합성 목표의4방향 충격은pb만 제거하여c#상태를 남긴다. 거미줄을 직접 제거하지 않는다.",
+        "이는 코드 규칙을 적용한 경로이며 실기 튜토리얼 입력 로그가 아니다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/BoardModelConfig.lua",
+          "line_start": 1,
+          "line_end": 93,
+          "sha256": "c99b95d0466db580d0189173216c1df2e10d433cd41a2073e22e33b3446ee8e3",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "static decompiled Lua and parsed packaged table cross-check",
+          "note": "7 columns by9 rows of wrapped codes",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+          "line_start": 182,
+          "line_end": 210,
+          "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "static decompiled Lua and parsed packaged table cross-check",
+          "note": "four-neighbor shock and collapse inner code",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+          "line_start": 309,
+          "line_end": 363,
+          "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "static decompiled Lua and parsed packaged table cross-check",
+          "note": "cobweb cannot move, can be matching merge target; chest exception",
+          "evidence_id": null
+        }
+      ],
+      "unknowns": [
+        "튜토리얼 강제 입력·시각 강조·실기 순서"
+      ]
+    },
+    {
+      "id": "SIM-C003",
+      "kind": "code",
+      "domain": "difficulty",
+      "domains": [
+        "bm",
+        "economy"
+      ],
+      "category": "웹 시뮬레이션 · 정적 규칙",
+      "title": "처음16개 고정 주문은 요구 타입과 기본 가격을 연결할 수 있다",
+      "summary": "첫4개 요구 타입은203/208/204/206, 기본 골드는2/32/4/12다.",
+      "details": [
+        "중복 요구504 두 개는 동일 타입2개를 실제로 소비해야 한다.",
+        "웹은 선언 해금 레벨을 유지하고16개 이후 임의의 원작 주문을 만들지 않는다.",
+        "슬롯별 병렬 생성·동적 주문·보너스는 이 단일 목록 실험과 구분한다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/OrderFixedConfig.lua",
+          "line_start": 1,
+          "line_end": 125,
+          "sha256": "15d78e024076a1abcda44c3e817ece7cc266ca9d61ca7d5a613cce91e3c71478",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "static decompiled Lua and parsed packaged table cross-check",
+          "note": "16 packaged fixed order rows, base variant",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Order/MainOrder.lua",
+          "line_start": 110,
+          "line_end": 127,
+          "sha256": "6fccb556a1115c1485ebf350168240112cdf4ec3f064584c1746620001a18d01",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "static decompiled Lua and parsed packaged table cross-check",
+          "note": "sum Price; RecommendedPrice when baseline flag and field present",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/OrderItemConfig.lua",
+          "line_start": 1,
+          "line_end": 50,
+          "sha256": "6ceea4e0e76cc24a7376768f116d5fa754ec6404220eb4c2c34304e465ccb5ed",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "static decompiled Lua and parsed packaged table cross-check",
+          "note": "base prices/diff scores for early requirements",
+          "evidence_id": null
+        }
+      ],
+      "unknowns": [
+        "서버 가격/추천가격·슬롯별 배정·후속 랜덤 주문"
+      ]
+    },
+    {
+      "id": "SIM-C004",
+      "kind": "code",
+      "domain": "map",
+      "domains": [
+        "map-fx",
+        "economy"
+      ],
+      "category": "웹 시뮬레이션 · 정적 규칙",
+      "title": "맵 과제는 연출 시작과 비용·보상 확정이 분리된다",
+      "summary": "골드 충족으로 연출을 시작하고 OnTimelineFinished에서 소비·보상·다음 과제를 확정한다.",
+      "details": [
+        "기본 Day1 첫6개 비용26/16/24/46/25/24, 합161이다. 모두EXP15이며 네 번째에1301×1이 추가된다.",
+        "웹은 기본 분기·배율1·6개 과제만 적용한다. fire변형과 서버 비용 보정을 섞지 않는다.",
+        "첫6개로Lv3/EXP15가 된다. 이후 Lv4 고정 주문은 명시적인 EXP 실험 도우미로 비교하며 자연 진행 완성을 주장하지 않는다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 2,
+          "line_end": 11,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "sha256_scope": "complete reconstructed static Lua source file",
+          "method": "static source/config trace; no game execution",
+          "evidence_id": null,
+          "excerpt": "2:   {\n3:     day = 1,\n4:     id = 1,\n5:     area = 1,\n6:     cost = 26,\n7:     rewards = {\"exp-15\"},\n8:     edit_pos = \"38.7,250,-390.6\",\n9:     detail_icon = \"colton\",\n10:     name = \"casinio_task_1_1\"\n11:   },"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Task/MainTaskModel.lua",
+          "line_start": 19,
+          "line_end": 43,
+          "sha256": "509c3615766e4fcb48b700c445784fcf752450f5c3a3d2d277a01d935343aa59",
+          "sha256_scope": "complete reconstructed static Lua source file",
+          "method": "static source/config trace; no game execution",
+          "evidence_id": null,
+          "excerpt": "19: function MainTaskModel:FinishCurTask()\n20:   local data = self.m_curTask\n21:   if GM.PropertyDataManager:GetPropertyNum(EPropertyType.Gold) >= self:GetTaskCost(data) then\n22:     GM.TimelineModel:OnTaskFinished(data)\n23:     return true\n24:   end\n25:   return false\n26: end\n27: \n28: function MainTaskModel:OnTimelineFinished(data)\n29:   GM.PropertyDataManager:Consume(EPropertyType.Gold, self:GetTaskCost(data), EBIType.TaskFinish, data.id)\n30:   local extraRewards\n31:   if PlayerPrefs.GetInt(EPlayerPrefKey.AutoTimeline, 0) ~= 1 then\n32:     RewardApi.AcquireRewardsLogic(self.m_curTask.rewards, EPropertySource.Give, EBIType.TaskFinish, EGameMode.Main, CacheItemType.Type2)\n33:     extraRewards = GM.ActivityManager:GetModel(ActivityType.TaskExtraReward):TryAcquireExtraReward(self.m_curTask)\n34:   end\n35:   local biRewards = {}\n36:   for _, reward in ipairs(self.m_curTask.rewards) do\n37:     local rewardKey = tostring(reward[PROPERTY_TYPE])\n38:     biRewards[rewardKey] = reward[PROPERTY_COUNT]\n39:   end\n40:   GM.BIManager:LogTask(self.m_curTask:GetDBKey(), self:GetTaskCost(self.m_curTask), biRewards)\n41:   self:UnlockNextTask()\n42:   local bTrigger = self:TryTriggerExtraReward(self.m_curTask)\n43:   EventDispatcher.DispatchEvent(EEventType.MainTaskFinished, data)"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/LevelConfig.lua",
+          "line_start": 1,
+          "line_end": 53,
+          "sha256": "fd9604b25c40004ef526a1338f7accfaa940cedd3543df9fe395794c75ebb8d4",
+          "sha256_scope": "complete reconstructed static Lua source file",
+          "method": "static source/config trace; no game execution",
+          "evidence_id": null,
+          "excerpt": "1: return {\n2:   {\n3:     level = 1,\n4:     cost = 30,\n5:     rewards = {\n6:       \"main_e_chest_new_1-1\",\n7:       \"main_t_chest_new_1-1\",\n8:       \"104-1\"\n9:     }\n10:   },\n11:   {\n12:     level = 2,\n13:     cost = 45,\n14:     rewards = {\n15:       \"main_g_chest_new_1-1\",\n16:       \"401-1\"\n17:     }\n18:   },\n19:   {\n20:     level = 3,\n21:     cost = 60,\n22:     rewards = {\n23:       \"404-1\",\n24:       \"main_e_chest_new2_1-1\"\n25:     }\n26:   },\n27:   {\n28:     level = 4,\n29:     cost = 75,\n30:     rewards = {\n31:       \"2701-1\",\n32:       \"main_g_chest_new_1-1\"\n33:     }\n34:   },\n35:   {\n36:     level = 5,\n37:     cost = 75,\n38:     rewards = {\n39:       \"2701-1\",\n40:       \"main_e_chest_new2_1-1\",\n41:       \"703-1\"\n42:     }\n43:   },\n44:   {\n45:     level = 6,\n46:     cost = 90,\n47:     rewards = {\n48:       \"2801-1\",\n49:       \"2901-1\",\n50:       \"1001-1\"\n51:     }\n52:   },\n53:   {"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/UserData/LevelModel.lua",
+          "line_start": 56,
+          "line_end": 99,
+          "sha256": "239a9a899c9ca641723b9fd956cf0407d147e4e2078449408b59eb3c05c3a079",
+          "sha256_scope": "complete reconstructed static Lua source file",
+          "method": "static source/config trace; no game execution",
+          "evidence_id": null,
+          "excerpt": "56: \n57: function LevelModel:CanLevelUp()\n58:   if self:IfReachMaxLevel(self:GetCurrentLevel()) then\n59:     return false\n60:   end\n61:   return GM.PropertyDataManager:GetPropertyNum(EPropertyType.Experience) >= self:GetLevelUpCost()\n62: end\n63: \n64: function LevelModel:GetLevelUpCost(uCurLevel)\n65:   uCurLevel = uCurLevel or self:GetCurrentLevel()\n66:   local config = GM.ConfigModel:GetLocalConfig(LocalConfigKey.Level)\n67:   if 1 <= uCurLevel and uCurLevel <= #config then\n68:     return config[uCurLevel].cost\n69:   end\n70:   return 0\n71: end\n72: \n73: function LevelModel:GetLevelUpRewards(uCurLevel)\n74:   uCurLevel = uCurLevel or self:GetCurrentLevel()\n75:   local config = GM.ConfigModel:GetLocalConfig(LocalConfigKey.Level)\n76:   if uCurLevel < 1 or uCurLevel > #config then\n77:     return {}\n78:   end\n79:   return ConfigUtil.GetCurrencyFromArrStr(config[uCurLevel].rewards) or {}\n80: end\n81: \n82: function LevelModel:DoLevelUp()\n83:   Log.Assert(self:CanLevelUp(), \"LevelModel:DoLevelUp\")\n84:   while self:CanLevelUp() and GM.PropertyDataManager:Consume(EPropertyType.Experience, self:GetLevelUpCost(), EBIType.LevelUp, self.m_curLevel) do\n85:     local formattedRewards = self:GetLevelUpRewards()\n86:     self.m_curLevel = self.m_curLevel + 1\n87:     GM.UserModel:Set(EUserSyncDataKey.UserLevel, self.m_curLevel)\n88:     GM.SyncModel:UpdateProgressLastModifiedTime()\n89:     if GLOBAL_APP then\n90:       CSFirebaseManager:LogLevelUpEvent(self.m_curLevel)\n91:     end\n92:     GM.OperBIManager:TrackLevelUpEvent(self.m_curLevel)\n93:     RewardApi.AcquireRewardsLogic(formattedRewards, EPropertySource.Give, EBIType.LevelUp, EGameMode.Main, CacheItemType.Type2)\n94:     GM.BIManager:LogAction(EBIType.LevelUp, self.m_curLevel + 1)\n95:     EventDispatcher.DispatchEvent(EEventType.LevelUp, {\n96:       level = self.m_curLevel\n97:     })\n98:   end\n99:   self:SyncCSLevel()"
+        }
+      ],
+      "unknowns": [
+        "현재 서버 비용 보정·실제 장면·추가 퀘스트/EXP유입"
+      ]
+    },
+    {
+      "id": "SIM-C005",
+      "kind": "config",
+      "domain": "mechanics",
+      "domains": [
+        "ui"
+      ],
+      "category": "웹 시뮬레이션 · 정적 규칙",
+      "title": "선정6체인65종의 실물Sprite를 연결했다",
+      "summary": "기존과 동일한14개를 재사용하고 신규PNG51개를 보강했다.",
+      "details": [
+        "Type→명시 Image→ImageFileConfig→bundle container→Sprite를 정확히 연결했다.",
+        "이전의 다른6타입과 합쳐 기본 타입 이미지71개가 연결된다. 선택 범위 밖은 이름/ID로 표시한다.",
+        "Sprite는 정적 자산이며 실제 화면·활성 variant 관측이 아니다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/simulation/sprites/manifest.json",
+          "sha256": "4a7d02c09a0f1a2b00c1eac8369bf6fd57591dfe3ed3f538863c331699c367d4",
+          "method": "exact static Sprite mapping and decoded PNG hashing",
+          "excerpt": "selected65 / existing-identical14 / exported-new51 / missing0 / Sprite path_id retained as decimal strings",
+          "evidence_id": null
+        }
+      ],
+      "unknowns": [
+        "기본552종 전체 이미지·이벤트 변형·원격 자산"
+      ]
     }
   ],
   "work": [
+    {
+      "step": "웹 보드·고정 주문",
+      "state": "partial",
+      "done": "552타입합성/판매 identity,선정생성기16종,소진풀/충전,원본초기판,고정주문16개",
+      "remaining": "smart/튜토리얼/부스트/랜덤주문·전체도구기믹·병렬슬롯"
+    },
+    {
+      "step": "맵·성장 연결",
+      "state": "partial",
+      "done": "기본첫6과제의골드/EXP/레벨보상,시작/확정분리",
+      "remaining": "실제스토리/장식/카메라·서버비용·이후과제.6과제이후레벨은도우미실험"
+    },
+    {
+      "step": "플레이→상점·오퍼",
+      "state": "partial",
+      "done": "에너지부족/무료충전/젬소비/닫기후후보,가정후보설정,과거체인6수령단계",
+      "remaining": "실계정자동노출·실제상품배정·모든이벤트/패스·광고/IAP"
+    },
+    {
+      "step": "웹 저장·복귀",
+      "state": "done",
+      "done": "revision/schema/상태검증,손상저장보존,이전실험백업,JSON이동,경과시간/소진풀/RNG/충전복원",
+      "remaining": "최대7일은웹정책.서버동기화·여러탭동시편집은지원하지않음"
+    },
     {
       "step": "BM 노출 조건",
       "state": "partial",
@@ -2287,7 +2546,7 @@
     {
       "step": "APK 이미지·UI 자산",
       "state": "partial",
-      "done": "동봉 Sprite1820개·MainItem581개, 원본PNG24개와 기본타입 20건 연결. UI트리11종·정적clip26개 확보",
+      "done": "원본Sprite75PNG·기본타입71연결,선정6체인65종정확매핑. UI트리11종·정적clip26개",
       "remaining": "현재 활성 레이아웃/실제 재생·원격 자산은 미관측"
     },
     {
@@ -2312,7 +2571,7 @@
       "step": "Unity 규칙 이식",
       "state": "partial",
       "done": "독립 C# UPM 규칙 패키지 작성, 실제 컴파일 및 JS/C# 결과 2701개 대조 통과",
-      "remaining": "Unity Editor import/NUnit·씬·새 콘텐츠·플랫폼 빌드 검증은 남음"
+      "remaining": "새설정기반보드/소진풀/고정주문C#이식·대조,Editor import/NUnit·씬·새콘텐츠·플랫폼빌드"
     }
   ],
   "wireFields": [

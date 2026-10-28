@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetVersion": "4.10.5",
-  "description": "APK4.10.5 원본 Sprite44개 참조와 버전 미확인 과거 사용자 캡처20개를 origin으로 구분합니다. 파생 이미지17개·무음영상3개이며 실기 플레이 검증 완료를 뜻하지 않습니다.",
+  "description": "APK정적 Sprite75개(기본 타입71개 연결)와 버전 미확인 과거 캡처20개를 구분합니다. 같은 PNG의 여러 키 참조는 고유 이미지 수와 다릅니다.",
   "entries": [
     {
       "key": "asset:Coffee01",
@@ -1652,6 +1652,1281 @@
           },
           "purpose": "상단 빌드·계정 식별 워터마크 제외; 게임 UI만 보존"
         }
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:103",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-GroceryBag03.png",
+      "alt": "GroceryBag03 · Type103 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1309128055502851620",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "122ce06cc3b0271be2b6634c08f849d20ce2c2f721a4242d5785c5aa03d56171",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "1309128055502851620",
+        "type": "Sprite",
+        "name": "GroceryBag03",
+        "object_source_sha256": "54bf609e7cb0095cb1261043ade253ddf0e0a6b6c700ce95b236e42590776f4a"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 15,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:104",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-GroceryBag04.png",
+      "alt": "GroceryBag04 · Type104 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -8326935537270922532",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "8420425e3e3df928d0687e83c108fa823404d8253038722bffdf92fde1d51fb4",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-8326935537270922532",
+        "type": "Sprite",
+        "name": "GroceryBag04",
+        "object_source_sha256": "4b6d28e360ccd0d0bec20f838aba01bdee28236512d85024be169dd7a0fc8263"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 21,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:105",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-GroceryBag05.png",
+      "alt": "GroceryBag05 · Type105 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4070234605313324039",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "5cbd4a1f1ed05c683850e5dbc77c73ef915ad02953de15c5076a50330919a73b",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4070234605313324039",
+        "type": "Sprite",
+        "name": "GroceryBag05",
+        "object_source_sha256": "a685ef305d7f63f244b6b871327cf72d85597aa6e62abc88045de2133c358805"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 27,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:107",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-GroceryBag07.png",
+      "alt": "GroceryBag07 · Type107 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3016378544994183403",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "9ac8c12fd8f400cf499f44fee759d2fa7761a76784deb643b99ab4fae08ef667",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3016378544994183403",
+        "type": "Sprite",
+        "name": "GroceryBag07",
+        "object_source_sha256": "d4e0feaa0e1bb5e9368d6718f8723cde9167a29e3ba29b382d6daf42a8e9fc6f"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 39,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:108",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-GroceryBag08.png",
+      "alt": "GroceryBag08 · Type108 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4070827689962874225",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "586bb9ad420b3738f8f44579d9f41def0000d243c559b5d15ff425ed34f2b65d",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4070827689962874225",
+        "type": "Sprite",
+        "name": "GroceryBag08",
+        "object_source_sha256": "a11ec66cd99cf813b3e1faa1097c55de29f55fd3fd351cd3fc39b6706b10bbda"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 45,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:109",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-GroceryBag09.png",
+      "alt": "GroceryBag09 · Type109 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -257276066425584311",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "40ac90130e570cf08a9642375c59981207751568c6a6052d86d55dd94370199f",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-257276066425584311",
+        "type": "Sprite",
+        "name": "GroceryBag09",
+        "object_source_sha256": "db2587c2f3d1c934c540f71fce668028b03f96742f1821c2efe5c8d3540eec3d"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 51,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:110",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-GroceryBag10.png",
+      "alt": "GroceryBag10 · Type110 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4815478538058402843",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3ff906deeed7ab00f158ca1d3ea0aefd5110aae0812544fddcaeccb39a015fbf",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4815478538058402843",
+        "type": "Sprite",
+        "name": "GroceryBag10",
+        "object_source_sha256": "c844455bda9bd31fcc25dde60e952562f31805c9b318fe8225efa819905359dd"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 57,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:111",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-GroceryBag11.png",
+      "alt": "GroceryBag11 · Type111 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1913114173679751117",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "7ec90306a6245255f20b9ff7f5c9bef762084b39d03d26eee297a299da64a4c3",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "1913114173679751117",
+        "type": "Sprite",
+        "name": "GroceryBag11",
+        "object_source_sha256": "8ea183c689cbb6a4a6682d732932e651f5bc32e9bf8e59e55938da3b43a3a082"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 63,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:205",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour05.png",
+      "alt": "Flour05 · Type205 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 6914157247691453235",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3c15924f257295e50c6e793f909e850cadc694fd6a49639ece4cd7bd062e6089",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "6914157247691453235",
+        "type": "Sprite",
+        "name": "Flour05",
+        "object_source_sha256": "6234e466b94e73978ab217189b84c2b1b7820b905dc21bc526a99bb3d7ef47d5"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 85,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:206",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour06.png",
+      "alt": "Flour06 · Type206 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3630668662108654924",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "419b2d2a1a11d2052e06dbb17ac9e49bf9a60267b7b31f750c787f054cb94ccc",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3630668662108654924",
+        "type": "Sprite",
+        "name": "Flour06",
+        "object_source_sha256": "60a7a9f534b8244f60ea9ce59f84f9d18d7e3c1ca93d04273fc8a5d6388ac5b0"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 89,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:207",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour07.png",
+      "alt": "Flour07 · Type207 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 4057506097769602654",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "902916945abcdc12d17133fee0820c5dd4da67444c5fac556a50d782d15019a3",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "4057506097769602654",
+        "type": "Sprite",
+        "name": "Flour07",
+        "object_source_sha256": "333fbf06f31c59fc7df4ff05190791a1d9de1d4256d8678b6b51cf676441bbce"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 93,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:208",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour08.png",
+      "alt": "Flour08 · Type208 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -8789509144254961584",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "a8f48cd3e256fad5c1a9a64bb6172f70e5e4b1c4c31f730108386599472f96dd",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-8789509144254961584",
+        "type": "Sprite",
+        "name": "Flour08",
+        "object_source_sha256": "7cf5fe1ae29211ce47be37958b127bfe519cf4091e6790792e7fcd16fd45c24f"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 97,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:209",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour09.png",
+      "alt": "Flour09 · Type209 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3348722703266150494",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "400991ed350e84113fff122a0318ea410adee6485170bcd8c9f07d54710ee97c",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3348722703266150494",
+        "type": "Sprite",
+        "name": "Flour09",
+        "object_source_sha256": "bf1d57bf66d6b42780aa1c83a75907ec5ae39a3df737542ef759c51c31b1ef58"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 101,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:210",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour10.png",
+      "alt": "Flour10 · Type210 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5914404063057546865",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "7003af1a52e1f80fab2139ee2a4b30f4b6d831cd8d50408ef8e1695b940ce9ef",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "5914404063057546865",
+        "type": "Sprite",
+        "name": "Flour10",
+        "object_source_sha256": "fcf909592ac3db7af69ce52aef1d7e51ff1e40abf994f705fd562c4ca6df684e"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 105,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:211",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour11.png",
+      "alt": "Flour11 · Type211 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 2275067022368588381",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "b229e617f7c718b6cbc6d8b0f38245f7369f23bcf218436e0cf007c15a331d48",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "2275067022368588381",
+        "type": "Sprite",
+        "name": "Flour11",
+        "object_source_sha256": "af023ddd9cd541f316a18582c15b98afa9bb2c4cb27b5806066abc3a1d015417"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 109,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:212",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour12.png",
+      "alt": "Flour12 · Type212 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 6315867115367574570",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3791153539366c8c169e21febfce93a8690ea9414d1f6bfaad574f9e076613cc",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "6315867115367574570",
+        "type": "Sprite",
+        "name": "Flour12",
+        "object_source_sha256": "92aa130f1a264081c2a19e99c6975ec9494843889339f924df5e725aed99b01e"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 113,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:213",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour13.png",
+      "alt": "Flour13 · Type213 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7434955628491688799",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "b2a31de3f773e059d55df80db2e5e8590373a49df382937999dc9b9662e15aae",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "7434955628491688799",
+        "type": "Sprite",
+        "name": "Flour13",
+        "object_source_sha256": "a7f7cb7e03402222f0ca65133a4825a639aaba50f5c8dd38f37f54fb73340300"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 117,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:214",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour14.png",
+      "alt": "Flour14 · Type214 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -1303590311540731283",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "8a5ac779c117d05160d63c3ef7476a0419d34eb12f2586719fb75740becfa683",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-1303590311540731283",
+        "type": "Sprite",
+        "name": "Flour14",
+        "object_source_sha256": "15614bebbc0f5cdd464db694e7fed06a0c2799f3bacb979451992ed0d116f712"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 121,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:215",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Flour15.png",
+      "alt": "Flour15 · Type215 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -3231763372934105463",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "f1dc42f4ccd3c74ff12ac80e737be8601ccc2c613e6300f83e08de5760d4e447",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-3231763372934105463",
+        "type": "Sprite",
+        "name": "Flour15",
+        "object_source_sha256": "6c15db8fce360677f4a67f4f9d22d4b2da469270fa5cc527dda4bdd1bb6a6735"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 125,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:301",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Potato01.png",
+      "alt": "Potato01 · Type301 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3662203822608577804",
+        "type": "Sprite",
+        "name": "Potato01",
+        "object_source_sha256": "8387794d3a8b4467f153b28d31f5b160b6ee1a61b282d2422d2213a99112aacb"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 129,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:302",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Potato02.png",
+      "alt": "Potato02 · Type302 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "8026677320063062495",
+        "type": "Sprite",
+        "name": "Potato02",
+        "object_source_sha256": "be33893fa1fe8b80c3e3d46b583ac9b729cfae4066854e6b378f2dd588ec076e"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 133,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:303",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Potato03.png",
+      "alt": "Potato03 · Type303 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4896440062686770266",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "7dac5c8f41dfb0c54739fe431632c94989ed16471179a32f7c402d8221c18e86",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4896440062686770266",
+        "type": "Sprite",
+        "name": "Potato03",
+        "object_source_sha256": "91b76b7c94a2bc9bbfb34c8c332a9a94d105b46cb91200653a9752e73136dd3f"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 137,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:304",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Potato04.png",
+      "alt": "Potato04 · Type304 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -7738763765540423338",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "afd562878ffa978e4e48dff1c381b7651451aca2235c24bbead9cbce973ad3eb",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-7738763765540423338",
+        "type": "Sprite",
+        "name": "Potato04",
+        "object_source_sha256": "dca746339a167f7e26b805d9d00e27c9ad6852d1571ad8803548d6c2b364f18f"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 141,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:305",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Potato05.png",
+      "alt": "Potato05 · Type305 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -2709141798961474793",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "17ba66477bf782d0cab3a890e1e01bd90629358a489c5e2ec76e87f34d3bcc47",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-2709141798961474793",
+        "type": "Sprite",
+        "name": "Potato05",
+        "object_source_sha256": "57ff54283e656433230e33c891c011f9d927895f29203e229b17d46e98822667"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 145,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:306",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Potato06.png",
+      "alt": "Potato06 · Type306 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -587284030025910887",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "e899c7e5abc5a318c77955c6a78c3e61139f936d36d01c9e9bee7c96ba07393b",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-587284030025910887",
+        "type": "Sprite",
+        "name": "Potato06",
+        "object_source_sha256": "135dec501189c9372ae1b1367a9d2cbf013ca98c707107ff9e0c75f9295ea983"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 149,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:307",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Potato07.png",
+      "alt": "Potato07 · Type307 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 2534261305118340366",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "ce9ff3162a2554668121a24d0e195b3f10b427954dab7d6357853ddf488d2d5e",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "2534261305118340366",
+        "type": "Sprite",
+        "name": "Potato07",
+        "object_source_sha256": "7c8eedfd07d82e64946ec62446d270167df322f8273f2a5c0c5977bb55eda090"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 153,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:401",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine01.png",
+      "alt": "CoffeeMachine01 · Type401 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "5336530793090555597",
+        "type": "Sprite",
+        "name": "CoffeeMachine01",
+        "object_source_sha256": "bd53ec91572687b43243d83886a10bc48d1567433524a0f94e977758e1f26e61"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 157,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:402",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine02.png",
+      "alt": "CoffeeMachine02 · Type402 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 4588475498289767863",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "864c7ae9aa7e24c6b8eb0058af11be5163561dee2bd5edfa410cc431d5be7dfa",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "4588475498289767863",
+        "type": "Sprite",
+        "name": "CoffeeMachine02",
+        "object_source_sha256": "bf39fe3ab576074d3b51c609f30af525c0e5692406d927bc26894dc51cd3bd4d"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 163,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:403",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine03.png",
+      "alt": "CoffeeMachine03 · Type403 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5662295843323391337",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "66910cdf3feab3f10873adf9ab008b4f39479c0534388d9a5c4786f425793776",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "5662295843323391337",
+        "type": "Sprite",
+        "name": "CoffeeMachine03",
+        "object_source_sha256": "d98a9fb869c79d74757285e50eb082ee1ad7886ea4e87d8b8a30c596e9cf9de2"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 169,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:404",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine04.png",
+      "alt": "CoffeeMachine04 · Type404 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 4450584770061742618",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "f0b1f9aaf3f10c25a8c9eb658ecd9a21133caf15afb87a138f719d80ad00b4db",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "4450584770061742618",
+        "type": "Sprite",
+        "name": "CoffeeMachine04",
+        "object_source_sha256": "5e3f5c3b9f3bf07b625069d04fbfccaa284bc45c1323355ac529d899527ed418"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 175,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:405",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine05.png",
+      "alt": "CoffeeMachine05 · Type405 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -1172454556900870752",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "95fd7b4b77c8c9bf6bb8015404e110e28a5c93f258da6cbb272fb00f9ab7a392",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-1172454556900870752",
+        "type": "Sprite",
+        "name": "CoffeeMachine05",
+        "object_source_sha256": "3529a08acae289577e44a76a137140d1190058b7a78df2e52cb06e87400d7cba"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 181,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:406",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine06.png",
+      "alt": "CoffeeMachine06 · Type406 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -2537988556595424065",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "dcc469c17f22d3e2a3fd5ddbf19392357dc434a6f7215dd7f5f859cb1b48bb5f",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-2537988556595424065",
+        "type": "Sprite",
+        "name": "CoffeeMachine06",
+        "object_source_sha256": "6e8083152eb7e0ca643d9732c2b6e35024b6adc1f8d727dd972df8a60e02bc57"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 187,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:407",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine07.png",
+      "alt": "CoffeeMachine07 · Type407 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1346732456182163931",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "3d6e6a7cac9f77338091f44b516b5ab0c795ad4cd5a1a537e54fb8cc07d9ac4c",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "1346732456182163931",
+        "type": "Sprite",
+        "name": "CoffeeMachine07",
+        "object_source_sha256": "d1333588da69f2c98b4fc739fd41a492525e5f75dd193317ccfcb0e8aed52eac"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 193,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:408",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine08.png",
+      "alt": "CoffeeMachine08 · Type408 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -441620755863591728",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "d714a3076802972daf342c79c41fb53754517cacce85ff2849c10ba607b4b617",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-441620755863591728",
+        "type": "Sprite",
+        "name": "CoffeeMachine08",
+        "object_source_sha256": "96e4c6eabceb2c317547b6acb8b6a883526098bff97ea162a47cdd597bb298ae"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 199,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:409",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine09.png",
+      "alt": "CoffeeMachine09 · Type409 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -8806387368317136338",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "1c64417b989a7589b4364d99704b947f091a035f95bfc3483197504188771639",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-8806387368317136338",
+        "type": "Sprite",
+        "name": "CoffeeMachine09",
+        "object_source_sha256": "32559b3a7b73010dc097dd564322c8b314d0f87c017472f4917e9a5d4e390bbc"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 205,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:410",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine10.png",
+      "alt": "CoffeeMachine10 · Type410 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8345782700895079778",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "24850a96617d7d1cf296a5ab1a415cda37f06eb93996f3658361ce6d79c2d961",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "8345782700895079778",
+        "type": "Sprite",
+        "name": "CoffeeMachine10",
+        "object_source_sha256": "6e9188f8cd89014506bbb77bdfa960cee0a6f26816a0449442c4b2f48449539f"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 211,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:411",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-CoffeeMachine11.png",
+      "alt": "CoffeeMachine11 · Type411 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3929405729364756255",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "72380c046acef6d91f357cbd3b40b46084bdb02861d9e95340da0f51c2e53660",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3929405729364756255",
+        "type": "Sprite",
+        "name": "CoffeeMachine11",
+        "object_source_sha256": "a7b1d2588e4de270b557057dc430407e47fd1b75a987904ff0007e76c46056b2"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 217,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:508",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Coffee08.png",
+      "alt": "Coffee08 · Type508 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -1792944520198921475",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "1364526549ca5253c4b9b7210ab1158c8af85128c15729b4b138b7bf53e5caca",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-1792944520198921475",
+        "type": "Sprite",
+        "name": "Coffee08",
+        "object_source_sha256": "57691f5e6e902f6183fc1559a91096ccca3e4539bf88e8226a57f900b8db4991"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 251,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:509",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Coffee09.png",
+      "alt": "Coffee09 · Type509 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4099858894409486344",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "39a82c622ca7c55b02f8ee02c8ca48c19852ead6e8a8f9692df08270f9b3e082",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4099858894409486344",
+        "type": "Sprite",
+        "name": "Coffee09",
+        "object_source_sha256": "5ca615994565b66aa6e26454cbb92635e6e8fc365a8a6f03b0c59df00929e636"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 255,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:510",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Coffee10.png",
+      "alt": "Coffee10 · Type510 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 75147110901966973",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "4f3d1fa6765d27a132eb4c2cfbc203005abe14f3c6ab5fc3466b3f50e3790bf7",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "75147110901966973",
+        "type": "Sprite",
+        "name": "Coffee10",
+        "object_source_sha256": "a5e90e5a86f6930056613b0d35e6cc3c36dcfda456794ee92d6d4d71dfc71b2c"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 259,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:511",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Coffee11.png",
+      "alt": "Coffee11 · Type511 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -2529836615347763815",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "cac546f643811e89076abf72130ea8dae9d97a231c816617e36d3305d2f815d4",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-2529836615347763815",
+        "type": "Sprite",
+        "name": "Coffee11",
+        "object_source_sha256": "4af85baaad736a2a2c9d3ffc32f416546811690692c07571e9d5367d3776eeef"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 263,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:512",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Coffee12.png",
+      "alt": "Coffee12 · Type512 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -1023797721029884588",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "32697f5e6cde7a7a1a8c340e7142af97881379acb77ee783862cff38ff24543c",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-1023797721029884588",
+        "type": "Sprite",
+        "name": "Coffee12",
+        "object_source_sha256": "f83cd4a147df4c56f2f8638b7ea40127037ae9b6ed4ba4b7ea600090252ec5cd"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 267,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:513",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Coffee13.png",
+      "alt": "Coffee13 · Type513 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1031551730248954181",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "89589cdffd82b9b4ab12b2a0db45b4c5dbc9daa8a7ab4f2859a7663520595c3b",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "1031551730248954181",
+        "type": "Sprite",
+        "name": "Coffee13",
+        "object_source_sha256": "ac596259987b89d89c8f47fd51e3764256f85773a08c49c3fa637462f5970081"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 271,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:514",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Coffee14.png",
+      "alt": "Coffee14 · Type514 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5494810489711000579",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "daf83d03b000fbc63dc821ad17300e8313733f3f59b30a81c8586abc12b99823",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "5494810489711000579",
+        "type": "Sprite",
+        "name": "Coffee14",
+        "object_source_sha256": "2b1fe8944823a896ec35a45a87fea02ff1d4cf2720c9056de6816bc4ee605034"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 275,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:601",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Tea01.png",
+      "alt": "Tea01 · Type601 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -2623215805906948761",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "50ccc0581e41806b6a299a55084df700d0dc789f42ead3e8e98737731084912b",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-2623215805906948761",
+        "type": "Sprite",
+        "name": "Tea01",
+        "object_source_sha256": "912d26eeb8e94c478e19c9e565c2481267fd9e0354c087e579efb12e5b16383b"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 279,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:602",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Tea02.png",
+      "alt": "Tea02 · Type602 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1073315246372652569",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "98377b3f5c08604ff295d59e5519d4972158ac434e9e947e3ff2b40fd433dae8",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "1073315246372652569",
+        "type": "Sprite",
+        "name": "Tea02",
+        "object_source_sha256": "ad78fb78097dc4fe61334e9bab9c1a16d4ae6bac1ee46a1393802d53f7a730b3"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 283,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:603",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Tea03.png",
+      "alt": "Tea03 · Type603 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -5869092359126107898",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "8053c1a1730350157865ffdba5cbd38e0fcd85c919058329c4141225b2ed1220",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-5869092359126107898",
+        "type": "Sprite",
+        "name": "Tea03",
+        "object_source_sha256": "4fe475e2503622330934229fe502a3ae91c2fcc4cf17092cb424a828787dc609"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 287,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:604",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Tea04.png",
+      "alt": "Tea04 · Type604 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4415480004596244939",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "9a0c310d5b4ab91c5a08ba7f006976155ef4b877d2b90ebe0d2adc3a18ea31df",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4415480004596244939",
+        "type": "Sprite",
+        "name": "Tea04",
+        "object_source_sha256": "bb872555b122cae2f7298fbbd69fb226baa0b413414a23b10f235ff557b63cde"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 291,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:605",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Tea05.png",
+      "alt": "Tea05 · Type605 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -2146526056268826668",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "007f5696dd47753ead1580835628dfe53fc978ecf0d233b8e93acfb004370bc8",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-2146526056268826668",
+        "type": "Sprite",
+        "name": "Tea05",
+        "object_source_sha256": "2c4faf600181aed1712a0d60aa8cfd847879513bdb18fc76d00c7ea759cf2767"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 295,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:606",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Tea06.png",
+      "alt": "Tea06 · Type606 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5019569158190452089",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "0f548ac7e4d2f63ae3ac023f9d280981bfa8d7bc708ffa3d986c3953a101dac5",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "5019569158190452089",
+        "type": "Sprite",
+        "name": "Tea06",
+        "object_source_sha256": "63974bbf741068c604637b0ce8e1d6e8f39a4155cbc6c63173f50cddddca875e"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 299,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+      }
+    },
+    {
+      "key": "item:ItemModelConfig:607",
+      "kind": "image",
+      "src": "./assets/media/apk-sim-Tea07.png",
+      "alt": "Tea07 · Type607 APK Sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4521332742570261029",
+      "version": "4.10.5",
+      "origin": "packaged-sprite",
+      "sha256": "286a107f50f0e1f3b323aa48bc5327bbcc6abaf71845594df7cdd3d6fb17dd4b",
+      "notes": "선정6체인 연구용 원본 Sprite. 실제 화면 캡처가 아님.",
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4521332742570261029",
+        "type": "Sprite",
+        "name": "Tea07",
+        "object_source_sha256": "16b2bcc4f958dc8871ccf3ad1c415eb68f94830e3856cb9e5179792d83a0b3ca"
+      },
+      "typeImageSource": {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+        "line_start": 303,
+        "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
       }
     }
   ]

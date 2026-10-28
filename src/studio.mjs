@@ -2,14 +2,18 @@ import {renderResearch,renderPuzzle,renderInteraction,renderDifficulty,renderInt
 import {validMedia,mediaFor} from './visual-model.mjs';
 import {createWalkthrough,walkthroughAction} from './walkthrough.mjs';
 import {renderCaptures} from './capture-pages.mjs';
+import {createPlayController} from './play-controller.mjs';
 
 export function createStudio({getData,getRoute,render,toast,download}){
  let walkthrough=createWalkthrough(),running=new Map();
+ let playMode='source';
+ const sourcePlay=createPlayController({getData,render,download});
+ const playPage=()=>`<nav class="studio-tabs" aria-label="게임 시뮬레이션 모드"><button class="button" data-play-mode="source" aria-pressed="${playMode==='source'}">APK 설정 기반 플레이</button><button class="button" data-play-mode="prototype" aria-pressed="${playMode==='prototype'}">기존 흐름 시연</button></nav>`+(playMode==='source'?sourcePlay.render():renderExperience(walkthrough,getData()));
  const itemFilters={query:'',table:'ItemModelConfig',role:'all',page:1};
  const uiFilters={query:'',category:'all',page:1};
  const captureFilters={category:'all',kind:'all'};
  const mediaDialog=document.querySelector('#media-dialog'),mediaContent=document.querySelector('#media-content');
- const pages={research:()=>renderResearch(getData()),captures:()=>renderCaptures(getData(),captureFilters),puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:()=>renderExperience(walkthrough,getData())};
+ const pages={research:()=>renderResearch(getData()),captures:()=>renderCaptures(getData(),captureFilters),puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
  const renderItem=()=>{document.querySelector('#item-catalog').innerHTML=renderItemCatalog(getData(),itemFilters);};
  const renderUI=()=>{document.querySelector('#ui-registry').innerHTML=renderUIRegistry(getData(),uiFilters);};
  function preserveInput(id,update){const node=document.getElementById(id),start=node.selectionStart,end=node.selectionEnd;update();const next=document.getElementById(id);next.focus({preventScroll:true});if(next.type==='search')next.setSelectionRange(start,end);}
@@ -34,6 +38,8 @@ export function createStudio({getData,getRoute,render,toast,download}){
  }
  document.addEventListener('click',event=>{
   const target=event.target.closest('button,a');if(!target)return;
+  if(target.dataset.playMode){playMode=target.dataset.playMode;render();document.querySelector(`[data-play-mode="${playMode}"]`)?.focus({preventScroll:true});return;}
+  if(target.hasAttribute('data-play')){sourcePlay.handle(target.dataset.play,target.dataset.value);return;}
   if(target.hasAttribute('data-capture-category')||target.hasAttribute('data-capture-kind')){const key=target.hasAttribute('data-capture-category')?'category':'kind',value=key==='category'?target.dataset.captureCategory:target.dataset.captureKind;captureFilters[key]=value;render();document.querySelector(`[data-capture-${key}="${value}"]`)?.focus({preventScroll:true});return;}
   if(target.hasAttribute('data-walk')){handleWalk(target.dataset.walk,target.dataset.value);return;}
   if(target.hasAttribute('data-demo')){
@@ -62,5 +68,5 @@ export function createStudio({getData,getRoute,render,toast,download}){
  mediaDialog.addEventListener('close',clearMedia);
  mediaDialog.addEventListener('cancel',clearMedia);
  function afterRender(){for(const [id,timer]of running){clearTimeout(timer);}running.clear();}
- return {renderPage:id=>pages[id]?.()||'',afterRender};
+ return {renderPage:id=>pages[id]?.()||'',afterRender,afterMount(){if(getRoute()==='experience'&&playMode==='source')sourcePlay.afterMount();}};
 }

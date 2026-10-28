@@ -111,7 +111,7 @@ function render(){
  syncNavigation(route);document.body.dataset.surface=VISUAL_ROUTES.includes(route)?'visual':'research';
  const pages={overview:renderOverview,wiki:renderWiki,catalog:renderCatalog,triggers:renderTriggers,simulator:renderSimulator,evidence:renderEvidence};
  studio.afterRender();view.innerHTML=route==='bm-validation'?bmWorkbench.render():Object.hasOwn(STUDIO_PAGES,route)?studio.renderPage(route):DOMAIN_IDS.includes(route)?renderDomainPage(route,data,filters):pages[route]();view.setAttribute('aria-busy','false');
- reader.afterRender();
+ studio.afterMount();reader.afterRender();
 }
 function renderAndFocus(selector){render();if(selector)document.querySelector(selector)?.focus({preventScroll:true});}
 function showEvidence(id){
@@ -179,7 +179,7 @@ document.addEventListener('keydown',event=>{
 
 async function load(){
  const readData=path=>fetch(path).then(response=>{if(!response.ok)throw new Error(`분석 데이터 응답: HTTP ${response.status}`);return response.json();});
- const dataPromise=Promise.all([readData('./data/research.json'),readData('./data/domains.json'),readData('./data/visual-index.json'),readData('./data/media.json'),readData('./data/followup.json')]).then(([base,extension,visual,media,followup])=>({...mergeResearch(base,extension,followup),visual,media}));
+ const dataPromise=Promise.all([readData('./data/research.json'),readData('./data/domains.json'),readData('./data/visual-index.json'),readData('./data/media.json'),readData('./data/followup.json'),readData('./data/play-config.json')]).then(([base,extension,visual,media,followup,playConfig])=>({...mergeResearch(base,extension,followup),visual,media,playConfig}));
  const enginePromise=import('./engine.mjs').then(module=>{engine=module;simState=engine.createState();}).catch(error=>{engineError='시뮬레이션 엔진을 불러오지 못했습니다. 위키의 정적 근거는 계속 읽을 수 있습니다.';console.error('Engine load failed:',error);});
  try{data=await dataPromise;if(!Array.isArray(data.facts)||!Array.isArray(data.products))throw new Error('분석 데이터의 형식이 올바르지 않습니다.');const sharedProduct=new URLSearchParams(location.hash.split('?')[1]||'').get('product');if(sharedProduct){filters.query=sharedProduct;search.value=sharedProduct;}render();await enginePromise;if(['simulator','triggers'].includes(route))render();}
  catch(error){view.setAttribute('aria-busy','false');view.innerHTML=`<div class="error-state"><h1>분석 노트를 불러오지 못했습니다</h1><p>${e(error.message)}<br>서버의 <code>./data/research.json</code> 파일과 네트워크 연결을 확인해 주세요.</p><button class="button primary" data-action="reload">다시 불러오기 ↺</button></div>`;}

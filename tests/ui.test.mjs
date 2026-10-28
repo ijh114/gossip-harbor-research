@@ -93,7 +93,21 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   assert.match(w.document.querySelector('#bm-rule-result').textContent,/신규 번들 생성 불가/);
   const bmCost=w.document.querySelector('[data-bm-key="generationCost"]');bmCost.value='2';bmCost.dispatchEvent(new w.Event('input',{bubbles:true}));
   assert.match(w.document.querySelector('#bm-rule-result').textContent,/신규 번들 생성 가능/);
-  await go('experience');for(let i=0;i<3;i++)click('[data-walk="load"]');assert.ok(w.document.querySelector('[data-stage="title"]'));
+  await go('experience');assert.ok(w.document.querySelector('.source-play-start'));click('[data-play="start"]');
+  assert.equal(w.document.querySelectorAll('.source-play-cell').length,63);click('[data-play="cell"][data-value="0"]');click('[data-play="generate"]');
+  assert.ok(w.document.querySelectorAll('.source-play-cell.occupied').length>=3);
+  click('[data-play="aid-energy"]');click('[data-play="generate"]');assert.ok(w.document.querySelector('#play-dialog[open]'));
+  click('[data-play="buy-energy"]');assert.equal(w.document.querySelector('#play-dialog'),null);
+  click('[data-play="aid-energy"]');click('[data-play="generate"]');w.document.querySelector('#play-dialog').dispatchEvent(new w.Event('cancel',{cancelable:true}));
+  assert.match(w.document.querySelector('#play-dialog').textContent,/에너지 번들/);click('[data-play="close-offer"]');
+  click('[data-play="aid-coins"]');click('[data-play="home"]');
+  for(let i=0;i<6;i++){click('[data-play="quest-start"]');click('[data-play="quest-finish"]');}
+  assert.match(w.document.querySelector('.source-map-progress').textContent,/6 \/ 6/);
+  click('[data-play="main"]');click('[data-play="shop"]');click('[data-play="chain-start"]');
+  for(let i=0;i<6;i++)click('[data-play="chain-claim"]');assert.equal(w.document.querySelector('[data-play="chain-claim"]').disabled,true);
+  click('[data-play="close-shop"]');click('[data-play="save"]');
+  assert.equal(JSON.parse(w.localStorage.getItem('harbor-research-play-v1')).state.questsDone,6);
+  click('[data-play-mode="prototype"]');for(let i=0;i<3;i++)click('[data-walk="load"]');assert.ok(w.document.querySelector('[data-stage="title"]'));
   click('[data-walk="start"]');click('[data-walk="tutorial-generate"]');click('[data-walk="tutorial-cell"][data-value="0"]');click('[data-walk="tutorial-cell"][data-value="1"]');click('[data-walk="finish-tutorial"]');
   click('[data-walk="play"]');assert.equal(w.document.querySelectorAll('.play-cell').length,63);click('[data-walk="generate"]');
   click('[data-walk="home"]');click('[data-walk="renovate"]');assert.match(w.document.querySelector('.experience-feedback').textContent,/골드 40개 필요/);
