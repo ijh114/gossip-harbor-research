@@ -21,7 +21,7 @@ npm run dev
 
 1. 저장소 Settings → Pages → Build and deployment의 Source를 **GitHub Actions**로 선택합니다.
 2. `main`에 push하면 `.github/workflows/github-pages.yml`이 테스트 → 빌드 → 데이터 검사 → 게시를 수행합니다.
-3. Actions의 배포 성공 후 `https://ijh114.github.io/gossip-harbor-research/`에서 확인합니다. 이 주소는 배포 전까지 예정 주소입니다.
+3. 배포 주소는 [가십하버 BM 분석실](https://ijh114.github.io/gossip-harbor-research/)입니다. 첫 배포와 페이지·데이터 정상 응답을 확인했습니다.
 
 ### Cloudflare Pages — Git 연동
 
