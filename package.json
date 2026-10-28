@@ -1,0 +1,14 @@
+{
+  "name": "harbor-bm-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Evidence-based Gossip Harbor BM research wiki and simulation laboratory",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": {"node": ">=22"}
+}
