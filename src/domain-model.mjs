@@ -31,11 +31,13 @@ export function domainStats(facts,id){
    code:selected.filter(f=>f.kind==='code').length,config:selected.filter(f=>f.kind==='config').length,
    text:selected.filter(f=>f.kind==='text').length,inference:selected.filter(f=>f.kind==='inference').length};
 }
-export function mergeResearch(base,extension){
+export function mergeResearch(base,extension,followup={findings:[]}){
  if(extension.targetVersion!==base.meta.version)throw new Error('분석 버전이 일치하지 않습니다.');
- const facts=[...base.facts,...extension.findings];
+ if(followup.targetVersion&&followup.targetVersion!==base.meta.version)throw new Error('후속 분석 버전이 일치하지 않습니다.');
+ const extra=followup.findings||[],facts=[...base.facts,...extension.findings,...extra];
  if(new Set(facts.map(f=>f.id)).size!==facts.length)throw new Error('분석 항목 ID가 중복됩니다.');
- return {...base,facts,domainAnalysis:extension,meta:{...base.meta,factCount:facts.length,domainCount:DOMAIN_DEFS.length}};
+ const pages=Object.fromEntries(Object.entries(extension.pages).map(([id,page])=>{const rows=extra.filter(f=>inDomain(f,id));return [id,rows.length?{...page,sections:[...page.sections,{id:'followup-verification',title:'후속 정적 검증',intro:'서버 입력과 실제 관측을 구분하여 추가 추적한 결과입니다.',factIds:rows.map(f=>f.id)}]}:page];}));
+ return {...base,facts,followup,domainAnalysis:{...extension,pages},meta:{...base.meta,factCount:facts.length,domainCount:DOMAIN_DEFS.length}};
 }
 export function baseMergeUnits(level){
  if(!Number.isInteger(level)||level<1||level>20)throw new RangeError('Level must be1..20');

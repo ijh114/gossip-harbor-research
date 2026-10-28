@@ -1,0 +1,3701 @@
+{
+  "schemaVersion": 1,
+  "scope": "Same analyst experiment inputs in JavaScript and C#; not game runtime equivalence.",
+  "cases": [
+    {
+      "id": "recovery-free-price-day",
+      "initial": {
+        "energy": 0
+      },
+      "actions": [
+        {
+          "kind": "advance",
+          "value": 119
+        },
+        {
+          "kind": "advance",
+          "value": 1
+        },
+        {
+          "kind": "buy"
+        },
+        {
+          "kind": "buy"
+        },
+        {
+          "kind": "advance",
+          "value": 86400
+        },
+        {
+          "kind": "buy"
+        }
+      ],
+      "expected": [
+        {
+          "ok": true,
+          "state": {
+            "energy": 0,
+            "gems": 200,
+            "coins": 0,
+            "time": 119,
+            "recoveryRemainder": 119,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 1,
+            "gems": 200,
+            "coins": 0,
+            "time": 120,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 101,
+            "gems": 200,
+            "coins": 0,
+            "time": 120,
+            "recoveryRemainder": 0,
+            "freeUsed": 1,
+            "freeTotal": 1,
+            "price": 20,
+            "energyBuys": 1,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 201,
+            "gems": 180,
+            "coins": 0,
+            "time": 120,
+            "recoveryRemainder": 0,
+            "freeUsed": 1,
+            "freeTotal": 1,
+            "price": 40,
+            "energyBuys": 2,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 201,
+            "gems": 180,
+            "coins": 0,
+            "time": 86520,
+            "recoveryRemainder": 0,
+            "freeUsed": 1,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 2,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 301,
+            "gems": 170,
+            "coins": 0,
+            "time": 86520,
+            "recoveryRemainder": 0,
+            "freeUsed": 1,
+            "freeTotal": 1,
+            "price": 20,
+            "energyBuys": 3,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "capped-recovery-no-bank",
+      "initial": {
+        "energy": 99
+      },
+      "actions": [
+        {
+          "kind": "advance",
+          "value": 1000
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "advance",
+          "value": 119
+        },
+        {
+          "kind": "advance",
+          "value": 1
+        }
+      ],
+      "expected": [
+        {
+          "ok": true,
+          "state": {
+            "energy": 100,
+            "gems": 200,
+            "coins": 0,
+            "time": 1000,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 99,
+            "gems": 200,
+            "coins": 0,
+            "time": 1000,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 1,
+            "orders": 0,
+            "seed": 11355432,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 99,
+            "gems": 200,
+            "coins": 0,
+            "time": 1119,
+            "recoveryRemainder": 119,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 1,
+            "orders": 0,
+            "seed": 11355432,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 100,
+            "gems": 200,
+            "coins": 0,
+            "time": 1120,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 1,
+            "orders": 0,
+            "seed": 11355432,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "failed-paid-buy",
+      "initial": {
+        "energy": 0,
+        "gems": 0,
+        "freeUsed": 1,
+        "price": 20
+      },
+      "actions": [
+        {
+          "kind": "buy"
+        },
+        {
+          "kind": "advance",
+          "value": 240
+        }
+      ],
+      "expected": [
+        {
+          "ok": false,
+          "state": {
+            "energy": 0,
+            "gems": 0,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 1,
+            "freeTotal": 1,
+            "price": 20,
+            "energyBuys": 0,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 2,
+            "gems": 0,
+            "coins": 0,
+            "time": 240,
+            "recoveryRemainder": 0,
+            "freeUsed": 1,
+            "freeTotal": 1,
+            "price": 20,
+            "energyBuys": 0,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "xorshift32-and-board",
+      "initial": {
+        "energy": 100
+      },
+      "actions": [
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        },
+        {
+          "kind": "generate"
+        }
+      ],
+      "expected": [
+        {
+          "ok": true,
+          "state": {
+            "energy": 99,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 1,
+            "orders": 0,
+            "seed": 11355432,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 98,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 2,
+            "orders": 0,
+            "seed": 2836018348,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 97,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 3,
+            "orders": 0,
+            "seed": 476557059,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 96,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 4,
+            "orders": 0,
+            "seed": 3648046016,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 95,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 5,
+            "orders": 0,
+            "seed": 3759983556,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 94,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 6,
+            "orders": 0,
+            "seed": 1441438134,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 93,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 7,
+            "orders": 0,
+            "seed": 3713466840,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 92,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 8,
+            "orders": 0,
+            "seed": 2431644334,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 91,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 9,
+            "orders": 0,
+            "seed": 3120216979,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 90,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 10,
+            "orders": 0,
+            "seed": 1067267639,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 89,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 11,
+            "orders": 0,
+            "seed": 2989017562,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 88,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 12,
+            "orders": 0,
+            "seed": 3379058227,
+            "board": [
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "bread",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "merge-move-order",
+      "initial": {
+        "board": [
+          {
+            "family": "bread",
+            "level": 3
+          },
+          {
+            "family": "bread",
+            "level": 3
+          },
+          {
+            "family": "tea",
+            "level": 1
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "actions": [
+        {
+          "kind": "merge",
+          "from": 0,
+          "to": 2
+        },
+        {
+          "kind": "merge",
+          "from": 2,
+          "to": 4
+        },
+        {
+          "kind": "merge",
+          "from": 0,
+          "to": 1
+        },
+        {
+          "kind": "deliver"
+        },
+        {
+          "kind": "deliver"
+        }
+      ],
+      "expected": [
+        {
+          "ok": false,
+          "state": {
+            "energy": 100,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              {
+                "family": "bread",
+                "level": 3
+              },
+              {
+                "family": "bread",
+                "level": 3
+              },
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 100,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              {
+                "family": "bread",
+                "level": 3
+              },
+              {
+                "family": "bread",
+                "level": 3
+              },
+              null,
+              null,
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 100,
+            "gems": 200,
+            "coins": 0,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 0,
+            "orders": 0,
+            "seed": 42,
+            "board": [
+              null,
+              {
+                "family": "bread",
+                "level": 4
+              },
+              null,
+              null,
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": true,
+          "state": {
+            "energy": 100,
+            "gems": 200,
+            "coins": 40,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 0,
+            "orders": 1,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        },
+        {
+          "ok": false,
+          "state": {
+            "energy": 100,
+            "gems": 200,
+            "coins": 40,
+            "time": 0,
+            "recoveryRemainder": 0,
+            "freeUsed": 0,
+            "freeTotal": 1,
+            "price": 10,
+            "energyBuys": 0,
+            "generated": 0,
+            "orders": 1,
+            "seed": 42,
+            "board": [
+              null,
+              null,
+              null,
+              null,
+              {
+                "family": "tea",
+                "level": 1
+              },
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "predicates": [
+    {
+      "raw": {
+        "groupDuration": 60,
+        "groupCD": 240,
+        "giftDuration": 30,
+        "triggerEnergyPrice": 20,
+        "dailyTriggerUpper": 2,
+        "poptype": 1
+      },
+      "state": {},
+      "expected": {
+        "canCreate": true,
+        "config": {
+          "groupSeconds": 3600,
+          "cooldownSeconds": 14400,
+          "giftSeconds": 1800,
+          "triggerPrice": 20,
+          "triggerLimit": 2,
+          "popType": 1
+        },
+        "gates": [
+          {
+            "id": "lateInit",
+            "label": "LateInit 완료",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "config",
+            "label": "EnergyGift 구성 존재",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "daily",
+            "label": "일별 신규 생성 횟수",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "cooldown",
+            "label": "그룹 쿨다운 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "free",
+            "label": "무료 충전 차례 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "price",
+            "label": "일반 젬 충전 가격 임계값",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "existing",
+            "label": "그룹 내 유효 번들 없음",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "energy",
+            "label": "현재 생성 비용보다 에너지 부족",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "chain",
+            "label": "ChainEnergy 충전 체인 비활성",
+            "evaluated": true,
+            "pass": true
+          }
+        ],
+        "refreshed": false,
+        "effectiveTriggerCount": 0,
+        "firstFailure": null,
+        "scope": "신규 EnergyBundle 생성 판정만. 기존 번들 노출·상위 IAP/튜토리얼/UI 게이트는 별도."
+      }
+    },
+    {
+      "raw": {
+        "groupDuration": 60,
+        "groupCD": 240,
+        "giftDuration": 30,
+        "triggerEnergyPrice": 20,
+        "dailyTriggerUpper": 2,
+        "poptype": 1
+      },
+      "state": {
+        "energy": 1
+      },
+      "expected": {
+        "canCreate": false,
+        "config": {
+          "groupSeconds": 3600,
+          "cooldownSeconds": 14400,
+          "giftSeconds": 1800,
+          "triggerPrice": 20,
+          "triggerLimit": 2,
+          "popType": 1
+        },
+        "gates": [
+          {
+            "id": "lateInit",
+            "label": "LateInit 완료",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "config",
+            "label": "EnergyGift 구성 존재",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "daily",
+            "label": "일별 신규 생성 횟수",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "cooldown",
+            "label": "그룹 쿨다운 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "free",
+            "label": "무료 충전 차례 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "price",
+            "label": "일반 젬 충전 가격 임계값",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "existing",
+            "label": "그룹 내 유효 번들 없음",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "energy",
+            "label": "현재 생성 비용보다 에너지 부족",
+            "evaluated": true,
+            "pass": false
+          },
+          {
+            "id": "chain",
+            "label": "ChainEnergy 충전 체인 비활성",
+            "evaluated": false,
+            "pass": null
+          }
+        ],
+        "refreshed": false,
+        "effectiveTriggerCount": 0,
+        "firstFailure": "energy",
+        "scope": "신규 EnergyBundle 생성 판정만. 기존 번들 노출·상위 IAP/튜토리얼/UI 게이트는 별도."
+      }
+    },
+    {
+      "raw": {
+        "groupDuration": 60,
+        "groupCD": 240,
+        "giftDuration": 30,
+        "triggerEnergyPrice": 20,
+        "dailyTriggerUpper": 2,
+        "poptype": 1
+      },
+      "state": {
+        "energy": 1,
+        "generationCost": 2
+      },
+      "expected": {
+        "canCreate": true,
+        "config": {
+          "groupSeconds": 3600,
+          "cooldownSeconds": 14400,
+          "giftSeconds": 1800,
+          "triggerPrice": 20,
+          "triggerLimit": 2,
+          "popType": 1
+        },
+        "gates": [
+          {
+            "id": "lateInit",
+            "label": "LateInit 완료",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "config",
+            "label": "EnergyGift 구성 존재",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "daily",
+            "label": "일별 신규 생성 횟수",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "cooldown",
+            "label": "그룹 쿨다운 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "free",
+            "label": "무료 충전 차례 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "price",
+            "label": "일반 젬 충전 가격 임계값",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "existing",
+            "label": "그룹 내 유효 번들 없음",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "energy",
+            "label": "현재 생성 비용보다 에너지 부족",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "chain",
+            "label": "ChainEnergy 충전 체인 비활성",
+            "evaluated": true,
+            "pass": true
+          }
+        ],
+        "refreshed": false,
+        "effectiveTriggerCount": 0,
+        "firstFailure": null,
+        "scope": "신규 EnergyBundle 생성 판정만. 기존 번들 노출·상위 IAP/튜토리얼/UI 게이트는 별도."
+      }
+    },
+    {
+      "raw": {
+        "groupDuration": 60,
+        "groupCD": 240,
+        "giftDuration": 30,
+        "triggerEnergyPrice": 20,
+        "dailyTriggerUpper": 2,
+        "poptype": 1
+      },
+      "state": {
+        "triggerCount": 2
+      },
+      "expected": {
+        "canCreate": false,
+        "config": {
+          "groupSeconds": 3600,
+          "cooldownSeconds": 14400,
+          "giftSeconds": 1800,
+          "triggerPrice": 20,
+          "triggerLimit": 2,
+          "popType": 1
+        },
+        "gates": [
+          {
+            "id": "lateInit",
+            "label": "LateInit 완료",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "config",
+            "label": "EnergyGift 구성 존재",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "daily",
+            "label": "일별 신규 생성 횟수",
+            "evaluated": true,
+            "pass": false
+          },
+          {
+            "id": "cooldown",
+            "label": "그룹 쿨다운 아님",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "free",
+            "label": "무료 충전 차례 아님",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "price",
+            "label": "일반 젬 충전 가격 임계값",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "existing",
+            "label": "그룹 내 유효 번들 없음",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "energy",
+            "label": "현재 생성 비용보다 에너지 부족",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "chain",
+            "label": "ChainEnergy 충전 체인 비활성",
+            "evaluated": false,
+            "pass": null
+          }
+        ],
+        "refreshed": false,
+        "effectiveTriggerCount": 2,
+        "firstFailure": "daily",
+        "scope": "신규 EnergyBundle 생성 판정만. 기존 번들 노출·상위 IAP/튜토리얼/UI 게이트는 별도."
+      }
+    },
+    {
+      "raw": {
+        "groupDuration": 60,
+        "groupCD": 240,
+        "giftDuration": 30,
+        "triggerEnergyPrice": 20,
+        "dailyTriggerUpper": 2,
+        "poptype": 1
+      },
+      "state": {
+        "triggerCount": 20,
+        "serverTime": 172800,
+        "refreshTime": 172799
+      },
+      "expected": {
+        "canCreate": true,
+        "config": {
+          "groupSeconds": 3600,
+          "cooldownSeconds": 14400,
+          "giftSeconds": 1800,
+          "triggerPrice": 20,
+          "triggerLimit": 2,
+          "popType": 1
+        },
+        "gates": [
+          {
+            "id": "lateInit",
+            "label": "LateInit 완료",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "config",
+            "label": "EnergyGift 구성 존재",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "daily",
+            "label": "일별 신규 생성 횟수",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "cooldown",
+            "label": "그룹 쿨다운 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "free",
+            "label": "무료 충전 차례 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "price",
+            "label": "일반 젬 충전 가격 임계값",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "existing",
+            "label": "그룹 내 유효 번들 없음",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "energy",
+            "label": "현재 생성 비용보다 에너지 부족",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "chain",
+            "label": "ChainEnergy 충전 체인 비활성",
+            "evaluated": true,
+            "pass": true
+          }
+        ],
+        "refreshed": true,
+        "effectiveTriggerCount": 0,
+        "firstFailure": null,
+        "scope": "신규 EnergyBundle 생성 판정만. 기존 번들 노출·상위 IAP/튜토리얼/UI 게이트는 별도."
+      }
+    },
+    {
+      "raw": {
+        "groupDuration": 60,
+        "groupCD": 240,
+        "giftDuration": 30,
+        "triggerEnergyPrice": 20,
+        "dailyTriggerUpper": 2,
+        "poptype": 1
+      },
+      "state": {
+        "freeAvailable": true
+      },
+      "expected": {
+        "canCreate": false,
+        "config": {
+          "groupSeconds": 3600,
+          "cooldownSeconds": 14400,
+          "giftSeconds": 1800,
+          "triggerPrice": 20,
+          "triggerLimit": 2,
+          "popType": 1
+        },
+        "gates": [
+          {
+            "id": "lateInit",
+            "label": "LateInit 완료",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "config",
+            "label": "EnergyGift 구성 존재",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "daily",
+            "label": "일별 신규 생성 횟수",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "cooldown",
+            "label": "그룹 쿨다운 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "free",
+            "label": "무료 충전 차례 아님",
+            "evaluated": true,
+            "pass": false
+          },
+          {
+            "id": "price",
+            "label": "일반 젬 충전 가격 임계값",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "existing",
+            "label": "그룹 내 유효 번들 없음",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "energy",
+            "label": "현재 생성 비용보다 에너지 부족",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "chain",
+            "label": "ChainEnergy 충전 체인 비활성",
+            "evaluated": false,
+            "pass": null
+          }
+        ],
+        "refreshed": false,
+        "effectiveTriggerCount": 0,
+        "firstFailure": "free",
+        "scope": "신규 EnergyBundle 생성 판정만. 기존 번들 노출·상위 IAP/튜토리얼/UI 게이트는 별도."
+      }
+    },
+    {
+      "raw": {
+        "groupDuration": 60,
+        "groupCD": 240,
+        "giftDuration": 30,
+        "triggerEnergyPrice": 20,
+        "dailyTriggerUpper": 2,
+        "poptype": 1
+      },
+      "state": {
+        "existingValidBundle": true
+      },
+      "expected": {
+        "canCreate": false,
+        "config": {
+          "groupSeconds": 3600,
+          "cooldownSeconds": 14400,
+          "giftSeconds": 1800,
+          "triggerPrice": 20,
+          "triggerLimit": 2,
+          "popType": 1
+        },
+        "gates": [
+          {
+            "id": "lateInit",
+            "label": "LateInit 완료",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "config",
+            "label": "EnergyGift 구성 존재",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "daily",
+            "label": "일별 신규 생성 횟수",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "cooldown",
+            "label": "그룹 쿨다운 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "free",
+            "label": "무료 충전 차례 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "price",
+            "label": "일반 젬 충전 가격 임계값",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "existing",
+            "label": "그룹 내 유효 번들 없음",
+            "evaluated": true,
+            "pass": false
+          },
+          {
+            "id": "energy",
+            "label": "현재 생성 비용보다 에너지 부족",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "chain",
+            "label": "ChainEnergy 충전 체인 비활성",
+            "evaluated": false,
+            "pass": null
+          }
+        ],
+        "refreshed": false,
+        "effectiveTriggerCount": 0,
+        "firstFailure": "existing",
+        "scope": "신규 EnergyBundle 생성 판정만. 기존 번들 노출·상위 IAP/튜토리얼/UI 게이트는 별도."
+      }
+    },
+    {
+      "raw": {
+        "groupDuration": 60,
+        "groupCD": 240,
+        "giftDuration": 30,
+        "triggerEnergyPrice": 20,
+        "dailyTriggerUpper": 2,
+        "poptype": 1
+      },
+      "state": {
+        "chainEnergyOpen": true
+      },
+      "expected": {
+        "canCreate": false,
+        "config": {
+          "groupSeconds": 3600,
+          "cooldownSeconds": 14400,
+          "giftSeconds": 1800,
+          "triggerPrice": 20,
+          "triggerLimit": 2,
+          "popType": 1
+        },
+        "gates": [
+          {
+            "id": "lateInit",
+            "label": "LateInit 완료",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "config",
+            "label": "EnergyGift 구성 존재",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "daily",
+            "label": "일별 신규 생성 횟수",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "cooldown",
+            "label": "그룹 쿨다운 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "free",
+            "label": "무료 충전 차례 아님",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "price",
+            "label": "일반 젬 충전 가격 임계값",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "existing",
+            "label": "그룹 내 유효 번들 없음",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "energy",
+            "label": "현재 생성 비용보다 에너지 부족",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "chain",
+            "label": "ChainEnergy 충전 체인 비활성",
+            "evaluated": true,
+            "pass": false
+          }
+        ],
+        "refreshed": false,
+        "effectiveTriggerCount": 0,
+        "firstFailure": "chain",
+        "scope": "신규 EnergyBundle 생성 판정만. 기존 번들 노출·상위 IAP/튜토리얼/UI 게이트는 별도."
+      }
+    },
+    {
+      "raw": {
+        "groupDuration": 60,
+        "groupCD": 240,
+        "giftDuration": 30,
+        "triggerEnergyPrice": 20,
+        "dailyTriggerUpper": 2,
+        "poptype": 1
+      },
+      "state": {
+        "coolingDown": true
+      },
+      "expected": {
+        "canCreate": false,
+        "config": {
+          "groupSeconds": 3600,
+          "cooldownSeconds": 14400,
+          "giftSeconds": 1800,
+          "triggerPrice": 20,
+          "triggerLimit": 2,
+          "popType": 1
+        },
+        "gates": [
+          {
+            "id": "lateInit",
+            "label": "LateInit 완료",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "config",
+            "label": "EnergyGift 구성 존재",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "daily",
+            "label": "일별 신규 생성 횟수",
+            "evaluated": true,
+            "pass": true
+          },
+          {
+            "id": "cooldown",
+            "label": "그룹 쿨다운 아님",
+            "evaluated": true,
+            "pass": false
+          },
+          {
+            "id": "free",
+            "label": "무료 충전 차례 아님",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "price",
+            "label": "일반 젬 충전 가격 임계값",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "existing",
+            "label": "그룹 내 유효 번들 없음",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "energy",
+            "label": "현재 생성 비용보다 에너지 부족",
+            "evaluated": false,
+            "pass": null
+          },
+          {
+            "id": "chain",
+            "label": "ChainEnergy 충전 체인 비활성",
+            "evaluated": false,
+            "pass": null
+          }
+        ],
+        "refreshed": false,
+        "effectiveTriggerCount": 0,
+        "firstFailure": "cooldown",
+        "scope": "신규 EnergyBundle 생성 판정만. 기존 번들 노출·상위 IAP/튜토리얼/UI 게이트는 별도."
+      }
+    }
+  ],
+  "normalization": {
+    "raw": {
+      "groupDuration": 60,
+      "groupCD": 240,
+      "giftDuration": 30,
+      "triggerEnergyPrice": 20,
+      "dailyTriggerUpper": 2,
+      "poptype": 1
+    },
+    "expected": {
+      "groupSeconds": 3600,
+      "cooldownSeconds": 14400,
+      "giftSeconds": 1800,
+      "triggerPrice": 20,
+      "triggerLimit": 2,
+      "popType": 1
+    }
+  },
+  "prices": [
+    {
+      "normal": 20,
+      "chain": [
+        0,
+        40,
+        160
+      ],
+      "index": 0,
+      "expected": 40
+    },
+    {
+      "normal": 80,
+      "chain": [
+        0,
+        40,
+        160
+      ],
+      "index": 0,
+      "expected": 80
+    },
+    {
+      "normal": 20,
+      "chain": [
+        0,
+        40,
+        160
+      ],
+      "index": 2,
+      "expected": 160
+    },
+    {
+      "normal": 20,
+      "chain": [
+        0,
+        0
+      ],
+      "index": 0,
+      "expected": 20
+    }
+  ]
+}

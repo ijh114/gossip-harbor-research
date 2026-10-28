@@ -71,8 +71,8 @@ export function traceOffers(inputs={}) {
   // Server candidates here are analyst-supplied eligibility, not discovered live config.
   const x={level:3,energy:0,price:20,freeAvailable:false,triggerPrice:20,invite:false,noPay:false,
     bundle:true,plenty:false,chain:false,weekly:false,chainPrice:2.99,weeklyPrice:4.99,
-    closedWithoutPurchase:true,popType:1,...inputs};
-  const bundleEligible=x.bundle&&!x.freeAvailable&&x.energy<1&&x.price>=x.triggerPrice;
+    closedWithoutPurchase:true,popType:1,generationCost:1,...inputs};
+  const bundleEligible=x.bundle&&!x.freeAvailable&&x.energy<x.generationCost&&x.price>=x.triggerPrice;
   const earlyBundle=bundleEligible&&Number(x.popType)!==1;
   const steps=[];
   const step=(id,label,ok,reason)=>{steps.push({id,label,ok,reason});return ok;};
@@ -80,7 +80,7 @@ export function traceOffers(inputs={}) {
   if(!x.closedWithoutPurchase) {step('close','충전창 닫기',false,'구매 없이 닫은 경우에만 후속 체인을 평가');return {chosen:null,steps,earlyBundle:false};}
   if(step('invite','친구 초대',x.invite,'서버·초대 상태 적격 여부를 입력값으로 가정')) return {chosen:'친구 초대',steps,earlyBundle:false};
   if(step('no-pay','EnergyGemOffer',x.noPay,'NoPayEnergy 서버 구성·잔여시간·쿨다운 적격 여부 가정')) return {chosen:'EnergyGemOffer',steps,earlyBundle:false};
-  if(step('energy-bundle','에너지 번들',bundleEligible,!x.bundle?'서버 후보 비활성':x.freeAvailable?'무료 충전이 남아 있음':x.energy>=1?'생성 비용 이상의 에너지 보유':x.price<x.triggerPrice?'충전 젬 비용이 triggerPrice 미만':'에너지 부족·가격 임계치 통과, 나머지 서버 게이트 적격 가정')) return {chosen:'에너지 번들',steps,earlyBundle:false};
+  if(step('energy-bundle','에너지 번들',bundleEligible,!x.bundle?'서버 후보 비활성':x.freeAvailable?'무료 충전이 남아 있음':x.energy>=x.generationCost?'현재 생성 비용 이상의 에너지 보유':x.price<x.triggerPrice?'충전 젬 비용이 triggerPrice 미만':'에너지 부족·가격 임계치 통과, 나머지 서버 게이트 적격 가정')) return {chosen:'에너지 번들',steps,earlyBundle:false};
   if(step('plenty','Plenty 오퍼',x.plenty,'서버 후보·로컬 적격 여부 가정')) return {chosen:'Plenty 오퍼',steps,earlyBundle:false};
   let chosen=null;
   if(x.chain&&x.weekly) chosen=x.chainPrice<=x.weeklyPrice?'체인 패키지':'신규 주간 패키지';

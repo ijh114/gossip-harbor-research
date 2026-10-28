@@ -1,0 +1,9 @@
+{
+  "name": "com.harbor.research.rules",
+  "version": "0.1.0",
+  "displayName": "Harbor Research Rules",
+  "description": "Independent, offline energy, merge-board and BM predicate research model. No game assets, server integration or payment integration.",
+  "unity": "6000.3",
+  "keywords": ["research", "simulation", "offline"],
+  "license": "UNLICENSED"
+}

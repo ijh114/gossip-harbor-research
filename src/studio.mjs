@@ -18,7 +18,7 @@ export function createStudio({getData,getRoute,render,toast,download}){
   const asset=document.createElement(entry.kind==='video'?'video':'img');asset.src=entry.src;
   if(entry.kind==='video'){asset.controls=true;asset.autoplay=false;asset.playsInline=true;if(entry.poster)asset.poster=entry.poster;}
   else asset.alt=entry.alt;
-  const caption=document.createElement('p');caption.textContent=`${entry.source}${entry.capturedAt?' · '+entry.capturedAt:''}${entry.version?' · v'+entry.version:''}`;
+  const caption=document.createElement('p');caption.textContent=`${entry.source}${entry.capturedAt?' · '+entry.capturedAt:''}${entry.version?' · v'+entry.version:''}${entry.notes?' · '+entry.notes:''}`;
   const stop=document.createElement('button');stop.className='button';stop.textContent=entry.kind==='gif'?'GIF 정지·닫기':'닫기';stop.addEventListener('click',closeMedia);
   mediaContent.replaceChildren(title,asset,caption,stop);mediaDialog.showModal();document.querySelector('#close-media').focus();
  }

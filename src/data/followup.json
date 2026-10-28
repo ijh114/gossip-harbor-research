@@ -1,0 +1,2741 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "date": "2026-10-28",
+  "scope": "정적 후속 조사. 사용자 지시로 모든 영상 검토/추출 보류. 실제 서버 응답·실기 노출은 미관측.",
+  "findings": [
+    {
+      "id": "BM-G001",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "difficulty"
+      ],
+      "category": "후속 BM 검증",
+      "title": "부족 판정은 부스트 상태를 반영한 생성 비용이다",
+      "summary": "EnergyBundle과 EnergyGemOffer의 부족 판정은 고정 에너지 1이 아니라 현재 부스트 모드가 반환하는 생성 비용을 사용한다.",
+      "details": [
+        "두 모델은 ItemSpread.GetCostEnergyNum()에 itemType 없이 호출한 결과와 현재 Main 에너지를 비교한다.",
+        "GetCostEnergyNum의 기본은 1이지만 부스트 모드가 켜져 있으면 GetEnergyBoostCostNum/PowerRatio를 사용한다.",
+        "따라서 에너지가 1 이상이어도 현재 생성 비용 미만이면 이 두 gate의 부족 조건은 참일 수 있다. 이는 조건식 해석이며 실제 계정 관찰이 아니다."
+      ],
+      "unknowns": [
+        "실계정 부스트 모드/현재 비용",
+        "생성기별 실제 입력 경로와 무한 에너지 상태의 전체 상호작용"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+          "line_start": 960,
+          "line_end": 972,
+          "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "3560b2d02da6dceebe4696baaf70bbd70245cb8c0a4932bdc6eb3e81c3c78c8b",
+          "module": "Board.Model.Item.ItemSpread",
+          "excerpt": "960: function ItemSpread.GetCostEnergyNum(itemType)\n961:   local nCostNum = 1\n963:   if itemType == nil then\n964:     if GM.EnergyBoostModel:IsEnergyBoostModeOn() then\n965:       nCostNum = GM.EnergyBoostModel:GetEnergyBoostCostNum()\n972:   return nCostNum, nEnergyBoostRatio",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+          "line_start": 189,
+          "line_end": 193,
+          "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "61ed4d451148c140bbde2bbda56c90dd0e9374bb58f6448b5502332912b4c9bd",
+          "module": "Model.Bundle.BundleEnergyModel",
+          "excerpt": "189:   if GM.EnergyModel:GetEnergy(EnergyType.Main) >= ItemSpread.GetCostEnergyNum() then\n192:   if GM.ShopModel:IsChainEnergyOpen() then",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/EnergyGemOffer/Model/EnergyGemOfferModel.lua",
+          "line_start": 84,
+          "line_end": 85,
+          "sha256": "e3b1898f91d8f8aee457048600ee8be16b8661485c0e2266472b13993815bd68",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "27bda38231c8b0ad17556b6de9af26bc6ce1140e98a90429907348fdf1fab43a",
+          "module": "EnergyGemOffer.Model.EnergyGemOfferModel",
+          "excerpt": "84:   if GM.EnergyModel:GetEnergy(EnergyType.Main) >= ItemSpread.GetCostEnergyNum() then\n85:     return false",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-G002",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [],
+      "category": "후속 BM 검증",
+      "title": "EnergyGift 서버 원문 필드와 내부 명칭·단위는 다르다",
+      "summary": "기존 보고서의 triggerPrice/triggerMaxNum/duration 명칭은 내부 getter 의미다. 실제 서버 입력은 triggerEnergyPrice/dailyTriggerUpper/groupDuration/groupCD/giftDuration/poptype다.",
+      "details": [
+        "BundleEnergyModel은 ServerConfigKey.EnergyGift의 첫 번째 레코드만 그룹 생성에 사용한다.",
+        "groupDuration, groupCD, giftDuration은 모두 60을 곱하여 초 단위 내부값으로 바꾼다.",
+        "groupID/include/giftContent가 상품 목록과 순서를 연결하며 giftID/payID/content는 각각 상품 식별자/IAP purchase ID/보상으로 해석된다.",
+        "서버 원문 필드 poptype은 내부 popType으로 저장되며 숫자 1과의 비교가 선노출/후노출을 나눈다. 여기에 알려진 내장 가격·기간 기본값을 대입할 근거는 없다."
+      ],
+      "unknowns": [
+        "현행 energyGift 레코드 전체",
+        "그룹/상품 실제 SKU·보상·할당",
+        "서버 타입 검증 규칙"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "line_start": 148,
+          "line_end": 155,
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "1a8f021bd23626c95c952f1953feceebeefbab6a91d871c3e351f05067bc5249",
+          "module": "Model.Bundle.BundleServerConfigData",
+          "excerpt": "150:   self.groupLastDuration = groupData.groupDuration * 60\n151:   self.groupRefreshDuration = groupData.groupCD * 60\n152:   self.triggerEnergyPrice = groupData.triggerEnergyPrice\n153:   self.dailyTriggerUpper = groupData.dailyTriggerUpper\n154:   self.singleGiftLastDuration = groupData.giftDuration * 60\n155:   self.popType = groupData.poptype",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+          "line_start": 27,
+          "line_end": 37,
+          "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "61ed4d451148c140bbde2bbda56c90dd0e9374bb58f6448b5502332912b4c9bd",
+          "module": "Model.Bundle.BundleEnergyModel",
+          "excerpt": "28:   local configMD5 = GM.ConfigModel:GetServerConfigMD5(ServerConfigKey.EnergyGift)\n31:     local energyConfig = (GM.ConfigModel:GetServerConfig(ServerConfigKey.EnergyGift) or Table.Empty)[1]\n33:       self.m_dataGroup = BundleEnergyConfigDataGroup.Create(energyConfig)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "line_start": 17,
+          "line_end": 26,
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "1a8f021bd23626c95c952f1953feceebeefbab6a91d871c3e351f05067bc5249",
+          "module": "Model.Bundle.BundleServerConfigData",
+          "excerpt": "18:   return self.giftID\n22:   return self.payID\n26:   return self.content",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "line_start": 49,
+          "line_end": 68,
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "1a8f021bd23626c95c952f1953feceebeefbab6a91d871c3e351f05067bc5249",
+          "module": "Model.Bundle.BundleServerConfigData",
+          "excerpt": "50:   self.groupId = groupData.groupID\n59:   for i, data in ipairs(groupData[self.GiftContentKey]) do\n65:   for i, str in ipairs(groupData.include) do\n66:     bundleId = StringUtil.Split(str, \"#\")[2]\n68:       self.m_arrBundleIds[#self.m_arrBundleIds + 1] = bundleId",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-G003",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "events"
+      ],
+      "category": "후속 BM 검증",
+      "title": "ChainEnergy는 별도 충전창을 여는 시간·요일·리소스 gate다",
+      "summary": "ChainEnergy는 후속 IAP ChainBundle과 다른 gem 충전 기능이다. 설정·리소스·요일·저장된 종료시각을 통과하면 기본 충전창을 대체하고 EnergyBundle 생성을 차단한다.",
+      "details": [
+        "chainEnergy 첫 레코드와 chainEnergyContent가 비어 있으면 빈 구성으로 남는다. groupID/sTime/eTime/uiCode/weekDay와 단계별 가격·보상을 로드한다.",
+        "IsChainEnergyOpen은 구성 존재, GLOBAL_APP에서 ChainEnergy label 다운로드 완료를 확인한 뒤 TryTriggerChainEnergy를 호출하고 저장 endTime>serverTime을 요구한다.",
+        "저장 endTime이 아직 미래이면 재트리거하지 않는다. 만료 후에는 서버 타임스탬프로 계산한 요일이 weekDay에 포함되어야 하고 endTime=min(다음 86400초 일 경계, 설정 eTime)을 저장하며 단계를 초기화한다.",
+        "sTime은 이 loader에서 저장되지만 조사한 IsChainEnergyOpen/TryTriggerChainEnergy에서는 비교하지 않는다. 이는 전체 서비스에 시작시간 gate가 없다는 뜻이 아니며 상위 구성 전달·선별은 미확인이다.",
+        "열린 ChainEnergy는 ShopModel.OpenEnergyWindow의 창 선택을 바꾸고 BundleEnergyModel._CanTriggerEnergyBundle에서 false를 반환하게 한다."
+      ],
+      "unknowns": [
+        "현재 chainEnergy 구성·요일·시간",
+        "상위 서버의 sTime 선별 여부",
+        "실계정 다운로드/DB 상태"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+          "line_start": 582,
+          "line_end": 628,
+          "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "ed5a43577ea2acca79d51fca89e5ce241b1b7b50722cdcc8e2b0b20a251cd1ef",
+          "module": "Model.Shop.ShopModel",
+          "excerpt": "589:   local data = GM.ConfigModel:GetServerConfig(ServerConfigKey.ChainEnergy)\n590:   if Table.IsEmpty(data) or Table.IsEmpty(data[1]) or Table.IsEmpty(data[1].chainEnergyContent) then\n595:   self.m_chainEnergyConfig.sTime = data[1].sTime\n596:   self.m_chainEnergyConfig.eTime = data[1].eTime\n598:   self.m_chainEnergyConfig.weekDayList = Table.DeepCopy(data[1].weekDay, true)\n620:   if GLOBAL_APP and not GM.DownloadManager:IsLabelDownloaded(AddressableLabel.ChainEnergy) then\n623:   self:TryTriggerChainEnergy()\n625:   if endTime <= GM.GameModel:GetServerTime() then",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+          "line_start": 631,
+          "line_end": 651,
+          "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "ed5a43577ea2acca79d51fca89e5ce241b1b7b50722cdcc8e2b0b20a251cd1ef",
+          "module": "Model.Shop.ShopModel",
+          "excerpt": "634:   if serverTime < endTime then\n637:   local list = self.m_chainEnergyConfig.weekDayList\n638:   local curDay = TimeUtil.ToDayofWeek(serverTime)\n646:   if not isInWeekDay then\n649:   endTime = math.min(TimeUtil.ToCur24ClockTimestamp(GM.GameModel:GetServerTime()), self.m_chainEnergyConfig.eTime)\n650:   self.m_shopDB:Set(DBShopId, DBColumnChainEnergyEndTime, endTime)\n651:   self.m_shopDB:Remove(DBShopId, DBColumnChainEnergyStep)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+          "line_start": 265,
+          "line_end": 275,
+          "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "ed5a43577ea2acca79d51fca89e5ce241b1b7b50722cdcc8e2b0b20a251cd1ef",
+          "module": "Model.Shop.ShopModel",
+          "excerpt": "267:   if self:IsChainEnergyOpen() then\n269:       self:GetChainEnergyPrefabName(),\n274:       UIPrefabConfigName.BuyEnergyWindow,",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+          "line_start": 192,
+          "line_end": 194,
+          "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "61ed4d451148c140bbde2bbda56c90dd0e9374bb58f6448b5502332912b4c9bd",
+          "module": "Model.Bundle.BundleEnergyModel",
+          "excerpt": "192:   if GM.ShopModel:IsChainEnergyOpen() then\n193:     return false",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Common/Utility/TimeUtil.lua",
+          "line_start": 239,
+          "line_end": 261,
+          "sha256": "7c06c4ddd3e9e4ce13a9efca3120729008874f17e1c04b2ec80c937c342ad970",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "5e37259b50214f39e7fad880bba1f04f7f41e5697c8cdafda129c593721f889a",
+          "module": "Common.Utility.TimeUtil",
+          "excerpt": "239: function TimeUtil.ToDayofWeek(timeStamp)\n240:   return (timeStamp // Sec2Day + 3) % 7 + 1\n260: function TimeUtil.ToCur24ClockTimestamp(timeStamp)\n261:   return (timeStamp // Sec2Day + 1) * Sec2Day",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-G004",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "economy"
+      ],
+      "category": "후속 BM 검증",
+      "title": "ChainEnergy의 잠금·결제·마지막 단계는 IAP 체인과 다르다",
+      "summary": "ChainEnergy는 현재 단계만 gem으로 소비하고 보상을 지급하며 마지막 단계에 도달하면 그 단계에 머문다. 이 코드에는 마지막 구매 뒤 품절 처리 분기가 없다.",
+      "details": [
+        "BuyChainEnergy는 열림 상태와 요청 step==현재 step을 확인하고 서버 단계 price만큼 Gem을 Consume한다. 보상은 해당 content다.",
+        "다음 단계는 min(curStep+1, 단계 수)다. 마지막 단계 구매 후에도 현재 step이 마지막 번호로 저장된다.",
+        "뷰는 현재 단계부터 3개 셀을 표시하되 마지막 번호로 clamp한다. 첫 번째 셀만 잠금 해제하며 현재 단계와 일치하지 않는 요청은 모델도 거절한다.",
+        "성공 구매 또는 성공 에너지 광고는 창의 m_bBuySuccess=true를 만든다. 그 뒤 닫을 때는 후속 에너지 gift 체인을 실행하지 않는다. 성공 에너지 광고 콜백은 일반 BuyEnergyWindow와 달리 여기서 창을 즉시 닫지 않는다."
+      ],
+      "unknowns": [
+        "현재 단계 가격·보상",
+        "실제 반복 구매·최종 단계 운영 의도",
+        "계정 동기화/상위 검증과 런타임 성공 여부"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+          "line_start": 699,
+          "line_end": 726,
+          "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "ed5a43577ea2acca79d51fca89e5ce241b1b7b50722cdcc8e2b0b20a251cd1ef",
+          "module": "Model.Shop.ShopModel",
+          "excerpt": "700:   if not self:IsChainEnergyOpen() then\n704:   local curStep = self:GetCurChainEnergyStep()\n705:   if curStep ~= step then\n709:   local price = self.m_chainEnergyConfig.contentList[curStep].price\n710:   if not GM.PropertyDataManager:Consume(EPropertyType.Gem, price, EBIType.BuyChainEnergy, curStep) then\n723:   local reward = self.m_chainEnergyConfig.contentList[curStep].content\n724:   RewardApi.AcquireRewardsLogic(reward, EPropertySource.Buy, EBIType.BuyChainEnergy, EGameMode.Main, CacheItemType.Type2)\n725:   local nextStep = curStep + 1 > #self.m_chainEnergyConfig.contentList and #self.m_chainEnergyConfig.contentList or curStep + 1\n726:   self.m_shopDB:Set(DBShopId, DBColumnChainEnergyStep, nextStep)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Shop/ChainEnergyBundleWindow.lua",
+          "line_start": 23,
+          "line_end": 27,
+          "sha256": "ceb6086c28752ee0a50d80b45fde955589a03a2f3e3ab65b309df325576977e1",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "e03bad27f3290234eea1076f0be9e28d83632ef873c8c21fbbd9b6b806c5cdf4",
+          "module": "UI.Window.Shop.ChainEnergyBundleWindow",
+          "excerpt": "24:     local step = math.min(curStep + i - 1, #configList)\n26:     luaTable:Init(i, configList[step], self)\n27:     luaTable:SetLockActive(i ~= 1)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Shop/ChainEnergyBundleWindow.lua",
+          "line_start": 99,
+          "line_end": 114,
+          "sha256": "ceb6086c28752ee0a50d80b45fde955589a03a2f3e3ab65b309df325576977e1",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "e03bad27f3290234eea1076f0be9e28d83632ef873c8c21fbbd9b6b806c5cdf4",
+          "module": "UI.Window.Shop.ChainEnergyBundleWindow",
+          "excerpt": "103:   if msg.bSuccess then\n104:     self.m_bBuySuccess = true\n112:     RewardApi.AcquireRewards(formattedRewards, EPropertySource.Give, EBIType.AdSuccess, {eventLock = false}, EGameMode.Main, CacheItemType.Type2)\n114:   self:UpdateAd()",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Shop/ChainEnergyBundleWindow.lua",
+          "line_start": 151,
+          "line_end": 159,
+          "sha256": "ceb6086c28752ee0a50d80b45fde955589a03a2f3e3ab65b309df325576977e1",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "e03bad27f3290234eea1076f0be9e28d83632ef873c8c21fbbd9b6b806c5cdf4",
+          "module": "UI.Window.Shop.ChainEnergyBundleWindow",
+          "excerpt": "153:   if not self.m_bBuySuccess then\n154:     if GLOBAL_APP then\n155:       EnergyWindowPopupHelper.TryPopGlobalEnergyGiftBundleChain(self)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Shop/ChainEnergyBundleWindow.lua",
+          "line_start": 183,
+          "line_end": 199,
+          "sha256": "ceb6086c28752ee0a50d80b45fde955589a03a2f3e3ab65b309df325576977e1",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "e03bad27f3290234eea1076f0be9e28d83632ef873c8c21fbbd9b6b806c5cdf4",
+          "module": "UI.Window.Shop.ChainEnergyBundleWindow",
+          "excerpt": "187:   if self.m_index ~= 1 then\n198:   if not GM.ShopModel:BuyChainEnergy(self.m_config.steps) then",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-G005",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [],
+      "category": "후속 BM 검증",
+      "title": "후속 오퍼의 가격 임계값은 다음 유료 ChainEnergy 단계까지 본다",
+      "summary": "NoEnergyGiftGem 비교에 쓰는 GetEnergyCostExcludeFree는 일반 충전가격과 현재 ChainEnergy 이후 첫 양수 단계가격 중 큰 값을 반환한다.",
+      "details": [
+        "함수는 GetEnergyData(Main).costNum을 시작값으로 사용한다. ChainEnergy가 닫혀 있으면 그 값을 바로 반환한다.",
+        "ChainEnergy가 열려 있으면 현재 단계부터 훑어 price>0인 첫 단계를 찾고 그 가격이 더 크면 maxCost를 올린 뒤 반복을 중단한다.",
+        "따라서 현재 체인 단계가 무료여도 다음 양수 단계가 NoEnergyGiftGem 임계 충족에 기여할 수 있다. 전체 남은 단계 중 최대값을 고르는 알고리즘은 아니다."
+      ],
+      "unknowns": [
+        "현행 임계값/쿨다운/단계가격",
+        "현재 DB 가격과 마지막 팝업 시각"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+          "line_start": 736,
+          "line_end": 752,
+          "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "ed5a43577ea2acca79d51fca89e5ce241b1b7b50722cdcc8e2b0b20a251cd1ef",
+          "module": "Model.Shop.ShopModel",
+          "excerpt": "737:   local energyData = self:GetEnergyData(EnergyType.Main)\n738:   local maxCost = energyData.costNum\n739:   if not self:IsChainEnergyOpen() then\n740:     return maxCost\n742:   local curStep = self:GetCurChainEnergyStep()\n744:   for i = curStep, #self.m_chainEnergyConfig.contentList do\n745:     if self.m_chainEnergyConfig.contentList[i].price > 0 then\n746:       if maxCost < self.m_chainEnergyConfig.contentList[i].price then\n747:         maxCost = self.m_chainEnergyConfig.contentList[i].price\n749:       break\n752:   return maxCost",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/EnergyWindowPopupHelper.lua",
+          "line_start": 23,
+          "line_end": 29,
+          "sha256": "2417400ae4f77332e68bba0df5a94dfe56c49ae56385ea22a7a6cd9b974ebe2f",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "0291bb6b7b123eb1019f96375ee5d6f208b4e8a912f0ed56e0f6e9dfee37b6ca",
+          "module": "UI.UIFramework.EnergyWindowPopupHelper",
+          "excerpt": "24:   local gemCostNum = GM.ConfigModel:GetGeneralConfByType(EGeneralConfType.NoEnergyGiftGem)\n25:   local popupCd = GM.ConfigModel:GetGeneralConfByType(EGeneralConfType.NoEnergyGiftCoolDown)\n26:   if gemCostNum and popupCd and gemCostNum <= GM.ShopModel:GetEnergyCostExcludeFree() and EnergyWindowPopupHelper._IsMoreBundleCdExpired(popupCd) then",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-G006",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "events"
+      ],
+      "category": "후속 BM 검증",
+      "title": "EnergyGemOffer 횟수는 노출 기준이며 쿨다운 저장소는 별도다",
+      "summary": "EnergyGemOffer.times는 창 초기화 때 증가하는 일별 팝업 횟수와 비교된다. 일별 카운트 초기화는 LastPopTime을 지우지 않는다.",
+      "details": [
+        "EnergyGemOfferWindow.Init이 PopWindow를 호출한다. 이 메서드는 LastPopTime을 PlayerPrefs에 서버 시각으로 쓰고 MiscModel의 팝업 횟수를 +1한다.",
+        "UpdatePerSecond는 유효 설정이 있는 경우 마지막 refresh와 서버 시각의 86400초 일 번호가 다르면 팝업 횟수를 0으로 하고 refreshTime을 갱신한다.",
+        "lastPopTime은 별도 PlayerPrefs.GetInt(...,0)다. 이 일별 초기화는 PlayerPrefs를 변경하지 않으므로 자정 이후에도 cooldown*60의 미경과 구간이 남을 수 있다.",
+        "이 카운트는 성공 결제 수가 아니다. 구매하지 않고 닫아도 Init을 거친 노출은 카운트에 반영된다."
+      ],
+      "unknowns": [
+        "실제 PlayerPrefs와 MiscModel 상태",
+        "플랫폼별 PlayerPrefs 유지/동기화 범위",
+        "현행 노출 상한/쿨다운"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Activity/EnergyGemOffer/Model/EnergyGemOfferModel.lua",
+          "line_start": 32,
+          "line_end": 56,
+          "sha256": "e3b1898f91d8f8aee457048600ee8be16b8661485c0e2266472b13993815bd68",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "27bda38231c8b0ad17556b6de9af26bc6ce1140e98a90429907348fdf1fab43a",
+          "module": "EnergyGemOffer.Model.EnergyGemOfferModel",
+          "excerpt": "37:   return tonumber(GM.MiscModel:GetEnergyGemOfferPop() or \"0\")\n40: function EnergyGemOfferModel:PopWindow()\n41:   PlayerPrefs.SetInt(EStrDBKeys.LastPopTime, GM.GameModel:GetServerTime())\n42:   GM.MiscModel:SetEnergyGemOfferPop(tostring(self:GetCurPopNum() + 1))\n46:   local t = PlayerPrefs.GetInt(EStrDBKeys.LastPopTime, 0)\n54:   if self:GetLastRefreshTime() == nil or self:GetLastRefreshTime() // Sec2Day ~= GM.GameModel:GetServerTime() // Sec2Day then\n55:     GM.MiscModel:SetEnergyGemOfferPop(tostring(0))\n56:     GM.MiscModel:SetEnergyGemOfferLastRefreshTime(GM.GameModel:GetServerTime())",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/EnergyGemOffer/View/EnergyGemOfferWindow.lua",
+          "line_start": 41,
+          "line_end": 44,
+          "sha256": "e3bda1042c33f4ac38679e23b98f9a5602b52ae1f8879b85b800384a886770c3",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "16d1939666f4ffba9579dd921e45e636c98d3fc09f67d378765c861904c545ec",
+          "module": "EnergyGemOffer.View.EnergyGemOfferWindow",
+          "excerpt": "41: function EnergyGemOfferWindow:Init()\n43:   self.m_model:PopWindow()",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/EnergyGemOffer/Model/EnergyGemOfferModel.lua",
+          "line_start": 90,
+          "line_end": 97,
+          "sha256": "e3b1898f91d8f8aee457048600ee8be16b8661485c0e2266472b13993815bd68",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "27bda38231c8b0ad17556b6de9af26bc6ce1140e98a90429907348fdf1fab43a",
+          "module": "EnergyGemOffer.Model.EnergyGemOfferModel",
+          "excerpt": "90:   if self:GetLastPopTime() ~= nil and GM.GameModel:GetServerTime() - self:GetLastPopTime() < self:GetCurEnergyGemConfig().cooldown * 60 then\n96:   if self:GetCurPopNum() < self:GetCurEnergyGemConfig().times then",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-G007",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "economy"
+      ],
+      "category": "후속 BM 검증",
+      "title": "EnergyGemOffer 구매도 일반 에너지 가격 단계를 올린다",
+      "summary": "EnergyGemOffer의 3개 선택지 중 하나를 성공 구매하면 보상을 받은 뒤 일반 에너지 충전가격을 다음 단계로 갱신한다.",
+      "details": [
+        "각 선택지는 서버 price_1/2/3를 Gem으로 소비하고 reward_1/2/3를 지급한다. 성공 콜백은 Window.BuySuccess를 호출한다.",
+        "BuySuccess는 m_bSuccess=true, Close 후 RefreshNextEnergyGemLevel(GetBuyEnergyGemCost(Main,true),Main)을 호출한다.",
+        "즉 다음 일반 에너지 충전가격은 선택지의 결제 gem 값 자체가 아니라 현재 일반 가격 단계에 연결된다. 후속 EnergyGift triggerEnergyPrice 및 EnergyGemOffer.trigger_energy_price 적격성에도 간접 영향을 줄 수 있다.",
+        "성공 Close에서는 실패/미구매 경로의 TryOpenBundleEnergyWindow를 호출하지 않는다."
+      ],
+      "unknowns": [
+        "서버 3개 가격·보상 실값",
+        "실제 구매 성공/사용자 선택",
+        "런타임 호출 및 동기화"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Activity/EnergyGemOffer/View/EnergyGemOfferWindow.lua",
+          "line_start": 16,
+          "line_end": 26,
+          "sha256": "e3bda1042c33f4ac38679e23b98f9a5602b52ae1f8879b85b800384a886770c3",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "16d1939666f4ffba9579dd921e45e636c98d3fc09f67d378765c861904c545ec",
+          "module": "EnergyGemOffer.View.EnergyGemOfferWindow",
+          "excerpt": "17:   if GM.PropertyDataManager:Consume(EPropertyType.Gem, self.m_Gem, EBIType.EnergyGemBuyOffer, \"energygemoffer\") then\n21:     local gemNum = GM.ShopModel:GetBuyEnergyGemCost(EnergyType.Main)\n22:     RewardApi.AcquireRewardsLogic(formattedRewards, EPropertySource.Buy, EBIType.EnergyGemBuyOffer, EGameMode.Main, CacheItemType.Type2)\n25:     if self.m_callback then\n26:       self.m_callback()",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/EnergyGemOffer/View/EnergyGemOfferWindow.lua",
+          "line_start": 71,
+          "line_end": 81,
+          "sha256": "e3bda1042c33f4ac38679e23b98f9a5602b52ae1f8879b85b800384a886770c3",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "16d1939666f4ffba9579dd921e45e636c98d3fc09f67d378765c861904c545ec",
+          "module": "EnergyGemOffer.View.EnergyGemOfferWindow",
+          "excerpt": "72:   self.m_bSuccess = true\n73:   self:Close()\n74:   GM.ShopModel:RefreshNextEnergyGemLevel(GM.ShopModel:GetBuyEnergyGemCost(EnergyType.Main, true), EnergyType.Main)\n78:   if not self.m_bSuccess then\n79:     UIHelper.TryOpenBundleEnergyWindow()",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+          "line_start": 337,
+          "line_end": 340,
+          "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "ed5a43577ea2acca79d51fca89e5ce241b1b7b50722cdcc8e2b0b20a251cd1ef",
+          "module": "Model.Shop.ShopModel",
+          "excerpt": "338:   local nextGemCost = GM.ShopDataModel:GetNextBuyEnergyGemCost(buyGemCostOrigin)\n339:   self.m_shopDB:Set(DBShopId, DBColumnBuyCostEnergy, nextGemCost)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-G008",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [],
+      "category": "후속 BM 검증",
+      "title": "IAP 스위치 누락은 이 메서드에서 기본 허용이다",
+      "summary": "ConfigModel.IsIAPEnabled는 general_conf의 all_gift_switch가 숫자 0인지 검사한다. 값이 없다는 이유만으로 false를 반환하지 않는다.",
+      "details": [
+        "EGeneralConfType.EnableIAP의 wire key는 all_gift_switch다. IsIAPEnabled는 nParam~=0을 반환한다.",
+        "따라서 해당 getter가 nil을 반환하는 경우 이 메서드는 true다. 이는 앱 전체의 구매 성공이나 다른 gate 통과를 보장하지 않는 국소 기본 동작이다.",
+        "EnergyModel.OnLackEnergy는 Main·강제 튜토리얼 없음 조건 안에서 이 메서드가 true이고 번들 모델이 있을 때만 Try2TriggerEnergyBundle 및 선노출을 검사한다.",
+        "일반 에너지 충전창을 여는 마지막 호출은 이 IAP 선노출 조건 바깥에 있다. IAP 비활성이 에너지 창 전체를 닫는다는 모델은 맞지 않는다."
+      ],
+      "unknowns": [
+        "현행 all_gift_switch 값과 서버 정규화 타입",
+        "스토어·계정·플랫폼 구매 가능성",
+        "강제 튜토리얼 실제 진행 상태"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 139,
+          "line_end": 139,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "module": "Model.ConfigModel",
+          "excerpt": "139:   EnableIAP = \"all_gift_switch\",",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 566,
+          "line_end": 569,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "module": "Model.ConfigModel",
+          "excerpt": "566: function ConfigModel:IsIAPEnabled()\n567:   local nParam = self:GetGeneralConfByType(EGeneralConfType.EnableIAP)\n568:   return nParam ~= 0",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/UserData/EnergyModel.lua",
+          "line_start": 232,
+          "line_end": 245,
+          "sha256": "ab93681b1aabc120fccae754436a24d4f819ef094fdb4964265dfd08508bc9b3",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "0030230aa205488a410d3c4ff05d57c69ae5138a92c10ec91f0fe2d31966b7ae",
+          "module": "Model.UserData.EnergyModel",
+          "excerpt": "233:   if type == EnergyType.Main and not GM.TutorialModel:HasAnyStrongTutorialOngoing() then\n234:     local iapEnabled = GM.ConfigModel:IsIAPEnabled()\n236:     if iapEnabled and bundleEnergyModel ~= nil then\n237:       bundleEnergyModel:Try2TriggerEnergyBundle()\n244:   GM.ShopModel:OpenEnergyWindow(type, true)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-G009",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [],
+      "category": "후속 BM 검증",
+      "title": "새 번들 생성 가능성과 저장된 번들 노출 가능성은 다르다",
+      "summary": "부족 시 Try2TriggerEnergyBundle이 새 상품을 만들지 못해도 기존 유효 번들은 별도 조회로 선노출될 수 있다. 후속 BundleEnergy는 popType==1 및 기존 유효 상품이 필요하다.",
+      "details": [
+        "OnLackEnergy는 Try2TriggerEnergyBundle의 반환값으로 창을 결정하지 않는다. 호출 뒤 GetCurBundleConfigData~=nil 및 후노출 설정 아님을 검사한다.",
+        "GetCurBundleConfigData는 현재 그룹 상품 중 manager.IsBundleDataValid를 통과하는 첫 상품을 반환한다.",
+        "반면 UIHelper.TryOpenBundleEnergyWindow는 IsBundleWindowPopupAfterEnergyWindow()==true와 현재 상품/manager 유효성을 다시 요구하며 새 번들을 trigger하지 않는다.",
+        "따라서 새 생성 quota/cooldown/부족 조건과 기존 상품의 화면 노출 판정을 한 boolean으로 합치면 둘을 구분하지 못한다. 예를 들어 이미 존재하는 유효 번들을 quota 소진만으로 숨긴다고 단정할 수 없다.",
+        "후노출 BundleEnergy를 구매하지 않고 닫으면 Plenty/Chain/NewWeekly 전용 후속 체인으로 간다. 선노출 설정이면 일반/체인 에너지 충전창으로 돌아간다."
+      ],
+      "unknowns": [
+        "실계정 번들 DB와 manager 유효성 결과",
+        "이미 열린/만료 직전 창의 실제 시퀀스",
+        "실제 서버 poptype"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/UserData/EnergyModel.lua",
+          "line_start": 236,
+          "line_end": 240,
+          "sha256": "ab93681b1aabc120fccae754436a24d4f819ef094fdb4964265dfd08508bc9b3",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "0030230aa205488a410d3c4ff05d57c69ae5138a92c10ec91f0fe2d31966b7ae",
+          "module": "Model.UserData.EnergyModel",
+          "excerpt": "237:       bundleEnergyModel:Try2TriggerEnergyBundle()\n238:       if bundleEnergyModel:GetCurBundleConfigData() ~= nil and not bundleEnergyModel:IsBundleWindowPopupAfterEnergyWindow() then\n239:         GM.UIManager:OpenView(UIPrefabConfigName.BundleEnergyWindow)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+          "line_start": 81,
+          "line_end": 90,
+          "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "61ed4d451148c140bbde2bbda56c90dd0e9374bb58f6448b5502332912b4c9bd",
+          "module": "Model.Bundle.BundleEnergyModel",
+          "excerpt": "85:   for _, bundleId in ipairs(self.m_dataGroup:GetBundleIds()) do\n86:     if self.m_manager:IsBundleDataValid(bundleId) then\n87:       return self.m_dataGroup:GetConfigData(bundleId)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+          "line_start": 102,
+          "line_end": 107,
+          "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "61ed4d451148c140bbde2bbda56c90dd0e9374bb58f6448b5502332912b4c9bd",
+          "module": "Model.Bundle.BundleEnergyModel",
+          "excerpt": "106:   return self.m_dataGroup:GetPopType() == 1",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/UIHelper.lua",
+          "line_start": 123,
+          "line_end": 134,
+          "sha256": "9ff93d99d1e6ce0d0c569adc9c080a75d266bf21c5046f275204814ed1382637",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "cd069b08eb4e7de00e9c1741be502fb493121ee0b052591a795199d68ba05615",
+          "module": "UI.UIFramework.UIHelper",
+          "excerpt": "127:   if bundleEnergyModel ~= nil and bundleEnergyModel:IsBundleWindowPopupAfterEnergyWindow() then\n128:     local bundleData = bundleEnergyModel:GetCurBundleConfigData()\n129:     if bundleData ~= nil and GM.BundleManager:IsBundleDataValid(bundleData:GetBundleId()) then\n130:       GM.UIManager:OpenView(UIPrefabConfigName.BundleEnergyWindow)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Bundle/BundleEnergyWindow.lua",
+          "line_start": 76,
+          "line_end": 85,
+          "sha256": "085f7780aa808b8356e56edaad970d508336fe3daa13c9d50ea864dbf2c2e346",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "5f1f07c5f9639ba817bcebbaa6f538e301641dd88a261b89aa7b321f3384c2a4",
+          "module": "UI.Window.Bundle.BundleEnergyWindow",
+          "excerpt": "78:   if not self.m_bBuySuccess then\n79:     if self.m_model == nil or not self.m_model:IsBundleWindowPopupAfterEnergyWindow() then\n80:       GM.ShopModel:OpenEnergyWindow(EnergyType.Main, self.m_popupForLackingEnergy)\n82:       EnergyWindowPopupHelper.TryPopGlobalEnergyGiftBundleChainAfterBundleEnergyWindow(self)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-G010",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "ui",
+        "events"
+      ],
+      "category": "후속 BM 검증",
+      "title": "일반 에너지 충전창 안에 별도 Pass 티켓 BM 분기가 있다",
+      "summary": "BuyEnergyWindow는 조건을 만족하면 PassActivityEnergyTicketArea 패널을 비동기로 붙인다. 닫은 뒤의 오퍼 체인 이전에 존재하는 별도 교차판매 경로다.",
+      "details": [
+        "서버 제어 buy_energy_bp를 IsServerControlOpen(key,true)로 검사한다. true 기본 분기는 nParam~=0이므로 값 누락도 이 메서드에서는 허용이다.",
+        "진행 중 Pass 활동이 존재하고 현재 ticketState가 Super가 아니면 티켓 영역을 로드하고 Init에 부모창/활동 모델/Main/부족 자동팝업 여부/true를 전달한다.",
+        "활동이 Started를 벗어나면 해당 영역을 제거하고 충전 내용을 갱신한다.",
+        "이 정적 코드로 패널 경로는 확인하지만 현재 Pass 활성·해당 UI의 실제 완성/배치·상품 가격·구매 전환은 확인하지 않았다."
+      ],
+      "unknowns": [
+        "현재 Pass 활동 및 티켓 소유 상태",
+        "실제 패널 레이아웃·리소스 성공",
+        "티켓별 가격/보상과 실제 노출·결제"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 123,
+          "line_end": 123,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "module": "Model.ConfigModel",
+          "excerpt": "123:   BuyEnergyBp = \"buy_energy_bp\",",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 643,
+          "line_end": 651,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "module": "Model.ConfigModel",
+          "excerpt": "644:   local nParam = self:GetGeneralConfByType(key)\n645:   if bDefaultOpen then\n646:     return nParam ~= 0",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/BuyEnergy/BuyEnergyWindow.lua",
+          "line_start": 24,
+          "line_end": 50,
+          "sha256": "8abf10ded55a7b1d6d2068d1d8b41b655bfad3075051a01c608f180b6844aa80",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "e30bafbf307b19810d54d9339289600306c19e0b3fc46df2d913c0de2387782b",
+          "module": "UI.Window.BuyEnergy.BuyEnergyWindow",
+          "excerpt": "25:   if GM.ConfigModel:IsServerControlOpen(EGeneralConfType.BuyEnergyBp, true) then\n26:     self.m_passActivityModel = GM.ActivityManager:GetStartedPassActivity()\n27:     if self.m_passActivityModel ~= nil then\n28:       local ticketState = self.m_passActivityModel:GetTicketState()\n29:       if ticketState ~= PassActivityTicketState.Super then\n32:         local config = GM.DataResource.UIPrefabConfig:GetConfig(UIPrefabConfigName.PassActivityEnergyTicketArea)\n37:             self.m_passActivityTicketArea:Init(self, self.m_passActivityModel, {\n38:               EnergyType.Main,\n39:               popupForLackingEnergy,\n40:               true\n47:         GM.ResourceLoader:LoadPrefab(config, self.m_passActivityComponentNode, Vector3.zero, callback)",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/BuyEnergy/BuyEnergyWindow.lua",
+          "line_start": 146,
+          "line_end": 152,
+          "sha256": "8abf10ded55a7b1d6d2068d1d8b41b655bfad3075051a01c608f180b6844aa80",
+          "sha256_scope": "reconstructed Lua source file",
+          "chunk_sha256": "e30bafbf307b19810d54d9339289600306c19e0b3fc46df2d913c0de2387782b",
+          "module": "UI.Window.BuyEnergy.BuyEnergyWindow",
+          "excerpt": "147:   if self.m_passActivityModel and self.m_passActivityModel:GetState() ~= ActivityState.Started and self.m_bHasPassTicketArea then\n149:       AddressableLoader.Destroy(self.m_passActivityTicketArea.gameObject)\n151:     self.m_bHasPassTicketArea = false\n152:     self:_UpdateContent()",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-O001",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "events"
+      ],
+      "category": "후속 BM 검증",
+      "title": "A/B 집단 표식과 BM 설정 본문은 로그인 응답의 별도 필드다",
+      "summary": "클라이언트는 계정·레벨·지역·언어와 보유 설정 MD5를 BLLogin에 보내고, 서버가 돌려준 그룹 표식과 config를 각각 보관·적용한다. 이 경로로 서버의 cohort 배정 공식을 복원할 수는 없다.",
+      "details": [
+        "ApiMessage.Login은 userId/version/channel/user_level/region/lang/config_entries/install_id/ad_campaign 등을 BLLogin 요청에 넣는다. 이 필드의 존재는 서버가 모두 BM 차등화에 사용한다는 증거가 아니다.",
+        "GameModel은 group_status와 group_name을 로그/BI로 넘기고, valid_group_name 배열은 m_groupName, 전체 group_name 문자열은 m_allGroupName에 저장한다.",
+        "같은 로그인 성공 처리에서 CheckRestart가 tbLoginResp.config를 ConfigModel에 적용하고, 이후 GlobalManager.LoadServerConfig가 singleton 모델에 설정 로드를 전파한다.",
+        "valid_group_name은 OperManager.Login의 groups로도 전달된다. 확인한 ConfigModel·BM loader는 그룹 문자열을 조건식으로 해석해 임계값을 고르지 않고, 이미 응답에 들어온 config를 소비한다."
+      ],
+      "unknowns": [
+        "현재 계정의 group_name/valid_group_name/group_status 값과 지속기간.",
+        "서버의 cohort 배정·실험 비율·조건·리밸런싱 규칙.",
+        "지역·결제·레벨·유입 속성 중 어떤 항목이 실제 BM 설정 선택에 쓰이는지."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Network/Api/ApiMessage.lua",
+          "line_start": 24,
+          "line_end": 42,
+          "sha256": "f66ba35501cbfa96b4b7db83a7d1188f35cb9cb6f7f9e9715207c7f6f63b87a8",
+          "excerpt": "    region = DeviceInfo.GetCountry(),\n    lang = LocalizationModel:GetCurLanguageInString(),\n    reward_keys = arrRewardKeys,\n    network_name = CSAppsFlyerManager:GetMediaSource() or \"\",\n    tracker_name = CSAppsFlyerManager:GetTrackerName(),\n    adid = \"::\" .. CSAppsFlyerManager:GetAppsFlyerId(),\n    config_entries = GM.ConfigModel:GetSeverConfigEntries(),",
+          "excerpt_line_start": 30,
+          "excerpt_line_end": 36,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Network/Api/ApiMessage.luac",
+          "original_chunk_sha256": "5444a42a03713e337b44aff9b25c395d49c3188403d93be8b40b788adb42a80e",
+          "manifest_module_index": 203,
+          "debug_source": "@ApiMessage.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/GameModel.lua",
+          "line_start": 218,
+          "line_end": 231,
+          "sha256": "bd6fa5762db0db763133e6de133d36eb1289911d46590a080f183deee58d017c",
+          "excerpt": "      Log.Info(\" group_status:\" .. tbLoginResp.group_status .. \"; group_name:\" .. tbLoginResp.group_name, \"ABTest\")\n      if GM.TestModel then\n        GM.TestModel:SetABTestGroupInfo(tbLoginResp.group_name)\n      end\n      if not StringUtil.IsNilOrEmpty(tbLoginResp.group_name) then\n        GM.BIManager:LogABTest(tbLoginResp.group_name, tbLoginResp.group_status)\n      end",
+          "excerpt_line_start": 223,
+          "excerpt_line_end": 229,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/GameModel.luac",
+          "original_chunk_sha256": "cffe72b9b9ee200346eb3b83bf29f21a389f0c0f2c1012f68cc7ccd9b86a4225",
+          "manifest_module_index": 187,
+          "debug_source": "@GameModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/GameModel.lua",
+          "line_start": 245,
+          "line_end": 272,
+          "sha256": "bd6fa5762db0db763133e6de133d36eb1289911d46590a080f183deee58d017c",
+          "excerpt": "      self.m_otherInfo = json.decode(tbLoginResp.other_info) or {}\n      if tbLoginResp.total_pay then\n        GM.InAppPurchaseModel:SetTotalRecharge(tbLoginResp.total_pay)\n      end\n      if tbLoginResp.reg_scene then\n        GM.InAppPurchaseModel:SetMiniGameRegScene(tbLoginResp.reg_scene)\n      end",
+          "excerpt_line_start": 264,
+          "excerpt_line_end": 270,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/GameModel.luac",
+          "original_chunk_sha256": "cffe72b9b9ee200346eb3b83bf29f21a389f0c0f2c1012f68cc7ccd9b86a4225",
+          "manifest_module_index": 187,
+          "debug_source": "@GameModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Network/Oper/OperManager.lua",
+          "line_start": 118,
+          "line_end": 124,
+          "sha256": "6d59206d4763e4e4b78df1870fe8a40cd307449ed108e1b7dfb146cc78ecc206",
+          "excerpt": "  local reqBody = {\n    userId = tostring(GM.UserModel:GetUserId()),\n    groups = validGroupName,\n    level = GM.LevelModel:GetCurrentLevel(),\n    pay = GM.InAppPurchaseModel:GetTotalRecharge(),",
+          "excerpt_line_start": 118,
+          "excerpt_line_end": 122,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Network/Oper/OperManager.luac",
+          "original_chunk_sha256": "61249f22d1a0c49c23d44bcddc35cafd9af375d5422301abd0dd2933da0616ed",
+          "manifest_module_index": 213,
+          "debug_source": "@OperManager.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/GlobalManager.lua",
+          "line_start": 291,
+          "line_end": 298,
+          "sha256": "1385b9922f879820a6e2d15dff3946e88f434b47e782a5ba00b73e858748900a",
+          "excerpt": "function GlobalManager:LoadServerConfig(tbLoginResp)\n  self.EnergyModel:LoadServerConfig(tbLoginResp)\n  for name, v in pairs(self._singletons) do\n    if name ~= \"EnergyModel\" and v.LoadServerConfig then\n      v:LoadServerConfig(tbLoginResp)\n    end",
+          "excerpt_line_start": 291,
+          "excerpt_line_end": 296,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/GlobalManager.luac",
+          "original_chunk_sha256": "d541e56dfbe971ac35b3fcf44087af701a6e5fd86b803136f06e5592c15dd4b5",
+          "manifest_module_index": 189,
+          "debug_source": "@GlobalManager.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-O002",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [],
+      "category": "후속 BM 검증",
+      "title": "서버 설정은 DB 캐시와 MD5로 유지되며 응답에 없는 키는 삭제된다",
+      "summary": "ConfigModel은 시작 시 Config DB의 JSON을 복원한다. UpdateServerConfigs는 입력 JSON의 키 집합을 현재 집합과 맞추고 MD5가 바뀐 키만 교체하므로, 단순한 부분 delta 병합으로 해석하면 안 된다.",
+      "details": [
+        "Init에서 m_serverConfigs와 m_generalConfigs를 빈 테이블로 만든 뒤 DB key/value의 JSON이 해독되면 m_serverConfigs로 채운다. 따라서 신규 응답이 없어도 이전 캐시가 남아 있을 수 있다.",
+        "GetServerConfig(key)는 저장 레코드의 config를 반환하고 GetServerConfigMD5(key)는 md5 또는 빈 문자열을 반환한다.",
+        "UpdateServerConfigs는 json.decode(data) or {}를 사용하고, 현재 캐시 키가 수신 데이터에 없으면 지운다. 존재하는 키는 새 키이거나 md5가 다를 때만 레코드를 교체한다.",
+        "변경 후 전체 m_serverConfigs JSON을 DB에 저장하고 general_conf_new를 다시 색인한다. 동일 MD5의 본문 변화가 주어져도 이 코드에서는 교체하지 않는다.",
+        "GetSeverConfigEntries는 ServerConfigKey 및 ActivityType 각각의 config_key/config_md5 목록을 다음 로그인에 싣는다. 실제 서버가 캐시 MD5를 어떻게 사용해 완전 응답을 구성하는지는 응답 관측이 필요하다."
+      ],
+      "unknowns": [
+        "캐시 DB의 현재 내용·최종 갱신 시각·계정 전환 시 정리 동작.",
+        "현행 서버가 항상 전체 key 집합을 보내는지, 다른 계층에서 응답을 확장하는지.",
+        "MD5의 서버 생성 방식 및 실제 버전 이력."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 249,
+          "line_end": 258,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "  self.m_dbTable = GM.DBTableManager:GetTable(EDBTableConfigs.Config)\n  self.m_serverConfigs = {}\n  self.m_generalConfigs = {}\n  local data = self.m_dbTable:GetValue(DBKEY, DBVALUE) or \"\"\n  local cacheServerConfig = json.decode(data)\n  if cacheServerConfig then\n    self.m_serverConfigs = cacheServerConfig",
+          "excerpt_line_start": 250,
+          "excerpt_line_end": 256,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 354,
+          "line_end": 384,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "function ConfigModel:UpdateServerConfigs(data)\n  local bChanged = false\n  local mapChangedKeys = {}\n  data = json.decode(data) or {}\n  for key, config in pairs(self.m_serverConfigs) do\n    if data[key] == nil then\n      self.m_serverConfigs[key] = nil",
+          "excerpt_line_start": 364,
+          "excerpt_line_end": 370,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 403,
+          "line_end": 417,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "function ConfigModel:GetSeverConfigEntries()\n  local entries = {}\n  for _, type in pairs(ServerConfigKey) do\n    table.insert(entries, {\n      config_key = type,\n      config_md5 = GM.ConfigModel:GetServerConfigMD5(type)\n    })",
+          "excerpt_line_start": 403,
+          "excerpt_line_end": 409,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/GameModel.lua",
+          "line_start": 329,
+          "line_end": 338,
+          "sha256": "bd6fa5762db0db763133e6de133d36eb1289911d46590a080f183deee58d017c",
+          "excerpt": "function GameModel:CheckRestart(tbLoginResp, isEnterForeground)\n  local restart = GM.ConfigModel:UpdateServerConfigs(tbLoginResp.config)\n  if restart then\n    GM:RestartGame(nil, EBIProjectType.RestartGameAction.FileReplaceChanged)\n    return true\n  end\n  self.m_bServerCacheMode = tbLoginResp.server_cache == 1",
+          "excerpt_line_start": 329,
+          "excerpt_line_end": 335,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/GameModel.luac",
+          "original_chunk_sha256": "cffe72b9b9ee200346eb3b83bf29f21a389f0c0f2c1012f68cc7ccd9b86a4225",
+          "manifest_module_index": 187,
+          "debug_source": "@GameModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-O003",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "difficulty"
+      ],
+      "category": "후속 BM 검증",
+      "title": "파일 variant는 서버 fileReplace의 file/suffix로 선택되고 실패 시 원본으로 되돌아간다",
+      "summary": "내장 _random/_fire 파일 존재는 활성 variant를 결정하지 않는다. 서버 fileReplace가 모듈의 마지막 이름과 일치하는 file에 suffix를 붙이고, require 및 동적 설정 로드가 원본 fallback을 갖는다.",
+      "details": [
+        "GetReplacesFilePath는 마지막 경로 구분자 뒤 이름을 추출하여 fileReplace 레코드의 file과 비교하고 path .. suffix를 반환한다. 일치 항목이 없으면 원래 path를 반환한다.",
+        "Lua_Base/Main.lua의 require wrapper는 교체 경로를 xpcall로 로드하고 실패하면 formerRequire(path)를 호출한다.",
+        "LoadDynamicConfigAsync도 교체 경로가 로드되지 않으면 원래 requireStr을 다시 읽으며, 둘 다 실패하면 오류 기록과 강제 재시작 창으로 이어진다.",
+        "fileReplace가 변경되고 Loading 모드가 아니면 UpdateServerConfigs는 true를 반환한다. GameModel.CheckRestart는 이를 FileReplaceChanged 재시작으로 연결한다.",
+        "따라서 패키지 variant 목록, 현재 fileReplace 응답, 실제 성공한 모듈 로드가 서로 다른 증거다. 파일명의 suffix만으로 A/B 그룹 또는 현재 경제값을 배정할 수 없다."
+      ],
+      "unknowns": [
+        "현재 fileReplace의 file/suffix 배열 및 해당 응답의 MD5.",
+        "교체 경로가 실제로 성공했는지, 원본 fallback이 발생했는지.",
+        "서버 그룹표식과 suffix 사이의 대응 관계."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 232,
+          "line_end": 247,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "  local config = self:GetServerConfig(ServerConfigKey.FileReplace)\n  if config then\n    for i = 1, #config do\n      if config[i].file == fileName then\n        return path .. config[i].suffix\n      end\n    end",
+          "excerpt_line_start": 238,
+          "excerpt_line_end": 244,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Main.lua",
+          "line_start": 14,
+          "line_end": 25,
+          "sha256": "8f0a2bcae3cf923fb920830079ceeabae96c2fa79414e3aa981c94aa7aeb4f53",
+          "excerpt": "function require(path)\n  local replacedRequirePath = path\n  if GM and GM.ConfigModel then\n    replacedRequirePath = GM.ConfigModel:GetReplacesFilePath(path, \".\")\n  end\n  local result, ret = xpcall(formerRequire, requireErrorHandler, replacedRequirePath)\n  if result then",
+          "excerpt_line_start": 14,
+          "excerpt_line_end": 20,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Base/Main.luac",
+          "original_chunk_sha256": "b7657be5b336af7ca31e71b1e2377c948562560f61178b934c609401a11faddc",
+          "manifest_module_index": 65,
+          "debug_source": "@Main.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 689,
+          "line_end": 723,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "  LuaManager:LoadDynamicConfigAsync(fileReplaceRequire, function(tb)\n    if not tb then\n      LuaManager:LoadDynamicConfigAsync(requireStr, function(tb)\n        if not tb then\n          GM.BIManager:LogErrorInfo(\"tm_ld_er\", requireStr .. \"\\n\" .. debug.traceback())\n          CS.CSErrorMonitor.OpenForceRestartWindow(\"force_restart_desc\")\n          return",
+          "excerpt_line_start": 710,
+          "excerpt_line_end": 716,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 386,
+          "line_end": 391,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "  local eGameMode = GM.SceneManager:GetGameMode()\n  if mapChangedKeys[ServerConfigKey.FileReplace] and eGameMode ~= EGameMode.Loading then\n    local info = json.encode(self:GetServerConfig(ServerConfigKey.FileReplace) or {})\n    Log.Info(\"[Restart] file replace: config is \" .. info)\n    return true",
+          "excerpt_line_start": 386,
+          "excerpt_line_end": 390,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/GameModel.lua",
+          "line_start": 329,
+          "line_end": 334,
+          "sha256": "bd6fa5762db0db763133e6de133d36eb1289911d46590a080f183deee58d017c",
+          "excerpt": "function GameModel:CheckRestart(tbLoginResp, isEnterForeground)\n  local restart = GM.ConfigModel:UpdateServerConfigs(tbLoginResp.config)\n  if restart then\n    GM:RestartGame(nil, EBIProjectType.RestartGameAction.FileReplaceChanged)\n    return true",
+          "excerpt_line_start": 329,
+          "excerpt_line_end": 333,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/GameModel.luac",
+          "original_chunk_sha256": "cffe72b9b9ee200346eb3b83bf29f21a389f0c0f2c1012f68cc7ccd9b86a4225",
+          "manifest_module_index": 187,
+          "debug_source": "@GameModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-O004",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [],
+      "category": "후속 BM 검증",
+      "title": "스타터의 로컬 기본표와 서버형 BM의 빈 설정 경로를 구분해야 한다",
+      "summary": "BundleConfig에는 실제 로컬 스타터 테이블이 있지만, 확인한 EnergyGift·TimeLimitGift·일반 Activity 로더는 서버/캐시 설정이 없을 때 내장 상품표로 대체하지 않는다.",
+      "details": [
+        "ConfigModel.LoadConfigs는 LocalConfigKey.Bundle에 Data.Config.BundleConfig를 로드하고 BundleLocalModel.LoadFileConfig가 이를 BundleLocalConfigData로 만든다. BundleConfig.lua의 GLOBAL_APP/else 스타터 레코드는 실제 패키지 안에 있다.",
+        "EnergyGift loader는 (GetServerConfig(EnergyGift) or Table.Empty)[1]만 읽고 레코드가 없으면 m_dataGroup=nil로 둔다. _CanTriggerEnergyBundle은 m_dataGroup=nil이면 false다.",
+        "TimeLimitGift loader는 GetServerConfig(TimeLimitGift) or Table.Empty를 순회해 그룹 맵을 새로 구성한다. 이 경로에는 LocalConfigKey.Bundle 대체가 없다.",
+        "BaseActivityModel은 해당 ActivityType 서버 설정이 nil이면 m_config=nil로 두고 Released를 반환한다. 일정·오픈 레벨의 실제 레코드를 로컬 기본표에서 채우는 처리는 이 베이스 로더에 없다.",
+        "별도 한정 검색: 보존된 Lua_Config의 .lua 306개에서 triggerEnergyPrice/dailyTriggerUpper/groupDuration/giftDuration/popup_max/general_conf_new/energyGift 대입 검색은 일치 0건이다. 이는 해당 디코딩 표 범위의 결과이며 원격·동적 코드 전체의 부재를 증명하지 않는다."
+      ],
+      "unknowns": [
+        "현재 DB 캐시의 서버형 BM 본문; 응답 부재와 캐시 부재를 구분할 자료.",
+        "이후 원격 리소스/핫픽스가 새 기본값 또는 대체 경로를 제공하는지.",
+        "현재 계정에서 스타터 기본표가 실제 선택·노출되었는지."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 297,
+          "line_end": 301,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "  self.m_configs[LocalConfigKey.Level] = require(\"Data.Config.LevelConfig\")\n  self.m_configs[LocalConfigKey.BoardPrompt] = require(\"Data.Config.BoardPromptConfig\")\n  self.m_configs[LocalConfigKey.Bundle] = require(\"Data.Config.BundleConfig\")\n  self.m_configs[LocalConfigKey.MapBorder] = require(\"Data.Config.MapBorderConfig\")\n  self.m_configs[LocalConfigKey.CharacterIntimacyDialog] = require(\"Data.Config.CharacterIntimacyDialogConfig\")",
+          "excerpt_line_start": 297,
+          "excerpt_line_end": 301,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleLocalModel.lua",
+          "line_start": 40,
+          "line_end": 62,
+          "sha256": "4280ed3276d773ce40763b163cdc92fdb7dbc9e296938b29b7ea89f5f024197d",
+          "excerpt": "\nfunction BundleLocalModel:LoadFileConfig()\n  self.m_mapBundleType2ConfigDatas = {}\n  self.m_arrConfigDatas = {}\n  self.m_mapConfigDatas = {}\n  self.m_mapGroupWrappers = {}\n  local datas = GM.ConfigModel:GetLocalConfig(LocalConfigKey.Bundle)",
+          "excerpt_line_start": 40,
+          "excerpt_line_end": 46,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Bundle/BundleLocalModel.luac",
+          "original_chunk_sha256": "0563affab2c40b1d083e7791c98ee06a6256d5d80ff3de84aad965995d0bdda6",
+          "manifest_module_index": 166,
+          "debug_source": "@BundleLocalModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/BundleConfig.lua",
+          "line_start": 1,
+          "line_end": 17,
+          "sha256": "9caf4aa5a3f36e10b450f8643252a199ef78204a4883d7a5968df587c3e6e638",
+          "excerpt": "if GLOBAL_APP then\n  return {\n    {\n      id = \"starter_bundle_1\",\n      type = \"StarterBundle\",",
+          "excerpt_line_start": 1,
+          "excerpt_line_end": 5,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Config/Data/Config/BundleConfig.luac",
+          "original_chunk_sha256": "365b04937ed5abd7ff0a48a7dfdf64ccf19b6d800000d8caadaafee5427bd0f6",
+          "manifest_module_index": 55,
+          "debug_source": "@BundleConfig.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+          "line_start": 27,
+          "line_end": 38,
+          "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+          "excerpt": "function BundleEnergyModel:LoadServerConfig()\n  local configMD5 = GM.ConfigModel:GetServerConfigMD5(ServerConfigKey.EnergyGift)\n  if self.m_md5 ~= configMD5 then\n    self.m_md5 = configMD5\n    local energyConfig = (GM.ConfigModel:GetServerConfig(ServerConfigKey.EnergyGift) or Table.Empty)[1]\n    if energyConfig ~= nil then\n      self.m_dataGroup = BundleEnergyConfigDataGroup.Create(energyConfig)",
+          "excerpt_line_start": 27,
+          "excerpt_line_end": 33,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.luac",
+          "original_chunk_sha256": "61ed4d451148c140bbde2bbda56c90dd0e9374bb58f6448b5502332912b4c9bd",
+          "manifest_module_index": 163,
+          "debug_source": "@BundleEnergyModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/TimeLimitBundle/Model/BundleTimeLimitModel.lua",
+          "line_start": 20,
+          "line_end": 41,
+          "sha256": "f9f2a1d26de6664b3203b5802d175dd12ade8b351d383a5aaef1e52d46f5ee87",
+          "excerpt": "function BundleTimeLimitModel:LoadServerConfig()\n  local configMD5 = GM.ConfigModel:GetServerConfigMD5(ServerConfigKey.TimeLimitGift)\n  if self.m_md5 ~= configMD5 then\n    self.m_md5 = configMD5\n    local timelimitConfig = GM.ConfigModel:GetServerConfig(ServerConfigKey.TimeLimitGift) or Table.Empty\n    self.m_mapConfigDataGroup = {}\n    self.m_arrGroupIds = {}",
+          "excerpt_line_start": 20,
+          "excerpt_line_end": 26,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Activity/TimeLimitBundle/Model/BundleTimeLimitModel.luac",
+          "original_chunk_sha256": "f52c4a8085d98103e50214f42f2c8e19afff32b165ccd7261bbf647a0b9b9ab7",
+          "manifest_module_index": 1112,
+          "debug_source": "@BundleTimeLimitModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "line_start": 46,
+          "line_end": 56,
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "excerpt": "function BaseActivityModel:_LoadServerConfig()\n  local md5 = GM.ConfigModel:GetServerConfigMD5(self.m_type)\n  if self.m_md5 == md5 then\n    return\n  end",
+          "excerpt_line_start": 46,
+          "excerpt_line_end": 50,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.luac",
+          "original_chunk_sha256": "77217c4e52e315e8ca0d0ebfa14b95322aaa2d8764f6a1963445f9d66b88e458",
+          "manifest_module_index": 154,
+          "debug_source": "@BaseActivityModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "line_start": 125,
+          "line_end": 138,
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "excerpt": "function BaseActivityModel:_CalculateState()\n  if self.m_config == nil then\n    return ActivityState.Released, nil\n  end\n  local serverTime = GM.GameModel:GetServerTime()\n  if serverTime < self.m_config.sTime then\n    return ActivityState.Preparing, self.m_config.sTime",
+          "excerpt_line_start": 125,
+          "excerpt_line_end": 131,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.luac",
+          "original_chunk_sha256": "77217c4e52e315e8ca0d0ebfa14b95322aaa2d8764f6a1963445f9d66b88e458",
+          "manifest_module_index": 154,
+          "debug_source": "@BaseActivityModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-O005",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "events"
+      ],
+      "category": "후속 BM 검증",
+      "title": "sLv는 선택적 레벨 gate이고 sTime/eTime/rTime은 서로 다른 서버 시각 경계다",
+      "summary": "BaseActivityModel은 서버 레코드에서 id·일정을 직접 복사한다. sLv가 있고 현재 레벨보다 높을 때만 차단하며, 일정상 Started여도 리소스 미준비면 GetState는 Released를 반환할 수 있다.",
+      "details": [
+        "설정은 GetServerConfig(self.m_type)로 수신된다. config.sLv가 nil이면 이 레벨 gate는 적용되지 않는다. sLv 초과로 차단되면 m_md5=nil로 돌려 후속 LoadServerConfig에서 재검사할 수 있게 한다.",
+        "통과 시 id/sTime/eTime/rTime을 m_config에 복사하고 구체 활동의 _LoadOtherServerConfig(config)를 호출한다. 이 지점에 숫자 일정의 내장 default는 없다.",
+        "서버시각 < sTime이면 Preparing, sTime 이상 eTime 미만이면 Started, eTime 이상 rTime 미만이면 Ended, rTime 이상이면 Released다. rTime은 이 베이스 상태머신의 해제 경계이며 단순한 반복 refresh 시각으로 이름만 보고 바꾸면 안 된다.",
+        "GameModel은 로그인 server_time을 1000으로 나눠 정수 초로 취급한다. BaseActivityModel은 이 GetServerTime 값과 일정 필드를 직접 비교한다.",
+        "리소스 라벨의 다운로드 여부가 별도로 검사되며 기본 GetState(checkResource=true)는 리소스 미준비 시 Released를 반환한다. 달력 값만으로 실제 UI 진입 가능성을 확정할 수 없다."
+      ],
+      "unknowns": [
+        "ActivityType별 현행 id/sLv/sTime/eTime/rTime과 리소스 준비 상태.",
+        "구체 활동의 추가 gate, join/group 조건 및 서버 개인화 결과.",
+        "계정·버전별 일정이 동일한지, 한국 현지시각에서 어떤 달력으로 보이는지."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "line_start": 46,
+          "line_end": 78,
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "excerpt": "  if config.sLv ~= nil and config.sLv > GM.LevelModel:GetCurrentLevel() then\n    if not self.m_bLogActivityBanByLevelLimit then\n      GM.BIManager:LogAction(EBIType.ActivityBanByLevelLimit, {\n        sLv = config.sLv,\n        uLv = GM.LevelModel:GetCurrentLevel(),\n        atype = self.m_type,\n        id = config.id",
+          "excerpt_line_start": 57,
+          "excerpt_line_end": 63,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.luac",
+          "original_chunk_sha256": "77217c4e52e315e8ca0d0ebfa14b95322aaa2d8764f6a1963445f9d66b88e458",
+          "manifest_module_index": 154,
+          "debug_source": "@BaseActivityModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "line_start": 91,
+          "line_end": 123,
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "excerpt": "function BaseActivityModel:_UpdateState()\n  local lastState = self.m_state and self:GetState()\n  self.m_state, self.m_nextStateTime = self:_CalculateState()\n  self.m_resourceReady = true\n  if not MINIGAME then\n    for _, label in ipairs(self:GetResourceLabels()) do\n      if not GM.DownloadManager:IsLabelDownloaded(label) then",
+          "excerpt_line_start": 91,
+          "excerpt_line_end": 97,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.luac",
+          "original_chunk_sha256": "77217c4e52e315e8ca0d0ebfa14b95322aaa2d8764f6a1963445f9d66b88e458",
+          "manifest_module_index": 154,
+          "debug_source": "@BaseActivityModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "line_start": 125,
+          "line_end": 138,
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "excerpt": "function BaseActivityModel:_CalculateState()\n  if self.m_config == nil then\n    return ActivityState.Released, nil\n  end\n  local serverTime = GM.GameModel:GetServerTime()\n  if serverTime < self.m_config.sTime then\n    return ActivityState.Preparing, self.m_config.sTime",
+          "excerpt_line_start": 125,
+          "excerpt_line_end": 131,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.luac",
+          "original_chunk_sha256": "77217c4e52e315e8ca0d0ebfa14b95322aaa2d8764f6a1963445f9d66b88e458",
+          "manifest_module_index": 154,
+          "debug_source": "@BaseActivityModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "line_start": 152,
+          "line_end": 158,
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "excerpt": "function BaseActivityModel:GetState(checkResource)\n  checkResource = checkResource ~= false\n  if checkResource and not self.m_resourceReady then\n    return ActivityState.Released\n  end",
+          "excerpt_line_start": 152,
+          "excerpt_line_end": 156,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.luac",
+          "original_chunk_sha256": "77217c4e52e315e8ca0d0ebfa14b95322aaa2d8764f6a1963445f9d66b88e458",
+          "manifest_module_index": 154,
+          "debug_source": "@BaseActivityModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/GameModel.lua",
+          "line_start": 335,
+          "line_end": 338,
+          "sha256": "bd6fa5762db0db763133e6de133d36eb1289911d46590a080f183deee58d017c",
+          "excerpt": "  self.m_bServerCacheMode = tbLoginResp.server_cache == 1\n  local serverTime = math.floor(tbLoginResp.server_time / 1000)\n  GM:RecoverTimeFlagAndMask()\n  restart = self:RefreshServerTime(serverTime)",
+          "excerpt_line_start": 335,
+          "excerpt_line_end": 338,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/GameModel.luac",
+          "original_chunk_sha256": "cffe72b9b9ee200346eb3b83bf29f21a389f0c0f2c1012f68cc7ccd9b86a4225",
+          "manifest_module_index": 187,
+          "debug_source": "@GameModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-O007",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "ui"
+      ],
+      "category": "후속 BM 검증",
+      "title": "그룹 popups와 공통 popup_max는 출처·기본값·0의 의미가 다르다",
+      "summary": "서버 그룹 popups는 일일 노출 제한이며 누락 시 기본 1, 0이면 자동 팝업 차단이다. general_conf_new의 confType=popup_max/param_int는 구간 제한이며 누락 또는 0 이하이면 해당 상한을 적용하지 않는다.",
+      "details": [
+        "BundleServerConfigDataGroup.Init은 groupData.popups를 dailyPopupCount에 넣고 GetDailyPopupCount는 값이 없을 때 DEFAULT_POPUP_DAILY_COUNT=1을 사용한다. Lua에서 숫자 0은 truthy이므로 0이 1로 대체되지 않는다.",
+        "BundlePopupHelper._CanPopupDailyPopupBundle은 daily count=0이면 false다. 그 외 서버 일 경계가 바뀌면 그룹별 open count를 0으로 만들고 저장 count < daily limit을 검사한다.",
+        "ConfigModel은 OptionalWindowMaxCountInPopupPeriod를 문자열 popup_max로 선언한다. general_conf_new 레코드를 confType으로 색인하고 GetOptionalWindowMaxCountInPopupPeriod는 param_int를 별도 기본값 없이 읽는다.",
+        "PopupChain._CanPopupOptionalWindowInThisPeriod는 이 값이 nil 또는 <=0이면 true를 반환한다. 이 구간 cap은 기존 rule에 이미 있으므로 신규 결론은 두 입력의 구분과 서로 반대인 0의 해석이다.",
+        "현재 팝업 횟수를 검증하려면 두 서버값뿐 아니라 그룹별 PlayerPrefs openTime/openCount와 PopupChain 구간 count를 함께 보아야 한다. 그룹 default 1은 모든 종류의 BM 전체 팝업 수 1회를 뜻하지 않는다."
+      ],
+      "unknowns": [
+        "현재 popups와 general_conf_new popup_max 값.",
+        "현재 구간 경계·그룹별 PlayerPrefs 카운터 및 UI open 경로.",
+        "구체 번들 클래스가 base getter를 덮어쓰는지와 적용 범위."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "line_start": 1,
+          "line_end": 3,
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "excerpt": "local sec2Day = Sec2Day\nlocal DEFAULT_POPUP_DAILY_COUNT = 1\nBundleServerConfigData = {}",
+          "excerpt_line_start": 1,
+          "excerpt_line_end": 3,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.luac",
+          "original_chunk_sha256": "1a8f021bd23626c95c952f1953feceebeefbab6a91d871c3e351f05067bc5249",
+          "manifest_module_index": 173,
+          "debug_source": "@BundleServerConfigData.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "line_start": 49,
+          "line_end": 54,
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "excerpt": "function BundleServerConfigDataGroup:Init(groupData)\n  self.groupId = groupData.groupID\n  self.bundleUIType = groupData.uiCode\n  self.dailyPopupCount = groupData.popups\n  self:_InitConfigDatas(groupData)",
+          "excerpt_line_start": 49,
+          "excerpt_line_end": 53,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.luac",
+          "original_chunk_sha256": "1a8f021bd23626c95c952f1953feceebeefbab6a91d871c3e351f05067bc5249",
+          "manifest_module_index": 173,
+          "debug_source": "@BundleServerConfigData.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "line_start": 95,
+          "line_end": 97,
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "excerpt": "function BundleServerConfigDataGroup:GetDailyPopupCount()\n  return self.dailyPopupCount or DEFAULT_POPUP_DAILY_COUNT\nend",
+          "excerpt_line_start": 95,
+          "excerpt_line_end": 97,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.luac",
+          "original_chunk_sha256": "1a8f021bd23626c95c952f1953feceebeefbab6a91d871c3e351f05067bc5249",
+          "manifest_module_index": 173,
+          "debug_source": "@BundleServerConfigData.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Bundle/BundlePopupHelper.lua",
+          "line_start": 113,
+          "line_end": 123,
+          "sha256": "6f795ec0e7b98225665cb2a813756bfc7eeba8fcc2c4658a3b79f69689c26cf0",
+          "excerpt": "function BundlePopupHelper:_CanPopupDailyPopupBundle(serverTime, groupData)\n  if groupData:GetDailyPopupCount() == 0 then\n    return false\n  end\n  local openTime = PlayerPrefs.GetInt(BundleDefinition.GetGroupDataOpenWindowTimePlayerPrefsKey(groupData), 0)",
+          "excerpt_line_start": 113,
+          "excerpt_line_end": 117,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/UI/Window/Bundle/BundlePopupHelper.luac",
+          "original_chunk_sha256": "1a9455034e18d59e956b6de7cedd16b035c955e36ad5897004371c3a996daf31",
+          "manifest_module_index": 639,
+          "debug_source": "@BundlePopupHelper.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 151,
+          "line_end": 156,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "  Vibration = \"vibration\",\n  NoticeLessPopup = \"notice_popup_less\",\n  ServeButtonPositionType = \"serve_button_position\",\n  StoryRecap = \"story_recap\",\n  OptionalWindowMaxCountInPopupPeriod = \"popup_max\",",
+          "excerpt_line_start": 151,
+          "excerpt_line_end": 155,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 617,
+          "line_end": 641,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "function ConfigModel:GetOptionalWindowMaxCountInPopupPeriod()\n  return self:GetGeneralConfByType(EGeneralConfType.OptionalWindowMaxCountInPopupPeriod, ConfigModel.EGeneralConfigParam.Int)\nend",
+          "excerpt_line_start": 617,
+          "excerpt_line_end": 619,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 675,
+          "line_end": 683,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "function ConfigModel:_UpdateGeneralConfigInfo()\n  self.m_generalConfigs = {}\n  local serverConfig = self:GetServerConfig(ServerConfigKey.GeneralConf)\n  if Table.IsEmpty(serverConfig) then\n    return nil",
+          "excerpt_line_start": 675,
+          "excerpt_line_end": 679,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/PopupChain.lua",
+          "line_start": 411,
+          "line_end": 417,
+          "sha256": "6bedf13183b5f3d51fb9901bb82cf7e02465e5ad475713f5d7290b57e86bc5a0",
+          "excerpt": "function PopupChain:_CanPopupOptionalWindowInThisPeriod()\n  local maxCount = GM.ConfigModel:GetOptionalWindowMaxCountInPopupPeriod()\n  if maxCount == nil or maxCount <= 0 then\n    return true\n  end",
+          "excerpt_line_start": 411,
+          "excerpt_line_end": 415,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/UI/UIFramework/PopupChain.luac",
+          "original_chunk_sha256": "91aae5120dfef3af377bbb10fe6442742c914ed4761e1c1620c9ce3fa91014e6",
+          "manifest_module_index": 604,
+          "debug_source": "@PopupChain.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 52,
+          "line_end": 58,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "  RateUs = \"rateUs\",\n  Notify = \"notify_new\",\n  Ad = \"adAllControl\",\n  FileReplace = \"fileReplace\",\n  StoryUpdate = \"story_update\",\n  GeneralConf = \"general_conf_new\",",
+          "excerpt_line_start": 52,
+          "excerpt_line_end": 57,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 224,
+          "line_end": 229,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "excerpt": "ConfigModel.EGeneralConfigParam = {\n  Int = \"param_int\",\n  Float = \"param_float\",\n  String = \"param_string\",\n  llETime = \"eTime\",\n  llRTime = \"rTime\"",
+          "excerpt_line_start": 224,
+          "excerpt_line_end": 229,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/ConfigModel.luac",
+          "original_chunk_sha256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882",
+          "manifest_module_index": 179,
+          "debug_source": "@ConfigModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "BM-O008",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [],
+      "category": "후속 BM 검증",
+      "title": "서버 payID가 상품을 가리키고 결제 SDK callback이 localizedPrice를 갱신한다",
+      "summary": "BM 보상·SKU 선택은 서버 설정, 기준 fixedMoney는 내장 상품표, 표시 localizedPrice와 realMoney/currency는 결제 SDK 갱신 경로에서 온다. energyGift의 price는 에너지 창의 구매 성공 BI desc_price에도 따로 쓰인다.",
+      "details": [
+        "BundleServerConfigData는 서버 giftContent 레코드를 shallow copy하고 content를 보상 배열로 변환한다. GetPurchaseId는 payID, GetGoods는 content를 반환한다.",
+        "InAppPurchaseModel.Init은 IAPProduct.GetProducts로 내장 상품 객체를 만들고, 글로벌 IAPProduct.Init은 fixedMoney와 realMoney를 같은 기본값으로 시작하여 localizedPrice 문자열을 만든다.",
+        "SDKHelper의 purchaseClient:OnUpdated callback은 MessageEventArgs.Message를 UpdateInAppPurchaseData에 넘긴다. Android 경로는 productId/price/price_amount_micros/price_currency_code를 읽어 UpdateInfo(price,micros/1000000,currency)를 호출한다.",
+        "IAPProduct.UpdateInfo는 localizedPrice를 교체하고 realMoney>0일 때 realMoney/currency를 갱신한다. fixedMoney는 이 함수에서 교체하지 않으며 GetFixedMoney와 GetRealMoney는 별도 getter다.",
+        "BundleEnergyWindow 버튼은 GetLocalizedPrice(GetPurchaseId())를 표시한다. 서버형 BundleEnergyConfigData.GetDescPrice는 별도 self.price or 0을 반환하고, 구매 성공 시 이 값은 EnergyGiftBuySuc BI의 desc_price로 기록된다. 서버 price를 실제 버튼 판매가로 바로 치환하면 데이터 계층을 혼동한다.",
+        "새 상품 목록을 재집계하지 않았다. 기존 251 SKU는 기본 선언으로 유지하고, 실제 한국 판매가 확정에는 해당 productId에 대한 SDK 메타데이터와 UI 표시의 짝이 필요하다."
+      ],
+      "unknowns": [
+        "현재 Android 결제 SDK OnUpdated 메시지와 해당 통화·스토어·지역.",
+        "실제로 갱신에 성공한 SKU 및 fallback 기본 문자열이 남은 SKU.",
+        "현재 서버 payID/content/discountTag/price와 화면상 최종 표시."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "line_start": 6,
+          "line_end": 29,
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "excerpt": "function BundleServerConfigData.Create(configData, groupData)\n  local data = setmetatable(Table.ShallowCopy(configData), BundleServerConfigData)\n  data:Init(groupData)\n  return data\nend\n\nfunction BundleServerConfigData:Init(groupData)",
+          "excerpt_line_start": 6,
+          "excerpt_line_end": 12,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.luac",
+          "original_chunk_sha256": "1a8f021bd23626c95c952f1953feceebeefbab6a91d871c3e351f05067bc5249",
+          "manifest_module_index": 173,
+          "debug_source": "@BundleServerConfigData.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "line_start": 132,
+          "line_end": 134,
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "excerpt": "function BundleEnergyConfigData:GetDescPrice()\n  return self.price or 0\nend",
+          "excerpt_line_start": 132,
+          "excerpt_line_end": 134,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.luac",
+          "original_chunk_sha256": "1a8f021bd23626c95c952f1953feceebeefbab6a91d871c3e351f05067bc5249",
+          "manifest_module_index": 173,
+          "debug_source": "@BundleServerConfigData.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/InAppPurchase/InAppPurchaseModel.lua",
+          "line_start": 10,
+          "line_end": 13,
+          "sha256": "fccdbcb3b7db78616c217707e30a372d54d73dc778c84cb445e1710f13f1f91e",
+          "excerpt": "function InAppPurchaseModel:Init()\n  self.m_dbTable = GM.DBTableManager:GetTable(EDBTableConfigs.IAPOrder)\n  self.m_mapProducts = IAPProduct.GetProducts()\n  self.m_totalPay = 0",
+          "excerpt_line_start": 10,
+          "excerpt_line_end": 13,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/InAppPurchase/InAppPurchaseModel.luac",
+          "original_chunk_sha256": "48d2d8b02f80d1375fe8a96d42431bb839c92a3430c0448e8b779a61e8484aa9",
+          "manifest_module_index": 196,
+          "debug_source": "@InAppPurchaseModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Common/Platform/SDKHelper.lua",
+          "line_start": 200,
+          "line_end": 209,
+          "sha256": "b7fb3efbcdc0010b11028d604a00ea2b603ddfbc1f550eeded4e73bf0b85117c",
+          "excerpt": "  function self.m_funcPurchaseOnUpdatedCallback(client, MessageEventArgs)\n    local logMsg = {\n      \"purchaseClient:OnUpdated\",\n      [[\n",
+          "excerpt_line_start": 200,
+          "excerpt_line_end": 204,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Base/Common/Platform/SDKHelper.luac",
+          "original_chunk_sha256": "5f1fb5ce015eafce003a42b6b430398cf9728c09b4ab643080a44b6d13cb77fe",
+          "manifest_module_index": 18,
+          "debug_source": "@SDKHelper.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/InAppPurchase/InAppPurchaseModel.lua",
+          "line_start": 85,
+          "line_end": 112,
+          "sha256": "fccdbcb3b7db78616c217707e30a372d54d73dc778c84cb445e1710f13f1f91e",
+          "excerpt": "    else\n      eIAPType = self:GetIAPTypeFromProductId(info.productId)\n      if eIAPType ~= nil and info.price ~= nil then\n        if info.price_amount_micros ~= nil and info.price_currency_code ~= nil then\n          self.m_mapProducts[eIAPType]:UpdateInfo(info.price, info.price_amount_micros / 1000000, info.price_currency_code)\n        else\n          GM.BIManager:LogAction(EBIType.IAPProductPrice, info)",
+          "excerpt_line_start": 99,
+          "excerpt_line_end": 105,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/InAppPurchase/InAppPurchaseModel.luac",
+          "original_chunk_sha256": "48d2d8b02f80d1375fe8a96d42431bb839c92a3430c0448e8b779a61e8484aa9",
+          "manifest_module_index": 196,
+          "debug_source": "@InAppPurchaseModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/InAppPurchase/IAPProductGlobal.lua",
+          "line_start": 542,
+          "line_end": 556,
+          "sha256": "0207a5e8d2e1e8eeeffd3ee2cb9763347435d62a73d26957abbf938208839104",
+          "excerpt": "  self.eType = eType\n  self.productId = prefix .. \".\" .. self.eType\n  self.fixedMoney = fixedMoney\n  self.realMoney = fixedMoney\n  self.currency = currency\n  self.localizedPrice = (self.currency == \"USD\" and \"US$ \" or \"\\239\\191\\165 \") .. string.format(\"%.2f\", fixedMoney)\nend",
+          "excerpt_line_start": 542,
+          "excerpt_line_end": 548,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/InAppPurchase/IAPProductGlobal.luac",
+          "original_chunk_sha256": "40a27d8c5a55ac28686dec6d861c1321aee1407ec0a8bcc701dc96b832e51e24",
+          "manifest_module_index": 194,
+          "debug_source": "@IAPProductGlobal.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/InAppPurchase/InAppPurchaseModel.lua",
+          "line_start": 227,
+          "line_end": 251,
+          "sha256": "fccdbcb3b7db78616c217707e30a372d54d73dc778c84cb445e1710f13f1f91e",
+          "excerpt": "function InAppPurchaseModel:GetFixedMoney(eIAPType)\n  local productData = self.m_mapProducts[eIAPType]\n  if productData == nil then\n    Log.Error(\"InAppPurchaseModel:GetFixedMoney no product info, ErrType: \" .. eIAPType)\n    return nil\n  end\n  return productData.fixedMoney",
+          "excerpt_line_start": 245,
+          "excerpt_line_end": 251,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/Model/InAppPurchase/InAppPurchaseModel.luac",
+          "original_chunk_sha256": "48d2d8b02f80d1375fe8a96d42431bb839c92a3430c0448e8b779a61e8484aa9",
+          "manifest_module_index": 196,
+          "debug_source": "@InAppPurchaseModel.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Bundle/BundleEnergyWindow.lua",
+          "line_start": 27,
+          "line_end": 34,
+          "sha256": "085f7780aa808b8356e56edaad970d508336fe3daa13c9d50ea864dbf2c2e346",
+          "excerpt": "  self.m_gemItemGo:SetActive(showGem)\n  self.m_discountView:UpdateContent(self.m_bundleData:GetDiscountTag())\n  self.m_IAPButton:Init(GM.InAppPurchaseModel:GetLocalizedPrice(self.m_bundleData:GetPurchaseId()))\n  self:LogWindowAction(EBIType.UIActionType.Open, {\n    EBIReferType.ClickEle",
+          "excerpt_line_start": 27,
+          "excerpt_line_end": 31,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/UI/Window/Bundle/BundleEnergyWindow.luac",
+          "original_chunk_sha256": "5f1f07c5f9639ba817bcebbaa6f538e301641dd88a261b89aa7b321f3384c2a4",
+          "manifest_module_index": 634,
+          "debug_source": "@BundleEnergyWindow.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Bundle/BundleEnergyWindow.lua",
+          "line_start": 64,
+          "line_end": 71,
+          "sha256": "085f7780aa808b8356e56edaad970d508336fe3daa13c9d50ea864dbf2c2e346",
+          "excerpt": "  GM.BundleManager:Buy(self.m_bundleData:GetBundleId(), EBIType.BundleBuy, function(rewards)\n    self.m_bBuySuccess = true\n    self:Close()\n    local actionInfo = {\n      giftID = self.m_bundleData:GetBundleId(),",
+          "excerpt_line_start": 64,
+          "excerpt_line_end": 68,
+          "original_chunk_path": "D:/rea분석/analysis/lua/Lua_Core/UI/Window/Bundle/BundleEnergyWindow.luac",
+          "original_chunk_sha256": "5f1f07c5f9639ba817bcebbaa6f538e301641dd88a261b89aa7b321f3384c2a4",
+          "manifest_module_index": 634,
+          "debug_source": "@BundleEnergyWindow.lua",
+          "method": "제공 APK에서 복원한 Lua의 후속 정적 추적",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "AS-001",
+      "domain": "mechanics",
+      "domains": [
+        "ui"
+      ],
+      "title": "로컬 번들에서 실제 Sprite와 UI 객체를 확인",
+      "summary": "동봉 245개 번들에 Sprite 1,820개·Texture2D 2,608개가 있다. ImageFileConfig의 MainItem 경로와 실제 Sprite가 연결된 항목은 581개다.",
+      "details": [
+        "카탈로그 선언이 아니라 실제 로컬 번들의 m_Container와 PPtr로 확인했다.",
+        "원격 전용 자산과 현재 활성 상태는 조사 결과에 포함하지 않는다.",
+        "갤러리에는 전체 자산이 아닌 선정한 PNG 24개만 연결한다."
+      ],
+      "unknowns": [
+        "원격 자산의 실제 내용과 현재 서버 선택",
+        "실기에서 실제 표시된 아이템/화면"
+      ],
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "line_start": null,
+          "line_end": null,
+          "path_id": "7917883799874727847",
+          "object_sha256": "103114b0613fb25fe2a76c66098f23dfd8dd80e510d8aae1bc2bda483662570b",
+          "excerpt": "{\n  \"scope\": \"245 local bundles\",\n  \"sprites\": 1820,\n  \"textures\": 2608,\n  \"mainItemMatches\": 581,\n  \"example\": \"Coffee01\"\n}",
+          "excerpt_scope": "Unity serialized fields parsed by UnityPy; not Lua source",
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행.",
+          "evidence_id": null
+        }
+      ],
+      "kind": "config",
+      "category": "APK UI·이미지 실물"
+    },
+    {
+      "id": "AS-002",
+      "domain": "mechanics",
+      "domains": [],
+      "title": "Type106은 GroceryBag06 원본 Sprite에 연결된다",
+      "summary": "기본 ItemViewConfig의 Type106→GroceryBag06, ImageFileConfig 경로, 로컬 Sprite 객체를 끝까지 연결했다.",
+      "details": [
+        "GetSpriteName은 stateCollection 변환 후 Image 배열에서 선택하고, Image가 없으면 타입 문자열을 키로 사용한다.",
+        "기본 Type106의 이미지는 GroceryBag06이며 실제 PNG와 번들/객체 해시를 확보했다."
+      ],
+      "unknowns": [
+        "현행 서버의 fileReplace variant 및 실기 표시 상태"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+          "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+          "line_start": 33,
+          "line_end": 35,
+          "excerpt": "    Type = \"106\",\n    Image = {\n      \"GroceryBag06\"",
+          "method": "복원 Lua의 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/ItemDataModel.lua",
+          "sha256": "7a199a3ffea516f08a29a765cb030f630161cc4b631d8c5d773087b8d4c72a26",
+          "line_start": 185,
+          "line_end": 192,
+          "excerpt": "function ItemDataModel:GetSpriteName(type)\n  type = self:GetStateCollectionStateType(type, 1) or type\n  local viewConfig = self.m_mapViewConigs[type]\n  if viewConfig ~= nil and viewConfig.Image ~= nil then\n    return Table.ListRandomSelectOne(viewConfig.Image)\n  end\n  return type\nend",
+          "method": "복원 Lua의 정적 추적",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "line_start": null,
+          "line_end": null,
+          "path_id": "6356145883407704255",
+          "object_sha256": "00a0ae24001efb12d52bc4fffce7f46acca5a3089d08443e3e21869331abd08a",
+          "excerpt": "{\n  \"itemType\": \"106\",\n  \"imageKey\": \"GroceryBag06\",\n  \"pathId\": \"6356145883407704255\"\n}",
+          "excerpt_scope": "Unity serialized fields parsed by UnityPy; not Lua source",
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행.",
+          "evidence_id": null
+        }
+      ],
+      "kind": "config",
+      "category": "APK UI·이미지 실물"
+    },
+    {
+      "id": "AS-003",
+      "domain": "ui",
+      "domains": [],
+      "title": "UIRoot CanvasScaler의 기준 해상도는 1080×1920",
+      "summary": "직렬화된 CanvasScaler에 referenceResolution 1080×1920, scaleMode1·screenMatchMode0·matchWidthOrHeight0이 기록되어 있다.",
+      "details": [
+        "이는 UI 기준 해상도 선언이며 실제 기기 화면 크기나 적용 후 픽셀 좌표가 아니다.",
+        "SafeArea, 활성 레이아웃, Lua의 위치 변경은 추가 확인이 필요하다."
+      ],
+      "unknowns": [
+        "기기별 SafeArea 적용과 실제 활성 레이아웃"
+      ],
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "line_start": null,
+          "line_end": null,
+          "path_id": "2462666195210230446",
+          "object_sha256": "f37f69ee9f010c51f70512f5b92d72e1a235a8fc823fdc9d7424f011749f402a",
+          "excerpt": "{\n  \"m_ReferenceResolution\": {\n    \"x\": 1080.0,\n    \"y\": 1920.0\n  },\n  \"m_UiScaleMode\": 1,\n  \"m_ScreenMatchMode\": 0,\n  \"m_MatchWidthOrHeight\": 0.0\n}",
+          "excerpt_scope": "Unity serialized fields parsed by UnityPy; not Lua source",
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행.",
+          "evidence_id": null
+        }
+      ],
+      "kind": "config",
+      "category": "APK UI·이미지 실물"
+    },
+    {
+      "id": "AS-004",
+      "domain": "ui",
+      "domains": [],
+      "title": "11종 UI 프리팹의 원래 계층과 앵커를 확보",
+      "summary": "UIRoot, BaseSceneView, ShopWindow, BuyEnergyWindow, MainBoardView 등 11종의 GameObject/RectTransform/Animator 연결을 정적으로 추출했다.",
+      "details": [
+        "BaseSceneView에는 GameObject411개·RectTransform327개·Animator29개가 있다.",
+        "HUD Image의 Sprite PPtr를 실제 icon_energy/icon_coin/icon_gem으로 연결했다.",
+        "원시 anchoredPosition/sizeDelta/pivot와 계산 offset을 보존했다. 이를 최종 화면 좌표로 간주하지 않는다."
+      ],
+      "unknowns": [
+        "비활성/대체 레이아웃의 실제 선택",
+        "원작 전체 UI의 렌더 결과"
+      ],
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "line_start": null,
+          "line_end": null,
+          "path_id": "7164304523672550353",
+          "object_sha256": "b3a2cad9701570b002fcd6569869ccab38c1cb0fa1025eaa4ef92903b5d9344c",
+          "excerpt": "{\n  \"asset\": \"Assets/Hud/BaseSceneView.prefab\",\n  \"objects\": 411,\n  \"rectTransforms\": 327,\n  \"animators\": 29\n}",
+          "excerpt_scope": "Unity serialized fields parsed by UnityPy; not Lua source",
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행.",
+          "evidence_id": null
+        }
+      ],
+      "kind": "config",
+      "category": "APK UI·이미지 실물"
+    },
+    {
+      "id": "AS-005",
+      "domain": "ui",
+      "domains": [
+        "puzzle-fx"
+      ],
+      "title": "선택 UI에 연결된 정적 AnimationClip 26개를 확인",
+      "summary": "Animator→controller→AnimationClip PPtr로 controller14개·clip26개를 연결했다. Shop show 클립 구간은 약0.283초, hide는 약0.333초다.",
+      "details": [
+        "sample rate, 시작/종료, loop flag와 참조 객체 해시를 보존했다.",
+        "클립 구간은 실제 표시시간이 아니다. 상태 전이·속도·이벤트·스크립트와 결합된 최종 재생은 미관측이다."
+      ],
+      "unknowns": [
+        "실제 Animator trigger 순서와 재생 속도",
+        "프레임 시간과 화면상의 easing"
+      ],
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+          "sha256": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39",
+          "line_start": null,
+          "line_end": null,
+          "path_id": "394686312072661849",
+          "object_sha256": "812bf48c091a4459273d92564bc592e4819022c601776408041235b032c13f39",
+          "excerpt": "{\n  \"name\": \"Ani_ShopNewWindow_show\",\n  \"start\": 0,\n  \"end\": 0.28333333134651184,\n  \"scope\": \"serialized clip range\"\n}",
+          "excerpt_scope": "Unity serialized fields parsed by UnityPy; not Lua source",
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행.",
+          "evidence_id": null
+        }
+      ],
+      "kind": "config",
+      "category": "APK UI·이미지 실물"
+    }
+  ],
+  "work": [
+    {
+      "step": "BM 노출 조건",
+      "state": "partial",
+      "done": "서버 원문 필드·단위, 부스트 부족 판정, ChainEnergy, 노출횟수/쿨다운, 설정 캐시/variant·가격 경로 보강",
+      "remaining": "실계정 입력값·실노출·빈도 검증"
+    },
+    {
+      "step": "상품·이벤트 운영값",
+      "state": "partial",
+      "done": "서버 설정의 수신·캐시·삭제·MD5·cohort 표식·시간 경계 확인",
+      "remaining": "현재 config·실제 배정·localizedPrice 미확인"
+    },
+    {
+      "step": "APK 이미지·UI 자산",
+      "state": "partial",
+      "done": "동봉 Sprite1820개·MainItem581개, 원본PNG24개와 기본타입 20건 연결. UI트리11종·정적clip26개 확보",
+      "remaining": "현재 활성 레이아웃/실제 재생·원격 자산은 미관측"
+    },
+    {
+      "step": "플레이 영상·스크린샷",
+      "state": "held",
+      "done": "사용자 요청으로 분석과 추출 중단",
+      "remaining": "다운로드 완료 후 사용자가 재개를 요청할 때까지 보류"
+    },
+    {
+      "step": "실기 실행·광고·결제",
+      "state": "waiting",
+      "done": "기존 adb 확인: 연결 기기 없음",
+      "remaining": "선택된 실기 환경과 관측자료 필요. 실제 결제 수행 안 함"
+    },
+    {
+      "step": "원작 경제·매출 효과",
+      "state": "partial",
+      "done": "로컬 입력/코드와 서버 운영값의 경계 정리",
+      "remaining": "실제 주문분포·운영값·전환율 자료 필요"
+    },
+    {
+      "step": "Unity 규칙 이식",
+      "state": "partial",
+      "done": "독립 C# UPM 규칙 패키지 작성, 실제 컴파일 및 JS/C# 결과 2701개 대조 통과",
+      "remaining": "Unity Editor import/NUnit·씬·새 콘텐츠·플랫폼 빌드 검증은 남음"
+    }
+  ],
+  "wireFields": [
+    {
+      "raw": "groupDuration",
+      "internal": "groupLastDuration",
+      "unit": "분 → 초 (×60)"
+    },
+    {
+      "raw": "groupCD",
+      "internal": "groupRefreshDuration",
+      "unit": "분 → 초 (×60)"
+    },
+    {
+      "raw": "giftDuration",
+      "internal": "singleGiftLastDuration",
+      "unit": "분 → 초 (×60)"
+    },
+    {
+      "raw": "triggerEnergyPrice",
+      "internal": "GetTriggerPrice()",
+      "unit": "젬 가격 임계값"
+    },
+    {
+      "raw": "dailyTriggerUpper",
+      "internal": "GetTriggerMaxNum()",
+      "unit": "신규 번들 생성 횟수"
+    },
+    {
+      "raw": "poptype",
+      "internal": "popType",
+      "unit": "1: 충전창 이후 / 이외: 선노출 분기"
+    }
+  ],
+  "assets": {
+    "summary": {
+      "localBundles": 245,
+      "sprites": 1820,
+      "textures": 2608,
+      "mainItemSprites": 581,
+      "publishedPNGs": 24,
+      "linkedBaseTypes": 20,
+      "canvasReference": [
+        1080,
+        1920
+      ]
+    },
+    "gallery": [
+      {
+        "name": "Coffee01",
+        "key": "asset:Coffee01",
+        "width": 83,
+        "height": 118,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "7917883799874727847",
+          "type": "Sprite",
+          "name": "Coffee01",
+          "object_source_sha256": "103114b0613fb25fe2a76c66098f23dfd8dd80e510d8aae1bc2bda483662570b"
+        }
+      },
+      {
+        "name": "Coffee02",
+        "key": "asset:Coffee02",
+        "width": 94,
+        "height": 130,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-2792108663191636135",
+          "type": "Sprite",
+          "name": "Coffee02",
+          "object_source_sha256": "7c2175c16dc9e4640cf354cf1a9e87ea37c68abfd5c99a18e1d681034c04b829"
+        }
+      },
+      {
+        "name": "Coffee03",
+        "key": "asset:Coffee03",
+        "width": 86,
+        "height": 126,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "6045862191363597540",
+          "type": "Sprite",
+          "name": "Coffee03",
+          "object_source_sha256": "97d1ffff9f47ea429c27fbfa3aa88d0372aa58f596cde648f8f25be78cedccdf"
+        }
+      },
+      {
+        "name": "Coffee04",
+        "key": "asset:Coffee04",
+        "width": 112,
+        "height": 107,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-8963958252169246508",
+          "type": "Sprite",
+          "name": "Coffee04",
+          "object_source_sha256": "a1cc918d8f4f5bfa1696bff55dad638c6fa349da82489fd0e2749ac59763e810"
+        }
+      },
+      {
+        "name": "Coffee05",
+        "key": "asset:Coffee05",
+        "width": 138,
+        "height": 122,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "3103579817854687023",
+          "type": "Sprite",
+          "name": "Coffee05",
+          "object_source_sha256": "463175b5f1e9cc23214fb8018a389dbeed797d2af1af60e9c55f6ae7d19ac009"
+        }
+      },
+      {
+        "name": "Coffee06",
+        "key": "asset:Coffee06",
+        "width": 137,
+        "height": 135,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "5307078318518904171",
+          "type": "Sprite",
+          "name": "Coffee06",
+          "object_source_sha256": "752a7b3b3fd29166e8cbe25e3777020203ee812a3ccff5039264585e7b5422ac"
+        }
+      },
+      {
+        "name": "Coffee07",
+        "key": "asset:Coffee07",
+        "width": 146,
+        "height": 145,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-9009786539323876001",
+          "type": "Sprite",
+          "name": "Coffee07",
+          "object_source_sha256": "c31e566bbabd8d8c210afdc236bda459bc6b4859c74696939a7012956d2d755d"
+        }
+      },
+      {
+        "name": "Flour01",
+        "key": "asset:Flour01",
+        "width": 111,
+        "height": 120,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "5942478146542824120",
+          "type": "Sprite",
+          "name": "Flour01",
+          "object_source_sha256": "9a43905ec921496b3e7c12efe638f3b809397decb67339cb1b8728ee89ccbda4"
+        }
+      },
+      {
+        "name": "Flour02",
+        "key": "asset:Flour02",
+        "width": 132,
+        "height": 103,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "7001515343319629134",
+          "type": "Sprite",
+          "name": "Flour02",
+          "object_source_sha256": "7a1115d68322d140424df3e240c7064d87dc94e6c26d74cddce2dc6aa48c0653"
+        }
+      },
+      {
+        "name": "Flour03",
+        "key": "asset:Flour03",
+        "width": 121,
+        "height": 98,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "5300630747596259029",
+          "type": "Sprite",
+          "name": "Flour03",
+          "object_source_sha256": "2240620d748d4d1aedbb6ec1ddf6813de1237a8d1560e9b1b88b475a0402d41b"
+        }
+      },
+      {
+        "name": "Flour04",
+        "key": "asset:Flour04",
+        "width": 137,
+        "height": 87,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-4613292626073120423",
+          "type": "Sprite",
+          "name": "Flour04",
+          "object_source_sha256": "ee7aed98a413c2db70ec350fe4891c1b0fe98d40c7b25bde0e891c7a48eb49a7"
+        }
+      },
+      {
+        "name": "GroceryBag01",
+        "key": "asset:GroceryBag01",
+        "width": 157,
+        "height": 128,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-8013486328790876795",
+          "type": "Sprite",
+          "name": "GroceryBag01",
+          "object_source_sha256": "5a6a2abd69d88949a086dd517d36d183461055d989a5ae0331b0c556e4d72d38"
+        }
+      },
+      {
+        "name": "GroceryBag02",
+        "key": "asset:GroceryBag02",
+        "width": 147,
+        "height": 138,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "39584849394863510",
+          "type": "Sprite",
+          "name": "GroceryBag02",
+          "object_source_sha256": "d86a1c3c77981ff063ca310993027181c97f1a4e99c4007cd1af62204957876a"
+        }
+      },
+      {
+        "name": "Seafood01",
+        "key": "asset:Seafood01",
+        "width": 105,
+        "height": 87,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "4596277123586333618",
+          "type": "Sprite",
+          "name": "Seafood01",
+          "object_source_sha256": "f39603533d3bed8fbec055046c70458d130e35da13a8ef9f2f811394844766ab"
+        }
+      },
+      {
+        "name": "Seafood02",
+        "key": "asset:Seafood02",
+        "width": 134,
+        "height": 101,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-4026490547256856487",
+          "type": "Sprite",
+          "name": "Seafood02",
+          "object_source_sha256": "64bfc6bd524babfca70bbe5f7e6e6db23a39510758991241222af14195949317"
+        }
+      },
+      {
+        "name": "Energy01",
+        "key": "asset:Energy01",
+        "width": 86,
+        "height": 99,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-622612851221713467",
+          "type": "Sprite",
+          "name": "Energy01",
+          "object_source_sha256": "6a07a2eb88ab3e70672b4a02b86a535e100fea7922e647be80c26bfe01a7a493"
+        }
+      },
+      {
+        "name": "Energy02",
+        "key": "asset:Energy02",
+        "width": 98,
+        "height": 111,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-5591871692156992925",
+          "type": "Sprite",
+          "name": "Energy02",
+          "object_source_sha256": "d6de96fbf5dc91b2e3e362051ab4849e93214faaa3eb829161548b88bb2c7db3"
+        }
+      },
+      {
+        "name": "Gem01",
+        "key": "asset:Gem01",
+        "width": 89,
+        "height": 76,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-1148886061685245975",
+          "type": "Sprite",
+          "name": "Gem01",
+          "object_source_sha256": "6cdb24ecdc46423fb582b0f3de2b21fe0a3a39f5a538d92a2475814a2c7906e9"
+        }
+      },
+      {
+        "name": "Coin01",
+        "key": "asset:Coin01",
+        "width": 106,
+        "height": 76,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-7347656611019235201",
+          "type": "Sprite",
+          "name": "Coin01",
+          "object_source_sha256": "7acb7596038536325f500f65274d60e687bfd78b609bf5336a1a7391f182a7c1"
+        }
+      },
+      {
+        "name": "icon_energy",
+        "key": "asset:icon_energy",
+        "width": 48,
+        "height": 71,
+        "identity": {
+          "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+          "path_id": "-8708593683354196762",
+          "type": "Sprite",
+          "name": "icon_energy",
+          "object_source_sha256": "f257486c6bafb0cd8d9cfdbcd26ea3b35ed7d6b6c18d2b6901f8dc61496c5287"
+        }
+      },
+      {
+        "name": "icon_gem",
+        "key": "asset:icon_gem",
+        "width": 70,
+        "height": 69,
+        "identity": {
+          "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+          "path_id": "4210405712286748447",
+          "type": "Sprite",
+          "name": "icon_gem",
+          "object_source_sha256": "a0555d60159d92e451066b8c598fc151d4f9f804ff10cd2f5cbc345fddee503f"
+        }
+      },
+      {
+        "name": "icon_coin",
+        "key": "asset:icon_coin",
+        "width": 70,
+        "height": 70,
+        "identity": {
+          "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+          "path_id": "-7630645738776084383",
+          "type": "Sprite",
+          "name": "icon_coin",
+          "object_source_sha256": "087e0ae8aa28650ef4e5de7b4d74004aa5013a7645bed031c09da7a61fd4eb42"
+        }
+      },
+      {
+        "name": "icon_infinite_energy",
+        "key": "asset:icon_infinite_energy",
+        "width": 95,
+        "height": 54,
+        "identity": {
+          "bundle": "ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "bundle_sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "serialized_file": "CAB-6f43364ce39611db23bd60885a00e097",
+          "path_id": "6801693000406198311",
+          "type": "Sprite",
+          "name": "icon_infinite_energy",
+          "object_source_sha256": "cec60c1a6ca178ca1f61d094dac1a7bdd7ea8990ffe4ba6b3917f9dfe5114918"
+        }
+      },
+      {
+        "name": "GroceryBag06",
+        "key": "asset:GroceryBag06",
+        "width": 152,
+        "height": 146,
+        "identity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "6356145883407704255",
+          "type": "Sprite",
+          "name": "GroceryBag06",
+          "object_source_sha256": "00a0ae24001efb12d52bc4fffce7f46acca5a3089d08443e3e21869331abd08a"
+        }
+      }
+    ],
+    "prefabs": [
+      {
+        "asset_path": "Assets/Hud/UIRoot.prefab",
+        "game_object_count": 153,
+        "rect_transform_count": 124,
+        "animator_count": 0
+      },
+      {
+        "asset_path": "Assets/Hud/BaseSceneView.prefab",
+        "game_object_count": 411,
+        "rect_transform_count": 327,
+        "animator_count": 29
+      },
+      {
+        "asset_path": "Assets/Prefabs/SubView/SceneViewHud.prefab",
+        "game_object_count": 367,
+        "rect_transform_count": 290,
+        "animator_count": 24
+      },
+      {
+        "asset_path": "Assets/Prefabs/SceneView/HudPropertyButton.prefab",
+        "game_object_count": 6,
+        "rect_transform_count": 4,
+        "animator_count": 0
+      },
+      {
+        "asset_path": "Assets/Prefabs/SceneView/HudFixEntry/EnergyHudButton.prefab",
+        "game_object_count": 14,
+        "rect_transform_count": 9,
+        "animator_count": 0
+      },
+      {
+        "asset_path": "Assets/Prefabs/Window/Shop/ShopWindow.prefab",
+        "game_object_count": 49,
+        "rect_transform_count": 49,
+        "animator_count": 4
+      },
+      {
+        "asset_path": "Assets/Prefabs/Window/BuyEnergy/BuyEnergyWindow.prefab",
+        "game_object_count": 19,
+        "rect_transform_count": 19,
+        "animator_count": 1
+      },
+      {
+        "asset_path": "Assets/Prefabs/Window/BuyEnergy/BuyEnergyContentDefaultAd.prefab",
+        "game_object_count": 35,
+        "rect_transform_count": 27,
+        "animator_count": 0
+      },
+      {
+        "asset_path": "Assets/Prefabs/Window/BuyEnergy/BuyEnergyContentDefaultNoAd.prefab",
+        "game_object_count": 12,
+        "rect_transform_count": 8,
+        "animator_count": 0
+      },
+      {
+        "asset_path": "Assets/Board/Prefab/MainBoardView.prefab",
+        "game_object_count": 180,
+        "rect_transform_count": 141,
+        "animator_count": 13
+      },
+      {
+        "asset_path": "Assets/Board/BaseUIBoard/prefab/BaseUIBoardView.prefab",
+        "game_object_count": 80,
+        "rect_transform_count": 51,
+        "animator_count": 9
+      }
+    ],
+    "rects": [
+      {
+        "prefab": "Assets/Hud/BaseSceneView.prefab",
+        "node_path": "/BaseSceneView/SceneViewHud/TopRight/TopHudButtonContainer/EnergyHudButton",
+        "active_self": true,
+        "m_AnchorMin": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchorMax": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchoredPosition": {
+          "x": 309.56549072265625,
+          "y": -49.0
+        },
+        "m_SizeDelta": {
+          "x": 260.7090148925781,
+          "y": 98.0
+        },
+        "m_Pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "derived_offset_min": {
+          "x": 179.2109832763672,
+          "y": -98.0
+        },
+        "derived_offset_max": {
+          "x": 439.9199981689453,
+          "y": 0.0
+        }
+      },
+      {
+        "prefab": "Assets/Hud/BaseSceneView.prefab",
+        "node_path": "/BaseSceneView/SceneViewHud/TopRight/TopHudButtonContainer/CoinHudButton",
+        "active_self": true,
+        "m_AnchorMin": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchorMax": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchoredPosition": {
+          "x": 554.6099853515625,
+          "y": -49.0
+        },
+        "m_SizeDelta": {
+          "x": 249.3800048828125,
+          "y": 98.0
+        },
+        "m_Pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "derived_offset_min": {
+          "x": 429.91998291015625,
+          "y": -98.0
+        },
+        "derived_offset_max": {
+          "x": 679.2999877929688,
+          "y": 0.0
+        }
+      },
+      {
+        "prefab": "Assets/Hud/BaseSceneView.prefab",
+        "node_path": "/BaseSceneView/SceneViewHud/TopRight/TopHudButtonContainer/GemHudButton",
+        "active_self": true,
+        "m_AnchorMin": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchorMax": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchoredPosition": {
+          "x": 797.300048828125,
+          "y": -49.0
+        },
+        "m_SizeDelta": {
+          "x": 256.0,
+          "y": 98.0
+        },
+        "m_Pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "derived_offset_min": {
+          "x": 669.300048828125,
+          "y": -98.0
+        },
+        "derived_offset_max": {
+          "x": 925.300048828125,
+          "y": 0.0
+        }
+      },
+      {
+        "prefab": "Assets/Hud/BaseSceneView.prefab",
+        "node_path": "/BaseSceneView/SceneViewHud/TopRight/TopHudButtonContainer/ShopButton",
+        "active_self": true,
+        "m_AnchorMin": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchorMax": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchoredPosition": {
+          "x": 990.1500244140625,
+          "y": -60.099998474121094
+        },
+        "m_SizeDelta": {
+          "x": 149.6999969482422,
+          "y": 120.19999694824219
+        },
+        "m_Pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "derived_offset_min": {
+          "x": 915.3000259399414,
+          "y": -120.19999694824219
+        },
+        "derived_offset_max": {
+          "x": 1065.0000228881836,
+          "y": 0.0
+        }
+      },
+      {
+        "prefab": "Assets/Hud/BaseSceneView.prefab",
+        "node_path": "/BaseSceneView/SceneViewHud/TopRight/smallIcon/MainIcon/ShopButton",
+        "active_self": true,
+        "m_AnchorMin": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "m_AnchorMax": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "m_AnchoredPosition": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "m_SizeDelta": {
+          "x": 0.0,
+          "y": 120.19999694824219
+        },
+        "m_Pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "derived_offset_min": {
+          "x": 0.0,
+          "y": -60.099998474121094
+        },
+        "derived_offset_max": {
+          "x": 0.0,
+          "y": 60.099998474121094
+        }
+      },
+      {
+        "prefab": "Assets/Hud/BaseSceneView.prefab",
+        "node_path": "/BaseSceneView/SceneViewHud/TopLeft/EnergyHudButton",
+        "active_self": true,
+        "m_AnchorMin": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchorMax": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchoredPosition": {
+          "x": 289.9999084472656,
+          "y": -79.0
+        },
+        "m_SizeDelta": {
+          "x": 220.0,
+          "y": 98.0
+        },
+        "m_Pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "derived_offset_min": {
+          "x": 179.99990844726562,
+          "y": -128.0
+        },
+        "derived_offset_max": {
+          "x": 399.9999084472656,
+          "y": -30.0
+        }
+      },
+      {
+        "prefab": "Assets/Hud/BaseSceneView.prefab",
+        "node_path": "/BaseSceneView/SceneViewHud/TopLeft/CoinHudButton",
+        "active_self": true,
+        "m_AnchorMin": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchorMax": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchoredPosition": {
+          "x": 502.9999084472656,
+          "y": -79.0
+        },
+        "m_SizeDelta": {
+          "x": 220.0,
+          "y": 98.0
+        },
+        "m_Pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "derived_offset_min": {
+          "x": 392.9999084472656,
+          "y": -128.0
+        },
+        "derived_offset_max": {
+          "x": 612.9999084472656,
+          "y": -30.0
+        }
+      },
+      {
+        "prefab": "Assets/Hud/BaseSceneView.prefab",
+        "node_path": "/BaseSceneView/SceneViewHud/TopLeft/GemHudButton",
+        "active_self": true,
+        "m_AnchorMin": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchorMax": {
+          "x": 0.0,
+          "y": 1.0
+        },
+        "m_AnchoredPosition": {
+          "x": 715.9998779296875,
+          "y": -79.0
+        },
+        "m_SizeDelta": {
+          "x": 220.0,
+          "y": 98.0
+        },
+        "m_Pivot": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "derived_offset_min": {
+          "x": 605.9998779296875,
+          "y": -128.0
+        },
+        "derived_offset_max": {
+          "x": 825.9998779296875,
+          "y": -30.0
+        }
+      }
+    ],
+    "clips": [
+      {
+        "name": "Ani_UI_Rotate",
+        "start": 0.0,
+        "end": 6.0,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "4593902398623922548",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "Ani_Exclamation",
+        "start": 0.0,
+        "end": 1.25,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "-226097469369737878",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "am_shouzhi_dianji_1",
+        "start": 0.0,
+        "end": 1.0,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "6808960113392964437",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "am_shouzhi_huadong_out",
+        "start": 0.0,
+        "end": 0.3333333432674408,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "1292712484582335585",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "am_shouzhi_huadong_in",
+        "start": 0.0,
+        "end": 0.3333333432674408,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "-8002794896021737373",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "am_shouzhi_huadong_init",
+        "start": 0.0,
+        "end": 0.10000000149011612,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "1000957770629076618",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "UITutorialArrow",
+        "start": 0.0,
+        "end": 1.5,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "3137335365038919262",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "Ani_ShopNewWindow_show",
+        "start": 0.0,
+        "end": 0.28333333134651184,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "394686312072661849",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "Ani_ShopNewWindow_hide",
+        "start": 0.0,
+        "end": 0.3333333432674408,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "-4219286857285001915",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "Ani_ShopNewWindow_init",
+        "start": 0.0,
+        "end": 0.10000000149011612,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "4831988819301102046",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "tabButton_show",
+        "start": 0.0,
+        "end": 0.5,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "451675416718553101",
+        "bundleSha": "88ceb11454f5c3cbf8ae52c7b7604a9df6df1b11f7e5dfc6382940427d2a8cbc"
+      },
+      {
+        "name": "tabButton_hide",
+        "start": 0.0,
+        "end": 0.1666666716337204,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "-8798494167709492843",
+        "bundleSha": "88ceb11454f5c3cbf8ae52c7b7604a9df6df1b11f7e5dfc6382940427d2a8cbc"
+      },
+      {
+        "name": "window_show",
+        "start": 0.0,
+        "end": 2.0,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "8687983881981186238",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "window_hide",
+        "start": 0.0,
+        "end": 0.3499999940395355,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "3554434082864545713",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "window_init",
+        "start": 0.0,
+        "end": 0.10000000149011612,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "8064880868120490470",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "Ani_UI_button_1",
+        "start": 0.0,
+        "end": 0.6666666865348816,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "-4993070717731050201",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "clock_rotate",
+        "start": 0.0,
+        "end": 4.0,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "-2665659177078773245",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "Ani_Exclamation_Weak",
+        "start": 0.0,
+        "end": 1.25,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "-7712070324964960538",
+        "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
+      },
+      {
+        "name": "Ani_ClickICon",
+        "start": 0.0,
+        "end": 0.38333332538604736,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "7399355909158335569",
+        "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
+      },
+      {
+        "name": "effect_button_glow",
+        "start": 0.0,
+        "end": 30.0,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "-6965966406149798410",
+        "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
+      },
+      {
+        "name": "Ani_switch",
+        "start": 0.0,
+        "end": 1.0333333015441895,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "-2920349118864342815",
+        "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
+      },
+      {
+        "name": "Ani_switch_red",
+        "start": 0.0,
+        "end": 3.0,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "8521197011749275318",
+        "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
+      },
+      {
+        "name": "Ani_switch_yellow",
+        "start": 0.0,
+        "end": 3.0,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "-1729499193939553880",
+        "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
+      },
+      {
+        "name": "Ani_switch_pink",
+        "start": 0.0,
+        "end": 3.0,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "-5273052589430707483",
+        "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
+      },
+      {
+        "name": "Ani_switch_anniu",
+        "start": 0.0,
+        "end": 0.3333333432674408,
+        "loop": false,
+        "sampleRate": 60.0,
+        "pathId": "-3240452122897147780",
+        "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
+      },
+      {
+        "name": "Ani_switch_blue",
+        "start": 0.0,
+        "end": 3.0,
+        "loop": true,
+        "sampleRate": 60.0,
+        "pathId": "-3198588796205976904",
+        "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
+      }
+    ]
+  },
+  "unity": {
+    "package": "unity/Packages/com.harbor.research.rules",
+    "validation": {
+      "compiled": true,
+      "assertions": 2701,
+      "sequences": 5,
+      "actions": 29,
+      "bmPredicates": 9,
+      "priceCases": 4,
+      "editorImported": false,
+      "scope": "독립 실험 규칙의 언어간 동등 입력 비교. 원작 런타임 동등성 아님."
+    }
+  }
+}
