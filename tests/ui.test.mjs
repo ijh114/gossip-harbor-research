@@ -8,6 +8,7 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
  const html=await readFile(new URL('../src/index.html',import.meta.url),'utf8');
  const dom=new JSDOM(html,{url:'https://ijh114.github.io/gossip-harbor-research/#overview',pretendToBeVisual:true});
  const w=dom.window;
+ const errors=[];w.addEventListener('error',event=>{errors.push(event.error?.message||event.message);event.preventDefault();});
  w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};
  const media={matches:false,listener:null,addEventListener(_name,listener){this.listener=listener;},removeEventListener(){}};
  w.matchMedia=()=>media;
@@ -48,5 +49,6 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   w.document.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
   assert.equal(w.document.querySelector('#menu-toggle').getAttribute('aria-expanded'),'false');
   assert.equal(w.document.querySelector('.app-shell').inert,false);
+  assert.deepEqual(errors,[],'No uncaught UI event errors');
  }finally{for(const [key,value]of Object.entries(previous))globalThis[key]=value;dom.window.close();}
 });

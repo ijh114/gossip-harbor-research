@@ -165,7 +165,7 @@ document.addEventListener('keydown',event=>{
  if(event.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)&&!dialog.open){event.preventDefault();search.focus();}
  if(event.key==='Escape'&&!dialog.open)closeSidebar();
  if(event.key==='Tab'&&mobileViewport.matches&&document.querySelector('#sidebar').classList.contains('open')){const links=[...document.querySelectorAll('#sidebar a')];const first=links[0],last=links.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}
- if(event.target.matches('[data-sim-tab]')&&['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();simTab=event.key==='Home'?'board':event.key==='End'?'activity':simTab==='board'?'activity':'board';renderAndFocus('#sim-tab-'+simTab);}
+ if(event.target.matches?.('[data-sim-tab]')&&['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();simTab=event.key==='Home'?'board':event.key==='End'?'activity':simTab==='board'?'activity':'board';renderAndFocus('#sim-tab-'+simTab);}
 });
 
 async function load(){
