@@ -1,0 +1,3085 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "scope": "packaged rules and web-model replay; not live gameplay or current server assignments",
+  "natural": {
+    "kind": "model-action-trace-not-original-runtime",
+    "initial": {
+      "scenario": "initial",
+      "guide": true,
+      "level": 1,
+      "xp": 0,
+      "gold": 0,
+      "gems": 200,
+      "energy": 100
+    },
+    "final": {
+      "time": 37113,
+      "level": 5,
+      "xp": 15,
+      "gold": 3,
+      "gems": 205,
+      "energy": 0,
+      "orders": 30,
+      "fixedDone": 14,
+      "quests": 15,
+      "generated": 602,
+      "queue": [],
+      "open": 15,
+      "webs": 17,
+      "boxes": 14,
+      "boardHash": "b08811b1656f6e5d5facc3ea19c3afb8d13f3570400c522bc6e94c47f8174121",
+      "rng": 272437611
+    },
+    "income": {
+      "fixedOrders": 206,
+      "randomOrders": 214,
+      "collectibles": 60,
+      "sales": 0,
+      "questCosts": 477
+    },
+    "actions": 1942,
+    "assistance": {
+      "aidActions": 0,
+      "directResourceStateEdits": 0,
+      "tutorialSkips": 0,
+      "inventoryInjections": 0,
+      "paidEnergyPurchases": 0,
+      "sourceDefaultFreeRefills": 1
+    },
+    "onboardingCoverage": {
+      "integrated": true,
+      "starterCount": 8,
+      "completed": [
+        "tutorial_1",
+        "tutorial_2",
+        "tutorial_3",
+        "tutorial_4",
+        "tutorial_5",
+        "tutorial_6",
+        "tutorial_7",
+        "tutorial_task",
+        "tutorial_cache",
+        "tutorial_chest",
+        "tutorial_energy",
+        "tutorial_shop",
+        "tutorial_item_detail",
+        "tutorial_order_item_info",
+        "tutorial_bubble",
+        "tutorial_back2board"
+      ],
+      "registeredFinished": [
+        "tutorial_1",
+        "tutorial_2",
+        "tutorial_3",
+        "tutorial_4",
+        "tutorial_5",
+        "tutorial_6",
+        "tutorial_7",
+        "tutorial_task",
+        "tutorial_cache",
+        "tutorial_chest",
+        "tutorial_energy",
+        "tutorial_shop",
+        "tutorial_item_detail",
+        "tutorial_order_item_info",
+        "tutorial_bubble",
+        "tutorial_back2board"
+      ],
+      "activePhases": {},
+      "visualsDeferred": true
+    },
+    "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+    "boundaries": [
+      "Source-based model execution, not LDPlayer or an actual player session.",
+      "Web RNG/clock/default cohort assumptions remain explicit.",
+      "Time advances use natural recovery; the first source-default free refill is allowed only through the ordinary UI action. Paid energy purchases are excluded.",
+      "Unopened/unknown reward containers are never assigned guessed contents.",
+      "Non-wait actions execute instantaneously. Recorded time sums explicit waits and modeled tutorial delay; it is not measured user interaction duration.",
+      "Solver is a bounded heuristic. Failure is a model/solver investigation result, not proof the original game is blocked."
+    ],
+    "sourceHashes": {
+      "play-model.mjs": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+      "engine.mjs": "a12b859b61e544cceb41ff7985d57c912d55c897f9b2bd6d39fb6fb36f41ae19",
+      "order-model.mjs": "5ec1d385ff6d23dd2edf7f76fbd06b3fb739f1be4817063800a1ba13a4a56aef",
+      "inventory-model.mjs": "e40756c69517570475e3eb3dd89aad286fcf249b20f07802a16fbf50b7d5f511",
+      "onboarding-model.mjs": "9ef8dec88d18cc3f3079c8a22f8331bae1ed7ac00c93f385d5a0a2a6e029c260",
+      "spread-model.mjs": "2a6b8cb6ab91dd7cccbb505acac99582b8ab856a6ee2701feaeeed17c3c2857f",
+      "smart-reward-model.mjs": "dd80c7ccd06c7682bb5027c7b886e6cfdee459d59d85045ea7831e3a834e91cc",
+      "commerce-model.mjs": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
+      "production-modifiers.mjs": "79bba589780db007b118e878acf396bcffc7d36e1cc0ef8762aa3eaf50a5b544",
+      "bubble-model.mjs": "75b888a0e7df635181806f52a2e5d32a08f689f5497cb5d083f381081ae0e8fa",
+      "session-store.mjs": "c7485ba5561169d438e6ffd2a544b488c7f0db074ba89a6eec167cf3e03cad13"
+    },
+    "evidence": {
+      "path": "analysis/simulation/qa/natural-progression.json",
+      "sha256": "e862ab8fbd3ef69dac412a3232dc65e8470b0cab90a2f3a85ed1d4c787d79cd2",
+      "method": "pure model action replay, not original game runtime"
+    }
+  },
+  "fixed16": {
+    "kind": "model-action-trace-not-original-runtime",
+    "initial": {
+      "scenario": "initial",
+      "guide": true,
+      "level": 1,
+      "xp": 0,
+      "gold": 0,
+      "gems": 200,
+      "energy": 100
+    },
+    "final": {
+      "time": 1062153,
+      "level": 5,
+      "xp": 15,
+      "gold": 5301,
+      "gems": 205,
+      "energy": 0,
+      "orders": 418,
+      "fixedDone": 16,
+      "quests": 15,
+      "generated": 9144,
+      "queue": [],
+      "open": 16,
+      "webs": 17,
+      "boxes": 14,
+      "boardHash": "d4737982e5395c8c1ef478697914ea2d38e414a0ab76db2190a45c24e5a146d1",
+      "rng": 3214651471
+    },
+    "income": {
+      "fixedOrders": 268,
+      "randomOrders": 5192,
+      "collectibles": 318,
+      "sales": 0,
+      "questCosts": 477
+    },
+    "actions": 31825,
+    "assistance": {
+      "aidActions": 0,
+      "directResourceStateEdits": 0,
+      "tutorialSkips": 0,
+      "inventoryInjections": 0,
+      "paidEnergyPurchases": 0,
+      "sourceDefaultFreeRefills": 1
+    },
+    "onboardingCoverage": {
+      "integrated": true,
+      "starterCount": 8,
+      "completed": [
+        "tutorial_1",
+        "tutorial_2",
+        "tutorial_3",
+        "tutorial_4",
+        "tutorial_5",
+        "tutorial_6",
+        "tutorial_7",
+        "tutorial_task",
+        "tutorial_cache",
+        "tutorial_chest",
+        "tutorial_energy",
+        "tutorial_shop",
+        "tutorial_item_detail",
+        "tutorial_order_item_info",
+        "tutorial_bubble",
+        "tutorial_back2board"
+      ],
+      "registeredFinished": [
+        "tutorial_1",
+        "tutorial_2",
+        "tutorial_3",
+        "tutorial_4",
+        "tutorial_5",
+        "tutorial_6",
+        "tutorial_7",
+        "tutorial_task",
+        "tutorial_cache",
+        "tutorial_chest",
+        "tutorial_energy",
+        "tutorial_shop",
+        "tutorial_item_detail",
+        "tutorial_order_item_info",
+        "tutorial_bubble",
+        "tutorial_back2board"
+      ],
+      "activePhases": {},
+      "visualsDeferred": true
+    },
+    "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+    "boundaries": [
+      "Source-based model execution, not LDPlayer or an actual player session.",
+      "Web RNG/clock/default cohort assumptions remain explicit.",
+      "Time advances use natural recovery; the first source-default free refill is allowed only through the ordinary UI action. Paid energy purchases are excluded.",
+      "Unopened/unknown reward containers are never assigned guessed contents.",
+      "Non-wait actions execute instantaneously. Recorded time sums explicit waits and modeled tutorial delay; it is not measured user interaction duration.",
+      "Solver is a bounded heuristic. Failure is a model/solver investigation result, not proof the original game is blocked."
+    ],
+    "sourceHashes": {
+      "play-model.mjs": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+      "engine.mjs": "a12b859b61e544cceb41ff7985d57c912d55c897f9b2bd6d39fb6fb36f41ae19",
+      "order-model.mjs": "5ec1d385ff6d23dd2edf7f76fbd06b3fb739f1be4817063800a1ba13a4a56aef",
+      "inventory-model.mjs": "e40756c69517570475e3eb3dd89aad286fcf249b20f07802a16fbf50b7d5f511",
+      "onboarding-model.mjs": "9ef8dec88d18cc3f3079c8a22f8331bae1ed7ac00c93f385d5a0a2a6e029c260",
+      "spread-model.mjs": "2a6b8cb6ab91dd7cccbb505acac99582b8ab856a6ee2701feaeeed17c3c2857f",
+      "smart-reward-model.mjs": "dd80c7ccd06c7682bb5027c7b886e6cfdee459d59d85045ea7831e3a834e91cc",
+      "commerce-model.mjs": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
+      "production-modifiers.mjs": "79bba589780db007b118e878acf396bcffc7d36e1cc0ef8762aa3eaf50a5b544",
+      "bubble-model.mjs": "75b888a0e7df635181806f52a2e5d32a08f689f5497cb5d083f381081ae0e8fa",
+      "session-store.mjs": "c7485ba5561169d438e6ffd2a544b488c7f0db074ba89a6eec167cf3e03cad13"
+    },
+    "evidence": {
+      "path": "analysis/simulation/qa/natural-progression-fixed16.json",
+      "sha256": "ace800f0cc915ca5e23708fd1af820a021c553a3460643dd8c96954403dcb19b",
+      "method": "pure model action replay, not original game runtime"
+    }
+  },
+  "tutorials": {
+    "summary": {
+      "declarations": 116,
+      "uniqueIds": 115,
+      "duplicateIds": [
+        "tutorial_story_recap"
+      ],
+      "classificationCounts": {
+        "original-presentation-required": 2,
+        "web-runtime": 16,
+        "server-or-presentation-required": 97
+      },
+      "webLogicHooks": 18,
+      "naturalTraceCompleted": 16,
+      "naturalTraceConditionalNotReached": [
+        "tutorial_inventory",
+        "tutorial_scissor_merge"
+      ],
+      "countBoundary": "web-runtime counts exclude opening CG/intro logical acknowledgments; webLogicHooks includes those2 partial logical nodes. Runtime hooks do not imply original visual or live cohort parity.",
+      "naturalSourceLogicCompleted": 14,
+      "logicalEntryAcknowledgments": 2,
+      "sourceDeclarationCoverageComplete": true,
+      "allTutorialGameplayImplemented": false
+    },
+    "rows": [
+      {
+        "id": "tutorial_1",
+        "status": "original-presentation-required",
+        "system": "로딩·오프닝",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 2,
+            "line_end": 7,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBeginning1.lua",
+            "line_start": 1,
+            "line_end": 40,
+            "sha256": "47d4e715654bca7a5a323489e09d0e584d98375e3a632019cdbdda095d07d875",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_2",
+        "status": "original-presentation-required",
+        "system": "맵·인트로",
+        "conditions": "TutorialFinished-tutorial_1",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 8,
+            "line_end": 13,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBeginning2.lua",
+            "line_start": 1,
+            "line_end": 107,
+            "sha256": "9e2a8c612695443b436f67fbeadcada6635f515503a2410ac7f31f08d2152578",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_3",
+        "status": "web-runtime",
+        "system": "퍼즐",
+        "conditions": "TutorialFinished-tutorial_2",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 14,
+            "line_end": 19,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMerge1.lua",
+            "line_start": 1,
+            "line_end": 134,
+            "sha256": "eb130c53c1d199c7e975bd6c284e7677c3fba66b757a27ec77f252a41dbef1e8",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_4",
+        "status": "web-runtime",
+        "system": "퍼즐·생성기",
+        "conditions": "TutorialFinished-tutorial_3",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 20,
+            "line_end": 25,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterClick1.lua",
+            "line_start": 1,
+            "line_end": 81,
+            "sha256": "de04f8ea0e0a5083c95c9cf64416ed27508d07ed7b79a013a113a77d0d81c922",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_5",
+        "status": "web-runtime",
+        "system": "퍼즐",
+        "conditions": "TutorialFinished-tutorial_4",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 26,
+            "line_end": 31,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMerge2.lua",
+            "line_start": 1,
+            "line_end": 94,
+            "sha256": "94c8cfe89dfe2879279268f1878c49c739dd3bc1e8bbd9d42ca4121aa5ca2117",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_6",
+        "status": "web-runtime",
+        "system": "주문",
+        "conditions": "TutorialFinished-tutorial_5",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 32,
+            "line_end": 37,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterOrder1.lua",
+            "line_start": 1,
+            "line_end": 116,
+            "sha256": "26c2f6e383513c9fd5085f53eb913964ba4d07f8ce221cea529c9f1b3af3ad6b",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_7",
+        "status": "web-runtime",
+        "system": "주문",
+        "conditions": "TutorialFinished-tutorial_6",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 38,
+            "line_end": 43,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterOrder2.lua",
+            "line_start": 1,
+            "line_end": 73,
+            "sha256": "4d82322a2fa41d044c106033be1e295f75ba6b7e0438531353b3e95163cd6240",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_task",
+        "status": "web-runtime",
+        "system": "과제·맵",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 44,
+            "line_end": 49,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTask.lua",
+            "line_start": 1,
+            "line_end": 110,
+            "sha256": "76bc17bcd825f4af47e78f040c981f7933e14bd4ead0a65ea2fb8428c968142e",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_cache",
+        "status": "web-runtime",
+        "system": "보상 대기열",
+        "conditions": "MainLevel-2",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 50,
+            "line_end": 55,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCache.lua",
+            "line_start": 1,
+            "line_end": 180,
+            "sha256": "0c9ee85fa50008bf0e43f27262e0adebb30818a702ba9fe389e1177d43b0aa24",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_chest",
+        "status": "web-runtime",
+        "system": "상자",
+        "conditions": "MainLevel-2,TutorialFinished-tutorial_cache",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 56,
+            "line_end": 61,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterChest.lua",
+            "line_start": 1,
+            "line_end": 115,
+            "sha256": "14905b8296330e2f86c4fff0d7bd58fbfbe5505c326ba92160682d168206bfa7",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_energy",
+        "status": "web-runtime",
+        "system": "에너지·BM",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 62,
+            "line_end": 67,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterEnergy.lua",
+            "line_start": 1,
+            "line_end": 110,
+            "sha256": "d6782c229e9e1501e82f6b73d33122a64c64cae74877c59fbd99d363ab8942e4",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_shop",
+        "status": "web-runtime",
+        "system": "상점·BM",
+        "conditions": "MainLevel-3",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 68,
+            "line_end": 73,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterShop.lua",
+            "line_start": 1,
+            "line_end": 172,
+            "sha256": "4bd5bb316a3e95e5e3954242ff983d2e59ce09525c4e660740443e023e261a7c",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_back2board",
+        "status": "web-runtime",
+        "system": "맵·보드 이동",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 74,
+            "line_end": 79,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBack2Board.lua",
+            "line_start": 1,
+            "line_end": 94,
+            "sha256": "b3865a611b975ab1d127c41d1afad8518213eb0e57dd61b46494f818c1622a54",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_bubble",
+        "status": "web-runtime",
+        "system": "퍼즐·버블",
+        "conditions": "FunctionEnabled-bubble",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 80,
+            "line_end": 85,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBubble.lua",
+            "line_start": 1,
+            "line_end": 105,
+            "sha256": "28d09c1893ee09c21c24f554cacc55aedf8f0254fa57e8af86b648caa373383a",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_order_item_info",
+        "status": "web-runtime",
+        "system": "주문·아이템 정보",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 86,
+            "line_end": 91,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterOrderItemInfo.lua",
+            "line_start": 1,
+            "line_end": 147,
+            "sha256": "f7ed89c834da0f99695ca825d0f73ef1d25bdc668bf9a066fe95d201b3c97fd6",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_scissor_merge",
+        "status": "web-runtime",
+        "system": "퍼즐·특수 도구",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "조건부 상태 전이·입력 제한 검사 통과. 이 자연 성장 경로에서는 발동 조건 미충족.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 92,
+            "line_end": 97,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterScissorMerge.lua",
+            "line_start": 1,
+            "line_end": 124,
+            "sha256": "8fa191f6965f3ba60264624b90755eb1a11ebc3d78adb0fd6a7470f17938c537",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_item_detail",
+        "status": "web-runtime",
+        "system": "아이템 정보",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "현재 초기판 모델 경로에서 실행 확인. 원본 화면·연출 동일성은 별도.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 98,
+            "line_end": 103,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterItemDetail.lua",
+            "line_start": 1,
+            "line_end": 76,
+            "sha256": "2be64f05f371f0430c5e705bd366188be7c1921a327c816d697c21c9957d70a4",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": true
+      },
+      {
+        "id": "tutorial_bakeout_1",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "BakeOutStart",
+        "requirements": "ActivityManager · BakeOut · BakeOutMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 104,
+            "line_end": 109,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBakeOut1.lua",
+            "line_start": 1,
+            "line_end": 91,
+            "sha256": "eb8e7bae4de60eddb66f7ee32337a728603fb12e93fb412c5cdf8b3053593546",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_bakeout_2",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "BakeOutStart,TutorialFinished-tutorial_bakeout_1",
+        "requirements": "ActivityManager · BakeOut · BakeOutCoinExchangeWindow · BakeOutMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 110,
+            "line_end": 115,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBakeOut2.lua",
+            "line_start": 1,
+            "line_end": 193,
+            "sha256": "26d5b0a3e6c3c82c43ce94fce98db8d284e799da0e420b79072626ab323df82c",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_battlepass",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · PassActivityTicketWindow · PassActivityTicketWindowSVip",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 116,
+            "line_end": 121,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPassActivity.lua",
+            "line_start": 1,
+            "line_end": 116,
+            "sha256": "352205e44bcb01bf55349d6460843b5461c6fc9c2b0c4814389acf8700773b97",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_battlepass_loop_2",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_battlepass",
+        "requirements": "ActivityManager · PassActivityTicketWindow · PassActivityTicketWindowSVip",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 122,
+            "line_end": 127,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPassActivityLoop.lua",
+            "line_start": 1,
+            "line_end": 111,
+            "sha256": "c55b1cbb8b9877e5a067a5a0609414cd47428547e3f8f3c294db4b6aadc5a7aa",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_battlepass_bonus_task",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 128,
+            "line_end": 133,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPassActivityBonusTask.lua",
+            "line_start": 1,
+            "line_end": 61,
+            "sha256": "97d19ce6aae85c24c933404f2534b84a940abf4f641acf00cebb7211f9e4146a",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_character_intimacy_entry",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "CharacterIntimacyModel · TimelineModel · BaseSceneView · CharacterIntimacyDetailWindow · CharacterIntimacyListWindow · CharacterIntimacyScreenTransition",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 134,
+            "line_end": 139,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCharacterIntimacyEntry.lua",
+            "line_start": 1,
+            "line_end": 220,
+            "sha256": "0c7eacbc70ab73944bd605370bf00420f572e1a40cbe8d1c2e6772fc1825f856",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_coin_race_first_main_window",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · CoinRace · CoinRaceMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 140,
+            "line_end": 145,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCoinRace2.lua",
+            "line_start": 1,
+            "line_end": 75,
+            "sha256": "7fbb6bb5faed8aa84cf72cfa1ddd8700aacacb987d1413b7a03659a1f9c7554b",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_coin_race_second_main_window",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · CoinRace · CoinRaceMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 146,
+            "line_end": 151,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCoinRace3.lua",
+            "line_start": 1,
+            "line_end": 52,
+            "sha256": "23ee3a0c2162ba4c86ab1aa37b505f74ec1cafe93a517da0c058148d49626316",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_wipeout_first_main_window",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · CoinRace · WipeOut · WipeOutMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 152,
+            "line_end": 157,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWipeOut2.lua",
+            "line_start": 1,
+            "line_end": 84,
+            "sha256": "04bf279ba1f396e6a1d41d96288b38ed78bf9a5b1ab45395066b8bf446128460",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_wipeout_second_main_window",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · WipeOut · WipeOutMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 158,
+            "line_end": 163,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWipeOut3.lua",
+            "line_start": 1,
+            "line_end": 60,
+            "sha256": "b7a022cc5355d70552434e632a4dd8750162887d27eecbf5d7409cc99de1e48d",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_energy_boost",
+        "status": "server-or-presentation-required",
+        "system": "퍼즐·에너지 부스트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "EnergyBoostModel · EnergyBoostLevel · BaseSceneView · EnergyBoostReadyWindow · EnergyBoostSettingWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 164,
+            "line_end": 169,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterEnergyBoost.lua",
+            "line_start": 1,
+            "line_end": 139,
+            "sha256": "76ca8b11982ebcbd306cb80cb223b961bf09964b5090a6742d0aa71c1d4f8076",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_triggerplane",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · TriggerPlane · TriggerPlaneMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 170,
+            "line_end": 175,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTriggerPlane.lua",
+            "line_start": 1,
+            "line_end": 98,
+            "sha256": "b2e723c653690a55e221a20f3e9aee1d2086d3626f04efe8f21d32c26c9bd9cf",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_intimacy_order",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "TimelineModel",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 176,
+            "line_end": 181,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCharacterIntimacyOrder.lua",
+            "line_start": 1,
+            "line_end": 87,
+            "sha256": "ce9738310e2faa47357e906c2bc889e225459c6b5893aeb1a52c5946dddc2e03",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_energy_boost_super",
+        "status": "server-or-presentation-required",
+        "system": "퍼즐·에너지 부스트",
+        "conditions": "TutorialFinished-tutorial_energy_boost",
+        "requirements": "EnergyBoostModel · EnergyBoostLevel · EnergyBoostSettingWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 182,
+            "line_end": 187,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterEnergyBoostSuper.lua",
+            "line_start": 1,
+            "line_end": 102,
+            "sha256": "d55f7b99895450aa7d8e415ee863e0a49f2d8232ab1a208310bdef7e666fc348",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_checkin_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · CheckIn · CheckInMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 188,
+            "line_end": 193,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCheckInStart.lua",
+            "line_start": 1,
+            "line_end": 116,
+            "sha256": "916f32f7d6ac0243465080290a8a6d06623825b57fefe3ecc6d24900b4a6f804",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_event_energyboost_simple",
+        "status": "server-or-presentation-required",
+        "system": "퍼즐·에너지 부스트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "EnergyBoostLevel",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 194,
+            "line_end": 199,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterEnergyBoostSimpleSetting.lua",
+            "line_start": 1,
+            "line_end": 79,
+            "sha256": "b23afddc1c8bd8f9204ff79d02208475047e2f59b95be0fe61ab088217a025a8",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_inventory",
+        "status": "web-runtime",
+        "system": "보관함·보드 압박",
+        "conditions": "MainLevel-2",
+        "requirements": "조건부 상태 전이·입력 제한 검사 통과. 이 자연 성장 경로에서는 발동 조건 미충족.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 200,
+            "line_end": 205,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventory.lua",
+            "line_start": 1,
+            "line_end": 272,
+            "sha256": "73129663a9eb37d87f197dbb9ff7719785f61e0aaa45b19a4610858609bfc535",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_generator_factory",
+        "status": "server-or-presentation-required",
+        "system": "보관함·생성기 보관소",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "MainBoardModel · InventoryWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 206,
+            "line_end": 211,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+            "line_start": 1,
+            "line_end": 149,
+            "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_generator_factory_Acquire",
+        "status": "server-or-presentation-required",
+        "system": "보관함·생성기 보관소",
+        "conditions": "TutorialFinished-tutorial_generator_factory",
+        "requirements": "MainBoardModel",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 212,
+            "line_end": 217,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGeneratorFactoryAcquire.lua",
+            "line_start": 1,
+            "line_end": 96,
+            "sha256": "2676db65e6ba375966b4c0dcbf05344dfa7aa14fb3f69b6644cd9c28a1dc7102",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_story_recap",
+        "status": "server-or-presentation-required",
+        "system": "맵·스토리 회상",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "StoryRecapModel · NoTaskWindow · TaskWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 218,
+            "line_end": 223,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 248,
+            "line_end": 253,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterStoryRecap.lua",
+            "line_start": 1,
+            "line_end": 73,
+            "sha256": "466bbdd77411c9b2323254205ea0b2f0b6bf50f9069671f35b12aa67240f0be3",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_hitbricks_west",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · MiscModel · WestSearch",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 224,
+            "line_end": 229,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks_west.lua",
+            "line_start": 1,
+            "line_end": 5,
+            "sha256": "1744ffa4e33bf7bda37b7db993e9a7a9f0c82028b4016053df43782fd199ed6b",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+            "line_start": 1,
+            "line_end": 174,
+            "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_hitbricks_crystal2search",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · MiscModel · Crystal2Search",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 230,
+            "line_end": 235,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks_crystal2search.lua",
+            "line_start": 1,
+            "line_end": 5,
+            "sha256": "4b6e2e960d18763ab7dfb1c8d4968a99dda47b1cdeef8e527899f1658cbf8efb",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+            "line_start": 1,
+            "line_end": 174,
+            "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_album_moon_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · MiscModel · Album_moon · AlbumHelpWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 236,
+            "line_end": 241,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbum_moon.lua",
+            "line_start": 1,
+            "line_end": 5,
+            "sha256": "f33f0a6aabbe34518021f3c2cb1dc3be7e5ca67c44345c25dd9bbbc9dda32ecd",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+            "line_start": 1,
+            "line_end": 246,
+            "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_album_halloween_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · MiscModel · Album_halloween · AlbumHelpWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 242,
+            "line_end": 247,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbum_halloween.lua",
+            "line_start": 1,
+            "line_end": 5,
+            "sha256": "a1af3ea411237881cd62b6679beb406568834fbffb65b240e350c093da037128",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+            "line_start": 1,
+            "line_end": 246,
+            "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_adventure_activity",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "선언 condition만으로 시작을 단정할 수 없다. 아래 executer/template의 활동·기능·창 이벤트와 내부 guard를 충족해야 하며 현재 웹 가이드 dispatcher에는 없다. 래퍼/전용 UI 이벤트 기반 실행이며 원본 프레젠테이션 상태가 추가로 필요하다.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 254,
+            "line_end": 259,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAdventureActivity.lua",
+            "line_start": 1,
+            "line_end": 66,
+            "sha256": "3fdc5a23129cec647487f3cb178c6b512c6fbeb6d5486a792b8183b4e99816c5",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_adventure_activity_board",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · ItemDataModel",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 260,
+            "line_end": 265,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAdventureActivityBoard.lua",
+            "line_start": 1,
+            "line_end": 93,
+            "sha256": "7051f2d9df956438697d9e297ae1ee28398d3fbb86826b87d7423c781828054d",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_adventure_activity_fog",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_adventure_activity",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 266,
+            "line_end": 271,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAdventureActivityFog.lua",
+            "line_start": 1,
+            "line_end": 93,
+            "sha256": "b52aff45bd2946f83a62a159bc51799ce1199fc94e57f2e3b8d6f3c0e5078e29",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_temp",
+        "status": "server-or-presentation-required",
+        "system": "퍼즐·한시 아이템",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · MainBoardModel · TempItem · ItemDetailWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 272,
+            "line_end": 277,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTemp.lua",
+            "line_start": 1,
+            "line_end": 112,
+            "sha256": "3f9ddc965d0a658be30f948da557b54a7639eb827536ecb135a159c93eacbba9",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_bingo_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · Bingo · BingoActivityHelpWindow · BingoActivityMainWindow · BingoActivityStartWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 278,
+            "line_end": 283,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBingoStart.lua",
+            "line_start": 1,
+            "line_end": 83,
+            "sha256": "95a35da2c2b45356c15e16eeb53f896d763ac457e840acd1eeeff445ad6bbab1",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_album_upgrade_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · AlbumJokerExchangeWindow · AlbumRemindUseJokerWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 284,
+            "line_end": 289,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumUpgradeStart.lua",
+            "line_start": 1,
+            "line_end": 101,
+            "sha256": "37e8a59f9558a25ca1a59b392e75f7bdf19a96bc5100322438633f461c3eec4e",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_order_boost_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · OrderBoost · BaseSceneView · OrderBoostMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 290,
+            "line_end": 295,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterOrderBoostStart.lua",
+            "line_start": 1,
+            "line_end": 105,
+            "sha256": "21e42577058098fc88509ebd64360c68fc670feeef5e02bd16d675898e89ba22",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_order_boost_end",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · OrderBoost · BaseSceneView",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 296,
+            "line_end": 301,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterOrderBoostFinish.lua",
+            "line_start": 1,
+            "line_end": 115,
+            "sha256": "3990f124f42c311fb82359ecf1b0793a0923f74cc065633777047a9998ec15c5",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_order_boost_end_23",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · LevelModel · OrderBoost · BaseSceneView",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 302,
+            "line_end": 307,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterOrderBoostFinish_23.lua",
+            "line_start": 1,
+            "line_end": 130,
+            "sha256": "c446a30deec67ceb72051cea67f884c49ed548d1b83973fd11886e06ab7e5006",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_order_boost_pro",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · OrderBoost · BaseSceneView · OrderBoostProMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 308,
+            "line_end": 313,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterOrderBoostPro.lua",
+            "line_start": 1,
+            "line_end": 112,
+            "sha256": "12cf621972dbaa7e51eec8c2888239c850a4c82b19405eebe5d87b50d6f29d7b",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_dig",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 314,
+            "line_end": 319,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterDig.lua",
+            "line_start": 1,
+            "line_end": 135,
+            "sha256": "3b4e63b777c270cdd92001a00ac42d1b84b3bc14aafc0b14fcf8aa3ccf5e7b89",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_dig_collect",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_dig",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 320,
+            "line_end": 325,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterDigCollect.lua",
+            "line_start": 1,
+            "line_end": 104,
+            "sha256": "a97aac4fb80bb4250490a566169cce2172b0acb0dac7e488c46278cb6f27eebf",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_multiboards_activity",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "선언 condition만으로 시작을 단정할 수 없다. 아래 executer/template의 활동·기능·창 이벤트와 내부 guard를 충족해야 하며 현재 웹 가이드 dispatcher에는 없다. 래퍼/전용 UI 이벤트 기반 실행이며 원본 프레젠테이션 상태가 추가로 필요하다.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 326,
+            "line_end": 331,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMultiboardsActivity.lua",
+            "line_start": 1,
+            "line_end": 66,
+            "sha256": "496045aca43917bc0e04eb37cbd092c01a6229be6beb4d459b052dd458adfedd",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_multiboards_activity_portal",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 332,
+            "line_end": 337,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMultiboardsActivityPortal.lua",
+            "line_start": 1,
+            "line_end": 69,
+            "sha256": "c4287a7b0b62cdf96ca32939bd6b501e5d729d85a1a8e84bf708907ea2a1fc05",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_mission_open",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 338,
+            "line_end": 343,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMissionOpen.lua",
+            "line_start": 1,
+            "line_end": 113,
+            "sha256": "0b315af3406615fc8134f53d6a082426faa7206520f8e9f2e1ebbf3c5c20d9a6",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_mission_entry",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_mission_open",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 344,
+            "line_end": 349,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMissionEntry.lua",
+            "line_start": 1,
+            "line_end": 161,
+            "sha256": "dbf45f17d7933e153ecee3e7701c676e70df12fc3edbae39fa11e8d71f097024",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_puzzle",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · Puzzle · PuzzleMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 350,
+            "line_end": 355,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPuzzle.lua",
+            "line_start": 1,
+            "line_end": 115,
+            "sha256": "181976702ce646159ae7bc779a0c7e3e732b51be260c8b107da0ef5ded3b3f53",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_cookingfrenzy_start",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "BaseSceneView · CookingFrenzyMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 356,
+            "line_end": 361,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCookingFrenzyStart.lua",
+            "line_start": 1,
+            "line_end": 54,
+            "sha256": "be5bf2c91e9e906917b84e283c2432d4731f2686e31a8d23cfb2a51d543e2d77",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_energyBoosteight_start",
+        "status": "server-or-presentation-required",
+        "system": "퍼즐·에너지 부스트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "EnergyBoostEightStartWindow · EnergyBoostSettingWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 362,
+            "line_end": 367,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterEnergyBoostEight.lua",
+            "line_start": 1,
+            "line_end": 49,
+            "sha256": "ea919f669acb85b55421bdc868ea2877d054c7703efe427397fb0fb221d4d55e",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_farmboard",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 368,
+            "line_end": 373,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFarmboard.lua",
+            "line_start": 1,
+            "line_end": 116,
+            "sha256": "4b1d9e615c76b2283f215c28821c1921072a4df84cb5eef81fc15206bab59896",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_farmboard_animal_spread",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "선언 condition만으로 시작을 단정할 수 없다. 아래 executer/template의 활동·기능·창 이벤트와 내부 guard를 충족해야 하며 현재 웹 가이드 dispatcher에는 없다. 래퍼/전용 UI 이벤트 기반 실행이며 원본 프레젠테이션 상태가 추가로 필요하다.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 374,
+            "line_end": 379,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFarmboardAnimalSpread.lua",
+            "line_start": 1,
+            "line_end": 71,
+            "sha256": "7987fc42f87039d71882fc0a8d52b0d448dc937c1350abbb922f2f22470952b3",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_farmboard_unlock_block",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 380,
+            "line_end": 385,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFarmboardUnlockBlock.lua",
+            "line_start": 1,
+            "line_end": 121,
+            "sha256": "8512efd500c011a0363ed9df6c61e9734423e4e044e23cb0b9a03203c73c004c",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_farmboard_block_multiple",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_farmboard_unlock_block",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 386,
+            "line_end": 391,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFarmboardBlockMultiple.lua",
+            "line_start": 1,
+            "line_end": 118,
+            "sha256": "2720b75926878509fefdeacdc134409bbeb05cb88c7320055698816b909dc9a0",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_acquire_avatar",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "UserProfileModel · SettingUserInfoWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 392,
+            "line_end": 397,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAcquireAvatar.lua",
+            "line_start": 1,
+            "line_end": 39,
+            "sha256": "bed86a8b5735a5f110e117b63a5cb5bcd2b3a6366550278c2a091c5e39c43f53",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_wheel",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "MiscModel · RewardWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 398,
+            "line_end": 403,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWheel.lua",
+            "line_start": 1,
+            "line_end": 79,
+            "sha256": "11b05f32eb932f256b0dace41bdbbdbd609fa976e8d3d457e1328b2ca2b97b53",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_change_decoration",
+        "status": "server-or-presentation-required",
+        "system": "맵·스킨 변경",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "MapDataModel · TutorialChangeDecorationContent",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 404,
+            "line_end": 409,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterChangeDecoration.lua",
+            "line_start": 1,
+            "line_end": 59,
+            "sha256": "4f241f22d08431c8cd89ccffc1527e0c4133f0f7f0c57659a24c6637a55565d0",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_flowerpairwork_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · FlowerPairwork",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 410,
+            "line_end": 415,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFlowerPairworkStart.lua",
+            "line_start": 1,
+            "line_end": 76,
+            "sha256": "1cc4a4f7f0573827745ebe1c9357927dc453b90766638b7d727da1b26207bc02",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_flowerpairwork_invite",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · FlowerPairwork",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 416,
+            "line_end": 421,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFlowerPairworkInvite.lua",
+            "line_start": 1,
+            "line_end": 50,
+            "sha256": "fe9e5f1a34fb65bc217a9fb33f347ea9d6422e1a8066eb940dd3e13174ce380b",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_flowerpairwork_game",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · FlowerPairwork",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 422,
+            "line_end": 427,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFlowerPairworkGame.lua",
+            "line_start": 1,
+            "line_end": 95,
+            "sha256": "b7912cdaa352ff98de4553a63c9439d03bb9338ce077ac82d87963833f51e2e6",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_floatrace_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · FloatRace · FloatRaceMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 428,
+            "line_end": 433,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFloatRaceStart.lua",
+            "line_start": 1,
+            "line_end": 59,
+            "sha256": "1bd3b66cd68296b6d37274744c8102b2e7d6b1642294eadb7d58e6c4767e4be3",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_floatrace_entry",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_floatrace_start",
+        "requirements": "ActivityManager · FloatRace · FloatRaceMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 434,
+            "line_end": 439,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFloatRaceEntry.lua",
+            "line_start": 1,
+            "line_end": 88,
+            "sha256": "e97de0bf167d03f8db05cd7014b13d891531828025faeadab72bfaebbafd0074",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_upward_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 440,
+            "line_end": 445,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterUpwardStart.lua",
+            "line_start": 1,
+            "line_end": 63,
+            "sha256": "2dbba9f13f03669a72abf4d7a8aa66d53c25a08abd5bf79f3fae1b90b98863fc",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_upward_entry",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_upward_start",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 446,
+            "line_end": 451,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterUpwardEntry.lua",
+            "line_start": 1,
+            "line_end": 113,
+            "sha256": "44cb9d66e122240dae8dcc4d83f35a795b5ac32758b56b278fb738ee07f661e9",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_gomeroom_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · GnomeRoom",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 452,
+            "line_end": 457,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGnomeRoomStart.lua",
+            "line_start": 1,
+            "line_end": 72,
+            "sha256": "7215c84d593099ba3d560f55c17bd1fddc34b8fd482baff819658eafc07dc220",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_gomeroom_joinlock",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · GnomeRoom",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 458,
+            "line_end": 463,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGnomeRoomJoinLock.lua",
+            "line_start": 1,
+            "line_end": 50,
+            "sha256": "4e81adebaa4c316d60dabb871e2237503e6a7a93f20c53d3a12d01317751eeb1",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_gomeroom_game",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · GnomeRoom",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 464,
+            "line_end": 469,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGnomeRoomGame.lua",
+            "line_start": 1,
+            "line_end": 96,
+            "sha256": "b844a2e9b8b4c6feeb6ddb5ccf83a00b10221f06d81d935fc8d5b30b8fe0cd1f",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_gomeroom_firstReward",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · GnomeRoom",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 470,
+            "line_end": 475,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGnomeRoomFirstReward.lua",
+            "line_start": 1,
+            "line_end": 54,
+            "sha256": "67b5bb3601377af55d6e95afa1fb325a00b2a2dabe1710488f0b99ab70c84273",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_weekly_quest_star_reward",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 476,
+            "line_end": 481,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestStarReward.lua",
+            "line_start": 1,
+            "line_end": 130,
+            "sha256": "8b67db7d14c71d5bbc28c8b579ac3f4cbf512b43e348bc6095acb4e9c5fd4530",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_weekly_quest_star_info",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "TutorialFinished-tutorial_weekly_quest_star_reward",
+        "requirements": "선언 condition만으로 시작을 단정할 수 없다. 아래 executer/template의 활동·기능·창 이벤트와 내부 guard를 충족해야 하며 현재 웹 가이드 dispatcher에는 없다. 래퍼/전용 UI 이벤트 기반 실행이며 원본 프레젠테이션 상태가 추가로 필요하다.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 482,
+            "line_end": 487,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestStarInfo.lua",
+            "line_start": 1,
+            "line_end": 91,
+            "sha256": "e06239ca9cbec6b3a5e7e69102e2ff46b89c448a06f0c5983b9e583d24e569ce",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_weekly_quest_bonus_star",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "선언 condition만으로 시작을 단정할 수 없다. 아래 executer/template의 활동·기능·창 이벤트와 내부 guard를 충족해야 하며 현재 웹 가이드 dispatcher에는 없다. 래퍼/전용 UI 이벤트 기반 실행이며 원본 프레젠테이션 상태가 추가로 필요하다.",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 488,
+            "line_end": 493,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestBonusStar.lua",
+            "line_start": 1,
+            "line_end": 56,
+            "sha256": "767f1ab2bf74d853d2cfff0889b4d8a6c78dffc9b179ee386964cb728365f809",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_chest_custom_order_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · MainBoardModel · ChestCustomer · ChestCustomStartTutorialWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 494,
+            "line_end": 499,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterChestCustomOrderStart.lua",
+            "line_start": 1,
+            "line_end": 88,
+            "sha256": "aa90ffe9144b262ad9fa7fe58b1d1b649df676d710f1423e862b57ba63707089",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_event_task_extra_reward_entry",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · TaskExtraReward · TaskWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 500,
+            "line_end": 505,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTaskExtraReward.lua",
+            "line_start": 1,
+            "line_end": 76,
+            "sha256": "7a404a3b2ab3d3089cdfb8feac735914da10171a61cd94d2755007b1d3de0dcf",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_reviewRace_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_order_boost_end",
+        "requirements": "ActivityManager · OrderBoost · ReviewRace · ReviewRaceMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 506,
+            "line_end": 511,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterReviewRace.lua",
+            "line_start": 1,
+            "line_end": 87,
+            "sha256": "72a6c91c18381dc479afa7e955d224d6d17cb6adacf7479b7fe69c562f77eaf5",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_stickerboard_open",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 512,
+            "line_end": 517,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterStickerboardOpen.lua",
+            "line_start": 1,
+            "line_end": 104,
+            "sha256": "5688df95d63f7f6a485c796750b541e07fd01559f658a5e87845e92dceeae776",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_stickerboard_normal_tool",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_stickerboard_open",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 518,
+            "line_end": 523,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterStickerboardNormalToolItem.lua",
+            "line_start": 1,
+            "line_end": 92,
+            "sha256": "d32b95cc9f1bbdb5dfb2ba2c7f9226dafd11e9f557810e11fb64d55605cebfd9",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_stickerboard_special_tool",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_stickerboard_open",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 524,
+            "line_end": 529,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterStickerboardSpecialToolItem.lua",
+            "line_start": 1,
+            "line_end": 126,
+            "sha256": "f503649859b6656a93c8f34dae578643d29c6db17ab356b4b0d7d1a2d3e426d5",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_stickerboard_remove_obstacle",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_stickerboard_open",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 530,
+            "line_end": 535,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterStickerboardRemoveObstacle.lua",
+            "line_start": 1,
+            "line_end": 77,
+            "sha256": "5400e80a5afa03a75ea5621e2acdc74438f15175bcbb23ebe14f4245cd0b6ef5",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_stickerboard_portal",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_stickerboard_open",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 536,
+            "line_end": 541,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterStickerboardPortal.lua",
+            "line_start": 1,
+            "line_end": 77,
+            "sha256": "9324253f2b2622cf3820ee30a6d8e3a665abbe56335f192d8a9d80cd5b193837",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_acquire_avatar_frame",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "UserProfileModel · AvatarFrameRewardWindow · SettingUserInfoWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 542,
+            "line_end": 547,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAcquireAvatarFrame.lua",
+            "line_start": 1,
+            "line_end": 88,
+            "sha256": "587679ce5bcd7cd5775366f4bca5b1ac31ad4507709ccba89367288ca89ee8e2",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_xmas_pairup_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · XmasPairup",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 548,
+            "line_end": 553,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterXmasPairupStart.lua",
+            "line_start": 1,
+            "line_end": 95,
+            "sha256": "29738fe10272a8314d820b171fd1ad13f229b38b893e2756e06e0c92ba6a6175",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_seafood_tutorial_order",
+        "status": "server-or-presentation-required",
+        "system": "주문·신규 합성선",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ItemDataModel · MainBoardModel · TutorialSeafoodOrderStartWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 554,
+            "line_end": 559,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterSeafoodTutorialOrder.lua",
+            "line_start": 1,
+            "line_end": 86,
+            "sha256": "97e1bd82976211a45b147e5d03c048c75f60223c3177d078d5c2c8835f7b6668",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_seafood_tutorial_order_2",
+        "status": "server-or-presentation-required",
+        "system": "주문·신규 합성선",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "MainBoardModel · TutorialSeafoodOrderStart2Window",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 560,
+            "line_end": 565,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterSeafoodTutorialOrder2.lua",
+            "line_start": 1,
+            "line_end": 76,
+            "sha256": "43c7ce4047c5fe19642b40bfccca051f8f6870e9dae448c8daa8f53f812a28f0",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_combo_first_open_main_window",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 566,
+            "line_end": 571,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterComboOpen.lua",
+            "line_start": 1,
+            "line_end": 99,
+            "sha256": "3196561c0d34df1ecbf15df0fb7aeab1e4398d21cc5fb19615e4bade4556d836",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_combo_first_upgrade_main_window",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 572,
+            "line_end": 577,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterComboUpgrade.lua",
+            "line_start": 1,
+            "line_end": 72,
+            "sha256": "93a932a6e84931c5358dcf785d9569da24f8e0ead5d184bd451255fd95bdf141",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_generator_boost_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · GeneratorBoost",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 578,
+            "line_end": 583,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGeneratorBoostStart.lua",
+            "line_start": 1,
+            "line_end": 91,
+            "sha256": "8349b6298c3588795e933f3d140ebd47a803937b7c1198ddd6cafe5c4afa9db8",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_generator_boost_active",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · GeneratorBoost",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 584,
+            "line_end": 589,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGeneratorBoostActive.lua",
+            "line_start": 1,
+            "line_end": 64,
+            "sha256": "861a420c1fbbcc708eb9abc2010c90a2344566942dcc688361cebea76768cd19",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_album_royal",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · BaseSceneView · RoyalActivityHelpWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 590,
+            "line_end": 595,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumRoyal.lua",
+            "line_start": 1,
+            "line_end": 150,
+            "sha256": "505cfc24704f5d6ccf29d1faf11eaa1f01ae6784069c8d0d47e5d078a47be997",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_midfallMapExplore_map",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · midfallMapExplore",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 596,
+            "line_end": 601,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMidfallMapExplore_map.lua",
+            "line_start": 1,
+            "line_end": 5,
+            "sha256": "ede84805defd4c4508b18c9e43e8205ab064b2eb728ce410dab1f4c3546c9c5b",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_mapNewBase.lua",
+            "line_start": 1,
+            "line_end": 130,
+            "sha256": "741f6dd9c93376ac20e28c0b04b3ba51a819cd0db6af9f7d7f503b94559edf37",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_midfallMapExplore_board",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · midfallMapExplore",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 602,
+            "line_end": 607,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMidfallMapExplore_board.lua",
+            "line_start": 1,
+            "line_end": 4,
+            "sha256": "68508a811f42004d69e412f866de22876386f079869bfd224a26125b77663ca7",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_boardbase.lua",
+            "line_start": 1,
+            "line_end": 100,
+            "sha256": "36e6e3184dc351e9887df2e63926b3fa0724b57599c2949284bb6710988eab5d",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_halloweenMapExplore_map",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · halloweenMapExplore",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 608,
+            "line_end": 613,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHalloweenMapExplore_map.lua",
+            "line_start": 1,
+            "line_end": 5,
+            "sha256": "b165ebc782424d1df0ea51e40751696663f50393cead25be908a555707af3f29",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_mapNewBase.lua",
+            "line_start": 1,
+            "line_end": 130,
+            "sha256": "741f6dd9c93376ac20e28c0b04b3ba51a819cd0db6af9f7d7f503b94559edf37",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_halloweenMapExplore_board",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · halloweenMapExplore",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 614,
+            "line_end": 619,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHalloweenMapExplore_board.lua",
+            "line_start": 1,
+            "line_end": 4,
+            "sha256": "161c357c97fb58c1e6cef5c5263448c1101a9c97cbb502d893862f1c4638612a",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_boardbase.lua",
+            "line_start": 1,
+            "line_end": 100,
+            "sha256": "36e6e3184dc351e9887df2e63926b3fa0724b57599c2949284bb6710988eab5d",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_team_signin",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 620,
+            "line_end": 625,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTeamSignIn.lua",
+            "line_start": 1,
+            "line_end": 132,
+            "sha256": "3b355928ba8dc464c45f20a085acf6b10994074cd2c2afa53e3e9d3fd039a7a3",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_team_window",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_team_signin",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 626,
+            "line_end": 631,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTeamWindow.lua",
+            "line_start": 1,
+            "line_end": 107,
+            "sha256": "da3a2b7c396628bd0af5646c33d81e6c44b4007dbf351e96dc7199a522ffac53",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_stagecha_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 632,
+            "line_end": 637,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterStagechaStart.lua",
+            "line_start": 1,
+            "line_end": 82,
+            "sha256": "3cad0d989302c3f0836f815a46159b0b644a9bf1e69d06d82f3f4ded60d21e06",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_boostChargedisco_start",
+        "status": "server-or-presentation-required",
+        "system": "후속 기능·원본 창",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "BoostChargeManager · TriggerBoostDiscoEmptyView",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 638,
+            "line_end": 643,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBoostChargediscoStart.lua",
+            "line_start": 1,
+            "line_end": 75,
+            "sha256": "c092defb1153a27e0781d65c73d3ce047b6510b08ee427054a3f18837b37f4d2",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_taskLimitTimeReward_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · TimelineModel · TaskLimitTimeReward · BaseSceneView · TaskWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 644,
+            "line_end": 649,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTaskLimitTimeStart.lua",
+            "line_start": 1,
+            "line_end": 106,
+            "sha256": "37aa52bef4753ad2d216a596a79b068c5a33fd84966cba8f166001152aba5409",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_boostCannon_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · OrderBoost · BaseSceneView · OrderBoostMainWindow · OrderBoostProMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 650,
+            "line_end": 655,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterOrderBoostCannonReward.lua",
+            "line_start": 1,
+            "line_end": 133,
+            "sha256": "872200a574ae7041fcfed2b0fd750a7fb3d16303813c9310ae2ffd8f820ebfa9",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_exped_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 656,
+            "line_end": 661,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterExpedStart.lua",
+            "line_start": 1,
+            "line_end": 129,
+            "sha256": "fd102b69315526c31c2db4d0679b69f7d8d4d326dd5d005afb38a9360187bb39",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_exped_entry",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "TutorialFinished-tutorial_exped_start",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 662,
+            "line_end": 667,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterExpedEntry.lua",
+            "line_start": 1,
+            "line_end": 113,
+            "sha256": "5c2aec2fd72e7f14fcae7da5ec10667dd78f11aae1446d4673512470f188261c",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorail_event_wheelpack_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 668,
+            "line_end": 673,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWheelPackStart.lua",
+            "line_start": 1,
+            "line_end": 102,
+            "sha256": "a540fe343ead629166564aaeec28c2482490d89058fc16f1ed666b14f9a16bfb",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_extra_customer",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · MainBoardModel · ExtraCustomer · ExtraCustomerActivityMainWindow · ExtraCustomerBannerWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 674,
+            "line_end": 679,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterExtraCustomer.lua",
+            "line_start": 1,
+            "line_end": 119,
+            "sha256": "ab1678e0ca8a13b1e86c599e751a5ddd8e66f26702c3e52587678b6d4cf9822b",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_cardItem_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · MainBoardModel · CardItem · ItemDetailWindow · TutorialCardItemFirstWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 680,
+            "line_end": 685,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCardItemStart.lua",
+            "line_start": 1,
+            "line_end": 125,
+            "sha256": "8f5f792dd456cea51f719fa3136646e23d9af50e933d0c2c836ca4b677a4f72f",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_cardItem_max",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · MainBoardModel · CardItem · CardItemTriggerWindow · CardItemUseConfirmWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 686,
+            "line_end": 691,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCardItemMergeMax.lua",
+            "line_start": 1,
+            "line_end": 108,
+            "sha256": "4e5a5becf0c22a7a205f64b493a95cde7e09648381eb17b9d191b430b565a81a",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      },
+      {
+        "id": "tutorial_dailyRating_piggyBank_start",
+        "status": "server-or-presentation-required",
+        "system": "라이브 활동·이벤트",
+        "conditions": "(empty: executer starts, internal activation still applies)",
+        "requirements": "ActivityManager · DailyRating · BaseSceneView · PiggyMainWindow",
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+            "line_start": 697,
+            "line_end": 702,
+            "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPiggyBankStart.lua",
+            "line_start": 1,
+            "line_end": 135,
+            "sha256": "d0ea4c4649581c9035096754d6c8992455036d8e47e00b0d9018fcf7114c4a10",
+            "method": "static reconstructed packaged Lua source; not original runtime observation"
+          }
+        ],
+        "naturalTraceCompleted": false
+      }
+    ]
+  }
+}

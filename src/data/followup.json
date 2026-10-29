@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetVersion": "4.10.5",
   "date": "2026-10-28",
-  "scope": "APK4.10.5 정적 후속 조사와 설정 기반 웹 실험. 과거 사용자 캡처는 버전 미확인 독립 관측. LDPlayer 검증은 사용자 요청 중단. 현행 서버 규칙/완성 게임 재현 아님.",
+  "scope": "APK4.10.5 정적 규칙·웹 모델 실행·버전 미확인 캡처 관측을 구분한 후속 조사. LDPlayer 검증은 사용자 요청 중단.",
   "findings": [
     {
       "id": "BM-G001",
@@ -2941,6 +2941,1152 @@
       "unknowns": [
         "현재 서버 확률·할인·기간·튜토리얼 별도 가격"
       ]
+    },
+    {
+      "id": "SIM-X001",
+      "kind": "config",
+      "domain": "difficulty",
+      "domains": [
+        "economy",
+        "mechanics"
+      ],
+      "category": "플레이 확장 · 소스 대조",
+      "title": "고정·일반 랜덤 주문은 병렬 슬롯을 공유한다",
+      "summary": "고정16개와 일반 랜덤5종을 순차 목록 하나로 축소하지 않고 슬롯 생성·필터·쿨다운으로 복원했다.",
+      "details": [
+        "소스는19개 슬롯을 정해진 순서로 검사한다. 일반 주문이 사용하는 슬롯1/2/3/4/5/8과 레벨 조건을 분리한다.",
+        "고정 주문 커서는 생성할 때 증가하며 납품할 때 같은 보상을 다시 만들지 않는다.",
+        "주문 난도·최근 주문·보유량·발견한 생산기·반복 가중치·일경계 상태를 추적한다. 납품은 보드 재료를 먼저 쓰고 보관함 재료를 이어 쓴다."
+      ],
+      "unknowns": [
+        "현행 서버 variant·특수 이벤트 주문·원작 난수열"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Order/MainOrderCreator.lua",
+          "line_start": 1,
+          "line_end": 25,
+          "sha256": "f8b609ec2969668dadd4d76c55ba4149c2c3364b099e944aa6b40a4c23cf14a5",
+          "hash_scope": "complete reconstructed packaged Lua source bytes",
+          "method": "static source/config projection, no live runtime",
+          "note": "Global fixed cursor advances on creation, slot and unlock gates",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/OrderFixedConfig.lua",
+          "line_start": 1,
+          "line_end": 106,
+          "sha256": "15d78e024076a1abcda44c3e817ece7cc266ca9d61ca7d5a613cce91e3c71478",
+          "hash_scope": "complete reconstructed packaged Lua source bytes",
+          "method": "static source/config projection, no live runtime",
+          "note": "All16 packaged fixed orders",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Order/SlotOrderModel.lua",
+          "line_start": 30,
+          "line_end": 74,
+          "sha256": "83283ae168f6ab8d57cdacceb0361a9a5dd9a20f981ce49d47288acf393b0c89",
+          "hash_scope": "complete reconstructed packaged Lua source bytes",
+          "method": "static source/config projection, no live runtime",
+          "note": "Repeated ascending1..19 empty slot fill and submit refill",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "SIM-X002",
+      "kind": "config",
+      "domain": "economy",
+      "domains": [
+        "interaction",
+        "mechanics"
+      ],
+      "category": "플레이 확장 · 소스 대조",
+      "title": "보관함은 공간뿐 아니라 아이템 상태를 보존한다",
+      "summary": "기본5칸·최대32칸과 다음 칸의 젬 가격표를 사용하며 UID·가위 사용횟수·생성기 상태를 유지한다.",
+      "details": [
+        "첫 추가 칸은50젬이며 다음 칸55젬·65젬 등 내장 슬롯 가격을 읽는다.",
+        "빈칸 부족·수량 부족·보관 불가 상태에서는 아이템이나 재화를 일부 소비하지 않는다.",
+        "보관 중 생성기를 반복 갱신하지 않고 꺼낼 때 절대 타이머에 따라 회복을 반영한다. 정렬용 서버 플래그와 주문 납품의 보관함 소비는 별개다."
+      ],
+      "unknowns": [
+        "생성기 공장·정렬 플래그의 현행 계정 값"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/InventorySlotConfig.lua",
+          "line_start": 1,
+          "line_end": 38,
+          "sha256": "5ff98c0f7495d7aab137ae7369480b56d651343c6d743de5b4e10e9e107cfb95",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "recovered static Lua and packaged table cross-check",
+          "evidence_id": null,
+          "note": "5 default slots; 32 displayed maximum; next total-slot index selects gem price"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/FunctionEnableConfig.lua",
+          "line_start": 1,
+          "line_end": 8,
+          "sha256": "4a924b0ea96d691d4a655912bf9082964072772bca8fca5c9da2f2eec20eb468",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "recovered static Lua and packaged table cross-check",
+          "evidence_id": null,
+          "note": "inventory enabled, openLevel2"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/OpenFunctionModel.lua",
+          "line_start": 33,
+          "line_end": 70,
+          "sha256": "85e7276619105a82ca9a411e0409ecb049395861191dfc109aa0c75744471353",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "method": "recovered static Lua and packaged table cross-check",
+          "evidence_id": null,
+          "note": "enabled function opens once current level reaches configured threshold"
+        }
+      ]
+    },
+    {
+      "id": "SIM-X003",
+      "kind": "config",
+      "domain": "mechanics",
+      "domains": [
+        "difficulty",
+        "puzzle-fx"
+      ],
+      "category": "플레이 확장 · 소스 대조",
+      "title": "생성기163행은 여러 가중 방식과 수명 상태를 가진다",
+      "summary": "fixed·감소 덱·주문형·custom·smart 분기와 초기화·개봉·충전·소진·변형을 분리해 구현했다.",
+      "details": [
+        "에너지 소비 여부와 수명 예산, 두 저장고 회복 시간은 같은 값으로 묶지 않는다.",
+        "자동 생성5타입은 인접8방향을 검사한다. 인접 칸이 막히면 자동 생성은 먼 칸으로 우회하지 않으며 별도 수동 경로를 평가한다.",
+        "열기와 단축 비용은 현재 상태·남은 시간에서 계산하고 튜토리얼0젬 값을 그대로 보존한다."
+      ],
+      "unknowns": [
+        "활동 보정의 현행 서버 스냅샷·원작 난수열"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+          "line_start": 1,
+          "line_end": 5828,
+          "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "evidence_id": null,
+          "method": "recovered static Lua and parsed packaged configuration",
+          "note": "552 base rows, not remotely selected variant"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+          "line_start": 31,
+          "line_end": 67,
+          "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "evidence_id": null,
+          "method": "recovered static Lua and parsed packaged configuration",
+          "note": "nullable storage; init/open phase; forced tutorial timer override"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+          "line_start": 76,
+          "line_end": 137,
+          "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "evidence_id": null,
+          "method": "recovered static Lua and parsed packaged configuration",
+          "note": "absolute timer, item and storage recovery transitions; non-disposable means item recovery defined"
+        }
+      ]
+    },
+    {
+      "id": "SIM-X004",
+      "kind": "config",
+      "domain": "mechanics",
+      "domains": [
+        "economy",
+        "events"
+      ],
+      "category": "플레이 확장 · 소스 대조",
+      "title": "smart 보상과 카드팩 획득은 카드 추첨과 구분된다",
+      "summary": "SmartRewardHelper 선택을 포팅하고 다섯 rb# 합성 결과를 payload가 있는 보상 포장으로 보존했다.",
+      "details": [
+        "주문 슬롯·부족분·보드/보관 재고·점수 예산을 사용한다. 미확인 결과를 무작위 기본 아이템으로 대체하지 않는다.",
+        "앨범이 없거나 팩이 지원되지 않으면 common5→os_2_1, common3→scratch_a_1, laser5→rc_d_1로 변환해Type2 대기열에 넣는다.",
+        "지원되는 활성 앨범 팩은 획득 수량만 기록한다. 실제 카드 선정은 별도의 소비 단계이며 카드 내용·확률을 생성하지 않는다."
+      ],
+      "unknowns": [
+        "현행 앨범·팩 구성·카드 드롭확률·완성 보상"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/BoardModelHelper.lua",
+          "line_start": 96,
+          "line_end": 115,
+          "sha256": "620917b55d8607763cdbd7d5b0fb992c03ec182441e61cff4d8b1288ccd39809",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "evidence_id": null,
+          "method": "read-only recovered static Lua",
+          "note": "exact and lower merge units consumed from scratch stock"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Order/BaseOrder.lua",
+          "line_start": 6,
+          "line_end": 12,
+          "sha256": "15d0e8d50ced77dcbd3e166e55c5ae9c240867e3e772194f076b4fea521586bc",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "evidence_id": null,
+          "method": "read-only recovered static Lua",
+          "note": "CanDeliver3 / Finished4"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Order/MainOrderDefinition.lua",
+          "line_start": 1,
+          "line_end": 16,
+          "sha256": "76529247cb13221b5aa8073a9dfac522510b4a61cb99e5fd6acc21b014743793",
+          "sha256_scope": "reconstructed static Lua source bytes",
+          "evidence_id": null,
+          "method": "read-only recovered static Lua",
+          "note": "special slot6 excluded"
+        }
+      ]
+    },
+    {
+      "id": "SIM-X005",
+      "kind": "config",
+      "domain": "map",
+      "domains": [
+        "economy",
+        "interaction"
+      ],
+      "category": "플레이 확장 · 소스 대조",
+      "title": "기본 과제4277개·레벨300행을 전체 투영했다",
+      "summary": "초기15과제에 한정했던 웹 데이터를 기본 MainTask 전체와 레벨 배열로 확장했다.",
+      "details": [
+        "292일·48구역은 데이터의 구분이며 실제 경과 플레이 일수가 아니다.",
+        "레벨 표85번째 행은 declaredLevel75로 기재됐지만 원본 소비 코드는 배열 인덱스를 사용한다. 웹은 유효 레벨85와 원문값75를 함께 보존한다.",
+        "연출 시작과 비용 확정을 분리하고 확정 시 골드·경험치·아이템·다음 과제를 한 번만 반영한다. 실제 집 이미지와 스토리 타임라인은 별도 범위다."
+      ],
+      "unknowns": [
+        "서버 비용 배율·fire 변형·현재 개방 지역·원본 장면 연출"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 1,
+          "line_end": 40437,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "method": "reconstructed packaged Lua static trace; no runtime observation",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/LevelConfig.lua",
+          "line_start": 1,
+          "line_end": 1543,
+          "sha256": "fd9604b25c40004ef526a1338f7accfaa940cedd3543df9fe395794c75ebb8d4",
+          "hash_scope": "complete file bytes",
+          "method": "reconstructed packaged Lua static trace; no runtime observation",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/decoded/game_text_ko.bin",
+          "line_start": 1,
+          "line_end": 12762,
+          "sha256": "c36f297fa46f926601ea5625540cbbf524f0c01dbe445e903d802ed6ba97623a",
+          "hash_scope": "complete file bytes",
+          "method": "reconstructed packaged Lua static trace; no runtime observation",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "SIM-X006",
+      "kind": "config",
+      "domain": "interaction",
+      "domains": [
+        "ui",
+        "economy"
+      ],
+      "category": "플레이 확장 · 소스 대조",
+      "title": "튜토리얼은 안내·허용 입력·보상 규칙을 구분한다",
+      "summary": "첫8개 합성/생성 뒤 주문·맵·보상·상자·에너지·상점 안내를 실제 플레이 동작과 연결했다.",
+      "details": [
+        "잘못된 합성 방향과 다른 주문 제출을 차단하고 타이머 경과·안내 종료·관련 창 닫기는 별도로 처리한다.",
+        "원본 캐시 안내의105 생성기 강제301 산출은 일반 덱과 난수를 소비하지 않는다. 상자 첫 단축과 첫 버블 안내의0젬을 유료값으로 바꾸지 않는다.",
+        "116개 선언과 고유115개ID의 지원 범위는 별도 표로 감사한다. 원본 오프닝 영상 재생과 웹의 논리적 보드 진입은 같다고 주장하지 않는다."
+      ],
+      "unknowns": [
+        "활동 전용 후속 가이드의 서버조건·실제 원본 마스크/애니메이션 시간"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+          "line_start": 1,
+          "line_end": 40437,
+          "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+          "hash_scope": "complete file bytes",
+          "method": "reconstructed packaged Lua static trace; no runtime observation",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/LevelConfig.lua",
+          "line_start": 1,
+          "line_end": 1543,
+          "sha256": "fd9604b25c40004ef526a1338f7accfaa940cedd3543df9fe395794c75ebb8d4",
+          "hash_scope": "complete file bytes",
+          "method": "reconstructed packaged Lua static trace; no runtime observation",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/decoded/game_text_ko.bin",
+          "line_start": 1,
+          "line_end": 12762,
+          "sha256": "c36f297fa46f926601ea5625540cbbf524f0c01dbe445e903d802ed6ba97623a",
+          "hash_scope": "complete file bytes",
+          "method": "reconstructed packaged Lua static trace; no runtime observation",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "SIM-X007",
+      "kind": "config",
+      "domain": "puzzle-fx",
+      "domains": [
+        "mechanics",
+        "ui"
+      ],
+      "category": "플레이 확장 · 소스 대조",
+      "title": "기본552타입 중544타입의 정적 이미지를 연결했다",
+      "summary": "타입별 image key→실제Sprite 객체→PNG 해시를 대조하고3201의6개 이미지 변형도 별도 탐색할 수 있다.",
+      "details": [
+        "8개 미확보 타입은 도감에서 삭제하지 않고 로컬 매핑 부재·원격 이벤트 자산 미포함 사유를 표시한다.",
+        "같은 타입의 여러 이미지와 같은 PNG를 공유하는 타입을 구분한다.3201 첫 그림은 도감 대표이며 원작의 무작위 결과를 고정하지 않는다.",
+        "생성·합성·수집·주문·도구 도움말·팝업의 실제 발췌와 APK 이미지 기반 웹 시연을 구분한다. 가위·모래시계 실제 사용 영상이 없는 부분은 만들어냈다고 표시하지 않는다."
+      ],
+      "unknowns": [
+        "미포함 원격 자산·실제 도구 사용 연출 표본"
+      ],
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "line_start": 1,
+          "line_end": 56177,
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "sha256_scope": "complete local analysis projection bytes",
+          "method": "전체 기본 타입의Sprite/해시 매핑 투영",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/media-review/bm-timeline.json",
+          "line_start": 1,
+          "line_end": 2878,
+          "sha256": "c6ac8ff3f33c68aec2a99589b74ba7573dc7518c9073905bfecc9dfd8630bed5",
+          "sha256_scope": "complete local analysis projection bytes",
+          "method": "선정 캡처와 파생 미디어의 출처·구간 검증",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "SIM-X008",
+      "kind": "config",
+      "domain": "economy",
+      "domains": [
+        "difficulty",
+        "map",
+        "bm"
+      ],
+      "category": "플레이 확장 · 소스 대조",
+      "title": "보충 없는 초반 성장 경로를 웹 모델에서 실행 검증했다",
+      "summary": "초기판에서30주문·15과제·레벨5에 도달했다. 원작 실행 검증이나 실유저 소요시간 측정은 아니다.",
+      "details": [
+        "보조 지급·직접 재화 편집·튜토리얼 건너뛰기·유료 충전0회. 명시된 원본 무료 충전과 무료 상점 행만 사용했다. 행동1942개를 검증했다.",
+        "별도 경로는 추가 과제 보상 없이 고정16개를 모두 완료했다. 전체418주문이며 최적 플레이를 증명하지 않는다.",
+        "기록된 시간은 모델의 명시 대기 합계다. 화면 클릭·읽기·판단 시간이0으로 처리되므로 실제 유저 플레이 시간으로 환산하지 않는다."
+      ],
+      "unknowns": [
+        "원작 계정 주문분포·현행 운영값·유저별 체류/결제 효과"
+      ],
+      "sources": [
+        {
+          "path": "analysis/simulation/qa/natural-progression.json",
+          "line_start": 1,
+          "line_end": 82461,
+          "sha256": "e862ab8fbd3ef69dac412a3232dc65e8470b0cab90a2f3a85ed1d4c787d79cd2",
+          "sha256_scope": "complete local analysis projection bytes",
+          "method": "웹 모델 행동 추적·모든 행동 상태 검증",
+          "evidence_id": null
+        },
+        {
+          "path": "analysis/simulation/qa/natural-progression-fixed16.json",
+          "line_start": 1,
+          "line_end": 1337544,
+          "sha256": "ace800f0cc915ca5e23708fd1af820a021c553a3460643dd8c96954403dcb19b",
+          "sha256_scope": "complete local analysis projection bytes",
+          "method": "원본 기본 고정16개 완주를 확인한 별도 웹 모델 경로",
+          "evidence_id": null
+        }
+      ]
+    },
+    {
+      "id": "SIM-SH001",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "ui"
+      ],
+      "category": "설정 기반 상점·오퍼·이벤트",
+      "title": "상점은 두 탭과 다섯 컨테이너를 조건에 따라 나눈다",
+      "summary": "기본 순서는 OrderItem→DailyDeals→FlashSale→Bundles→Diamonds다. Daily/Flash는 아이템 탭, 나머지는 젬 탭이며 젬 전용 최대레벨2와 상점 해금3은 서로 다른 조건이다.",
+      "details": [
+        "ShopWindow는 레벨이 ShopShowGemOnlyMaxLevel 이하이면 Diamonds 컨테이너만 만든다.",
+        "IAP가 비활성일 때 현재 탭을 아이템으로 바꾸고 탭 선택기를 숨긴다. 원래 두 탭을 항상 보여 주는 규칙이 아니다.",
+        "웹의 카드형 배치·모달 크기·설명 접기는 이 분기 구조를 설명하는 구현이다. 원작 프리팹의 최종 활성 레이아웃을 렌더한 결과는 아니다."
+      ],
+      "unknowns": [
+        "현재 서버 스위치와 활성 OrderItem/Bundle 후보",
+        "기기별 실제 레이아웃·자동 스크롤 결과"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Shop/ShopWindow.lua",
+          "line_start": 8,
+          "line_end": 52,
+          "sha256": "1e6111e36bf90561f02e43bb53c40fe29c9b84210b80c224f6a9e16036850ddf",
+          "bytes": 9191,
+          "source_lines": 274,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Shop/ShopWindow.lua",
+          "line_start": 92,
+          "line_end": 99,
+          "sha256": "1e6111e36bf90561f02e43bb53c40fe29c9b84210b80c224f6a9e16036850ddf",
+          "bytes": 9191,
+          "source_lines": 274,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/SystemConfig.lua",
+          "line_start": 1,
+          "line_end": 25,
+          "sha256": "68b6e58d4aeb9b60782d38a2381c2e40d89c59565c47ca96fa5f3a6b12744883",
+          "bytes": 963,
+          "source_lines": 22,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/FunctionEnableConfig.lua",
+          "line_start": 1,
+          "line_end": 30,
+          "sha256": "4a924b0ea96d691d4a655912bf9082964072772bca8fca5c9da2f2eec20eb468",
+          "bytes": 292,
+          "source_lines": 23,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ]
+    },
+    {
+      "id": "SIM-SH002",
+      "kind": "config",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "events",
+        "ui"
+      ],
+      "category": "설정 기반 상점·오퍼·이벤트",
+      "title": "일일 상품의 기본표와 랜덤 후보표는 별도 내장 variant다",
+      "summary": "기본표3행과 랜덤표7후보를 구분했다. 같은id의 후보 중 가중 선택하고 id순으로 정렬한다. 활성 앨범이 없으면 카드팩 후보 가중치를0으로 둔다.",
+      "details": [
+        "기본표는3101/25젬,2901/10젬,ShopNewChest_1/무료 선언을 가진다. 두 번째 상품에는 광고 선언도 있지만 웹에서 실제 광고는 실행하지 않는다.",
+        "구매는 남은 수량과 비용을 확인한 뒤 아이템1개를 지급한다. DailyDeals의 수량 차감 시 costIncreasement를 다음 비용에 더한다.",
+        "다음 일일 갱신은 저장된 시각을86400초로 나눈 다음 일경계다. 웹 최초 시각0의 초기 구성은 별도 초기화 정책이다.",
+        "웹 보상 연결은 대기열로 전달하며 카드팩 내부 내용이나 IAP 지급을 추측하지 않는다."
+      ],
+      "unknowns": [
+        "현행 서버가 선택한 기본/랜덤 variant",
+        "광고 적격성과 실제 지급 콜백",
+        "카드팩 서버 구성·가챠 결과"
+      ],
+      "sources": [
+        {
+          "path": "analysis/config-tables/ShopDailyDealsConfig.json",
+          "line_start": null,
+          "line_end": null,
+          "sha256": "efba8416b5ccf8fba48f3a853b2acda4dc45826af1ea6ca13c5a3c63ccc65222",
+          "bytes": 2594,
+          "source_lines": 149,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/config-tables/ShopDailyDealsConfig_random.json",
+          "line_start": null,
+          "line_end": null,
+          "sha256": "389ee7d06f70956e0afdd908dde82a2ebe652e5143e69d99bb65debd0865f3f9",
+          "bytes": 5616,
+          "source_lines": 325,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopDataModel.lua",
+          "line_start": 36,
+          "line_end": 64,
+          "sha256": "05cd3bd8ab86d88f17432c9cf08a93d4df66ddab730cd1e93752010c8d0b9418",
+          "bytes": 28381,
+          "source_lines": 697,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopDataModel.lua",
+          "line_start": 192,
+          "line_end": 219,
+          "sha256": "05cd3bd8ab86d88f17432c9cf08a93d4df66ddab730cd1e93752010c8d0b9418",
+          "bytes": 28381,
+          "source_lines": 697,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+          "line_start": 100,
+          "line_end": 127,
+          "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+          "bytes": 29068,
+          "source_lines": 810,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopItemDBManager.lua",
+          "line_start": 104,
+          "line_end": 129,
+          "sha256": "3eb8d26cc07d671feb0aa16e3feca65a293c1155d11353b3ce30274129936e74",
+          "bytes": 3772,
+          "source_lines": 113,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+          "line_start": 135,
+          "line_end": 231,
+          "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+          "bytes": 29068,
+          "source_lines": 810,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/AlbumActivity/Model/AlbumActivityModel.lua",
+          "line_start": 39,
+          "line_end": 68,
+          "sha256": "b103213429d85a45936769769811ff0ee3b3ef22f99815a5c3332dfb2b9d9d74",
+          "bytes": 111010,
+          "source_lines": 3114,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ]
+    },
+    {
+      "id": "SIM-SH003",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "ui"
+      ],
+      "category": "설정 기반 상점·오퍼·이벤트",
+      "title": "기본 플래시 세일은 발견 단계와 두 단계 가중 선택을 사용한다",
+      "summary": "로컬 후보114개·체인 가중표19행에서 최대6슬롯을 선정한다. 최소레벨을 통과하고 체인의 발견 최대단계보다 엄격히 낮은 타입만 유효하다.",
+      "details": [
+        "슬롯별 체인 가중 선택 후 해당 체인의 ShopWeight로 타입을 선택한다. 같은 타입은 한 번만 선정한다.",
+        "원래 슬롯에서 후보가 없으면 슬롯1부터6까지 차례로 가중fallback을 시도한다. 후보가 없는데6개를 채우려고 새 상품을 만들지 않는다.",
+        "현재 특수주문에 속하지 않는 특수주문 체인 아이템은 제외한다. CustomChain과 실제ChainId도 별도로 보존한다.",
+        "수량은 ShopCount 선언 또는 코드 기본5, 비용은 Price의 젬 값이다. 수동 갱신은20젬이며 자동 갱신 시각을 다시 기록하지 않는다.",
+        "서버 갱신 간격이 양수로 있으면 시간 단위 간격을 사용하고, 없으면 일경계fallback을 사용한다."
+      ],
+      "unknowns": [
+        "현행 서버의 플래시 세일 mode/갱신 간격",
+        "원작 RNG의 상태와 실제 추첨 순서",
+        "미구현 동적 특수주문의 현재 체인"
+      ],
+      "sources": [
+        {
+          "path": "analysis/config-tables/ItemPropertyConfig.json",
+          "line_start": null,
+          "line_end": null,
+          "sha256": "28f6a40744fb51242675b8dd5d7d3683d26670c5b8376dab9934fb79469a3180",
+          "bytes": 133280,
+          "source_lines": 8036,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/config-tables/ShopSlotConfig.json",
+          "line_start": null,
+          "line_end": null,
+          "sha256": "634366370cb9f37a2deb9ba9cbbfef3c8c81b778998b8e92dc23ce472f860ad5",
+          "bytes": 17206,
+          "source_lines": 979,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopDataModel.lua",
+          "line_start": 300,
+          "line_end": 350,
+          "sha256": "05cd3bd8ab86d88f17432c9cf08a93d4df66ddab730cd1e93752010c8d0b9418",
+          "bytes": 28381,
+          "source_lines": 697,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopDataModel.lua",
+          "line_start": 592,
+          "line_end": 627,
+          "sha256": "05cd3bd8ab86d88f17432c9cf08a93d4df66ddab730cd1e93752010c8d0b9418",
+          "bytes": 28381,
+          "source_lines": 697,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopDataModel.lua",
+          "line_start": 678,
+          "line_end": 689,
+          "sha256": "05cd3bd8ab86d88f17432c9cf08a93d4df66ddab730cd1e93752010c8d0b9418",
+          "bytes": 28381,
+          "source_lines": 697,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+          "line_start": 658,
+          "line_end": 670,
+          "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+          "bytes": 30307,
+          "source_lines": 765,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+          "line_start": 135,
+          "line_end": 231,
+          "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+          "bytes": 29068,
+          "source_lines": 810,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/ItemDataModel.lua",
+          "line_start": 318,
+          "line_end": 355,
+          "sha256": "7a199a3ffea516f08a29a765cb030f630161cc4b631d8c5d773087b8d4c72a26",
+          "bytes": 16855,
+          "source_lines": 458,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ]
+    },
+    {
+      "id": "SIM-SH004",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "ui"
+      ],
+      "category": "설정 기반 상점·오퍼·이벤트",
+      "title": "플래시 세일mode1/2는 서로 다른 주문 적응 알고리즘이다",
+      "summary": "mode1은 완전 미보유 주문과 수동 미구매 이력으로 가중치를 바꾸고, mode2는 주문별 최상위 부족 타입을 우선한다. 두 분기를 기본 추첨에 합치지 않았다.",
+      "details": [
+        "mode1: 완전히 없는 주문 타입의 체인×10, 요구 타입/직전 단계×50, 더 낮은 단계×10. 수동 갱신의 미구매 체인·타입은×0.33333을 적용한다.",
+        "같은 체인에서 구매한 상품이 있으면 체인의 미구매 감쇠를 적용하지 않는다. IsSpecial 체인은 배율1로 되돌리고 슬롯6에는 체인 배율을 적용하지 않는다. 조정 가중치는ceil 처리한다.",
+        "mode2: 일반 슬롯1/2/3/4/5/8과 시간제13에서 반복 요구 수량까지 고려한 최상위 부족 타입을 고른다. 판매표가 없으면 가까운 하위 판매 타입도 후보에 더한다.",
+        "슬롯6→1로 우선 선정하고 결과를 뒤집는다. 같은 슬롯에서 직전 단계도 유효하면50%로 낮은 단계를 고른다. 우선 요구에 사용한 타입과 최종 선정 타입의set을 따로 둔다.",
+        "두 분기는 보드+보관함을 읽고 보상 대기열을 제외한다. 래퍼 안쪽 아이템을 일반 타입 재고로 바꾸어 세지 않는다.",
+        "웹은 이 조건·소비 알고리즘을 구현했으며 실제 계정의 서버mode를 관측한 결과가 아니다."
+      ],
+      "unknowns": [
+        "현재 계정의 mode 배정",
+        "새 타입/동적 이벤트 주문의 완전한 정체성",
+        "서버·원작 RNG와 동일한 추첨 열"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopDataModel.lua",
+          "line_start": 241,
+          "line_end": 297,
+          "sha256": "05cd3bd8ab86d88f17432c9cf08a93d4df66ddab730cd1e93752010c8d0b9418",
+          "bytes": 28381,
+          "source_lines": 697,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopDataModel.lua",
+          "line_start": 391,
+          "line_end": 518,
+          "sha256": "05cd3bd8ab86d88f17432c9cf08a93d4df66ddab730cd1e93752010c8d0b9418",
+          "bytes": 28381,
+          "source_lines": 697,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopDataModel.lua",
+          "line_start": 520,
+          "line_end": 590,
+          "sha256": "05cd3bd8ab86d88f17432c9cf08a93d4df66ddab730cd1e93752010c8d0b9418",
+          "bytes": 28381,
+          "source_lines": 697,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopDataModel.lua",
+          "line_start": 630,
+          "line_end": 676,
+          "sha256": "05cd3bd8ab86d88f17432c9cf08a93d4df66ddab730cd1e93752010c8d0b9418",
+          "bytes": 28381,
+          "source_lines": 697,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+          "line_start": 502,
+          "line_end": 525,
+          "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+          "bytes": 23524,
+          "source_lines": 680,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+          "line_start": 204,
+          "line_end": 220,
+          "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+          "bytes": 71385,
+          "source_lines": 1902,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Order/MainOrderDefinition.lua",
+          "line_start": 3,
+          "line_end": 75,
+          "sha256": "76529247cb13221b5aa8073a9dfac522510b4a61cb99e5fd6acc21b014743793",
+          "bytes": 3555,
+          "source_lines": 117,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ]
+    },
+    {
+      "id": "SIM-SH005",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "ui"
+      ],
+      "category": "설정 기반 상점·오퍼·이벤트",
+      "title": "EnergyGift의 그룹 주기와 개별 상품·일일 횟수는 별도 상태다",
+      "summary": "groupDuration/groupCD/giftDuration은 분에서 초로 바꾸고 triggerEnergyPrice/dailyTriggerUpper/poptype을 그대로 읽는다. 서버 설정이 없으면 내장 상품으로 대체하지 않는다.",
+      "details": [
+        "그룹은 None→Open→CoolingDown→None으로 바뀐다. 개별 상품 종료시각과 그룹 종료시각을 별도로 저장한다.",
+        "새 생성은 늦은 초기화·설정·일일 횟수·쿨다운·무료 충전 차례·원가격 임계값·같은 그룹 상품·생성비용보다 작은 에너지·ChainEnergy 비활성을 확인한다.",
+        "일일triggerCount의 날짜 리셋은 그룹 쿨다운과 별도다. 기존 유효상품은 새 생성 quota를 소진했다고 곧바로 없어지는 것이 아니다.",
+        "웹 예제 raw필드는 사용자가 준비한 연구 입력이다. SKU·보상·현지가격 없는 후보 상태를 실제 서버 상품 생성으로 표시하지 않는다.",
+        "강제 튜토리얼 여부는 연구 입력, 기존 첫 단계, 후속 입력/대기 가이드를OR해 부족 경로에 연결한다."
+      ],
+      "unknowns": [
+        "현재 EnergyGift 서버 그룹·상품 배열·가격·기간",
+        "원작 비동기 초기화/상품 유효성 전체",
+        "계정별 기존 구매·반복 상품 기록"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "line_start": 148,
+          "line_end": 179,
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "bytes": 27164,
+          "source_lines": 916,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+          "line_start": 45,
+          "line_end": 65,
+          "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+          "bytes": 9271,
+          "source_lines": 251,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+          "line_start": 81,
+          "line_end": 90,
+          "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+          "bytes": 9271,
+          "source_lines": 251,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+          "line_start": 124,
+          "line_end": 200,
+          "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+          "bytes": 9271,
+          "source_lines": 251,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+          "line_start": 202,
+          "line_end": 226,
+          "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+          "bytes": 9271,
+          "source_lines": 251,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/UserData/EnergyModel.lua",
+          "line_start": 232,
+          "line_end": 245,
+          "sha256": "ab93681b1aabc120fccae754436a24d4f819ef094fdb4964265dfd08508bc9b3",
+          "bytes": 9529,
+          "source_lines": 274,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ]
+    },
+    {
+      "id": "SIM-SH006",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "ui"
+      ],
+      "category": "설정 기반 상점·오퍼·이벤트",
+      "title": "부족 진입과 충전창 종료의 오퍼 경로를 구분한다",
+      "summary": "글로벌 종료 경로는 친구 초대→EnergyGemOffer→기존 EnergyGift→Plenty→Chain/NewWeekly 순서다. 후속 상품에는 가격 임계값·서버시각·부족창·쿨다운 조건이 더 있다.",
+      "details": [
+        "부족 진입의 IAP/강제 튜토리얼 검사와 이미 존재하는 상품의 조회를 분리했다. poptype1은 충전창 후, 다른 값은 부족 경로의 선노출 후보다.",
+        "GLOBAL_APP의 기본 종료 경로에 중국 경로의 추가 IAP/WX 조건을 붙이지 않는다. 친구 초대의 비동기 결과는 웹에서 가정 입력으로만 다룬다.",
+        "NoEnergyGiftGem/NoEnergyGiftCoolDown이 미입력이면 Plenty/Chain/NewWeekly 후속 gate를 통과시키지 않는다. 날짜가 바뀌는 쿨다운 예외도 별도로 계산한다.",
+        "Chain과 NewWeekly가 모두 유효하면 fixedMoney를 비교하고 같을 때Chain을 택한다. fixedMoney는 소수도 가능하며 현지 표시가격으로 대체하지 않는다. 값이 없으면 승자를 정하지 않는다.",
+        "LevelUp 상품은 서버 levels/duration이 있어야 레벨 이벤트로 생성한다. 첫 결제 이력 가정은 소스에 없는 조건을 스타터/EnergyGemOffer에 덧붙이는 데 쓰지 않는다."
+      ],
+      "unknowns": [
+        "실제 비동기 응답·후속 그룹 적격성",
+        "현행 고정 통화가격과 현지 세금/가격",
+        "레벨업 상품의 실제 자동 노출·클릭 구분",
+        "다른 지역 경로의 완전한 웹 구현"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/EnergyWindowPopupHelper.lua",
+          "line_start": 25,
+          "line_end": 93,
+          "sha256": "2417400ae4f77332e68bba0df5a94dfe56c49ae56385ea22a7a6cd9b974ebe2f",
+          "bytes": 5564,
+          "source_lines": 146,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/UIHelper.lua",
+          "line_start": 65,
+          "line_end": 136,
+          "sha256": "9ff93d99d1e6ce0d0c569adc9c080a75d266bf21c5046f275204814ed1382637",
+          "bytes": 12285,
+          "source_lines": 323,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+          "line_start": 736,
+          "line_end": 751,
+          "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+          "bytes": 29068,
+          "source_lines": 810,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/InAppPurchase/InAppPurchaseModel.lua",
+          "line_start": 245,
+          "line_end": 252,
+          "sha256": "fccdbcb3b7db78616c217707e30a372d54d73dc778c84cb445e1710f13f1f91e",
+          "bytes": 44841,
+          "source_lines": 1077,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/InAppPurchase/InAppPurchaseModel.lua",
+          "line_start": 462,
+          "line_end": 468,
+          "sha256": "fccdbcb3b7db78616c217707e30a372d54d73dc778c84cb445e1710f13f1f91e",
+          "bytes": 44841,
+          "source_lines": 1077,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleLevelUpGiftModel.lua",
+          "line_start": 17,
+          "line_end": 136,
+          "sha256": "7c04b1d0cdc5da7820d5b34f02c204cd7b4da9cd4f2ba2f57aaaa9fa6d494db5",
+          "bytes": 8485,
+          "source_lines": 228,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleLocalModel.lua",
+          "line_start": 40,
+          "line_end": 62,
+          "sha256": "4280ed3276d773ce40763b163cdc92fdb7dbc9e296938b29b7ea89f5f024197d",
+          "bytes": 8457,
+          "source_lines": 230,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ]
+    },
+    {
+      "id": "SIM-SH007",
+      "kind": "code",
+      "domain": "bm",
+      "domains": [
+        "events",
+        "economy",
+        "ui"
+      ],
+      "category": "설정 기반 상점·오퍼·이벤트",
+      "title": "이벤트·패스·앨범은 진행도·자원·수령권을 따로 검사한다",
+      "summary": "활동은 설정·레벨·sTime/eTime/rTime과 자원 준비로 상태를 정한다. 패스는 단계별require를 차감하고 달성도와 무료/유료 수령권·수령 이력을 분리한다.",
+      "details": [
+        "설정이 없거나 레벨이 낮으면Released, 시간이 시작 전이면Preparing, 운영 중Started, 종료 후 회수 전Ended다. 자원 미준비 상태의 기본GetState는Released다.",
+        "패스 customer 목표는 OrderFinished1건이다. gold는 Gold/BakeOutToken 획득이며 ItemSell은 제외한다. energy는 잔액 감소가 아닌PropertyConsumed.ext.origin이므로 무한 에너지의 실제 차감0과 다를 수 있다.",
+        "무료/유료 보상의 수령표시는 단계별·트랙별로 저장한다. 유료 트랙에는 티켓 권리가 추가로 필요하며 예제 소유 토글은 실제IAP 구매가 아니다.",
+        "카드팩은 앨범 서버 설정·활성 상태와 연결되며 첫 보유와 중복을 구분한다. 웹은 실제 드롭 확률·앨범 완성 보상을 만들지 않는다.",
+        "웹의10분 일정·3단계 패스·연구 카드3종·주문2회당 토큰1은 명시적 예제다. 원작 일정/보상표로 제시하지 않는다."
+      ],
+      "unknowns": [
+        "실제 활동 일정·서버 과제표·카드/팩 목록",
+        "티켓 상태와 서버 수령 이력",
+        "드롭 확률·실제 완성 보상"
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "line_start": 46,
+          "line_end": 78,
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "bytes": 6785,
+          "source_lines": 243,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "line_start": 125,
+          "line_end": 158,
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "bytes": 6785,
+          "source_lines": 243,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/PassActivity/Model/PassActivityModel.lua",
+          "line_start": 241,
+          "line_end": 264,
+          "sha256": "3587274cf8ab4269a87f9de5b560126154c21afb5ecaeb500aa877b980b37a9f",
+          "bytes": 37325,
+          "source_lines": 927,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/PassActivity/Model/PassActivityModel.lua",
+          "line_start": 675,
+          "line_end": 694,
+          "sha256": "3587274cf8ab4269a87f9de5b560126154c21afb5ecaeb500aa877b980b37a9f",
+          "bytes": 37325,
+          "source_lines": 927,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/PassActivity/Model/PassActivityModel.lua",
+          "line_start": 755,
+          "line_end": 797,
+          "sha256": "3587274cf8ab4269a87f9de5b560126154c21afb5ecaeb500aa877b980b37a9f",
+          "bytes": 37325,
+          "source_lines": 927,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/UserData/PropertyDataManager.lua",
+          "line_start": 122,
+          "line_end": 134,
+          "sha256": "a00caeb18e6ec8c2c23f7fd0a6ad61b34035a41ca35cb7295dff6f3b2e9ada2d",
+          "bytes": 20627,
+          "source_lines": 532,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/UserData/PropertyDataManager.lua",
+          "line_start": 224,
+          "line_end": 233,
+          "sha256": "a00caeb18e6ec8c2c23f7fd0a6ad61b34035a41ca35cb7295dff6f3b2e9ada2d",
+          "bytes": 20627,
+          "source_lines": 532,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/AlbumActivity/Model/AlbumActivityModel.lua",
+          "line_start": 39,
+          "line_end": 68,
+          "sha256": "b103213429d85a45936769769811ff0ee3b3ef22f99815a5c3332dfb2b9d9d74",
+          "bytes": 111010,
+          "source_lines": 3114,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/UserData/PropertyDataDefinition.lua",
+          "line_start": 1,
+          "line_end": 70,
+          "sha256": "f69a37003d66e3eba29a022743ad0bcefd2e781a97eb63fcd7ce0d3f33b84a72",
+          "bytes": 15185,
+          "source_lines": 297,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ]
+    },
+    {
+      "id": "SIM-SH008",
+      "kind": "config",
+      "domain": "bm",
+      "domains": [
+        "economy",
+        "ui",
+        "events"
+      ],
+      "category": "설정 기반 상점·오퍼·이벤트",
+      "title": "내장 표·공식fallback·웹 연구 입력·현재 서버값을 섞지 않는다",
+      "summary": "현재 구현은 복원한 상점/노출 알고리즘을 공용wallet과 연결한 웹 실험이다. 상점 모달의 세부 배치와 선택 예제는 원작 실행 결과나 현재 판매 카탈로그가 아니다.",
+      "details": [
+        "내장 상품 선언은 IAP 젬6종과 GLOBAL_APP/else 스타터 분기를 확인했다. 지급량·purchaseId가 있다는 이유로 현재 판매가격이나 동시 활성 상품을 확정하지 않는다.",
+        "ChainGift/WeeklyGift/LevelUp/EnergyGift/활동 일정의 서버 입력이 없으면 임의 SKU·가격·할인율·확률을 만들지 않는다.",
+        "상점 연구 재화 구매는 보상hook이 성공한 경우에만 비용·수량을 확정한다. 실제 SDK 결제와 광고는 비활성이며 설명/선언 조회만 가능하다.",
+        "매크로 수준의 탭·동선·카드/접기 표현은 원문 조건을 설명하는 웹 UI다. 원작 UI 프리팹의 최종 표시·연출을 같은 것으로 간주하지 않는다.",
+        "출처별 파일 길이·전체 파일SHA-256·행 범위를 보존하며 복원 Lua 전체와 원본 번들은 공개하지 않는다."
+      ],
+      "unknowns": [
+        "현재 계정의 서버 동기화와AB/코호트",
+        "실제 결제/광고 완료·수령 보장",
+        "원작 최종 활성 레이아웃·입력/연출 시간의 동일성"
+      ],
+      "sources": [
+        {
+          "path": "analysis/config-tables/ShopIAPConfig.json",
+          "line_start": null,
+          "line_end": null,
+          "sha256": "d11c5d48a360bf603981ce073b717529beeb410a4373df34999588d725f4b741",
+          "bytes": 3626,
+          "source_lines": 214,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleLocalModel.lua",
+          "line_start": 40,
+          "line_end": 62,
+          "sha256": "4280ed3276d773ce40763b163cdc92fdb7dbc9e296938b29b7ea89f5f024197d",
+          "bytes": 8457,
+          "source_lines": 230,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleChainModel.lua",
+          "line_start": 20,
+          "line_end": 39,
+          "sha256": "ce71b00d5e4d57db72f54d31ea195d4d9352dadcdeeb333baa58669ba37e2252",
+          "bytes": 22575,
+          "source_lines": 552,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleWeeklyModel.lua",
+          "line_start": 12,
+          "line_end": 48,
+          "sha256": "7f9f1a05d55ebc8e7a90d0a2e44dc621a1505ecfecec3053cd6a60c7d85d9a65",
+          "bytes": 8767,
+          "source_lines": 223,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "line_start": 148,
+          "line_end": 179,
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "bytes": 27164,
+          "source_lines": 916,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Shop/ShopWindow.lua",
+          "line_start": 8,
+          "line_end": 52,
+          "sha256": "1e6111e36bf90561f02e43bb53c40fe29c9b84210b80c224f6a9e16036850ddf",
+          "bytes": 9191,
+          "source_lines": 274,
+          "evidence_id": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ]
     }
   ],
   "work": [
@@ -2982,21 +4128,21 @@
     },
     {
       "step": "APK 이미지·UI 자산",
-      "state": "partial",
-      "done": "고유 APK Sprite117PNG, 기본 타입88개와 게임 UI25개 연결, UI프리팹11종·정적클립26개",
-      "remaining": "전체552기본타입 이미지·활성 고객/장면·원격자산·실제 애니메이션 타이밍"
+      "state": "complete",
+      "done": "기본552타입 중544타입·3201 이미지6변형·미확보8사유와 UI 선정자산 연결",
+      "remaining": "원격 미포함 자산과 원작 화면의 최종 배치/시간 검증"
     },
     {
       "step": "플레이 영상·스크린샷",
       "state": "partial",
-      "done": "사용자 보류 해제. 공유 카탈로그 고유453개(이미지340·영상113) 참조, BM9개 관측과 선별 미디어 연결",
-      "remaining": "모든 영상 연속 재생·오디오 검토, 전체 프레임 단위 타이밍·버전 일치 검증은 남음"
+      "done": "버전 미확인 BM9유형·42관측점·공개41미디어와 동작별 영상 그리드",
+      "remaining": "전체 영상 연속 감사·실제 가위/모래시계 사용 등 미확보 동작 표본"
     },
     {
       "step": "실기 실행·광고·결제",
       "state": "held",
-      "done": "LDPlayer-2의4.10.5/311 설치 확인, 시작 화면 뒤 검은 화면 관측. 사용자 요청으로 LDPlayer 검증 중단",
-      "remaining": "호환 기기에서 튜토리얼·게임플레이·BM 노출 검증. 실제 광고·결제 미수행"
+      "done": "사용자 요청으로 LDPlayer 분석 중단. 실제 광고·결제는 실행하지 않음",
+      "remaining": "실기 검증 재개는 현재 범위에 포함하지 않음"
     },
     {
       "step": "원작 경제·매출 효과",

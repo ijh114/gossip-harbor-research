@@ -20,7 +20,7 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
  Object.assign(globalThis,{window:w,document:w.document,location:w.location,history:w.history,matchMedia:w.matchMedia,
   fetch:async relative=>({ok:true,json:async()=>JSON.parse(await readFile(new URL('../src/'+relative.replace(/^\.\//,''),import.meta.url),'utf8'))})});
  const tick=()=>new Promise(resolve=>setTimeout(resolve,15));
- const until=async predicate=>{for(let i=0;i<50;i++){if(predicate())return;await tick();}throw new Error('Application state did not settle');};
+ const until=async predicate=>{const deadline=Date.now()+5000;while(Date.now()<deadline){if(predicate())return;await tick();}throw new Error('Application state did not settle: '+errors.join(' / '));};
  const click=selector=>{const node=w.document.querySelector(selector);assert.ok(node,selector);node.click();};
  const go=async id=>{click(`[data-route="${id}"]`);await until(()=>w.document.querySelector('#page-label')?.textContent===(STUDIO_PAGES[id]||DOMAIN_DEFS.find(d=>d.id===id)?.title||({catalog:'상품 카탈로그',simulator:'시뮬레이션'})[id]));};
  try{
@@ -80,8 +80,8 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   await go('interface');assert.equal(w.document.querySelectorAll('.ui-registry-card').length,24);
   await go('interface-structure');click('[data-ui-region="overlay"]');assert.match(w.document.querySelector('#region-inspector').textContent,/정렬 간격 10/);
   await go('interface-motion');assert.equal(w.document.querySelectorAll('.motion-card').length,6);
-  await go('captures');assert.equal(w.document.querySelectorAll('.capture-card').length,20);
-  click('[data-capture-kind="video"]');assert.equal(w.document.querySelectorAll('.capture-card').length,3);
+  await go('captures');assert.equal(w.document.querySelectorAll('.capture-card').length,41);
+  click('[data-capture-kind="video"]');assert.equal(w.document.querySelectorAll('.capture-card').length,11);
   click('[data-capture-category="BM"]');assert.equal(w.document.querySelectorAll('.capture-card').length,1);
   click('.capture-card [data-media-key="capture:energy-chain"]');
   assert.ok(w.document.querySelector('#media-content video'));assert.equal(w.document.querySelector('#media-content video').autoplay,false);
@@ -99,14 +99,31 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   click('[data-play="aid-energy"]');click('[data-play="generate"]');assert.ok(w.document.querySelector('#play-dialog[open]'));
   click('[data-play="buy-energy"]');assert.equal(w.document.querySelector('#play-dialog'),null);
   click('[data-play="aid-energy"]');click('[data-play="generate"]');w.document.querySelector('#play-dialog').dispatchEvent(new w.Event('cancel',{cancelable:true}));
-  assert.match(w.document.querySelector('#play-dialog').textContent,/에너지 번들/);click('[data-play="close-offer"]');
+  assert.equal(w.document.querySelector('#play-dialog'),null,'no server gift configuration means no invented follow-up offer');
   click('[data-play="aid-coins"]');click('[data-play="home"]');
   for(let i=0;i<6;i++){click('[data-play="quest-start"]');click('[data-play="quest-finish"]');}
-  assert.match(w.document.querySelector('.source-map-progress').textContent,/6 \/ 15/);
-  click('[data-play="main"]');click('[data-play="shop"]');click('[data-play="chain-start"]');
+  assert.match(w.document.querySelector('.source-map-progress').textContent,/6 \/ 4277/);
+  click('[data-play="main"]');click('[data-play="shop"]');assert.ok(w.document.querySelector('.commerce-lab'));
+  click('[data-play="commerce-assume"][data-value="energy"]');click('[data-play="close-shop"]');
+  click('[data-play="cell"][data-value="0"]');click('[data-play="generate"]');click('[data-play="close-energy"]');
+  assert.match(w.document.querySelector('#play-dialog').textContent,/EnergyBundle/);click('[data-play="close-offer"]');
+  click('[data-play="shop"]');click('[data-play="chain-start"]');
   for(let i=0;i<6;i++)click('[data-play="chain-claim"]');assert.equal(w.document.querySelector('[data-play="chain-claim"]').disabled,true);
   click('[data-play="close-shop"]');click('[data-play="save"]');
   assert.equal(JSON.parse(w.localStorage.getItem('harbor-research-play-v1')).state.questsDone,6);
+  // Exercise the real file-change handler through the DOM File-like interface;
+  // browser extension file-URL permissions do not affect this app contract.
+  const savedImport=w.localStorage.getItem('harbor-research-play-v1');
+  let importInput=w.document.querySelector('#play-import');
+  Object.defineProperty(importInput,'files',{configurable:true,value:[{size:savedImport.length,text:async()=>savedImport}]});
+  importInput.dispatchEvent(new w.Event('change',{bubbles:true}));
+  await until(()=>w.localStorage.getItem('harbor-research-play-v1-previous')===savedImport);
+  assert.equal(JSON.parse(w.localStorage.getItem('harbor-research-play-v1')).state.questsDone,6);
+  const intact=w.localStorage.getItem('harbor-research-play-v1');
+  importInput=w.document.querySelector('#play-import');
+  Object.defineProperty(importInput,'files',{configurable:true,value:[{size:8,text:async()=>'{invalid'}]});
+  importInput.dispatchEvent(new w.Event('change',{bubbles:true}));await tick();
+  assert.equal(w.localStorage.getItem('harbor-research-play-v1'),intact,'invalid import must preserve the saved experiment');
   click('[data-play-mode="prototype"]');for(let i=0;i<3;i++)click('[data-walk="load"]');assert.ok(w.document.querySelector('[data-stage="title"]'));
   click('[data-walk="start"]');click('[data-walk="tutorial-generate"]');click('[data-walk="tutorial-cell"][data-value="0"]');click('[data-walk="tutorial-cell"][data-value="1"]');click('[data-walk="finish-tutorial"]');
   click('[data-walk="play"]');assert.equal(w.document.querySelectorAll('.play-cell').length,63);click('[data-walk="generate"]');

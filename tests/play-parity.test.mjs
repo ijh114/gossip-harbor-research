@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createPlay,playAction,generateFrom,moveOrMerge,advancePlay,validPlay,itemFor} from '../src/play-model.mjs';
+import {createSpreadState,spreadFor} from '../src/spread-model.mjs';
 
 const packaged=JSON.parse(await readFile(new URL('../src/data/play-config.json',import.meta.url),'utf8'));
 // Small verified-rule fixture keeps engine regressions independent of UI data publication.
@@ -24,7 +25,7 @@ function blank(c=rules()){
 }
 function place(s,c,index,type,{cover=null,uses}={}){
  const cell={uid:s.nextUid++,type,cover};if(uses!==undefined)cell.uses=uses;s.board[index]=cell;
- const g=itemFor(c,type)?.generator;if(g)s.generatorState[cell.uid]={charges:g.batch,storage:g.storage,timerStart:null,readyAt:0};
+ const g=itemFor(c,type)?.generator;if(g)s.generatorState[cell.uid]=spreadFor(c,type)?createSpreadState(type,c,s.wallet.time):{charges:g.batch,storage:g.storage,timerStart:null,readyAt:0};
  return cell;
 }
 const resources=s=>structuredClone({board:s.board,wallet:s.wallet,generatorState:s.generatorState,pools:s.pools,rng:s.rng,nextUid:s.nextUid,queue:s.queue,bubbles:s.bubbles});
@@ -55,7 +56,7 @@ test('generated pieces and the level8 coin use the recovered spread ring order, 
 });
 
 test('hourglasses advance only active generator timers and retain a valid partly skipped timer',()=>{
- const c=rules(),g=itemFor(c,'106').generator;g.cooldownSeconds=1200;
+ const c=rules(),g=itemFor(c,'106').generator;g.cooldownSeconds=1200;c.spreadRules.byType['106'].cooldownSeconds=1200;
  const s=blank(c),active=place(s,c,31,'106'),idle=place(s,c,0,'106');
  generateFrom(s,31,c);const idleBefore=structuredClone(s.generatorState[idle.uid]);place(s,c,40,'time_skip_1');
  assert.equal(playAction(s,'collect','40',c).ok,true);assert.equal(s.wallet.time,0);assert.equal(s.board[40],null);
@@ -104,7 +105,7 @@ test('ineligible special-item drops may exchange positions but never consume a t
 
 test('research aid places only declared special types in the queue and preserves opaque packs',()=>{
  const c=rules(),s=blank(c);s.queue.push({type:'not-a-supported-pack',count:1});
- assert.equal(playAction(s,'aid-special','2401',c).ok,true);assert.deepEqual(s.queue,[{type:'not-a-supported-pack',count:1},{type:'2401',count:1}]);
+ assert.equal(playAction(s,'aid-special','2401',c).ok,true);assert.deepEqual(s.queue,[{type:'2401',count:1,cacheType:2,origin:'research-aid'},{type:'not-a-supported-pack',count:1}]);
  const before=resources(s);assert.equal(playAction(s,'aid-special','not-a-supported-pack',c).ok,false);assert.deepEqual(resources(s),before);
  assert.equal(playAction(s,'queue',null,c).ok,true);assert.ok(s.board.some(x=>x?.type==='2401'));assert.deepEqual(s.queue,[{type:'not-a-supported-pack',count:1}]);
 });

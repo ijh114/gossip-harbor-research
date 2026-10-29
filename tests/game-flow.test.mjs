@@ -23,7 +23,7 @@ test('fifteen packaged quests commit477 base gold and225XP once, reaching level5
  assert.equal(playAction(s,'quest-start',null,config).ok,false);assert.equal(validPlay(s,config),true);
 });
 test('game presentation keeps research claims outside63 actionable square cells and displays source-localized item information',()=>{
- const s=createPlay(config,{scenario:'initial'});s.stage='play';s.tutorialStep=0;s.selected=22;
+ const s=createPlay(config,{scenario:'initial',guide:true});playAction(s,'start',undefined,config);s.selected=22;
  const dom=new JSDOM(renderGamePlay(s,config,{media:{entries:[]}}));
  const doc=dom.window.document;assert.equal(doc.querySelectorAll('.game-cell').length,63);assert.equal(doc.querySelectorAll('.guide-from').length,1);assert.equal(doc.querySelectorAll('.guide-to').length,1);
  assert.ok(doc.querySelector('.game-selection').textContent.includes(config.items.find(r=>r.type==='101').displayName));

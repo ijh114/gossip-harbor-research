@@ -30,8 +30,13 @@ for(const entry of media.entries){if(!validMedia(entry))throw new Error('Invalid
 console.log(`Verified ${visual.items.length} item declarations, ${visual.ui.length} UI mappings, ${media.entries.filter(x=>x.origin==='packaged-sprite').length} packaged-image references, ${media.entries.filter(x=>x.origin==='observed-user-capture').length} historical capture derivatives.`);
 console.log(`Verified ${DOMAIN_DEFS.length} research chapters, ${data.facts.length} sourced findings, ${data.products.length} product defaults, relative asset paths and publish boundary.`);
 const play=JSON.parse(await readFile('dist/data/play-config.json','utf8'));
-if(play.targetVersion!==data.meta.version||play.items.length!==552||play.orders.length!==16||play.quests.length!==15||play.initialBoard.length!==63)throw new Error('Invalid bounded play configuration');
+if(play.targetVersion!==data.meta.version||play.items.length!==552||play.orders.length!==16||play.quests.length!==4277||play.levels.length!==300||play.initialBoard.length!==63)throw new Error('Invalid play configuration');
+if(Object.keys(play.spreadRules.byType).length!==163||play.bubbleRules.items.filter(r=>r.chancePercent>0).length!==138||play.imageCoverage.available!==544)throw new Error('Incomplete play rule/image expansion');
+if(!play.commerceRules.flash||!play.productionRules.luckyConfigs?.length||play.onboardingRules.nodes.length<18)throw new Error('Missing connected shop/modifier/onboarding rules');
 const types=new Set(play.items.map(x=>x.type));
 for(const item of play.items){if(item.next&&!types.has(item.next)&&!/^rb#/.test(item.next))throw new Error('Unrecognized merge result '+item.next);if(item.generator)for(const drop of item.generator.pool)if(!types.has(drop.type)||!Number.isInteger(drop.weight)||drop.weight<1)throw new Error('Invalid fixed pool');}
 for(const s of play.sources)if(!s.path?.startsWith('analysis/')||!/^[a-f0-9]{64}$/.test(s.sha256))throw new Error('Missing simulation provenance');
-console.log(`Verified552 base types,16 fixed orders,15 default quests and configuration source hashes.`);
+console.log(`Verified552 base types,16 fixed orders,4277 default quests and300 level rows and configuration source hashes.`);
+const progress=JSON.parse(await readFile('dist/data/play-progress.json','utf8'));
+if(progress.natural.configRevision!==play.revision||progress.fixed16.configRevision!==play.revision||progress.tutorials.rows.length!==115)throw new Error('Stale or incomplete published play validation');
+if(progress.natural.assistance.aidActions!==0||progress.natural.assistance.paidEnergyPurchases!==0||progress.fixed16.final.fixedDone!==16)throw new Error('Natural growth or fixed-order replay is incomplete');

@@ -3,6 +3,7 @@ import {validMedia,mediaFor} from './visual-model.mjs';
 import {createWalkthrough,walkthroughAction} from './walkthrough.mjs';
 import {renderCaptures} from './capture-pages.mjs';
 import {createPlayController} from './play-controller.mjs';
+import {renderBMTimeline} from './bm-timeline.mjs';
 
 export function createStudio({getData,getRoute,render,toast,download}){
  let walkthrough=createWalkthrough(),running=new Map();
@@ -12,8 +13,9 @@ export function createStudio({getData,getRoute,render,toast,download}){
  const itemFilters={query:'',table:'ItemModelConfig',role:'all',page:1};
  const uiFilters={query:'',category:'all',page:1};
  const captureFilters={category:'all',kind:'all'};
+ const timelineFilters={entryId:null,milestoneId:null,baselineId:null};
  const mediaDialog=document.querySelector('#media-dialog'),mediaContent=document.querySelector('#media-content');
- const pages={research:()=>renderResearch(getData()),captures:()=>renderCaptures(getData(),captureFilters),puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
+ const pages={'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:()=>renderCaptures(getData(),captureFilters),puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
  const renderItem=()=>{document.querySelector('#item-catalog').innerHTML=renderItemCatalog(getData(),itemFilters);};
  const renderUI=()=>{document.querySelector('#ui-registry').innerHTML=renderUIRegistry(getData(),uiFilters);};
  function preserveInput(id,update){const node=document.getElementById(id),start=node.selectionStart,end=node.selectionEnd;update();const next=document.getElementById(id);next.focus({preventScroll:true});if(next.type==='search')next.setSelectionRange(start,end);}
@@ -38,6 +40,7 @@ export function createStudio({getData,getRoute,render,toast,download}){
  }
  document.addEventListener('click',event=>{
   const target=event.target.closest('button,a');if(!target)return;
+  if(target.dataset.timelineEntry||target.dataset.timelinePoint){if(target.dataset.timelineEntry){timelineFilters.entryId=target.dataset.timelineEntry;timelineFilters.milestoneId=null;}else timelineFilters.milestoneId=target.dataset.timelinePoint;render();document.querySelector(`[data-timeline-${target.dataset.timelineEntry?'entry':'point'}="${target.dataset.timelineEntry||target.dataset.timelinePoint}"]`)?.focus({preventScroll:true});return;}
   if(target.dataset.playMode){playMode=target.dataset.playMode;render();document.querySelector(`[data-play-mode="${playMode}"]`)?.focus({preventScroll:true});return;}
   if(target.hasAttribute('data-play')){sourcePlay.handle(target.dataset.play,target.dataset.value);return;}
   if(target.hasAttribute('data-capture-category')||target.hasAttribute('data-capture-kind')){const key=target.hasAttribute('data-capture-category')?'category':'kind',value=key==='category'?target.dataset.captureCategory:target.dataset.captureKind;captureFilters[key]=value;render();document.querySelector(`[data-capture-${key}="${value}"]`)?.focus({preventScroll:true});return;}
@@ -60,6 +63,7 @@ export function createStudio({getData,getRoute,render,toast,download}){
   if(t.hasAttribute('data-visual-depth'))document.querySelector('#difficulty-output').innerHTML=difficultyOutput(Number(t.value));
  });
  document.addEventListener('change',event=>{const t=event.target;
+  if(t.hasAttribute('data-timeline-baseline')){timelineFilters.baselineId=t.value;render();document.querySelector('[data-timeline-baseline]')?.focus({preventScroll:true});return;}
   if(t.id==='item-table'){itemFilters.table=t.value;itemFilters.page=1;renderItem();document.querySelector('#item-table').focus({preventScroll:true});}
   if(t.id==='item-role'){itemFilters.role=t.value;itemFilters.page=1;renderItem();document.querySelector('#item-role').focus({preventScroll:true});}
   if(t.id==='ui-category'){uiFilters.category=t.value;uiFilters.page=1;renderUI();document.querySelector('#ui-category').focus({preventScroll:true});}

@@ -1,0 +1,2715 @@
+{
+  "schemaVersion": 1,
+  "targetApkVersion": "4.10.5",
+  "captureVersion": null,
+  "capturedAt": null,
+  "title": "과거 캡처 기반 BM 관측 타임라인",
+  "scope": "동일 파일 전후·서로 다른 표본·정적 코드 비교를 구분한다. 미확인 값은null이다.",
+  "coverage": {
+    "catalogUniqueFiles": 453,
+    "catalogImages": 340,
+    "catalogVideos": 113,
+    "fullVideoAuditComplete": false,
+    "originalVideoMinutesPreviouslyCatalogued": 95.08,
+    "selectedBmTypes": 9,
+    "newTargetedVideoFiles": 5,
+    "newTargetedSampleFrames": 105,
+    "newImages": 13,
+    "newClips": 8,
+    "description": "기존9종 BM 관측과 전후 표본을 재사용하고 선정5개 영상의0.5초 간격105프레임을 추가 확인했다. 전체95.08분의 연속·프레임 전수 분석은 후속 작업이다."
+  },
+  "entries": [
+    {
+      "id": "energy-chain",
+      "title": "에너지 체인: 젬 지불과 무료 보상 순차 해제",
+      "factId": "HIST-BM001",
+      "summary": "같은 영상에서20젬·40젬 구매 구간과 무료 보상 체크가 이어진다. 시작 대비 에너지235 증가·젬60 감소이며80젬 단계는 미구매로 남았다.",
+      "relation": "same-file-sequence",
+      "relationLabel": "동일 파일의 전후 표본",
+      "milestones": [
+        {
+          "id": "chain-before",
+          "label": "관측 시작",
+          "sourceId": "GH-V0030",
+          "atSeconds": 5.5,
+          "mediaKeys": [
+            "capture:chain-before"
+          ],
+          "state": {
+            "level": null,
+            "energy": 2,
+            "gems": 719,
+            "coins": 244
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0030",
+            "originalName": "Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+            "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+            "frameAtSeconds": 5.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:chain-before",
+                "sha256": "dcd80a2c9443b311b90c7b0efd695ce9d0633d6f514258edbb2879cbae233475",
+                "sourceRange": {
+                  "frameAtSeconds": 5.5
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "chain-20",
+          "label": "에너지100·20젬과 잠긴 후속 무료 행",
+          "sourceId": "GH-V0030",
+          "atSeconds": 6.0,
+          "mediaKeys": [
+            "capture:energy-chain"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "현재 구매 행과 후속 잠금 표시",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 20,
+            "currency": "gem",
+            "quantity": 100
+          },
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0030",
+            "originalName": "Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+            "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+            "frameAtSeconds": 6.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:energy-chain",
+                "sha256": "504e02eefb8d082ac65e9d79b18464bb9b4f334fda8e01f140cac16c4beb594f",
+                "sourceRange": {
+                  "startSeconds": 5.8,
+                  "endSeconds": 17.8,
+                  "durationSeconds": 12
+                },
+                "posterSha256": "c4d6a37469464d7795f3751f86f80765e6c411a18a9889c3ef207f715d6abf09"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "chain-green",
+          "label": "초록 카드팩 체크",
+          "sourceId": "GH-V0030",
+          "atSeconds": 8.5,
+          "mediaKeys": [
+            "capture:energy-chain"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "무료 카드팩 수령 완료 표시",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0030",
+            "originalName": "Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+            "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+            "frameAtSeconds": 8.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:energy-chain",
+                "sha256": "504e02eefb8d082ac65e9d79b18464bb9b4f334fda8e01f140cac16c4beb594f",
+                "sourceRange": {
+                  "startSeconds": 5.8,
+                  "endSeconds": 17.8,
+                  "durationSeconds": 12
+                },
+                "posterSha256": "c4d6a37469464d7795f3751f86f80765e6c411a18a9889c3ef207f715d6abf09"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "chain-free15",
+          "label": "에너지15 무료 행의 잠금 해제",
+          "sourceId": "GH-V0030",
+          "atSeconds": 9.5,
+          "mediaKeys": [
+            "capture:energy-chain"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 0,
+            "currency": "gem",
+            "quantity": 15
+          },
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0030",
+            "originalName": "Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+            "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+            "frameAtSeconds": 9.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:energy-chain",
+                "sha256": "504e02eefb8d082ac65e9d79b18464bb9b4f334fda8e01f140cac16c4beb594f",
+                "sourceRange": {
+                  "startSeconds": 5.8,
+                  "endSeconds": 17.8,
+                  "durationSeconds": 12
+                },
+                "posterSha256": "c4d6a37469464d7795f3751f86f80765e6c411a18a9889c3ef207f715d6abf09"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "chain-40",
+          "label": "다음 에너지100·40젬",
+          "sourceId": "GH-V0030",
+          "atSeconds": 11.5,
+          "mediaKeys": [
+            "capture:energy-chain"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 40,
+            "currency": "gem",
+            "quantity": 100
+          },
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0030",
+            "originalName": "Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+            "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+            "frameAtSeconds": 11.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:energy-chain",
+                "sha256": "504e02eefb8d082ac65e9d79b18464bb9b4f334fda8e01f140cac16c4beb594f",
+                "sourceRange": {
+                  "startSeconds": 5.8,
+                  "endSeconds": 17.8,
+                  "durationSeconds": 12
+                },
+                "posterSha256": "c4d6a37469464d7795f3751f86f80765e6c411a18a9889c3ef207f715d6abf09"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "chain-blue",
+          "label": "파란 카드팩 체크와 재화",
+          "sourceId": "GH-V0030",
+          "atSeconds": 14.0,
+          "mediaKeys": [
+            "capture:energy-chain"
+          ],
+          "state": {
+            "level": null,
+            "energy": 217,
+            "gems": 659,
+            "coins": 244
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0030",
+            "originalName": "Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+            "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+            "frameAtSeconds": 14.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:energy-chain",
+                "sha256": "504e02eefb8d082ac65e9d79b18464bb9b4f334fda8e01f140cac16c4beb594f",
+                "sourceRange": {
+                  "startSeconds": 5.8,
+                  "endSeconds": 17.8,
+                  "durationSeconds": 12
+                },
+                "posterSha256": "c4d6a37469464d7795f3751f86f80765e6c411a18a9889c3ef207f715d6abf09"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "chain-free20",
+          "label": "무료 에너지20 체크",
+          "sourceId": "GH-V0030",
+          "atSeconds": 15.5,
+          "mediaKeys": [
+            "capture:energy-chain"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 0,
+            "currency": "gem",
+            "quantity": 20
+          },
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0030",
+            "originalName": "Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+            "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+            "frameAtSeconds": 15.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:energy-chain",
+                "sha256": "504e02eefb8d082ac65e9d79b18464bb9b4f334fda8e01f140cac16c4beb594f",
+                "sourceRange": {
+                  "startSeconds": 5.8,
+                  "endSeconds": 17.8,
+                  "durationSeconds": 12
+                },
+                "posterSha256": "c4d6a37469464d7795f3751f86f80765e6c411a18a9889c3ef207f715d6abf09"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "chain-80",
+          "label": "80젬 단계 미구매",
+          "sourceId": "GH-V0030",
+          "atSeconds": 17.0,
+          "mediaKeys": [
+            "capture:energy-chain"
+          ],
+          "state": {
+            "level": null,
+            "energy": 237,
+            "gems": 659,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 80,
+            "currency": "gem",
+            "quantity": 100
+          },
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0030",
+            "originalName": "Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+            "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+            "frameAtSeconds": 17.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:energy-chain",
+                "sha256": "504e02eefb8d082ac65e9d79b18464bb9b4f334fda8e01f140cac16c4beb594f",
+                "sourceRange": {
+                  "startSeconds": 5.8,
+                  "endSeconds": 17.8,
+                  "durationSeconds": 12
+                },
+                "posterSha256": "c4d6a37469464d7795f3751f86f80765e6c411a18a9889c3ef207f715d6abf09"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "chain-after",
+          "label": "보드 복귀와 최종 재화",
+          "sourceId": "GH-V0030",
+          "atSeconds": 19.0,
+          "mediaKeys": [
+            "capture:chain-after"
+          ],
+          "state": {
+            "level": null,
+            "energy": 237,
+            "gems": 659,
+            "coins": 244
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0030",
+            "originalName": "Screen_Recording_20260306_104713_Gossip Harbor.mp4",
+            "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+            "frameAtSeconds": 19.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:chain-after",
+                "sha256": "c29dff3f140edc1e29d4f2b0192904a9f1f994f191650c006829a86adfd0310a",
+                "sourceRange": {
+                  "frameAtSeconds": 19.0
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        }
+      ],
+      "transitions": [
+        {
+          "from": "chain-before",
+          "to": "chain-after",
+          "claim": "에너지+235·젬-60·골드변화0. 표시된100+15+100+20 및20+40 합계와 일치한다.",
+          "certainty": "observed-state-delta"
+        }
+      ],
+      "codeComparison": {
+        "status": "source-linked",
+        "condition": "ChainEnergy는 설정·필수 자원·운영요일·종료시각을 검사한다. 구매는 현재 step 일치와젬 소비 성공 후 보상을 지급하고 다음 step을 저장한다.",
+        "matched": [
+          "구매/무료 행의 단계적 진행과 체크를 별도 상태로 표현할 근거다."
+        ],
+        "unverified": [
+          "캡처의 상품과 코드 ChainEnergy가 같은 설정인지",
+          "20→40→80 이후 가격·반복",
+          "카드팩 내용"
+        ],
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+            "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+            "line_start": 616,
+            "line_end": 651,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+            "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+            "line_start": 699,
+            "line_end": 727,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          }
+        ],
+        "versionBoundary": "캡처 버전은 미확인이다. APK4.10.5 코드와 화면의 구조 비교이며 같은 런타임 객체·서버 설정임을 확정하지 않는다."
+      },
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "notes": [
+        "구매·수령 입력은 전후 상태로 해석한 것이며 입력 로그는 없다. 무한은 창 제목이다."
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-challenge",
+      "title": "에너지 도전: 목표 달성과 유료 수령권 분리",
+      "factId": "HIST-BM002",
+      "summary": "미구매 화면에는 달성한 초록 행에도 잠금과16000원이 남는다. 별도 영상의 결제 흐름 이후에는 수령 도장·에너지 이동과후반1251에너지가 보인다.",
+      "relation": "mixed",
+      "relationLabel": "동일 파일 전후와 별도 표본 비교",
+      "milestones": [
+        {
+          "id": "challenge-locked",
+          "label": "달성 목표에도 남은 잠금",
+          "sourceId": "GH-V0091",
+          "atSeconds": 1.5,
+          "mediaKeys": [
+            "capture:energy-challenge"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 16000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0091",
+            "originalName": "Screen_Recording_20260412_164902_Gossip Harbor(1).mp4",
+            "originalSha256": "c63e0afceaf5ab5252b6b422ae9bc91934aa20d71e232094d0413020d08e21b0",
+            "frameAtSeconds": 1.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:energy-challenge",
+                "sha256": "3105cb0b9b48ddece9b71ae92169c78231ec42148fd7f80f12315743e4956f9b",
+                "sourceRange": {
+                  "frameAtSeconds": 1.5
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [
+            "900/900 달성 행과 초록 수령 행에도 잠금이 있다."
+          ],
+          "version": null,
+          "capturedAt": null,
+          "progress": {
+            "current": 932,
+            "target": 1200
+          },
+          "maxAdvertisedEnergy": 2500
+        },
+        {
+          "id": "challenge-before",
+          "label": "별도 파일의 구매 흐름 전",
+          "sourceId": "GH-V0097",
+          "atSeconds": 0.0,
+          "mediaKeys": [],
+          "state": {
+            "level": 110,
+            "energy": 1,
+            "gems": 2,
+            "coins": 443
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0097",
+            "originalName": "Screen_Recording_20260415_192248_Gossip Harbor(1).mp4",
+            "originalSha256": "2f2142b05ec16736d1f8fe18e8a0fbbd261c51ed0ed3eb4f5499016afb7e0aba",
+            "frameAtSeconds": 0.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "challenge-claim",
+          "label": "수령 완료 도장과 HUD 이동",
+          "sourceId": "GH-V0097",
+          "atSeconds": 24.37,
+          "mediaKeys": [
+            "capture:challenge-collect"
+          ],
+          "state": {
+            "level": 110,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "이벤트 보상 수령 연출",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0097",
+            "originalName": "Screen_Recording_20260415_192248_Gossip Harbor(1).mp4",
+            "originalSha256": "2f2142b05ec16736d1f8fe18e8a0fbbd261c51ed0ed3eb4f5499016afb7e0aba",
+            "frameAtSeconds": 24.37,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:challenge-collect",
+                "sha256": "a2c1f04fbec77a270201abb751ea65c0b4f56dffc0f1c98764c0108fb544c1bb",
+                "sourceRange": {
+                  "startSeconds": 23.2,
+                  "endSeconds": 30.7,
+                  "durationSeconds": 7.5
+                },
+                "posterSha256": "4294cafd9ff8cd7b7cb575f5e990254feac5c80988e5d7976c4876384c3e718d"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [
+            "진행 중인 에너지 카운터는 안정된 잔액으로 기록하지 않는다. 결제창·OS 알림은 발췌에서 제외했다."
+          ],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "challenge-after",
+          "label": "수령 이후 남은 목표와 잔액",
+          "sourceId": "GH-V0097",
+          "atSeconds": 34.87,
+          "mediaKeys": [
+            "capture:challenge-after"
+          ],
+          "state": {
+            "level": 110,
+            "energy": 1251,
+            "gems": 2,
+            "coins": 443
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": {
+            "label": "1일20시간",
+            "seconds": 158400
+          },
+          "evidence": {
+            "sourceId": "GH-V0097",
+            "originalName": "Screen_Recording_20260415_192248_Gossip Harbor(1).mp4",
+            "originalSha256": "2f2142b05ec16736d1f8fe18e8a0fbbd261c51ed0ed3eb4f5499016afb7e0aba",
+            "frameAtSeconds": 34.87,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:challenge-after",
+                "sha256": "003d97aff976eddc9e7a9c93b1e3c61ce3ba2265c633cf282b184e3ab26d5e47",
+                "sourceRange": {
+                  "frameAtSeconds": 34.87
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "progress": {
+            "current": 5151,
+            "target": 5700
+          }
+        }
+      ],
+      "transitions": [
+        {
+          "from": "challenge-before",
+          "to": "challenge-after",
+          "claim": "V0097 내부에서 에너지1→1251, 젬2·골드443 유지. 여러 보상을 연속 수령했으나 개별 총합 전수 대조는 보류한다.",
+          "certainty": "observed-state-delta"
+        }
+      ],
+      "codeComparison": {
+        "status": "source-linked",
+        "condition": "이 에너지 도전 화면을 특정 APK 활동 모듈과 직접 연결한 증거는 아직 없다. 일반 BaseActivityModel은 서버 설정이 없거나 시작 레벨을 통과하지 못하면 설정을 비운다.",
+        "matched": [
+          "목표 진행과 유료 수령권을 하나의 상태로 합치면 관측된 잠금을 설명하기 어렵다."
+        ],
+        "unverified": [
+          "정확한 활동 모델·서버 목표표·권리 필드",
+          "모든 보상 합계",
+          "서로 다른 파일 사이의 계정·시점 연속성"
+        ],
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+            "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+            "line_start": 46,
+            "line_end": 70,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          }
+        ],
+        "versionBoundary": "캡처 버전은 미확인이다. APK4.10.5 코드와 화면의 구조 비교이며 같은 런타임 객체·서버 설정임을 확정하지 않는다."
+      },
+      "unknowns": [
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "notes": [],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "reward-tower",
+      "title": "보상탑: 같은 가격 반복과 다음 층 가격",
+      "factId": "HIST-BM003",
+      "summary": "V0123에서6500원 단계가 반복된 뒤16000원이 나타난다. V0125의16000원→49000원은 별도 파일 안의 후속 사례다. 결제 총횟수·총액은 확정하지 않는다.",
+      "relation": "mixed",
+      "relationLabel": "동일 파일 전후와 별도 표본 비교",
+      "milestones": [
+        {
+          "id": "tower-first",
+          "label": "첫6500원 표본",
+          "sourceId": "GH-V0123",
+          "atSeconds": 3.79,
+          "mediaKeys": [
+            "capture:tower-6500"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 6500,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": {
+            "label": "2일21시간",
+            "seconds": 248400
+          },
+          "evidence": {
+            "sourceId": "GH-V0123",
+            "originalName": "Screen_Recording_20260905_113927_Gossip Harbor.mp4",
+            "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+            "frameAtSeconds": 3.79,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:tower-6500",
+                "sha256": "b67d60d4a6aeae287b5f2fe22c1a6d0cda9899e7a81505256aa29a51972eb1f5",
+                "sourceRange": {
+                  "frameAtSeconds": 3.79
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "tower-repeat",
+          "label": "결제 흐름 이후에도6500원",
+          "sourceId": "GH-V0123",
+          "atSeconds": 23.7,
+          "mediaKeys": [
+            "capture:tower-6500-stable"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 6500,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0123",
+            "originalName": "Screen_Recording_20260905_113927_Gossip Harbor.mp4",
+            "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+            "frameAtSeconds": 23.7,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:tower-6500-stable",
+                "sha256": "afab34f5912774763db10e25572351521c06f3f9ed940b9bd39490005122ab50",
+                "sourceRange": {
+                  "frameAtSeconds": 23.7
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "tower-card",
+          "label": "후속 보상 수령 카드",
+          "sourceId": "GH-V0123",
+          "atSeconds": 40.5,
+          "mediaKeys": [
+            "capture:tower-reward-motion"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "보상 수령 창 표시",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0123",
+            "originalName": "Screen_Recording_20260905_113927_Gossip Harbor.mp4",
+            "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+            "frameAtSeconds": 40.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:tower-reward-motion",
+                "sha256": "1b1d01fbfa961880946bc4ec102493d95f5268010bf7f48cbc3574cef06ae343",
+                "sourceRange": {
+                  "startSeconds": 39.5,
+                  "endSeconds": 44.5,
+                  "durationSeconds": 5.0
+                },
+                "posterSha256": "23cffa5f73e124d6454915cd7ab2798005b2263e0d2d7e3c98d31cb980d2500b"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "tower-16000",
+          "label": "체크 영역 변화와16000원",
+          "sourceId": "GH-V0123",
+          "atSeconds": 44.07,
+          "mediaKeys": [
+            "capture:tower-16000",
+            "capture:tower-reward-motion"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 16000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0123",
+            "originalName": "Screen_Recording_20260905_113927_Gossip Harbor.mp4",
+            "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+            "frameAtSeconds": 44.07,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:tower-16000",
+                "sha256": "7ed44d8556bdfa8c10941652ee977b11bed79a84d1c65c8bf8d1fc813500b7d2",
+                "sourceRange": {
+                  "frameAtSeconds": 44.07
+                },
+                "posterSha256": null
+              },
+              {
+                "key": "capture:tower-reward-motion",
+                "sha256": "1b1d01fbfa961880946bc4ec102493d95f5268010bf7f48cbc3574cef06ae343",
+                "sourceRange": {
+                  "startSeconds": 39.5,
+                  "endSeconds": 44.5,
+                  "durationSeconds": 5.0
+                },
+                "posterSha256": "23cffa5f73e124d6454915cd7ab2798005b2263e0d2d7e3c98d31cb980d2500b"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "tower-other-start",
+          "label": "별도 파일의16000원 시작",
+          "sourceId": "GH-V0125",
+          "atSeconds": 0.0,
+          "mediaKeys": [],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 16000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": {
+            "label": "2일20시간",
+            "seconds": 244800
+          },
+          "evidence": {
+            "sourceId": "GH-V0125",
+            "originalName": "Screen_Recording_20260905_121248_Gossip Harbor.mp4",
+            "originalSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287",
+            "frameAtSeconds": 0.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "tower-49000",
+          "label": "별도 파일 후반의49000원",
+          "sourceId": "GH-V0125",
+          "atSeconds": 91.98,
+          "mediaKeys": [
+            "capture:tower-49000"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 49000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0125",
+            "originalName": "Screen_Recording_20260905_121248_Gossip Harbor.mp4",
+            "originalSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287",
+            "frameAtSeconds": 91.98,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:tower-49000",
+                "sha256": "79ea5cfe0dd2ba813eeba6cdfbbb99f5afa884c92fa70006a51a95c9a6b1ef64",
+                "sourceRange": {
+                  "frameAtSeconds": 91.98
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        }
+      ],
+      "transitions": [
+        {
+          "from": "tower-repeat",
+          "to": "tower-16000",
+          "claim": "같은 파일 안에서 체크 영역과 현재 시작 가격이 바뀐다.",
+          "certainty": "observed-state-change"
+        },
+        {
+          "from": "tower-other-start",
+          "to": "tower-49000",
+          "claim": "V0125 안에서16000원 이후49000원 단계가 보인다. 앞 파일과 세션을 합산하지 않는다.",
+          "certainty": "observed-state-change"
+        }
+      ],
+      "codeComparison": {
+        "status": "not-identified",
+        "condition": "캡처의 보상탑을 특정 APK 번들 모듈과 일대일로 식별하지 못했다. UI가 비슷하다는 이유로 TriStage/Chain/OnePlusN 중 하나로 확정하지 않는다.",
+        "matched": [
+          "수령 체크·현재 가격·강조된 층을 나눠 저장해야 한다."
+        ],
+        "unverified": [
+          "SKU/서버층 구성",
+          "각 결제 확정 횟수와 합계",
+          "6500/16000/49000의 전 계정 공통 사다리 여부"
+        ],
+        "sources": [],
+        "versionBoundary": "캡처 버전은 미확인이다. APK4.10.5 코드와 화면의 구조 비교이며 같은 런타임 객체·서버 설정임을 확정하지 않는다."
+      },
+      "unknowns": [
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "notes": [],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "theme-variants",
+      "title": "같은 테마의 서로 다른 가격·구성",
+      "factId": "HIST-BM004",
+      "summary": "조류 관찰자라는 같은 테마에14000·24000·60000원과 서로 다른 재화 구성이 보인다. 서로 다른 표본이며 시간 순서나 동시 선택지로 간주하지 않는다.",
+      "relation": "cross-file-comparison",
+      "relationLabel": "서로 다른 파일의 비교",
+      "milestones": [
+        {
+          "id": "bird14",
+          "label": "14000원 변형",
+          "sourceId": "GH-S0002",
+          "atSeconds": null,
+          "mediaKeys": [
+            "capture:bird-14000"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 14000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": {
+            "label": "3시간50분",
+            "seconds": 13800
+          },
+          "evidence": {
+            "sourceId": "GH-S0002",
+            "originalName": "22918.jpeg",
+            "originalSha256": "06722ba764fab84173f9962679e60195942a7b4da0b7a869a6d241c39cf4ae43",
+            "frameAtSeconds": null,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:bird-14000",
+                "sha256": "6daa85cd398c87599687e986e968acb777fb08a4b00fcc4b774e26486d262ce0",
+                "sourceRange": null,
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "offerRewards": {
+            "gems": 500,
+            "energy": 200
+          }
+        },
+        {
+          "id": "bird24",
+          "label": "24000원 변형",
+          "sourceId": "GH-S0003",
+          "atSeconds": null,
+          "mediaKeys": [
+            "capture:bird-24000"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 24000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": {
+            "label": "3시간5분",
+            "seconds": 11100
+          },
+          "evidence": {
+            "sourceId": "GH-S0003",
+            "originalName": "22998.jpeg",
+            "originalSha256": "d436f7ae2c9b95cdf34c870284210c9db7308874624523a1b6dca3f18730349a",
+            "frameAtSeconds": null,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:bird-24000",
+                "sha256": "47df65fb709884fe09a1f93eb6c14e431f45853187706f0c5719d986115f4dac",
+                "sourceRange": null,
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "offerRewards": {
+            "gems": 700,
+            "energy": 600
+          }
+        },
+        {
+          "id": "bird60",
+          "label": "60000원 변형",
+          "sourceId": "GH-S0258",
+          "atSeconds": null,
+          "mediaKeys": [
+            "capture:bird-60000"
+          ],
+          "state": {
+            "level": 96,
+            "energy": 2,
+            "gems": 8,
+            "coins": 96
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 60000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": {
+            "label": "3시간56분",
+            "seconds": 14160
+          },
+          "evidence": {
+            "sourceId": "GH-S0258",
+            "originalName": "Screenshot_20260321_170556_Gossip Harbor.jpg",
+            "originalSha256": "f26e0b17537d1d5f7f15651d01ab2a2a3c4cffd0daeff3347afd2ce85dfd71ed",
+            "frameAtSeconds": null,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:bird-60000",
+                "sha256": "09a9a38a97f2f8b537668b2fc01d072c7601b7f68f6112b76dfa40969085dd16",
+                "sourceRange": null,
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "offerRewards": {
+            "gems": 2000,
+            "energy": 800
+          }
+        }
+      ],
+      "transitions": [],
+      "codeComparison": {
+        "status": "not-identified",
+        "condition": "테마명만으로 SKU·BundleType·변형 배정 조건을 확정할 수 없다. 이 세 표본의 서버 그룹/결제 이력/실험 배정은 확보하지 못했다.",
+        "matched": [
+          "테마와 상품 변형을 별도 식별자로 관리해야 한다."
+        ],
+        "unverified": [
+          "가격 차이의 인과",
+          "구매 이력/진행도/실험군",
+          "동시 선택 가능 여부"
+        ],
+        "sources": [],
+        "versionBoundary": "캡처 버전은 미확인이다. APK4.10.5 코드와 화면의 구조 비교이며 같은 런타임 객체·서버 설정임을 확정하지 않는다."
+      },
+      "unknowns": [
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "notes": [],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "level-offer",
+      "title": "성장 마일스톤 뒤 레벨 한정 상품",
+      "factId": "HIST-BM005",
+      "summary": "113레벨 보상창→상자 이동→113레벨49000원 상품이 같은 영상에 이어진다. 약1시간 타이머는 보이지만 자동 팝업인지 사용자가 입구를 눌렀는지는 확정하지 않는다.",
+      "relation": "same-file-sequence",
+      "relationLabel": "동일 파일의 전후 표본",
+      "milestones": [
+        {
+          "id": "level113-before",
+          "label": "113레벨 보상창",
+          "sourceId": "GH-V0107",
+          "atSeconds": 0.0,
+          "mediaKeys": [
+            "capture:level113-before",
+            "capture:level-offer-transition"
+          ],
+          "state": {
+            "level": 113,
+            "energy": 8,
+            "gems": 1930,
+            "coins": 689
+          },
+          "action": {
+            "label": "상자2종과 수령 버튼 표시",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0107",
+            "originalName": "Screen_Recording_20260419_112118_Gossip Harbor.mp4",
+            "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+            "frameAtSeconds": 0.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:level113-before",
+                "sha256": "7b2a10fd930c22ece7d4833c86a17a79603017f83e8740ea6651a50c498f20ef",
+                "sourceRange": {
+                  "frameAtSeconds": 0.0
+                },
+                "posterSha256": null
+              },
+              {
+                "key": "capture:level-offer-transition",
+                "sha256": "01bfe15bc9e63afc4ae6184b8c8938f407186d91c6448be504dd59952227e8e4",
+                "sourceRange": {
+                  "startSeconds": 0.0,
+                  "endSeconds": 5.6,
+                  "durationSeconds": 5.6
+                },
+                "posterSha256": "4733fbd3017838c49e11d1d738abff6913e0154ec6a38797b2aefbde60b447d6"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "level113-reward",
+          "label": "상자 보상 이동",
+          "sourceId": "GH-V0107",
+          "atSeconds": 1.5,
+          "mediaKeys": [
+            "capture:level-offer-transition"
+          ],
+          "state": {
+            "level": 113,
+            "energy": 8,
+            "gems": 1930,
+            "coins": 689
+          },
+          "action": {
+            "label": "보상 상자가 아래 방향으로 이동",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0107",
+            "originalName": "Screen_Recording_20260419_112118_Gossip Harbor.mp4",
+            "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+            "frameAtSeconds": 1.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:level-offer-transition",
+                "sha256": "01bfe15bc9e63afc4ae6184b8c8938f407186d91c6448be504dd59952227e8e4",
+                "sourceRange": {
+                  "startSeconds": 0.0,
+                  "endSeconds": 5.6,
+                  "durationSeconds": 5.6
+                },
+                "posterSha256": "4733fbd3017838c49e11d1d738abff6913e0154ec6a38797b2aefbde60b447d6"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "level113-offer",
+          "label": "같은 레벨의 한정 상품",
+          "sourceId": "GH-V0107",
+          "atSeconds": 3.5,
+          "mediaKeys": [
+            "capture:level-offer-transition"
+          ],
+          "state": {
+            "level": 113,
+            "energy": 8,
+            "gems": 1930,
+            "coins": 689
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 49000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": {
+            "label": "59분44초",
+            "seconds": 3584
+          },
+          "evidence": {
+            "sourceId": "GH-V0107",
+            "originalName": "Screen_Recording_20260419_112118_Gossip Harbor.mp4",
+            "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+            "frameAtSeconds": 3.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:level-offer-transition",
+                "sha256": "01bfe15bc9e63afc4ae6184b8c8938f407186d91c6448be504dd59952227e8e4",
+                "sourceRange": {
+                  "startSeconds": 0.0,
+                  "endSeconds": 5.6,
+                  "durationSeconds": 5.6
+                },
+                "posterSha256": "4733fbd3017838c49e11d1d738abff6913e0154ec6a38797b2aefbde60b447d6"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "level113-offer-later",
+          "label": "카운트다운과 한정 문구",
+          "sourceId": "GH-V0107",
+          "atSeconds": 5.54,
+          "mediaKeys": [
+            "capture:level-offer"
+          ],
+          "state": {
+            "level": 113,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 49000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": {
+            "label": "59분42초",
+            "seconds": 3582
+          },
+          "evidence": {
+            "sourceId": "GH-V0107",
+            "originalName": "Screen_Recording_20260419_112118_Gossip Harbor.mp4",
+            "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+            "frameAtSeconds": 5.54,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:level-offer",
+                "sha256": "1215031956da3c5ccbfc2549abbc4485621ad3a68ee2febd2fad1245063ed633",
+                "sourceRange": {
+                  "frameAtSeconds": 5.54
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "advertisedValuePercent": 267,
+          "purchaseLimitLabel": "1회 한정"
+        },
+        {
+          "id": "level113-help",
+          "label": "만능 젬 도움말을 겹쳐 확인",
+          "sourceId": "GH-V0107",
+          "atSeconds": 10.5,
+          "mediaKeys": [
+            "capture:tool-help"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "도움말 애니메이션",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0107",
+            "originalName": "Screen_Recording_20260419_112118_Gossip Harbor.mp4",
+            "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+            "frameAtSeconds": 10.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:tool-help",
+                "sha256": "e874091cc11906fa6ab7fb7244340b1503ea091fa1d2d2585379d1bbe6e5fe7c",
+                "sourceRange": {
+                  "startSeconds": 8.1,
+                  "endSeconds": 12.1,
+                  "durationSeconds": 4.0
+                },
+                "posterSha256": "59b9aaceaa076c95665ba2f7542cf68ecec2802d26b02c649ff27a75e28c5900"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [
+            "실제 보드 도구 사용으로 분류하지 않는다."
+          ],
+          "version": null,
+          "capturedAt": null
+        }
+      ],
+      "transitions": [
+        {
+          "from": "level113-before",
+          "to": "level113-offer",
+          "claim": "같은 파일에서 보상창과 상품창이 연속해서 관측된다. 자동 호출·사용자 탭 중 어느 쪽인지는 미확인이다.",
+          "certainty": "observed-sequence"
+        }
+      ],
+      "codeComparison": {
+        "status": "source-linked",
+        "condition": "BundleLevelUpGiftModel은 LevelUp 이벤트를 듣고 서버 levels 목록(없으면 모든 레벨)을 검사한 뒤 상품과 종료시각을 만든다. 상품 생성과 실제 창을 여는 입력은 구분해야 한다.",
+        "matched": [
+          "성장 이벤트와 상품 생성의 연결을 비교할 근거다."
+        ],
+        "unverified": [
+          "이 캡처의 자동 노출 여부",
+          "서버 levels/duration/상품배열",
+          "현행/모든 레벨 공통 정책"
+        ],
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Model/Bundle/BundleLevelUpGiftModel.lua",
+            "sha256": "7c04b1d0cdc5da7820d5b34f02c204cd7b4da9cd4f2ba2f57aaaa9fa6d494db5",
+            "line_start": 17,
+            "line_end": 31,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Bundle/BundleLevelUpGiftModel.lua",
+            "sha256": "7c04b1d0cdc5da7820d5b34f02c204cd7b4da9cd4f2ba2f57aaaa9fa6d494db5",
+            "line_start": 87,
+            "line_end": 136,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          }
+        ],
+        "versionBoundary": "캡처 버전은 미확인이다. APK4.10.5 코드와 화면의 구조 비교이며 같은 런타임 객체·서버 설정임을 확정하지 않는다."
+      },
+      "unknowns": [
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "notes": [],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "selected-card",
+      "title": "특선 카드: 보장 설명과 한 번의 실제 결과",
+      "factId": "HIST-BM006",
+      "summary": "설명은 신규 후보3종 중1종 보장이다. V0121에서는4성 푸른 바다 케이크의 신규 표시와 재화+800에너지/+600젬이 확인된다. 후보별 동일 확률은 입증되지 않는다.",
+      "relation": "mixed",
+      "relationLabel": "동일 파일 전후와 별도 표본 비교",
+      "milestones": [
+        {
+          "id": "card-rule",
+          "label": "별도 스크린샷의 보장 규칙",
+          "sourceId": "GH-S0148",
+          "atSeconds": null,
+          "mediaKeys": [
+            "capture:selected-card"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 24000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-S0148",
+            "originalName": "Screenshot_20260207_204303_Gossip Harbor.jpg",
+            "originalSha256": "2cb6ef8a671085af6335e976152643e44bc565844a472b58112374957016e97c",
+            "frameAtSeconds": null,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:selected-card",
+                "sha256": "528d0c65d77af6f7d1a9924b97b9addc1a85365f159414c84357db7617995a78",
+                "sourceRange": null,
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [
+            "세트 완성 카드가 있으면 그중 하나 획득한다는 설명이다."
+          ],
+          "version": null,
+          "capturedAt": null,
+          "purchaseAvailability": "1/1",
+          "guaranteedNewCards": 1,
+          "candidateCards": 3
+        },
+        {
+          "id": "card-offer",
+          "label": "영상의 구매 흐름 전 상품",
+          "sourceId": "GH-V0121",
+          "atSeconds": 0.0,
+          "mediaKeys": [
+            "capture:card-offer-before"
+          ],
+          "state": {
+            "level": null,
+            "energy": 1,
+            "gems": 1474,
+            "coins": 210
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 24000,
+            "currency": "KRW",
+            "quantity": null
+          },
+          "remainingTime": {
+            "label": "3시간41분",
+            "seconds": 13260
+          },
+          "evidence": {
+            "sourceId": "GH-V0121",
+            "originalName": "Screen_Recording_20260828_071857_Gossip Harbor.mp4",
+            "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+            "frameAtSeconds": 0.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:card-offer-before",
+                "sha256": "df38a03881a68f010c299363f6fb8175e9c8ecb98e5cf2e2b4b8805662cb71b3",
+                "sourceRange": {
+                  "frameAtSeconds": 0.0
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "offerRewards": {
+            "energy": 800,
+            "gems": 600
+          }
+        },
+        {
+          "id": "card-result",
+          "label": "4성 신규 카드 결과",
+          "sourceId": "GH-V0121",
+          "atSeconds": 25.5,
+          "mediaKeys": [
+            "capture:card-result-after",
+            "capture:card-result-motion"
+          ],
+          "state": {
+            "level": null,
+            "energy": 801,
+            "gems": 2074,
+            "coins": 210
+          },
+          "action": {
+            "label": "카드팩 개봉 뒤 신규 표시",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0121",
+            "originalName": "Screen_Recording_20260828_071857_Gossip Harbor.mp4",
+            "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+            "frameAtSeconds": 25.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:card-result-after",
+                "sha256": "4b0c191ca2da0d2fcd310f02d0e54dfbec31004efcf93bec2749cff335ee4088",
+                "sourceRange": {
+                  "frameAtSeconds": 25.5
+                },
+                "posterSha256": null
+              },
+              {
+                "key": "capture:card-result-motion",
+                "sha256": "edaf6370805feca48acb21b91ad9d1c8c7464f958e8206a1bec627e6bf06d7bf",
+                "sourceRange": {
+                  "startSeconds": 24.0,
+                  "endSeconds": 27.4,
+                  "durationSeconds": 3.3999999999999986
+                },
+                "posterSha256": "d75988fc522ed0299007241484ae53aaf0006fad97033e9db69598a1f52fbaf7"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "cardResult": {
+            "name": "푸른 바다 케이크",
+            "stars": 4,
+            "newLabel": true
+          }
+        },
+        {
+          "id": "card-wallet",
+          "label": "결과 뒤 안정된 재화",
+          "sourceId": "GH-V0121",
+          "atSeconds": 26.5,
+          "mediaKeys": [
+            "capture:card-wallet-after",
+            "capture:card-result-motion"
+          ],
+          "state": {
+            "level": null,
+            "energy": 801,
+            "gems": 2074,
+            "coins": 210
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0121",
+            "originalName": "Screen_Recording_20260828_071857_Gossip Harbor.mp4",
+            "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+            "frameAtSeconds": 26.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:card-wallet-after",
+                "sha256": "9f5bc7fa5c9aad29331904ab2c03f04ce761d2d5880533bd93b451776fdbfd5f",
+                "sourceRange": {
+                  "frameAtSeconds": 26.5
+                },
+                "posterSha256": null
+              },
+              {
+                "key": "capture:card-result-motion",
+                "sha256": "edaf6370805feca48acb21b91ad9d1c8c7464f958e8206a1bec627e6bf06d7bf",
+                "sourceRange": {
+                  "startSeconds": 24.0,
+                  "endSeconds": 27.4,
+                  "durationSeconds": 3.3999999999999986
+                },
+                "posterSha256": "d75988fc522ed0299007241484ae53aaf0006fad97033e9db69598a1f52fbaf7"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        }
+      ],
+      "transitions": [
+        {
+          "from": "card-offer",
+          "to": "card-wallet",
+          "claim": "같은 파일에서 에너지1→801·젬1474→2074·골드210 유지. 표시 상품의800에너지·600젬과 일치한다.",
+          "certainty": "observed-state-delta"
+        }
+      ],
+      "codeComparison": {
+        "status": "source-linked",
+        "condition": "CustomizeCard 구매 성공 코드는 보유0인 후보를 모으고, 세트에 한 장만 남은 후보가 있으면 setOrder가 앞선 후보를 고른다. 그렇지 않으면 미보유 후보(없으면 전체 후보)에서 무작위 선택한다.",
+        "matched": [
+          "신규 후보 우선과 세트 완성 우선이라는 설명 구조를 비교할 수 있다.",
+          "V0121의 한 결과는 신규 표시를 확인한다."
+        ],
+        "unverified": [
+          "캡처와 동일 앨범·후보집합인지",
+          "후보별 확률·복수 완성 후보의 실기 결과",
+          "다음1/3 단계 정책"
+        ],
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Activity/CustomizeCard/Model/BundleCustomizeCardModel.lua",
+            "sha256": "7b791ed5d3e0374eb242d5824b55ada92aaecfb4fde5d3d7ee434aeb58ed52d4",
+            "line_start": 419,
+            "line_end": 454,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          }
+        ],
+        "versionBoundary": "캡처 버전은 미확인이다. APK4.10.5 코드와 화면의 구조 비교이며 같은 런타임 객체·서버 설정임을 확정하지 않는다."
+      },
+      "unknowns": [
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "notes": [
+        "결제창의 개인정보는 공개 파생본에 포함하지 않는다. 스크린샷 S0148과 영상 V0121을 같은 시점으로 연결하지 않는다."
+      ],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "low-energy",
+      "title": "낮은 에너지에서 순차 충전창까지",
+      "factId": "HIST-BM007",
+      "summary": "×4 표시 상태로 에너지41→21→1, 가득 찬 보드 안내와 이후 합성이 관측된다.36.5초에는100에너지/40젬·6시간38분 창이 보인다. 에너지0 즉시 자동 팝업으로 해석하지 않는다.",
+      "relation": "same-file-sequence",
+      "relationLabel": "동일 파일의 전후 표본",
+      "milestones": [
+        {
+          "id": "low-before",
+          "label": "생성 구간 전 에너지41",
+          "sourceId": "GH-V0047",
+          "atSeconds": 20.0,
+          "mediaKeys": [
+            "capture:low-energy-before"
+          ],
+          "state": {
+            "level": null,
+            "energy": 41,
+            "gems": 39,
+            "coins": 23
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0047",
+            "originalName": "Screen_Recording_20260402_022124_Gossip Harbor.mp4",
+            "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+            "frameAtSeconds": 20.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:low-energy-before",
+                "sha256": "574724c01b3e2706be5f86d3b425cb53e1c2c74d0a6690a3211d9dbbd9d88d08",
+                "sourceRange": {
+                  "frameAtSeconds": 20.0
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "boostDisplay": "×4"
+        },
+        {
+          "id": "low-generated",
+          "label": "산출물과 에너지21",
+          "sourceId": "GH-V0047",
+          "atSeconds": 25.0,
+          "mediaKeys": [
+            "effect:generate"
+          ],
+          "state": {
+            "level": null,
+            "energy": 21,
+            "gems": 39,
+            "coins": 23
+          },
+          "action": {
+            "label": "생성 산출물과 에너지 감소",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0047",
+            "originalName": "Screen_Recording_20260402_022124_Gossip Harbor.mp4",
+            "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+            "frameAtSeconds": 25.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "effect:generate",
+                "sha256": "c4261c18dbfc27e9d7b6d052351eff589623b3e01f5be955c8e1a9357d3e8dbb",
+                "sourceRange": {
+                  "startSeconds": 23.1,
+                  "endSeconds": 25.6,
+                  "durationSeconds": 2.5
+                },
+                "posterSha256": "f08e5edec82e4f0422c9b5cddcdc111b9d51d0f1bce8c1e100b0cc688ed43275"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "boostDisplay": "×4"
+        },
+        {
+          "id": "low-full",
+          "label": "에너지1·보드 가득 참",
+          "sourceId": "GH-V0047",
+          "atSeconds": 30.0,
+          "mediaKeys": [
+            "capture:board-full-energy1"
+          ],
+          "state": {
+            "level": null,
+            "energy": 1,
+            "gems": 39,
+            "coins": 23
+          },
+          "action": {
+            "label": "가득 찬 보드 안내",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0047",
+            "originalName": "Screen_Recording_20260402_022124_Gossip Harbor.mp4",
+            "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+            "frameAtSeconds": 30.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:board-full-energy1",
+                "sha256": "e324441804892f21b1f5b33ab54bdc9c82c9e8aa5abc304523d2839c4e4205e9",
+                "sourceRange": {
+                  "frameAtSeconds": 30.0
+                },
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "boostDisplay": "×4"
+        },
+        {
+          "id": "low-still-board",
+          "label": "에너지1 상태에서 계속되는 보드",
+          "sourceId": "GH-V0047",
+          "atSeconds": 36.0,
+          "mediaKeys": [
+            "capture:low-energy-popup-motion"
+          ],
+          "state": {
+            "level": null,
+            "energy": 1,
+            "gems": 39,
+            "coins": 23
+          },
+          "action": {
+            "label": "보드 합성·배치 상태",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0047",
+            "originalName": "Screen_Recording_20260402_022124_Gossip Harbor.mp4",
+            "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+            "frameAtSeconds": 36.0,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:low-energy-popup-motion",
+                "sha256": "a6e9139f3445a6d8699290be6d9be7d227fe0fd1d6f8f8d6b0fad835030b1163",
+                "sourceRange": {
+                  "startSeconds": 34.5,
+                  "endSeconds": 37.8,
+                  "durationSeconds": 3.299999999999997
+                },
+                "posterSha256": "a51aa43db2a251e0e173e6c9790c21744a666d83a391912e5d2dd70eb2d8c514"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "low-popup",
+          "label": "순차 충전창 표시",
+          "sourceId": "GH-V0047",
+          "atSeconds": 36.5,
+          "mediaKeys": [
+            "capture:low-energy-popup-motion"
+          ],
+          "state": {
+            "level": null,
+            "energy": 1,
+            "gems": 39,
+            "coins": 23
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": {
+            "amount": 40,
+            "currency": "gem",
+            "quantity": 100
+          },
+          "remainingTime": {
+            "label": "6시간38분",
+            "seconds": 23880
+          },
+          "evidence": {
+            "sourceId": "GH-V0047",
+            "originalName": "Screen_Recording_20260402_022124_Gossip Harbor.mp4",
+            "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+            "frameAtSeconds": 36.5,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:low-energy-popup-motion",
+                "sha256": "a6e9139f3445a6d8699290be6d9be7d227fe0fd1d6f8f8d6b0fad835030b1163",
+                "sourceRange": {
+                  "startSeconds": 34.5,
+                  "endSeconds": 37.8,
+                  "durationSeconds": 3.299999999999997
+                },
+                "posterSha256": "a51aa43db2a251e0e173e6c9790c21744a666d83a391912e5d2dd70eb2d8c514"
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [
+            "무료 카드팩과 에너지20 후속 행은 잠겨 있다."
+          ],
+          "version": null,
+          "capturedAt": null
+        }
+      ],
+      "transitions": [
+        {
+          "from": "low-before",
+          "to": "low-full",
+          "claim": "같은 파일에서 에너지41→21→1. 중간 카운터 보간값을 개별 소비량으로 세지 않는다.",
+          "certainty": "observed-state-delta"
+        },
+        {
+          "from": "low-full",
+          "to": "low-popup",
+          "claim": "가득 찬 보드 안내 뒤 보드 합성이 계속되고 나중에 충전창이 보인다. 자동 노출 여부는 미확인이다.",
+          "certainty": "observed-sequence"
+        }
+      ],
+      "codeComparison": {
+        "status": "source-linked",
+        "condition": "OnLackEnergy는 주 에너지·강제 튜토리얼·IAP/기존 번들 상태를 검사하며 기본 충전은 ChainEnergy 활성 여부로 분기한다. 에너지 번들 새 생성에는 현재 에너지가1회 생성 비용보다 작은 조건 등도 있다.",
+        "matched": [
+          "에너지가0이 아닌 상태도 부족 경로의 관측 후보가 될 수 있다."
+        ],
+        "unverified": [
+          "36.5초 창을 연 실제 입력",
+          "x4 상태의 개별 생성 비용·정확한 탭 수",
+          "시작40젬이 결정된 서버/진행 상태"
+        ],
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Model/UserData/EnergyModel.lua",
+            "sha256": "ab93681b1aabc120fccae754436a24d4f819ef094fdb4964265dfd08508bc9b3",
+            "line_start": 232,
+            "line_end": 245,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+            "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+            "line_start": 265,
+            "line_end": 286,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+            "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+            "line_start": 166,
+            "line_end": 221,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          }
+        ],
+        "versionBoundary": "캡처 버전은 미확인이다. APK4.10.5 코드와 화면의 구조 비교이며 같은 런타임 객체·서버 설정임을 확정하지 않는다."
+      },
+      "unknowns": [
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "notes": [],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "card-fever",
+      "title": "카드팩 피버: 주문 루프에 붙는 제한시간 배율",
+      "factId": "HIST-BM008",
+      "summary": "설명 화면과 별도 활성 보드에 주문 완료 시 카드팩2배 및29분56초가 보인다. 실제 지급량 전후·정확한 시작 조건은 확인하지 않는다.",
+      "relation": "cross-file-comparison",
+      "relationLabel": "서로 다른 파일의 비교",
+      "milestones": [
+        {
+          "id": "fever-help",
+          "label": "주문 완료 시 두 배 안내",
+          "sourceId": "GH-S0127",
+          "atSeconds": null,
+          "mediaKeys": [
+            "capture:card-fever"
+          ],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "카드팩 피버 설명 표시",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-S0127",
+            "originalName": "Screenshot_20260205_210708_Gossip Harbor.jpg",
+            "originalSha256": "052a8159635bf2f8de9a55050fd397d232dbbd3c85b133ed3ea060146284c757",
+            "frameAtSeconds": null,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:card-fever",
+                "sha256": "1804c4cd97423b81bb3f6de7ee856a3bb2d7018169690f4ed0d2a6acb9c7bb55",
+                "sourceRange": null,
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null
+        },
+        {
+          "id": "fever-active",
+          "label": "활성 보드와 남은 시간",
+          "sourceId": "GH-S0128",
+          "atSeconds": null,
+          "mediaKeys": [
+            "capture:fever-active"
+          ],
+          "state": {
+            "level": 74,
+            "energy": 12,
+            "gems": 107,
+            "coins": 334
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": {
+            "label": "29분56초",
+            "seconds": 1796
+          },
+          "evidence": {
+            "sourceId": "GH-S0128",
+            "originalName": "Screenshot_20260205_210717_Gossip Harbor.jpg",
+            "originalSha256": "b080b971a616ae1d65c76664c07e5bdcaa18076dbb74b5c3049d5b9e7193b006",
+            "frameAtSeconds": null,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "capture:fever-active",
+                "sha256": "575bf93eeff2307d871739c857b24e8f60ee5539be5534ae30ef124b0fbbe64d",
+                "sourceRange": null,
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "rewardMultiplierDisplay": 2
+        }
+      ],
+      "transitions": [],
+      "codeComparison": {
+        "status": "source-linked",
+        "condition": "이 카드팩 피버 표본과 APK의 특정 활동 모델/보상배율 필드를 직접 연결하지 못했다. 일반 활동의 서버 설정·레벨 조건만 확인되어 있다.",
+        "matched": [
+          "기존 주문 행동에 제한시간 보상 배율을 얹는 UI를 관측했다."
+        ],
+        "unverified": [
+          "정확한 활성 조건·지급 전후·전체 기간",
+          "모든 주문/카드팩 적용 여부",
+          "두 스크린샷 사이의 실시간 연속성"
+        ],
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+            "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+            "line_start": 46,
+            "line_end": 70,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          }
+        ],
+        "versionBoundary": "캡처 버전은 미확인이다. APK4.10.5 코드와 화면의 구조 비교이며 같은 런타임 객체·서버 설정임을 확정하지 않는다."
+      },
+      "unknowns": [
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "notes": [],
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "boost-discount",
+      "title": "×8 부스터와 할인 버블의 동시 표시",
+      "factId": "HIST-BM009",
+      "summary": "한 스크린샷에×8 버튼과 분홍% 버블2개가 함께 있다. 다른 영상의×1→×2→×4 전환은 별도 사례다. 할인율·가격·×8 생성 결과를 화면만으로 확정하지 않는다.",
+      "relation": "mixed",
+      "relationLabel": "동일 파일 전후와 별도 표본 비교",
+      "milestones": [
+        {
+          "id": "boost1",
+          "label": "별도 영상의 부스터 비활성",
+          "sourceId": "GH-V0088",
+          "atSeconds": 3.83,
+          "mediaKeys": [],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0088",
+            "originalName": "Screen_Recording_20260412_091637_Gossip Harbor.mp4",
+            "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+            "frameAtSeconds": 3.83,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "boostDisplay": "×1"
+        },
+        {
+          "id": "boost2",
+          "label": "별도 영상의 두 배 표시",
+          "sourceId": "GH-V0088",
+          "atSeconds": 7.11,
+          "mediaKeys": [],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0088",
+            "originalName": "Screen_Recording_20260412_091637_Gossip Harbor.mp4",
+            "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+            "frameAtSeconds": 7.11,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "boostDisplay": "×2"
+        },
+        {
+          "id": "boost4",
+          "label": "별도 영상의 네 배 활성 안내",
+          "sourceId": "GH-V0088",
+          "atSeconds": 8.75,
+          "mediaKeys": [],
+          "state": {
+            "level": null,
+            "energy": null,
+            "gems": null,
+            "coins": null
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-V0088",
+            "originalName": "Screen_Recording_20260412_091637_Gossip Harbor.mp4",
+            "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+            "frameAtSeconds": 8.75,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "boostDisplay": "×4"
+        },
+        {
+          "id": "boost8-sale",
+          "label": "×8과 할인 버블2개",
+          "sourceId": "GH-S0377",
+          "atSeconds": null,
+          "mediaKeys": [
+            "effect:bubble"
+          ],
+          "state": {
+            "level": 164,
+            "energy": 5,
+            "gems": 72,
+            "coins": 185
+          },
+          "action": {
+            "label": "화면 상태 관측",
+            "confirmed": true,
+            "inputConfirmed": false
+          },
+          "price": null,
+          "remainingTime": null,
+          "evidence": {
+            "sourceId": "GH-S0377",
+            "originalName": "가십하버_20260904_033900.jpg",
+            "originalSha256": "8f05219a1384b908e8b56d576c8cb41fe96acff5f0953c29319d7f44f3994ea8",
+            "frameAtSeconds": null,
+            "startSeconds": null,
+            "endSeconds": null,
+            "derivatives": [
+              {
+                "key": "effect:bubble",
+                "sha256": "7abb68d6d160180c8c5bf7750f466f72e5bc5d31a2f6177f955958e8e04f8eb1",
+                "sourceRange": null,
+                "posterSha256": null
+              }
+            ],
+            "timePolicy": "영상 시각은ffmpeg 요청값이며 원본 프레임 간격에 따른 오차가 가능하다."
+          },
+          "notes": [],
+          "version": null,
+          "capturedAt": null,
+          "boostDisplay": "×8",
+          "discountBadgeCount": 2
+        }
+      ],
+      "transitions": [
+        {
+          "from": "boost1",
+          "to": "boost4",
+          "claim": "V0088에서×1·×2·×4 표시가 바뀐다. S0377의×8과 같은 시점으로 연결하지 않는다.",
+          "certainty": "observed-state-change"
+        }
+      ],
+      "codeComparison": {
+        "status": "source-linked",
+        "condition": "APK의×8 활성 검사는 지원 모드와 서버 EnergyBoostEight 임계값을 요구한다. 버블 할인 비용은 할인값이 원가격보다 작고 BubbleSale 활동이 열렸을 때 선택된다. 화면의%만으로 실제 할인값을 복구할 수 없다.",
+        "matched": [
+          "×8 기능 경로와 버블 할인 분기가 APK에 존재한다."
+        ],
+        "unverified": [
+          "이 캡처의 임계값/배율 비용·산출 레벨·드롭",
+          "할인율·원가격·만료·무료 해제",
+          "두 기능을 함께 배정한 서버 정책"
+        ],
+        "sources": [
+          {
+            "path": "analysis/lua/Lua_Activity/EnergyBoost/Model/EnergyBoostModel.lua",
+            "sha256": "04b21756c4d27708d0ce512096c05783ebeec6e2bc4ed250af7ce57c7fcee7dc",
+            "line_start": 147,
+            "line_end": 174,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          },
+          {
+            "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemBubble.lua",
+            "sha256": "64538f4f1f56aec6b4b52e2479e93eb27375996c1ac22810dabeb29eef690e0c",
+            "line_start": 120,
+            "line_end": 132,
+            "method": "APK4.10.5에서 복원한 Lua의 정적 비교. 캡처 실행 버전과 동일하다는 증거는 아님."
+          }
+        ],
+        "versionBoundary": "캡처 버전은 미확인이다. APK4.10.5 코드와 화면의 구조 비교이며 같은 런타임 객체·서버 설정임을 확정하지 않는다."
+      },
+      "unknowns": [
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "notes": [],
+      "version": null,
+      "capturedAt": null
+    }
+  ],
+  "actionClips": [
+    {
+      "id": "generate",
+      "action": "generate",
+      "title": "생성기 산출물",
+      "mediaKey": "effect:generate",
+      "sourceId": "GH-V0047",
+      "claim": "산출물 등장과 에너지 표시 감소",
+      "notProven": [
+        "정확한 탭 수·각 비용·드롭 확률"
+      ],
+      "sourceRange": {
+        "startSeconds": 23.1,
+        "endSeconds": 25.6,
+        "durationSeconds": 2.5
+      },
+      "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+      "derivativeSha256": "c4261c18dbfc27e9d7b6d052351eff589623b3e01f5be955c8e1a9357d3e8dbb",
+      "version": null,
+      "capturedAt": null,
+      "speed": 1,
+      "muted": true
+    },
+    {
+      "id": "merge",
+      "action": "merge",
+      "title": "동일 아이템 합성",
+      "mediaKey": "effect:merge",
+      "sourceId": "GH-V0089",
+      "claim": "합성 발광과 결과 선택 상태",
+      "notProven": [
+        "원본 입력 이벤트·정확한 지속시간"
+      ],
+      "sourceRange": {
+        "startSeconds": 0.3,
+        "endSeconds": 7.9,
+        "durationSeconds": 7.6
+      },
+      "originalSha256": "74a8c08468079bd2b2c9b4ec05883c8b55aee1675186f857122e150439492642",
+      "derivativeSha256": "de609c38497a068c8da2efbc59c0788fe1aee87effdfe8dd8003e9529e07d315",
+      "version": null,
+      "capturedAt": null,
+      "speed": 1,
+      "muted": true
+    },
+    {
+      "id": "collect",
+      "action": "collect",
+      "title": "이벤트 보상 수령",
+      "mediaKey": "capture:challenge-collect",
+      "sourceId": "GH-V0097",
+      "claim": "수령 도장과 번개의 HUD 방향 이동",
+      "notProven": [
+        "보드 에너지 병 수집 동작·모든 보상 합계"
+      ],
+      "subtype": "event-reward-claim",
+      "sourceRange": {
+        "startSeconds": 23.2,
+        "endSeconds": 30.7,
+        "durationSeconds": 7.5
+      },
+      "originalSha256": "2f2142b05ec16736d1f8fe18e8a0fbbd261c51ed0ed3eb4f5499016afb7e0aba",
+      "derivativeSha256": "a2c1f04fbec77a270201abb751ea65c0b4f56dffc0f1c98764c0108fb544c1bb",
+      "version": null,
+      "capturedAt": null,
+      "speed": 1,
+      "muted": true
+    },
+    {
+      "id": "order",
+      "action": "order",
+      "title": "주문 제출 보상",
+      "mediaKey": "effect:order",
+      "sourceId": "GH-V0089",
+      "claim": "주문 완료 뒤 코인·이벤트 보상 이동",
+      "notProven": [
+        "발췌 밖 최종 골드220"
+      ],
+      "sourceRange": {
+        "startSeconds": 4.1,
+        "endSeconds": 7.9,
+        "durationSeconds": 3.8000000000000007
+      },
+      "originalSha256": "74a8c08468079bd2b2c9b4ec05883c8b55aee1675186f857122e150439492642",
+      "derivativeSha256": "ba5f347721d5b8a6577ab0a83d55b8f94bcb0ad70aca9523efeb283d5b76a2d8",
+      "version": null,
+      "capturedAt": null,
+      "speed": 1,
+      "muted": true
+    },
+    {
+      "id": "tool-help",
+      "action": "tool",
+      "title": "만능 젬 도움말 예시",
+      "mediaKey": "capture:tool-help",
+      "sourceId": "GH-V0107",
+      "claim": "도움말 속 드래그·결과 변경 애니메이션",
+      "notProven": [
+        "실제 보드 사용·도구 소비·전체 대상 판정"
+      ],
+      "isHelpAnimation": true,
+      "sourceRange": {
+        "startSeconds": 8.1,
+        "endSeconds": 12.1,
+        "durationSeconds": 4.0
+      },
+      "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+      "derivativeSha256": "e874091cc11906fa6ab7fb7244340b1503ea091fa1d2d2585379d1bbe6e5fe7c",
+      "version": null,
+      "capturedAt": null,
+      "speed": 1,
+      "muted": true
+    },
+    {
+      "id": "popup",
+      "action": "popup",
+      "title": "레벨 보상 뒤 상품창",
+      "mediaKey": "capture:level-offer-transition",
+      "sourceId": "GH-V0107",
+      "claim": "보상창·상자 이동·한정 상품의 연속 화면",
+      "notProven": [
+        "자동 팝업인지 사용자가 입구를 눌렀는지"
+      ],
+      "sourceRange": {
+        "startSeconds": 0.0,
+        "endSeconds": 5.6,
+        "durationSeconds": 5.6
+      },
+      "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+      "derivativeSha256": "01bfe15bc9e63afc4ae6184b8c8938f407186d91c6448be504dd59952227e8e4",
+      "version": null,
+      "capturedAt": null,
+      "speed": 1,
+      "muted": true
+    },
+    {
+      "id": "low-popup",
+      "action": "popup",
+      "title": "저에너지 순차 충전창",
+      "mediaKey": "capture:low-energy-popup-motion",
+      "sourceId": "GH-V0047",
+      "claim": "에너지1 보드에서 충전창으로 전환",
+      "notProven": [
+        "호출 입력·전 계정 노출 조건"
+      ],
+      "sourceRange": {
+        "startSeconds": 34.5,
+        "endSeconds": 37.8,
+        "durationSeconds": 3.299999999999997
+      },
+      "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+      "derivativeSha256": "a6e9139f3445a6d8699290be6d9be7d227fe0fd1d6f8f8d6b0fad835030b1163",
+      "version": null,
+      "capturedAt": null,
+      "speed": 1,
+      "muted": true
+    },
+    {
+      "id": "card-reveal",
+      "action": "reward",
+      "title": "신규 카드 개봉",
+      "mediaKey": "capture:card-result-motion",
+      "sourceId": "GH-V0121",
+      "claim": "4성 카드 신규 표시와 복귀",
+      "notProven": [
+        "후보별 확률"
+      ],
+      "sourceRange": {
+        "startSeconds": 24.0,
+        "endSeconds": 27.4,
+        "durationSeconds": 3.3999999999999986
+      },
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "derivativeSha256": "edaf6370805feca48acb21b91ad9d1c8c7464f958e8206a1bec627e6bf06d7bf",
+      "version": null,
+      "capturedAt": null,
+      "speed": 1,
+      "muted": true
+    },
+    {
+      "id": "tower-reward",
+      "action": "reward",
+      "title": "보상탑 수령과 다음 가격",
+      "mediaKey": "capture:tower-reward-motion",
+      "sourceId": "GH-V0123",
+      "claim": "보상 카드 뒤 체크·가격 상태",
+      "notProven": [
+        "결제 총횟수·총액"
+      ],
+      "sourceRange": {
+        "startSeconds": 39.5,
+        "endSeconds": 44.5,
+        "durationSeconds": 5.0
+      },
+      "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+      "derivativeSha256": "1b1d01fbfa961880946bc4ec102493d95f5268010bf7f48cbc3574cef06ae343",
+      "version": null,
+      "capturedAt": null,
+      "speed": 1,
+      "muted": true
+    }
+  ],
+  "boundaries": [
+    "자동 노출·사용자 탭·입력 이벤트를 영상 상태만으로 확정하지 않는다.",
+    "파일명 날짜를 확정 촬영일로 쓰지 않고, 서로 다른 파일의 타이머 차이를 경과시간으로 환산하지 않는다.",
+    "가격·기간·보상은 해당 화면의 과거 표본이다. 현행·전 계정 공통 운영값이 아니다.",
+    "도구 도움말 애니메이션은 실제 보드 사용과 구분한다. 가위/모래시계 실제 사용 클립은 이번 선정에서 확인하지 못했다.",
+    "전체95.08분 전수 분석·LDPlayer 실기·서버 조건 검증 완료를 뜻하지 않는다."
+  ]
+}

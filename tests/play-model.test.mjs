@@ -28,7 +28,9 @@ test('full board and insufficient energy preserve deck, RNG and generator charge
  s.board[62]=null;s.wallet.energy=0;s.selected=0;const empty=snapshot(s);assert.equal(generateFrom(s,0,config).ok,false);assert.deepEqual(snapshot(s),empty);assert.equal(s.modal,'energy');
  playAction(s,'close-energy',null,config);assert.equal(s.modal,null,'free refill blocks the bundle candidate');
  playAction(s,'open-energy',null,config);playAction(s,'buy-energy',null,config);assert.equal(s.wallet.energy,100);assert.equal(s.wallet.price,20);
- s.wallet.energy=0;generateFrom(s,0,config);playAction(s,'close-energy',null,config);assert.equal(s.modal,'offer');assert.equal(s.offer.chosen,'에너지 번들');
+ s.wallet.energy=0;generateFrom(s,0,config);playAction(s,'close-energy',null,config);assert.equal(s.modal,null,'missing server gift config never invents an eligible offer');
+ s.wallet.level=3;playAction(s,'shop',null,config);playAction(s,'commerce-assume','energy',config);playAction(s,'close-shop',null,config);
+ generateFrom(s,0,config);playAction(s,'close-energy',null,config);assert.equal(s.modal,'offer');assert.equal(s.offer.chosen,'EnergyBundle');assert.equal(validPlay(s,config),true);
 });
 test('generator recovery starts after first spend and transitions through both reservoir durations',()=>{
  const s=play({scenario:'initial'});for(const x of config.initialReplay)moveOrMerge(s,x.from,x.to,config);
@@ -70,8 +72,16 @@ test('saved deck/RNG and cooldowns resume deterministically, while invalid model
  const absent=play();absent.wallet.energy=0;absent.wallet.freeUsed=1;absent.wallet.price=20;
  assert.equal(playAction(absent,'close-energy',null,config).ok,false);assert.equal(absent.modal,null);
 });
-test('declared reward-wrapper merge results remain visible but never consume items into an unsupported saved type',()=>{
- const s=play(),unsupported=config.items.find(x=>x.next&&!itemFor(config,x.next));
- assert.ok(unsupported);s.board[2]={uid:s.nextUid++,type:unsupported.type,cover:null};s.board[3]={uid:s.nextUid++,type:unsupported.type,cover:null};
- const before=structuredClone(s.board);assert.equal(moveOrMerge(s,2,3,config).ok,false);assert.deepEqual(s.board,before);assert.equal(validPlay(s,config),true);
+test('known wrapped merge payloads survive validation and allocate absent-album replacement without invented cards',()=>{
+ for(const wrapper of Object.values(config.spreadRules.wrapperMerges)){
+  const s=play(),source=config.items.find(x=>x.next===wrapper.code);assert.ok(source);
+  s.board[2]={uid:s.nextUid++,type:source.type,cover:null};s.board[3]={uid:s.nextUid++,type:source.type,cover:null};
+  assert.equal(moveOrMerge(s,2,3,config).ok,true);assert.equal(s.board[3].type,wrapper.wrapperType);assert.equal(s.board[3].rewardType,wrapper.rewardType);assert.equal(validPlay(s,config),true);
+  s.selected=3;assert.equal(playAction(s,'collect-wrapper',undefined,config).ok,true);assert.equal(validPlay(s,config),true);
+  if(wrapper.opaque){assert.equal(s.board[3],null);assert.ok(s.queue[0]?.count>0);assert.equal(s.packLedger,undefined);}
+  else assert.equal(s.board[3].type,wrapper.rewardType);
+ }
+ const c=structuredClone(config);c.items.find(x=>x.type==='201').next='not-a-verified-result';
+ const s=createPlay(c);s.stage='play';s.board[2]={uid:s.nextUid++,type:'201',cover:null};s.board[3]={uid:s.nextUid++,type:'201',cover:null};
+ const before=structuredClone(s.board);assert.equal(moveOrMerge(s,2,3,c).ok,false);assert.deepEqual(s.board,before);
 });

@@ -1,6 +1,7 @@
-import {createPlay,playAction,advancePlay,validPlay} from './play-model.mjs';
+import {createPlay,playAction,advancePlay,validPlay,migratePlayState,currentBubbleQuote} from './play-model.mjs';
 import {renderSourcePlay} from './play-page.mjs';
 import {renderGamePlay,gameClocks} from './game-page.mjs';
+import {onboardingConstraints} from './onboarding-model.mjs';
 import {readSession,writeSession,encodeSave,decodeSave,SAVE_KEY,MAX_OFFLINE_SECONDS} from './session-store.mjs';
 
 export function createPlayController({getData,render,download}){
@@ -24,7 +25,8 @@ export function createPlayController({getData,render,download}){
  function compatible(raw){
   const exact=decodeSave(raw,options());if(exact.ok||exact.reason!=='revision-mismatch')return exact;
   try{const revision=JSON.parse(raw).revision;if(!config().compatibleRevisions?.includes(revision))return exact;
-   const saved=decodeSave(raw,{...options(),revision});return saved.ok?{...saved,migrated:true}:saved;
+   const saved=decodeSave(raw,{...options(),revision,validate:s=>validPlay(migratePlayState(s,config()),config())});
+   return saved.ok?{...saved,state:migratePlayState(saved.state,config()),migrated:true}:saved;
   }catch{return exact;}
  }
  function ensure(){
@@ -40,9 +42,9 @@ export function createPlayController({getData,render,download}){
   const disclosures=[...document.querySelectorAll('.source-play details,.game-play details')].map((node,i)=>({i,open:node.open}));
   ensure();syncTime();notice='';
   if(action==='new-game'){
-   const backed=backup();state=createPlay(config(),{scenario:'initial'});state.tutorialStep=0;wallAt=Date.now();loading=true;
+   const backed=backup();state=createPlay(config(),{scenario:'initial',guide:true});wallAt=Date.now();loading=true;
    state.storageMessage=backed?'이전 저장을 백업하고 새 게임을 시작했습니다.':'기존 저장을 보존하기 위해 메모리에서만 진행합니다.';
-   clearTimeout(loadingTimer);loadingTimer=setTimeout(()=>{loading=false;state.stage='play';persist();render();},450);render();return;
+   clearTimeout(loadingTimer);loadingTimer=setTimeout(()=>{loading=false;playAction(state,'start',undefined,config());persist();render();},450);render();return;
   }
   if(action==='reset'||action==='scenario'){
    clearTimeout(loadingTimer);loading=false;
@@ -52,15 +54,24 @@ export function createPlayController({getData,render,download}){
   }else if(action==='save'){persist();render();return;}
   else if(action==='export'){
    const result=encodeSave(state,options());if(result.ok)download('harbor-play-session.json',JSON.parse(result.raw));else state.storageMessage=result.message;
-  }else if(action==='inventory')notice=`보관함 해금 기본값은 Lv${config().functionGates.inventory}입니다. 보관함 입출고·칸 구매는 다음 구현 범위입니다. 현재 보상은 주문대 왼쪽 대기열에서 배치할 수 있습니다.`;
-  else if(action==='game-cell'){
+  }else if(action==='set-modifiers'){
+   playAction(state,action,value??document.querySelector('[data-modifier-json]')?.value,config());
+  }else if(action==='aid-type'){
+   playAction(state,action,document.querySelector('[data-play-aid-type]')?.value,config());
+  }else if(action==='game-cell'){
    const index=Number(value),cell=state.board[index],definition=config().items.find(r=>r.type===cell?.type);
-   if(state.stage==='play'&&!state.modal&&definition?.generator&&!cell.cover&&(state.selected===null||state.selected===index)){
-    state.selected=index;playAction(state,'generate',undefined,config());
+   if(state.stage==='play'&&!state.modal&&definition?.generator&&!cell.cover&&!state.bubbles?.[cell.uid]&&(state.selected===null||state.selected===index)){
+    const constraint=state.tutorialStep!==undefined&&!state.guidanceSkipped?onboardingConstraints(state,config()):{},phase=state.generatorState[cell.uid]?.phase;
+    if(constraint.input?.kind==='select'||phase==='closed'&&state.selected!==index)playAction(state,'cell',value,config());
+    else{state.selected=index;playAction(state,phase==='closed'?'open-item':'generate',undefined,config());}
    }else playAction(state,'cell',value,config());
   }else playAction(state,action,value,config());
   persist();render();for(const {i,open}of disclosures){const node=document.querySelectorAll('.source-play details,.game-play details')[i];if(node)node.open=open;}
-  if(!state.modal&&!state.toolPending)document.querySelector(`[data-play="${action}"]${value!==undefined?`[data-value="${value}"]`:''}`)?.focus({preventScroll:true});
+  if(!state.modal&&!state.toolPending){
+   const returnTo={'close-info':'item-info','close-choice':'open-choice','close-inventory':'inventory','close-shop':'shop','close-energy':'open-energy','close-offer':'open-energy'},focusAction=returnTo[action]||action;
+   document.querySelector(`[data-play="${focusAction}"]${value!==undefined&&typeof value!=='object'?`[data-value="${value}"]`:''}`)?.focus({preventScroll:true});
+  }
+  if(action==='commerce-input')document.querySelector(`[data-commerce-field="${value.field}"]`)?.focus({preventScroll:true});
   if((action==='focus'&&state.focused)||['main','home'].includes(action))document.querySelector('.game-play-stage')?.scrollIntoView?.({block:'start',behavior:'instant'});
  }
  function stopDrag(){
@@ -78,11 +89,11 @@ export function createPlayController({getData,render,download}){
   ev.preventDefault();
   if(!drag.moving){drag.moving=true;drag.node.classList.add('drag-origin');const ghost=document.createElement('div');ghost.className='game-drag-ghost';ghost.setAttribute('aria-hidden','true');const image=drag.node.querySelector('.game-item,.game-item-missing');if(image)ghost.append(image.cloneNode(true));document.body.append(ghost);drag.ghost=ghost;}
   drag.ghost.style.left=ev.clientX+'px';drag.ghost.style.top=ev.clientY+'px';
-  const target=document.elementFromPoint(ev.clientX,ev.clientY)?.closest('.game-cell');if(drag.target!==target){drag.target?.classList.remove('drag-target');target?.classList.add('drag-target');drag.target=target;}
+  const target=document.elementFromPoint(ev.clientX,ev.clientY)?.closest('.game-cell,.game-bottom [data-play=inventory]');if(drag.target!==target){drag.target?.classList.remove('drag-target');target?.classList.add('drag-target');drag.target=target;}
  },{passive:false});
  document.addEventListener('pointerup',ev=>{
-  if(!drag||ev.pointerId!==drag.id)return;const from=drag.from,to=drag.target?.dataset.value,moving=drag.moving;stopDrag();
-  if(moving){suppressClick=true;setTimeout(()=>{suppressClick=false;},0);if(to!==undefined)handle('move',`${from},${to}`);}
+  if(!drag||ev.pointerId!==drag.id)return;const from=drag.from,to=drag.target?.dataset.value,inventory=drag.target?.dataset.play==='inventory',moving=drag.moving;stopDrag();
+  if(moving){suppressClick=true;setTimeout(()=>{suppressClick=false;},0);if(inventory)handle('inventory-store',from);else if(to!==undefined)handle('move',`${from},${to}`);}
  });
  document.addEventListener('pointercancel',stopDrag);
  document.addEventListener('click',ev=>{if(suppressClick&&ev.target.closest?.('.game-cell')){ev.preventDefault();ev.stopImmediatePropagation();}},{capture:true});
@@ -93,13 +104,15 @@ export function createPlayController({getData,render,download}){
  function beforeRender(){if(ticker)window.clearInterval(ticker);ticker=null;stopDrag();}
  function afterMount(){
   document.body.dataset.playFocus=String(Boolean(state?.focused));
-  for(const id of ['play-dialog','tool-dialog']){const dialog=document.getElementById(id);if(dialog&&!dialog.open){dialog.showModal();dialog.addEventListener('cancel',ev=>{ev.preventDefault();handle(id==='tool-dialog'?'cancel-tool':state.modal==='energy'?'close-energy':state.modal==='offer'?'close-offer':'close-shop');});}}
+  for(const id of ['play-dialog','tool-dialog']){const dialog=document.getElementById(id);if(dialog&&!dialog.open){dialog.showModal();dialog.addEventListener('cancel',ev=>{ev.preventDefault();handle(id==='tool-dialog'?'cancel-tool':state.modal==='energy'?'close-energy':state.modal==='offer'?'close-offer':state.modal==='inventory'?'close-inventory':state.modal==='item-info'?'close-info':state.modal==='choice'?'close-choice':'close-shop');});}}
   if(document.querySelector('.game-phone')&&state?.stage==='play'){
-   const signature=()=>JSON.stringify([state.board.map(c=>c&&[c.uid,c.type]),Object.values(state.generatorState).map(r=>r.charges),state.wallet.price]);
+   const signature=()=>JSON.stringify([state.board.map(c=>c&&[c.uid,c.type]),Object.values(state.generatorState).map(r=>r.charges),state.wallet.price,state.orders?.slots.map(o=>o.id),state.onboarding?.phases,Object.values(state.generatorState).map(r=>r.phase)]);
    ticker=window.setInterval(()=>{
-    const before=signature();syncTime();const clocks=gameClocks(state);
+    const before=signature();syncTime();const clocks=gameClocks(state,config());
     for(const [key,value]of [['energy',state.wallet.energy.toLocaleString('ko-KR')],['coins',state.wallet.coins.toLocaleString('ko-KR')],['energy-clock',clocks.energy],['selected-clock',clocks.selected]]){const node=document.querySelector(`[data-live-${key}]`);if(node)node.textContent=value;}
-    document.querySelectorAll('[data-bubble-timer]').forEach(node=>{const b=state.bubbles?.[node.dataset.bubbleTimer];if(b){const left=Math.max(0,b.expiresAt-state.wallet.time);node.textContent=`${Math.floor(left/60)}:${String(left%60).padStart(2,'0')}`;}});
+    document.querySelectorAll('[data-bubble-timer]').forEach(node=>{const b=state.bubbles?.[node.dataset.bubbleTimer];if(b){const quote=currentBubbleQuote(state,config(),b),left=Math.max(0,(quote.expiresAt??b.expiresAt)-state.wallet.time);node.textContent=`${Math.floor(left/60)}:${String(Math.floor(left%60)).padStart(2,'0')}`;}});
+    const bubblePrice=document.querySelector('[data-live-bubble-price]'),bubble=state.bubbles?.[state.board[state.selected]?.uid];if(bubblePrice&&bubble){const quote=currentBubbleQuote(state,config(),bubble);bubblePrice.textContent=quote.status==='known'?quote.price.toLocaleString('ko-KR'):'미확인';bubblePrice.closest('button').disabled=quote.status!=='known'||state.wallet.gems<quote.price;}
+    const skipCost=document.querySelector('[data-live-speedup-cost]');if(skipCost&&clocks.skipCost!==null){skipCost.textContent=clocks.skipCost.toLocaleString('ko-KR');skipCost.closest('button').disabled=state.wallet.gems<clocks.skipCost;}
     if(Date.now()-lastCheckpoint>=15000){persist();lastCheckpoint=Date.now();}
     if(before!==signature()&&!drag&&!document.querySelector('dialog[open]')){persist();render();}
    },1000);
@@ -110,6 +123,10 @@ export function createPlayController({getData,render,download}){
   if(input.hasAttribute('data-play-bm')){
    ensure();syncTime();const key=input.dataset.playBm,value=input.type==='checkbox'?input.checked:Number(input.value);
    if((['bundle','noPay','invite','plenty','chain','weekly'].includes(key)&&typeof value==='boolean')||(key==='triggerPrice'&&Number.isInteger(value)&&value>=0&&value<=1e6)||(key==='popType'&&[1,2].includes(value))){state.bm[key]=value;persist();}return;
+  }
+  if(input.hasAttribute('data-commerce-field')){
+   const value=input.type==='checkbox'?input.checked:input.value;
+   handle('commerce-input',{field:input.dataset.commerceField,value});return;
   }
   if(input.id!=='play-import'||!input.files?.[0])return;ensure();const file=input.files[0];
   if(file.size>2*1024*1024){state.storageMessage='가져올 상태 JSON은2MB 이하여야 합니다.';render();return;}
