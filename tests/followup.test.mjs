@@ -23,7 +23,7 @@ test('published APK images preserve decoded PNG hashes and a clear static-image 
  assert.equal(followup.assets.clips.length,26);assert.deepEqual(followup.assets.summary.canvasReference,[1080,1920]);
 });
 test('historical evidence preserves unknown build identity, extraction ranges and published derivative hashes',async()=>{
- const captures=media.entries.filter(x=>x.origin==='observed-user-capture');assert.equal(captures.length,41);
+ const captures=media.entries.filter(x=>x.origin==='observed-user-capture');assert.equal(captures.length,42);
  assert.equal(followup.findings.filter(x=>x.kind==='capture').length,9);
  for(const entry of captures){
   assert.equal(entry.version,null);assert.equal(entry.capturedAt,null);assert.match(entry.originalSha256,/^[a-f0-9]{64}$/);

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetVersion": "4.10.5",
-  "description": "APK 정적 Sprite 551개, 기본 타입 544개·명시 변형 6개·게임 UI 25개 연결. 버전 미확인 과거 캡처 20개를 구분합니다. 같은 PNG의 여러 키 참조는 고유 이미지 수와 다릅니다. BM 선택 구간 보강: 과거 캡처 총41키, 정지30개·영상11개.",
+  "description": "APK 정적 Sprite와 기본 타입544개·명시 변형6개·게임 UI 선정 자산을 연결합니다. 패키지 이미지 참조599키, 과거 캡처 파생본42키(정지30·영상11·GIF1), APK 규칙 재현 GIF11키. 같은 파일의 여러 키 참조는 고유 이미지 수와 다릅니다.",
   "entries": [
     {
       "key": "asset:Coffee01",
@@ -24394,6 +24394,797 @@
           "durationSeconds": 3.299999999999997
         }
       }
+    },
+    {
+      "key": "interaction:select",
+      "kind": "gif",
+      "src": "./assets/media/interaction-select.gif",
+      "poster": "./assets/media/interaction-select-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "select"
+        },
+        "ruleFactIds": [
+          "PZ-029"
+        ],
+        "spriteSources": [
+          {
+            "type": "201",
+            "key": "item:ItemModelConfig:201",
+            "sha256": "24eb3b650b61ac22d5778be2112ad25d23ea94f4385732496acf222e763fabaf",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5942478146542824120"
+          },
+          {
+            "type": "202",
+            "key": "item:ItemModelConfig:202",
+            "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+          },
+          {
+            "type": "301",
+            "key": "item:ItemModelConfig:301",
+            "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804"
+          },
+          {
+            "type": "302",
+            "key": "item:ItemModelConfig:302",
+            "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495"
+          },
+          {
+            "type": "401",
+            "key": "item:ItemModelConfig:401",
+            "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "선택 동작 반복 시연",
+      "sha256": "72add731dc57d8392a4f3632b7d6c176fa88bcda4d215b2d4f49230da73637db",
+      "posterSha256": "b3f0947c526cc7c66fe498349beb7b0529f3aa51d1d80097c5dbb57a27e5e777",
+      "width": 560,
+      "height": 400
+    },
+    {
+      "key": "interaction:move",
+      "kind": "gif",
+      "src": "./assets/media/interaction-move.gif",
+      "poster": "./assets/media/interaction-move-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "move"
+        },
+        "ruleFactIds": [
+          "PZ-030"
+        ],
+        "spriteSources": [
+          {
+            "type": "201",
+            "key": "item:ItemModelConfig:201",
+            "sha256": "24eb3b650b61ac22d5778be2112ad25d23ea94f4385732496acf222e763fabaf",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5942478146542824120"
+          },
+          {
+            "type": "202",
+            "key": "item:ItemModelConfig:202",
+            "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+          },
+          {
+            "type": "301",
+            "key": "item:ItemModelConfig:301",
+            "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804"
+          },
+          {
+            "type": "302",
+            "key": "item:ItemModelConfig:302",
+            "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495"
+          },
+          {
+            "type": "401",
+            "key": "item:ItemModelConfig:401",
+            "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "이동 동작 반복 시연",
+      "sha256": "837ade758f9c83fb8dfaccf02994f1e871f3d21a37b61c8ada7dcdd91610e20b",
+      "posterSha256": "8588823f0637eeaa17178e2744a902b40237d09e33767d97b1b11c82ca489f8f",
+      "width": 560,
+      "height": 400
+    },
+    {
+      "key": "interaction:merge",
+      "kind": "gif",
+      "sourceId": "GH-V0089",
+      "alt": "합성 동작 반복 시연",
+      "source": "GH-V0089 · Screen_Recording_20260412_091739_Gossip Harbor.mp4",
+      "version": null,
+      "capturedAt": null,
+      "origin": "observed-user-capture",
+      "originalSha256": "74a8c08468079bd2b2c9b4ec05883c8b55aee1675186f857122e150439492642",
+      "originalName": "Screen_Recording_20260412_091739_Gossip Harbor.mp4",
+      "observations": [
+        "발췌 0.30~7.90초에서 보드 위 두 아이템의 합성 발광과 결과 아이템 선택 상태가 보인다.",
+        "이후 주문 완료 버튼과 코인·이벤트 토큰이 HUD 방향으로 이동하는 연출이 보인다. 최종 코인 220 표시는 이 발췌에 포함하지 않는다."
+      ],
+      "notes": "기존에 검수한 공개 발췌에서 보드 구간만 재크롭한 반복 GIF. 원본 0.3–3.7초. 캡처 버전·입력 로그 미확인.",
+      "sha256": "2489db76b3c85bb276bb78e00448c4d6097d6f814e68e8087afd8b4583dc4906",
+      "bytes": 952118,
+      "width": 560,
+      "height": 400,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 560,
+          "width": 600,
+          "height": 430
+        },
+        "width": 560,
+        "height": 400,
+        "fps": 12,
+        "muted": true,
+        "loop": true,
+        "speed": 1
+      },
+      "category": "퍼즐",
+      "sourceRange": {
+        "startSeconds": 0.3,
+        "endSeconds": 3.7,
+        "durationSeconds": 3.4
+      },
+      "posterAtSourceSeconds": 2.31,
+      "encodedVerification": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 600,
+            "height": 1270,
+            "r_frame_rate": "24/1"
+          }
+        ],
+        "format": {
+          "duration": "7.583333"
+        }
+      },
+      "src": "./assets/media/interaction-merge.gif",
+      "posterSha256": "bb011bc904201583a45b99b3a0194102af0475fe67b37188f9a12ddc611b9e60",
+      "poster": "./assets/media/interaction-merge-poster.png",
+      "provenance": {
+        "sourceId": "GH-V0089",
+        "originalSha256": "74a8c08468079bd2b2c9b4ec05883c8b55aee1675186f857122e150439492642",
+        "transform": {
+          "crop": {
+            "x": 0,
+            "y": 54,
+            "width": 1080,
+            "height": 2286
+          },
+          "scale": {
+            "width": 600,
+            "height": 1270
+          },
+          "fps": 24,
+          "audioRemoved": true,
+          "speed": 1,
+          "purpose": "상단 빌드·계정 식별 워터마크 제외; 음성 제거·원속도 재인코딩"
+        }
+      }
+    },
+    {
+      "key": "interaction:blocked",
+      "kind": "gif",
+      "src": "./assets/media/interaction-blocked.gif",
+      "poster": "./assets/media/interaction-blocked-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "blocked"
+        },
+        "ruleFactIds": [
+          "PZ-006"
+        ],
+        "spriteSources": [
+          {
+            "type": "201",
+            "key": "item:ItemModelConfig:201",
+            "sha256": "24eb3b650b61ac22d5778be2112ad25d23ea94f4385732496acf222e763fabaf",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5942478146542824120"
+          },
+          {
+            "type": "202",
+            "key": "item:ItemModelConfig:202",
+            "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+          },
+          {
+            "type": "301",
+            "key": "item:ItemModelConfig:301",
+            "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804"
+          },
+          {
+            "type": "302",
+            "key": "item:ItemModelConfig:302",
+            "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495"
+          },
+          {
+            "type": "401",
+            "key": "item:ItemModelConfig:401",
+            "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "입력 제한 동작 반복 시연",
+      "sha256": "f66f835e590835da7a7391fef504ae103b855251310bd4ad4e2c1bf73430bd95",
+      "posterSha256": "9a7e00cbd425256b49a9d558e911ccb53e0548e9ddf6ef59a16595bd72342559",
+      "width": 560,
+      "height": 400
+    },
+    {
+      "key": "interaction:rainbow",
+      "kind": "gif",
+      "src": "./assets/media/interaction-rainbow.gif",
+      "poster": "./assets/media/interaction-rainbow-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "rainbow"
+        },
+        "ruleFactIds": [
+          "SIM-C007"
+        ],
+        "spriteSources": [
+          {
+            "type": "202",
+            "key": "item:ItemModelConfig:202",
+            "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+          },
+          {
+            "type": "203",
+            "key": "item:ItemModelConfig:203",
+            "sha256": "837af669ff02f22d71c3b691c5cc04b9c7f669738e2ab0be7422900070339ac2",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5300630747596259029"
+          },
+          {
+            "type": "204",
+            "key": "item:ItemModelConfig:204",
+            "sha256": "ffc76720a69d8a89aca9f88b9eff1c2a4474a2cbb0e11615a7a77ea2f424c562",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4613292626073120423"
+          },
+          {
+            "type": "301",
+            "key": "item:ItemModelConfig:301",
+            "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804"
+          },
+          {
+            "type": "302",
+            "key": "item:ItemModelConfig:302",
+            "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495"
+          },
+          {
+            "type": "401",
+            "key": "item:ItemModelConfig:401",
+            "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597"
+          },
+          {
+            "type": "level_up_piece_1",
+            "key": "item:ItemModelConfig:level_up_piece_1",
+            "sha256": "d1244c31a8ac4d7640b8b10e744731992b0881423737b78a74ff3a3865005aa1",
+            "originalSource": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4141815654688426063"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "도구 효과 · 만능 젬 동작 반복 시연",
+      "sha256": "c37b0392c7489425a33b2b5567a862b58ff0bb057b995a1c6a1d38f028a3a936",
+      "posterSha256": "f7894ee718c0109414eda4b4ca8f9be5d13e14ad4756821c666554e437b43aac",
+      "width": 560,
+      "height": 400
+    },
+    {
+      "key": "interaction:scissors",
+      "kind": "gif",
+      "src": "./assets/media/interaction-scissors.gif",
+      "poster": "./assets/media/interaction-scissors-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "scissors"
+        },
+        "ruleFactIds": [
+          "SIM-C007"
+        ],
+        "spriteSources": [
+          {
+            "type": "202",
+            "key": "item:ItemModelConfig:202",
+            "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+          },
+          {
+            "type": "203",
+            "key": "item:ItemModelConfig:203",
+            "sha256": "837af669ff02f22d71c3b691c5cc04b9c7f669738e2ab0be7422900070339ac2",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5300630747596259029"
+          },
+          {
+            "type": "204",
+            "key": "item:ItemModelConfig:204",
+            "sha256": "ffc76720a69d8a89aca9f88b9eff1c2a4474a2cbb0e11615a7a77ea2f424c562",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -4613292626073120423"
+          },
+          {
+            "type": "301",
+            "key": "item:ItemModelConfig:301",
+            "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804"
+          },
+          {
+            "type": "302",
+            "key": "item:ItemModelConfig:302",
+            "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495"
+          },
+          {
+            "type": "401",
+            "key": "item:ItemModelConfig:401",
+            "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597"
+          },
+          {
+            "type": "level_down_piece_1",
+            "key": "item:ItemModelConfig:level_down_piece_1",
+            "sha256": "34c8ad3024c652ac5ff61e34f61cc6a33713fac26370e512bdff633d61ec0f25",
+            "originalSource": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1874462593635924693"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "도구 효과 · 가위 동작 반복 시연",
+      "sha256": "8a9760365dcd3c9b2868a56affa67d1104cd9b729f728351c2919c62b4c86df0",
+      "posterSha256": "01a8466e311ea5ebf4b157ec45e9cb9b556863ee02e10a7e45730eaa87845b7b",
+      "width": 560,
+      "height": 400
+    },
+    {
+      "key": "interaction:hourglass",
+      "kind": "gif",
+      "src": "./assets/media/interaction-hourglass.gif",
+      "poster": "./assets/media/interaction-hourglass-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "hourglass"
+        },
+        "ruleFactIds": [
+          "SIM-C007"
+        ],
+        "spriteSources": [
+          {
+            "type": "106",
+            "key": "item:ItemModelConfig:106",
+            "sha256": "4d4d9498438dae36cf6206b61b52e61c19c9768adf8d0a404860da49cf6ddb00",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 6356145883407704255"
+          },
+          {
+            "type": "time_skip_1",
+            "key": "item:ItemModelConfig:time_skip_1",
+            "sha256": "3a95bc14959e2c4fc77228685588238411fb1fd43ac1f18a0972da3d5b6f2fa1",
+            "originalSource": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5172776586136651539"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "도구 효과 · 모래시계 동작 반복 시연",
+      "sha256": "e30c7e39a750ef5ce1f5b5ee949a082f3e5312933745924b6fbaedbbb8448df1",
+      "posterSha256": "50b202070a48f071d9be069f3f867249a51a098a4753ac5ff859d77b713d49e1",
+      "width": 560,
+      "height": 400
+    },
+    {
+      "key": "interaction:swap",
+      "kind": "gif",
+      "src": "./assets/media/interaction-swap.gif",
+      "poster": "./assets/media/interaction-swap-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "swap"
+        },
+        "ruleFactIds": [
+          "PZ-030"
+        ],
+        "spriteSources": [
+          {
+            "type": "201",
+            "key": "item:ItemModelConfig:201",
+            "sha256": "24eb3b650b61ac22d5778be2112ad25d23ea94f4385732496acf222e763fabaf",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5942478146542824120"
+          },
+          {
+            "type": "202",
+            "key": "item:ItemModelConfig:202",
+            "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+          },
+          {
+            "type": "301",
+            "key": "item:ItemModelConfig:301",
+            "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804"
+          },
+          {
+            "type": "302",
+            "key": "item:ItemModelConfig:302",
+            "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495"
+          },
+          {
+            "type": "401",
+            "key": "item:ItemModelConfig:401",
+            "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "교환 동작 반복 시연",
+      "sha256": "436be415e5e4df6289c4efd2ad4b2a96da5242c9e4d8ef7e3eb2acdac93ac929",
+      "posterSha256": "b9adee9f22c458ca04a42fbed4f71aaeef019ea7921c2bd46f1f79bc07bd42f9",
+      "width": 560,
+      "height": 400
+    },
+    {
+      "key": "interaction:drag",
+      "kind": "gif",
+      "src": "./assets/media/interaction-drag.gif",
+      "poster": "./assets/media/interaction-drag-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "drag"
+        },
+        "ruleFactIds": [
+          "PZ-031"
+        ],
+        "spriteSources": [
+          {
+            "type": "201",
+            "key": "item:ItemModelConfig:201",
+            "sha256": "24eb3b650b61ac22d5778be2112ad25d23ea94f4385732496acf222e763fabaf",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5942478146542824120"
+          },
+          {
+            "type": "202",
+            "key": "item:ItemModelConfig:202",
+            "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+          },
+          {
+            "type": "301",
+            "key": "item:ItemModelConfig:301",
+            "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804"
+          },
+          {
+            "type": "302",
+            "key": "item:ItemModelConfig:302",
+            "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495"
+          },
+          {
+            "type": "401",
+            "key": "item:ItemModelConfig:401",
+            "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "드래그 앤 드롭 동작 반복 시연",
+      "sha256": "763626e5419b040f984a1dd02d57c1c40a3461d0b13d1947f539363fc7b03595",
+      "posterSha256": "eaf23a44442e21bb7cfcd863717339233f5f778b80df2fc4d3c907deabc2cae6",
+      "width": 560,
+      "height": 400
+    },
+    {
+      "key": "interaction:hint",
+      "kind": "gif",
+      "src": "./assets/media/interaction-hint.gif",
+      "poster": "./assets/media/interaction-hint-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "hint"
+        },
+        "ruleFactIds": [
+          "FX-009"
+        ],
+        "spriteSources": [
+          {
+            "type": "201",
+            "key": "item:ItemModelConfig:201",
+            "sha256": "24eb3b650b61ac22d5778be2112ad25d23ea94f4385732496acf222e763fabaf",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5942478146542824120"
+          },
+          {
+            "type": "202",
+            "key": "item:ItemModelConfig:202",
+            "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+          },
+          {
+            "type": "301",
+            "key": "item:ItemModelConfig:301",
+            "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804"
+          },
+          {
+            "type": "302",
+            "key": "item:ItemModelConfig:302",
+            "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495"
+          },
+          {
+            "type": "401",
+            "key": "item:ItemModelConfig:401",
+            "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "합성 힌트 동작 반복 시연",
+      "sha256": "7a87e3d1185c22ab59a2eb0b52d072f1ad0aa341a4b041dca593b5e5a5eae379",
+      "posterSha256": "bd5ec89ce706deda8e73fb7c448062bd267cf159c5493f674b4de9adc51b9fd8",
+      "width": 560,
+      "height": 400
+    },
+    {
+      "key": "interaction:unlock-web",
+      "kind": "gif",
+      "src": "./assets/media/interaction-unlock-web.gif",
+      "poster": "./assets/media/interaction-unlock-web-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "unlock-web"
+        },
+        "ruleFactIds": [
+          "PZ-005"
+        ],
+        "spriteSources": [
+          {
+            "type": "201",
+            "key": "item:ItemModelConfig:201",
+            "sha256": "24eb3b650b61ac22d5778be2112ad25d23ea94f4385732496acf222e763fabaf",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5942478146542824120"
+          },
+          {
+            "type": "202",
+            "key": "item:ItemModelConfig:202",
+            "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+          },
+          {
+            "type": "301",
+            "key": "item:ItemModelConfig:301",
+            "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804"
+          },
+          {
+            "type": "302",
+            "key": "item:ItemModelConfig:302",
+            "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495"
+          },
+          {
+            "type": "401",
+            "key": "item:ItemModelConfig:401",
+            "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "봉인 해제 · 거미줄 동작 반복 시연",
+      "sha256": "b2db5ebe74689d93b5563ab7c55984d1bbfa99dfc0c046b2e4918e36b14f88c9",
+      "posterSha256": "5092f8caa09f75ec2205a99e105eb2f2a7d62e49b61b308bff5b83e88e804543",
+      "width": 560,
+      "height": 400
+    },
+    {
+      "key": "interaction:unlock-box",
+      "kind": "gif",
+      "src": "./assets/media/interaction-unlock-box.gif",
+      "poster": "./assets/media/interaction-unlock-box-poster.png",
+      "origin": "apk-rule-replay",
+      "category": "퍼즐",
+      "version": "4.10.5",
+      "source": "APK 4.10.5 아이템 Sprite + 확인된 웹 모델 규칙 재현",
+      "notes": "원작 플레이 녹화가 아님. 배치·포인터 궤적·표시 시간·연출은 웹 설명용. 실제 사용 영상은 미확보.",
+      "replay": {
+        "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
+        "modelPath": "src/play-model.mjs",
+        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "fixtures": {
+          "path": "analysis/simulation/interaction-fixtures.json",
+          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "id": "unlock-box"
+        },
+        "ruleFactIds": [
+          "PZ-005"
+        ],
+        "spriteSources": [
+          {
+            "type": "201",
+            "key": "item:ItemModelConfig:201",
+            "sha256": "24eb3b650b61ac22d5778be2112ad25d23ea94f4385732496acf222e763fabaf",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5942478146542824120"
+          },
+          {
+            "type": "202",
+            "key": "item:ItemModelConfig:202",
+            "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+            "originalSource": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+          },
+          {
+            "type": "301",
+            "key": "item:ItemModelConfig:301",
+            "sha256": "fdfb92ed5054efb6f60d85d22672adf13c2ce994174981d61cae60a4cecff509",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 3662203822608577804"
+          },
+          {
+            "type": "302",
+            "key": "item:ItemModelConfig:302",
+            "sha256": "6f03f6fef39a1dbc7caf7ce07431f2a325132261ffb74c4c8b734a381710a1db",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 8026677320063062495"
+          },
+          {
+            "type": "401",
+            "key": "item:ItemModelConfig:401",
+            "sha256": "f2c6cf12d150fa7972c412c3ebb80cc334c322080f37c1a26ac9d334459cae67",
+            "originalSource": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5336530793090555597"
+          }
+        ],
+        "fps": 12,
+        "durationMs": 4814,
+        "illustrativeTiming": true
+      },
+      "alt": "봉인 해제 · 상자 동작 반복 시연",
+      "sha256": "2c697e160c2bcca950acfbb4fb4dcc88cea6c53af5ab2936725829f11d0d3452",
+      "posterSha256": "2667e27a04748b638d8b55ca29c6ba71906712bbcb2d29f99fe0df154c523cd9",
+      "width": 560,
+      "height": 400
     }
   ]
 }

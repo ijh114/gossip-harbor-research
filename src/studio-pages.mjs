@@ -3,15 +3,16 @@ import {PUZZLE_DEMOS,UI_DEMOS,UI_REGIONS,ROLE_NAMES,UI_CATEGORY_NAMES,filterVisu
 import {STAGE_NAMES,STAGES,RENOVATIONS} from './walkthrough.mjs';
 import {renderActionGallery} from './action-gallery.mjs';
 import {renderPlayProgress} from './play-progress.mjs';
+import {renderInteractionGallery} from './interaction-gallery.mjs';
 
 const e=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const source=id=>`<button class="source-button" data-evidence="${e(id)}">상세 연구·근거</button>`;
 const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
 const intro=(title,copy)=>`<header class="studio-intro"><h1>${title}</h1><p>${copy}</p></header>`;
 const pending='<span class="media-state">실제 캡처 대기</span>';
-function pageLinks(active,kind='puzzle'){
- const links=kind==='puzzle'?[['puzzle','타입·연출 도감'],['puzzle-interaction','상호작용'],['puzzle-difficulty','난이도']]:[['interface','화면 도감'],['interface-structure','UI 구조'],['interface-motion','UI 연출']];
- return `<nav class="studio-tabs" aria-label="${kind==='puzzle'?'퍼즐':'UI'} 하위 페이지">${links.map(([id,label])=>`<a href="#${id}"${id===active?' aria-current="page"':''}>${label}</a>`).join('')}</nav>`;
+function pageLinks(active){
+ const links=[['interface','화면 도감'],['interface-structure','UI 구조'],['interface-motion','UI 연출']];
+ return `<nav class="studio-tabs" aria-label="UI 하위 페이지">${links.map(([id,label])=>`<a href="#${id}"${id===active?' aria-current="page"':''}>${label}</a>`).join('')}</nav>`;
 }
 export function demoScene(type){
  const item='<rect x="42" y="48" width="48" height="48" rx="10" class="scene-item"/><path d="M55 72h22m-11-11v22" class="scene-mark"/>';
@@ -69,19 +70,20 @@ export function renderResearch(data){
 }
 function coverage(data,keys){const complete=keys.filter(key=>validMedia(mediaFor(data,key))).length;return `<div class="capture-coverage"><div><strong>실제 캡처 ${complete} / ${keys.length}</strong><span>연결한 실제 화면 이미지·GIF·영상</span></div><progress max="${keys.length||1}" value="${complete}" aria-label="캡처 자료 연결 현황"></progress><a class="text-link" href="#research">상세 문서는 연구에서 읽기</a></div>`;}
 export function renderPuzzle(data,filters){
- return intro('퍼즐','실제 보드·부스터·합성 영상을 먼저 살펴보고, 아래 모식도와 APK 타입 선언으로 규칙을 비교합니다. 캡처 버전과4.10.5 정적 분석은 구분합니다.')+pageLinks('puzzle')+renderActionGallery(data)+observedGallery(data,['퍼즐'],'실제 보드와 상호작용')+coverage(data,PUZZLE_DEMOS.map(x=>'effect:'+x.id))+
- `<section class="studio-section"><div class="section-heading"><h2>동작·기믹 갤러리</h2><a class="text-link" href="#puzzle-fx">연출 상세 연구</a></div><p class="section-copy">재생 버튼으로 한 번씩 확인합니다. 아래 도형은 동작 설명용이며 실제 아이템 그래픽과 다릅니다.</p>${demoCards(PUZZLE_DEMOS,data)}</section><section class="studio-section"><div class="section-heading"><h2>전체 타입 도감</h2><a class="text-link" href="#mechanics">기믹 상세 연구</a></div><div id="item-catalog">${renderItemCatalog(data,filters)}</div></section>${apkAssetGallery(data)}`;
+ return intro('타입 도감','아이템의 생김새와 합성 체인, 생성기 설정을 확인합니다. 기본 타입과 이벤트·변형 선언은 표를 선택해 구분할 수 있습니다.')+
+ `<section class="studio-section"><div class="section-heading"><h2>전체 아이템 타입</h2><a class="text-link" href="#mechanics">기믹 상세 연구</a></div><div id="item-catalog">${renderItemCatalog(data,filters)}</div></section>${apkAssetGallery(data)}`;
 }
-export function interactionExample(id='merge'){
- const scenarios={tap:['선택','탭 한 번으로 선택과 실행을 구분합니다. 선택 상태가 다음 입력의 의미를 바꿉니다.','PZ-029','hint'],move:['빈칸으로 이동','선택한 아이템을 빈칸으로 옮깁니다. 다른 아이템이 있으면 후속 판정을 평가합니다.','PZ-030','drag'],merge:['같은 타입 합성','같은 타입이며 MergedType이 존재하는 경우를 확인합니다. 소모 상태 등 예외는 별도입니다.','PZ-003','merge'],blocked:['입력 제한','상자·거미줄·잠금, 튜토리얼의 입력 영역을 먼저 확인합니다.','PZ-006','unlock']};
- const row=scenarios[id]||scenarios.merge;
- return `<div class="interaction-stage demo-${row[3]}" id="demo-interaction">${demoScene(row[3])}</div><div><h3>${row[0]}</h3><p>${row[1]}</p><button class="button primary" data-demo="interaction">이 동작 시연</button>${source(row[2])}</div>`;
+export function renderPuzzleMotion(data){
+ return intro('연출 도감','생성·합성·보상·팝업의 모습을 비교합니다. 실제 캡처와 APK 규칙으로 만든 웹 시연을 출처별로 구분합니다.')+
+ renderActionGallery(data)+coverage(data,PUZZLE_DEMOS.map(x=>'effect:'+x.id))+
+ `<section class="studio-section"><div class="section-heading"><h2>동작·기믹 연출</h2><a class="text-link" href="#puzzle-fx">연출 상세 연구</a></div><p class="section-copy">아래 모식도는 동작의 구조를 설명합니다. 실제 아이템 이미지로 반복 재생되는 입력 동작은 <a href="#puzzle-interaction">상호작용 도감</a>에서 비교하세요.</p>${demoCards(PUZZLE_DEMOS,data)}</section>`;
 }
-export function renderInteraction(data){return intro('퍼즐 · 상호작용','긴 설명 대신 입력 전후를 비교합니다. 실제 관측 구간과 원작 입력 판정의 정적 근거를 나란히 읽습니다.')+pageLinks('puzzle-interaction')+observedGallery(data,['퍼즐'],'합성·보상 배치 관측 자료')+
- `<section class="studio-section"><h2>입력에 따라 달라지는 결과</h2><div class="scenario-switch" role="group" aria-label="입력 시나리오">${[['tap','탭·선택'],['move','이동'],['merge','합성'],['blocked','입력 제한']].map(([id,name])=>`<button class="button" data-interaction="${id}" aria-pressed="${id==='merge'}">${name}</button>`).join('')}</div><div class="interaction-comparison" id="interaction-example">${interactionExample()}</div></section><section class="studio-section"><h2>드롭 판정 순서</h2><ol class="decision-flow">${['이동','도구 효과','합성','흡수','교환'].map(x=>`<li>${x}</li>`).join('')}</ol><p class="section-copy">적용 가능한 분기에서 처리하며 모든 효과가 연속 실행되는 뜻은 아닙니다.</p>${source('PZ-030')}</section><section class="studio-section"><h2>입력 피드백 비교</h2>${demoCards(PUZZLE_DEMOS.filter(d=>['drag','hint','unlock'].includes(d.id)),data)}</section>`;}
+export function renderInteraction(data){
+ return intro('상호작용','선택·이동·합성부터 봉인 해제까지, 12개 동작을 반복 GIF로 비교하세요.')+renderInteractionGallery(data);
+}
 export function difficultyOutput(level=8){return `<strong>${baseMergeUnits(level).toLocaleString('ko-KR')}<span>개</span></strong><p>레벨 ${level} 한 개에 필요한 레벨1 아이템의 이론 최소량</p><code>2^(${level} − 1)</code>`;}
 export function renderDifficulty(data){
- return intro('퍼즐 · 난이도','합성 깊이, 시간, 공간이 만드는 압력을 차트로 살펴봅니다. 아래 작업량은 산술 가정이며 원작 주문의 실제 난이도 점수가 아닙니다.')+pageLinks('puzzle-difficulty')+
+ return intro('퍼즐 · 난이도','합성 깊이, 시간, 공간이 만드는 압력을 차트로 살펴봅니다. 아래 작업량은 산술 가정이며 원작 주문의 실제 난이도 점수가 아닙니다.')+
  `<section class="studio-section"><h2>합성 깊이와 작업량</h2><div class="difficulty-lab"><div class="depth-chart" role="img" aria-label="목표 레벨 1부터 13까지 레벨1 투입량이 1부터 4096까지 두 배씩 증가합니다.">${Array.from({length:13},(_,i)=>{const level=i+1;return `<div><span>${baseMergeUnits(level).toLocaleString('ko-KR')}</span><i style="--bar:${Math.max(3,100*baseMergeUnits(level)/4096)}%"></i><small>${level}</small></div>`;}).join('')}</div><div class="depth-control"><label for="visual-depth">목표 아이템 레벨</label><input id="visual-depth" data-visual-depth type="range" min="1" max="13" value="8"><div id="difficulty-output" aria-live="polite">${difficultyOutput()}</div></div></div><p class="section-copy">레벨1만 공급되고 동일 아이템 두 개가 다음 레벨 한 개가 된다는 조건입니다. 드롭 분포·보상·상점·부스터는 포함하지 않습니다.</p></section>
  <section class="studio-section"><h2>플레이 압력의 세 축</h2><div class="pressure-grid"><article><div class="pressure-diagram pressure-depth"><i></i><i></i><i></i><i></i></div><h3>합성 깊이</h3><p>요구 레벨과 생성 경로가 필요한 투입량을 바꿉니다.</p>${source('PZ-003')}</article><article><div class="pressure-diagram pressure-time"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="40" cy="40" r="28"/><path d="M40 22v20l14 8"/></svg></div><h3>대기와 자원</h3><p>현재 산출량, 저장 회복량, 에너지 제약을 구분합니다.</p>${source('PZ-007')}</article><article><div class="pressure-diagram pressure-space">${'<i></i>'.repeat(12)}</div><h3>보드 공간</h3><p>봉인과 아이템 점유로 남은 칸이 줄어듭니다.</p>${source('PZ-001')}</article></div></section><a class="button" href="#difficulty">난이도 선택 필터와 예외 상세 읽기</a>`;
 }

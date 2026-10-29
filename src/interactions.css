@@ -1,0 +1,23 @@
+.interaction-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;margin:0 0 16px}
+.interaction-toolbar p{margin:0;color:var(--muted);font-size:.9375rem;line-height:1.65}
+.interaction-toolbar .button{flex-shrink:0;min-height:44px}
+.interaction-scope{font-size:.9375rem;line-height:1.8;max-width:76ch;color:var(--muted);margin:0 0 32px}
+.interaction-scope strong{color:var(--ink);font-weight:650}
+.interaction-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
+.interaction-card{display:flex;flex-direction:column;min-width:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel,#fff)}
+.interaction-preview{aspect-ratio:7/5;display:grid;place-items:center;background:#e6d2b9;overflow:hidden}
+.interaction-preview img{display:block;width:100%;height:100%;object-fit:contain}
+.interaction-preview>p{padding:24px;color:var(--ink)}
+.interaction-card-body{display:flex;flex-direction:column;flex:1;padding:20px}
+.interaction-origin{display:block;font-size:.8125rem;font-weight:650;line-height:1.6;color:var(--teal)}
+.interaction-card h2{font-size:1.25rem;line-height:1.4;margin:8px 0 12px;text-wrap:balance}
+.interaction-card p{font-size:.9375rem;line-height:1.8;margin:0 0 12px}
+.interaction-card .interaction-note{color:var(--muted)}
+.interaction-card-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin-top:auto;padding-top:8px}
+.interaction-card-actions .button,.interaction-card-actions .source-button{min-height:44px}
+.interaction-provenance{margin-top:16px;font-size:.875rem;border-top:1px solid var(--line);padding-top:8px}
+.interaction-provenance summary{cursor:pointer;min-height:44px;line-height:1.65;align-content:center;color:var(--muted)}
+.interaction-provenance p{font-size:.8125rem;overflow-wrap:anywhere;color:var(--muted);margin:8px 0}
+.interaction-load-error{color:#8b3326;background:#fff0e6;padding:12px;border-radius:8px}
+@media(max-width:1100px){.interaction-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}
+@media(max-width:600px){.interaction-grid{grid-template-columns:1fr}.interaction-card-body{padding:20px}.interaction-toolbar{align-items:flex-start}.interaction-toolbar p{flex:1;min-width:160px}.interaction-scope{margin-bottom:24px}}

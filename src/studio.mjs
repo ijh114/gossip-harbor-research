@@ -1,13 +1,14 @@
-import {renderResearch,renderPuzzle,renderInteraction,renderDifficulty,renderInterface,renderStructure,renderUIMotion,renderExperience,renderItemCatalog,renderUIRegistry,interactionExample,difficultyOutput,regionDetail} from './studio-pages.mjs';
+import {renderResearch,renderPuzzle,renderPuzzleMotion,renderInteraction,renderDifficulty,renderInterface,renderStructure,renderUIMotion,renderExperience,renderItemCatalog,renderUIRegistry,difficultyOutput,regionDetail} from './studio-pages.mjs';
 import {validMedia,mediaFor} from './visual-model.mjs';
 import {createWalkthrough,walkthroughAction} from './walkthrough.mjs';
 import {renderCaptures} from './capture-pages.mjs';
 import {createPlayController} from './play-controller.mjs';
 import {renderBMTimeline} from './bm-timeline.mjs';
+import {mountInteractionLoops} from './interaction-gallery.mjs';
 
 export function createStudio({getData,getRoute,render,toast,download}){
  let walkthrough=createWalkthrough(),running=new Map();
- let playMode='game';
+ let playMode='game',interactionCleanup=()=>{};
  const sourcePlay=createPlayController({getData,render,download});
  const playPage=()=>`<nav class="studio-tabs" aria-label="게임 시뮬레이션 모드"><button class="button" data-play-mode="game" aria-pressed="${playMode==='game'}">게임 플레이</button><button class="button" data-play-mode="source" aria-pressed="${playMode==='source'}">APK 설정 기반 플레이</button><button class="button" data-play-mode="prototype" aria-pressed="${playMode==='prototype'}">기존 흐름 시연</button></nav>`+(playMode!=='prototype'?sourcePlay.render(playMode):renderExperience(walkthrough,getData()));
  const itemFilters={query:'',table:'ItemModelConfig',role:'all',page:1};
@@ -15,7 +16,7 @@ export function createStudio({getData,getRoute,render,toast,download}){
  const captureFilters={category:'all',kind:'all'};
  const timelineFilters={entryId:null,milestoneId:null,baselineId:null};
  const mediaDialog=document.querySelector('#media-dialog'),mediaContent=document.querySelector('#media-content');
- const pages={'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:()=>renderCaptures(getData(),captureFilters),puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
+ const pages={'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:()=>renderCaptures(getData(),captureFilters),puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
  const renderItem=()=>{document.querySelector('#item-catalog').innerHTML=renderItemCatalog(getData(),itemFilters);};
  const renderUI=()=>{document.querySelector('#ui-registry').innerHTML=renderUIRegistry(getData(),uiFilters);};
  function preserveInput(id,update){const node=document.getElementById(id),start=node.selectionStart,end=node.selectionEnd;update();const next=document.getElementById(id);next.focus({preventScroll:true});if(next.type==='search')next.setSelectionRange(start,end);}
@@ -51,7 +52,6 @@ export function createStudio({getData,getRoute,render,toast,download}){
    node.classList.remove('playing');void node.offsetWidth;node.classList.add('playing');target.textContent='시연 정지';target.setAttribute('aria-pressed','true');
    const timer=setTimeout(()=>{node.classList.remove('playing');target.textContent='웹 시연 재생';target.setAttribute('aria-pressed','false');running.delete(id);},2000);running.set(id,timer);return;
   }
-  if(target.dataset.interaction){for(const b of document.querySelectorAll('[data-interaction]'))b.setAttribute('aria-pressed',String(b===target));document.querySelector('#interaction-example').innerHTML=interactionExample(target.dataset.interaction);return;}
   if(target.dataset.uiRegion){for(const b of document.querySelectorAll('[data-ui-region]'))b.setAttribute('aria-pressed',String(b===target));document.querySelector('#region-inspector').innerHTML=regionDetail(target.dataset.uiRegion);return;}
   if(target.hasAttribute('data-item-page')){itemFilters.page=Number(target.dataset.itemPage);renderItem();document.querySelector('#item-catalog').scrollIntoView({block:'start'});document.querySelector('#item-query').focus({preventScroll:true});return;}
   if(target.hasAttribute('data-ui-page')){uiFilters.page=Number(target.dataset.uiPage);renderUI();document.querySelector('#ui-registry').scrollIntoView({block:'start'});document.querySelector('#ui-query').focus({preventScroll:true});return;}
@@ -71,6 +71,6 @@ export function createStudio({getData,getRoute,render,toast,download}){
  document.querySelector('#close-media').addEventListener('click',closeMedia);
  mediaDialog.addEventListener('close',clearMedia);
  mediaDialog.addEventListener('cancel',clearMedia);
- function afterRender(){sourcePlay.beforeRender();for(const [id,timer]of running){clearTimeout(timer);}running.clear();}
- return {renderPage:id=>pages[id]?.()||'',afterRender,afterMount(){if(getRoute()==='experience'&&playMode!=='prototype')sourcePlay.afterMount();}};
+ function afterRender(){interactionCleanup();interactionCleanup=()=>{};sourcePlay.beforeRender();for(const [id,timer]of running){clearTimeout(timer);}running.clear();}
+ return {renderPage:id=>pages[id]?.()||'',afterRender,afterMount(){if(getRoute()==='puzzle-interaction')interactionCleanup=mountInteractionLoops();if(getRoute()==='experience'&&playMode!=='prototype')sourcePlay.afterMount();}};
 }

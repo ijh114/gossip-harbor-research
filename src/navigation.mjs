@@ -1,11 +1,11 @@
 import {DOMAIN_DEFS} from './domain-model.mjs';
 
-export const STUDIO_PAGES={research:'연구',captures:'실제 화면 · 관측 자료','bm-validation':'후속 검증 · BM 조건','bm-timeline':'BM 관측 타임라인',puzzle:'퍼즐 도감','puzzle-interaction':'퍼즐 · 상호작용','puzzle-difficulty':'퍼즐 · 난이도',interface:'UI 도감','interface-structure':'UI · 구조','interface-motion':'UI · 연출',experience:'게임 시뮬레이션'};
+export const STUDIO_PAGES={research:'연구',captures:'실제 화면 · 관측 자료','bm-validation':'후속 검증 · BM 조건','bm-timeline':'BM 관측 타임라인',puzzle:'타입 도감','puzzle-motion':'연출 도감','puzzle-interaction':'퍼즐 · 상호작용','puzzle-difficulty':'퍼즐 · 난이도',interface:'UI 도감','interface-structure':'UI · 구조','interface-motion':'UI · 연출',experience:'게임 시뮬레이션'};
 export const VISUAL_ROUTES=Object.keys(STUDIO_PAGES).filter(id=>!['research','bm-validation','bm-timeline'].includes(id));
 export const RESEARCH_ROUTES=['research','bm-validation','bm-timeline','overview',...DOMAIN_DEFS.map(d=>d.id),'wiki','catalog','triggers','simulator','evidence'];
 const link=(id,label)=>`<a href="#${id}" data-route="${id}">${label}</a>`;
 export function renderNavigation(){
- return `<details class="nav-tree" data-nav-group="puzzle" open><summary>퍼즐</summary><div class="nav-children">${link('puzzle','타입·연출 도감')}${link('puzzle-interaction','상호작용')}${link('puzzle-difficulty','난이도')}</div></details>
+ return `<details class="nav-tree" data-nav-group="puzzle" open><summary>퍼즐</summary><div class="nav-children">${link('puzzle','타입 도감')}${link('puzzle-motion','연출 도감')}${link('puzzle-interaction','상호작용')}${link('puzzle-difficulty','난이도')}</div></details>
  <details class="nav-tree" data-nav-group="interface"><summary>UI</summary><div class="nav-children">${link('interface','화면 도감')}${link('interface-structure','UI 구조')}${link('interface-motion','UI 연출')}</div></details>
  ${link('experience','게임 시뮬레이션')}
  ${link('captures','실제 화면 · 관측 자료')}
