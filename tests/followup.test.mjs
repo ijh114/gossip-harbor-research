@@ -36,3 +36,32 @@ test('historical evidence preserves unknown build identity, extraction ranges an
  assert.equal(captures.find(x=>x.sourceId==='GH-V0114').key,'capture:reward-queue');
  for(const fact of followup.findings.filter(x=>x.kind==='capture')){assert.equal(fact.version,null);assert.ok(fact.sourceIds.length);assert.ok(fact.sources.every(s=>s.evidence_id===null));assert.ok(captures.some(c=>fact.sourceIds.includes(c.sourceId)),fact.id+' needs a matching curated source');}
 });
+
+test('published work status matches current configuration, replay scope and media origins without stale implementation gaps',async()=>{
+ const [config,progress,audit]=await Promise.all(['play-config.json','play-progress.json','media-audit.json'].map(read));
+ const work=new Map(followup.work.map(row=>[row.step,row]));
+ assert.equal(work.size,followup.work.length);
+ for(const row of followup.work){assert.ok(['partial','held','waiting','working','done'].includes(row.state),row.step+' has a rendered status');assert.ok(row.done);assert.ok(row.remaining);}
+ assert.equal(work.get('문서·공개 상태표').state,'done');
+ assert.deepEqual(work.get('웹 보드·고정 주문').metrics,{
+  baseTypes:config.items.length,generators:Object.keys(config.spreadRules.byType).length,fixedOrders:config.orders.length,
+  randomOrderKinds:config.orderRules.supportedTypes.length,guideNodes:progress.tutorials.summary.webLogicHooks,
+  sourceLogicGuides:progress.tutorials.summary.classificationCounts['web-runtime'],
+  openingLogic:progress.tutorials.summary.classificationCounts['original-presentation-required'],
+  dependentGuides:progress.tutorials.summary.classificationCounts['server-or-presentation-required']
+ });
+ const growth=work.get('맵·성장 연결');
+ assert.deepEqual(growth.metrics,{quests:config.quests.length,levelRows:config.levels.length,naturalOrders:progress.natural.final.orders,
+  naturalQuests:progress.natural.final.quests,naturalLevel:progress.natural.final.level,fixedDone:progress.fixed16.final.fixedDone});
+ assert.match(growth.remaining,/레벨 5 이후/);
+ const images=work.get('APK 이미지·UI 자산').metrics;
+ assert.deepEqual(images,{baseTypes:config.items.length,available:config.imageCoverage.available,variants:config.imageCoverage.variants,unavailable:config.items.length-config.imageCoverage.available});
+ const observed=media.entries.filter(row=>row.origin==='observed-user-capture'),replays=media.entries.filter(row=>row.origin==='apk-rule-replay');
+ const clips=work.get('플레이 영상·스크린샷').metrics;
+ assert.equal(clips.observedReferences,observed.length);assert.equal(clips.replayGifs,replays.length);
+ for(const [kind,key]of [['image','images'],['video','videos'],['gif','gifs']])assert.equal(clips[key],observed.filter(row=>row.kind===kind).length);
+ assert.equal(clips.interactionCards,replays.length+observed.filter(row=>row.kind==='gif').length);
+ assert.equal(clips.sourceVideos,audit.summary.totalVideos);assert.equal(clips.visualTimelineReviewedVideos,audit.summary.visualTimelineReviewedVideos);assert.equal(clips.sampleFrames,audit.summary.inScopeSampleFrames);assert.equal(clips.reviewSheets,audit.summary.inScopeOrderedSheets);assert.equal(clips.audioListenedVideos,0);assert.match(work.get('신규 게임 제작 리소스').remaining,/확정/);
+ assert.match(work.get('실기 실행·광고·결제').remaining,/웹 모델/);
+ assert.match(work.get('Unity 규칙 이식').remaining,/최신 웹/);
+});

@@ -1,3 +1,5 @@
+> 이 문서는 2026-10-28 초기 구현 계획을 보존한 이력입니다. 복수/랜덤 주문·보관함·생산 보정·자연 버블은 이후 구현했습니다. 현재 상태와 남은 일은 [최신 대응표](GAMEPLAY-PARITY-VALIDATION.md)와 [후속 상태](FOLLOWUP-STATUS.md)를 기준으로 읽습니다.
+
 # 웹 시뮬레이션 후속 구현 순서
 
 사용자가 전체 체크리스트의 남은 작업을 추천 순서로 진행하도록 요청했다. 기존 vanilla ES modules·Pretendard·녹색 연구 UI와 GitHub/Cloudflare 배포를 유지한다. LDPlayer 조작·분석은 재개하지 않는다.

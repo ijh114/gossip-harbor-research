@@ -4091,70 +4091,133 @@
   ],
   "work": [
     {
+      "step": "문서·공개 상태표",
+      "state": "done",
+      "done": "최신 설정·공개 검증 요약·미디어 manifest와 구현 대응표를 대조해 완료 범위와 남은 차이를 동기화. 과거 검증 기록은 시점을 명시해 보존",
+      "remaining": "기능·자료·검수 범위가 바뀌면 같은 기준으로 함께 갱신"
+    },
+    {
       "step": "웹 보드·고정 주문",
       "state": "partial",
-      "done": "원본 첫8단계 튜토리얼, 주변 산출 위치, 드래그·탭·키보드, 생성기16종·고정16주문·재화수집·특수도구",
-      "remaining": "복수 주문 슬롯·랜덤 주문·smart/부스트·전체 튜토리얼·이벤트 보정"
+      "done": "기본 552타입·생성기 163종, 고정 16주문·일반 랜덤 5종의 복수 슬롯·필터·쿨다운·보상, 보관함 입출고/확장, 부스트·Lucky/Disco/Smart/FishNet/Extra/NoCD, 자연 버블과 특수도구 연결",
+      "remaining": "가이드 18개 논리 노드 중 시작 2개는 원작 연출 미재현. 나머지 97개 ID의 활동·원작 장면, 활동 전용 보드와 실계정 보정 입력·원작 난수열 검증",
+      "metrics": {
+        "baseTypes": 552,
+        "generators": 163,
+        "fixedOrders": 16,
+        "randomOrderKinds": 5,
+        "guideNodes": 18,
+        "sourceLogicGuides": 16,
+        "openingLogic": 2,
+        "dependentGuides": 97
+      }
     },
     {
       "step": "맵·성장 연결",
       "state": "partial",
-      "done": "기본15과제,실제 한글 이름/골드/EXP/레벨보상,시작/확정 분리,집 변화 웹 모식도",
-      "remaining": "실제 집/스토리/카메라·서버비용·동적 주문으로 보충되는 자연 성장"
+      "done": "기본 과제 4277개·레벨 300행의 비용/EXP/보상, 시작/확정 분리. 보충·직접 재화 편집·안내 건너뛰기·유료 충전 없이 30주문→15과제→Lv5 모델 실행 검증. 별도 고정 16주문 완주",
+      "remaining": "실제 집·장식·스토리·카메라·연출, 레벨 5 이후 중후반 자연 진행, 선택 variant/서버 비용과 실제 계정 성장 대조",
+      "metrics": {
+        "quests": 4277,
+        "levelRows": 300,
+        "naturalOrders": 30,
+        "naturalQuests": 15,
+        "naturalLevel": 5,
+        "fixedDone": 16
+      }
     },
     {
       "step": "플레이→상점·오퍼",
       "state": "partial",
-      "done": "에너지부족/무료충전/젬소비/닫기후후보,가정후보설정,과거체인6수령단계",
-      "remaining": "실계정자동노출·실제상품배정·모든이벤트/패스·광고/IAP"
+      "done": "플레이 재화와 일반/보석/Daily/Flash mode0·1·2/번들 UI, 무료 수령·재고·일 경계·갱신 비용, 부족→충전→닫기·레벨업의 상품 조건, 이벤트 시간 상태·패스 수령권·앨범/팩 배분 연결",
+      "remaining": "실계정 자동 노출·상품 배정·지역 실판매가, 실제 일정·패스 보상표·개별 활동 플레이, 카드 추첨 내용과 관측 체인 80젬 이후. 실제 결제/광고는 연결하지 않음"
     },
     {
       "step": "웹 저장·복귀",
       "state": "done",
-      "done": "스키마 검증·손상저장 보존·원본 백업 후 호환 revision 이전·JSON 이동·실시간/재접속 회복",
-      "remaining": "7일 상한은 웹 정책. 서버 동기화·여러 탭 동시 편집은 미지원"
+      "done": "스키마 검증·손상 저장 보존·원본 백업 후 호환 revision 이전·JSON 이동·실시간/재접속 회복, 확장한 주문/보관함/생산 보정/상점 상태 저장",
+      "remaining": "7일 오프라인 상한은 웹 정책. 서버 동기화·여러 탭 동시 편집은 미지원. 네이티브 파일 선택 자동화는 브라우저 확장 권한 제한으로 별도이며 가져오기 처리기는 DOM 검사 완료"
     },
     {
       "step": "BM 노출 조건",
       "state": "partial",
-      "done": "서버 원문 필드·단위, 부스트 부족 판정, ChainEnergy, 노출횟수/쿨다운, 설정 캐시/variant·가격 경로 보강; 공유 영상에서 순차 판매·에너지 도전·레벨 연계 화면 관측 추가",
-      "remaining": "실계정 입력값·실노출·빈도 검증"
+      "done": "서버 원문 필드·단위, 부족/레벨/닫기·노출 횟수·일 경계·기간·쿨다운·우선순위의 정적 조건과 웹 실행 연결. BM 9유형·42관측점의 원본/시각/재화/가격·전후 비교",
+      "remaining": "실계정 설정·입력 로그·실제 노출 빈도·구매 이력 대조. 버전 미확인 캡처의 전후 관계를 자동 노출 원인으로 확정하지 않음"
     },
     {
       "step": "상품·이벤트 운영값",
       "state": "partial",
-      "done": "서버 설정의 수신·캐시·삭제·MD5·cohort 표식·시간 경계 확인",
-      "remaining": "현재 config·실제 배정·localizedPrice 미확인"
+      "done": "서버 설정 수신·캐시·삭제·MD5·cohort 표식·가격 출처, 이벤트 준비/시작/종료/해제 경계, 패스 중복 수령과 권한·앨범 최초/중복 소유 처리",
+      "remaining": "현재 config·계정 배정·localizedPrice·실제 일정/보상표·팩 드롭 표 미확인. 연구 예시 입력과 원작 운영값을 구분"
     },
     {
       "step": "APK 이미지·UI 자산",
-      "state": "complete",
-      "done": "기본552타입 중544타입·3201 이미지6변형·미확보8사유와 UI 선정자산 연결",
-      "remaining": "원격 미포함 자산과 원작 화면의 최종 배치/시간 검증"
+      "state": "partial",
+      "done": "기본 552타입 중 이미지 544타입·3201 별도 6변형, 미확보 8타입 사유. UI 프리팹 11종·원시 좌표·controller 14개/clip 26개와 UI 선정 자산 연결",
+      "remaining": "미포함/원격 자산, 원작 최종 배치·활성 레이아웃·캐릭터 동작·장면·속도·소리. 기본 타입 이미지 감사 완료와 전체 게임 자산 제작 완료를 구분",
+      "metrics": {
+        "baseTypes": 552,
+        "available": 544,
+        "variants": 6,
+        "unavailable": 8
+      }
     },
     {
       "step": "플레이 영상·스크린샷",
       "state": "partial",
-      "done": "버전 미확인 BM9유형·42관측점·공개41미디어와 동작별 영상 그리드",
-      "remaining": "전체 영상 연속 감사·실제 가위/모래시계 사용 등 미확보 동작 표본"
+      "done": "가십하버 110개·5,657.265초의 전 구간 시간순 표본 1차 검토. 전체 113개 원본 해시·624,314프레임 디코드와 음량 측정. 기존 BM 9유형·42관측점, 공개 과거 캡처 42키와 규칙 재현 GIF 11개 보존",
+      "remaining": "약 0.5초 목표 표본(실제 최대 1.493112초) 사이 짧은 입력·효과의 정밀 검수, 오디오 청취, 실제 가위/모래시계 사용 등 미확보 표본·촬영 버전 확인. 원속도 전체 재생/전프레임 육안 검수는 수행하지 않음",
+      "metrics": {
+        "observedReferences": 42,
+        "images": 30,
+        "videos": 11,
+        "gifs": 1,
+        "replayGifs": 11,
+        "interactionCards": 12,
+        "bmStudies": 9,
+        "bmPoints": 42,
+        "sourceVideos": 113,
+        "inScopeVideos": 110,
+        "decodedVideos": 113,
+        "decodedFrames": 624314,
+        "visualTimelineReviewedVideos": 110,
+        "sampleFrames": 11167,
+        "reviewSheets": 233,
+        "audioListenedVideos": 0,
+        "nativeRealtimePlaybackVideos": 0
+      }
     },
     {
       "step": "실기 실행·광고·결제",
       "state": "held",
-      "done": "사용자 요청으로 LDPlayer 분석 중단. 실제 광고·결제는 실행하지 않음",
-      "remaining": "실기 검증 재개는 현재 범위에 포함하지 않음"
+      "done": "설치 버전 4.10.5·시작 뒤 검은 화면만 관측. 사용자 요청으로 LDPlayer 분석 중단. 실제 광고·결제는 실행하지 않음",
+      "remaining": "실기 검증 재개는 현재 범위에 포함하지 않음. 웹 모델·기존 캡처·정적 코드는 실기 검증과 구분"
     },
     {
       "step": "원작 경제·매출 효과",
       "state": "partial",
-      "done": "로컬 입력/코드와 서버 운영값의 경계 정리",
-      "remaining": "실제 주문분포·운영값·전환율 자료 필요"
+      "done": "기본 규칙의 주문→재화→과제→레벨 모델 수지, 정적 조건과 서버 운영값의 경계, 캡처의 표시 재화 차이 정리",
+      "remaining": "실제 주문/생성 분포·체류/전환율·매출·선택 variant가 필요. 웹 모델 결과로 원작 유저 효율이나 BM 매출 효과를 단정하지 않음"
     },
     {
       "step": "Unity 규칙 이식",
       "state": "partial",
-      "done": "독립 C# UPM 규칙 패키지 작성, 실제 컴파일 및 JS/C# 결과 2701개 대조 통과",
-      "remaining": "새설정기반보드/소진풀/고정주문C#이식·대조,Editor import/NUnit·씬·새콘텐츠·플랫폼빌드"
+      "done": "초기 독립 C# UPM 규칙 패키지와 NUnit 작성, C# 컴파일 및 기존 에너지/BM·독립 규칙 JS/C# 2701개 대조 통과",
+      "remaining": "최신 웹 보드·복수/랜덤 주문·보관함·생산 보정·성장·상점의 C# 이식과 대조, Unity Editor import/NUnit·씬·신규 자산/연출/콘텐츠·플랫폼 빌드"
+    },
+    {
+      "step": "신규 게임 제작 리소스",
+      "state": "partial",
+      "done": "제작 범위 페이지와 요청서 편집·저장·Markdown/CSV/JSON 내보내기. MVP 27개, 출시형 40개, 확장 포함 43개. 실제 픽셀/피벗/9-slice 예시와 8개 영상 관측을 20개 발주 항목에 연결",
+      "remaining": "체인 단계·첫 맵 장식·패스 시즌·앨범 장수·대표 이벤트 종류와 수량/규격 확정, 담당자 배정과 신규 자산 실제 제작. 원작 객체 수를 발주 수량으로 사용하지 않음",
+      "metrics": {
+        "coreRows": 27,
+        "launchRows": 40,
+        "allRows": 43,
+        "measuredExamples": 9,
+        "videoObservations": 8,
+        "rowsWithVideoReferences": 20
+      }
     }
   ],
   "wireFields": [
@@ -4638,20 +4701,20 @@
         "node_path": "/BaseSceneView/SceneViewHud/TopRight/TopHudButtonContainer/EnergyHudButton",
         "active_self": true,
         "m_AnchorMin": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchorMax": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchoredPosition": {
           "x": 309.56549072265625,
-          "y": -49.0
+          "y": -49
         },
         "m_SizeDelta": {
           "x": 260.7090148925781,
-          "y": 98.0
+          "y": 98
         },
         "m_Pivot": {
           "x": 0.5,
@@ -4659,11 +4722,11 @@
         },
         "derived_offset_min": {
           "x": 179.2109832763672,
-          "y": -98.0
+          "y": -98
         },
         "derived_offset_max": {
           "x": 439.9199981689453,
-          "y": 0.0
+          "y": 0
         }
       },
       {
@@ -4671,20 +4734,20 @@
         "node_path": "/BaseSceneView/SceneViewHud/TopRight/TopHudButtonContainer/CoinHudButton",
         "active_self": true,
         "m_AnchorMin": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchorMax": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchoredPosition": {
           "x": 554.6099853515625,
-          "y": -49.0
+          "y": -49
         },
         "m_SizeDelta": {
           "x": 249.3800048828125,
-          "y": 98.0
+          "y": 98
         },
         "m_Pivot": {
           "x": 0.5,
@@ -4692,11 +4755,11 @@
         },
         "derived_offset_min": {
           "x": 429.91998291015625,
-          "y": -98.0
+          "y": -98
         },
         "derived_offset_max": {
           "x": 679.2999877929688,
-          "y": 0.0
+          "y": 0
         }
       },
       {
@@ -4704,20 +4767,20 @@
         "node_path": "/BaseSceneView/SceneViewHud/TopRight/TopHudButtonContainer/GemHudButton",
         "active_self": true,
         "m_AnchorMin": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchorMax": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchoredPosition": {
           "x": 797.300048828125,
-          "y": -49.0
+          "y": -49
         },
         "m_SizeDelta": {
-          "x": 256.0,
-          "y": 98.0
+          "x": 256,
+          "y": 98
         },
         "m_Pivot": {
           "x": 0.5,
@@ -4725,11 +4788,11 @@
         },
         "derived_offset_min": {
           "x": 669.300048828125,
-          "y": -98.0
+          "y": -98
         },
         "derived_offset_max": {
           "x": 925.300048828125,
-          "y": 0.0
+          "y": 0
         }
       },
       {
@@ -4737,12 +4800,12 @@
         "node_path": "/BaseSceneView/SceneViewHud/TopRight/TopHudButtonContainer/ShopButton",
         "active_self": true,
         "m_AnchorMin": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchorMax": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchoredPosition": {
           "x": 990.1500244140625,
@@ -4762,7 +4825,7 @@
         },
         "derived_offset_max": {
           "x": 1065.0000228881836,
-          "y": 0.0
+          "y": 0
         }
       },
       {
@@ -4770,19 +4833,19 @@
         "node_path": "/BaseSceneView/SceneViewHud/TopRight/smallIcon/MainIcon/ShopButton",
         "active_self": true,
         "m_AnchorMin": {
-          "x": 0.0,
-          "y": 0.0
+          "x": 0,
+          "y": 0
         },
         "m_AnchorMax": {
-          "x": 0.0,
-          "y": 0.0
+          "x": 0,
+          "y": 0
         },
         "m_AnchoredPosition": {
-          "x": 0.0,
-          "y": 0.0
+          "x": 0,
+          "y": 0
         },
         "m_SizeDelta": {
-          "x": 0.0,
+          "x": 0,
           "y": 120.19999694824219
         },
         "m_Pivot": {
@@ -4790,11 +4853,11 @@
           "y": 0.5
         },
         "derived_offset_min": {
-          "x": 0.0,
+          "x": 0,
           "y": -60.099998474121094
         },
         "derived_offset_max": {
-          "x": 0.0,
+          "x": 0,
           "y": 60.099998474121094
         }
       },
@@ -4803,20 +4866,20 @@
         "node_path": "/BaseSceneView/SceneViewHud/TopLeft/EnergyHudButton",
         "active_self": true,
         "m_AnchorMin": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchorMax": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchoredPosition": {
           "x": 289.9999084472656,
-          "y": -79.0
+          "y": -79
         },
         "m_SizeDelta": {
-          "x": 220.0,
-          "y": 98.0
+          "x": 220,
+          "y": 98
         },
         "m_Pivot": {
           "x": 0.5,
@@ -4824,11 +4887,11 @@
         },
         "derived_offset_min": {
           "x": 179.99990844726562,
-          "y": -128.0
+          "y": -128
         },
         "derived_offset_max": {
           "x": 399.9999084472656,
-          "y": -30.0
+          "y": -30
         }
       },
       {
@@ -4836,20 +4899,20 @@
         "node_path": "/BaseSceneView/SceneViewHud/TopLeft/CoinHudButton",
         "active_self": true,
         "m_AnchorMin": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchorMax": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchoredPosition": {
           "x": 502.9999084472656,
-          "y": -79.0
+          "y": -79
         },
         "m_SizeDelta": {
-          "x": 220.0,
-          "y": 98.0
+          "x": 220,
+          "y": 98
         },
         "m_Pivot": {
           "x": 0.5,
@@ -4857,11 +4920,11 @@
         },
         "derived_offset_min": {
           "x": 392.9999084472656,
-          "y": -128.0
+          "y": -128
         },
         "derived_offset_max": {
           "x": 612.9999084472656,
-          "y": -30.0
+          "y": -30
         }
       },
       {
@@ -4869,20 +4932,20 @@
         "node_path": "/BaseSceneView/SceneViewHud/TopLeft/GemHudButton",
         "active_self": true,
         "m_AnchorMin": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchorMax": {
-          "x": 0.0,
-          "y": 1.0
+          "x": 0,
+          "y": 1
         },
         "m_AnchoredPosition": {
           "x": 715.9998779296875,
-          "y": -79.0
+          "y": -79
         },
         "m_SizeDelta": {
-          "x": 220.0,
-          "y": 98.0
+          "x": 220,
+          "y": 98
         },
         "m_Pivot": {
           "x": 0.5,
@@ -4890,246 +4953,246 @@
         },
         "derived_offset_min": {
           "x": 605.9998779296875,
-          "y": -128.0
+          "y": -128
         },
         "derived_offset_max": {
           "x": 825.9998779296875,
-          "y": -30.0
+          "y": -30
         }
       }
     ],
     "clips": [
       {
         "name": "Ani_UI_Rotate",
-        "start": 0.0,
-        "end": 6.0,
+        "start": 0,
+        "end": 6,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "4593902398623922548",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "Ani_Exclamation",
-        "start": 0.0,
+        "start": 0,
         "end": 1.25,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-226097469369737878",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "am_shouzhi_dianji_1",
-        "start": 0.0,
-        "end": 1.0,
+        "start": 0,
+        "end": 1,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "6808960113392964437",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "am_shouzhi_huadong_out",
-        "start": 0.0,
+        "start": 0,
         "end": 0.3333333432674408,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "1292712484582335585",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "am_shouzhi_huadong_in",
-        "start": 0.0,
+        "start": 0,
         "end": 0.3333333432674408,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-8002794896021737373",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "am_shouzhi_huadong_init",
-        "start": 0.0,
+        "start": 0,
         "end": 0.10000000149011612,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "1000957770629076618",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "UITutorialArrow",
-        "start": 0.0,
+        "start": 0,
         "end": 1.5,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "3137335365038919262",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "Ani_ShopNewWindow_show",
-        "start": 0.0,
+        "start": 0,
         "end": 0.28333333134651184,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "394686312072661849",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "Ani_ShopNewWindow_hide",
-        "start": 0.0,
+        "start": 0,
         "end": 0.3333333432674408,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-4219286857285001915",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "Ani_ShopNewWindow_init",
-        "start": 0.0,
+        "start": 0,
         "end": 0.10000000149011612,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "4831988819301102046",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "tabButton_show",
-        "start": 0.0,
+        "start": 0,
         "end": 0.5,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "451675416718553101",
         "bundleSha": "88ceb11454f5c3cbf8ae52c7b7604a9df6df1b11f7e5dfc6382940427d2a8cbc"
       },
       {
         "name": "tabButton_hide",
-        "start": 0.0,
+        "start": 0,
         "end": 0.1666666716337204,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-8798494167709492843",
         "bundleSha": "88ceb11454f5c3cbf8ae52c7b7604a9df6df1b11f7e5dfc6382940427d2a8cbc"
       },
       {
         "name": "window_show",
-        "start": 0.0,
-        "end": 2.0,
+        "start": 0,
+        "end": 2,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "8687983881981186238",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "window_hide",
-        "start": 0.0,
+        "start": 0,
         "end": 0.3499999940395355,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "3554434082864545713",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "window_init",
-        "start": 0.0,
+        "start": 0,
         "end": 0.10000000149011612,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "8064880868120490470",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "Ani_UI_button_1",
-        "start": 0.0,
+        "start": 0,
         "end": 0.6666666865348816,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-4993070717731050201",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "clock_rotate",
-        "start": 0.0,
-        "end": 4.0,
+        "start": 0,
+        "end": 4,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-2665659177078773245",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "Ani_Exclamation_Weak",
-        "start": 0.0,
+        "start": 0,
         "end": 1.25,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-7712070324964960538",
         "bundleSha": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39"
       },
       {
         "name": "Ani_ClickICon",
-        "start": 0.0,
+        "start": 0,
         "end": 0.38333332538604736,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "7399355909158335569",
         "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
       },
       {
         "name": "effect_button_glow",
-        "start": 0.0,
-        "end": 30.0,
+        "start": 0,
+        "end": 30,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-6965966406149798410",
         "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
       },
       {
         "name": "Ani_switch",
-        "start": 0.0,
+        "start": 0,
         "end": 1.0333333015441895,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-2920349118864342815",
         "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
       },
       {
         "name": "Ani_switch_red",
-        "start": 0.0,
-        "end": 3.0,
+        "start": 0,
+        "end": 3,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "8521197011749275318",
         "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
       },
       {
         "name": "Ani_switch_yellow",
-        "start": 0.0,
-        "end": 3.0,
+        "start": 0,
+        "end": 3,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-1729499193939553880",
         "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
       },
       {
         "name": "Ani_switch_pink",
-        "start": 0.0,
-        "end": 3.0,
+        "start": 0,
+        "end": 3,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-5273052589430707483",
         "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
       },
       {
         "name": "Ani_switch_anniu",
-        "start": 0.0,
+        "start": 0,
         "end": 0.3333333432674408,
         "loop": false,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-3240452122897147780",
         "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
       },
       {
         "name": "Ani_switch_blue",
-        "start": 0.0,
-        "end": 3.0,
+        "start": 0,
+        "end": 3,
         "loop": true,
-        "sampleRate": 60.0,
+        "sampleRate": 60,
         "pathId": "-3198588796205976904",
         "bundleSha": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895"
       }

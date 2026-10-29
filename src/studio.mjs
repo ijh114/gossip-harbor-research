@@ -5,10 +5,16 @@ import {renderCaptures} from './capture-pages.mjs';
 import {createPlayController} from './play-controller.mjs';
 import {renderBMTimeline} from './bm-timeline.mjs';
 import {mountInteractionLoops} from './interaction-gallery.mjs';
+import {createProductionController} from './production-controller.mjs';
+import {renderMediaAudit} from './media-audit-page.mjs';
 
 export function createStudio({getData,getRoute,render,toast,download}){
  let walkthrough=createWalkthrough(),running=new Map();
  let playMode='game',interactionCleanup=()=>{};
+ const production=createProductionController({getData,render,download,toast});
+ const auditFilters={query:'',category:'all',status:'all'};
+ let lastAuditSource=null;
+ const auditPage=()=>{const source=new URLSearchParams(location.hash.split('?')[1]||'').get('source');if(source!==lastAuditSource){lastAuditSource=source;if(source&&getData()?.mediaAudit?.videos.some(v=>v.id===source)){auditFilters.query=source;auditFilters.category='all';auditFilters.status='all';}}return renderMediaAudit(getData(),auditFilters);};
  const sourcePlay=createPlayController({getData,render,download});
  const playPage=()=>`<nav class="studio-tabs" aria-label="게임 시뮬레이션 모드"><button class="button" data-play-mode="game" aria-pressed="${playMode==='game'}">게임 플레이</button><button class="button" data-play-mode="source" aria-pressed="${playMode==='source'}">APK 설정 기반 플레이</button><button class="button" data-play-mode="prototype" aria-pressed="${playMode==='prototype'}">기존 흐름 시연</button></nav>`+(playMode!=='prototype'?sourcePlay.render(playMode):renderExperience(walkthrough,getData()));
  const itemFilters={query:'',table:'ItemModelConfig',role:'all',page:1};
@@ -16,7 +22,7 @@ export function createStudio({getData,getRoute,render,toast,download}){
  const captureFilters={category:'all',kind:'all'};
  const timelineFilters={entryId:null,milestoneId:null,baselineId:null};
  const mediaDialog=document.querySelector('#media-dialog'),mediaContent=document.querySelector('#media-content');
- const pages={'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:()=>renderCaptures(getData(),captureFilters),puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
+ const pages={'production-assets':()=>production.renderPage(),'media-audit':auditPage,'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:()=>renderCaptures(getData(),captureFilters),puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
  const renderItem=()=>{document.querySelector('#item-catalog').innerHTML=renderItemCatalog(getData(),itemFilters);};
  const renderUI=()=>{document.querySelector('#ui-registry').innerHTML=renderUIRegistry(getData(),uiFilters);};
  function preserveInput(id,update){const node=document.getElementById(id),start=node.selectionStart,end=node.selectionEnd;update();const next=document.getElementById(id);next.focus({preventScroll:true});if(next.type==='search')next.setSelectionRange(start,end);}
@@ -58,11 +64,13 @@ export function createStudio({getData,getRoute,render,toast,download}){
   if(target.dataset.mediaKey)openMedia(target.dataset.mediaKey);
  });
  document.addEventListener('input',event=>{const t=event.target;
+  if(t.hasAttribute('data-audit-query')){if(event.isComposing)return;const start=t.selectionStart; auditFilters.query=t.value;render();const next=document.querySelector('[data-audit-query]');next.focus({preventScroll:true});next.setSelectionRange(start,start);return;}
   if(t.id==='item-query'){itemFilters.query=t.value;itemFilters.page=1;preserveInput(t.id,renderItem);}
   if(t.id==='ui-query'){uiFilters.query=t.value;uiFilters.page=1;preserveInput(t.id,renderUI);}
   if(t.hasAttribute('data-visual-depth'))document.querySelector('#difficulty-output').innerHTML=difficultyOutput(Number(t.value));
  });
  document.addEventListener('change',event=>{const t=event.target;
+  if(t.hasAttribute('data-audit-category')||t.hasAttribute('data-audit-status')){const key=t.hasAttribute('data-audit-category')?'category':'status';auditFilters[key]=t.value;render();document.querySelector('[data-audit-'+key+']')?.focus({preventScroll:true});return;}
   if(t.hasAttribute('data-timeline-baseline')){timelineFilters.baselineId=t.value;render();document.querySelector('[data-timeline-baseline]')?.focus({preventScroll:true});return;}
   if(t.id==='item-table'){itemFilters.table=t.value;itemFilters.page=1;renderItem();document.querySelector('#item-table').focus({preventScroll:true});}
   if(t.id==='item-role'){itemFilters.role=t.value;itemFilters.page=1;renderItem();document.querySelector('#item-role').focus({preventScroll:true});}

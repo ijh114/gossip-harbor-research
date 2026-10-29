@@ -1,0 +1,4241 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "reviewDate": "2026-10-29",
+  "meta": {
+    "title": "제작 리소스·그래픽 발주 범위",
+    "scope": "가십하버 APK 정적 자산과 과거 캡처를 참고하여 신규게임 MVP→출시형 패스·앨범·대표이벤트1종의 제작범위를 정하는 초안",
+    "defaultPreset": "launch",
+    "counts": {
+      "baseTypes": 552,
+      "baseTypesWithImage": 544,
+      "baseTypesWithoutImage": 8,
+      "baseUniqueSpriteObjects": 527,
+      "baseUniquePngs": 522,
+      "baseGenerators": 163,
+      "itemDeclarations": 4270,
+      "itemConfigTables": 39,
+      "uiMappings": 1644,
+      "selectedUiSprites": 25,
+      "selectedUiPrefabs": 11,
+      "selectedAnimationControllers": 14,
+      "selectedAnimationClips": 26,
+      "bundledArchives": 245,
+      "bundledObjectCount": 110632,
+      "bundledSpriteObjects": 1820,
+      "bundledTextureObjects": 2608,
+      "bundledAnimationClipObjects": 261,
+      "bundledAnimatorControllerObjects": 153,
+      "bundledParticleSystemObjects": 6335,
+      "bundledAudioClipObjects": 164
+    },
+    "sourceCounts": {
+      "baseTypes": 552,
+      "baseTypesWithImage": 544,
+      "baseTypesWithoutImage": 8,
+      "baseUniqueSpriteObjects": 527,
+      "baseUniquePngs": 522,
+      "baseGenerators": 163,
+      "itemDeclarations": 4270,
+      "itemConfigTables": 39,
+      "uiMappings": 1644,
+      "selectedUiSprites": 25,
+      "selectedUiPrefabs": 11,
+      "selectedAnimationControllers": 14,
+      "selectedAnimationClips": 26,
+      "bundledArchives": 245,
+      "bundledObjectCount": 110632,
+      "bundledSpriteObjects": 1820,
+      "bundledTextureObjects": 2608,
+      "bundledAnimationClipObjects": 261,
+      "bundledAnimatorControllerObjects": 153,
+      "bundledParticleSystemObjects": 6335,
+      "bundledAudioClipObjects": 164
+    },
+    "quantityPolicy": "defaultQuantity는신규프로젝트의수정가능한제작계획예시다.원작고유원화수·전체업데이트수·최종발주수량이아니다.",
+    "countPolicy": "단위가다른아이콘·세트·화면·모션·효과음·곡·문서는총그림수로합산하지않는다.세트내상태/표정/파생은quantityBasis로별도읽는다.",
+    "boundaries": [
+      "원작리소스는참고·비교용이며신규게임은새이미지·스토리·연출로제작한다.",
+      "Unity객체수와고유제작물수는서로다르다.중복참조·Prefab구성요소·테마변형을단순합산하지않는다.",
+      "실제원작마스터PSD/리깅원본/원격업데이트전체/모든오디오청취결과를확보한상태가아니다.",
+      "제안픽셀·수량·포맷·모션개수는신규계획이다.원작확인규격과분리한다.",
+      "제작자산은체인·구역·시즌단위로늘리며처음부터원작의장기업데이트전체를만들지않는다."
+    ],
+    "dimensionSummary": {
+      "measuredDecodedUniqueItemPngs": 522,
+      "widthRange": [
+        67,
+        189
+      ],
+      "heightRange": [
+        67,
+        192
+      ],
+      "unit": "px",
+      "scope": "기본타입에연결된고유디코딩PNG522개,트림된실물이미지.원화해상도/실제표시픽셀아님"
+    },
+    "canvasReference": {
+      "width": 1080,
+      "height": 1920,
+      "kind": "CanvasScaler static reference",
+      "source": {
+        "path": "analysis/followup/assets/ui-coordinates.json",
+        "sha256": "400cd931782e5f75dfa4b213df3d3ae6ae8280ad6f5f3e57b8d499394eba78fd",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      }
+    }
+  },
+  "presets": [
+    {
+      "id": "core",
+      "name": "MVP",
+      "description": "기본퍼즐·주문·보관함·첫구역6슬롯·기본상점과소리.패스·앨범·대표이벤트는제외.",
+      "phases": [
+        "core"
+      ]
+    },
+    {
+      "id": "launch",
+      "name": "출시형",
+      "description": "MVP + 추가 체인·상황형 BM·패스·앨범·대표 이벤트를 포함한 사용자 선택 범위. 패스 1시즌·앨범 24장·대표 이벤트 1종 등 상세 수량은 수정 가능한 제안 초안.",
+      "phases": [
+        "core",
+        "launch"
+      ]
+    },
+    {
+      "id": "expansion",
+      "name": "후속 확장 검토",
+      "description": "출시형에추가시즌·다음챕터·다른규칙미니게임을선택적으로검토.원작전체업데이트복제를뜻하지않음.",
+      "phases": [
+        "core",
+        "launch",
+        "expansion"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "board",
+      "name": "퍼즐·아이템"
+    },
+    {
+      "id": "ui",
+      "name": "UI·상품"
+    },
+    {
+      "id": "world",
+      "name": "맵·캐릭터·스토리"
+    },
+    {
+      "id": "motion",
+      "name": "애니메이션·이펙트"
+    },
+    {
+      "id": "audio",
+      "name": "사운드"
+    },
+    {
+      "id": "pipeline",
+      "name": "납품·공통 규격"
+    }
+  ],
+  "observedExamples": [
+    {
+      "id": "item-201",
+      "title": "Flour01 · Type 201",
+      "kind": "item",
+      "mediaKey": "item:ItemModelConfig:201",
+      "pngPixels": [
+        111,
+        120
+      ],
+      "spriteRect": {
+        "width": 123,
+        "height": 120
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "border": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 0
+      },
+      "sha256": "24eb3b650b61ac22d5778be2112ad25d23ea94f4385732496acf222e763fabaf",
+      "source": {
+        "path": "analysis/simulation/base-type-assets.json",
+        "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "PNG는디코딩결과크기다.Sprite rect·트림·원화마스터크기와같다고단정하지않는다."
+    },
+    {
+      "id": "item-202",
+      "title": "Flour02 · Type 202",
+      "kind": "item",
+      "mediaKey": "item:ItemModelConfig:202",
+      "pngPixels": [
+        132,
+        103
+      ],
+      "spriteRect": {
+        "width": 146,
+        "height": 112
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "border": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 0
+      },
+      "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+      "source": {
+        "path": "analysis/simulation/base-type-assets.json",
+        "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "PNG는디코딩결과크기다.Sprite rect·트림·원화마스터크기와같다고단정하지않는다."
+    },
+    {
+      "id": "item-203",
+      "title": "Flour03 · Type 203",
+      "kind": "item",
+      "mediaKey": "item:ItemModelConfig:203",
+      "pngPixels": [
+        121,
+        98
+      ],
+      "spriteRect": {
+        "width": 128,
+        "height": 101
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "border": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 0
+      },
+      "sha256": "837af669ff02f22d71c3b691c5cc04b9c7f669738e2ab0be7422900070339ac2",
+      "source": {
+        "path": "analysis/simulation/base-type-assets.json",
+        "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "PNG는디코딩결과크기다.Sprite rect·트림·원화마스터크기와같다고단정하지않는다."
+    },
+    {
+      "id": "item-106",
+      "title": "GroceryBag06 · Type 106",
+      "kind": "item",
+      "mediaKey": "item:ItemModelConfig:106",
+      "pngPixels": [
+        152,
+        146
+      ],
+      "spriteRect": {
+        "width": 168,
+        "height": 163
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "border": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 0
+      },
+      "sha256": "4d4d9498438dae36cf6206b61b52e61c19c9768adf8d0a404860da49cf6ddb00",
+      "source": {
+        "path": "analysis/simulation/base-type-assets.json",
+        "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "PNG는디코딩결과크기다.Sprite rect·트림·원화마스터크기와같다고단정하지않는다."
+    },
+    {
+      "id": "item-3201",
+      "title": "PaperBox · Type 3201",
+      "kind": "item",
+      "mediaKey": "item:ItemModelConfig:3201",
+      "pngPixels": [
+        151,
+        150
+      ],
+      "spriteRect": {
+        "width": 151,
+        "height": 150
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "border": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 0
+      },
+      "sha256": "4265ff3b7786bab1782c1d0ec490e87ea42e35b6e623970ad9d3865fde2f314b",
+      "source": {
+        "path": "analysis/simulation/base-type-assets.json",
+        "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "PNG는디코딩결과크기다.Sprite rect·트림·원화마스터크기와같다고단정하지않는다."
+    },
+    {
+      "id": "ui-order_counter",
+      "title": "order_counter",
+      "kind": "ui",
+      "mediaKey": "ui-play:order_counter",
+      "pngPixels": [
+        1080,
+        163
+      ],
+      "spriteRect": {
+        "width": 1080,
+        "height": 163
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      },
+      "border": {
+        "x": 0,
+        "y": 151,
+        "z": 0,
+        "w": 0
+      },
+      "sha256": "0728f7767169650da3505100969f6ffea8c5ea796a16288df5045cc11c610c9b",
+      "source": {
+        "path": "analysis/simulation/gameplay-ui-assets.json",
+        "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "border=(left,bottom,right,top)원시값.실제9-slice사용여부와최종표시는Prefab/레이아웃과함께확인필요."
+    },
+    {
+      "id": "ui-info_bg_normal",
+      "title": "info_bg_normal",
+      "kind": "ui",
+      "mediaKey": "ui-play:info_bg_normal",
+      "pngPixels": [
+        167,
+        162
+      ],
+      "spriteRect": {
+        "width": 167,
+        "height": 162
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "border": {
+        "x": 36,
+        "y": 51,
+        "z": 37,
+        "w": 40
+      },
+      "sha256": "3ca141bd9dcdf4eabdb22f066235c0991600d184031603074294826c10c1377d",
+      "source": {
+        "path": "analysis/simulation/gameplay-ui-assets.json",
+        "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "border=(left,bottom,right,top)원시값.실제9-slice사용여부와최종표시는Prefab/레이아웃과함께확인필요."
+    },
+    {
+      "id": "ui-hud_property_bg",
+      "title": "hud_property_bg",
+      "kind": "ui",
+      "mediaKey": "ui-play:hud_property_bg",
+      "pngPixels": [
+        112,
+        86
+      ],
+      "spriteRect": {
+        "width": 129,
+        "height": 98
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "border": {
+        "x": 41,
+        "y": 7,
+        "z": 52,
+        "w": 0
+      },
+      "sha256": "ebffc4ba2f074fc8f3e0eb7765e88b5b9150d499dc85f7aecca4a0940361fa50",
+      "source": {
+        "path": "analysis/simulation/gameplay-ui-assets.json",
+        "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "border=(left,bottom,right,top)원시값.실제9-slice사용여부와최종표시는Prefab/레이아웃과함께확인필요."
+    },
+    {
+      "id": "ui-avatar_quinn",
+      "title": "avatar_quinn",
+      "kind": "ui",
+      "mediaKey": "ui-play:avatar_quinn",
+      "pngPixels": [
+        179,
+        200
+      ],
+      "spriteRect": {
+        "width": 200,
+        "height": 200
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "border": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 0
+      },
+      "sha256": "0eff596f9b439af7a9c80f5710f9f118af3e4cb6564cb54dcf11a9f42fa93377",
+      "source": {
+        "path": "analysis/simulation/gameplay-ui-assets.json",
+        "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "border=(left,bottom,right,top)원시값.실제9-slice사용여부와최종표시는Prefab/레이아웃과함께확인필요."
+    }
+  ],
+  "staticClipExamples": [
+    {
+      "name": "Ani_UI_Rotate",
+      "start": 0,
+      "end": 6,
+      "sampleRate": 60,
+      "loop": true,
+      "source": {
+        "path": "analysis/followup/assets/selected-ui-animations.json",
+        "sha256": "14063fc88bcfd5e5cb3742352cf2e87863f31165b90b3b28c8e4d5b903358454",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "직렬화클립구간이며Animator속도·전이·스크립트를포함한실기표시시간이아니다."
+    },
+    {
+      "name": "am_shouzhi_dianji_1",
+      "start": 0,
+      "end": 1,
+      "sampleRate": 60,
+      "loop": true,
+      "source": {
+        "path": "analysis/followup/assets/selected-ui-animations.json",
+        "sha256": "14063fc88bcfd5e5cb3742352cf2e87863f31165b90b3b28c8e4d5b903358454",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "직렬화클립구간이며Animator속도·전이·스크립트를포함한실기표시시간이아니다."
+    },
+    {
+      "name": "UITutorialArrow",
+      "start": 0,
+      "end": 1.5,
+      "sampleRate": 60,
+      "loop": true,
+      "source": {
+        "path": "analysis/followup/assets/selected-ui-animations.json",
+        "sha256": "14063fc88bcfd5e5cb3742352cf2e87863f31165b90b3b28c8e4d5b903358454",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "직렬화클립구간이며Animator속도·전이·스크립트를포함한실기표시시간이아니다."
+    },
+    {
+      "name": "Ani_ShopNewWindow_show",
+      "start": 0,
+      "end": 0.28333333134651184,
+      "sampleRate": 60,
+      "loop": false,
+      "source": {
+        "path": "analysis/followup/assets/selected-ui-animations.json",
+        "sha256": "14063fc88bcfd5e5cb3742352cf2e87863f31165b90b3b28c8e4d5b903358454",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "직렬화클립구간이며Animator속도·전이·스크립트를포함한실기표시시간이아니다."
+    },
+    {
+      "name": "Ani_ShopNewWindow_hide",
+      "start": 0,
+      "end": 0.3333333432674408,
+      "sampleRate": 60,
+      "loop": false,
+      "source": {
+        "path": "analysis/followup/assets/selected-ui-animations.json",
+        "sha256": "14063fc88bcfd5e5cb3742352cf2e87863f31165b90b3b28c8e4d5b903358454",
+        "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+      },
+      "note": "직렬화클립구간이며Animator속도·전이·스크립트를포함한실기표시시간이아니다."
+    }
+  ],
+  "rows": [
+    {
+      "id": "art-direction",
+      "category": "pipeline",
+      "title": "아트 방향·크기 기준판",
+      "purpose": "다른 담당자가 같은 시점·광원·선 굵기로 제작하도록 기준을 먼저 합의",
+      "phase": "core",
+      "unit": "문서",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 프로젝트 공통 기준서 1종",
+      "requiredStates": [
+        "아이템 실루엣",
+        "광원·명암",
+        "색·희귀도",
+        "재질·외곽",
+        "작게 표시한 비교"
+      ],
+      "deliverables": [
+        "스타일 가이드 원본",
+        "보드 1화면 목업",
+        "아이템·캐릭터·UI 기준판"
+      ],
+      "referenceKeys": [
+        "screen:play",
+        "ui-play:board_bg1"
+      ],
+      "facts": [
+        "AS-001",
+        "AS-003"
+      ],
+      "observed": {
+        "summary": "실제 캡처와 동봉 Sprite는 서로 다른 증거다. CanvasScaler 기준 1080×1920을 확인했다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920 세로 화면 목업, 아이템 64/96/128px 표시 비교",
+        "format": "편집 가능한 PSD 또는 디자인 원본 + PNG/PDF",
+        "notes": "원작의 화풍 복제가 아닌 신규 세계관의 실루엣·비례·광원 규칙을 정의한다. 픽셀 값은 신규 제안이다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/ui-coordinates.json",
+          "sha256": "400cd931782e5f75dfa4b213df3d3ae6ae8280ad6f5f3e57b8d499394eba78fd",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행."
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행."
+        }
+      ],
+      "unknowns": [
+        "새 게임 세계관·대상 기기·아트스타일 승인 필요"
+      ],
+      "dependencies": [],
+      "videoObservations": []
+    },
+    {
+      "id": "item-chains",
+      "category": "board",
+      "title": "일반 합성 아이템 체인",
+      "purpose": "합성 단계가 높아질수록 생김새가 확실히 성장하는 주 콘텐츠",
+      "phase": "core",
+      "unit": "아이콘",
+      "defaultQuantity": 48,
+      "quantityBasis": "신규 예시: 4체인 × 12단계 = 48개",
+      "requiredStates": [
+        "단계별 독립 실루엣",
+        "다음 단계 연결",
+        "작은 크기 식별",
+        "상위단계 강조"
+      ],
+      "deliverables": [
+        "체인별 레이어 원본",
+        "단계별 RGBA PNG",
+        "아이템ID·파일명 매핑"
+      ],
+      "referenceKeys": [
+        "item:ItemModelConfig:201",
+        "item:ItemModelConfig:202",
+        "item:ItemModelConfig:203"
+      ],
+      "facts": [
+        "PZ-003",
+        "SIM-X007"
+      ],
+      "observed": {
+        "summary": "기본552타입 중544타입의 이미지가 연결되며 고유 PNG는522개다. 같은 이미지를 여러 타입이 쓸 수 있어552장을 새로 그린다는 뜻이 아니다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "마스터 512×512px, 납품 PNG 256×256px 초안; 96px 보드 표시에서 식별 검수",
+        "format": "PSD/PSB + 투명 PNG, 기준 피벗(0.5,0.5)",
+        "notes": "수량은4체인×12단계라는 출시 가정이다. 실제 체인 길이·보드 점유·테마 결정 후 조절한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+          "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+          "line_start": 334,
+          "line_end": 341,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "line_start": 1,
+          "line_end": 56177,
+          "method": "전체 기본 타입의Sprite/해시 매핑 투영"
+        }
+      ],
+      "unknowns": [
+        "신규 체인 수·단계·희귀도 확정 필요"
+      ],
+      "dependencies": [
+        "art-direction"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "generator-icons",
+      "category": "board",
+      "title": "생성기 단계·상태 이미지",
+      "purpose": "어떤 재료를 생산하는지와 충전 상태를 빠르게 전달",
+      "phase": "core",
+      "unit": "아이콘",
+      "defaultQuantity": 12,
+      "quantityBasis": "신규 예시: 생성기 3종 × 외형 단계 4개",
+      "requiredStates": [
+        "기본",
+        "선택",
+        "소진·회복",
+        "미개방"
+      ],
+      "deliverables": [
+        "단계별 생성기 PNG",
+        "산출 체인 연결표",
+        "시각 상태 분리 명세"
+      ],
+      "referenceKeys": [
+        "item:ItemModelConfig:106",
+        "effect:generate"
+      ],
+      "facts": [
+        "PZ-007",
+        "SIM-X003"
+      ],
+      "observed": {
+        "summary": "기본 생성 규칙163행은 고유 생성기 그림 수와 다르며 자동/상자/소모성 타입도 포함한다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "일반 아이템과 동일 512px 마스터 / 256px 납품",
+        "format": "PSD + RGBA PNG; 회복·선택 표시는 공용 오버레이 우선",
+        "notes": "같은 그림에서 표현 가능한 충전 상태를 별도 원화로 중복 발주하지 않는다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+          "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+          "line_start": 40,
+          "line_end": 46,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+          "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+          "line_start": 1,
+          "line_end": 5828,
+          "method": "recovered static Lua and parsed packaged configuration"
+        }
+      ],
+      "unknowns": [
+        "신규 생성기별 단계수·산출·소진 표현 결정"
+      ],
+      "dependencies": [
+        "item-chains"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "board-surface",
+      "category": "board",
+      "title": "보드·빈칸·선택·목표 표시",
+      "purpose": "7×9 판과 입력 대상·가능한 합성 대상을 표현",
+      "phase": "core",
+      "unit": "세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 보드 공통 세트 1종",
+      "requiredStates": [
+        "기본 칸",
+        "선택",
+        "드래그 목표",
+        "가능 합성",
+        "거절"
+      ],
+      "deliverables": [
+        "타일·선택 프레임 PNG",
+        "UI 스케일링/마진 명세",
+        "색상 토큰"
+      ],
+      "referenceKeys": [
+        "screen:play",
+        "interaction:select",
+        "interaction:drag"
+      ],
+      "facts": [
+        "PZ-001",
+        "PZ-032"
+      ],
+      "observed": {
+        "summary": "메인 기본 규격은7×9이다. 선택/드롭/하이라이트의 규칙과 시각 프레임은 분리된다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080px 기준 7열; 칸 원본 192×192px 초안",
+        "format": "RGBA PNG + 필요 시9-slice 경계 JSON",
+        "notes": "그리드 크기·기기 세이프 영역은 UI 구현과 함께 검수한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/gameplay-ui-assets.json",
+          "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+          "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+          "line_start": 18,
+          "line_end": 19,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "line_start": 461,
+          "line_end": 468,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "최종 HUD가 차지하는 높이·보드 표시 크기"
+      ],
+      "dependencies": [
+        "art-direction"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "covers",
+      "category": "board",
+      "title": "상자·거미줄·잠금 오버레이",
+      "purpose": "초기 공간 제한과 단계적 봉인 해제를 표현",
+      "phase": "core",
+      "unit": "오버레이",
+      "defaultQuantity": 3,
+      "quantityBasis": "신규 예시: 상자·거미줄·별도 잠금 각1종",
+      "requiredStates": [
+        "상자",
+        "거미줄",
+        "잠금",
+        "해제 전후"
+      ],
+      "deliverables": [
+        "분리된 투명 오버레이",
+        "상자 파편 소스",
+        "전이 참조 GIF"
+      ],
+      "referenceKeys": [
+        "interaction:unlock-box",
+        "interaction:unlock-web"
+      ],
+      "facts": [
+        "PZ-005",
+        "PZ-006"
+      ],
+      "observed": {
+        "summary": "인접 합성은 상자를 거미줄 상태로 바꾸며 거미줄 합성 해제와 다르다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "256×256px, 보드 칸 안쪽 여백 통일",
+        "format": "PSD + RGBA PNG; 파편은 별도 레이어",
+        "notes": "밑의 아이템과 봉인 그림을 합쳐 굽지 않는다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+          "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+          "line_start": 256,
+          "line_end": 258,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+          "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+          "line_start": 310,
+          "line_end": 317,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "잠금 타입의 출시 포함 여부"
+      ],
+      "dependencies": [
+        "board-surface"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "currency-items",
+      "category": "board",
+      "title": "수집 재화·보상 조각",
+      "purpose": "합성 가능한 코인·보석·에너지 조각을 표시",
+      "phase": "core",
+      "unit": "아이콘",
+      "defaultQuantity": 14,
+      "quantityBasis": "신규 예시: 코인5·보석4·에너지5단계, 현재 모델의 분류를 참고한 계획",
+      "requiredStates": [
+        "획득",
+        "합성 단계",
+        "수집",
+        "수량 차이"
+      ],
+      "deliverables": [
+        "재화별 단계 PNG",
+        "HUD 아이콘 대응표"
+      ],
+      "referenceKeys": [
+        "item:ItemModelConfig:2401",
+        "interaction:select"
+      ],
+      "facts": [
+        "SIM-C006",
+        "FX-013"
+      ],
+      "observed": {
+        "summary": "모델에는 수집량이 다른 재화 조각과 HUD 비행 처리가 있다. 그림 수와 실제 지급량은 다르다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "512px 마스터 / 256px 납품, HUD용 별도128px 파생",
+        "format": "PSD + 투명 PNG",
+        "notes": "수집량을 글자에 굽지 않아 밸런스 변경이 가능하게 한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+          "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+          "line_start": 1,
+          "line_end": 5828,
+          "method": "read-only recovered Lua / parsed packaged table cross-check"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Animation/PropertyAnimationManager.lua",
+          "sha256": "207775baed628983c5c59365d40b5c361917f67de8ddf54f3994c294d2dc1e9f",
+          "line_start": 22,
+          "line_end": 30,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "출시할 재화 단계 수·종류"
+      ],
+      "dependencies": [
+        "item-chains"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "special-tools",
+      "category": "board",
+      "title": "만능 젬·가위·모래시계 도구",
+      "purpose": "업그레이드·분할·대기 단축이라는 다른 사용 효과를 구분",
+      "phase": "core",
+      "unit": "아이콘",
+      "defaultQuantity": 7,
+      "quantityBasis": "신규 예시: 만능 젬1·가위1·모래시계5단계",
+      "requiredStates": [
+        "기본",
+        "선택",
+        "사용 확인",
+        "잔여 횟수"
+      ],
+      "deliverables": [
+        "도구 PNG",
+        "적용 대상 표시 가이드",
+        "효과별 레이어"
+      ],
+      "referenceKeys": [
+        "interaction:rainbow",
+        "interaction:scissors",
+        "interaction:hourglass"
+      ],
+      "facts": [
+        "SIM-C007",
+        "PZ-017"
+      ],
+      "observed": {
+        "summary": "가위·만능 젬은 대상 재검사와 사용 확인을 거친다. 모래시계는 진행 중 타이머를 단축하며 월드 시간을 바꾸지 않는다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "512px 마스터 / 256px 납품",
+        "format": "PSD + RGBA PNG; 횟수는 런타임 텍스트",
+        "notes": "5단계 모래시계는 계획 예시이며 단계 축소 가능."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemModel.lua",
+          "sha256": "5bdded307eba2913754b8b25e9abb4ebcf4217d398723d16a3d367b1138916ec",
+          "line_start": 11,
+          "line_end": 29,
+          "method": "read-only recovered Lua / parsed packaged table cross-check"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+          "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+          "line_start": 354,
+          "line_end": 361,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "무료/유료 획득처와 실제 출시 단계"
+      ],
+      "dependencies": [
+        "board-surface"
+      ],
+      "videoObservations": [
+        {
+          "id": "animated-tool-help",
+          "observations": [
+            "동결 아이템 도움말 안 작은 격자에서 도구/아이템의 이동과 빛 뒤 결과가 드러나는 시연을 반복한다."
+          ],
+          "briefImplication": "도구 아이콘과 인게임 효과 외에 도움말용 미니 보드·손/아이템 이동·전후 결과를 반복 시연할 리소스/타임라인이 필요한지 정한다.",
+          "limit": "도움말 안 시연이며 실제 플레이 보드에서 그 도구를 사용한 증거가 아니다.",
+          "references": [
+            {
+              "sourceId": "GH-V0117",
+              "fromSeconds": 3.5,
+              "toSeconds": 14,
+              "videoSha256": "d9a5a6b1b95e2a9ef075f9d6034ee0999d579a546d7625265116988dcb4cd701"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reward-containers",
+      "category": "board",
+      "title": "상자·선택 상자·보상 포장",
+      "purpose": "받기·열기·선택의 차이를 시각적으로 구분",
+      "phase": "core",
+      "unit": "아이콘",
+      "defaultQuantity": 6,
+      "quantityBasis": "신규 예시: 일반/선택/보상 상자 각 닫힘·열림 2상태",
+      "requiredStates": [
+        "닫힘",
+        "열기 대기",
+        "열림",
+        "선택 후보",
+        "소진"
+      ],
+      "deliverables": [
+        "닫힘·열림 원화",
+        "보상 슬롯 프레임",
+        "오픈 연출 분리 레이어"
+      ],
+      "referenceKeys": [
+        "item:ItemModelConfig:reward_bubble_1",
+        "capture:reward-queue"
+      ],
+      "facts": [
+        "SIM-X003",
+        "SIM-X004"
+      ],
+      "observed": {
+        "summary": "보상 래퍼·상자 산출·선택 보상과 실제 카드 추첨은 서로 다른 처리다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "상자256px / 보상 프레임192px 초안",
+        "format": "PSD + RGBA PNG",
+        "notes": "상자 개봉 마스터를 재사용하고 테마 스킨만 파생한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+          "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+          "line_start": 1,
+          "line_end": 5828,
+          "method": "recovered static Lua and parsed packaged configuration"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/BoardModelHelper.lua",
+          "sha256": "620917b55d8607763cdbd7d5b0fb992c03ec182441e61cff4d8b1288ccd39809",
+          "line_start": 96,
+          "line_end": 115,
+          "method": "read-only recovered static Lua"
+        }
+      ],
+      "unknowns": [
+        "출시 상자 수·선택지 수"
+      ],
+      "dependencies": [
+        "currency-items"
+      ],
+      "videoObservations": [
+        {
+          "id": "full-scene-reward",
+          "observations": [
+            "민트색 전면 배경에서 상자와 고양이가 나타나며 여러 보상 아이콘과 분홍 리본을 차례로 표시한다."
+          ],
+          "briefImplication": "아이템 아이콘 외에 전면 배경·상자 상태·동물 모션·결과 배치·리본·재화 비행을 한 연출 묶음으로 발주할지 선택한다.",
+          "limit": "원속도와 리깅/프레임 방식 미확인. 외부 결제 화면 자체는 게임 제작 리소스에 포함하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0106",
+              "fromSeconds": 14.5,
+              "toSeconds": 19.5,
+              "videoSha256": "99735ee4847c33badfa6db00d014d72403acec507316a7f0adebea507ad1389c"
+            },
+            {
+              "sourceId": "GH-V0121",
+              "fromSeconds": 18.3,
+              "toSeconds": 22.8,
+              "videoSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d"
+            }
+          ]
+        },
+        {
+          "id": "tiered-offer-states",
+          "observations": [
+            "보라색 탑에 여러 단의 보상 타일이 있고 구매 뒤 수령 버튼·체크·다음 가격 버튼 상태가 바뀐다.",
+            "서로 다른 상자/선물 그림을 회전·빛으로 열고 결과 아이콘을 펼친다. 뒤 단계는 젬 하나를 크게 보여준다."
+          ],
+          "briefImplication": "단계형 판매는 한 장의 배너가 아니라 타일 정상/선택/수령/체크, 버튼 상태, 포장 변형, 단계 상승 연출을 분리한다.",
+          "limit": "한 사용자의 연속 구매 녹화이다. 모든 유저의 고정 가격·노출 조건·결제 결과 규칙은 확정하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0125",
+              "fromSeconds": 11.9,
+              "toSeconds": 26.6,
+              "videoSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287"
+            },
+            {
+              "sourceId": "GH-V0125",
+              "fromSeconds": 38.1,
+              "toSeconds": 49.2,
+              "videoSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287"
+            },
+            {
+              "sourceId": "GH-V0125",
+              "fromSeconds": 87.1,
+              "toSeconds": 98.2,
+              "videoSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287"
+            }
+          ]
+        },
+        {
+          "id": "choice-chest-dialog",
+          "observations": [
+            "세 아이템 후보와 초록 확인 버튼을 가진 선택상자 창을 여러 번 열어 선택 결과를 보드에 받는다."
+          ],
+          "briefImplication": "선택상자 껍데기 외에 후보 슬롯·선택/비선택·확인 버튼·배치/대기열 상태를 재사용 컴포넌트로 구성한다.",
+          "limit": "표본에 없는 후보 개수와 생성 확률, 타이머/취소 등 다른 상태는 별도 정의가 필요하다.",
+          "references": [
+            {
+              "sourceId": "GH-V0124",
+              "fromSeconds": 38,
+              "toSeconds": 46,
+              "videoSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bubble-visual",
+      "category": "board",
+      "title": "버블·가격 태그·할인 상태",
+      "purpose": "시간 제한 상품의 일반/할인/만료를 전달",
+      "phase": "core",
+      "unit": "세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 공용 버블 세트 1종",
+      "requiredStates": [
+        "등장",
+        "유지",
+        "가격",
+        "할인",
+        "구매",
+        "만료"
+      ],
+      "deliverables": [
+        "버블 텍스처",
+        "가격 프레임",
+        "할인 태그",
+        "파열 소스"
+      ],
+      "referenceKeys": [
+        "effect:bubble",
+        "interaction:merge"
+      ],
+      "facts": [
+        "PZ-015",
+        "FX-007"
+      ],
+      "observed": {
+        "summary": "기본 만료와 구매 해제 경로가 다르며 현행 할인 기간·가격은 서버값 미확인이다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "버블 384×384px 마스터, 가격 태그 256×96px 초안",
+        "format": "RGBA PNG + 파티클 소스; 가격은 런타임 숫자",
+        "notes": "기간/가격/할인율을 이미지에 고정하지 않는다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemBubble.lua",
+          "sha256": "64538f4f1f56aec6b4b52e2479e93eb27375996c1ac22810dabeb29eef690e0c",
+          "line_start": 3,
+          "line_end": 3,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "line_start": 1655,
+          "line_end": 1663,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "실제 판매 정책과 할인별 상태"
+      ],
+      "dependencies": [
+        "board-surface"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "hud-components",
+      "category": "ui",
+      "title": "HUD·공용 버튼·재화·내비게이션",
+      "purpose": "레벨·재화·상점·보관함·맵 이동의 반복 UI",
+      "phase": "core",
+      "unit": "세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 HUD/UI 키트 1종",
+      "requiredStates": [
+        "기본",
+        "누름",
+        "비활성",
+        "배지",
+        "잠금",
+        "플러스"
+      ],
+      "deliverables": [
+        "버튼·프레임 원본",
+        "재화/진입 아이콘",
+        "9-slice 표",
+        "컴포넌트 목업"
+      ],
+      "referenceKeys": [
+        "ui-play:hud_property_bg",
+        "ui-play:icon_shop",
+        "ui-play:icon_inventory"
+      ],
+      "facts": [
+        "UI-010",
+        "AS-003",
+        "AS-004"
+      ],
+      "observed": {
+        "summary": "선정 HUD Sprite25개와11종 프리팹을 연결했다. 이 선정치는 전체 UI 제작량이 아니다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920 기준 목업; 패널·버튼은9-slice, 아이콘128/256px 초안",
+        "format": "PSD 또는 벡터 원본 + PNG + border/pivot JSON",
+        "notes": "텍스트·숫자·배지는 분리해 언어/재화 변화에 대응한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/gameplay-ui-assets.json",
+          "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/selected-prefabs.json",
+          "sha256": "8f108b9eacb95befc2699474537eaefe9574400b07b1d4d384c26d0cfd1f98b0",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/ui-coordinates.json",
+          "sha256": "400cd931782e5f75dfa4b213df3d3ae6ae8280ad6f5f3e57b8d499394eba78fd",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/SceneView/SceneViewHud.lua",
+          "sha256": "4b5ac3e538542555c160ad73e407d77c74d6f4de9ccaac1fae01c000f8bf6a3d",
+          "line_start": 10,
+          "line_end": 18,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행."
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행."
+        }
+      ],
+      "unknowns": [
+        "최종 텍스트 크기·터치 영역·세이프 영역"
+      ],
+      "dependencies": [
+        "art-direction"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "orders-inventory",
+      "category": "ui",
+      "title": "주문 트레이·보관함·아이템 정보",
+      "purpose": "진행 중 주문과 공간·체인 정보를 표시",
+      "phase": "core",
+      "unit": "화면 세트",
+      "defaultQuantity": 3,
+      "quantityBasis": "신규 예시: 주문·보관함·아이템 정보 3화면",
+      "requiredStates": [
+        "요구 미충족",
+        "준비 완료",
+        "납품",
+        "보관함 빈칸/가득참",
+        "확장/잠금"
+      ],
+      "deliverables": [
+        "화면 목업",
+        "공용 패널·슬롯",
+        "주문 체크/잠금 마크"
+      ],
+      "referenceKeys": [
+        "ui-play:order_counter",
+        "capture:item-chain",
+        "ui-play:icon_inventory"
+      ],
+      "facts": [
+        "SIM-X001",
+        "SIM-X002",
+        "PZ-027"
+      ],
+      "observed": {
+        "summary": "복수 주문은 슬롯을 공유하고 보관함은 아이템의 충전·상태도 보존한다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920 화면; 트레이·슬롯 9-slice와 고정비율 혼합",
+        "format": "편집 원본 + PNG + 상태별 UI 목업",
+        "notes": "주문 상품 원화와 주문 UI 프레임의 수량을 구분한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/gameplay-ui-assets.json",
+          "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Order/MainOrderCreator.lua",
+          "sha256": "f8b609ec2969668dadd4d76c55ba4149c2c3364b099e944aa6b40a4c23cf14a5",
+          "line_start": 1,
+          "line_end": 25,
+          "method": "static source/config projection, no live runtime"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/InventorySlotConfig.lua",
+          "sha256": "5ff98c0f7495d7aab137ae7369480b56d651343c6d743de5b4e10e9e107cfb95",
+          "line_start": 1,
+          "line_end": 38,
+          "method": "recovered static Lua and packaged table cross-check"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/InventorySlotConfig.lua",
+          "sha256": "5ff98c0f7495d7aab137ae7369480b56d651343c6d743de5b4e10e9e107cfb95",
+          "line_start": 2,
+          "line_end": 9,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "최대 동시 주문·초기 보관함 칸수"
+      ],
+      "dependencies": [
+        "hud-components"
+      ],
+      "videoObservations": [
+        {
+          "id": "choice-chest-dialog",
+          "observations": [
+            "세 아이템 후보와 초록 확인 버튼을 가진 선택상자 창을 여러 번 열어 선택 결과를 보드에 받는다."
+          ],
+          "briefImplication": "선택상자 껍데기 외에 후보 슬롯·선택/비선택·확인 버튼·배치/대기열 상태를 재사용 컴포넌트로 구성한다.",
+          "limit": "표본에 없는 후보 개수와 생성 확률, 타이머/취소 등 다른 상태는 별도 정의가 필요하다.",
+          "references": [
+            {
+              "sourceId": "GH-V0124",
+              "fromSeconds": 38,
+              "toSeconds": 46,
+              "videoSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "common-dialogs",
+      "category": "ui",
+      "title": "공용 모달·확인·보상·충전 UI",
+      "purpose": "창마다 공통 외형을 재사용하면서 상태 차이를 유지",
+      "phase": "core",
+      "unit": "화면 세트",
+      "defaultQuantity": 5,
+      "quantityBasis": "신규 예시: 확인·보상·에너지·일반 알림·아이템 사용 5템플릿",
+      "requiredStates": [
+        "열기",
+        "닫기",
+        "확인/취소",
+        "지급",
+        "부족",
+        "일시 입력 제한"
+      ],
+      "deliverables": [
+        "공용 배경/헤더/닫기",
+        "5개 템플릿 목업",
+        "스케일링·레이어 명세"
+      ],
+      "referenceKeys": [
+        "capture:upgrade",
+        "capture:energy-refill",
+        "effect:window"
+      ],
+      "facts": [
+        "UI-001",
+        "UI-005",
+        "UI-009"
+      ],
+      "observed": {
+        "summary": "창의 입력·마스크·닫기 수명 정책과 Animator/오디오 후크가 있다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920 목업, 패널 9-slice, 텍스트는 분리",
+        "format": "PSD/Figma 등 편집 원본 + RGBA PNG",
+        "notes": "열기/닫기를 원화 프레임으로 매번 제작하지 않고 공통 모션과 분리한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/selected-prefabs.json",
+          "sha256": "8f108b9eacb95befc2699474537eaefe9574400b07b1d4d384c26d0cfd1f98b0",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/selected-ui-animations.json",
+          "sha256": "14063fc88bcfd5e5cb3742352cf2e87863f31165b90b3b28c8e4d5b903358454",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/BaseView.lua",
+          "sha256": "614cda6ce8c94a6f08b5b44637b04a92170e7165c399140db0727813a6e60b7a",
+          "line_start": 1,
+          "line_end": 9,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/BaseWindow.lua",
+          "sha256": "87e071f4d37bee8a3abf7e57d5d71478ae38e35dbce9084475af312e07371d27",
+          "line_start": 50,
+          "line_end": 58,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/UIManager.lua",
+          "sha256": "2d8036bf9684418897d2ea1b08a8e4d2af2827cd16db92f3c9d98874fb73f6cb",
+          "line_start": 16,
+          "line_end": 17,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "최종 모달 종류·문구 길이"
+      ],
+      "dependencies": [
+        "hud-components"
+      ],
+      "videoObservations": [
+        {
+          "id": "choice-chest-dialog",
+          "observations": [
+            "세 아이템 후보와 초록 확인 버튼을 가진 선택상자 창을 여러 번 열어 선택 결과를 보드에 받는다."
+          ],
+          "briefImplication": "선택상자 껍데기 외에 후보 슬롯·선택/비선택·확인 버튼·배치/대기열 상태를 재사용 컴포넌트로 구성한다.",
+          "limit": "표본에 없는 후보 개수와 생성 확률, 타이머/취소 등 다른 상태는 별도 정의가 필요하다.",
+          "references": [
+            {
+              "sourceId": "GH-V0124",
+              "fromSeconds": 38,
+              "toSeconds": 46,
+              "videoSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tutorial-ui",
+      "category": "ui",
+      "title": "튜토리얼 손·화살표·마스크",
+      "purpose": "허용 입력과 강조 대상을 분명히 보여준다",
+      "phase": "core",
+      "unit": "세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 예시: 손·화살표·마스크·설명창 공용1세트",
+      "requiredStates": [
+        "탭",
+        "드래그",
+        "허용 영역",
+        "대화",
+        "완료"
+      ],
+      "deliverables": [
+        "손/화살표 원화",
+        "설명창",
+        "마스크 구현용 경계 정의"
+      ],
+      "referenceKeys": [
+        "interaction:drag",
+        "interaction:blocked"
+      ],
+      "facts": [
+        "UI-014",
+        "UI-015",
+        "PZ-034"
+      ],
+      "observed": {
+        "summary": "전체115ID 중 원작 연출·서버 활동 의존 가이드가 남아 있다. 마스크 시각과 입력 허용 영역은 다르다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "손/화살표256px, 설명창9-slice, 마스크는 엔진 구현",
+        "format": "원본 + PNG + 탭/드래그 루프 참조",
+        "notes": "전체115가이드마다 개별 일러스트를 요구하는 수량이 아니다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/tutorial-coverage.json",
+          "sha256": "af40a0340f1ddd4a275fabc73efbf1e1b3db9e9cd070932b44b94c875efff65e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/selected-ui-animations.json",
+          "sha256": "14063fc88bcfd5e5cb3742352cf2e87863f31165b90b3b28c8e4d5b903358454",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Layer/TutorialLayer.lua",
+          "sha256": "64fe5cefb2ee729d8fb1194353ee761305f40a373a0b2450ea641135a96d52bd",
+          "line_start": 410,
+          "line_end": 418,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Layer/TutorialLayer.lua",
+          "sha256": "64fe5cefb2ee729d8fb1194353ee761305f40a373a0b2450ea641135a96d52bd",
+          "line_start": 155,
+          "line_end": 163,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "line_start": 425,
+          "line_end": 429,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "초반 사용자 여정과 안내 횟수"
+      ],
+      "dependencies": [
+        "common-dialogs"
+      ],
+      "videoObservations": [
+        {
+          "id": "animated-tool-help",
+          "observations": [
+            "동결 아이템 도움말 안 작은 격자에서 도구/아이템의 이동과 빛 뒤 결과가 드러나는 시연을 반복한다."
+          ],
+          "briefImplication": "도구 아이콘과 인게임 효과 외에 도움말용 미니 보드·손/아이템 이동·전후 결과를 반복 시연할 리소스/타임라인이 필요한지 정한다.",
+          "limit": "도움말 안 시연이며 실제 플레이 보드에서 그 도구를 사용한 증거가 아니다.",
+          "references": [
+            {
+              "sourceId": "GH-V0117",
+              "fromSeconds": 3.5,
+              "toSeconds": 14,
+              "videoSha256": "d9a5a6b1b95e2a9ef075f9d6034ee0999d579a546d7625265116988dcb4cd701"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "basic-shop",
+      "category": "ui",
+      "title": "일반·일일·한정 상점 UI",
+      "purpose": "무료 상품과 재화 구매, 제한 수량·갱신을 전달",
+      "phase": "core",
+      "unit": "화면 세트",
+      "defaultQuantity": 3,
+      "quantityBasis": "신규 예시: 일일/한정/보석 상점 3화면",
+      "requiredStates": [
+        "무료",
+        "보석 가격",
+        "실결제 가격 자리",
+        "품절",
+        "갱신",
+        "잠금"
+      ],
+      "deliverables": [
+        "상품 카드 템플릿",
+        "탭/리스트",
+        "재고·할인·타이머 프레임"
+      ],
+      "referenceKeys": [
+        "effect:window",
+        "capture:energy-refill"
+      ],
+      "facts": [
+        "SIM-SH001",
+        "SIM-SH002",
+        "SIM-SH003"
+      ],
+      "observed": {
+        "summary": "일일·플래시·보석 컨테이너와 레벨/구매 상태가 다르다.251개 IAP 선언은251개 전용 배너 원화 수가 아니다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920, 상품카드 가변높이; 가격/수량/시간은 동적 텍스트",
+        "format": "편집 원본 + PNG +9-slice",
+        "notes": "모바일 스토어 실제 가격 길이와 통화기호를 담을 공간이 필요하다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/selected-prefabs.json",
+          "sha256": "8f108b9eacb95befc2699474537eaefe9574400b07b1d4d384c26d0cfd1f98b0",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Shop/ShopWindow.lua",
+          "sha256": "1e6111e36bf90561f02e43bb53c40fe29c9b84210b80c224f6a9e16036850ddf",
+          "line_start": 8,
+          "line_end": 52,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/config-tables/ShopDailyDealsConfig.json",
+          "sha256": "efba8416b5ccf8fba48f3a853b2acda4dc45826af1ea6ca13c5a3c63ccc65222",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/config-tables/ItemPropertyConfig.json",
+          "sha256": "28f6a40744fb51242675b8dd5d7d3683d26670c5b8376dab9934fb79469a3180",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "출시 상품구성·가격·새로고침 동선"
+      ],
+      "dependencies": [
+        "common-dialogs"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "bm-offers",
+      "category": "ui",
+      "title": "상황형 오퍼·번들·단계형 판매",
+      "purpose": "부족/종료/성장 시점의 상품 제안과 단계 잠금을 전달",
+      "phase": "launch",
+      "unit": "화면 세트",
+      "defaultQuantity": 3,
+      "quantityBasis": "신규 예시: 에너지 제안·성장 번들·단계형 판매 3템플릿",
+      "requiredStates": [
+        "노출",
+        "유료 단계",
+        "무료 해금",
+        "구매 완료",
+        "품절",
+        "기간 종료"
+      ],
+      "deliverables": [
+        "배너 키아트3종",
+        "상품/보상 슬롯 공통 UI",
+        "가격·타이머·체크 표기"
+      ],
+      "referenceKeys": [
+        "capture:energy-chain",
+        "capture:level-offer",
+        "capture:tower-6500"
+      ],
+      "facts": [
+        "SIM-SH005",
+        "SIM-SH006",
+        "SIM-SH008"
+      ],
+      "observed": {
+        "summary": "과거9유형42관측점이 있지만 자동노출 원인과 현행 서버 가격을 확정하지 못했다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "키아트1080px 폭 마스터; 카드 프레임은9-slice",
+        "format": "PSD 레이어 + PNG; 가격·기간·지급량 텍스트 분리",
+        "notes": "BM마다 완전 신규 UI보다 공통 슬롯과 테마 키아트를 조합하는 계획이다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/media-review/bm-timeline.json",
+          "sha256": "c6ac8ff3f33c68aec2a99589b74ba7573dc7518c9073905bfecc9dfd8630bed5",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+          "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+          "line_start": 148,
+          "line_end": 179,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/EnergyWindowPopupHelper.lua",
+          "sha256": "2417400ae4f77332e68bba0df5a94dfe56c49ae56385ea22a7a6cd9b974ebe2f",
+          "line_start": 25,
+          "line_end": 93,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/config-tables/ShopIAPConfig.json",
+          "sha256": "d11c5d48a360bf603981ce073b717529beeb410a4373df34999588d725f4b741",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "출시 BM 종류·노출 빈도·무료/유료 단계 수"
+      ],
+      "dependencies": [
+        "basic-shop"
+      ],
+      "videoObservations": [
+        {
+          "id": "tiered-offer-states",
+          "observations": [
+            "보라색 탑에 여러 단의 보상 타일이 있고 구매 뒤 수령 버튼·체크·다음 가격 버튼 상태가 바뀐다.",
+            "서로 다른 상자/선물 그림을 회전·빛으로 열고 결과 아이콘을 펼친다. 뒤 단계는 젬 하나를 크게 보여준다."
+          ],
+          "briefImplication": "단계형 판매는 한 장의 배너가 아니라 타일 정상/선택/수령/체크, 버튼 상태, 포장 변형, 단계 상승 연출을 분리한다.",
+          "limit": "한 사용자의 연속 구매 녹화이다. 모든 유저의 고정 가격·노출 조건·결제 결과 규칙은 확정하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0125",
+              "fromSeconds": 11.9,
+              "toSeconds": 26.6,
+              "videoSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287"
+            },
+            {
+              "sourceId": "GH-V0125",
+              "fromSeconds": 38.1,
+              "toSeconds": 49.2,
+              "videoSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287"
+            },
+            {
+              "sourceId": "GH-V0125",
+              "fromSeconds": 87.1,
+              "toSeconds": 98.2,
+              "videoSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "customer-portraits",
+      "category": "world",
+      "title": "고객 초상·주문 감정 표현",
+      "purpose": "반복 주문의 주체와 반응을 전달",
+      "phase": "core",
+      "unit": "캐릭터 세트",
+      "defaultQuantity": 3,
+      "quantityBasis": "신규 예시: 초기 고객3명, 각 기본·기쁨·요청 3표정",
+      "requiredStates": [
+        "기본",
+        "요청",
+        "만족",
+        "잠금 초상"
+      ],
+      "deliverables": [
+        "캐릭터별 레이어 PSD",
+        "표정 파생 PNG",
+        "초상 크롭 영역"
+      ],
+      "referenceKeys": [
+        "ui-play:avatar_quinn",
+        "ui-play:avatar_olivia",
+        "ui-play:avatar_colton"
+      ],
+      "facts": [
+        "AS-001",
+        "FX-012"
+      ],
+      "observed": {
+        "summary": "웹은 선정 초상3개를 사용하며 원작의 전신 고객 연출을 대체한다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "상반신 마스터1024px 높이, UI초상256/512px 파생",
+        "format": "PSD 분리 레이어 + RGBA PNG",
+        "notes": "전신 리깅은 출시 확대 항목으로 별도 산정한다. 표정 파생 수는 세트 내 포함."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/gameplay-ui-assets.json",
+          "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "line_start": 1715,
+          "line_end": 1723,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "캐릭터 수·표정 수·대사 역할"
+      ],
+      "dependencies": [
+        "art-direction"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "world-map",
+      "category": "world",
+      "title": "첫 구역 맵·배경·진입점",
+      "purpose": "퍼즐 보상을 집 발전으로 연결하는 공간",
+      "phase": "core",
+      "unit": "구역 세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 MVP 첫 구역1개",
+      "requiredStates": [
+        "변경 전",
+        "진행 중",
+        "영역 잠금",
+        "카메라 여백"
+      ],
+      "deliverables": [
+        "배경 분리 레이어",
+        "가림/앞뒤 레이어",
+        "카메라 기준 목업",
+        "이동/상호작용 영역표"
+      ],
+      "referenceKeys": [
+        "screen:home",
+        "ui-play:board_bg1"
+      ],
+      "facts": [
+        "MAP-009",
+        "MAP-011",
+        "MAP-014"
+      ],
+      "observed": {
+        "summary": "맵 프리팹·슬롯 상태·카메라 체크점은 다른 모집단이고 원격 리소스가 포함된다. 전체 맵 원화를 복원한 상태가 아니다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "화면1080×1920 기준 구역별 분할 배경, 실제 마스터 크기는 카메라 범위 확정 후",
+        "format": "2D layered PSD+PNG 또는3D 원본 선택 후 확정",
+        "notes": "신규 MVP는1구역으로 제한한다. 원작3D Mesh객체 수를 신규맵 모델 수로 쓰지 않는다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/simulation/progression-parity.json",
+          "sha256": "7d79afa7b65e4014bf2b8e4d36668eb6738f062d3f0a4c943c9c49c785a06581",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Map/Slot.lua",
+          "sha256": "30a4d4de75f4fc95d0bac473798b06ab05beeaeb5200f6e0ec032661091e1184",
+          "line_start": 673,
+          "line_end": 680,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MapBorderConfig.lua",
+          "sha256": "5d8d60753c0d51773d3133e840948cf08d8b3e3f3184597b231b42c504040185",
+          "line_start": 15,
+          "line_end": 22,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Map/MapLayer.lua",
+          "sha256": "1f4f81dbd9e15c1addfdad1be5e6ca265a865aeb9b894366507bc32e2839b804",
+          "line_start": 11,
+          "line_end": 18,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "2D/2.5D/3D 선택·시점·카메라 이동 범위"
+      ],
+      "dependencies": [
+        "art-direction"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "renovation-slots",
+      "category": "world",
+      "title": "집 발전 슬롯·전후·장식 선택",
+      "purpose": "과제 완료 보상이 눈에 보이는 공간 변화로 이어지게 한다",
+      "phase": "core",
+      "unit": "슬롯 세트",
+      "defaultQuantity": 6,
+      "quantityBasis": "신규 예시: 첫 구역6슬롯, 각 변경전1+변경후1",
+      "requiredStates": [
+        "변경 전",
+        "공사/먼지",
+        "변경 후",
+        "선택 강조"
+      ],
+      "deliverables": [
+        "슬롯별 전후 레이어",
+        "공통 기준점/가림 레이어",
+        "설치 위치표"
+      ],
+      "referenceKeys": [
+        "screen:home",
+        "ui-play:icon_build"
+      ],
+      "facts": [
+        "MAP-008",
+        "MAP-010",
+        "MAP-026"
+      ],
+      "observed": {
+        "summary": "슬롯은 영구 상태와 임시 연출 상태를 나누며 과제 행수4277개와 장식 고유개수는 같지 않다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "구역 기준 동일 좌표·피벗; 오브젝트별 해상도는 화면 최대 배율에서 결정",
+        "format": "PSD 레이어 + PNG, 필요 시 FBX/텍스처/머티리얼 별도",
+        "notes": "6슬롯 세트는12장 전후 이미지라는 초안이나 공통 바닥/먼지는 재사용 가능."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/progression-parity.json",
+          "sha256": "7d79afa7b65e4014bf2b8e4d36668eb6738f062d3f0a4c943c9c49c785a06581",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/MapDataModel.lua",
+          "sha256": "9a5cab4fc2000ed436b0995764a338a3eaa463a6d76129899384f1dc66877357",
+          "line_start": 129,
+          "line_end": 136,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Map/Slot.lua",
+          "sha256": "30a4d4de75f4fc95d0bac473798b06ab05beeaeb5200f6e0ec032661091e1184",
+          "line_start": 669,
+          "line_end": 676,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Layer/TimelineLayer.lua",
+          "sha256": "9960c04e6efcf9e071ee3a3f2f3dbf160ad72eb9e5590ea0560002bd1d5b8f8e",
+          "line_start": 27,
+          "line_end": 34,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "수리 슬롯 개수·최종 선택지 수·원근 기준"
+      ],
+      "dependencies": [
+        "world-map"
+      ],
+      "videoObservations": [
+        {
+          "id": "map-decoration-controls",
+          "observations": [
+            "네온 테마 공간에서 하단 선택/확인 패널을 조작하며 장식 오브젝트를 배치하고 목록 진행이 갱신된다."
+          ],
+          "briefImplication": "맵 배경 한 장 외에 배치 슬롯·전후 오브젝트·대안 선택 썸네일·확인 UI·등장 효과와 가림 순서의 제작 항목을 둔다.",
+          "limit": "원본 레이어 분리·지도 좌표·카메라/전후 변형 전체 미확인. 원작과 같은 수의 구역/선택지를 요구하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0113",
+              "fromSeconds": 30.7,
+              "toSeconds": 40.7,
+              "videoSha256": "cb18d9c38a7ffec15bf0be468bd2452a88f0530090b73c6e536284bd934d64b5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "story-ui",
+      "category": "world",
+      "title": "대사창·초상·초반 스토리 컷",
+      "purpose": "튜토리얼·과제·전환의 맥락을 전달",
+      "phase": "core",
+      "unit": "화면 세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 예시: 대사 템플릿1종 + 캐릭터 초상 재사용",
+      "requiredStates": [
+        "좌/우 화자",
+        "표정",
+        "다음",
+        "스킵",
+        "선택지"
+      ],
+      "deliverables": [
+        "대사 프레임",
+        "화자명/텍스트 영역",
+        "초반 컷 구성표"
+      ],
+      "referenceKeys": [
+        "screen:home",
+        "ui-play:avatar_quinn"
+      ],
+      "facts": [
+        "MAP-023",
+        "MAP-024"
+      ],
+      "observed": {
+        "summary": "원작 대사는 화자 방향·표정·버블 규약이 있으나 전체 스토리와 연출이 복원된 것은 아니다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920 목업, 텍스트가 늘어나는9-slice 대사창",
+        "format": "편집 원본 + PNG + 대사 ID/화자 매핑",
+        "notes": "스토리 원고·컷·대사 길이는 그래픽 발주 전에 별도 확정한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/progression-parity.json",
+          "sha256": "7d79afa7b65e4014bf2b8e4d36668eb6738f062d3f0a4c943c9c49c785a06581",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Story/StoryWindow.lua",
+          "sha256": "36e00fc2f5878531329f736f274da8e0a3ee8c4ea45681ca787c4bb944b80974",
+          "line_start": 16,
+          "line_end": 23,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Story/StoryWindow.lua",
+          "sha256": "36e00fc2f5878531329f736f274da8e0a3ee8c4ea45681ca787c4bb944b80974",
+          "line_start": 163,
+          "line_end": 170,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "신규 대본·캐릭터 관계·초반 컷 수"
+      ],
+      "dependencies": [
+        "customer-portraits",
+        "common-dialogs"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "title-loading",
+      "category": "ui",
+      "title": "로딩·타이틀·앱 아이콘",
+      "purpose": "첫 진입과 리소스 준비 상태를 전달",
+      "phase": "core",
+      "unit": "화면 세트",
+      "defaultQuantity": 2,
+      "quantityBasis": "신규 예시: 타이틀·로딩2화면, 앱아이콘1개 포함",
+      "requiredStates": [
+        "시작",
+        "로딩 진행",
+        "재시도",
+        "점검"
+      ],
+      "deliverables": [
+        "키아트",
+        "로고",
+        "앱아이콘 마스터",
+        "로딩 UI 분리"
+      ],
+      "referenceKeys": [
+        "ui-play:board_bg1"
+      ],
+      "facts": [
+        "AS-003",
+        "MAP-022"
+      ],
+      "observed": {
+        "summary": "웹 타이틀은 재구성이다. 원작 로딩·타이틀 전체 연출 검증은 남아 있다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "키아트2160×3840px 초안; 앱아이콘1024×1024px 마스터",
+        "format": "PSD + PNG, 로고는 벡터 원본 병행",
+        "notes": "스토어 등록 규격은 실제 목표 플랫폼 결정 후 별도 파생한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/ui-coordinates.json",
+          "sha256": "400cd931782e5f75dfa4b213df3d3ae6ae8280ad6f5f3e57b8d499394eba78fd",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/SceneManager.lua",
+          "sha256": "7b340fb139de3597ee46a2ea8b763467b7face65ff18119b43b8162d7b3b07d3",
+          "line_start": 124,
+          "line_end": 131,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "신규 제목·브랜드·타이틀 캐릭터·플랫폼"
+      ],
+      "dependencies": [
+        "art-direction"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "board-animations",
+      "category": "motion",
+      "title": "선택·이동·합성·생성·거절 모션",
+      "purpose": "기본 퍼즐 입력 결과를 즉시 이해시키는 피드백",
+      "phase": "core",
+      "unit": "모션",
+      "defaultQuantity": 6,
+      "quantityBasis": "신규 예시: 선택·이동/드롭·합성·생성·복귀·거절6동작",
+      "requiredStates": [
+        "시작",
+        "완료",
+        "중단",
+        "재실행",
+        "입력 제한 복원"
+      ],
+      "deliverables": [
+        "동작별 타이밍시트",
+        "시작/중간/끝 기준",
+        "엔진용 커브 또는 타임라인",
+        "검수용 GIF"
+      ],
+      "referenceKeys": [
+        "interaction:select",
+        "interaction:drag",
+        "interaction:merge",
+        "effect:generate"
+      ],
+      "facts": [
+        "FX-001",
+        "FX-002",
+        "FX-004",
+        "FX-016"
+      ],
+      "observed": {
+        "summary": "코드에는 합성 흡수0.1초+팝0.3초, 드래그 끝 보정0.15초 등이 있지만 전체 실기 타이밍은 별도다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "아이템 기준 좌표/피벗 유지,60fps 기준 타이밍시트 초안",
+        "format": "Unity Animation/Tween 명세 + GIF/MP4 참조",
+        "notes": "모든 동작을 프레임 시퀀스로 납품하지 않고 공통 transform 커브와 이펙트를 분리한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/selected-ui-animations.json",
+          "sha256": "14063fc88bcfd5e5cb3742352cf2e87863f31165b90b3b28c8e4d5b903358454",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "line_start": 296,
+          "line_end": 304,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "line_start": 392,
+          "line_end": 400,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "line_start": 465,
+          "line_end": 473,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/Item/ItemView.lua",
+          "sha256": "176ca4e46ae0bacc287577ff0853ff010ff644231f3de884c3f5c22ad45f4aa7",
+          "line_start": 194,
+          "line_end": 202,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "목표 조작감·중단 정책·실기 프레임 비교"
+      ],
+      "dependencies": [
+        "board-surface",
+        "item-chains"
+      ],
+      "videoObservations": [
+        {
+          "id": "animated-tool-help",
+          "observations": [
+            "동결 아이템 도움말 안 작은 격자에서 도구/아이템의 이동과 빛 뒤 결과가 드러나는 시연을 반복한다."
+          ],
+          "briefImplication": "도구 아이콘과 인게임 효과 외에 도움말용 미니 보드·손/아이템 이동·전후 결과를 반복 시연할 리소스/타임라인이 필요한지 정한다.",
+          "limit": "도움말 안 시연이며 실제 플레이 보드에서 그 도구를 사용한 증거가 아니다.",
+          "references": [
+            {
+              "sourceId": "GH-V0117",
+              "fromSeconds": 3.5,
+              "toSeconds": 14,
+              "videoSha256": "d9a5a6b1b95e2a9ef075f9d6034ee0999d579a546d7625265116988dcb4cd701"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "board-vfx",
+      "category": "motion",
+      "title": "합성 등급·착지·봉인·버블 이펙트",
+      "purpose": "성과와 특별한 상태변화를 구분하는 시각 효과",
+      "phase": "core",
+      "unit": "이펙트",
+      "defaultQuantity": 8,
+      "quantityBasis": "신규 예시: 합성3등급·생성착지·봉인2종·버블구매/만료8종",
+      "requiredStates": [
+        "재생",
+        "루프 여부",
+        "등급/색 파생",
+        "중단/정리"
+      ],
+      "deliverables": [
+        "파티클 텍스처",
+        "머티리얼",
+        "Prefab/설정",
+        "알파 소스",
+        "재생 참조"
+      ],
+      "referenceKeys": [
+        "interaction:unlock-box",
+        "interaction:unlock-web",
+        "effect:bubble"
+      ],
+      "facts": [
+        "FX-003",
+        "FX-007",
+        "FX-008"
+      ],
+      "observed": {
+        "summary": "원작 패키지의 ParticleSystem6335개는 프리팹 내 다중 구성요소 수이며6335개 고유 효과 발주량이 아니다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "텍스처256/512px 초안, 기기 오버드로/동시효과 수로 검수",
+        "format": "RGBA PNG + 엔진 파티클/Shader 명세 또는 Prefab",
+        "notes": "연출별 파티클 수/동시 최대수는 기기 성능 프로파일링 후 확정한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MergeEffectManager.lua",
+          "sha256": "306ea5788be4907ab13772a3e93da46dcd9254f3d4df70be9ee393a516580211",
+          "line_start": 1,
+          "line_end": 6,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "line_start": 1655,
+          "line_end": 1663,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "line_start": 1689,
+          "line_end": 1697,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "출시 효과 등급수·효과재생범위·목표기기"
+      ],
+      "dependencies": [
+        "board-animations"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "reward-ui-motion",
+      "category": "motion",
+      "title": "주문 완료·재화 비행·UI 전환",
+      "purpose": "주문→지급→카운터 반영의 인과관계를 전달",
+      "phase": "core",
+      "unit": "모션",
+      "defaultQuantity": 5,
+      "quantityBasis": "신규 예시: 주문서빙·보상비행·카운터·창열기·창닫기5동작",
+      "requiredStates": [
+        "준비 완료",
+        "비행",
+        "도착",
+        "정리",
+        "중단/스킵"
+      ],
+      "deliverables": [
+        "이동경로·도착 이벤트",
+        "HUD 반영 타이밍",
+        "열기/닫기 커브",
+        "화면 전환 참조"
+      ],
+      "referenceKeys": [
+        "effect:order",
+        "capture:reward-queue",
+        "effect:window"
+      ],
+      "facts": [
+        "FX-011",
+        "FX-012",
+        "FX-013",
+        "UI-005"
+      ],
+      "observed": {
+        "summary": "보상량과 비행 아이콘 개수는1:1이 아니며 창 닫기 완료까지 입력 수명을 유지한다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920 기준 경로는 런타임 앵커로 해석",
+        "format": "Unity Animation/Tween 명세 + 참조 영상",
+        "notes": "지급 시점과 시각효과 완료 시점을 개발자와 합의한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/selected-ui-animations.json",
+          "sha256": "14063fc88bcfd5e5cb3742352cf2e87863f31165b90b3b28c8e4d5b903358454",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/simulation/gameplay-ui-assets.json",
+          "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/Order/BaseOrderCell.lua",
+          "sha256": "052429be6760b5fc9c74903257f8827d1d689c01aff22b55dea62ca7355a6460",
+          "line_start": 537,
+          "line_end": 545,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "line_start": 1715,
+          "line_end": 1723,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Animation/PropertyAnimationManager.lua",
+          "sha256": "207775baed628983c5c59365d40b5c361917f67de8ddf54f3994c294d2dc1e9f",
+          "line_start": 22,
+          "line_end": 30,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/BaseWindow.lua",
+          "sha256": "87e071f4d37bee8a3abf7e57d5d71478ae38e35dbce9084475af312e07371d27",
+          "line_start": 50,
+          "line_end": 58,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "보상 병합·연속창 처리·사운드 이벤트"
+      ],
+      "dependencies": [
+        "orders-inventory",
+        "common-dialogs"
+      ],
+      "videoObservations": [
+        {
+          "id": "full-scene-reward",
+          "observations": [
+            "민트색 전면 배경에서 상자와 고양이가 나타나며 여러 보상 아이콘과 분홍 리본을 차례로 표시한다."
+          ],
+          "briefImplication": "아이템 아이콘 외에 전면 배경·상자 상태·동물 모션·결과 배치·리본·재화 비행을 한 연출 묶음으로 발주할지 선택한다.",
+          "limit": "원속도와 리깅/프레임 방식 미확인. 외부 결제 화면 자체는 게임 제작 리소스에 포함하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0106",
+              "fromSeconds": 14.5,
+              "toSeconds": 19.5,
+              "videoSha256": "99735ee4847c33badfa6db00d014d72403acec507316a7f0adebea507ad1389c"
+            },
+            {
+              "sourceId": "GH-V0121",
+              "fromSeconds": 18.3,
+              "toSeconds": 22.8,
+              "videoSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d"
+            }
+          ]
+        },
+        {
+          "id": "tiered-offer-states",
+          "observations": [
+            "보라색 탑에 여러 단의 보상 타일이 있고 구매 뒤 수령 버튼·체크·다음 가격 버튼 상태가 바뀐다.",
+            "서로 다른 상자/선물 그림을 회전·빛으로 열고 결과 아이콘을 펼친다. 뒤 단계는 젬 하나를 크게 보여준다."
+          ],
+          "briefImplication": "단계형 판매는 한 장의 배너가 아니라 타일 정상/선택/수령/체크, 버튼 상태, 포장 변형, 단계 상승 연출을 분리한다.",
+          "limit": "한 사용자의 연속 구매 녹화이다. 모든 유저의 고정 가격·노출 조건·결제 결과 규칙은 확정하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0125",
+              "fromSeconds": 11.9,
+              "toSeconds": 26.6,
+              "videoSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287"
+            },
+            {
+              "sourceId": "GH-V0125",
+              "fromSeconds": 38.1,
+              "toSeconds": 49.2,
+              "videoSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287"
+            },
+            {
+              "sourceId": "GH-V0125",
+              "fromSeconds": 87.1,
+              "toSeconds": 98.2,
+              "videoSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287"
+            }
+          ]
+        },
+        {
+          "id": "season-track-states",
+          "observations": [
+            "시즌 완료/토큰 강조 뒤 무료·프리미엄 두 보상열의 트랙과 진행·수령 상태를 표시한다."
+          ],
+          "briefImplication": "패스는 시즌 키아트 외에 무료/유료 열, 잠김/수령가능/완료, 토큰 강조와 수령 효과를 각각 납품 상태로 명시한다.",
+          "limit": "시즌 전체 보상행 수·상세 조건·전체 가격 정책을 모두 관측한 것은 아니다.",
+          "references": [
+            {
+              "sourceId": "GH-V0087",
+              "fromSeconds": 38,
+              "toSeconds": 47.5,
+              "videoSha256": "ff00351ba6d47df579bcbac4d4b6ccdf8a00df9803695c58f371d5e8a00faaac"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "map-renovation-motion",
+      "category": "motion",
+      "title": "집 발전·먼지·등장·카메라 전환",
+      "purpose": "골드 소비와 완성 오브젝트 등장 순간을 강조",
+      "phase": "core",
+      "unit": "모션",
+      "defaultQuantity": 4,
+      "quantityBasis": "신규 예시: 가림·철거먼지·설치등장·카메라전환4동작",
+      "requiredStates": [
+        "시작",
+        "작업중",
+        "확정",
+        "스킵/복원"
+      ],
+      "deliverables": [
+        "먼지/반짝임 소스",
+        "설치 타이밍시트",
+        "카메라 경로/범위",
+        "스킵 후 최종 상태"
+      ],
+      "referenceKeys": [
+        "screen:home"
+      ],
+      "facts": [
+        "MAP-017",
+        "MAP-019",
+        "MAP-021",
+        "MAP-026"
+      ],
+      "observed": {
+        "summary": "타임라인은 동시 행동 완료와 스킵 후 상태 복원을 조율한다. 현재 웹 맵은 모식도다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "슬롯 좌표·가림 레이어·카메라 기준 공통",
+        "format": "엔진 Timeline/Animation 명세 + VFX 소스",
+        "notes": "카메라 키·먼지효과·설치물 원화는 별도 비용 항목으로 중복 산정하지 않는다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/progression-parity.json",
+          "sha256": "7d79afa7b65e4014bf2b8e4d36668eb6738f062d3f0a4c943c9c49c785a06581",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Data/Task/TimelineData.lua",
+          "sha256": "5230e3e4b180e468dfcc4070c38ace37e4beb67c897b451caa54290e18f0425e",
+          "line_start": 69,
+          "line_end": 76,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Task/TimelineExecuter.lua",
+          "sha256": "f1530ed4edaa535a7bf8fd33e0e58b39e2bc21321ca25bfa097f6acbe1e2489a",
+          "line_start": 1,
+          "line_end": 8,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Data/Task/TimelineData.lua",
+          "sha256": "5230e3e4b180e468dfcc4070c38ace37e4beb67c897b451caa54290e18f0425e",
+          "line_start": 240,
+          "line_end": 247,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Layer/TimelineLayer.lua",
+          "sha256": "9960c04e6efcf9e071ee3a3f2f3dbf160ad72eb9e5590ea0560002bd1d5b8f8e",
+          "line_start": 27,
+          "line_end": 34,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "실제 맵 구현방식·카메라·장식 확정"
+      ],
+      "dependencies": [
+        "renovation-slots",
+        "board-vfx"
+      ],
+      "videoObservations": [
+        {
+          "id": "map-decoration-controls",
+          "observations": [
+            "네온 테마 공간에서 하단 선택/확인 패널을 조작하며 장식 오브젝트를 배치하고 목록 진행이 갱신된다."
+          ],
+          "briefImplication": "맵 배경 한 장 외에 배치 슬롯·전후 오브젝트·대안 선택 썸네일·확인 UI·등장 효과와 가림 순서의 제작 항목을 둔다.",
+          "limit": "원본 레이어 분리·지도 좌표·카메라/전후 변형 전체 미확인. 원작과 같은 수의 구역/선택지를 요구하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0113",
+              "fromSeconds": 30.7,
+              "toSeconds": 40.7,
+              "videoSha256": "cb18d9c38a7ffec15bf0be468bd2452a88f0530090b73c6e536284bd934d64b5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core-sfx",
+      "category": "audio",
+      "title": "입력·합성·생성·보상·실패 SFX",
+      "purpose": "무음 상태에서도 규칙은 유지하며 소리로 결과를 보강",
+      "phase": "core",
+      "unit": "효과음",
+      "defaultQuantity": 16,
+      "quantityBasis": "신규 예시: 버튼3·생성2·합성3·수집3·오류2·주문1·도구2",
+      "requiredStates": [
+        "단발",
+        "연속입력 제한",
+        "볼륨/피치 파생",
+        "동시재생"
+      ],
+      "deliverables": [
+        "무가공 WAV 원본",
+        "최종 WAV",
+        "재생 이벤트표",
+        "러드니스 기준 메모"
+      ],
+      "referenceKeys": [
+        "effect:merge",
+        "effect:generate",
+        "effect:order"
+      ],
+      "facts": [
+        "FX-003",
+        "UI-005"
+      ],
+      "observed": {
+        "summary": "동봉 AudioClip164개 객체를 확인했지만 이 작업에서 소리의 전수 청취·고유곡/효과 분류를 완료한 것은 아니다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "WAV48kHz/24bit 마스터 초안, 기기용 포맷·압축은 엔진에서 결정",
+        "format": "WAV + 이벤트명/루프/피치/중복규칙 CSV",
+        "notes": "원작 오디오를 재사용하지 않고 신규 사운드를 제작하는 요구서다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MergeEffectManager.lua",
+          "sha256": "306ea5788be4907ab13772a3e93da46dcd9254f3d4df70be9ee393a516580211",
+          "line_start": 1,
+          "line_end": 6,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/BaseWindow.lua",
+          "sha256": "87e071f4d37bee8a3abf7e57d5d71478ae38e35dbce9084475af312e07371d27",
+          "line_start": 50,
+          "line_end": 58,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "오디오 스타일·목표 음량·피치변형 정책·원작 소리 관측"
+      ],
+      "dependencies": [
+        "board-animations"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "bgm",
+      "category": "audio",
+      "title": "메인·보드 BGM",
+      "purpose": "장시간 플레이의 공간 분위기를 유지",
+      "phase": "core",
+      "unit": "곡",
+      "defaultQuantity": 2,
+      "quantityBasis": "신규 예시: 메인/퍼즐 루프2곡",
+      "requiredStates": [
+        "인트로",
+        "완전루프",
+        "페이드아웃",
+        "전환"
+      ],
+      "deliverables": [
+        "스테레오 WAV 마스터",
+        "루프 시작/끝 샘플",
+        "스템 선택납품",
+        "권리/원본 정보"
+      ],
+      "referenceKeys": [
+        "screen:play",
+        "screen:home"
+      ],
+      "facts": [
+        "AS-001"
+      ],
+      "observed": {
+        "summary": "패키지 AudioClip 객체 수는 곡수와 같지 않으며 실제 배경음·전환·루프 검증은 남아 있다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "48kHz/24bit stereo 초안,1–2분 자연루프; 길이는 제작 협의",
+        "format": "WAV + loop cue 문서",
+        "notes": "BGM 길이·악기·테마는 신규 기획 선택이다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행."
+        }
+      ],
+      "unknowns": [
+        "신규 세계관 사운드 방향·곡 길이·스토리 삽입음"
+      ],
+      "dependencies": [
+        "art-direction"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "asset-pipeline",
+      "category": "pipeline",
+      "title": "파일명·피벗·아틀라스·원본 납품",
+      "purpose": "교체·추가 업데이트가 가능한 일관된 임포트 체계",
+      "phase": "core",
+      "unit": "문서",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 프로젝트 공통 납품 규약1종",
+      "requiredStates": [
+        "원본",
+        "파생",
+        "임포트",
+        "검수",
+        "수정 이력"
+      ],
+      "deliverables": [
+        "ID_manifest.csv",
+        "원본PSD/벡터",
+        "분리 PNG",
+        "pivot/border",
+        "텍스처 설정",
+        "버전/변경 목록"
+      ],
+      "referenceKeys": [
+        "ui-play:info_bg_normal",
+        "ui-play:order_price_bg"
+      ],
+      "facts": [
+        "AS-001",
+        "AS-004"
+      ],
+      "observed": {
+        "summary": "원본 Sprite에는 rect/pivot/border가 있고 선택 UI는비대칭9-slice를 사용한다. 내보낸 PNG크기와Sprite rect가 다를 수 있다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "ID별 투명여백·피벗 규칙, UI atlas와board atlas 분리 초안; 최대2048/4096은 목표기기 후 결정",
+        "format": "PNG RGBA + PSD/PSB/SVG + JSON/CSV + Unity meta 협의",
+        "notes": "straight/premultiplied alpha, 색공간, padding/엣지번짐,9-slice 기준을 개발과 확정한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/simulation/gameplay-ui-assets.json",
+          "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행."
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행."
+        }
+      ],
+      "unknowns": [
+        "엔진버전·압축포맷·PPU·atlas padding·최대텍스처"
+      ],
+      "dependencies": [
+        "art-direction"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "font-localization",
+      "category": "pipeline",
+      "title": "폰트·숫자·다국어 레이아웃",
+      "purpose": "상품가격·긴 문구·줄바꿈이 그림을 깨지 않도록 준비",
+      "phase": "core",
+      "unit": "문서",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 폰트/텍스트 규약1종",
+      "requiredStates": [
+        "한글",
+        "숫자",
+        "가격",
+        "긴 제목",
+        "폴백"
+      ],
+      "deliverables": [
+        "폰트 파일/정보",
+        "텍스트 스타일표",
+        "문자 범위",
+        "번역 키",
+        "길이별 UI 검수표"
+      ],
+      "referenceKeys": [
+        "effect:window",
+        "capture:selected-card"
+      ],
+      "facts": [
+        "UI-016",
+        "AS-003"
+      ],
+      "observed": {
+        "summary": "원작 Font5개 객체 존재와 실제 최종 사용 폰트·라이선스 확보는 별개다. 웹은 Pretendard를 사용한다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920 목업,가격 통화기호/수량 최대길이 포함",
+        "format": "폰트 원본/사용정보 + 스타일/로컬라이징 CSV",
+        "notes": "텍스트를 상품 원화에 굽지 않고 숫자·기간·가격을 런타임 레이어로 둔다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/ui-coordinates.json",
+          "sha256": "400cd931782e5f75dfa4b213df3d3ae6ae8280ad6f5f3e57b8d499394eba78fd",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/UIHelper.lua",
+          "sha256": "9ff93d99d1e6ce0d0c569adc9c080a75d266bf21c5046f275204814ed1382637",
+          "line_start": 3,
+          "line_end": 11,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/ui-hud_assets_all_08d3ff86d57a3b5475f4a22f18d5e8d8.bundle",
+          "sha256": "ab7de227bd3a78140a01342a2b90f30e4b956241be54425f27600c85af022500",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK 동봉 Unity 직렬화 객체의 정적 파싱. 런타임 미실행."
+        }
+      ],
+      "unknowns": [
+        "새게임 지원 언어·폰트사용권·최소가독크기"
+      ],
+      "dependencies": [
+        "hud-components"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "launch-item-expansion",
+      "category": "board",
+      "title": "출시용 추가 체인·생성기",
+      "purpose": "MVP에서 반복성이 드러난 뒤 초기 콘텐츠 폭을 확대",
+      "phase": "launch",
+      "unit": "아이콘",
+      "defaultQuantity": 28,
+      "quantityBasis": "신규 예시: 추가2체인×12단계+생성기4단계=28개",
+      "requiredStates": [
+        "단계별 성장",
+        "해금",
+        "신규 체인 발견"
+      ],
+      "deliverables": [
+        "추가 체인/생성기 PNG",
+        "ID/체인 연결",
+        "MVP와 일관된 기준판"
+      ],
+      "referenceKeys": [
+        "item:ItemModelConfig:301",
+        "item:ItemModelConfig:302"
+      ],
+      "facts": [
+        "SIM-X003",
+        "SIM-X007"
+      ],
+      "observed": {
+        "summary": "원작 기본552타입과39개 설정표4270선언은 업데이트/테마/변형을 포함한 서로 다른 모집단이다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "MVP 아이템과 동일512px 마스터/256px 납품",
+        "format": "PSD + RGBA PNG + 매핑 CSV",
+        "notes": "launch기준 일반 아이템6체인72개+생성기16개라는 예시로 범위를 고정한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+          "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+          "line_start": 1,
+          "line_end": 5828,
+          "method": "recovered static Lua and parsed packaged configuration"
+        },
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "line_start": 1,
+          "line_end": 56177,
+          "method": "전체 기본 타입의Sprite/해시 매핑 투영"
+        }
+      ],
+      "unknowns": [
+        "출시 체인6개가 충분한지 플레이테스트 필요"
+      ],
+      "dependencies": [
+        "item-chains",
+        "generator-icons"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "pass-ui",
+      "category": "ui",
+      "title": "시즌 패스 트랙·보상·수령권",
+      "purpose": "무료·유료 보상과 단계 진행·수령 상태를 구분",
+      "phase": "launch",
+      "unit": "화면 세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 패스1시즌 UI세트; 단계 수는 별도 밸런스",
+      "requiredStates": [
+        "잠금",
+        "달성",
+        "무료 수령",
+        "프리미엄 권한",
+        "수령 완료",
+        "종료 후 수령"
+      ],
+      "deliverables": [
+        "패스 타이틀/키아트",
+        "트랙·노드·두 보상열",
+        "권한/체크/잠금",
+        "시즌 교체 슬롯"
+      ],
+      "referenceKeys": [
+        "capture:energy-challenge",
+        "capture:challenge-collect"
+      ],
+      "facts": [
+        "SIM-SH007"
+      ],
+      "observed": {
+        "summary": "진행도·소비토큰·수령권·기수령은 별개다. 해당 캡처는 패스 전용 UI 완전 표본이 아니며 상태 비교 참고다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920 스크롤 UI; 단계 프레임·가격·기간 가변",
+        "format": "PSD/편집 원본 + PNG + 상태 목업",
+        "notes": "한 시즌 패스만 출시 범위에 포함하고 시즌당 전면 UI 재작업은 피한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "실제 신규 패스 단계수·무료/유료보상·구매시점"
+      ],
+      "dependencies": [
+        "common-dialogs",
+        "basic-shop"
+      ],
+      "videoObservations": [
+        {
+          "id": "season-track-states",
+          "observations": [
+            "시즌 완료/토큰 강조 뒤 무료·프리미엄 두 보상열의 트랙과 진행·수령 상태를 표시한다."
+          ],
+          "briefImplication": "패스는 시즌 키아트 외에 무료/유료 열, 잠김/수령가능/완료, 토큰 강조와 수령 효과를 각각 납품 상태로 명시한다.",
+          "limit": "시즌 전체 보상행 수·상세 조건·전체 가격 정책을 모두 관측한 것은 아니다.",
+          "references": [
+            {
+              "sourceId": "GH-V0087",
+              "fromSeconds": 38,
+              "toSeconds": 47.5,
+              "videoSha256": "ff00351ba6d47df579bcbac4d4b6ccdf8a00df9803695c58f371d5e8a00faaac"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pass-season-art",
+      "category": "ui",
+      "title": "패스 시즌 키아트·배지·토큰",
+      "purpose": "시즌 교체 가능한 테마 외피",
+      "phase": "launch",
+      "unit": "세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 대표시즌1개: 키아트1+배지1+토큰1",
+      "requiredStates": [
+        "진행",
+        "잠금",
+        "완료",
+        "기수령"
+      ],
+      "deliverables": [
+        "시즌 원화",
+        "토큰/배지 PNG",
+        "교체영역 가이드"
+      ],
+      "referenceKeys": [
+        "capture:energy-challenge",
+        "capture:card-fever"
+      ],
+      "facts": [
+        "SIM-SH007"
+      ],
+      "observed": {
+        "summary": "시즌 그림 수·단계 수는 동일하지 않으며 보상 아이템은 공용 자산을 재사용할 수 있다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "키아트1080px 폭,토큰256px,배지512px 초안",
+        "format": "PSD 레이어 + 투명 PNG",
+        "notes": "공통 프레임과 시즌 장식을 분리한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "시즌 테마·캐릭터 사용 여부"
+      ],
+      "dependencies": [
+        "pass-ui"
+      ],
+      "videoObservations": [
+        {
+          "id": "season-track-states",
+          "observations": [
+            "시즌 완료/토큰 강조 뒤 무료·프리미엄 두 보상열의 트랙과 진행·수령 상태를 표시한다."
+          ],
+          "briefImplication": "패스는 시즌 키아트 외에 무료/유료 열, 잠김/수령가능/완료, 토큰 강조와 수령 효과를 각각 납품 상태로 명시한다.",
+          "limit": "시즌 전체 보상행 수·상세 조건·전체 가격 정책을 모두 관측한 것은 아니다.",
+          "references": [
+            {
+              "sourceId": "GH-V0087",
+              "fromSeconds": 38,
+              "toSeconds": 47.5,
+              "videoSha256": "ff00351ba6d47df579bcbac4d4b6ccdf8a00df9803695c58f371d5e8a00faaac"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "album-ui",
+      "category": "ui",
+      "title": "앨범·세트·카드 소유 UI",
+      "purpose": "최초 획득·중복·세트완성 상태를 전달",
+      "phase": "launch",
+      "unit": "화면 세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 앨범1기 UI세트",
+      "requiredStates": [
+        "미소유",
+        "소유",
+        "중복",
+        "세트완성",
+        "앨범완성",
+        "기간 종료"
+      ],
+      "deliverables": [
+        "앨범 목록",
+        "카드 슬롯",
+        "미소유 실루엣",
+        "중복표시",
+        "완성보상 UI"
+      ],
+      "referenceKeys": [
+        "capture:selected-card",
+        "capture:card-result-after"
+      ],
+      "facts": [
+        "SIM-SH007",
+        "SIM-X004"
+      ],
+      "observed": {
+        "summary": "웹은 최초/중복 소유와팩 배분을 구분하지만 실제 카드 추첨표는 미확인이다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920,카드 종횡비2:3 초안",
+        "format": "편집 원본 + PNG + 상태 목업",
+        "notes": "카드 일러스트 수와 앨범UI세트 수를 별도 집계한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/BoardModelHelper.lua",
+          "sha256": "620917b55d8607763cdbd7d5b0fb992c03ec182441e61cff4d8b1288ccd39809",
+          "line_start": 96,
+          "line_end": 115,
+          "method": "read-only recovered static Lua"
+        }
+      ],
+      "unknowns": [
+        "세트수·세트당 카드수·희귀도·중복처리"
+      ],
+      "dependencies": [
+        "common-dialogs"
+      ],
+      "videoObservations": [
+        {
+          "id": "pack-and-new-card",
+          "observations": [
+            "금색 팩의 별·빛 뒤 네 카드가 펼쳐지는 결과 배치가 보인다.",
+            "다른 구간에는 큰 보라색 카드와 축하 문구·반짝임·초록 확인 버튼의 단일 결과 연출이 보인다."
+          ],
+          "briefImplication": "팩 표면과 카드 원화에 더해 팩 개봉, 다중 결과 레이아웃, 단일 강조 카드, NEW/중복 태그용 레이어를 정의한다.",
+          "limit": "팩 등급별 전체 변형 수·새 카드 확률·중복 전환 규칙과 모든 결과 종류는 이 표본으로 확정하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0121",
+              "fromSeconds": 35.7,
+              "toSeconds": 40.769,
+              "videoSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d"
+            },
+            {
+              "sourceId": "GH-V0122",
+              "fromSeconds": 49.7,
+              "toSeconds": 51.7,
+              "videoSha256": "3c22d3e65392a30a6aedb2e29d4d41ad01aac38c0d63e57c84e3c7a86b75a9df"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "album-card-art",
+      "category": "ui",
+      "title": "앨범 카드 일러스트",
+      "purpose": "수집 목표와테마 변화를 제공",
+      "phase": "launch",
+      "unit": "일러스트",
+      "defaultQuantity": 24,
+      "quantityBasis": "신규 예시: 4세트×6카드=24개",
+      "requiredStates": [
+        "원화",
+        "미소유 파생",
+        "NEW",
+        "중복 수량",
+        "희귀도 프레임"
+      ],
+      "deliverables": [
+        "카드 원화24개",
+        "세트명/ID목록",
+        "크롭 안전영역"
+      ],
+      "referenceKeys": [
+        "capture:card-result-after",
+        "capture:selected-card"
+      ],
+      "facts": [
+        "SIM-SH007"
+      ],
+      "observed": {
+        "summary": "24개는 신규 출시계획 예시다. 원작 카드 총수·확률·실제 앨범별 구성을 뜻하지 않는다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "카드마스터1024×1536px(2:3)초안,노출크기에따라 다운스케일",
+        "format": "PSD + PNG; 텍스트·희귀도 프레임은 분리",
+        "notes": "프레임·NEW·중복 숫자를 카드 원화에 굽지 않는다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "출시 앨범 수·카드수·소장효과"
+      ],
+      "dependencies": [
+        "album-ui",
+        "art-direction"
+      ],
+      "videoObservations": [
+        {
+          "id": "pack-and-new-card",
+          "observations": [
+            "금색 팩의 별·빛 뒤 네 카드가 펼쳐지는 결과 배치가 보인다.",
+            "다른 구간에는 큰 보라색 카드와 축하 문구·반짝임·초록 확인 버튼의 단일 결과 연출이 보인다."
+          ],
+          "briefImplication": "팩 표면과 카드 원화에 더해 팩 개봉, 다중 결과 레이아웃, 단일 강조 카드, NEW/중복 태그용 레이어를 정의한다.",
+          "limit": "팩 등급별 전체 변형 수·새 카드 확률·중복 전환 규칙과 모든 결과 종류는 이 표본으로 확정하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0121",
+              "fromSeconds": 35.7,
+              "toSeconds": 40.769,
+              "videoSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d"
+            },
+            {
+              "sourceId": "GH-V0122",
+              "fromSeconds": 49.7,
+              "toSeconds": 51.7,
+              "videoSha256": "3c22d3e65392a30a6aedb2e29d4d41ad01aac38c0d63e57c84e3c7a86b75a9df"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pack-opening",
+      "category": "motion",
+      "title": "카드팩·개봉·NEW·중복 연출",
+      "purpose": "팩종류와 결과의 중요한 차이를 전달",
+      "phase": "launch",
+      "unit": "세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 예시: 팩3외형+개봉1시퀀스+NEW/중복 분기",
+      "requiredStates": [
+        "봉인",
+        "개봉",
+        "카드뒤집기",
+        "NEW",
+        "중복",
+        "보상정리"
+      ],
+      "deliverables": [
+        "팩 레이어3종",
+        "카드뒷면",
+        "찢김/빛소스",
+        "개봉 타이밍시트"
+      ],
+      "referenceKeys": [
+        "capture:card-result-motion",
+        "capture:card-result-after"
+      ],
+      "facts": [
+        "SIM-X004",
+        "SIM-SH007"
+      ],
+      "observed": {
+        "summary": "팩획득·팩배분·카드결과는 별개다. 관측 신규표시가 모든팩의보장규칙을 입증하지 않는다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "팩512px,카드2:3,효과512px 초안",
+        "format": "PSD/PNG + 모션/VFX 명세 + 참조영상",
+        "notes": "실제 카드지급 결정은 개발·서버, 원화/연출은 정해진 결과를 표시한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/media-review/bm-timeline.json",
+          "sha256": "c6ac8ff3f33c68aec2a99589b74ba7573dc7518c9073905bfecc9dfd8630bed5",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/BoardModelHelper.lua",
+          "sha256": "620917b55d8607763cdbd7d5b0fb992c03ec182441e61cff4d8b1288ccd39809",
+          "line_start": 96,
+          "line_end": 115,
+          "method": "read-only recovered static Lua"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "팩종류·희귀도·넘기기/연속오픈정책"
+      ],
+      "dependencies": [
+        "album-card-art",
+        "reward-ui-motion"
+      ],
+      "videoObservations": [
+        {
+          "id": "pack-and-new-card",
+          "observations": [
+            "금색 팩의 별·빛 뒤 네 카드가 펼쳐지는 결과 배치가 보인다.",
+            "다른 구간에는 큰 보라색 카드와 축하 문구·반짝임·초록 확인 버튼의 단일 결과 연출이 보인다."
+          ],
+          "briefImplication": "팩 표면과 카드 원화에 더해 팩 개봉, 다중 결과 레이아웃, 단일 강조 카드, NEW/중복 태그용 레이어를 정의한다.",
+          "limit": "팩 등급별 전체 변형 수·새 카드 확률·중복 전환 규칙과 모든 결과 종류는 이 표본으로 확정하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0121",
+              "fromSeconds": 35.7,
+              "toSeconds": 40.769,
+              "videoSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d"
+            },
+            {
+              "sourceId": "GH-V0122",
+              "fromSeconds": 49.7,
+              "toSeconds": 51.7,
+              "videoSha256": "3c22d3e65392a30a6aedb2e29d4d41ad01aac38c0d63e57c84e3c7a86b75a9df"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "event-board",
+      "category": "board",
+      "title": "대표 이벤트1종 · 전용 보드 스킨",
+      "purpose": "기본퍼즐과 분리된 한정콘텐츠의 판을 표현",
+      "phase": "launch",
+      "unit": "세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "신규 이벤트1종,기본7×9보드 재사용스킨1개",
+      "requiredStates": [
+        "준비",
+        "진행",
+        "잠김",
+        "완료",
+        "종료"
+      ],
+      "deliverables": [
+        "보드배경/테두리",
+        "진입아이콘",
+        "테마 헤더",
+        "레이어 분리"
+      ],
+      "referenceKeys": [
+        "screen:play",
+        "capture:bird-14000"
+      ],
+      "facts": [
+        "PZ-001",
+        "SIM-SH007"
+      ],
+      "observed": {
+        "summary": "동봉업데이트에는여러활동이있지만 대표이벤트의신규보드규칙·아트는설계선택이다. 참고캡처는기능유형 예시다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920 화면목업,기본보드타일크기재사용",
+        "format": "PSD + PNG + 상태목업",
+        "notes": "이벤트1종은기간형수집/보상트랙과기존머지입력재사용을 기본안으로 둔다. 별도미니게임은제외."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+          "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+          "line_start": 18,
+          "line_end": 19,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "대표이벤트테마·별도보드필요여부·기간"
+      ],
+      "dependencies": [
+        "board-surface",
+        "hud-components"
+      ],
+      "videoObservations": [
+        {
+          "id": "representative-event-parts",
+          "observations": [
+            "정원 테마 전용 합성판은 메인 보드와 다른 칸·아이템·상단 진행 표시를 쓴다.",
+            "여러 나비가 나타나 퍼지는 연출과 별도의 나비 수집 슬롯/체크 도감창이 보인다."
+          ],
+          "briefImplication": "대표 이벤트1종도 보드 스킨·전용 아이템·진행바·수집목록·테마 VFX로 부품화한다. 이 게임의 모든 이벤트 테마는 기본 제작 범위가 아니다.",
+          "limit": "이는 대표 관측 사례다. 신규게임의 이벤트 테마와 나비 수집 방식을 채택한 것으로 보지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 0,
+              "toSeconds": 6.6,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            },
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 35,
+              "toSeconds": 40.5,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            },
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 52.5,
+              "toSeconds": 55.1,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "event-items",
+      "category": "board",
+      "title": "대표 이벤트1종 · 아이템·토큰",
+      "purpose": "이벤트안에서 소비/합성할 목표를 만든다",
+      "phase": "launch",
+      "unit": "아이콘",
+      "defaultQuantity": 10,
+      "quantityBasis": "신규 예시: 이벤트체인8단계+토큰1+생성기1=10개",
+      "requiredStates": [
+        "합성단계",
+        "이벤트토큰",
+        "생성기",
+        "완료"
+      ],
+      "deliverables": [
+        "이벤트체인 PNG",
+        "토큰/생성기",
+        "ID 매핑"
+      ],
+      "referenceKeys": [
+        "item:ItemModelConfig:301",
+        "capture:card-fever"
+      ],
+      "facts": [
+        "SIM-X003",
+        "SIM-SH007"
+      ],
+      "observed": {
+        "summary": "해당10개는신규대표이벤트 계획이다. 원작활동별아이템수와일치한다고주장하지 않는다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "기본아이템과동일512px 마스터/256px 납품",
+        "format": "PSD + RGBA PNG",
+        "notes": "기본게임체인과별도네임스페이스를사용한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/base-type-assets.json",
+          "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+          "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+          "line_start": 1,
+          "line_end": 5828,
+          "method": "recovered static Lua and parsed packaged configuration"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "이벤트체인길이·기본재화와교환비"
+      ],
+      "dependencies": [
+        "event-board",
+        "item-chains"
+      ],
+      "videoObservations": [
+        {
+          "id": "representative-event-parts",
+          "observations": [
+            "정원 테마 전용 합성판은 메인 보드와 다른 칸·아이템·상단 진행 표시를 쓴다.",
+            "여러 나비가 나타나 퍼지는 연출과 별도의 나비 수집 슬롯/체크 도감창이 보인다."
+          ],
+          "briefImplication": "대표 이벤트1종도 보드 스킨·전용 아이템·진행바·수집목록·테마 VFX로 부품화한다. 이 게임의 모든 이벤트 테마는 기본 제작 범위가 아니다.",
+          "limit": "이는 대표 관측 사례다. 신규게임의 이벤트 테마와 나비 수집 방식을 채택한 것으로 보지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 0,
+              "toSeconds": 6.6,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            },
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 35,
+              "toSeconds": 40.5,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            },
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 52.5,
+              "toSeconds": 55.1,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "event-progression-ui",
+      "category": "ui",
+      "title": "대표 이벤트1종 · 진행·교환·보상 UI",
+      "purpose": "진입·진행·보상수령·종료를 완결한다",
+      "phase": "launch",
+      "unit": "화면 세트",
+      "defaultQuantity": 3,
+      "quantityBasis": "신규 예시: 이벤트메인·보상트랙/교환·종료3화면",
+      "requiredStates": [
+        "예고",
+        "시작",
+        "진행",
+        "보상준비",
+        "수령완료",
+        "종료/정산"
+      ],
+      "deliverables": [
+        "3화면목업",
+        "진행바·보상노드",
+        "교환/수령·종료상태"
+      ],
+      "referenceKeys": [
+        "capture:energy-challenge",
+        "capture:challenge-collect",
+        "capture:bird-14000"
+      ],
+      "facts": [
+        "SIM-SH007"
+      ],
+      "observed": {
+        "summary": "실제원작일정/보상표는추가자료가필요하다. 이벤트시간상태와권한표시를분리해설계한다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "1080×1920,진행바/카드프레임9-slice",
+        "format": "편집 원본 + PNG + 전이 다이어그램",
+        "notes": "단일대표이벤트로기간·보상·상품관계를검증하고모든이벤트확장으로오해하지않게한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/media-review/bm-timeline.json",
+          "sha256": "c6ac8ff3f33c68aec2a99589b74ba7573dc7518c9073905bfecc9dfd8630bed5",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "보상단계수·종료후유예·교환방식"
+      ],
+      "dependencies": [
+        "event-board",
+        "currency-items"
+      ],
+      "videoObservations": [
+        {
+          "id": "representative-event-parts",
+          "observations": [
+            "정원 테마 전용 합성판은 메인 보드와 다른 칸·아이템·상단 진행 표시를 쓴다.",
+            "여러 나비가 나타나 퍼지는 연출과 별도의 나비 수집 슬롯/체크 도감창이 보인다."
+          ],
+          "briefImplication": "대표 이벤트1종도 보드 스킨·전용 아이템·진행바·수집목록·테마 VFX로 부품화한다. 이 게임의 모든 이벤트 테마는 기본 제작 범위가 아니다.",
+          "limit": "이는 대표 관측 사례다. 신규게임의 이벤트 테마와 나비 수집 방식을 채택한 것으로 보지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 0,
+              "toSeconds": 6.6,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            },
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 35,
+              "toSeconds": 40.5,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            },
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 52.5,
+              "toSeconds": 55.1,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "event-shop-motion",
+      "category": "motion",
+      "title": "대표 이벤트1종 · 판매·수령·피버 연출",
+      "purpose": "이벤트상품과보상획득의주목도를조절",
+      "phase": "launch",
+      "unit": "모션",
+      "defaultQuantity": 3,
+      "quantityBasis": "신규 예시: 오픈·마일스톤수령·피버/완료3동작",
+      "requiredStates": [
+        "시작",
+        "수령",
+        "완료",
+        "종료시취소"
+      ],
+      "deliverables": [
+        "이벤트오픈/수령동작",
+        "테마효과소스",
+        "사운드이벤트표"
+      ],
+      "referenceKeys": [
+        "capture:challenge-collect",
+        "capture:card-fever",
+        "capture:tower-reward-motion"
+      ],
+      "facts": [
+        "FX-013",
+        "SIM-SH007"
+      ],
+      "observed": {
+        "summary": "영상에서보상수령·피버표시는관측했지만모든활동에같은연출·조건이적용되는것은아니다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "공통보상모션재사용,테마VFX512px초안",
+        "format": "Unity모션/VFX명세 + 참조영상",
+        "notes": "신규이벤트효과를전면신규로만들지공통자산재사용할지구분한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/media-review/bm-timeline.json",
+          "sha256": "c6ac8ff3f33c68aec2a99589b74ba7573dc7518c9073905bfecc9dfd8630bed5",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Animation/PropertyAnimationManager.lua",
+          "sha256": "207775baed628983c5c59365d40b5c361917f67de8ddf54f3994c294d2dc1e9f",
+          "line_start": 22,
+          "line_end": 30,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "대표이벤트의유료구성·피버포함여부"
+      ],
+      "dependencies": [
+        "event-progression-ui",
+        "bm-offers",
+        "reward-ui-motion"
+      ],
+      "videoObservations": [
+        {
+          "id": "full-scene-reward",
+          "observations": [
+            "민트색 전면 배경에서 상자와 고양이가 나타나며 여러 보상 아이콘과 분홍 리본을 차례로 표시한다."
+          ],
+          "briefImplication": "아이템 아이콘 외에 전면 배경·상자 상태·동물 모션·결과 배치·리본·재화 비행을 한 연출 묶음으로 발주할지 선택한다.",
+          "limit": "원속도와 리깅/프레임 방식 미확인. 외부 결제 화면 자체는 게임 제작 리소스에 포함하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0106",
+              "fromSeconds": 14.5,
+              "toSeconds": 19.5,
+              "videoSha256": "99735ee4847c33badfa6db00d014d72403acec507316a7f0adebea507ad1389c"
+            },
+            {
+              "sourceId": "GH-V0121",
+              "fromSeconds": 18.3,
+              "toSeconds": 22.8,
+              "videoSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d"
+            }
+          ]
+        },
+        {
+          "id": "representative-event-parts",
+          "observations": [
+            "정원 테마 전용 합성판은 메인 보드와 다른 칸·아이템·상단 진행 표시를 쓴다.",
+            "여러 나비가 나타나 퍼지는 연출과 별도의 나비 수집 슬롯/체크 도감창이 보인다."
+          ],
+          "briefImplication": "대표 이벤트1종도 보드 스킨·전용 아이템·진행바·수집목록·테마 VFX로 부품화한다. 이 게임의 모든 이벤트 테마는 기본 제작 범위가 아니다.",
+          "limit": "이는 대표 관측 사례다. 신규게임의 이벤트 테마와 나비 수집 방식을 채택한 것으로 보지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 0,
+              "toSeconds": 6.6,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            },
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 35,
+              "toSeconds": 40.5,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            },
+            {
+              "sourceId": "GH-V0115",
+              "fromSeconds": 52.5,
+              "toSeconds": 55.1,
+              "videoSha256": "abb234bd279258dc0da2db2fcc4f075157420bfab61c899bc88515280e5a1f56"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "launch-audio",
+      "category": "audio",
+      "title": "패스·앨범·이벤트 효과음",
+      "purpose": "새콘텐츠의달성·개봉·중복·완료를구분",
+      "phase": "launch",
+      "unit": "효과음",
+      "defaultQuantity": 8,
+      "quantityBasis": "신규 예시: 패스달성/수령2·팩개봉/NEW/중복3·이벤트진입/수령/종료3",
+      "requiredStates": [
+        "단발",
+        "반복제한",
+        "동시재생",
+        "스킵"
+      ],
+      "deliverables": [
+        "WAV 원본8종",
+        "이벤트명·볼륨표",
+        "재사용매핑"
+      ],
+      "referenceKeys": [
+        "capture:card-result-motion",
+        "capture:challenge-collect"
+      ],
+      "facts": [
+        "UI-005",
+        "SIM-SH007"
+      ],
+      "observed": {
+        "summary": "원작의실제소리/이벤트별매핑은확정하지않았다. 신규동작목록기반의제작예시다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "48kHz/24bit master초안",
+        "format": "WAV + 이벤트CSV",
+        "notes": "기본SFX재사용가능한행동은중복제작을줄인다."
+      },
+      "sources": [
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/BaseWindow.lua",
+          "sha256": "87e071f4d37bee8a3abf7e57d5d71478ae38e35dbce9084475af312e07371d27",
+          "line_start": 50,
+          "line_end": 58,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "사운드스타일·기존SFX재사용률"
+      ],
+      "dependencies": [
+        "core-sfx",
+        "pack-opening",
+        "event-progression-ui"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "world-options",
+      "category": "world",
+      "title": "출시 구역 장식 선택지",
+      "purpose": "발전결과에플레이어선택을추가",
+      "phase": "launch",
+      "unit": "슬롯 세트",
+      "defaultQuantity": 6,
+      "quantityBasis": "신규 예시: MVP6슬롯별추가완성안2개,기본안포함총3선택지",
+      "requiredStates": [
+        "미선택",
+        "선택미리보기",
+        "확정",
+        "교체"
+      ],
+      "deliverables": [
+        "추가장식원화12개",
+        "선택썸네일",
+        "동일피벗·가림표"
+      ],
+      "referenceKeys": [
+        "screen:home"
+      ],
+      "facts": [
+        "MAP-008",
+        "MAP-012"
+      ],
+      "observed": {
+        "summary": "원작은슬롯장착/스킨소유를분리한다. 신규6슬롯×3선택은출시스코프예시다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "MVP슬롯과동일해상도·피벗·카메라",
+        "format": "PSD/PNG 또는확정된3D원본",
+        "notes": "기본슬롯세트와추가선택지세트를분리해MVP산정에서중복제외한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/progression-parity.json",
+          "sha256": "7d79afa7b65e4014bf2b8e4d36668eb6738f062d3f0a4c943c9c49c785a06581",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/MapDataModel.lua",
+          "sha256": "9a5cab4fc2000ed436b0995764a338a3eaa463a6d76129899384f1dc66877357",
+          "line_start": 129,
+          "line_end": 136,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/MapDataModel.lua",
+          "sha256": "9a5cab4fc2000ed436b0995764a338a3eaa463a6d76129899384f1dc66877357",
+          "line_start": 214,
+          "line_end": 221,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "장식선택이플레이에필수인지·재선택비용"
+      ],
+      "dependencies": [
+        "renovation-slots"
+      ],
+      "videoObservations": [
+        {
+          "id": "map-decoration-controls",
+          "observations": [
+            "네온 테마 공간에서 하단 선택/확인 패널을 조작하며 장식 오브젝트를 배치하고 목록 진행이 갱신된다."
+          ],
+          "briefImplication": "맵 배경 한 장 외에 배치 슬롯·전후 오브젝트·대안 선택 썸네일·확인 UI·등장 효과와 가림 순서의 제작 항목을 둔다.",
+          "limit": "원본 레이어 분리·지도 좌표·카메라/전후 변형 전체 미확인. 원작과 같은 수의 구역/선택지를 요구하지 않는다.",
+          "references": [
+            {
+              "sourceId": "GH-V0113",
+              "fromSeconds": 30.7,
+              "toSeconds": 40.7,
+              "videoSha256": "cb18d9c38a7ffec15bf0be468bd2452a88f0530090b73c6e536284bd934d64b5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seasonal-reskins",
+      "category": "ui",
+      "title": "추가 시즌·행사 테마 스킨",
+      "purpose": "패스/앨범/대표이벤트를차기시즌에재사용",
+      "phase": "expansion",
+      "unit": "테마 세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "후속 업데이트1시즌단위 템플릿;원작전체시즌수아님",
+      "requiredStates": [
+        "신규키아트",
+        "시즌배지",
+        "이벤트토큰",
+        "상점장식"
+      ],
+      "deliverables": [
+        "시즌별교체PNG",
+        "공용자산재사용목록",
+        "신규/파생구분"
+      ],
+      "referenceKeys": [
+        "capture:bird-14000",
+        "capture:bird-24000"
+      ],
+      "facts": [
+        "SIM-SH008"
+      ],
+      "observed": {
+        "summary": "비슷한테마상품도서로다른가격·구성이관측되며모든변형이새원화라는뜻은아니다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "launch규격재사용",
+        "format": "PSD+PNG+시즌manifest",
+        "notes": "출시필수범위에서제외하고시즌별업데이트예산으로분리한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/media-review/bm-timeline.json",
+          "sha256": "c6ac8ff3f33c68aec2a99589b74ba7573dc7518c9073905bfecc9dfd8630bed5",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/config-tables/ShopIAPConfig.json",
+          "sha256": "d11c5d48a360bf603981ce073b717529beeb410a4373df34999588d725f4b741",
+          "line_start": null,
+          "line_end": null,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "업데이트주기·시즌당신규비중"
+      ],
+      "dependencies": [
+        "pass-season-art",
+        "event-board"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "extra-areas-story",
+      "category": "world",
+      "title": "추가 구역·캐릭터·스토리 챕터",
+      "purpose": "장기콘텐츠진행의공간과이야기확장",
+      "phase": "expansion",
+      "unit": "챕터 세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "후속예시: 구역1·6발전슬롯·캐릭터1·스토리컷3 묶음",
+      "requiredStates": [
+        "잠금",
+        "해금",
+        "변경전후",
+        "스토리분기"
+      ],
+      "deliverables": [
+        "챕터별배경/장식/캐릭터",
+        "대사·컷목록",
+        "씬전환기준"
+      ],
+      "referenceKeys": [
+        "screen:home"
+      ],
+      "facts": [
+        "MAP-011",
+        "MAP-016",
+        "MAP-023"
+      ],
+      "observed": {
+        "summary": "과제4277행이4277개독립장면이아니며원격확장과동봉타임라인범위도다르다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "기본맵규격재사용,씬별카메라조건은재확정",
+        "format": "레이어원본/텍스처/필요시모델 + 타임라인명세",
+        "notes": "새구역은진행검증후챕터단위발주한다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/progression-parity.json",
+          "sha256": "7d79afa7b65e4014bf2b8e4d36668eb6738f062d3f0a4c943c9c49c785a06581",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/followup/assets/RESULT.json",
+          "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Config/Data/Config/MapBorderConfig.lua",
+          "sha256": "5d8d60753c0d51773d3133e840948cf08d8b3e3f3184597b231b42c504040185",
+          "line_start": 15,
+          "line_end": 22,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Task/TimelineModel.lua",
+          "sha256": "5701ca27186283fd430b4283a05b0d9ccda6d10d773a5e3b41c53a813edd03ad",
+          "line_start": 10,
+          "line_end": 17,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Story/StoryWindow.lua",
+          "sha256": "36e00fc2f5878531329f736f274da8e0a3ee8c4ea45681ca787c4bb944b80974",
+          "line_start": 16,
+          "line_end": 23,
+          "method": "복원된 출하 데이터/바이트코드의 정적 분석 · 실제 실행 미관측"
+        }
+      ],
+      "unknowns": [
+        "장기챕터수·캐릭터수·스토리분량"
+      ],
+      "dependencies": [
+        "world-map",
+        "renovation-slots",
+        "story-ui"
+      ],
+      "videoObservations": []
+    },
+    {
+      "id": "new-minigames",
+      "category": "board",
+      "title": "다른 규칙의 추가 이벤트·미니게임",
+      "purpose": "보드재사용을벗어나는새플레이콘텐츠",
+      "phase": "expansion",
+      "unit": "이벤트 세트",
+      "defaultQuantity": 1,
+      "quantityBasis": "후속새규칙이벤트1종단위;원작전체활동복제아님",
+      "requiredStates": [
+        "별도입력",
+        "튜토리얼",
+        "보드",
+        "결과",
+        "종료"
+      ],
+      "deliverables": [
+        "새게임전용자산명세",
+        "입력/결과연출",
+        "전용UI",
+        "별도테스트"
+      ],
+      "referenceKeys": [
+        "capture:bird-14000",
+        "capture:tower-6500"
+      ],
+      "facts": [
+        "SIM-SH007"
+      ],
+      "observed": {
+        "summary": "원작다양한활동이모두웹게임플레이로구현된것은아니다. 대표이벤트범위를초과하는작업이다.",
+        "evidenceType": "packaged-static-or-historical-observation"
+      },
+      "proposal": {
+        "status": "제작 계획 초안 · 승인 전",
+        "dimensions": "선정미니게임디자인후별도정의",
+        "format": "설계확정후원본포맷/엔진규격결정",
+        "notes": "지금기본수량에포함하지않고개별확장심사대상으로둔다."
+      },
+      "sources": [
+        {
+          "path": "analysis/simulation/commerce-parity.json",
+          "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+          "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+          "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+          "line_start": 46,
+          "line_end": 78,
+          "method": "APK4.10.5 복원 Lua/내장 표의 정적 투영. 런타임·현재 서버 상품 검증 아님."
+        }
+      ],
+      "unknowns": [
+        "플레이규칙·전용보드·캐릭터·비용모두별도산정"
+      ],
+      "dependencies": [
+        "event-progression-ui"
+      ],
+      "videoObservations": []
+    }
+  ],
+  "sources": [
+    {
+      "path": "analysis/simulation/base-type-assets.json",
+      "sha256": "d4cd8a9d378afe6561b665ec5717397e5d6a1eaa82c3ed1dad46d67f4b7ee14e",
+      "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+    },
+    {
+      "path": "analysis/simulation/gameplay-ui-assets.json",
+      "sha256": "e4d6a4f2fc829b162ae45b9070fe5849a809bdb6520be5834e1ded366aeee35c",
+      "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+    },
+    {
+      "path": "analysis/followup/assets/RESULT.json",
+      "sha256": "6890f2a9fa8cf63ec970f997ed1c6fbc5f91e26fba2d5f64f4c936db7c989dca",
+      "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+    },
+    {
+      "path": "analysis/followup/assets/selected-ui-animations.json",
+      "sha256": "14063fc88bcfd5e5cb3742352cf2e87863f31165b90b3b28c8e4d5b903358454",
+      "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+    },
+    {
+      "path": "analysis/followup/assets/selected-prefabs.json",
+      "sha256": "8f108b9eacb95befc2699474537eaefe9574400b07b1d4d384c26d0cfd1f98b0",
+      "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+    },
+    {
+      "path": "analysis/followup/assets/ui-coordinates.json",
+      "sha256": "400cd931782e5f75dfa4b213df3d3ae6ae8280ad6f5f3e57b8d499394eba78fd",
+      "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+    },
+    {
+      "path": "analysis/simulation/tutorial-coverage.json",
+      "sha256": "af40a0340f1ddd4a275fabc73efbf1e1b3db9e9cd070932b44b94c875efff65e",
+      "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+    },
+    {
+      "path": "analysis/simulation/progression-parity.json",
+      "sha256": "7d79afa7b65e4014bf2b8e4d36668eb6738f062d3f0a4c943c9c49c785a06581",
+      "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+    },
+    {
+      "path": "analysis/simulation/commerce-parity.json",
+      "sha256": "e458fbd7c8c126616e6295edc8a2c53e17691e56132586c1bd113865ff43c474",
+      "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+    },
+    {
+      "path": "analysis/media-review/bm-timeline.json",
+      "sha256": "c6ac8ff3f33c68aec2a99589b74ba7573dc7518c9073905bfecc9dfd8630bed5",
+      "method": "기존 APK 정적 분석의 최소 투영; 원작 실행 아님"
+    }
+  ],
+  "decisionsBeforeBrief": [
+    "신규세계관·화풍·시점·색/광원기준",
+    "목표기기·해상도·Unity UI/맵구현방식",
+    "출시체인수/단계·첫구역슬롯수·캐릭터수",
+    "패스단계·앨범세트/카드수·대표이벤트규칙",
+    "마스터파일·최종크기·피벗·9-slice·아틀라스·폴더/ID규약",
+    "모션중단·입력잠금·보상지급이벤트와소리동기",
+    "납품회차·리뷰·수정횟수·최종사용정보"
+  ],
+  "videoReviewBoundary": "약0.5초 시간순 정지 표본의 관측이다. 원속도 전체 재생·오디오 청취·전프레임 육안 검수 미수행. 버전/실제 촬영일 미확인. 신규 제작 범위·규격은 별도 제안이다."
+}

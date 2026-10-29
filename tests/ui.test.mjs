@@ -68,6 +68,12 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   click('#sim-buy-energy');assert.match(w.document.querySelector('.sim-info').textContent,/20 젬/);
   await go('research');assert.ok(w.document.querySelector('.research-list a[href="#economy"]'));
   assert.ok(w.document.querySelector('[data-nav-group="research"]').open);
+  await go('production-assets');assert.equal(w.document.querySelectorAll('[data-production-row]').length,43);assert.equal(w.document.querySelectorAll('[data-production-include]:checked').length,40);
+  click('[data-production-preset="core"]');assert.equal(w.document.querySelectorAll('[data-production-include]:checked').length,27);
+  click('[data-production-preset="launch"]');assert.equal(w.document.querySelectorAll('[data-production-include]:checked').length,40);
+  await go('media-audit');assert.equal(w.document.querySelectorAll('.audit-video').length,113);
+  const auditQuery=w.document.querySelector('[data-audit-query]');auditQuery.value='GH-V0001';auditQuery.dispatchEvent(new w.Event('input',{bubbles:true}));assert.equal(w.document.querySelectorAll('.audit-video').length,1);
+  await go('production-assets');const videoLink=w.document.querySelector('.production-video-note a');const sourceId=new URLSearchParams(videoLink.hash.split('?')[1]).get('source');videoLink.click();await until(()=>w.document.querySelector('[data-audit-query]')?.value===sourceId);assert.equal(w.document.querySelectorAll('.audit-video').length,1);assert.equal(w.document.querySelector('.audit-video').open,true);
   await go('puzzle');assert.equal(w.document.querySelectorAll('#item-catalog .type-card').length,24);
   assert.equal(w.document.querySelectorAll('.studio-tabs,.motion-card').length,0);
   assert.equal(w.document.querySelectorAll('.apk-asset-gallery .type-card').length,20);

@@ -31,3 +31,10 @@ The existing experience route now switches between a source-backed bounded exper
 ## Capture-referenced game surface
 
 The default experience mode now presents the source model inside a390–480px phone frame. HUD → customer/order tray → square7×9 grid → selected-item panel follows GH-S0363; newer high-level customer counts and right-side generator placement are not copied into the beginner board. Selected APK portraits replace full-body customer animation and are explicitly identified as substitutions. Local scenery, resource, shop and inventory Sprites are reused; the map entry is a labeled web control because its captured icon is not mapped. Box/web overlays, merge pops, title and home drawing are web reconstruction. Research aids, provenance and gaps sit outside the phone. Pointer drag has a separate ghost; tap/keyboard alternatives, native dialogs,44px normal controls and reduced-motion support remain. Existing saves migrate only from a reviewed revision after an intact backup.
+
+
+## Production planning and source timeline audit
+
+`#production-assets` extends the Operate notebook with a scope selector, unit-separated selection summary and a single-column request ledger. Original measurements and proposed new-game specifications occupy adjacent labeled columns and stack on phones. The user chose MVP through launch with pass, album and a representative event; detailed quantities are editable planning proposals. Include checkboxes, quantity/spec/notes, dependency warnings, per-browser draft storage and Markdown/CSV/JSON exports support a concrete graphics handoff. Avoid aggregating icons, clips, scenes and music into one invented asset count. Existing source previews use the same media viewer.
+
+`#media-audit` is a Read ledger of decode coverage, chronological sampled visual review, audio measurement and unperformed listening/real-time playback. Source ID, hash, timestamp ranges and unknowns stay visible in disclosures; private full videos/contact sheets remain local. Counts come from the current audit dataset, and publication does not imply original-game runtime parity.
