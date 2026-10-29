@@ -36,7 +36,7 @@ export function filterVisualUI(index,{query='',category='all',page=1,size=24}={}
  const q=query.trim().toLocaleLowerCase();const rows=index.ui.filter(x=>(category==='all'||x.category===category)&&(!q||[x.name,x.path].join(' ').toLocaleLowerCase().includes(q)));
  const pages=Math.max(1,Math.ceil(rows.length/size)),current=Math.max(1,Math.min(pages,page));return {total:rows.length,pages,page:current,rows:rows.slice((current-1)*size,current*size)};
 }
-export function mediaFor(data,key){return data.media?.entries?.find(x=>x.key===key)||data.refinement?.mediaEntries?.find(x=>x.key===key)||data.sceneConfig?.mediaEntries?.find(x=>x.key===key)||null;}
+export function mediaFor(data,key){return data.media?.entries?.find(x=>x.key===key)||data.refinement?.mediaEntries?.find(x=>x.key===key)||data.sceneConfig?.mediaEntries?.find(x=>x.key===key)||data.bmObservationAudit?.mediaEntries?.find(x=>x.key===key)||null;}
 export function validMedia(entry){
  if(!entry||!['image','gif','video'].includes(entry.kind)||!entry.alt||!entry.source)return false;
  const safe=p=>typeof p==='string'&&/^\.\/assets\/media\/[\w\-/\.]+$/.test(p)&&!p.includes('..')&&/\.(png|jpe?g|webp|gif|mp4|webm)$/i.test(p);

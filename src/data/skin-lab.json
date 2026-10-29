@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "kind": "selected-skin-config-with-explicit-research-ownership",
+  "scope": "First two packaged area+item_id groups only; no unlocked status or art inferred.",
+  "groups": [
+    {
+      "id": "DecorationWeddingDay:1",
+      "label": "동봉 장식 세트 1",
+      "area": "DecorationWeddingDay",
+      "itemId": "1",
+      "skins": [
+        {
+          "id": "1",
+          "slot": "ex_1",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_1",
+          "timeline": "ex_1",
+          "sourceRow": 3,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "2",
+          "slot": "ex_2",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_2",
+          "timeline": "ex_2",
+          "sourceRow": 11,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "3",
+          "slot": "ex_3",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_3",
+          "timeline": "ex_3",
+          "sourceRow": 19,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "4",
+          "slot": "ex_4",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_4",
+          "timeline": "ex_4",
+          "sourceRow": 27,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "5",
+          "slot": "ex_5",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_5",
+          "timeline": "ex_5",
+          "sourceRow": 35,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "6",
+          "slot": "ex_6",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_6",
+          "timeline": "ex_6",
+          "sourceRow": 43,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "7",
+          "slot": "ex_7",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_7",
+          "timeline": "ex_7",
+          "sourceRow": 51,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "8",
+          "slot": "ex_8",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_8",
+          "timeline": "ex_8",
+          "sourceRow": 59,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "9",
+          "slot": "ex_9",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_9",
+          "timeline": "ex_9",
+          "sourceRow": 67,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "10",
+          "slot": "ex_10",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_10",
+          "timeline": "ex_10",
+          "sourceRow": 75,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "11",
+          "slot": "ex_11",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_11",
+          "timeline": "ex_11",
+          "sourceRow": 83,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "12",
+          "slot": "ex_12",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_12",
+          "timeline": "ex_12",
+          "sourceRow": 91,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "13",
+          "slot": "ex_13",
+          "itemId": "1",
+          "nameKey": "event_anniversary_decoration_name_13",
+          "timeline": "ex_13",
+          "sourceRow": 99,
+          "artStatus": "not-curated"
+        }
+      ]
+    },
+    {
+      "id": "DecorationSummerPicnic:2",
+      "label": "동봉 장식 세트 2",
+      "area": "DecorationSummerPicnic",
+      "itemId": "2",
+      "skins": [
+        {
+          "id": "14",
+          "slot": "ex_1",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_1",
+          "timeline": "event_picnic_decoration_1",
+          "sourceRow": 107,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "15",
+          "slot": "ex_2",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_2",
+          "timeline": "event_picnic_decoration_2",
+          "sourceRow": 115,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "16",
+          "slot": "ex_3",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_3",
+          "timeline": "event_picnic_decoration_3",
+          "sourceRow": 123,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "17",
+          "slot": "ex_4",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_4",
+          "timeline": "event_picnic_decoration_4",
+          "sourceRow": 131,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "18",
+          "slot": "ex_5",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_5",
+          "timeline": "event_picnic_decoration_5",
+          "sourceRow": 139,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "19",
+          "slot": "ex_6",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_6",
+          "timeline": "event_picnic_decoration_6",
+          "sourceRow": 147,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "20",
+          "slot": "ex_7",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_7",
+          "timeline": "event_picnic_decoration_7",
+          "sourceRow": 155,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "21",
+          "slot": "ex_8",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_8",
+          "timeline": "event_picnic_decoration_8",
+          "sourceRow": 163,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "22",
+          "slot": "ex_9",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_11",
+          "timeline": "event_picnic_decoration_11",
+          "sourceRow": 171,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "23",
+          "slot": "ex_10",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_9",
+          "timeline": "event_picnic_decoration_9",
+          "sourceRow": 179,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "24",
+          "slot": "ex_11",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_10",
+          "timeline": "event_picnic_decoration_10",
+          "sourceRow": 187,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "25",
+          "slot": "ex_12",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_13",
+          "timeline": "event_picnic_decoration_13",
+          "sourceRow": 195,
+          "artStatus": "not-curated"
+        },
+        {
+          "id": "26",
+          "slot": "ex_13",
+          "itemId": "2",
+          "nameKey": "event_picnic_decoration_name_12",
+          "timeline": "event_picnic_decoration_12",
+          "sourceRow": 203,
+          "artStatus": "not-curated"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/SkinConfig.lua",
+      "ranges": [
+        "3–7259"
+      ],
+      "kind": "selected-packaged-config",
+      "sha256": "262ae9dfda09ac7b7cdda69df75787c20fbdc520d3f9de94344556db436f0936"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/MapDataModel.lua",
+      "ranges": [
+        "37–65",
+        "181–223",
+        "313–336"
+      ],
+      "kind": "static-reconstructed-packaged-code",
+      "sha256": "9a5cab4fc2000ed436b0995764a338a3eaa463a6d76129899384f1dc66877357"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/SceneView/EditHud.lua",
+      "ranges": [
+        "65–137",
+        "276–316",
+        "467–530",
+        "594–630"
+      ],
+      "kind": "static-reconstructed-packaged-code",
+      "sha256": "852ba3aa30c7de81f6c9036025bde732b8e1ca145b5bdd7a8245ad1c2d7ccd9f"
+    }
+  ],
+  "boundaries": [
+    "소유권은 연구 버튼으로만 명시하며 원작 계정의 획득·구매를 뜻하지 않는다.",
+    "확정 전 미리보기는 별도 초안이며 취소하면 모든 연동 슬롯을 되돌린다.",
+    "일괄 확정은 선정 세트의 전 소유를 명시한 경우만 허용하는 웹 제한이다. 원작의 전체 세트 버튼 자체에 같은 검사가 있다고 주장하지 않는다.",
+    "현재 선택한 세트의 실물 미리보기는 미확보다. 등록 ID를 그림으로 대체하지 않는다."
+  ],
+  "revision": "9336141133613d8e9988f7421c7aa838026f2581de567d387e07b90bd4185176"
+}

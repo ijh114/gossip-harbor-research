@@ -1,0 +1,607 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "scope": "Five additional independent source-executer research projections. No mutation of main wallet/save or prior tutorial modules. They are not live activity observation.",
+  "guides": [
+    {
+      "id": "tutorial_battlepass_bonus_task",
+      "name": "패스 추가 과제 안내",
+      "executer": "PassActivityBonusTask",
+      "condition": "",
+      "fields": [
+        {
+          "path": "passActivities",
+          "label": "동봉 패스 종류별 명시 상태 스냅샷",
+          "kind": "array",
+          "default": null
+        },
+        {
+          "path": "selectedPassActivity",
+          "label": "Started가 여러 개일 때 명시하는 선택",
+          "kind": "string",
+          "default": null
+        },
+        {
+          "path": "bonusTaskCellId",
+          "label": "생성된 추가 과제 셀의 연구 ID",
+          "kind": "string",
+          "default": null
+        },
+        {
+          "path": "bonusTaskCellAlive",
+          "label": "지연 뒤 과제 셀 gameObject 유효성",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "otherStrong",
+          "label": "지연 뒤 다른 강제 안내 실행 중",
+          "kind": "boolean",
+          "default": null
+        }
+      ],
+      "researchExample": {
+        "mode": "research",
+        "passActivities": [
+          {
+            "activityType": "RoadtripPass",
+            "state": "Started"
+          },
+          {
+            "activityType": "WitchlingPass",
+            "state": "Released"
+          },
+          {
+            "activityType": "SplurgePass",
+            "state": "Released"
+          }
+        ],
+        "bonusTaskCellId": "research-bonus-cell-1",
+        "bonusTaskCellAlive": true,
+        "otherStrong": false
+      },
+      "eventCatalog": [
+        {
+          "label": "추가 과제 셀 생성",
+          "event": {
+            "type": "pass-bonus-cell-created"
+          }
+        },
+        {
+          "label": "정적 지연 경계 진행",
+          "event": {
+            "type": "clock"
+          }
+        },
+        {
+          "label": "추가 과제 마스크 클릭",
+          "event": {
+            "type": "mask-click"
+          }
+        },
+        {
+          "label": "선택된 활동 종료 스냅샷",
+          "event": {
+            "type": "pass-state-changed",
+            "selectedState": "Ended"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "phase": "cell-delay",
+          "sourceStep": null,
+          "label": "셀·강제 안내1.5초 재검사",
+          "registered": false,
+          "strong": false,
+          "delaySeconds": 1.5
+        },
+        {
+          "phase": "waiting-cell",
+          "sourceStep": null,
+          "label": "재검사 미통과 · 다음 셀 생성 대기",
+          "registered": false,
+          "strong": false
+        },
+        {
+          "phase": "bonus-dialog",
+          "sourceStep": "1",
+          "label": "추가 과제 셀 설명",
+          "registered": false,
+          "strong": true,
+          "textKey": "battlepass_tutorial_extraTask"
+        }
+      ],
+      "notes": [
+        "대기 또는 설명 시작에서 SetTutorialFinished를 호출하지 않습니다. Finish 때만 등록됩니다.",
+        "1.5초 뒤 셀이 파괴됐거나 강제 안내가 있으면 아무 설명도 시작하지 않으며 Finish도 하지 않습니다. 다음 셀 생성 이벤트로 다시 시도할 수 있습니다.",
+        "동시에 Started인 활동의 pairs 순회 우선순위는 추정하지 않습니다. 다중 후보에는 명시 선택이 필요합니다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPassActivityBonusTask.lua",
+          "ranges": [
+            "5–62"
+          ],
+          "sha256": "97d19ce6aae85c24c933404f2534b84a940abf4f641acf00cebb7211f9e4146a",
+          "kind": "static-reconstructed-packaged-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/PassActivity/PassActivityDefinition.lua",
+          "ranges": [
+            "1–139"
+          ],
+          "sha256": "d012e5f6d6588322ff4e30bae60d25c62b7e29e3a22d14bc24960317a1ce5edd",
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_energyBoosteight_start",
+      "name": "8배 부스트 시작 창 이후 안내",
+      "executer": "EnergyBoostEight",
+      "condition": "",
+      "fields": [
+        {
+          "path": "energyBoostHudAvailable",
+          "label": "시각 안내에 필요한 부스트 HUD 존재",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "persistedOngoingData",
+          "label": "Executer 시작 시 저장된 ongoing 문자열",
+          "kind": "string",
+          "default": null
+        }
+      ],
+      "researchExample": {
+        "mode": "research",
+        "energyBoostHudAvailable": true,
+        "persistedOngoingData": ""
+      },
+      "eventCatalog": [
+        {
+          "label": "8배 부스트 시작 창 닫힘",
+          "event": {
+            "type": "view-closed",
+            "name": "EnergyBoostEightStartWindow"
+          }
+        },
+        {
+          "label": "부스트 모드 변경",
+          "event": {
+            "type": "energy-mode-changed"
+          }
+        },
+        {
+          "label": "설정 창 열림",
+          "event": {
+            "type": "view-opened",
+            "name": "EnergyBoostSettingWindow"
+          }
+        },
+        {
+          "label": "전체 마스크 클릭",
+          "event": {
+            "type": "mask-click"
+          }
+        },
+        {
+          "label": "Executer 재시작/복원",
+          "event": {
+            "type": "executer-started"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "phase": "boost-highlight",
+          "sourceStep": "1",
+          "label": "부스트 HUD 강조",
+          "registered": false,
+          "strong": true,
+          "textKey": "energy_boost_eight_guide"
+        }
+      ],
+      "notes": [
+        "StartTutorial에는 SetTutorialFinished 호출이 없습니다. 화면 안내가 끝나거나 ongoing=1 복원 시 FinishTutorial로 등록됩니다.",
+        "닫힌 시작 창이라는 명시 이벤트를 사용하며 원격8배 해금 조건을 임의로 추가하지 않습니다. HUD 부재는 안전한 표현 불가로 차단하고 원작의 자동 종료로 표시하지 않습니다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterEnergyBoostEight.lua",
+          "ranges": [
+            "5–50"
+          ],
+          "sha256": "ea919f669acb85b55421bdc868ea2877d054c7703efe427397fb0fb221d4d55e",
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_weekly_quest_bonus_star",
+      "name": "주간 과제 추가 별 영역 안내",
+      "executer": "WeeklyActiveQuestBonusStar",
+      "condition": "",
+      "fields": [
+        {
+          "path": "openViews",
+          "label": "현재 열려 있다고 명시한 창",
+          "kind": "array",
+          "default": null
+        },
+        {
+          "path": "otherStrong",
+          "label": "다른 강제 안내 실행 중",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "weeklySelectedWindow",
+          "label": "동시에 여러 주간 창이 열렸을 때 명시하는 선택",
+          "kind": "string",
+          "default": null
+        }
+      ],
+      "researchExample": {
+        "mode": "research",
+        "openViews": [
+          "WeeklyActiveQuestMainWindow"
+        ],
+        "otherStrong": false
+      },
+      "eventCatalog": [
+        {
+          "label": "추가 별 수집 이벤트",
+          "event": {
+            "type": "weekly-bonus-star-collected"
+          }
+        },
+        {
+          "label": "정적 지연 경계 진행",
+          "event": {
+            "type": "clock"
+          }
+        },
+        {
+          "label": "별 영역 마스크 클릭",
+          "event": {
+            "type": "mask-click"
+          }
+        },
+        {
+          "label": "활동 상태 변경 이벤트",
+          "event": {
+            "type": "weekly-state-changed"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "phase": "star-delay",
+          "sourceStep": "1",
+          "label": "등록 후 별 영역 대기",
+          "registered": true,
+          "strong": true,
+          "delaySeconds": 0.6
+        },
+        {
+          "phase": "star-area",
+          "sourceStep": "1",
+          "label": "추가 별 영역 강조",
+          "registered": true,
+          "strong": true,
+          "textKey": "weekly_active_bonus_star_guide"
+        }
+      ],
+      "notes": [
+        "메인 창을 찾지 못하거나 다른 강제 안내가 있으면 시작하지 않고 Finish합니다.",
+        "상태 변경 시 Ended 여부를 검사하지 않고 선택된 activityDefinition이 있으면 Finish합니다. 소스의 선언 Step2/3은 실행 경로가 없어 별도 완료 단계로 세지 않습니다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestBonusStar.lua",
+          "ranges": [
+            "10–54"
+          ],
+          "sha256": "767f1ab2bf74d853d2cfff0889b4d8a6c78dffc9b179ee386964cb728365f809",
+          "kind": "static-reconstructed-packaged-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/WeeklyActiveQuest/WeeklyActiveQuestDefinition.lua",
+          "ranges": [
+            "1–130"
+          ],
+          "sha256": "6a1f5f369490b8c7985555ddc7402305cea99166dc1c605b1aac840051167a52",
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_event_task_extra_reward_entry",
+      "name": "과제 추가 보상 입구 안내",
+      "executer": "TaskExtraReward",
+      "condition": "",
+      "fields": [
+        {
+          "path": "extraRewardModelExists",
+          "label": "TaskExtraReward 모델 존재",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "extraRewardRunning",
+          "label": "모델의 IsActivityRunning 결과",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "openViews",
+          "label": "현재 열려 있다고 명시한 창",
+          "kind": "array",
+          "default": null
+        },
+        {
+          "path": "extraChestAvailable",
+          "label": "캡처한 과제 창의 추가 보상 상자 transform 존재",
+          "kind": "boolean",
+          "default": null
+        }
+      ],
+      "researchExample": {
+        "mode": "research",
+        "extraRewardModelExists": true,
+        "extraRewardRunning": true,
+        "openViews": [
+          "TaskWindow"
+        ],
+        "extraChestAvailable": true
+      },
+      "eventCatalog": [
+        {
+          "label": "추가 보상 안내 시작 이벤트",
+          "event": {
+            "type": "extra-reward-start"
+          }
+        },
+        {
+          "label": "과제 창 열림",
+          "event": {
+            "type": "view-opened",
+            "name": "TaskWindow"
+          }
+        },
+        {
+          "label": "정적 지연 경계 진행",
+          "event": {
+            "type": "clock"
+          }
+        },
+        {
+          "label": "안내 마스크 클릭",
+          "event": {
+            "type": "mask-click"
+          }
+        },
+        {
+          "label": "활동 종료 스냅샷",
+          "event": {
+            "type": "extra-state-changed",
+            "modelExists": true,
+            "running": false
+          }
+        }
+      ],
+      "steps": [
+        {
+          "phase": "task-button",
+          "sourceStep": "1",
+          "label": "과제 HUD 버튼 강조",
+          "registered": true,
+          "strong": true,
+          "textKey": "task_extra_reward_guide_1_1"
+        },
+        {
+          "phase": "chest-delay",
+          "sourceStep": "2",
+          "label": "추가 보상 상자1초 대기",
+          "registered": true,
+          "strong": true,
+          "delaySeconds": 1
+        },
+        {
+          "phase": "chest-highlight",
+          "sourceStep": "2",
+          "label": "추가 보상 상자 강조",
+          "registered": true,
+          "strong": true,
+          "textKey": "task_extra_reward_guide_1_2"
+        }
+      ],
+      "notes": [
+        "첫 WholeMask에는 완료 콜백이 없어 클릭만으로 다음 단계로 넘어가지 않습니다. TaskWindow OpenView가 필요합니다.",
+        "과제 창 또는 상자 transform이 없으면 Finish합니다. 마스크 offset(0,82,0)과 sizeDelta 추가(20,20)는 정적 Unity 값이며 화면 픽셀 측정이 아닙니다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTaskExtraReward.lua",
+          "ranges": [
+            "5–77"
+          ],
+          "sha256": "7a404a3b2ab3d3089cdfb8feac735914da10171a61cd94d2755007b1d3de0dcf",
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_generator_boost_active",
+      "name": "생성기 부스트 활성 영역 안내",
+      "executer": "GeneratorBoostActive",
+      "condition": "",
+      "fields": [
+        {
+          "path": "openViews",
+          "label": "현재 열려 있다고 명시한 창",
+          "kind": "array",
+          "default": null
+        },
+        {
+          "path": "canActiveSpreadFirst",
+          "label": "첫 CanActiveSpread 호출 결과",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "canActiveSpreadSecond",
+          "label": "두 번째 CanActiveSpread 호출 결과",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "boostWindowAfterStartAvailable",
+          "label": "StartTutorial0에서 재조회한 창 존재",
+          "kind": "boolean",
+          "default": null
+        }
+      ],
+      "researchExample": {
+        "mode": "research",
+        "openViews": [
+          "GeneratorBoostActivityMainWindow"
+        ],
+        "canActiveSpreadFirst": true,
+        "canActiveSpreadSecond": true,
+        "boostWindowAfterStartAvailable": true
+      },
+      "eventCatalog": [
+        {
+          "label": "활성 연출 종료 이벤트",
+          "event": {
+            "type": "generator-buff-animation-ended"
+          }
+        },
+        {
+          "label": "활성/닫기 영역 마스크 클릭",
+          "event": {
+            "type": "mask-click"
+          }
+        },
+        {
+          "label": "Started 상태 변경 스냅샷",
+          "event": {
+            "type": "generator-state-changed",
+            "state": "Started"
+          }
+        },
+        {
+          "label": "Ended 상태 변경 스냅샷",
+          "event": {
+            "type": "generator-state-changed",
+            "state": "Ended"
+          }
+        },
+        {
+          "label": "Released 상태 변경 스냅샷",
+          "event": {
+            "type": "generator-state-changed",
+            "state": "Released"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "phase": "active-area",
+          "sourceStep": "1",
+          "label": "부스트 활성 영역 강조",
+          "registered": true,
+          "strong": true,
+          "textKey": "generatorBoost_guide_2_1"
+        },
+        {
+          "phase": "close-area",
+          "sourceStep": "2",
+          "label": "닫기 영역 강조",
+          "registered": true,
+          "strong": true,
+          "textKey": "generatorBoost_guide_2_2"
+        }
+      ],
+      "notes": [
+        "CanActiveSpread 조건은 원문에 두 번 호출됩니다. 명시 결과2개로 분리하고 short-circuit을 보존합니다.",
+        "활성 안내의 StateChanged 종료 조건은 Started 또는 Released입니다. Ended로 바꾸어 해석하지 않습니다."
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGeneratorBoostActive.lua",
+          "ranges": [
+            "5–65"
+          ],
+          "sha256": "861a420c1fbbcc708eb9abc2010c90a2344566942dcc688361cebea76768cd19",
+          "kind": "static-reconstructed-packaged-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/GeneratorBoostActivity/GeneratorBoostActivityDefinition.lua",
+          "ranges": [
+            "1–18"
+          ],
+          "sha256": "32367210f2b4d9fe81b502724adeb80873a9f411711834846813541278782259",
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ]
+    }
+  ],
+  "weeklyWindows": [
+    "WeeklyActiveQuestMainWindow",
+    "WeeklyActiveQuestMainWindow2"
+  ],
+  "passActivityTypes": [
+    "RoadtripPass",
+    "WitchlingPass",
+    "SplurgePass"
+  ],
+  "generatorWindow": "GeneratorBoostActivityMainWindow",
+  "registrationBoundary": "EnergyBoostEight와 PassActivityBonusTask는 설명 시작에서 Finished를 등록하지 않습니다. 나머지3종은 첫 시각 단계에서 먼저 등록합니다. 조기 Finish 경로와 화면 완료를 각각 기록합니다.",
+  "coordinationBoundary": "원작 pairs/listener의 동시 경합 우선순위를 추정하지 않습니다. 독립 도구는 한 안내씩 비교합니다. 이벤트 중복/콜백 경합을 원작과 동일하게 재현했다고 주장하지 않습니다.",
+  "eventPayloadBoundary": "event의 selectedState/state/modelExists/running은 웹 어댑터에 명시한 모델 조회 결과입니다. 원작 네이티브 이벤트 payload 필드라고 주장하지 않습니다. mode=research 필수이며 누락 정보는 unknown으로 차단합니다.",
+  "boundaries": [
+    "서버의 활동 배정·레벨/기능 해금·현재 계정 상태는 미확인입니다.",
+    "정적0.6/1/1.5초 지연과 마스크 좌표는 실제 기기 입력·연출 측정값이 아닙니다.",
+    "창이 사라졌을 때 원문에 null 안전 종료가 없는 구간은 완료를 지어내지 않고 표현 불가로 차단합니다.",
+    "등록/완료/진행 문자열만 투영하며 보상·광고·IAP·캐릭터 연출·원작 실제 조작을 수행하지 않습니다."
+  ],
+  "sources": [
+    {
+      "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+      "ranges": [
+        "128–133",
+        "362–367",
+        "488–505",
+        "584–589"
+      ],
+      "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+      "kind": "static-reconstructed-packaged-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/Tutorial/TutorialModel.lua",
+      "ranges": [
+        "85–102",
+        "156–159",
+        "185–222"
+      ],
+      "sha256": "b52c9ca625826500e7a1be78121644a58ad5c7777ab3303e5b604eca67a92766",
+      "kind": "static-reconstructed-packaged-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/Tutorial/TutorialExecuterBase.lua",
+      "ranges": [
+        "5–22",
+        "41–49",
+        "57–77"
+      ],
+      "sha256": "2dbf2af6beb2eac00fa3f4cf8886c3d5cf8b78ec35479ddab982996f9d08c55f",
+      "kind": "static-reconstructed-packaged-code"
+    }
+  ],
+  "revision": "93b4c722f0822aecfe41516b409942eac8fe697ed0b842614708dfbd12d45cfd"
+}

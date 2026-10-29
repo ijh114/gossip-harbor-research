@@ -23,10 +23,11 @@ export function mountMapInput(node,{getView,isLocked=()=>false,onChange,onCommit
  }
  const up=ev=>{if(ev.pointerId===drag?.id)stopDrag(false);};
  const cancel=ev=>{if(ev.pointerId===drag?.id)stopDrag(true);};
+ const blur=()=>stopDrag(true);
  const key=ev=>{
   if(ev.target!==node||isLocked())return;const change={ArrowLeft:[-5,0],ArrowRight:[5,0],ArrowUp:[0,-5],ArrowDown:[0,5]}[ev.key];if(!change)return;
   ev.preventDefault();const v=getView(),next={...v,x:clamp(v.x+change[0],-25,25),y:clamp(v.y+change[1],-25,25)};paint(next);onCommit(next);
  };
- node.addEventListener('pointerdown',down);node.addEventListener('pointermove',move,{passive:false});node.addEventListener('pointerup',up);node.addEventListener('pointercancel',cancel);node.addEventListener('keydown',key);
- return {isDragging:()=>Boolean(drag?.moved),stop(){stopDrag(true);node.removeEventListener('pointerdown',down);node.removeEventListener('pointermove',move);node.removeEventListener('pointerup',up);node.removeEventListener('pointercancel',cancel);node.removeEventListener('keydown',key);}};
+ node.addEventListener('pointerdown',down);node.addEventListener('pointermove',move,{passive:false});node.addEventListener('pointerup',up);node.addEventListener('pointercancel',cancel);node.addEventListener('lostpointercapture',cancel);node.addEventListener('keydown',key);node.ownerDocument.defaultView.addEventListener('blur',blur);
+ return {isDragging:()=>Boolean(drag?.moved),stop(){stopDrag(true);node.removeEventListener('pointerdown',down);node.removeEventListener('pointermove',move);node.removeEventListener('pointerup',up);node.removeEventListener('pointercancel',cancel);node.removeEventListener('lostpointercapture',cancel);node.removeEventListener('keydown',key);node.ownerDocument.defaultView.removeEventListener('blur',blur);}};
 }

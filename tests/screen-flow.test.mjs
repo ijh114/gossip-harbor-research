@@ -11,8 +11,10 @@ const refinement=JSON.parse(await readFile(new URL('../src/data/media-refinement
 const media=JSON.parse(await readFile(new URL('../src/data/media.json',import.meta.url),'utf8'));
 const sceneConfig=JSON.parse(await readFile(new URL('../src/data/scene-config.json',import.meta.url),'utf8'));
 const activityConfig=JSON.parse(await readFile(new URL('../src/data/activity-play.json',import.meta.url),'utf8'));
+const tutorialConfig=JSON.parse(await readFile(new URL('../src/data/tutorial-extension.json',import.meta.url),'utf8'));
+const skinConfig=JSON.parse(await readFile(new URL('../src/data/skin-lab.json',import.meta.url),'utf8'));
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-async function harness(run,{saved=null,raw=null,reduced=true,scenes=false,activities=false}={}){
+async function harness(run,{saved=null,raw=null,reduced=true,scenes=false,activities=false,tutorials=false,skins=false}={}){
  const dom=new JSDOM('<main></main>',{url:'https://example.test/project/#experience',pretendToBeVisual:true}),w=dom.window,prior={window:globalThis.window,document:globalThis.document};
  Object.assign(globalThis,{window:w,document:w.document});
  w.matchMedia=()=>({matches:reduced});w.HTMLElement.prototype.scrollIntoView=()=>{};
@@ -23,7 +25,7 @@ async function harness(run,{saved=null,raw=null,reduced=true,scenes=false,activi
  if(raw)w.localStorage.setItem(SAVE_KEY,raw);
  let controller,skin='game';
  function render(){controller.beforeRender();w.document.querySelector('main').innerHTML=controller.render(skin);controller.afterMount();}
- const create=()=>{controller=createPlayController({getData:()=>({playConfig:config,media,refinement,...(scenes?{sceneConfig}:{}),...(activities?{activityConfig}:{})}),render,download(){}});return controller;};
+ const create=()=>{controller=createPlayController({getData:()=>({playConfig:config,media,refinement,...(scenes?{sceneConfig}:{}),...(activities?{activityConfig}:{}),...(tutorials?{tutorialConfig}:{}),...(skins?{skinConfig}:{})}),render,download(){}});return controller;};
  create();render();
  const read=()=>JSON.parse(w.localStorage.getItem(SAVE_KEY)).state;
  const act=(action,value)=>controller.handle(action,value);
@@ -135,4 +137,26 @@ test('defined invalid optional activity saves are preserved until a backed-up ac
   showMode('activities');assert.match(w.document.body.textContent,/활동 저장을 보존/);act('save');assert.equal(read().activityPlay,null);
   act('activity:reset-invalid');assert.equal(read().activityPlay.schema,1);assert.equal(read().wallet.coins,27);assert.equal(JSON.parse(w.localStorage.getItem(SAVE_KEY+'-previous')).state.activityPlay,null);
  },{saved,activities:true});
+});
+
+test('linked boost guide consumes successful web boost changes and preserves wallet',async()=>{
+ const saved=createPlay(config,{scenario:'open'});saved.stage='play';
+ await harness(async({w,act,read})=>{await pause(380);act('game-continue');w.document.querySelector('[data-guide-select]').value='tutorial_event_energyboost_simple';act('guide:configure');assert.equal(read().tutorialBridge.engine.active?.phase,'entry-delay');act('guide:clock');assert.equal(read().tutorialBridge.engine.active?.phase,'click-1');const coins=read().wallet.coins,energy=read().wallet.energy;act('set-boost',1);assert.equal(read().tutorialBridge.engine.active?.phase,'click-2');act('set-boost',2);assert.equal(read().tutorialBridge.engine.completed.length,1);assert.equal(read().wallet.coins,coins);assert.equal(read().wallet.energy,energy);},{saved,tutorials:true});
+});
+test('linked pass and recap guides follow actual activity entry and native web dialog callbacks',async()=>{
+ const saved=createPlay(config);saved.stage='home';
+ await harness(async({w,act,read,showMode})=>{await pause(380);act('game-continue');act('guide:configure');showMode('activities');act('activity:start');assert.equal(read().tutorialBridge.engine.active?.phase,'tip-delay');act('guide:clock');act('guide:event','2');act('guide:event','2');assert.equal(read().tutorialBridge.engine.completed.length,1);act('guide:reset');showMode('game');w.document.querySelector('[data-guide-select]').value='tutorial_story_recap';act('guide:configure');act('game-task-list');assert.ok(w.document.querySelector('#game-task-list [data-play="guide:clock"]'));act('guide:clock');act('guide:event','2');assert.equal(read().tutorialBridge.engine.active?.phase,'recap-highlight');act('game-task-list-close');assert.equal(read().tutorialBridge.engine.completed.includes('tutorial_story_recap'),true);assert.equal(read().wallet.coins,0);},{saved,tutorials:true,activities:true});
+});
+test('Skin research grants drive decoration guide while linked-slot edits restore, cancel and apply without main rewards',async()=>{
+ const saved=createPlay(config);saved.stage='home';
+ await harness(async({w,act,read,recreate,screen})=>{await pause(380);act('game-continue');w.document.querySelector('[data-guide-select]').value='tutorial_change_decoration';act('guide:configure');act('game-decor-open');act('game-skins-open');assert.equal(screen(),'skins');act('skin:acquire-set');act('skin:select','14');act('skin:acquire-set');assert.equal(read().tutorialBridge.engine.active?.phase,'dialogue-delay');act('guide:clock');act('guide:event','2');act('guide:clock');act('guide:event','3');assert.equal(read().tutorialBridge.engine.completed.includes('tutorial_change_decoration'),true);act('skin:preview-set');recreate();await pause(380);act('game-continue');assert.equal(screen(),'skins');assert.equal(Object.keys(read().skinLab.edit.preview).length,13);act('skin:cancel');assert.deepEqual(read().skinLab.slots,{});act('skin:preview-set');act('skin:confirm');assert.equal(Object.keys(read().skinLab.slots).length,13);assert.equal(read().wallet.coins,0);assert.equal(read().questsDone,0);},{saved,tutorials:true,skins:true});
+});
+
+test('synthetic touch drag interruption removes the ghost and cannot move or merge a piece',async()=>{
+ const saved=createPlay(config);saved.stage='play';
+ await harness(async({w,act,read})=>{await pause(380);act('game-continue');const before=JSON.stringify(read().board),index=read().board.findIndex(x=>x&&!x.cover),node=w.document.querySelector(`.game-cell[data-value="${index}"]`);w.document.elementFromPoint=()=>node;const pointer=(type,x)=>{const ev=new w.Event(type,{bubbles:true,cancelable:true});Object.assign(ev,{pointerId:3,pointerType:'touch',button:0,clientX:x,clientY:100});node.dispatchEvent(ev);};pointer('pointerdown',10);pointer('pointermove',50);assert.ok(w.document.querySelector('.game-drag-ghost'));pointer('lostpointercapture',50);assert.equal(w.document.querySelector('.game-drag-ghost'),null);pointer('pointerup',50);assert.equal(JSON.stringify(read().board),before);},{saved});
+});
+test('defined corrupt linked-guide and Skin saves stay intact until an explicit backed-up reset',async()=>{
+ const saved=createPlay(config);saved.stage='home';saved.tutorialBridge=null;saved.skinLab=null;saved.wallet.coins=37;
+ await harness(async({w,act,read,screen})=>{await pause(380);act('game-continue');assert.match(w.document.body.textContent,/연결 안내 저장을 보존/);act('guide:configure');assert.equal(read().tutorialBridge,null);act('game-decor-open');act('game-skins-open');assert.equal(screen(),'skins');assert.match(w.document.body.textContent,/장식 연구 저장을 보존/);act('game-skins-close');assert.equal(screen(),'map');act('guide:reset-invalid');assert.equal(JSON.parse(w.localStorage.getItem(SAVE_KEY+'-previous')).state.tutorialBridge,null);act('skin:reset-invalid');assert.equal(JSON.parse(w.localStorage.getItem(SAVE_KEY+'-previous')).state.skinLab,null);assert.equal(read().wallet.coins,37);},{saved,tutorials:true,skins:true});
 });

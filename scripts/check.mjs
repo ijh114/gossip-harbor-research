@@ -77,5 +77,14 @@ const tutorials=JSON.parse(await readFile('dist/data/tutorial-extension.json','u
 const decor=JSON.parse(await readFile('dist/data/decor-edit.json','utf8'));
 if(tutorials.guides.length!==5||!validTutorialExtension(createTutorialExtension(tutorials),tutorials)||decor.sources.length!==4)throw new Error('Invalid additional research boundaries');
 for(const s of [...tutorials.sources,...decor.sources])if(!s.path.startsWith('analysis/')||!/^[a-f0-9]{64}$/.test(s.sha256)||!s.ranges.length)throw new Error('Missing selected code provenance');
-if(followup.tutorialExtension?.remainingPreviouslyUnsupported!==92)throw new Error('Stale tutorial coverage ledger');
+if(followup.tutorialExtension?.remainingPreviouslyUnsupported!==87)throw new Error('Stale tutorial coverage ledger');
 console.log('Verified 5 isolated context-driven tutorials and normal decor edit provenance; no game server or main-wallet connection.');
+
+const more=JSON.parse(await readFile('dist/data/tutorial-more.json','utf8'));
+const skins=JSON.parse(await readFile('dist/data/skin-lab.json','utf8'));
+const observation=JSON.parse(await readFile('dist/data/bm-observation-audit.json','utf8'));
+const availability=JSON.parse(await readFile('dist/data/artifact-availability.json','utf8'));
+if(more.guides.length!==5||skins.groups.flatMap(g=>g.skins).length!==26||observation.rows.length!==54||availability.entries.length!==16)throw new Error('Incomplete 1-4 followup data');
+for(const m of observation.mediaEntries){if(!validMedia(m))throw new Error('Invalid BM excerpt '+m.key);const bytes=await readFile(path.join('dist',m.src));if(createHash('sha256').update(bytes).digest('hex')!==m.sha256)throw new Error('BM excerpt hash mismatch '+m.key);if(m.poster)await stat(path.join('dist',m.poster));}
+if(observation.summary.automaticReappearanceConfirmed!==0||observation.summary.expiryTransitionsConfirmed!==0||availability.summary.newlyRecoveredAssets!==0)throw new Error('Unreviewed evidence upgrade');
+console.log('Verified 10 additional research guides (5 play-linked), selected26 Skin identities, 54 BM evidence cells and 16 availability records.');

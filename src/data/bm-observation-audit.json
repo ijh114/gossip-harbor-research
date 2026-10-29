@@ -1,0 +1,4623 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-29",
+  "targetApkVersion": "4.10.5",
+  "captureVersion": null,
+  "capturedAt": null,
+  "title": "BM 관측과 코드 조건 대조",
+  "scope": "기존9유형42표본과 후속 검토를 질문별로 대조한 최소 공개 투영. 원본 게임 실행·서버/광고/결제 접속 없이 작성했다.",
+  "evidencePolicy": {
+    "observations": "과거 사용자 캡처의 파일 내 상태·전이",
+    "static": "APK4.10.5 복원 Lua의 조건부 경로",
+    "researchExamples": "웹·Unity 연구 예제의 입력/난수/시간 전진은 원작 성공 근거에 포함하지 않는다.",
+    "creditRule": "각 관측 단위는 한 typeId와 한 questionId에만 배정한다. 42개 맥락 표본은 완료 건수로 세지 않는다.",
+    "counterMeaning": "관측 구간/셀 수는 노출 빈도·계정 수·결제 횟수·커버리지 완료율이 아니다."
+  },
+  "summary": {
+    "typeCount": 9,
+    "questionCount": 6,
+    "matrixCellCount": 54,
+    "contextPointCount": 42,
+    "observationUnitCount": 12,
+    "observedScopedCells": 9,
+    "partialCells": 3,
+    "staticOnlyCells": 15,
+    "unconfirmedCells": 27,
+    "newOriginalRuntimeObservations": 0,
+    "newVerifiedPaymentReceipts": 0,
+    "accountFirstExposureConfirmed": 0,
+    "automaticReappearanceConfirmed": 0,
+    "expiryTransitionsConfirmed": 0,
+    "competingPopupPriorityConfirmed": 0,
+    "reappearanceTypes": [
+      "level-offer",
+      "selected-card"
+    ],
+    "newSourceFiles": 0,
+    "newPublicExcerptSources": 2,
+    "newPublicMediaEntries": 10,
+    "newPublicMediaBytes": 2258263
+  },
+  "inputRefs": [
+    {
+      "id": "bm-timeline",
+      "path": "src/data/bm-timeline.json",
+      "sha256": "335838638d8485f7bb0fb7225667f91647095404238984e20fa86056db9e41d5"
+    },
+    {
+      "id": "media-audit",
+      "path": "src/data/media-audit.json",
+      "sha256": "35eeaee449e9ec1b16eea1f9171ae1ea56e2ab462db6cf958c4e87c92ee35c90"
+    },
+    {
+      "id": "media-refinement",
+      "path": "src/data/media-refinement.json",
+      "sha256": "c5cfc5dfc27d7651553cb6df4d9c11401ae6e2b56e824111350df6d15e526a5c"
+    },
+    {
+      "id": "media-completion",
+      "path": "src/data/media-completion.json",
+      "sha256": "3301e0b0259e835d8f0f0ab82f04cb62f0bb07dd6a1f81d075003294588c2dec"
+    }
+  ],
+  "types": [
+    {
+      "id": "energy-chain",
+      "label": "에너지 체인",
+      "title": "에너지 체인: 젬 지불과 무료 보상 순차 해제",
+      "timelineFactId": "HIST-BM001",
+      "contextPointCount": 9,
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ]
+    },
+    {
+      "id": "energy-challenge",
+      "label": "에너지 도전",
+      "title": "에너지 도전: 목표 달성과 유료 수령권 분리",
+      "timelineFactId": "HIST-BM002",
+      "contextPointCount": 4,
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "unknowns": [
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ]
+    },
+    {
+      "id": "reward-tower",
+      "label": "보상탑",
+      "title": "보상탑: 같은 가격 반복과 다음 층 가격",
+      "timelineFactId": "HIST-BM003",
+      "contextPointCount": 6,
+      "staticAnchorIds": [],
+      "unknowns": [
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ]
+    },
+    {
+      "id": "theme-variants",
+      "label": "같은 테마의 서로 다른 가격·구성",
+      "title": "같은 테마의 서로 다른 가격·구성",
+      "timelineFactId": "HIST-BM004",
+      "contextPointCount": 3,
+      "staticAnchorIds": [],
+      "unknowns": [
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ]
+    },
+    {
+      "id": "level-offer",
+      "label": "성장 마일스톤 뒤 레벨 한정 상품",
+      "title": "성장 마일스톤 뒤 레벨 한정 상품",
+      "timelineFactId": "HIST-BM005",
+      "contextPointCount": 5,
+      "staticAnchorIds": [
+        "STATIC-level-offer-1",
+        "STATIC-level-offer-2"
+      ],
+      "unknowns": [
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ]
+    },
+    {
+      "id": "selected-card",
+      "label": "특선 카드",
+      "title": "특선 카드: 보장 설명과 한 번의 실제 결과",
+      "timelineFactId": "HIST-BM006",
+      "contextPointCount": 4,
+      "staticAnchorIds": [
+        "STATIC-selected-card-1"
+      ],
+      "unknowns": [
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ]
+    },
+    {
+      "id": "low-energy",
+      "label": "낮은 에너지에서 순차 충전창까지",
+      "title": "낮은 에너지에서 순차 충전창까지",
+      "timelineFactId": "HIST-BM007",
+      "contextPointCount": 5,
+      "staticAnchorIds": [
+        "STATIC-low-energy-1",
+        "STATIC-low-energy-2",
+        "STATIC-low-energy-3"
+      ],
+      "unknowns": [
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ]
+    },
+    {
+      "id": "card-fever",
+      "label": "카드팩 피버",
+      "title": "카드팩 피버: 주문 루프에 붙는 제한시간 배율",
+      "timelineFactId": "HIST-BM008",
+      "contextPointCount": 2,
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "unknowns": [
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ]
+    },
+    {
+      "id": "boost-discount",
+      "label": "×8 부스터와 할인 버블의 동시 표시",
+      "title": "×8 부스터와 할인 버블의 동시 표시",
+      "timelineFactId": "HIST-BM009",
+      "contextPointCount": 4,
+      "staticAnchorIds": [
+        "STATIC-boost-discount-1",
+        "STATIC-boost-discount-2"
+      ],
+      "unknowns": [
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "first-exposure",
+      "label": "최초 노출",
+      "question": "파일 안 첫 등장과 실제 최초 노출 조건을 구분했나?",
+      "successCriterion": "녹화 안 등장 전후만 한정 확인한다. 계정 생애 최초·자동 트리거는 로그 없이는 확인하지 않는다.",
+      "codeOnly": "에너지 부족·기존 번들·레벨 이벤트·IAP/튜토리얼 조건은 정적 경로다. 캡처에 적용된 값과 호출 입력은 미확인이다."
+    },
+    {
+      "id": "close",
+      "label": "닫기",
+      "question": "상품창이 닫힌 뒤 화면을 같은 파일에서 확인했나?",
+      "successCriterion": "창 소멸과 복귀 화면만 관측한다. 정확한 닫기 입력·후속 체인 호출 여부는 별도다.",
+      "codeOnly": "구매 성공·실패·미시도의 닫기 분기와 poptype별 후속 경로는 코드에 있다. 영상의 닫힘만으로 실행 분기를 확정하지 않는다."
+    },
+    {
+      "id": "reappearance",
+      "label": "재노출",
+      "question": "닫힌 뒤 같은 디자인의 상품 UI가 다시 보였나?",
+      "successCriterion": "같은 파일의 상품→맵→상품만 한정 확인한다. 자동 재노출·동일 SKU·계정별 빈도는 확인하지 않는다.",
+      "codeOnly": "일별 횟수·별도 쿨다운·일일/구간 팝업 상한은 정적 조건이다. 화면 재진입이 그 자동 정책의 실행 증거는 아니다."
+    },
+    {
+      "id": "after-purchase",
+      "label": "구매 흐름 후",
+      "question": "녹화된 구매 흐름 뒤 보상·가격·재화 상태를 확인했나?",
+      "successCriterion": "과거 파일의 게임 화면 변화만 확인한다. 분석자의 결제 실행·영수증/서버 지급 검증은 아니다.",
+      "codeOnly": "gem 소비 성공·보상 지급·단계 저장, EnergyGemOffer 구매 뒤 일반 가격 갱신은 코드 경로다. 같은 상품 객체인지는 별도다."
+    },
+    {
+      "id": "expiry",
+      "label": "만료",
+      "question": "타이머 0과 상품 종료·교체를 연속으로 확인했나?",
+      "successCriterion": "같은 상품이 유효하다가 종료 경계에 닿아 사라지거나 바뀌는 연속 근거가 필요하다.",
+      "codeOnly": "ChainEnergy endTime과 활동 eTime/rTime·번들 냉각 상태는 정적 시간 조건이다. 남은 시간 표시는 만료 전이가 아니다."
+    },
+    {
+      "id": "competition",
+      "label": "경쟁 노출",
+      "question": "둘 이상 적격 팝업의 선택·차단 순서를 확인했나?",
+      "successCriterion": "동시에 적격인 후보와 실제 선택/억제 로그가 필요하다. 동시 UI 표시·앞뒤 창은 경쟁 우선순위 검증과 다르다.",
+      "codeOnly": "에너지 후속 순서·가격 gate·팝업 상한·Pass 영역 코드는 있다. 캡처의 실제 적격 후보 집합과 우선순위 결과는 미확인이다."
+    }
+  ],
+  "contextPoints": [
+    {
+      "id": "energy-chain:chain-before",
+      "typeId": "energy-chain",
+      "milestoneId": "chain-before",
+      "sourceId": "GH-V0030",
+      "atSeconds": 5.5,
+      "mediaKeys": [
+        "capture:chain-before"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "label": "관측 시작",
+      "state": {
+        "level": null,
+        "energy": 2,
+        "gems": 719,
+        "coins": 244
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-chain:chain-20",
+      "typeId": "energy-chain",
+      "milestoneId": "chain-20",
+      "sourceId": "GH-V0030",
+      "atSeconds": 6.0,
+      "mediaKeys": [
+        "capture:energy-chain"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "label": "에너지100·20젬과 잠긴 후속 무료 행",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-chain:chain-green",
+      "typeId": "energy-chain",
+      "milestoneId": "chain-green",
+      "sourceId": "GH-V0030",
+      "atSeconds": 8.5,
+      "mediaKeys": [
+        "capture:energy-chain"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "label": "초록 카드팩 체크",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-chain:chain-free15",
+      "typeId": "energy-chain",
+      "milestoneId": "chain-free15",
+      "sourceId": "GH-V0030",
+      "atSeconds": 9.5,
+      "mediaKeys": [
+        "capture:energy-chain"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "label": "에너지15 무료 행의 잠금 해제",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-chain:chain-40",
+      "typeId": "energy-chain",
+      "milestoneId": "chain-40",
+      "sourceId": "GH-V0030",
+      "atSeconds": 11.5,
+      "mediaKeys": [
+        "capture:energy-chain"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "label": "다음 에너지100·40젬",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-chain:chain-blue",
+      "typeId": "energy-chain",
+      "milestoneId": "chain-blue",
+      "sourceId": "GH-V0030",
+      "atSeconds": 14.0,
+      "mediaKeys": [
+        "capture:energy-chain"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "label": "파란 카드팩 체크와 재화",
+      "state": {
+        "level": null,
+        "energy": 217,
+        "gems": 659,
+        "coins": 244
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-chain:chain-free20",
+      "typeId": "energy-chain",
+      "milestoneId": "chain-free20",
+      "sourceId": "GH-V0030",
+      "atSeconds": 15.5,
+      "mediaKeys": [
+        "capture:energy-chain"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "label": "무료 에너지20 체크",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-chain:chain-80",
+      "typeId": "energy-chain",
+      "milestoneId": "chain-80",
+      "sourceId": "GH-V0030",
+      "atSeconds": 17.0,
+      "mediaKeys": [
+        "capture:energy-chain"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "label": "80젬 단계 미구매",
+      "state": {
+        "level": null,
+        "energy": 237,
+        "gems": 659,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-chain:chain-after",
+      "typeId": "energy-chain",
+      "milestoneId": "chain-after",
+      "sourceId": "GH-V0030",
+      "atSeconds": 19.0,
+      "mediaKeys": [
+        "capture:chain-after"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "label": "보드 복귀와 최종 재화",
+      "state": {
+        "level": null,
+        "energy": 237,
+        "gems": 659,
+        "coins": 244
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "unknowns": [
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-challenge:challenge-locked",
+      "typeId": "energy-challenge",
+      "milestoneId": "challenge-locked",
+      "sourceId": "GH-V0091",
+      "atSeconds": 1.5,
+      "mediaKeys": [
+        "capture:energy-challenge"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "c63e0afceaf5ab5252b6b422ae9bc91934aa20d71e232094d0413020d08e21b0",
+      "label": "달성 목표에도 남은 잠금",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "unknowns": [
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-challenge:challenge-before",
+      "typeId": "energy-challenge",
+      "milestoneId": "challenge-before",
+      "sourceId": "GH-V0097",
+      "atSeconds": 0.0,
+      "mediaKeys": [],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "2f2142b05ec16736d1f8fe18e8a0fbbd261c51ed0ed3eb4f5499016afb7e0aba",
+      "label": "별도 파일의 구매 흐름 전",
+      "state": {
+        "level": 110,
+        "energy": 1,
+        "gems": 2,
+        "coins": 443
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "unknowns": [
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-challenge:challenge-claim",
+      "typeId": "energy-challenge",
+      "milestoneId": "challenge-claim",
+      "sourceId": "GH-V0097",
+      "atSeconds": 24.37,
+      "mediaKeys": [
+        "capture:challenge-collect"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "2f2142b05ec16736d1f8fe18e8a0fbbd261c51ed0ed3eb4f5499016afb7e0aba",
+      "label": "수령 완료 도장과 HUD 이동",
+      "state": {
+        "level": 110,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "unknowns": [
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "energy-challenge:challenge-after",
+      "typeId": "energy-challenge",
+      "milestoneId": "challenge-after",
+      "sourceId": "GH-V0097",
+      "atSeconds": 34.87,
+      "mediaKeys": [
+        "capture:challenge-after"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "2f2142b05ec16736d1f8fe18e8a0fbbd261c51ed0ed3eb4f5499016afb7e0aba",
+      "label": "수령 이후 남은 목표와 잔액",
+      "state": {
+        "level": 110,
+        "energy": 1251,
+        "gems": 2,
+        "coins": 443
+      },
+      "remainingTime": {
+        "label": "1일20시간",
+        "seconds": 158400
+      },
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "unknowns": [
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "reward-tower:tower-first",
+      "typeId": "reward-tower",
+      "milestoneId": "tower-first",
+      "sourceId": "GH-V0123",
+      "atSeconds": 3.79,
+      "mediaKeys": [
+        "capture:tower-6500"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+      "label": "첫6500원 표본",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": {
+        "label": "2일21시간",
+        "seconds": 248400
+      },
+      "staticAnchorIds": [],
+      "unknowns": [
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "reward-tower:tower-repeat",
+      "typeId": "reward-tower",
+      "milestoneId": "tower-repeat",
+      "sourceId": "GH-V0123",
+      "atSeconds": 23.7,
+      "mediaKeys": [
+        "capture:tower-6500-stable"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+      "label": "결제 흐름 이후에도6500원",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [],
+      "unknowns": [
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "reward-tower:tower-card",
+      "typeId": "reward-tower",
+      "milestoneId": "tower-card",
+      "sourceId": "GH-V0123",
+      "atSeconds": 40.5,
+      "mediaKeys": [
+        "capture:tower-reward-motion"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+      "label": "후속 보상 수령 카드",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [],
+      "unknowns": [
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "reward-tower:tower-16000",
+      "typeId": "reward-tower",
+      "milestoneId": "tower-16000",
+      "sourceId": "GH-V0123",
+      "atSeconds": 44.07,
+      "mediaKeys": [
+        "capture:tower-16000",
+        "capture:tower-reward-motion"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+      "label": "체크 영역 변화와16000원",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [],
+      "unknowns": [
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "reward-tower:tower-other-start",
+      "typeId": "reward-tower",
+      "milestoneId": "tower-other-start",
+      "sourceId": "GH-V0125",
+      "atSeconds": 0.0,
+      "mediaKeys": [],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287",
+      "label": "별도 파일의16000원 시작",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": {
+        "label": "2일20시간",
+        "seconds": 244800
+      },
+      "staticAnchorIds": [],
+      "unknowns": [
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "reward-tower:tower-49000",
+      "typeId": "reward-tower",
+      "milestoneId": "tower-49000",
+      "sourceId": "GH-V0125",
+      "atSeconds": 91.98,
+      "mediaKeys": [
+        "capture:tower-49000"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287",
+      "label": "별도 파일 후반의49000원",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [],
+      "unknowns": [
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "theme-variants:bird14",
+      "typeId": "theme-variants",
+      "milestoneId": "bird14",
+      "sourceId": "GH-S0002",
+      "atSeconds": null,
+      "mediaKeys": [
+        "capture:bird-14000"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "06722ba764fab84173f9962679e60195942a7b4da0b7a869a6d241c39cf4ae43",
+      "label": "14000원 변형",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": {
+        "label": "3시간50분",
+        "seconds": 13800
+      },
+      "staticAnchorIds": [],
+      "unknowns": [
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "theme-variants:bird24",
+      "typeId": "theme-variants",
+      "milestoneId": "bird24",
+      "sourceId": "GH-S0003",
+      "atSeconds": null,
+      "mediaKeys": [
+        "capture:bird-24000"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "d436f7ae2c9b95cdf34c870284210c9db7308874624523a1b6dca3f18730349a",
+      "label": "24000원 변형",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": {
+        "label": "3시간5분",
+        "seconds": 11100
+      },
+      "staticAnchorIds": [],
+      "unknowns": [
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "theme-variants:bird60",
+      "typeId": "theme-variants",
+      "milestoneId": "bird60",
+      "sourceId": "GH-S0258",
+      "atSeconds": null,
+      "mediaKeys": [
+        "capture:bird-60000"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "f26e0b17537d1d5f7f15651d01ab2a2a3c4cffd0daeff3347afd2ce85dfd71ed",
+      "label": "60000원 변형",
+      "state": {
+        "level": 96,
+        "energy": 2,
+        "gems": 8,
+        "coins": 96
+      },
+      "remainingTime": {
+        "label": "3시간56분",
+        "seconds": 14160
+      },
+      "staticAnchorIds": [],
+      "unknowns": [
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "level-offer:level113-before",
+      "typeId": "level-offer",
+      "milestoneId": "level113-before",
+      "sourceId": "GH-V0107",
+      "atSeconds": 0.0,
+      "mediaKeys": [
+        "capture:level113-before",
+        "capture:level-offer-transition"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+      "label": "113레벨 보상창",
+      "state": {
+        "level": 113,
+        "energy": 8,
+        "gems": 1930,
+        "coins": 689
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-level-offer-1",
+        "STATIC-level-offer-2"
+      ],
+      "unknowns": [
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "level-offer:level113-reward",
+      "typeId": "level-offer",
+      "milestoneId": "level113-reward",
+      "sourceId": "GH-V0107",
+      "atSeconds": 1.5,
+      "mediaKeys": [
+        "capture:level-offer-transition"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+      "label": "상자 보상 이동",
+      "state": {
+        "level": 113,
+        "energy": 8,
+        "gems": 1930,
+        "coins": 689
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-level-offer-1",
+        "STATIC-level-offer-2"
+      ],
+      "unknowns": [
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "level-offer:level113-offer",
+      "typeId": "level-offer",
+      "milestoneId": "level113-offer",
+      "sourceId": "GH-V0107",
+      "atSeconds": 3.5,
+      "mediaKeys": [
+        "capture:level-offer-transition"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+      "label": "같은 레벨의 한정 상품",
+      "state": {
+        "level": 113,
+        "energy": 8,
+        "gems": 1930,
+        "coins": 689
+      },
+      "remainingTime": {
+        "label": "59분44초",
+        "seconds": 3584
+      },
+      "staticAnchorIds": [
+        "STATIC-level-offer-1",
+        "STATIC-level-offer-2"
+      ],
+      "unknowns": [
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "level-offer:level113-offer-later",
+      "typeId": "level-offer",
+      "milestoneId": "level113-offer-later",
+      "sourceId": "GH-V0107",
+      "atSeconds": 5.54,
+      "mediaKeys": [
+        "capture:level-offer"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+      "label": "카운트다운과 한정 문구",
+      "state": {
+        "level": 113,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": {
+        "label": "59분42초",
+        "seconds": 3582
+      },
+      "staticAnchorIds": [
+        "STATIC-level-offer-1",
+        "STATIC-level-offer-2"
+      ],
+      "unknowns": [
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "level-offer:level113-help",
+      "typeId": "level-offer",
+      "milestoneId": "level113-help",
+      "sourceId": "GH-V0107",
+      "atSeconds": 10.5,
+      "mediaKeys": [
+        "capture:tool-help"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+      "label": "만능 젬 도움말을 겹쳐 확인",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-level-offer-1",
+        "STATIC-level-offer-2"
+      ],
+      "unknowns": [
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "selected-card:card-rule",
+      "typeId": "selected-card",
+      "milestoneId": "card-rule",
+      "sourceId": "GH-S0148",
+      "atSeconds": null,
+      "mediaKeys": [
+        "capture:selected-card"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "2cb6ef8a671085af6335e976152643e44bc565844a472b58112374957016e97c",
+      "label": "별도 스크린샷의 보장 규칙",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-selected-card-1"
+      ],
+      "unknowns": [
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "selected-card:card-offer",
+      "typeId": "selected-card",
+      "milestoneId": "card-offer",
+      "sourceId": "GH-V0121",
+      "atSeconds": 0.0,
+      "mediaKeys": [
+        "capture:card-offer-before"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "label": "영상의 구매 흐름 전 상품",
+      "state": {
+        "level": null,
+        "energy": 1,
+        "gems": 1474,
+        "coins": 210
+      },
+      "remainingTime": {
+        "label": "3시간41분",
+        "seconds": 13260
+      },
+      "staticAnchorIds": [
+        "STATIC-selected-card-1"
+      ],
+      "unknowns": [
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "selected-card:card-result",
+      "typeId": "selected-card",
+      "milestoneId": "card-result",
+      "sourceId": "GH-V0121",
+      "atSeconds": 25.5,
+      "mediaKeys": [
+        "capture:card-result-after",
+        "capture:card-result-motion"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "label": "4성 신규 카드 결과",
+      "state": {
+        "level": null,
+        "energy": 801,
+        "gems": 2074,
+        "coins": 210
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-selected-card-1"
+      ],
+      "unknowns": [
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "selected-card:card-wallet",
+      "typeId": "selected-card",
+      "milestoneId": "card-wallet",
+      "sourceId": "GH-V0121",
+      "atSeconds": 26.5,
+      "mediaKeys": [
+        "capture:card-wallet-after",
+        "capture:card-result-motion"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "label": "결과 뒤 안정된 재화",
+      "state": {
+        "level": null,
+        "energy": 801,
+        "gems": 2074,
+        "coins": 210
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-selected-card-1"
+      ],
+      "unknowns": [
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "low-energy:low-before",
+      "typeId": "low-energy",
+      "milestoneId": "low-before",
+      "sourceId": "GH-V0047",
+      "atSeconds": 20.0,
+      "mediaKeys": [
+        "capture:low-energy-before"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+      "label": "생성 구간 전 에너지41",
+      "state": {
+        "level": null,
+        "energy": 41,
+        "gems": 39,
+        "coins": 23
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-low-energy-1",
+        "STATIC-low-energy-2",
+        "STATIC-low-energy-3"
+      ],
+      "unknowns": [
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "low-energy:low-generated",
+      "typeId": "low-energy",
+      "milestoneId": "low-generated",
+      "sourceId": "GH-V0047",
+      "atSeconds": 25.0,
+      "mediaKeys": [
+        "effect:generate"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+      "label": "산출물과 에너지21",
+      "state": {
+        "level": null,
+        "energy": 21,
+        "gems": 39,
+        "coins": 23
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-low-energy-1",
+        "STATIC-low-energy-2",
+        "STATIC-low-energy-3"
+      ],
+      "unknowns": [
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "low-energy:low-full",
+      "typeId": "low-energy",
+      "milestoneId": "low-full",
+      "sourceId": "GH-V0047",
+      "atSeconds": 30.0,
+      "mediaKeys": [
+        "capture:board-full-energy1"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+      "label": "에너지1·보드 가득 참",
+      "state": {
+        "level": null,
+        "energy": 1,
+        "gems": 39,
+        "coins": 23
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-low-energy-1",
+        "STATIC-low-energy-2",
+        "STATIC-low-energy-3"
+      ],
+      "unknowns": [
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "low-energy:low-still-board",
+      "typeId": "low-energy",
+      "milestoneId": "low-still-board",
+      "sourceId": "GH-V0047",
+      "atSeconds": 36.0,
+      "mediaKeys": [
+        "capture:low-energy-popup-motion"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+      "label": "에너지1 상태에서 계속되는 보드",
+      "state": {
+        "level": null,
+        "energy": 1,
+        "gems": 39,
+        "coins": 23
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-low-energy-1",
+        "STATIC-low-energy-2",
+        "STATIC-low-energy-3"
+      ],
+      "unknowns": [
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "low-energy:low-popup",
+      "typeId": "low-energy",
+      "milestoneId": "low-popup",
+      "sourceId": "GH-V0047",
+      "atSeconds": 36.5,
+      "mediaKeys": [
+        "capture:low-energy-popup-motion"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+      "label": "순차 충전창 표시",
+      "state": {
+        "level": null,
+        "energy": 1,
+        "gems": 39,
+        "coins": 23
+      },
+      "remainingTime": {
+        "label": "6시간38분",
+        "seconds": 23880
+      },
+      "staticAnchorIds": [
+        "STATIC-low-energy-1",
+        "STATIC-low-energy-2",
+        "STATIC-low-energy-3"
+      ],
+      "unknowns": [
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "card-fever:fever-help",
+      "typeId": "card-fever",
+      "milestoneId": "fever-help",
+      "sourceId": "GH-S0127",
+      "atSeconds": null,
+      "mediaKeys": [
+        "capture:card-fever"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "052a8159635bf2f8de9a55050fd397d232dbbd3c85b133ed3ea060146284c757",
+      "label": "주문 완료 시 두 배 안내",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "unknowns": [
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "card-fever:fever-active",
+      "typeId": "card-fever",
+      "milestoneId": "fever-active",
+      "sourceId": "GH-S0128",
+      "atSeconds": null,
+      "mediaKeys": [
+        "capture:fever-active"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "b080b971a616ae1d65c76664c07e5bdcaa18076dbb74b5c3049d5b9e7193b006",
+      "label": "활성 보드와 남은 시간",
+      "state": {
+        "level": 74,
+        "energy": 12,
+        "gems": 107,
+        "coins": 334
+      },
+      "remainingTime": {
+        "label": "29분56초",
+        "seconds": 1796
+      },
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "unknowns": [
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "boost-discount:boost1",
+      "typeId": "boost-discount",
+      "milestoneId": "boost1",
+      "sourceId": "GH-V0088",
+      "atSeconds": 3.83,
+      "mediaKeys": [],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "label": "별도 영상의 부스터 비활성",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-boost-discount-1",
+        "STATIC-boost-discount-2"
+      ],
+      "unknowns": [
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "boost-discount:boost2",
+      "typeId": "boost-discount",
+      "milestoneId": "boost2",
+      "sourceId": "GH-V0088",
+      "atSeconds": 7.11,
+      "mediaKeys": [],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "label": "별도 영상의 두 배 표시",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-boost-discount-1",
+        "STATIC-boost-discount-2"
+      ],
+      "unknowns": [
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "boost-discount:boost4",
+      "typeId": "boost-discount",
+      "milestoneId": "boost4",
+      "sourceId": "GH-V0088",
+      "atSeconds": 8.75,
+      "mediaKeys": [],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "label": "별도 영상의 네 배 활성 안내",
+      "state": {
+        "level": null,
+        "energy": null,
+        "gems": null,
+        "coins": null
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-boost-discount-1",
+        "STATIC-boost-discount-2"
+      ],
+      "unknowns": [
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "boost-discount:boost8-sale",
+      "typeId": "boost-discount",
+      "milestoneId": "boost8-sale",
+      "sourceId": "GH-S0377",
+      "atSeconds": null,
+      "mediaKeys": [
+        "effect:bubble"
+      ],
+      "evidenceType": "observed-user-capture",
+      "originalSha256": "8f05219a1384b908e8b56d576c8cb41fe96acff5f0953c29319d7f44f3994ea8",
+      "label": "×8과 할인 버블2개",
+      "state": {
+        "level": 164,
+        "energy": 5,
+        "gems": 72,
+        "coins": 185
+      },
+      "remainingTime": null,
+      "staticAnchorIds": [
+        "STATIC-boost-discount-1",
+        "STATIC-boost-discount-2"
+      ],
+      "unknowns": [
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "coverageCredit": false,
+      "version": null,
+      "capturedAt": null
+    }
+  ],
+  "observations": [
+    {
+      "id": "OBS-LOW-APPEAR",
+      "typeId": "low-energy",
+      "questionId": "first-exposure",
+      "sourceId": "GH-V0047",
+      "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+      "sourceRange": {
+        "startSeconds": 36,
+        "endSeconds": 36.5
+      },
+      "atSeconds": 36,
+      "mediaKeys": [
+        "capture:low-energy-popup-motion"
+      ],
+      "contextPointIds": [
+        "low-energy:low-still-board",
+        "low-energy:low-popup"
+      ],
+      "staticAnchorIds": [
+        "STATIC-low-energy-1",
+        "STATIC-low-energy-2",
+        "STATIC-low-energy-3"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-timeline-milestones",
+      "reviewSegment": null,
+      "claim": "같은 영상의 에너지1 보드 뒤 36.5초에 순차 충전창이 보인다. 파일 안 등장 전후만 확인했다.",
+      "unknowns": [
+        "계정 생애 최초 노출·자동 호출·HUD 진입 중 원인 미확인",
+        "현재 생성 비용·가격40의 서버/진행 상태 미확인"
+      ],
+      "credit": "partial",
+      "creditedQuestionId": "first-exposure",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "OBS-LEVEL-APPEAR",
+      "typeId": "level-offer",
+      "questionId": "first-exposure",
+      "sourceId": "GH-V0107",
+      "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+      "sourceRange": {
+        "startSeconds": 0,
+        "endSeconds": 5.54
+      },
+      "atSeconds": 0,
+      "mediaKeys": [
+        "capture:level-offer-transition"
+      ],
+      "contextPointIds": [
+        "level-offer:level113-before",
+        "level-offer:level113-reward",
+        "level-offer:level113-offer",
+        "level-offer:level113-offer-later"
+      ],
+      "staticAnchorIds": [
+        "STATIC-level-offer-1",
+        "STATIC-level-offer-2"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-timeline-milestones",
+      "reviewSegment": null,
+      "claim": "113레벨 보상창과 상자 이동 뒤 같은 레벨 상품이 이어진다. 자동 팝업인지는 미확인이다.",
+      "unknowns": [
+        "계정 생애 최초 노출·정확한 호출 입력 미확인",
+        "전체 레벨·코호트 정책 미확인"
+      ],
+      "credit": "partial",
+      "creditedQuestionId": "first-exposure",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "OBS-LOW-CLOSE",
+      "typeId": "low-energy",
+      "questionId": "close",
+      "sourceId": "GH-V0047",
+      "originalSha256": "2a72aeb50c2affceb82c1d599c256d7b83cd86a0ee6b2c6a54718420ee6195e8",
+      "sourceRange": {
+        "startSeconds": 38.6,
+        "endSeconds": 39.975
+      },
+      "atSeconds": 38.6,
+      "mediaKeys": [],
+      "contextPointIds": [],
+      "staticAnchorIds": [
+        "STATIC-low-energy-1",
+        "STATIC-low-energy-2",
+        "STATIC-low-energy-3"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-bounded-visual-review",
+      "reviewSegment": {
+        "dataset": "media-audit",
+        "sourceId": "GH-V0047",
+        "segmentIndex": 5
+      },
+      "claim": "기존 시간순 검토에서 수령 없이 충전창이 닫히고 보드로 복귀하는 구간을 확인했다.",
+      "unknowns": [
+        "정확한 닫기 포인터·마지막 1.375초 이후 후속 제안 미확인"
+      ],
+      "credit": "observed-scoped",
+      "creditedQuestionId": "close",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "OBS-CHALLENGE-CLOSE",
+      "typeId": "energy-challenge",
+      "questionId": "close",
+      "sourceId": "GH-V0091",
+      "originalSha256": "c63e0afceaf5ab5252b6b422ae9bc91934aa20d71e232094d0413020d08e21b0",
+      "sourceRange": {
+        "startSeconds": 7,
+        "endSeconds": 7.518
+      },
+      "atSeconds": 7,
+      "mediaKeys": [],
+      "contextPointIds": [],
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-bounded-visual-review",
+      "reviewSegment": {
+        "dataset": "media-audit",
+        "sourceId": "GH-V0091",
+        "segmentIndex": 2
+      },
+      "claim": "보상 트랙이 흐려지며 맵으로 돌아가는 닫힘 전환이 시간순 표본에 기록되어 있다.",
+      "unknowns": [
+        "0.5초 표본의 대략적 경계이며 입력·후속 팝업 판정 미확인"
+      ],
+      "credit": "observed-scoped",
+      "creditedQuestionId": "close",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "OBS-LEVEL-CLOSE",
+      "typeId": "level-offer",
+      "questionId": "close",
+      "sourceId": "GH-V0107",
+      "originalSha256": "72fb2f929f8c50dbc32cc22a8e033f0a15343cbabcee546f50b802536994d22a",
+      "sourceRange": {
+        "startSeconds": 12.8,
+        "endSeconds": 15.821
+      },
+      "atSeconds": 12.8,
+      "mediaKeys": [],
+      "contextPointIds": [],
+      "staticAnchorIds": [
+        "STATIC-level-offer-1",
+        "STATIC-level-offer-2"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-bounded-visual-review",
+      "reviewSegment": {
+        "dataset": "media-audit",
+        "sourceId": "GH-V0107",
+        "segmentIndex": 3
+      },
+      "claim": "도움말과 상품창을 경유해 맵으로 복귀한다. 이 구간은 재노출 완료로도 계산하지 않는다.",
+      "unknowns": [
+        "도움말 닫기와 상품 닫기의 개별 입력/잠금 시간 미확인"
+      ],
+      "credit": "observed-scoped",
+      "creditedQuestionId": "close",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "OBS-LEVEL-REAPPEAR",
+      "typeId": "level-offer",
+      "questionId": "reappearance",
+      "sourceId": "GH-V0003",
+      "originalSha256": "86d2e208eb548149b4abed9f2e657c78f7936f1c2fd167b30340d9269fa7bf5a",
+      "sourceRange": {
+        "startSeconds": 2.4,
+        "endSeconds": 5.2
+      },
+      "atSeconds": 2.4,
+      "mediaKeys": [
+        "bm-observation:level-reappears:video",
+        "bm-observation:level-reappears:before",
+        "bm-observation:level-reappears:map",
+        "bm-observation:level-reappears:after"
+      ],
+      "contextPointIds": [],
+      "staticAnchorIds": [
+        "STATIC-level-offer-1",
+        "STATIC-level-offer-2"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-bounded-visual-review",
+      "reviewSegment": {
+        "dataset": "media-audit",
+        "sourceId": "GH-V0003",
+        "segmentIndex": 0
+      },
+      "claim": "65레벨 상품→맵→같은 디자인 상품 UI가 보인다. 2.4초 표본의59분26초와4.6초의59분33초는 같은 상품의 연속 감소로 해석하지 않는다.",
+      "unknowns": [
+        "자동 재노출인지 수동 재진입인지 미확인",
+        "같은 SKU/서버 그룹이라는 식별값 미확인",
+        "앞뒤 타이머 표시는59분26초→59분33초다. 편집 여부·게임/서버 시각 연속성·변화 원인은 미확인",
+        "65레벨 사례를 113레벨 표본과 같은 상품으로 합산하지 않음"
+      ],
+      "credit": "observed-scoped",
+      "creditedQuestionId": "reappearance",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null,
+      "timelineContinuityConfirmed": false,
+      "remainingTimeSamples": [
+        {
+          "atSeconds": 2.4,
+          "label": "59분26초",
+          "seconds": 3566
+        },
+        {
+          "atSeconds": 4.6,
+          "label": "59분33초",
+          "seconds": 3573
+        }
+      ]
+    },
+    {
+      "id": "OBS-CARD-REAPPEAR",
+      "typeId": "selected-card",
+      "questionId": "reappearance",
+      "sourceId": "GH-V0121",
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "sourceRange": {
+        "startSeconds": 2.8,
+        "endSeconds": 6.2
+      },
+      "atSeconds": 2.8,
+      "mediaKeys": [
+        "bm-observation:card-reappears:video",
+        "bm-observation:card-reappears:before",
+        "bm-observation:card-reappears:map",
+        "bm-observation:card-reappears:after"
+      ],
+      "contextPointIds": [],
+      "staticAnchorIds": [
+        "STATIC-selected-card-1"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-bounded-visual-review",
+      "reviewSegment": {
+        "dataset": "media-audit",
+        "sourceId": "GH-V0121",
+        "segmentIndex": 1
+      },
+      "claim": "특선 카드 상품→맵→같은 디자인의 특선 카드 상품 순서가 같은 파일에서 보인다.",
+      "unknowns": [
+        "자동 재노출·동일 SKU·실제 호출 입력 미확인",
+        "한 번의 파일 내 재진입이며 재노출 빈도/쿨다운을 산출하지 않음"
+      ],
+      "credit": "observed-scoped",
+      "creditedQuestionId": "reappearance",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "OBS-CHAIN-OUTCOME",
+      "typeId": "energy-chain",
+      "questionId": "after-purchase",
+      "sourceId": "GH-V0030",
+      "originalSha256": "649ec80f8a2b2521367c4ae4f28a9126db773afbe57d2febbbcebccd86d19208",
+      "sourceRange": {
+        "startSeconds": 5.5,
+        "endSeconds": 19
+      },
+      "atSeconds": 5.5,
+      "mediaKeys": [
+        "capture:energy-chain",
+        "capture:chain-before",
+        "capture:chain-after"
+      ],
+      "contextPointIds": [
+        "energy-chain:chain-before",
+        "energy-chain:chain-20",
+        "energy-chain:chain-green",
+        "energy-chain:chain-free15",
+        "energy-chain:chain-40",
+        "energy-chain:chain-blue",
+        "energy-chain:chain-free20",
+        "energy-chain:chain-80",
+        "energy-chain:chain-after"
+      ],
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1",
+        "STATIC-energy-chain-2"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-timeline-milestones",
+      "reviewSegment": null,
+      "claim": "같은 파일에서 gem 단계·무료 수령이 진행되고 에너지2→237, 젬719→659가 보인다. 전체 차이는 +235/-60이다.",
+      "unknowns": [
+        "실제 입력 이벤트·카드팩 내용·80젬 이후 정책 미확인",
+        "이 자료를 닫기나 재노출의 별도 완료로 다시 세지 않음"
+      ],
+      "credit": "observed-scoped",
+      "creditedQuestionId": "after-purchase",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "OBS-CHALLENGE-OUTCOME",
+      "typeId": "energy-challenge",
+      "questionId": "after-purchase",
+      "sourceId": "GH-V0097",
+      "originalSha256": "2f2142b05ec16736d1f8fe18e8a0fbbd261c51ed0ed3eb4f5499016afb7e0aba",
+      "sourceRange": {
+        "startSeconds": 15.5,
+        "endSeconds": 36.5
+      },
+      "atSeconds": 15.5,
+      "mediaKeys": [
+        "capture:challenge-collect",
+        "capture:challenge-after"
+      ],
+      "contextPointIds": [
+        "energy-challenge:challenge-before",
+        "energy-challenge:challenge-claim",
+        "energy-challenge:challenge-after"
+      ],
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-timeline-milestones",
+      "reviewSegment": null,
+      "claim": "녹화된 외부 구매 흐름 이후 구매 버튼이 사라지고 연속 수령·도장·에너지1251 상태가 보인다. 0초의 에너지1은 비교 기준 표본이다.",
+      "unknowns": [
+        "분석자의 결제 실행이 아니며 영수증·서버 지급 기록 검증 없음",
+        "개별 보상 전체 합계 대조 미완료"
+      ],
+      "credit": "observed-scoped",
+      "creditedQuestionId": "after-purchase",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "OBS-TOWER-OUTCOME",
+      "typeId": "reward-tower",
+      "questionId": "after-purchase",
+      "sourceId": "GH-V0123",
+      "originalSha256": "bac053c59871e04f46f09940998a9d833255dfd25d19f7639a1d1618accd0b4d",
+      "sourceRange": {
+        "startSeconds": 17,
+        "endSeconds": 47.39
+      },
+      "atSeconds": 17,
+      "mediaKeys": [
+        "capture:tower-reward-motion",
+        "capture:tower-6500-stable",
+        "capture:tower-16000"
+      ],
+      "contextPointIds": [
+        "reward-tower:tower-repeat",
+        "reward-tower:tower-card",
+        "reward-tower:tower-16000"
+      ],
+      "staticAnchorIds": [],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-timeline-milestones",
+      "reviewSegment": null,
+      "claim": "녹화된 구매 흐름 후 수령 체크와 현재 가격이 바뀐다. 같은 파일의 6500원 표본 이후 16000원이 보인다.",
+      "unknowns": [
+        "정확한 SKU/모듈·총 결제 횟수/금액 검증 없음",
+        "V0125의49000원 표본을 앞 파일과 하나의 세션으로 잇지 않음"
+      ],
+      "credit": "observed-scoped",
+      "creditedQuestionId": "after-purchase",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "OBS-CARD-OUTCOME",
+      "typeId": "selected-card",
+      "questionId": "after-purchase",
+      "sourceId": "GH-V0121",
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "sourceRange": {
+        "startSeconds": 18.3,
+        "endSeconds": 26.8
+      },
+      "atSeconds": 18.3,
+      "mediaKeys": [
+        "capture:card-result-motion",
+        "capture:card-wallet-after"
+      ],
+      "contextPointIds": [
+        "selected-card:card-offer",
+        "selected-card:card-result",
+        "selected-card:card-wallet"
+      ],
+      "staticAnchorIds": [
+        "STATIC-selected-card-1"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-timeline-milestones",
+      "reviewSegment": null,
+      "claim": "구매 흐름 후 4성 신규 카드와 에너지801·젬2074가 보인다. 0초 비교 표본 대비 +800에너지/+600젬이다.",
+      "unknowns": [
+        "신규 후보별 확률·다른 보유 상태의 결과·서버 지급 영수증 미확인",
+        "0초는 맥락 기준이며 재진입 관측을 구매 증거로 재계산하지 않음"
+      ],
+      "credit": "observed-scoped",
+      "creditedQuestionId": "after-purchase",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    },
+    {
+      "id": "OBS-BOOST-COEXIST",
+      "typeId": "boost-discount",
+      "questionId": "competition",
+      "sourceId": "GH-S0377",
+      "originalSha256": "8f05219a1384b908e8b56d576c8cb41fe96acff5f0953c29319d7f44f3994ea8",
+      "sourceRange": null,
+      "atSeconds": null,
+      "mediaKeys": [
+        "effect:bubble"
+      ],
+      "contextPointIds": [
+        "boost-discount:boost8-sale"
+      ],
+      "staticAnchorIds": [
+        "STATIC-boost-discount-1",
+        "STATIC-boost-discount-2"
+      ],
+      "evidenceType": "observed-user-capture",
+      "reviewMethod": "reused-timeline-milestones",
+      "reviewSegment": null,
+      "claim": "한 정지 화면에서 ×8 버튼과 분홍 % 버블2개가 함께 보인다. 경쟁 팝업 후보의 선택/억제는 관측하지 않았다.",
+      "unknowns": [
+        "동시 적격 팝업 후보 집합·선택/억제 순서 미확인",
+        "동시 UI 표시를 팝업 우선순위 검증으로 계산하지 않음"
+      ],
+      "credit": "partial",
+      "creditedQuestionId": "competition",
+      "automaticExposureConfirmed": false,
+      "skuIdentityConfirmed": false,
+      "inputEventConfirmed": false,
+      "version": null,
+      "capturedAt": null
+    }
+  ],
+  "staticAnchors": [
+    {
+      "id": "STATIC-energy-chain-1",
+      "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+      "line_start": 616,
+      "line_end": 651,
+      "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+      "evidenceType": "static-code",
+      "interpretation": "ChainEnergy는 설정·필수 자원·운영요일·종료시각을 검사한다. 구매는 현재 step 일치와젬 소비 성공 후 보상을 지급하고 다음 step을 저장한다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "STATIC-energy-chain-2",
+      "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+      "line_start": 699,
+      "line_end": 727,
+      "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+      "evidenceType": "static-code",
+      "interpretation": "ChainEnergy는 설정·필수 자원·운영요일·종료시각을 검사한다. 구매는 현재 step 일치와젬 소비 성공 후 보상을 지급하고 다음 step을 저장한다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "STATIC-energy-challenge-1",
+      "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+      "line_start": 46,
+      "line_end": 70,
+      "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+      "evidenceType": "static-code",
+      "interpretation": "이 에너지 도전 화면을 특정 APK 활동 모듈과 직접 연결한 증거는 아직 없다. 일반 BaseActivityModel은 서버 설정이 없거나 시작 레벨을 통과하지 못하면 설정을 비운다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "STATIC-level-offer-1",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleLevelUpGiftModel.lua",
+      "line_start": 17,
+      "line_end": 31,
+      "sha256": "7c04b1d0cdc5da7820d5b34f02c204cd7b4da9cd4f2ba2f57aaaa9fa6d494db5",
+      "evidenceType": "static-code",
+      "interpretation": "BundleLevelUpGiftModel은 LevelUp 이벤트를 듣고 서버 levels 목록(없으면 모든 레벨)을 검사한 뒤 상품과 종료시각을 만든다. 상품 생성과 실제 창을 여는 입력은 구분해야 한다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "STATIC-level-offer-2",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleLevelUpGiftModel.lua",
+      "line_start": 87,
+      "line_end": 136,
+      "sha256": "7c04b1d0cdc5da7820d5b34f02c204cd7b4da9cd4f2ba2f57aaaa9fa6d494db5",
+      "evidenceType": "static-code",
+      "interpretation": "BundleLevelUpGiftModel은 LevelUp 이벤트를 듣고 서버 levels 목록(없으면 모든 레벨)을 검사한 뒤 상품과 종료시각을 만든다. 상품 생성과 실제 창을 여는 입력은 구분해야 한다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "STATIC-selected-card-1",
+      "path": "analysis/lua/Lua_Activity/CustomizeCard/Model/BundleCustomizeCardModel.lua",
+      "line_start": 419,
+      "line_end": 454,
+      "sha256": "7b791ed5d3e0374eb242d5824b55ada92aaecfb4fde5d3d7ee434aeb58ed52d4",
+      "evidenceType": "static-code",
+      "interpretation": "CustomizeCard 구매 성공 코드는 보유0인 후보를 모으고, 세트에 한 장만 남은 후보가 있으면 setOrder가 앞선 후보를 고른다. 그렇지 않으면 미보유 후보(없으면 전체 후보)에서 무작위 선택한다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "STATIC-low-energy-1",
+      "path": "analysis/lua/Lua_Core/Model/UserData/EnergyModel.lua",
+      "line_start": 232,
+      "line_end": 245,
+      "sha256": "ab93681b1aabc120fccae754436a24d4f819ef094fdb4964265dfd08508bc9b3",
+      "evidenceType": "static-code",
+      "interpretation": "OnLackEnergy는 주 에너지·강제 튜토리얼·IAP/기존 번들 상태를 검사하며 기본 충전은 ChainEnergy 활성 여부로 분기한다. 에너지 번들 새 생성에는 현재 에너지가1회 생성 비용보다 작은 조건 등도 있다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "STATIC-low-energy-2",
+      "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+      "line_start": 265,
+      "line_end": 286,
+      "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+      "evidenceType": "static-code",
+      "interpretation": "OnLackEnergy는 주 에너지·강제 튜토리얼·IAP/기존 번들 상태를 검사하며 기본 충전은 ChainEnergy 활성 여부로 분기한다. 에너지 번들 새 생성에는 현재 에너지가1회 생성 비용보다 작은 조건 등도 있다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "STATIC-low-energy-3",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+      "line_start": 166,
+      "line_end": 221,
+      "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+      "evidenceType": "static-code",
+      "interpretation": "OnLackEnergy는 주 에너지·강제 튜토리얼·IAP/기존 번들 상태를 검사하며 기본 충전은 ChainEnergy 활성 여부로 분기한다. 에너지 번들 새 생성에는 현재 에너지가1회 생성 비용보다 작은 조건 등도 있다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "STATIC-boost-discount-1",
+      "path": "analysis/lua/Lua_Activity/EnergyBoost/Model/EnergyBoostModel.lua",
+      "line_start": 147,
+      "line_end": 174,
+      "sha256": "04b21756c4d27708d0ce512096c05783ebeec6e2bc4ed250af7ce57c7fcee7dc",
+      "evidenceType": "static-code",
+      "interpretation": "APK의×8 활성 검사는 지원 모드와 서버 EnergyBoostEight 임계값을 요구한다. 버블 할인 비용은 할인값이 원가격보다 작고 BubbleSale 활동이 열렸을 때 선택된다. 화면의%만으로 실제 할인값을 복구할 수 없다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "STATIC-boost-discount-2",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemBubble.lua",
+      "line_start": 120,
+      "line_end": 132,
+      "sha256": "64538f4f1f56aec6b4b52e2479e93eb27375996c1ac22810dabeb29eef690e0c",
+      "evidenceType": "static-code",
+      "interpretation": "APK의×8 활성 검사는 지원 모드와 서버 EnergyBoostEight 임계값을 요구한다. 버블 할인 비용은 할인값이 원가격보다 작고 BubbleSale 활동이 열렸을 때 선택된다. 화면의%만으로 실제 할인값을 복구할 수 없다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-G009-1",
+      "path": "analysis/lua/Lua_Core/Model/UserData/EnergyModel.lua",
+      "line_start": 236,
+      "line_end": 240,
+      "sha256": "ab93681b1aabc120fccae754436a24d4f819ef094fdb4964265dfd08508bc9b3",
+      "evidenceType": "static-code",
+      "interpretation": "부족 시 Try2TriggerEnergyBundle이 새 상품을 만들지 못해도 기존 유효 번들은 별도 조회로 선노출될 수 있다. 후속 BundleEnergy는 popType==1 및 기존 유효 상품이 필요하다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-O001-2",
+      "path": "analysis/lua/Lua_Core/Model/GameModel.lua",
+      "line_start": 218,
+      "line_end": 231,
+      "sha256": "bd6fa5762db0db763133e6de133d36eb1289911d46590a080f183deee58d017c",
+      "evidenceType": "static-code",
+      "interpretation": "클라이언트는 계정·레벨·지역·언어와 보유 설정 MD5를 BLLogin에 보내고, 서버가 돌려준 그룹 표식과 config를 각각 보관·적용한다. 이 경로로 서버의 cohort 배정 공식을 복원할 수는 없다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-G009-5",
+      "path": "analysis/lua/Lua_Core/UI/Window/Bundle/BundleEnergyWindow.lua",
+      "line_start": 76,
+      "line_end": 85,
+      "sha256": "085f7780aa808b8356e56edaad970d508336fe3daa13c9d50ea864dbf2c2e346",
+      "evidenceType": "static-code",
+      "interpretation": "부족 시 Try2TriggerEnergyBundle이 새 상품을 만들지 못해도 기존 유효 번들은 별도 조회로 선노출될 수 있다. 후속 BundleEnergy는 popType==1 및 기존 유효 상품이 필요하다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-G004-4",
+      "path": "analysis/lua/Lua_Core/UI/Window/Shop/ChainEnergyBundleWindow.lua",
+      "line_start": 151,
+      "line_end": 159,
+      "sha256": "ceb6086c28752ee0a50d80b45fde955589a03a2f3e3ab65b309df325576977e1",
+      "evidenceType": "static-code",
+      "interpretation": "ChainEnergy는 현재 단계만 gem으로 소비하고 보상을 지급하며 마지막 단계에 도달하면 그 단계에 머문다. 이 코드에는 마지막 구매 뒤 품절 처리 분기가 없다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-G006-1",
+      "path": "analysis/lua/Lua_Activity/EnergyGemOffer/Model/EnergyGemOfferModel.lua",
+      "line_start": 32,
+      "line_end": 56,
+      "sha256": "e3b1898f91d8f8aee457048600ee8be16b8661485c0e2266472b13993815bd68",
+      "evidenceType": "static-code",
+      "interpretation": "EnergyGemOffer.times는 창 초기화 때 증가하는 일별 팝업 횟수와 비교된다. 일별 카운트 초기화는 LastPopTime을 지우지 않는다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-O007-4",
+      "path": "analysis/lua/Lua_Core/UI/Window/Bundle/BundlePopupHelper.lua",
+      "line_start": 113,
+      "line_end": 123,
+      "sha256": "6f795ec0e7b98225665cb2a813756bfc7eeba8fcc2c4658a3b79f69689c26cf0",
+      "evidenceType": "static-code",
+      "interpretation": "서버 그룹 popups는 일일 노출 제한이며 누락 시 기본 1, 0이면 자동 팝업 차단이다. general_conf_new의 confType=popup_max/param_int는 구간 제한이며 누락 또는 0 이하이면 해당 상한을 적용하지 않는다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-G004-1",
+      "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+      "line_start": 699,
+      "line_end": 726,
+      "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+      "evidenceType": "static-code",
+      "interpretation": "ChainEnergy는 현재 단계만 gem으로 소비하고 보상을 지급하며 마지막 단계에 도달하면 그 단계에 머문다. 이 코드에는 마지막 구매 뒤 품절 처리 분기가 없다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-G007-2",
+      "path": "analysis/lua/Lua_Activity/EnergyGemOffer/View/EnergyGemOfferWindow.lua",
+      "line_start": 71,
+      "line_end": 81,
+      "sha256": "e3bda1042c33f4ac38679e23b98f9a5602b52ae1f8879b85b800384a886770c3",
+      "evidenceType": "static-code",
+      "interpretation": "EnergyGemOffer의 3개 선택지 중 하나를 성공 구매하면 보상을 받은 뒤 일반 에너지 충전가격을 다음 단계로 갱신한다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-G003-2",
+      "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+      "line_start": 631,
+      "line_end": 651,
+      "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+      "evidenceType": "static-code",
+      "interpretation": "ChainEnergy는 후속 IAP ChainBundle과 다른 gem 충전 기능이다. 설정·리소스·요일·저장된 종료시각을 통과하면 기본 충전창을 대체하고 EnergyBundle 생성을 차단한다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-O005-2",
+      "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+      "line_start": 91,
+      "line_end": 123,
+      "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+      "evidenceType": "static-code",
+      "interpretation": "BaseActivityModel은 서버 레코드에서 id·일정을 직접 복사한다. sLv가 있고 현재 레벨보다 높을 때만 차단하며, 일정상 Started여도 리소스 미준비면 GetState는 Released를 반환할 수 있다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-G005-2",
+      "path": "analysis/lua/Lua_Core/UI/UIFramework/EnergyWindowPopupHelper.lua",
+      "line_start": 23,
+      "line_end": 29,
+      "sha256": "2417400ae4f77332e68bba0df5a94dfe56c49ae56385ea22a7a6cd9b974ebe2f",
+      "evidenceType": "static-code",
+      "interpretation": "NoEnergyGiftGem 비교에 쓰는 GetEnergyCostExcludeFree는 일반 충전가격과 현재 ChainEnergy 이후 첫 양수 단계가격 중 큰 값을 반환한다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-G010-3",
+      "path": "analysis/lua/Lua_Core/UI/Window/BuyEnergy/BuyEnergyWindow.lua",
+      "line_start": 24,
+      "line_end": 50,
+      "sha256": "8abf10ded55a7b1d6d2068d1d8b41b655bfad3075051a01c608f180b6844aa80",
+      "evidenceType": "static-code",
+      "interpretation": "BuyEnergyWindow는 조건을 만족하면 PassActivityEnergyTicketArea 패널을 비동기로 붙인다. 닫은 뒤의 오퍼 체인 이전에 존재하는 별도 교차판매 경로다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    },
+    {
+      "id": "BM-O007-8",
+      "path": "analysis/lua/Lua_Core/UI/UIFramework/PopupChain.lua",
+      "line_start": 411,
+      "line_end": 417,
+      "sha256": "6bedf13183b5f3d51fb9901bb82cf7e02465e5ad475713f5d7290b57e86bc5a0",
+      "evidenceType": "static-code",
+      "interpretation": "서버 그룹 popups는 일일 노출 제한이며 누락 시 기본 1, 0이면 자동 팝업 차단이다. general_conf_new의 confType=popup_max/param_int는 구간 제한이며 누락 또는 0 이하이면 해당 상한을 적용하지 않는다.",
+      "version": "4.10.5",
+      "captureObjectIdentityConfirmed": false
+    }
+  ],
+  "rows": [
+    {
+      "id": "energy-chain--first-exposure",
+      "typeId": "energy-chain",
+      "questionId": "first-exposure",
+      "status": "static-only",
+      "answer": "화면 상태 표본은 있지만 이 유형의 최초 노출 조건을 확정할 등장 전후·입력 기록은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "energy-chain:chain-before",
+        "energy-chain:chain-20",
+        "energy-chain:chain-green",
+        "energy-chain:chain-free15",
+        "energy-chain:chain-40",
+        "energy-chain:chain-blue",
+        "energy-chain:chain-free20",
+        "energy-chain:chain-80",
+        "energy-chain:chain-after"
+      ],
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G009-1",
+        "BM-O001-2"
+      ],
+      "codeScope": "type-linked",
+      "specificModelIdentified": true,
+      "unknowns": [
+        "녹화 안 등장 전후만 한정 확인한다. 계정 생애 최초·자동 트리거는 로그 없이는 확인하지 않는다.",
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-chain--close",
+      "typeId": "energy-chain",
+      "questionId": "close",
+      "status": "static-only",
+      "answer": "이 유형에 독립 배정한 닫기 전후 근거가 없다. 다른 질문에 배정한 같은 관측을 닫기 완료로 다시 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "energy-chain:chain-before",
+        "energy-chain:chain-20",
+        "energy-chain:chain-green",
+        "energy-chain:chain-free15",
+        "energy-chain:chain-40",
+        "energy-chain:chain-blue",
+        "energy-chain:chain-free20",
+        "energy-chain:chain-80",
+        "energy-chain:chain-after"
+      ],
+      "staticAnchorIds": [
+        "BM-G009-5",
+        "BM-G004-4"
+      ],
+      "generalStaticAnchorIds": [],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "창 소멸과 복귀 화면만 관측한다. 정확한 닫기 입력·후속 체인 호출 여부는 별도다.",
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-chain--reappearance",
+      "typeId": "energy-chain",
+      "questionId": "reappearance",
+      "status": "static-only",
+      "answer": "이 유형의 닫힘 뒤 같은 디자인 상품 재등장을 한정 확인한 독립 관측은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "energy-chain:chain-before",
+        "energy-chain:chain-20",
+        "energy-chain:chain-green",
+        "energy-chain:chain-free15",
+        "energy-chain:chain-40",
+        "energy-chain:chain-blue",
+        "energy-chain:chain-free20",
+        "energy-chain:chain-80",
+        "energy-chain:chain-after"
+      ],
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G006-1",
+        "BM-O007-4"
+      ],
+      "codeScope": "type-linked",
+      "specificModelIdentified": true,
+      "unknowns": [
+        "같은 파일의 상품→맵→상품만 한정 확인한다. 자동 재노출·동일 SKU·계정별 빈도는 확인하지 않는다.",
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-chain--after-purchase",
+      "typeId": "energy-chain",
+      "questionId": "after-purchase",
+      "status": "observed-scoped",
+      "answer": "같은 파일에서 gem 단계·무료 수령이 진행되고 에너지2→237, 젬719→659가 보인다. 전체 차이는 +235/-60이다.",
+      "observationIds": [
+        "OBS-CHAIN-OUTCOME"
+      ],
+      "contextPointIds": [
+        "energy-chain:chain-before",
+        "energy-chain:chain-20",
+        "energy-chain:chain-green",
+        "energy-chain:chain-free15",
+        "energy-chain:chain-40",
+        "energy-chain:chain-blue",
+        "energy-chain:chain-free20",
+        "energy-chain:chain-80",
+        "energy-chain:chain-after"
+      ],
+      "staticAnchorIds": [
+        "STATIC-energy-chain-2"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G004-1",
+        "BM-G007-2"
+      ],
+      "codeScope": "type-linked",
+      "specificModelIdentified": true,
+      "unknowns": [
+        "실제 입력 이벤트·카드팩 내용·80젬 이후 정책 미확인",
+        "이 자료를 닫기나 재노출의 별도 완료로 다시 세지 않음",
+        "과거 파일의 게임 화면 변화만 확인한다. 분석자의 결제 실행·영수증/서버 지급 검증은 아니다.",
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-chain--expiry",
+      "typeId": "energy-chain",
+      "questionId": "expiry",
+      "status": "static-only",
+      "answer": "이 유형의 타이머 0→종료/교체 연속 표본은 확보하지 못했다. 남은 시간과 감소 표시는 만료 전이로 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "energy-chain:chain-before",
+        "energy-chain:chain-20",
+        "energy-chain:chain-green",
+        "energy-chain:chain-free15",
+        "energy-chain:chain-40",
+        "energy-chain:chain-blue",
+        "energy-chain:chain-free20",
+        "energy-chain:chain-80",
+        "energy-chain:chain-after"
+      ],
+      "staticAnchorIds": [
+        "STATIC-energy-chain-1"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G003-2",
+        "BM-O005-2"
+      ],
+      "codeScope": "type-linked",
+      "specificModelIdentified": true,
+      "unknowns": [
+        "같은 상품이 유효하다가 종료 경계에 닿아 사라지거나 바뀌는 연속 근거가 필요하다.",
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-chain--competition",
+      "typeId": "energy-chain",
+      "questionId": "competition",
+      "status": "static-only",
+      "answer": "이 유형의 동시 적격 후보·선택/억제 결과는 관측하지 못했다. 정적 순서와 화면 공존만으로 완료하지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "energy-chain:chain-before",
+        "energy-chain:chain-20",
+        "energy-chain:chain-green",
+        "energy-chain:chain-free15",
+        "energy-chain:chain-40",
+        "energy-chain:chain-blue",
+        "energy-chain:chain-free20",
+        "energy-chain:chain-80",
+        "energy-chain:chain-after"
+      ],
+      "staticAnchorIds": [
+        "BM-G005-2",
+        "BM-G010-3",
+        "BM-O007-8"
+      ],
+      "generalStaticAnchorIds": [],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "동시에 적격인 후보와 실제 선택/억제 로그가 필요하다. 동시 UI 표시·앞뒤 창은 경쟁 우선순위 검증과 다르다.",
+        "보석80 이후 가격·끝·반복 규칙",
+        "실제 입력 이벤트",
+        "카드팩 내용과 앨범 반영",
+        "ChainEnergy 코드와 동일 런타임 객체인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-challenge--first-exposure",
+      "typeId": "energy-challenge",
+      "questionId": "first-exposure",
+      "status": "static-only",
+      "answer": "화면 상태 표본은 있지만 이 유형의 최초 노출 조건을 확정할 등장 전후·입력 기록은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "energy-challenge:challenge-locked",
+        "energy-challenge:challenge-before",
+        "energy-challenge:challenge-claim",
+        "energy-challenge:challenge-after"
+      ],
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G009-1",
+        "BM-O001-2"
+      ],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "녹화 안 등장 전후만 한정 확인한다. 계정 생애 최초·자동 트리거는 로그 없이는 확인하지 않는다.",
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-challenge--close",
+      "typeId": "energy-challenge",
+      "questionId": "close",
+      "status": "observed-scoped",
+      "answer": "보상 트랙이 흐려지며 맵으로 돌아가는 닫힘 전환이 시간순 표본에 기록되어 있다.",
+      "observationIds": [
+        "OBS-CHALLENGE-CLOSE"
+      ],
+      "contextPointIds": [
+        "energy-challenge:challenge-locked",
+        "energy-challenge:challenge-before",
+        "energy-challenge:challenge-claim",
+        "energy-challenge:challenge-after"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G009-5",
+        "BM-G004-4"
+      ],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "0.5초 표본의 대략적 경계이며 입력·후속 팝업 판정 미확인",
+        "창 소멸과 복귀 화면만 관측한다. 정확한 닫기 입력·후속 체인 호출 여부는 별도다.",
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-challenge--reappearance",
+      "typeId": "energy-challenge",
+      "questionId": "reappearance",
+      "status": "unconfirmed",
+      "answer": "이 유형의 닫힘 뒤 같은 디자인 상품 재등장을 한정 확인한 독립 관측은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "energy-challenge:challenge-locked",
+        "energy-challenge:challenge-before",
+        "energy-challenge:challenge-claim",
+        "energy-challenge:challenge-after"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G006-1",
+        "BM-O007-4"
+      ],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 파일의 상품→맵→상품만 한정 확인한다. 자동 재노출·동일 SKU·계정별 빈도는 확인하지 않는다.",
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-challenge--after-purchase",
+      "typeId": "energy-challenge",
+      "questionId": "after-purchase",
+      "status": "observed-scoped",
+      "answer": "녹화된 외부 구매 흐름 이후 구매 버튼이 사라지고 연속 수령·도장·에너지1251 상태가 보인다. 0초의 에너지1은 비교 기준 표본이다.",
+      "observationIds": [
+        "OBS-CHALLENGE-OUTCOME"
+      ],
+      "contextPointIds": [
+        "energy-challenge:challenge-locked",
+        "energy-challenge:challenge-before",
+        "energy-challenge:challenge-claim",
+        "energy-challenge:challenge-after"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G004-1",
+        "BM-G007-2"
+      ],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "분석자의 결제 실행이 아니며 영수증·서버 지급 기록 검증 없음",
+        "개별 보상 전체 합계 대조 미완료",
+        "과거 파일의 게임 화면 변화만 확인한다. 분석자의 결제 실행·영수증/서버 지급 검증은 아니다.",
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-challenge--expiry",
+      "typeId": "energy-challenge",
+      "questionId": "expiry",
+      "status": "static-only",
+      "answer": "이 유형의 타이머 0→종료/교체 연속 표본은 확보하지 못했다. 남은 시간과 감소 표시는 만료 전이로 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "energy-challenge:challenge-locked",
+        "energy-challenge:challenge-before",
+        "energy-challenge:challenge-claim",
+        "energy-challenge:challenge-after"
+      ],
+      "staticAnchorIds": [
+        "BM-G003-2",
+        "BM-O005-2"
+      ],
+      "generalStaticAnchorIds": [],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 상품이 유효하다가 종료 경계에 닿아 사라지거나 바뀌는 연속 근거가 필요하다.",
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "energy-challenge--competition",
+      "typeId": "energy-challenge",
+      "questionId": "competition",
+      "status": "unconfirmed",
+      "answer": "이 유형의 동시 적격 후보·선택/억제 결과는 관측하지 못했다. 정적 순서와 화면 공존만으로 완료하지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "energy-challenge:challenge-locked",
+        "energy-challenge:challenge-before",
+        "energy-challenge:challenge-claim",
+        "energy-challenge:challenge-after"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G005-2",
+        "BM-G010-3",
+        "BM-O007-8"
+      ],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "동시에 적격인 후보와 실제 선택/억제 로그가 필요하다. 동시 UI 표시·앞뒤 창은 경쟁 우선순위 검증과 다르다.",
+        "목표 전체·보상 합계 전수 검증",
+        "모든 계정의 고정 목표/가격",
+        "게스트 구매 전후 실시간 재현",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "reward-tower--first-exposure",
+      "typeId": "reward-tower",
+      "questionId": "first-exposure",
+      "status": "unconfirmed",
+      "answer": "화면 상태 표본은 있지만 이 유형의 최초 노출 조건을 확정할 등장 전후·입력 기록은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "reward-tower:tower-first",
+        "reward-tower:tower-repeat",
+        "reward-tower:tower-card",
+        "reward-tower:tower-16000",
+        "reward-tower:tower-other-start",
+        "reward-tower:tower-49000"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G009-1",
+        "BM-O001-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "녹화 안 등장 전후만 한정 확인한다. 계정 생애 최초·자동 트리거는 로그 없이는 확인하지 않는다.",
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "reward-tower--close",
+      "typeId": "reward-tower",
+      "questionId": "close",
+      "status": "unconfirmed",
+      "answer": "이 유형에 독립 배정한 닫기 전후 근거가 없다. 다른 질문에 배정한 같은 관측을 닫기 완료로 다시 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "reward-tower:tower-first",
+        "reward-tower:tower-repeat",
+        "reward-tower:tower-card",
+        "reward-tower:tower-16000",
+        "reward-tower:tower-other-start",
+        "reward-tower:tower-49000"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G009-5",
+        "BM-G004-4"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "창 소멸과 복귀 화면만 관측한다. 정확한 닫기 입력·후속 체인 호출 여부는 별도다.",
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "reward-tower--reappearance",
+      "typeId": "reward-tower",
+      "questionId": "reappearance",
+      "status": "unconfirmed",
+      "answer": "이 유형의 닫힘 뒤 같은 디자인 상품 재등장을 한정 확인한 독립 관측은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "reward-tower:tower-first",
+        "reward-tower:tower-repeat",
+        "reward-tower:tower-card",
+        "reward-tower:tower-16000",
+        "reward-tower:tower-other-start",
+        "reward-tower:tower-49000"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G006-1",
+        "BM-O007-4"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 파일의 상품→맵→상품만 한정 확인한다. 자동 재노출·동일 SKU·계정별 빈도는 확인하지 않는다.",
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "reward-tower--after-purchase",
+      "typeId": "reward-tower",
+      "questionId": "after-purchase",
+      "status": "observed-scoped",
+      "answer": "녹화된 구매 흐름 후 수령 체크와 현재 가격이 바뀐다. 같은 파일의 6500원 표본 이후 16000원이 보인다.",
+      "observationIds": [
+        "OBS-TOWER-OUTCOME"
+      ],
+      "contextPointIds": [
+        "reward-tower:tower-first",
+        "reward-tower:tower-repeat",
+        "reward-tower:tower-card",
+        "reward-tower:tower-16000",
+        "reward-tower:tower-other-start",
+        "reward-tower:tower-49000"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G004-1",
+        "BM-G007-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "정확한 SKU/모듈·총 결제 횟수/금액 검증 없음",
+        "V0125의49000원 표본을 앞 파일과 하나의 세션으로 잇지 않음",
+        "과거 파일의 게임 화면 변화만 확인한다. 분석자의 결제 실행·영수증/서버 지급 검증은 아니다.",
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "reward-tower--expiry",
+      "typeId": "reward-tower",
+      "questionId": "expiry",
+      "status": "unconfirmed",
+      "answer": "이 유형의 타이머 0→종료/교체 연속 표본은 확보하지 못했다. 남은 시간과 감소 표시는 만료 전이로 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "reward-tower:tower-first",
+        "reward-tower:tower-repeat",
+        "reward-tower:tower-card",
+        "reward-tower:tower-16000",
+        "reward-tower:tower-other-start",
+        "reward-tower:tower-49000"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G003-2",
+        "BM-O005-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 상품이 유효하다가 종료 경계에 닿아 사라지거나 바뀌는 연속 근거가 필요하다.",
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "reward-tower--competition",
+      "typeId": "reward-tower",
+      "questionId": "competition",
+      "status": "unconfirmed",
+      "answer": "이 유형의 동시 적격 후보·선택/억제 결과는 관측하지 못했다. 정적 순서와 화면 공존만으로 완료하지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "reward-tower:tower-first",
+        "reward-tower:tower-repeat",
+        "reward-tower:tower-card",
+        "reward-tower:tower-16000",
+        "reward-tower:tower-other-start",
+        "reward-tower:tower-49000"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G005-2",
+        "BM-G010-3",
+        "BM-O007-8"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "동시에 적격인 후보와 실제 선택/억제 로그가 필요하다. 동시 UI 표시·앞뒤 창은 경쟁 우선순위 검증과 다르다.",
+        "각 유료 입력의 확정 횟수·총 결제액",
+        "전체 층 구성과 확률",
+        "모든 계정에 동일한 가격 사다리인지",
+        "V0118의 ₩26,000 사례와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "theme-variants--first-exposure",
+      "typeId": "theme-variants",
+      "questionId": "first-exposure",
+      "status": "unconfirmed",
+      "answer": "화면 상태 표본은 있지만 이 유형의 최초 노출 조건을 확정할 등장 전후·입력 기록은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "theme-variants:bird14",
+        "theme-variants:bird24",
+        "theme-variants:bird60"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G009-1",
+        "BM-O001-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "녹화 안 등장 전후만 한정 확인한다. 계정 생애 최초·자동 트리거는 로그 없이는 확인하지 않는다.",
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "theme-variants--close",
+      "typeId": "theme-variants",
+      "questionId": "close",
+      "status": "unconfirmed",
+      "answer": "이 유형에 독립 배정한 닫기 전후 근거가 없다. 다른 질문에 배정한 같은 관측을 닫기 완료로 다시 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "theme-variants:bird14",
+        "theme-variants:bird24",
+        "theme-variants:bird60"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G009-5",
+        "BM-G004-4"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "창 소멸과 복귀 화면만 관측한다. 정확한 닫기 입력·후속 체인 호출 여부는 별도다.",
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "theme-variants--reappearance",
+      "typeId": "theme-variants",
+      "questionId": "reappearance",
+      "status": "unconfirmed",
+      "answer": "이 유형의 닫힘 뒤 같은 디자인 상품 재등장을 한정 확인한 독립 관측은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "theme-variants:bird14",
+        "theme-variants:bird24",
+        "theme-variants:bird60"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G006-1",
+        "BM-O007-4"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 파일의 상품→맵→상품만 한정 확인한다. 자동 재노출·동일 SKU·계정별 빈도는 확인하지 않는다.",
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "theme-variants--after-purchase",
+      "typeId": "theme-variants",
+      "questionId": "after-purchase",
+      "status": "unconfirmed",
+      "answer": "이 유형의 구매 흐름 후 상태 변화에 독립 배정한 근거가 없다. 가격·보상 화면만으로 구매 성공을 만들지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "theme-variants:bird14",
+        "theme-variants:bird24",
+        "theme-variants:bird60"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G004-1",
+        "BM-G007-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "과거 파일의 게임 화면 변화만 확인한다. 분석자의 결제 실행·영수증/서버 지급 검증은 아니다.",
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "theme-variants--expiry",
+      "typeId": "theme-variants",
+      "questionId": "expiry",
+      "status": "unconfirmed",
+      "answer": "이 유형의 타이머 0→종료/교체 연속 표본은 확보하지 못했다. 남은 시간과 감소 표시는 만료 전이로 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "theme-variants:bird14",
+        "theme-variants:bird24",
+        "theme-variants:bird60"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G003-2",
+        "BM-O005-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 상품이 유효하다가 종료 경계에 닿아 사라지거나 바뀌는 연속 근거가 필요하다.",
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "theme-variants--competition",
+      "typeId": "theme-variants",
+      "questionId": "competition",
+      "status": "unconfirmed",
+      "answer": "이 유형의 동시 적격 후보·선택/억제 결과는 관측하지 못했다. 정적 순서와 화면 공존만으로 완료하지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "theme-variants:bird14",
+        "theme-variants:bird24",
+        "theme-variants:bird60"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G005-2",
+        "BM-G010-3",
+        "BM-O007-8"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "동시에 적격인 후보와 실제 선택/억제 로그가 필요하다. 동시 UI 표시·앞뒤 창은 경쟁 우선순위 검증과 다르다.",
+        "계정군·결제 이력·서버 실험·진행도 중 무엇이 변형을 정하는지",
+        "한 계정/한 시점에서 동시 선택 가능했는지",
+        "실제 할인율의 비교 기준",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "level-offer--first-exposure",
+      "typeId": "level-offer",
+      "questionId": "first-exposure",
+      "status": "partial",
+      "answer": "113레벨 보상창과 상자 이동 뒤 같은 레벨 상품이 이어진다. 자동 팝업인지는 미확인이다.",
+      "observationIds": [
+        "OBS-LEVEL-APPEAR"
+      ],
+      "contextPointIds": [
+        "level-offer:level113-before",
+        "level-offer:level113-reward",
+        "level-offer:level113-offer",
+        "level-offer:level113-offer-later",
+        "level-offer:level113-help"
+      ],
+      "staticAnchorIds": [
+        "STATIC-level-offer-1",
+        "STATIC-level-offer-2"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G009-1",
+        "BM-O001-2"
+      ],
+      "codeScope": "type-linked",
+      "specificModelIdentified": true,
+      "unknowns": [
+        "계정 생애 최초 노출·정확한 호출 입력 미확인",
+        "전체 레벨·코호트 정책 미확인",
+        "녹화 안 등장 전후만 한정 확인한다. 계정 생애 최초·자동 트리거는 로그 없이는 확인하지 않는다.",
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "level-offer--close",
+      "typeId": "level-offer",
+      "questionId": "close",
+      "status": "observed-scoped",
+      "answer": "도움말과 상품창을 경유해 맵으로 복귀한다. 이 구간은 재노출 완료로도 계산하지 않는다.",
+      "observationIds": [
+        "OBS-LEVEL-CLOSE"
+      ],
+      "contextPointIds": [
+        "level-offer:level113-before",
+        "level-offer:level113-reward",
+        "level-offer:level113-offer",
+        "level-offer:level113-offer-later",
+        "level-offer:level113-help"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G009-5",
+        "BM-G004-4"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "도움말 닫기와 상품 닫기의 개별 입력/잠금 시간 미확인",
+        "창 소멸과 복귀 화면만 관측한다. 정확한 닫기 입력·후속 체인 호출 여부는 별도다.",
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "level-offer--reappearance",
+      "typeId": "level-offer",
+      "questionId": "reappearance",
+      "status": "observed-scoped",
+      "answer": "65레벨 상품→맵→같은 디자인 상품 UI가 보인다. 2.4초 표본의59분26초와4.6초의59분33초는 같은 상품의 연속 감소로 해석하지 않는다.",
+      "observationIds": [
+        "OBS-LEVEL-REAPPEAR"
+      ],
+      "contextPointIds": [
+        "level-offer:level113-before",
+        "level-offer:level113-reward",
+        "level-offer:level113-offer",
+        "level-offer:level113-offer-later",
+        "level-offer:level113-help"
+      ],
+      "staticAnchorIds": [
+        "BM-G006-1",
+        "BM-O007-4"
+      ],
+      "generalStaticAnchorIds": [],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "자동 재노출인지 수동 재진입인지 미확인",
+        "같은 SKU/서버 그룹이라는 식별값 미확인",
+        "앞뒤 타이머 표시는59분26초→59분33초다. 편집 여부·게임/서버 시각 연속성·변화 원인은 미확인",
+        "65레벨 사례를 113레벨 표본과 같은 상품으로 합산하지 않음",
+        "같은 파일의 상품→맵→상품만 한정 확인한다. 자동 재노출·동일 SKU·계정별 빈도는 확인하지 않는다.",
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "level-offer--after-purchase",
+      "typeId": "level-offer",
+      "questionId": "after-purchase",
+      "status": "unconfirmed",
+      "answer": "이 유형의 구매 흐름 후 상태 변화에 독립 배정한 근거가 없다. 가격·보상 화면만으로 구매 성공을 만들지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "level-offer:level113-before",
+        "level-offer:level113-reward",
+        "level-offer:level113-offer",
+        "level-offer:level113-offer-later",
+        "level-offer:level113-help"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G004-1",
+        "BM-G007-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "과거 파일의 게임 화면 변화만 확인한다. 분석자의 결제 실행·영수증/서버 지급 검증은 아니다.",
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "level-offer--expiry",
+      "typeId": "level-offer",
+      "questionId": "expiry",
+      "status": "static-only",
+      "answer": "이 유형의 타이머 0→종료/교체 연속 표본은 확보하지 못했다. 남은 시간과 감소 표시는 만료 전이로 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "level-offer:level113-before",
+        "level-offer:level113-reward",
+        "level-offer:level113-offer",
+        "level-offer:level113-offer-later",
+        "level-offer:level113-help"
+      ],
+      "staticAnchorIds": [
+        "STATIC-level-offer-2"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G003-2",
+        "BM-O005-2"
+      ],
+      "codeScope": "type-linked",
+      "specificModelIdentified": true,
+      "unknowns": [
+        "같은 상품이 유효하다가 종료 경계에 닿아 사라지거나 바뀌는 연속 근거가 필요하다.",
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "level-offer--competition",
+      "typeId": "level-offer",
+      "questionId": "competition",
+      "status": "unconfirmed",
+      "answer": "이 유형의 동시 적격 후보·선택/억제 결과는 관측하지 못했다. 정적 순서와 화면 공존만으로 완료하지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "level-offer:level113-before",
+        "level-offer:level113-reward",
+        "level-offer:level113-offer",
+        "level-offer:level113-offer-later",
+        "level-offer:level113-help"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G005-2",
+        "BM-G010-3",
+        "BM-O007-8"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "동시에 적격인 후보와 실제 선택/억제 로그가 필요하다. 동시 UI 표시·앞뒤 창은 경쟁 우선순위 검증과 다르다.",
+        "자동 팝업인지 사용자가 아이콘을 누른 것인지",
+        "모든 레벨의 노출 정책·최초 노출 지연",
+        "구매 이력/코호트와의 관계",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "selected-card--first-exposure",
+      "typeId": "selected-card",
+      "questionId": "first-exposure",
+      "status": "unconfirmed",
+      "answer": "화면 상태 표본은 있지만 이 유형의 최초 노출 조건을 확정할 등장 전후·입력 기록은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "selected-card:card-rule",
+        "selected-card:card-offer",
+        "selected-card:card-result",
+        "selected-card:card-wallet"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G009-1",
+        "BM-O001-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "녹화 안 등장 전후만 한정 확인한다. 계정 생애 최초·자동 트리거는 로그 없이는 확인하지 않는다.",
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "selected-card--close",
+      "typeId": "selected-card",
+      "questionId": "close",
+      "status": "unconfirmed",
+      "answer": "이 유형에 독립 배정한 닫기 전후 근거가 없다. 다른 질문에 배정한 같은 관측을 닫기 완료로 다시 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "selected-card:card-rule",
+        "selected-card:card-offer",
+        "selected-card:card-result",
+        "selected-card:card-wallet"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G009-5",
+        "BM-G004-4"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "창 소멸과 복귀 화면만 관측한다. 정확한 닫기 입력·후속 체인 호출 여부는 별도다.",
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "selected-card--reappearance",
+      "typeId": "selected-card",
+      "questionId": "reappearance",
+      "status": "observed-scoped",
+      "answer": "특선 카드 상품→맵→같은 디자인의 특선 카드 상품 순서가 같은 파일에서 보인다.",
+      "observationIds": [
+        "OBS-CARD-REAPPEAR"
+      ],
+      "contextPointIds": [
+        "selected-card:card-rule",
+        "selected-card:card-offer",
+        "selected-card:card-result",
+        "selected-card:card-wallet"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G006-1",
+        "BM-O007-4"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "자동 재노출·동일 SKU·실제 호출 입력 미확인",
+        "한 번의 파일 내 재진입이며 재노출 빈도/쿨다운을 산출하지 않음",
+        "같은 파일의 상품→맵→상품만 한정 확인한다. 자동 재노출·동일 SKU·계정별 빈도는 확인하지 않는다.",
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "selected-card--after-purchase",
+      "typeId": "selected-card",
+      "questionId": "after-purchase",
+      "status": "observed-scoped",
+      "answer": "구매 흐름 후 4성 신규 카드와 에너지801·젬2074가 보인다. 0초 비교 표본 대비 +800에너지/+600젬이다.",
+      "observationIds": [
+        "OBS-CARD-OUTCOME"
+      ],
+      "contextPointIds": [
+        "selected-card:card-rule",
+        "selected-card:card-offer",
+        "selected-card:card-result",
+        "selected-card:card-wallet"
+      ],
+      "staticAnchorIds": [
+        "STATIC-selected-card-1"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G004-1",
+        "BM-G007-2"
+      ],
+      "codeScope": "type-linked",
+      "specificModelIdentified": true,
+      "unknowns": [
+        "신규 후보별 확률·다른 보유 상태의 결과·서버 지급 영수증 미확인",
+        "0초는 맥락 기준이며 재진입 관측을 구매 증거로 재계산하지 않음",
+        "과거 파일의 게임 화면 변화만 확인한다. 분석자의 결제 실행·영수증/서버 지급 검증은 아니다.",
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "selected-card--expiry",
+      "typeId": "selected-card",
+      "questionId": "expiry",
+      "status": "unconfirmed",
+      "answer": "이 유형의 타이머 0→종료/교체 연속 표본은 확보하지 못했다. 남은 시간과 감소 표시는 만료 전이로 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "selected-card:card-rule",
+        "selected-card:card-offer",
+        "selected-card:card-result",
+        "selected-card:card-wallet"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G003-2",
+        "BM-O005-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 상품이 유효하다가 종료 경계에 닿아 사라지거나 바뀌는 연속 근거가 필요하다.",
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "selected-card--competition",
+      "typeId": "selected-card",
+      "questionId": "competition",
+      "status": "unconfirmed",
+      "answer": "이 유형의 동시 적격 후보·선택/억제 결과는 관측하지 못했다. 정적 순서와 화면 공존만으로 완료하지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "selected-card:card-rule",
+        "selected-card:card-offer",
+        "selected-card:card-result",
+        "selected-card:card-wallet"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G005-2",
+        "BM-G010-3",
+        "BM-O007-8"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "동시에 적격인 후보와 실제 선택/억제 로그가 필요하다. 동시 UI 표시·앞뒤 창은 경쟁 우선순위 검증과 다르다.",
+        "각 카드의 확률이 동일한지",
+        "여러 세트 완성 후보가 있을 때의 확률",
+        "다음1/3 단계 정책",
+        "다양한 보유 상태에서 실제 지급 결과 검증",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "low-energy--first-exposure",
+      "typeId": "low-energy",
+      "questionId": "first-exposure",
+      "status": "partial",
+      "answer": "같은 영상의 에너지1 보드 뒤 36.5초에 순차 충전창이 보인다. 파일 안 등장 전후만 확인했다.",
+      "observationIds": [
+        "OBS-LOW-APPEAR"
+      ],
+      "contextPointIds": [
+        "low-energy:low-before",
+        "low-energy:low-generated",
+        "low-energy:low-full",
+        "low-energy:low-still-board",
+        "low-energy:low-popup"
+      ],
+      "staticAnchorIds": [
+        "STATIC-low-energy-1",
+        "STATIC-low-energy-2",
+        "STATIC-low-energy-3"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G009-1",
+        "BM-O001-2"
+      ],
+      "codeScope": "type-linked",
+      "specificModelIdentified": true,
+      "unknowns": [
+        "계정 생애 최초 노출·자동 호출·HUD 진입 중 원인 미확인",
+        "현재 생성 비용·가격40의 서버/진행 상태 미확인",
+        "녹화 안 등장 전후만 한정 확인한다. 계정 생애 최초·자동 트리거는 로그 없이는 확인하지 않는다.",
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "low-energy--close",
+      "typeId": "low-energy",
+      "questionId": "close",
+      "status": "observed-scoped",
+      "answer": "기존 시간순 검토에서 수령 없이 충전창이 닫히고 보드로 복귀하는 구간을 확인했다.",
+      "observationIds": [
+        "OBS-LOW-CLOSE"
+      ],
+      "contextPointIds": [
+        "low-energy:low-before",
+        "low-energy:low-generated",
+        "low-energy:low-full",
+        "low-energy:low-still-board",
+        "low-energy:low-popup"
+      ],
+      "staticAnchorIds": [
+        "BM-G009-5",
+        "BM-G004-4"
+      ],
+      "generalStaticAnchorIds": [],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "정확한 닫기 포인터·마지막 1.375초 이후 후속 제안 미확인",
+        "창 소멸과 복귀 화면만 관측한다. 정확한 닫기 입력·후속 체인 호출 여부는 별도다.",
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "low-energy--reappearance",
+      "typeId": "low-energy",
+      "questionId": "reappearance",
+      "status": "static-only",
+      "answer": "이 유형의 닫힘 뒤 같은 디자인 상품 재등장을 한정 확인한 독립 관측은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "low-energy:low-before",
+        "low-energy:low-generated",
+        "low-energy:low-full",
+        "low-energy:low-still-board",
+        "low-energy:low-popup"
+      ],
+      "staticAnchorIds": [
+        "BM-G006-1",
+        "BM-O007-4"
+      ],
+      "generalStaticAnchorIds": [],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 파일의 상품→맵→상품만 한정 확인한다. 자동 재노출·동일 SKU·계정별 빈도는 확인하지 않는다.",
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "low-energy--after-purchase",
+      "typeId": "low-energy",
+      "questionId": "after-purchase",
+      "status": "static-only",
+      "answer": "이 유형의 구매 흐름 후 상태 변화에 독립 배정한 근거가 없다. 가격·보상 화면만으로 구매 성공을 만들지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "low-energy:low-before",
+        "low-energy:low-generated",
+        "low-energy:low-full",
+        "low-energy:low-still-board",
+        "low-energy:low-popup"
+      ],
+      "staticAnchorIds": [
+        "BM-G004-1",
+        "BM-G007-2"
+      ],
+      "generalStaticAnchorIds": [],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "과거 파일의 게임 화면 변화만 확인한다. 분석자의 결제 실행·영수증/서버 지급 검증은 아니다.",
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "low-energy--expiry",
+      "typeId": "low-energy",
+      "questionId": "expiry",
+      "status": "static-only",
+      "answer": "이 유형의 타이머 0→종료/교체 연속 표본은 확보하지 못했다. 남은 시간과 감소 표시는 만료 전이로 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "low-energy:low-before",
+        "low-energy:low-generated",
+        "low-energy:low-full",
+        "low-energy:low-still-board",
+        "low-energy:low-popup"
+      ],
+      "staticAnchorIds": [
+        "BM-G003-2",
+        "BM-O005-2"
+      ],
+      "generalStaticAnchorIds": [],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 상품이 유효하다가 종료 경계에 닿아 사라지거나 바뀌는 연속 근거가 필요하다.",
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "low-energy--competition",
+      "typeId": "low-energy",
+      "questionId": "competition",
+      "status": "static-only",
+      "answer": "이 유형의 동시 적격 후보·선택/억제 결과는 관측하지 못했다. 정적 순서와 화면 공존만으로 완료하지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "low-energy:low-before",
+        "low-energy:low-generated",
+        "low-energy:low-full",
+        "low-energy:low-still-board",
+        "low-energy:low-popup"
+      ],
+      "staticAnchorIds": [
+        "BM-G005-2",
+        "BM-G010-3",
+        "BM-O007-8"
+      ],
+      "generalStaticAnchorIds": [],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "동시에 적격인 후보와 실제 선택/억제 로그가 필요하다. 동시 UI 표시·앞뒤 창은 경쟁 우선순위 검증과 다르다.",
+        "마지막 생성 입력 횟수/비용/부스터 배율",
+        "자동 노출인지 HUD + 버튼 진입인지",
+        "가격40으로 시작한 이유",
+        "모든 부족 상태에서 동일 창이 나오는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "card-fever--first-exposure",
+      "typeId": "card-fever",
+      "questionId": "first-exposure",
+      "status": "static-only",
+      "answer": "화면 상태 표본은 있지만 이 유형의 최초 노출 조건을 확정할 등장 전후·입력 기록은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "card-fever:fever-help",
+        "card-fever:fever-active"
+      ],
+      "staticAnchorIds": [
+        "STATIC-energy-challenge-1"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G009-1",
+        "BM-O001-2"
+      ],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "녹화 안 등장 전후만 한정 확인한다. 계정 생애 최초·자동 트리거는 로그 없이는 확인하지 않는다.",
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "card-fever--close",
+      "typeId": "card-fever",
+      "questionId": "close",
+      "status": "unconfirmed",
+      "answer": "이 유형에 독립 배정한 닫기 전후 근거가 없다. 다른 질문에 배정한 같은 관측을 닫기 완료로 다시 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "card-fever:fever-help",
+        "card-fever:fever-active"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G009-5",
+        "BM-G004-4"
+      ],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "창 소멸과 복귀 화면만 관측한다. 정확한 닫기 입력·후속 체인 호출 여부는 별도다.",
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "card-fever--reappearance",
+      "typeId": "card-fever",
+      "questionId": "reappearance",
+      "status": "unconfirmed",
+      "answer": "이 유형의 닫힘 뒤 같은 디자인 상품 재등장을 한정 확인한 독립 관측은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "card-fever:fever-help",
+        "card-fever:fever-active"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G006-1",
+        "BM-O007-4"
+      ],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 파일의 상품→맵→상품만 한정 확인한다. 자동 재노출·동일 SKU·계정별 빈도는 확인하지 않는다.",
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "card-fever--after-purchase",
+      "typeId": "card-fever",
+      "questionId": "after-purchase",
+      "status": "unconfirmed",
+      "answer": "이 유형의 구매 흐름 후 상태 변화에 독립 배정한 근거가 없다. 가격·보상 화면만으로 구매 성공을 만들지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "card-fever:fever-help",
+        "card-fever:fever-active"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G004-1",
+        "BM-G007-2"
+      ],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "과거 파일의 게임 화면 변화만 확인한다. 분석자의 결제 실행·영수증/서버 지급 검증은 아니다.",
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "card-fever--expiry",
+      "typeId": "card-fever",
+      "questionId": "expiry",
+      "status": "static-only",
+      "answer": "이 유형의 타이머 0→종료/교체 연속 표본은 확보하지 못했다. 남은 시간과 감소 표시는 만료 전이로 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "card-fever:fever-help",
+        "card-fever:fever-active"
+      ],
+      "staticAnchorIds": [
+        "BM-G003-2",
+        "BM-O005-2"
+      ],
+      "generalStaticAnchorIds": [],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 상품이 유효하다가 종료 경계에 닿아 사라지거나 바뀌는 연속 근거가 필요하다.",
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "card-fever--competition",
+      "typeId": "card-fever",
+      "questionId": "competition",
+      "status": "unconfirmed",
+      "answer": "이 유형의 동시 적격 후보·선택/억제 결과는 관측하지 못했다. 정적 순서와 화면 공존만으로 완료하지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "card-fever:fever-help",
+        "card-fever:fever-active"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G005-2",
+        "BM-G010-3",
+        "BM-O007-8"
+      ],
+      "codeScope": "general-comparison",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "동시에 적격인 후보와 실제 선택/억제 로그가 필요하다. 동시 UI 표시·앞뒤 창은 경쟁 우선순위 검증과 다르다.",
+        "정확한 활성 조건·전체 기간",
+        "지급량 실제 전후 검증",
+        "모든 주문/카드팩에 적용되는지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "boost-discount--first-exposure",
+      "typeId": "boost-discount",
+      "questionId": "first-exposure",
+      "status": "static-only",
+      "answer": "화면 상태 표본은 있지만 이 유형의 최초 노출 조건을 확정할 등장 전후·입력 기록은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "boost-discount:boost1",
+        "boost-discount:boost2",
+        "boost-discount:boost4",
+        "boost-discount:boost8-sale"
+      ],
+      "staticAnchorIds": [
+        "STATIC-boost-discount-1"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G009-1",
+        "BM-O001-2"
+      ],
+      "codeScope": "type-linked",
+      "specificModelIdentified": true,
+      "unknowns": [
+        "녹화 안 등장 전후만 한정 확인한다. 계정 생애 최초·자동 트리거는 로그 없이는 확인하지 않는다.",
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "boost-discount--close",
+      "typeId": "boost-discount",
+      "questionId": "close",
+      "status": "unconfirmed",
+      "answer": "이 유형에 독립 배정한 닫기 전후 근거가 없다. 다른 질문에 배정한 같은 관측을 닫기 완료로 다시 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "boost-discount:boost1",
+        "boost-discount:boost2",
+        "boost-discount:boost4",
+        "boost-discount:boost8-sale"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G009-5",
+        "BM-G004-4"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "창 소멸과 복귀 화면만 관측한다. 정확한 닫기 입력·후속 체인 호출 여부는 별도다.",
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "boost-discount--reappearance",
+      "typeId": "boost-discount",
+      "questionId": "reappearance",
+      "status": "unconfirmed",
+      "answer": "이 유형의 닫힘 뒤 같은 디자인 상품 재등장을 한정 확인한 독립 관측은 없다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "boost-discount:boost1",
+        "boost-discount:boost2",
+        "boost-discount:boost4",
+        "boost-discount:boost8-sale"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G006-1",
+        "BM-O007-4"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 파일의 상품→맵→상품만 한정 확인한다. 자동 재노출·동일 SKU·계정별 빈도는 확인하지 않는다.",
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "boost-discount--after-purchase",
+      "typeId": "boost-discount",
+      "questionId": "after-purchase",
+      "status": "unconfirmed",
+      "answer": "이 유형의 구매 흐름 후 상태 변화에 독립 배정한 근거가 없다. 가격·보상 화면만으로 구매 성공을 만들지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "boost-discount:boost1",
+        "boost-discount:boost2",
+        "boost-discount:boost4",
+        "boost-discount:boost8-sale"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G004-1",
+        "BM-G007-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "과거 파일의 게임 화면 변화만 확인한다. 분석자의 결제 실행·영수증/서버 지급 검증은 아니다.",
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "boost-discount--expiry",
+      "typeId": "boost-discount",
+      "questionId": "expiry",
+      "status": "unconfirmed",
+      "answer": "이 유형의 타이머 0→종료/교체 연속 표본은 확보하지 못했다. 남은 시간과 감소 표시는 만료 전이로 세지 않는다.",
+      "observationIds": [],
+      "contextPointIds": [
+        "boost-discount:boost1",
+        "boost-discount:boost2",
+        "boost-discount:boost4",
+        "boost-discount:boost8-sale"
+      ],
+      "staticAnchorIds": [],
+      "generalStaticAnchorIds": [
+        "BM-G003-2",
+        "BM-O005-2"
+      ],
+      "codeScope": "not-established",
+      "specificModelIdentified": false,
+      "unknowns": [
+        "같은 상품이 유효하다가 종료 경계에 닿아 사라지거나 바뀌는 연속 근거가 필요하다.",
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    },
+    {
+      "id": "boost-discount--competition",
+      "typeId": "boost-discount",
+      "questionId": "competition",
+      "status": "partial",
+      "answer": "한 정지 화면에서 ×8 버튼과 분홍 % 버블2개가 함께 보인다. 경쟁 팝업 후보의 선택/억제는 관측하지 않았다.",
+      "observationIds": [
+        "OBS-BOOST-COEXIST"
+      ],
+      "contextPointIds": [
+        "boost-discount:boost1",
+        "boost-discount:boost2",
+        "boost-discount:boost4",
+        "boost-discount:boost8-sale"
+      ],
+      "staticAnchorIds": [
+        "STATIC-boost-discount-1",
+        "STATIC-boost-discount-2"
+      ],
+      "generalStaticAnchorIds": [
+        "BM-G005-2",
+        "BM-G010-3",
+        "BM-O007-8"
+      ],
+      "codeScope": "type-linked",
+      "specificModelIdentified": true,
+      "unknowns": [
+        "동시 적격 팝업 후보 집합·선택/억제 순서 미확인",
+        "동시 UI 표시를 팝업 우선순위 검증으로 계산하지 않음",
+        "동시에 적격인 후보와 실제 선택/억제 로그가 필요하다. 동시 UI 표시·앞뒤 창은 경쟁 우선순위 검증과 다르다.",
+        "8배 비용·산출물 레벨·드롭 확률",
+        "할인율·버블 가격/만료/무료 해제 규칙",
+        "APK4.10.5 설정과 같은 feature gate인지",
+        "APK 4.10.5 정적 코드와 비교할 독립 관측. 같은 빌드·계정·서버 설정임을 검증하지 않았다."
+      ],
+      "lifecycleComplete": false
+    }
+  ],
+  "mediaEntries": [
+    {
+      "sourceId": "GH-V0003",
+      "source": "GH-V0003 · 사용자 제공 과거 원본의 한정 발췌",
+      "originalSha256": "86d2e208eb548149b4abed9f2e657c78f7936f1c2fd167b30340d9269fa7bf5a",
+      "origin": "observed-user-capture",
+      "evidenceType": "observed-user-capture",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 2.4,
+        "endSeconds": 5.2,
+        "durationSeconds": 2.8000000000000003
+      },
+      "sourceTimePolicy": "원본 요청 구간과 정지 요청 시각. 원본 VFR/native PTS와의 미세 차이가 가능하며 정확한 입력 시각 측정이 아니다.",
+      "privacyReview": "게임 UI 구간만 선별. OS 상태/내비게이션 줄을 크롭하고 결제·알림 장면을 포함하지 않는다.",
+      "notes": [
+        "화면이 사라진 뒤 같은 디자인의 상품 UI가 다시 보이는 구간이다.",
+        "자동 재노출·동일 SKU·서버 쿨다운·전 계정 빈도는 미확인이다.",
+        "원속도 구간을 고정 fps로 재인코딩했다. 파생본의 프레임 길이를 원본 입력 지연 측정에 사용하지 않는다."
+      ],
+      "key": "bm-observation:level-reappears:video",
+      "kind": "video",
+      "src": "./assets/media/bm-observation/level-reappears.mp4",
+      "alt": "65레벨 상품·맵·상품 재등장 · 무음 영상",
+      "sha256": "8da3daacef46da6347766cd5250ca24380282ba319b25f1efdbdb8c7d16426e6",
+      "bytes": 328370,
+      "width": 360,
+      "height": 720,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 90,
+          "width": 1080,
+          "height": 2160
+        },
+        "width": 360,
+        "height": 720,
+        "fps": 15,
+        "speed": 1,
+        "muted": true,
+        "timingIsMeasurementSource": false
+      },
+      "poster": "./assets/media/bm-observation/level-reappears-poster.webp",
+      "posterSha256": "70c0bfff15c54098991b41fb0cb1e93a878b5e79aaf3560938dbd19777fb6e82",
+      "encodedVerification": {
+        "decodedAllFrames": true,
+        "decodedFrames": 42,
+        "decoderErrorCount": 0,
+        "audioStreams": 0,
+        "durationSeconds": 2.8,
+        "allEncodedFramesVisuallyReviewed": true
+      }
+    },
+    {
+      "sourceId": "GH-V0003",
+      "source": "GH-V0003 · 사용자 제공 과거 원본의 한정 발췌",
+      "originalSha256": "86d2e208eb548149b4abed9f2e657c78f7936f1c2fd167b30340d9269fa7bf5a",
+      "origin": "observed-user-capture",
+      "evidenceType": "observed-user-capture",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 2.4,
+        "endSeconds": 5.2,
+        "durationSeconds": 2.8000000000000003
+      },
+      "sourceTimePolicy": "원본 요청 구간과 정지 요청 시각. 원본 VFR/native PTS와의 미세 차이가 가능하며 정확한 입력 시각 측정이 아니다.",
+      "privacyReview": "게임 UI 구간만 선별. OS 상태/내비게이션 줄을 크롭하고 결제·알림 장면을 포함하지 않는다.",
+      "notes": [
+        "화면이 사라진 뒤 같은 디자인의 상품 UI가 다시 보이는 구간이다.",
+        "자동 재노출·동일 SKU·서버 쿨다운·전 계정 빈도는 미확인이다.",
+        "원속도 구간을 고정 fps로 재인코딩했다. 파생본의 프레임 길이를 원본 입력 지연 측정에 사용하지 않는다."
+      ],
+      "key": "bm-observation:level-reappears:gif",
+      "kind": "gif",
+      "src": "./assets/media/bm-observation/level-reappears.gif",
+      "alt": "65레벨 상품·맵·상품 재등장 · GIF 미리보기",
+      "sha256": "b16ebedaf61db12f7b72f3bac206c3d08ba7c5d391ae6a46fa3dafa337a4b344",
+      "bytes": 736140,
+      "width": 240,
+      "height": 480,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 90,
+          "width": 1080,
+          "height": 2160
+        },
+        "width": 240,
+        "height": 480,
+        "fps": 10,
+        "speed": 1,
+        "muted": true,
+        "timingIsMeasurementSource": false
+      },
+      "encodedVerification": {
+        "decodedAllFrames": true,
+        "decodedFrames": 28,
+        "decoderErrorCount": 0,
+        "allEncodedFramesVisuallyReviewed": true
+      }
+    },
+    {
+      "sourceId": "GH-V0003",
+      "source": "GH-V0003 · 사용자 제공 과거 원본의 한정 발췌",
+      "originalSha256": "86d2e208eb548149b4abed9f2e657c78f7936f1c2fd167b30340d9269fa7bf5a",
+      "origin": "observed-user-capture",
+      "evidenceType": "observed-user-capture",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 2.4,
+        "endSeconds": 5.2,
+        "durationSeconds": 2.8000000000000003
+      },
+      "sourceTimePolicy": "원본 요청 구간과 정지 요청 시각. 원본 VFR/native PTS와의 미세 차이가 가능하며 정확한 입력 시각 측정이 아니다.",
+      "privacyReview": "게임 UI 구간만 선별. OS 상태/내비게이션 줄을 크롭하고 결제·알림 장면을 포함하지 않는다.",
+      "notes": [
+        "화면이 사라진 뒤 같은 디자인의 상품 UI가 다시 보이는 구간이다.",
+        "자동 재노출·동일 SKU·서버 쿨다운·전 계정 빈도는 미확인이다.",
+        "원속도 구간을 고정 fps로 재인코딩했다. 파생본의 프레임 길이를 원본 입력 지연 측정에 사용하지 않는다."
+      ],
+      "key": "bm-observation:level-reappears:before",
+      "kind": "image",
+      "src": "./assets/media/bm-observation/level-reappears-before.webp",
+      "alt": "65레벨 상품·맵·상품 재등장 · before",
+      "sha256": "de26f5be6a3415783c92063ee26c236f4e9912f4621bcc941f17c12029e18de9",
+      "bytes": 26608,
+      "width": 360,
+      "height": 720,
+      "frameAtSeconds": 2.4,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 90,
+          "width": 1080,
+          "height": 2160
+        },
+        "width": 360,
+        "height": 720
+      }
+    },
+    {
+      "sourceId": "GH-V0003",
+      "source": "GH-V0003 · 사용자 제공 과거 원본의 한정 발췌",
+      "originalSha256": "86d2e208eb548149b4abed9f2e657c78f7936f1c2fd167b30340d9269fa7bf5a",
+      "origin": "observed-user-capture",
+      "evidenceType": "observed-user-capture",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 2.4,
+        "endSeconds": 5.2,
+        "durationSeconds": 2.8000000000000003
+      },
+      "sourceTimePolicy": "원본 요청 구간과 정지 요청 시각. 원본 VFR/native PTS와의 미세 차이가 가능하며 정확한 입력 시각 측정이 아니다.",
+      "privacyReview": "게임 UI 구간만 선별. OS 상태/내비게이션 줄을 크롭하고 결제·알림 장면을 포함하지 않는다.",
+      "notes": [
+        "화면이 사라진 뒤 같은 디자인의 상품 UI가 다시 보이는 구간이다.",
+        "자동 재노출·동일 SKU·서버 쿨다운·전 계정 빈도는 미확인이다.",
+        "원속도 구간을 고정 fps로 재인코딩했다. 파생본의 프레임 길이를 원본 입력 지연 측정에 사용하지 않는다."
+      ],
+      "key": "bm-observation:level-reappears:map",
+      "kind": "image",
+      "src": "./assets/media/bm-observation/level-reappears-map.webp",
+      "alt": "65레벨 상품·맵·상품 재등장 · map",
+      "sha256": "499b35d025bc2039769ed21268b427c9450fdafcd5696e873179fe301a91c785",
+      "bytes": 32756,
+      "width": 360,
+      "height": 720,
+      "frameAtSeconds": 3.4,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 90,
+          "width": 1080,
+          "height": 2160
+        },
+        "width": 360,
+        "height": 720
+      }
+    },
+    {
+      "sourceId": "GH-V0003",
+      "source": "GH-V0003 · 사용자 제공 과거 원본의 한정 발췌",
+      "originalSha256": "86d2e208eb548149b4abed9f2e657c78f7936f1c2fd167b30340d9269fa7bf5a",
+      "origin": "observed-user-capture",
+      "evidenceType": "observed-user-capture",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 2.4,
+        "endSeconds": 5.2,
+        "durationSeconds": 2.8000000000000003
+      },
+      "sourceTimePolicy": "원본 요청 구간과 정지 요청 시각. 원본 VFR/native PTS와의 미세 차이가 가능하며 정확한 입력 시각 측정이 아니다.",
+      "privacyReview": "게임 UI 구간만 선별. OS 상태/내비게이션 줄을 크롭하고 결제·알림 장면을 포함하지 않는다.",
+      "notes": [
+        "화면이 사라진 뒤 같은 디자인의 상품 UI가 다시 보이는 구간이다.",
+        "자동 재노출·동일 SKU·서버 쿨다운·전 계정 빈도는 미확인이다.",
+        "원속도 구간을 고정 fps로 재인코딩했다. 파생본의 프레임 길이를 원본 입력 지연 측정에 사용하지 않는다."
+      ],
+      "key": "bm-observation:level-reappears:after",
+      "kind": "image",
+      "src": "./assets/media/bm-observation/level-reappears-after.webp",
+      "alt": "65레벨 상품·맵·상품 재등장 · after",
+      "sha256": "c5319067bdb7294292cd4922c8c409cb6e06b8ff18ab28c1fa38a07a43fdb9f6",
+      "bytes": 27174,
+      "width": 360,
+      "height": 720,
+      "frameAtSeconds": 4.6,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 90,
+          "width": 1080,
+          "height": 2160
+        },
+        "width": 360,
+        "height": 720
+      }
+    },
+    {
+      "sourceId": "GH-V0121",
+      "source": "GH-V0121 · 사용자 제공 과거 원본의 한정 발췌",
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "origin": "observed-user-capture",
+      "evidenceType": "observed-user-capture",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 2.8,
+        "endSeconds": 6.2,
+        "durationSeconds": 3.4000000000000004
+      },
+      "sourceTimePolicy": "원본 요청 구간과 정지 요청 시각. 원본 VFR/native PTS와의 미세 차이가 가능하며 정확한 입력 시각 측정이 아니다.",
+      "privacyReview": "게임 UI 구간만 선별. OS 상태/내비게이션 줄을 크롭하고 결제·알림 장면을 포함하지 않는다.",
+      "notes": [
+        "화면이 사라진 뒤 같은 디자인의 상품 UI가 다시 보이는 구간이다.",
+        "자동 재노출·동일 SKU·서버 쿨다운·전 계정 빈도는 미확인이다.",
+        "원속도 구간을 고정 fps로 재인코딩했다. 파생본의 프레임 길이를 원본 입력 지연 측정에 사용하지 않는다."
+      ],
+      "key": "bm-observation:card-reappears:video",
+      "kind": "video",
+      "src": "./assets/media/bm-observation/card-reappears.mp4",
+      "alt": "특선 카드 상품·맵·상품 재진입 · 무음 영상",
+      "sha256": "5d975c055c60603db339ea2cdb81351738d30fb1e1d276e06caa0526cae5b412",
+      "bytes": 309230,
+      "width": 360,
+      "height": 720,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 90,
+          "width": 1080,
+          "height": 2160
+        },
+        "width": 360,
+        "height": 720,
+        "fps": 15,
+        "speed": 1,
+        "muted": true,
+        "timingIsMeasurementSource": false
+      },
+      "poster": "./assets/media/bm-observation/card-reappears-poster.webp",
+      "posterSha256": "6aecd4e7b12ca9893d05fa4c4778d62ba5df0b6679f2870fda378f88043c75db",
+      "encodedVerification": {
+        "decodedAllFrames": true,
+        "decodedFrames": 51,
+        "decoderErrorCount": 0,
+        "audioStreams": 0,
+        "durationSeconds": 3.4,
+        "allEncodedFramesVisuallyReviewed": true
+      }
+    },
+    {
+      "sourceId": "GH-V0121",
+      "source": "GH-V0121 · 사용자 제공 과거 원본의 한정 발췌",
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "origin": "observed-user-capture",
+      "evidenceType": "observed-user-capture",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 2.8,
+        "endSeconds": 6.2,
+        "durationSeconds": 3.4000000000000004
+      },
+      "sourceTimePolicy": "원본 요청 구간과 정지 요청 시각. 원본 VFR/native PTS와의 미세 차이가 가능하며 정확한 입력 시각 측정이 아니다.",
+      "privacyReview": "게임 UI 구간만 선별. OS 상태/내비게이션 줄을 크롭하고 결제·알림 장면을 포함하지 않는다.",
+      "notes": [
+        "화면이 사라진 뒤 같은 디자인의 상품 UI가 다시 보이는 구간이다.",
+        "자동 재노출·동일 SKU·서버 쿨다운·전 계정 빈도는 미확인이다.",
+        "원속도 구간을 고정 fps로 재인코딩했다. 파생본의 프레임 길이를 원본 입력 지연 측정에 사용하지 않는다."
+      ],
+      "key": "bm-observation:card-reappears:gif",
+      "kind": "gif",
+      "src": "./assets/media/bm-observation/card-reappears.gif",
+      "alt": "특선 카드 상품·맵·상품 재진입 · GIF 미리보기",
+      "sha256": "1b79c575b1b48d53a37b79894dc54123b64450c5723e3317d9b18bf6c30d2acc",
+      "bytes": 637323,
+      "width": 240,
+      "height": 480,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 90,
+          "width": 1080,
+          "height": 2160
+        },
+        "width": 240,
+        "height": 480,
+        "fps": 10,
+        "speed": 1,
+        "muted": true,
+        "timingIsMeasurementSource": false
+      },
+      "encodedVerification": {
+        "decodedAllFrames": true,
+        "decodedFrames": 34,
+        "decoderErrorCount": 0,
+        "allEncodedFramesVisuallyReviewed": true
+      }
+    },
+    {
+      "sourceId": "GH-V0121",
+      "source": "GH-V0121 · 사용자 제공 과거 원본의 한정 발췌",
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "origin": "observed-user-capture",
+      "evidenceType": "observed-user-capture",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 2.8,
+        "endSeconds": 6.2,
+        "durationSeconds": 3.4000000000000004
+      },
+      "sourceTimePolicy": "원본 요청 구간과 정지 요청 시각. 원본 VFR/native PTS와의 미세 차이가 가능하며 정확한 입력 시각 측정이 아니다.",
+      "privacyReview": "게임 UI 구간만 선별. OS 상태/내비게이션 줄을 크롭하고 결제·알림 장면을 포함하지 않는다.",
+      "notes": [
+        "화면이 사라진 뒤 같은 디자인의 상품 UI가 다시 보이는 구간이다.",
+        "자동 재노출·동일 SKU·서버 쿨다운·전 계정 빈도는 미확인이다.",
+        "원속도 구간을 고정 fps로 재인코딩했다. 파생본의 프레임 길이를 원본 입력 지연 측정에 사용하지 않는다."
+      ],
+      "key": "bm-observation:card-reappears:before",
+      "kind": "image",
+      "src": "./assets/media/bm-observation/card-reappears-before.webp",
+      "alt": "특선 카드 상품·맵·상품 재진입 · before",
+      "sha256": "90ad30f660a795c6b75d85f32112c0a195faa7fbcf684d2391333f7053eae9c8",
+      "bytes": 31026,
+      "width": 360,
+      "height": 720,
+      "frameAtSeconds": 3.0,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 90,
+          "width": 1080,
+          "height": 2160
+        },
+        "width": 360,
+        "height": 720
+      }
+    },
+    {
+      "sourceId": "GH-V0121",
+      "source": "GH-V0121 · 사용자 제공 과거 원본의 한정 발췌",
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "origin": "observed-user-capture",
+      "evidenceType": "observed-user-capture",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 2.8,
+        "endSeconds": 6.2,
+        "durationSeconds": 3.4000000000000004
+      },
+      "sourceTimePolicy": "원본 요청 구간과 정지 요청 시각. 원본 VFR/native PTS와의 미세 차이가 가능하며 정확한 입력 시각 측정이 아니다.",
+      "privacyReview": "게임 UI 구간만 선별. OS 상태/내비게이션 줄을 크롭하고 결제·알림 장면을 포함하지 않는다.",
+      "notes": [
+        "화면이 사라진 뒤 같은 디자인의 상품 UI가 다시 보이는 구간이다.",
+        "자동 재노출·동일 SKU·서버 쿨다운·전 계정 빈도는 미확인이다.",
+        "원속도 구간을 고정 fps로 재인코딩했다. 파생본의 프레임 길이를 원본 입력 지연 측정에 사용하지 않는다."
+      ],
+      "key": "bm-observation:card-reappears:map",
+      "kind": "image",
+      "src": "./assets/media/bm-observation/card-reappears-map.webp",
+      "alt": "특선 카드 상품·맵·상품 재진입 · map",
+      "sha256": "417923d971e46401a3a7b173f819875f8b17e2353414bc52f45ce3de5706948c",
+      "bytes": 46914,
+      "width": 360,
+      "height": 720,
+      "frameAtSeconds": 4.2,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 90,
+          "width": 1080,
+          "height": 2160
+        },
+        "width": 360,
+        "height": 720
+      }
+    },
+    {
+      "sourceId": "GH-V0121",
+      "source": "GH-V0121 · 사용자 제공 과거 원본의 한정 발췌",
+      "originalSha256": "5cbddc21ca7af7e57804f6ba8299694ca004524abfac6ccf1120b55f55ae649d",
+      "origin": "observed-user-capture",
+      "evidenceType": "observed-user-capture",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 2.8,
+        "endSeconds": 6.2,
+        "durationSeconds": 3.4000000000000004
+      },
+      "sourceTimePolicy": "원본 요청 구간과 정지 요청 시각. 원본 VFR/native PTS와의 미세 차이가 가능하며 정확한 입력 시각 측정이 아니다.",
+      "privacyReview": "게임 UI 구간만 선별. OS 상태/내비게이션 줄을 크롭하고 결제·알림 장면을 포함하지 않는다.",
+      "notes": [
+        "화면이 사라진 뒤 같은 디자인의 상품 UI가 다시 보이는 구간이다.",
+        "자동 재노출·동일 SKU·서버 쿨다운·전 계정 빈도는 미확인이다.",
+        "원속도 구간을 고정 fps로 재인코딩했다. 파생본의 프레임 길이를 원본 입력 지연 측정에 사용하지 않는다."
+      ],
+      "key": "bm-observation:card-reappears:after",
+      "kind": "image",
+      "src": "./assets/media/bm-observation/card-reappears-after.webp",
+      "alt": "특선 카드 상품·맵·상품 재진입 · after",
+      "sha256": "9f3c2be9cd6406007c3681576f899c93510ee58d2ab2958447077d4adf6ec3f5",
+      "bytes": 31134,
+      "width": 360,
+      "height": 720,
+      "frameAtSeconds": 5.4,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 90,
+          "width": 1080,
+          "height": 2160
+        },
+        "width": 360,
+        "height": 720
+      }
+    }
+  ],
+  "historicalRuntime": {
+    "evidenceType": "runtime-observed",
+    "evidenceId": "ev_656935934ca6eaaba1f1e0fa1baa0bf397416ab446270249856f82e22b6388ac",
+    "result": "기존 설치/검은 화면만 확인했고 플레이·BM 실행 관측은 확보하지 못했다. 사용자 지시로 LDPlayer 조사는 중단 상태다.",
+    "bmCoverageCredit": false
+  },
+  "reusedReviewContext": {
+    "decodedVideos": 113,
+    "inScopeSampledReviewVideos": 110,
+    "fullRealtimePlaybackVideos": 0,
+    "refinementStudies": 25,
+    "completionStudies": 2,
+    "interpretation": "디코드·표본/도구 검토 완료를 BM 최초/만료/경쟁 조건 검증으로 바꾸지 않는다."
+  },
+  "boundaries": [
+    "캡처 실행 버전·촬영일·계정 식별·실험 배정은 미확인이다.",
+    "보이는 상품명·가격·타이머는 해당 과거 화면 표본이다. 현행 서버값·노출 원인·빈도·전 계정 정책으로 일반화하지 않는다.",
+    "소스 파일/정적 모델의 구조가 유사해도 캡처의 동일 SKU/런타임 객체로 확정하지 않는다.",
+    "표본 검토의 장면 경계는 대략적이다. 두 신규 발췌의 고정 fps·GIF 길이를 원본 입력 지연·잠금 시간으로 사용하지 않는다.",
+    "GH-V0003과 비슷한65레벨 장면인 GH-V0022는 별도 성공 건수로 추가하지 않았다.",
+    "서로 다른 원본의 가격·타이머 차이를 단일 세션·노출 간격·고정 가격 사다리로 합산하지 않는다.",
+    "만료 전이·경쟁 팝업 선택·계정 생애 최초 노출·자동 재노출은 신규 성공 근거 없음으로 유지한다."
+  ],
+  "remainingValidation": [
+    {
+      "id": "first-cause",
+      "questionId": "first-exposure",
+      "needed": "동일 상품 식별자와 계정의 첫 eligibility 전후, 호출 입력/서버 설정 로그"
+    },
+    {
+      "id": "automatic-repeat",
+      "questionId": "reappearance",
+      "needed": "같은SKU·조건의 수동 입력 유무, 쿨다운·일별 카운터·재호출 기록"
+    },
+    {
+      "id": "expiry-boundary",
+      "questionId": "expiry",
+      "needed": "같은 상품 타이머0과 종료/교체의 끊김 없는 시각·상태 근거"
+    },
+    {
+      "id": "competing-candidates",
+      "questionId": "competition",
+      "needed": "동시 적격 후보집합과 실제 선택·억제 결과를 연결한 기록"
+    },
+    {
+      "id": "receipt",
+      "questionId": "after-purchase",
+      "needed": "개인정보를 제외한 거래/지급 검증과 게임 상태 전후. 현재 기록은 게임 화면 변화에 한정"
+    }
+  ]
+}

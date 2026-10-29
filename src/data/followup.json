@@ -4100,7 +4100,7 @@
       "step": "웹 보드·고정 주문",
       "state": "partial",
       "done": "기본 552타입·생성기 163종, 고정 16주문·일반 랜덤 5종의 복수 슬롯·필터·쿨다운·보상, 보관함 입출고/확장, 부스트·Lucky/Disco/Smart/FishNet/Extra/NoCD, 자연 버블과 특수도구 연결",
-      "remaining": "가이드 18개 논리 노드 중 시작 2개는 원작 연출 미재현. 기존 미지원97개 중5개는 독립 연구로 추가. 나머지92개 ID의 활동·원작 장면, 활동 전용 보드와 실계정 보정 입력·원작 난수열 검증",
+      "remaining": "가이드 18개 논리 노드 중 시작 2개는 원작 연출 미재현. 기존 미지원97개 중10개는 독립 연구로 추가(5개는 웹 플레이 연결). 나머지87개 ID의 활동·원작 장면, 활동 전용 보드와 실계정 보정 입력·원작 난수열 검증",
       "metrics": {
         "baseTypes": 552,
         "generators": 163,
@@ -4129,7 +4129,7 @@
     {
       "step": "웹 화면·동선",
       "state": "partial",
-      "done": "로딩→타이틀→두 단계 동봉 인트로 대사 발췌→맵↔퍼즐→실제 동봉106과제의 선정 명령·카메라·대사·삽화·장식선택→확정/보상/복귀. 슬롯41개·등록123후보 중111실물 기술미리보기(12미동봉), 선택 저장·기본 장식 재선택, 장면 보류/재개/손상 커서 복구, 웹 시점 조작",
+      "done": "로딩→타이틀→두 단계 동봉 인트로 대사 발췌→맵↔퍼즐→실제 동봉106과제의 선정 명령·카메라·대사·삽화·장식선택→확정/보상/복귀. 슬롯41개·등록123후보 중111실물 기술미리보기(12미동봉), 선택 저장·기본 장식 재선택, 장면 보류/재개/손상 커서 복구, 웹 시점 조작; 추가5안내의 명시 컨텍스트/플레이 이벤트 연결, 선정 Skin2세트26개 소유권·연동 슬롯 미리보기/취소/확정",
       "remaining": "원작 완성3D맵·CG·캐릭터/모션·전체 서사/음향/실시간 입력 복원과 실제 브라우저 검수. 기술투영·정적발췌를 원작 실행 관측으로 계산하지 않음"
     },
     {
@@ -5241,10 +5241,23 @@
     "coverage": "전체95.08분 연속 재생·오디오 검토를 뜻하지 않음. 타게임6개는 가십하버 근거에서 제외."
   },
   "tutorialExtension": {
-    "guides": 5,
-    "remainingPreviouslyUnsupported": 92,
-    "kind": "isolated-explicit-research-context",
+    "guides": 10,
+    "playConnected": 5,
+    "remainingPreviouslyUnsupported": 87,
+    "kind": "isolated-explicit-research-context-with-web-event-adapters",
     "route": "#tutorial-analysis",
     "actualAccountObserved": false
+  },
+  "observationAudit": {
+    "route": "#bm-observation",
+    "types": 9,
+    "questions": 6,
+    "cells": 54,
+    "scopedObserved": 9,
+    "partial": 3,
+    "staticOnly": 15,
+    "unconfirmed": 27,
+    "automaticReappearanceConfirmed": 0,
+    "actualFirstExposureConfirmed": 0
   }
 }

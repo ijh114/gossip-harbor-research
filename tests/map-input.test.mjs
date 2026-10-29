@@ -18,3 +18,6 @@ test('cancel and unmount discard transient pan; keyboard is repeatable and obeys
  for(let i=0;i<2;i++)h.node.dispatchEvent(new h.w.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true,cancelable:true}));assert.equal(h.view().x,10);
  h.lock();h.node.dispatchEvent(new h.w.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));h.pointer('pointerdown',0,0);h.pointer('pointermove',40,0);h.pointer('pointerup',40,0);assert.equal(h.commits.length,2);
 }finally{h.close();}});
+test('lost pointer capture or window blur cancels map preview without saving it',()=>{const h=setup();try{
+ for(const reason of ['lostpointercapture','blur']){h.pointer('pointerdown',0,0);h.pointer('pointermove',30,20);if(reason==='blur')h.w.dispatchEvent(new h.w.Event('blur'));else h.pointer(reason,30,20);assert.equal(h.controls.isDragging(),false);assert.equal(h.commits.length,0);assert.deepEqual(h.view(),{x:0,y:0,zoom:1.2});}
+}finally{h.close();}});

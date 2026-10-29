@@ -1,0 +1,1130 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "reviewDate": "2026-10-29",
+  "title": "자료 가용성 · 필요한 추가 근거",
+  "scope": "기존 감사 재사용 + 세 가지 후속 가설의 제한된 정적 확인",
+  "statuses": [
+    {
+      "id": "missing",
+      "label": "자료 미확보",
+      "description": "필요한 원본·정확한 매핑을 현재 제공 자료에서 확보하지 못했습니다."
+    },
+    {
+      "id": "registered-only",
+      "label": "등록만 확인",
+      "description": "키·경로·후보 선언은 있으나 필요한 실물 객체를 연결하지 못했습니다."
+    },
+    {
+      "id": "curated",
+      "label": "선별 자료 있음",
+      "description": "출처를 확인한 공개 파생 이미지가 있습니다. 실제 게임 실행 관측과 구분합니다."
+    },
+    {
+      "id": "research-projection",
+      "label": "연구용 투영",
+      "description": "정적 명령·컴포넌트 규칙·기술 미리보기를 공개했습니다. 원작 최종 렌더가 아닙니다."
+    }
+  ],
+  "summary": {
+    "newlyRecoveredAssets": 0,
+    "records": 16,
+    "statusRecords": {
+      "missing": 3,
+      "registered-only": 6,
+      "curated": 3,
+      "research-projection": 4
+    },
+    "sourceBundles": 245,
+    "sourceObjects": 110632,
+    "sourceContainers": 10037,
+    "sceneTasksProjected": 106,
+    "sceneLastTask": "12_11",
+    "nextMissingTimelineTask": "13_1",
+    "decorationPreviews": 111,
+    "decorationRegisteredOnly": 12,
+    "sceneCuratedImages": 5,
+    "baseCatalogTypes": 552,
+    "baseTypeImagesCurated": 544,
+    "baseTypesWithoutStandaloneImageKey": 8,
+    "baseHelperRenderingExplained": 3,
+    "baseUnknownPurpose": 1,
+    "baseGiftTypesRegisteredOnly": 4,
+    "eventTypesMissing": 35,
+    "eventSharedImagesVerified": 24
+  },
+  "entries": [
+    {
+      "id": "scene-next-timeline",
+      "title": "13_1 이후 기본 과제 타임라인",
+      "status": "missing",
+      "count": 1,
+      "unit": "필요 테이블",
+      "group": "scene",
+      "claim": "현재 동봉 숫자 타임라인은 1~12입니다. 13_1은 Timeline_13을 요구하며, named 테이블의 131개 명령에도 13_ 접두 과제는 없습니다.",
+      "impact": "정확한 카메라·대사·장식 순서의 자연 진행 범위는 12_11까지입니다. 13_1 이후 장면을 앞 과제의 연출로 대체할 근거가 없습니다.",
+      "sourceRefs": [
+        "scene-expansion",
+        "timeline-path",
+        "file-replace",
+        "dynamic-loader",
+        "scene-index",
+        "containers",
+        "named-branch",
+        "named-special",
+        "named-fire",
+        "named-intro",
+        "fire13-prefab"
+      ],
+      "targets": [
+        {
+          "label": "장면 분석",
+          "href": "#scene-analysis"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "동일 버전의 Timeline_13 실제 TextAsset과 객체·번들 식별 정보",
+        "이후 범위의 실제 화면이 제공되면 입력 순서·연출과 별도로 대조"
+      ],
+      "subjectIds": [
+        "13_1",
+        "DynamicConfig.Timeline.13.Timeline_13"
+      ],
+      "mediaKeys": [],
+      "boundary": "Story_13의 존재나 fire_13_1.prefab은 Timeline_13 회수를 뜻하지 않습니다. 서버 FileReplace 값은 미관측입니다."
+    },
+    {
+      "id": "decor-12_11",
+      "title": "Area4 장식 선택 12_11",
+      "status": "registered-only",
+      "count": 3,
+      "unit": "후보",
+      "group": "decoration",
+      "claim": "MapConfig에는 1·2·3 후보가 등록되어 있으나, 기존 245개 번들의 정확한 컨테이너·GameObject 대조에서 실물 프리팹을 확보하지 못했습니다.",
+      "impact": "선택 선언은 분석할 수 있지만 해당 장식의 실제 모습·기술 미리보기는 표시할 수 없습니다.",
+      "sourceRefs": [
+        "scene-expansion",
+        "containers",
+        "objects"
+      ],
+      "targets": [
+        {
+          "label": "장면 분석",
+          "href": "#scene-analysis"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "등록된 정확한 Area4 프리팹과 의존 메시·재질·텍스처"
+      ],
+      "subjectIds": [
+        "Map/Area4/12_11_1.prefab",
+        "Map/Area4/12_11_2.prefab",
+        "Map/Area4/12_11_3.prefab"
+      ],
+      "mediaKeys": [],
+      "boundary": "이전 Area3 장식이나 임의 그림을 대신 연결하지 않았습니다."
+    },
+    {
+      "id": "decor-12_5",
+      "title": "Area4 장식 선택 12_5",
+      "status": "registered-only",
+      "count": 3,
+      "unit": "후보",
+      "group": "decoration",
+      "claim": "MapConfig에는 1·2·3 후보가 등록되어 있으나, 기존 245개 번들의 정확한 컨테이너·GameObject 대조에서 실물 프리팹을 확보하지 못했습니다.",
+      "impact": "선택 선언은 분석할 수 있지만 해당 장식의 실제 모습·기술 미리보기는 표시할 수 없습니다.",
+      "sourceRefs": [
+        "scene-expansion",
+        "containers",
+        "objects"
+      ],
+      "targets": [
+        {
+          "label": "장면 분석",
+          "href": "#scene-analysis"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "등록된 정확한 Area4 프리팹과 의존 메시·재질·텍스처"
+      ],
+      "subjectIds": [
+        "Map/Area4/12_5_1.prefab",
+        "Map/Area4/12_5_2.prefab",
+        "Map/Area4/12_5_3.prefab"
+      ],
+      "mediaKeys": [],
+      "boundary": "이전 Area3 장식이나 임의 그림을 대신 연결하지 않았습니다."
+    },
+    {
+      "id": "decor-12_8",
+      "title": "Area4 장식 선택 12_8",
+      "status": "registered-only",
+      "count": 3,
+      "unit": "후보",
+      "group": "decoration",
+      "claim": "MapConfig에는 1·2·3 후보가 등록되어 있으나, 기존 245개 번들의 정확한 컨테이너·GameObject 대조에서 실물 프리팹을 확보하지 못했습니다.",
+      "impact": "선택 선언은 분석할 수 있지만 해당 장식의 실제 모습·기술 미리보기는 표시할 수 없습니다.",
+      "sourceRefs": [
+        "scene-expansion",
+        "containers",
+        "objects"
+      ],
+      "targets": [
+        {
+          "label": "장면 분석",
+          "href": "#scene-analysis"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "등록된 정확한 Area4 프리팹과 의존 메시·재질·텍스처"
+      ],
+      "subjectIds": [
+        "Map/Area4/12_8_1.prefab",
+        "Map/Area4/12_8_2.prefab",
+        "Map/Area4/12_8_3.prefab"
+      ],
+      "mediaKeys": [],
+      "boundary": "이전 Area3 장식이나 임의 그림을 대신 연결하지 않았습니다."
+    },
+    {
+      "id": "decor-12_9",
+      "title": "Area4 장식 선택 12_9",
+      "status": "registered-only",
+      "count": 3,
+      "unit": "후보",
+      "group": "decoration",
+      "claim": "MapConfig에는 1·2·3 후보가 등록되어 있으나, 기존 245개 번들의 정확한 컨테이너·GameObject 대조에서 실물 프리팹을 확보하지 못했습니다.",
+      "impact": "선택 선언은 분석할 수 있지만 해당 장식의 실제 모습·기술 미리보기는 표시할 수 없습니다.",
+      "sourceRefs": [
+        "scene-expansion",
+        "containers",
+        "objects"
+      ],
+      "targets": [
+        {
+          "label": "장면 분석",
+          "href": "#scene-analysis"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "등록된 정확한 Area4 프리팹과 의존 메시·재질·텍스처"
+      ],
+      "subjectIds": [
+        "Map/Area4/12_9_1.prefab",
+        "Map/Area4/12_9_2.prefab",
+        "Map/Area4/12_9_3.prefab"
+      ],
+      "mediaKeys": [],
+      "boundary": "이전 Area3 장식이나 임의 그림을 대신 연결하지 않았습니다."
+    },
+    {
+      "id": "event-35-images",
+      "title": "대표 탐험 이벤트 전용 아이템",
+      "status": "missing",
+      "count": 35,
+      "unit": "타입",
+      "group": "event",
+      "claim": "dogparkpure 35타입은 모델 규칙만 확인했습니다. 기본 보드 그림 재지정 3종은 별도 보조 타입이며, 이 35타입을 다른 그림으로 연결하는 근거가 없습니다.",
+      "impact": "대표 이벤트는 ID·규칙으로 실험할 수 있습니다. 원작 이벤트 아이템의 생김새를 갖춘 플레이를 위해 정확한 그림 자료가 필요합니다.",
+      "sourceRefs": [
+        "event-audit",
+        "event-items",
+        "event-overrides",
+        "item-custom-mapping",
+        "sprite-name",
+        "sprite-load",
+        "objects",
+        "containers",
+        "inventory"
+      ],
+      "targets": [
+        {
+          "label": "이벤트·운영 연구",
+          "href": "#events"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        },
+        {
+          "label": "타입 도감",
+          "href": "#puzzle"
+        }
+      ],
+      "neededEvidence": [
+        "동일 테마의 ItemViewConfig 또는 명시적 이미지 키 매핑",
+        "그 키에 대응하는 실제 Sprite·텍스처/아틀라스 객체 또는 검증 가능한 해당 화면"
+      ],
+      "subjectIds": [
+        "adv_dogparkpure_tar_1",
+        "adv_dogparkpure_tar_2",
+        "adv_dogparkpure_tar_3",
+        "adv_dogparkpure_tar_4",
+        "adv_dogparkpure_tar_5",
+        "adv_dogparkpure_tar_6",
+        "adv_dogparkpure_tar_7",
+        "adv_dogparkpure_tar_8",
+        "adv_dogparkpure_tar_9",
+        "adv_dogparkpure_tar_10",
+        "adv_dogparkpure_tar_11",
+        "adv_dogparkpure_tar_12",
+        "adv_dogparkpure_book_1",
+        "adv_dogparkpure_book_2",
+        "adv_dogparkpure_book_3",
+        "adv_dogparkpure_book_4",
+        "adv_dogparkpure_book_5",
+        "adv_dogparkpure_book_6",
+        "adv_dogparkpure_book_7",
+        "adv_dogparkpure_book_8",
+        "adv_dogparkpure_baby_1",
+        "adv_dogparkpure_baby_a_1",
+        "adv_dogparkpure_baby_a_f_1",
+        "adv_dogparkpure_baby_b_1",
+        "adv_dogparkpure_baby_b_f_1",
+        "adv_dogparkpure_baby_c_1",
+        "adv_dogparkpure_baby_c_f_1",
+        "adv_dogparkpure_baby_d_1",
+        "adv_dogparkpure_feed_1",
+        "adv_dogparkpure_letter_1",
+        "adv_dogparkpure_letter_2",
+        "adv_dogparkpure_letter_3",
+        "adv_dogparkpure_score_1",
+        "adv_dogparkpure_score_2",
+        "adv_dogparkpure_score_3"
+      ],
+      "mediaKeys": [],
+      "boundary": "기존 객체 110,632개에 SpriteAtlas 객체와 Sprite의 비어 있지 않은 atlas 참조는 0개입니다. 이름이 비슷한 dogpark 테마를 dogparkpure의 매핑으로 채택하지 않았습니다."
+    },
+    {
+      "id": "base-gift-images",
+      "title": "기본 도감의 이벤트 선물 상자",
+      "status": "registered-only",
+      "count": 4,
+      "unit": "타입",
+      "group": "base-item",
+      "claim": "4타입은 EventActivityGift2/3으로 명시 매핑됩니다. 두 이미지 키는 등록되어 있으나 현재 동봉 실물 Sprite를 확보하지 못했습니다.",
+      "impact": "생산·보상 규칙과 원작 선물 상자 그림의 확보 상태를 분리합니다.",
+      "sourceRefs": [
+        "gift-view-1",
+        "gift-view-2",
+        "image-EventActivityGift2",
+        "image-EventActivityGift3",
+        "objects"
+      ],
+      "targets": [
+        {
+          "label": "타입 도감",
+          "href": "#puzzle"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "EventActivityGift2/3의 실제 Sprite와 텍스처"
+      ],
+      "subjectIds": [
+        "md_hw_gift_1",
+        "md_hw_gift_2",
+        "deco_event_gift_s_1",
+        "deco_event_gift_b_1"
+      ],
+      "mediaKeys": []
+    },
+    {
+      "id": "base-property-bubble",
+      "title": "property_bubble_1의 용도·표현",
+      "status": "missing",
+      "count": 1,
+      "unit": "타입",
+      "group": "base-item",
+      "claim": "빈 모델 선언 외에 이 타입의 독립 그림·전용 컴포넌트 사용을 확정할 근거를 확보하지 못했습니다.",
+      "impact": "숨김 타입 또는 버블 그림으로 단정할 수 없습니다.",
+      "sourceRefs": [
+        "property-bubble-declaration",
+        "sprite-name",
+        "objects",
+        "prior-scene-audit"
+      ],
+      "targets": [
+        {
+          "label": "타입 도감",
+          "href": "#puzzle"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "이 타입을 사용하는 실제 코드·설정과 명시적 이미지 연결 또는 해당 동작 화면"
+      ],
+      "subjectIds": [
+        "property_bubble_1"
+      ],
+      "mediaKeys": []
+    },
+    {
+      "id": "base-temp-component",
+      "title": "temp_1 · 외곽과 내부 아이템 합성",
+      "status": "registered-only",
+      "count": 1,
+      "unit": "보조 타입",
+      "group": "base-item",
+      "claim": "ItemTemp는 item_temp 외곽과 내부 아이템 이미지를 따로 요청합니다. temp_1이라는 독립 그림을 요구하지 않지만 item_temp 외곽은 등록만 확인했습니다.",
+      "impact": "타입 이름 그림의 부재와 필요한 외곽 이미지 미회수를 구분해야 합니다.",
+      "sourceRefs": [
+        "component-factory",
+        "item-display",
+        "temp-image-name",
+        "image-item_temp",
+        "objects"
+      ],
+      "targets": [
+        {
+          "label": "타입 도감",
+          "href": "#puzzle"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "TempItem/item_temp.png의 실제 Sprite·텍스처와 원래 합성 화면"
+      ],
+      "subjectIds": [
+        "temp_1",
+        "item_temp"
+      ],
+      "mediaKeys": [],
+      "representation": "component-composite",
+      "standaloneTypeSpriteRequired": false
+    },
+    {
+      "id": "base-bubble-component",
+      "title": "3401 · 일반 버블 합성 규칙",
+      "status": "research-projection",
+      "count": 1,
+      "unit": "보조 타입",
+      "group": "base-item",
+      "claim": "ItemBubble은 일반 Bubble 외곽과 내부 아이템을 합성합니다. 일반 Bubble 실물 Sprite는 기존 번들에 있으며, 3401이라는 별도 타입 그림을 직접 요청하지 않습니다.",
+      "impact": "독립 타입 이미지 8개 미연결 총계 중 이 항목을 단순한 원본 그림 소실로 해석하면 안 됩니다.",
+      "sourceRefs": [
+        "component-factory",
+        "item-display",
+        "bubble-name",
+        "bubble-image-name",
+        "image-Bubble",
+        "physical-Bubble"
+      ],
+      "targets": [
+        {
+          "label": "상호작용 도감",
+          "href": "#puzzle-interaction"
+        },
+        {
+          "label": "타입 도감",
+          "href": "#puzzle"
+        }
+      ],
+      "neededEvidence": [
+        "원작 합성 화면·연출 대조",
+        "BubbleInstant 참조의 정확한 설정·실물 연결"
+      ],
+      "subjectIds": [
+        "3401",
+        "Bubble"
+      ],
+      "mediaKeys": [],
+      "representation": "component-rendering-analysis",
+      "standaloneTypeSpriteRequired": false,
+      "physicalSourcePresent": true,
+      "boundary": "일반 Bubble의 기존 실물 존재를 확인했으며 새 공개 이미지 파일을 회수·추가한 것은 아닙니다. 즉시 버블은 미해결입니다."
+    },
+    {
+      "id": "base-locked-component",
+      "title": "locked_1 · 직접 Sprite 요청 없는 분기",
+      "status": "research-projection",
+      "count": 1,
+      "unit": "보조 타입",
+      "group": "base-item",
+      "claim": "ItemModelFactory는 ItemLocked 컴포넌트를 만들고, ItemView의 해당 분기는 타입 Sprite를 직접 요청하지 않습니다.",
+      "impact": "locked_1이라는 단독 그림이 없다는 것만으로 화면 자산 누락을 단정할 수 없습니다.",
+      "sourceRefs": [
+        "component-factory",
+        "item-display"
+      ],
+      "targets": [
+        {
+          "label": "타입 도감",
+          "href": "#puzzle"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "잠금 레이어·배경·내부 아이템이 함께 보이는 원작 화면 대조"
+      ],
+      "subjectIds": [
+        "locked_1"
+      ],
+      "mediaKeys": [],
+      "representation": "component-no-direct-sprite-request",
+      "standaloneTypeSpriteRequired": false,
+      "boundary": "이 분기만으로 다른 잠금 레이어·전체 화면 연출의 자산이 불필요하다고 단정하지 않습니다."
+    },
+    {
+      "id": "scene-projection",
+      "title": "동봉 기본 과제의 장면 순서",
+      "status": "research-projection",
+      "count": 106,
+      "unit": "과제",
+      "group": "scene",
+      "claim": "1_1~12_11의 1,357개 명령과 intro 7개 명령, 314개 짧은 대사 발췌를 선택 투영했습니다.",
+      "impact": "명령·선택 순서를 연구하고 웹 시뮬레이션에 연결할 수 있습니다.",
+      "sourceRefs": [
+        "scene-expansion",
+        "scene-index",
+        "timeline-path"
+      ],
+      "targets": [
+        {
+          "label": "장면 분석",
+          "href": "#scene-analysis"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "원작 실행의 병렬 명령·카메라·페이드·음향 타이밍은 화면·오디오 자료와 별도로 대조"
+      ],
+      "subjectIds": [
+        "1_1",
+        "12_11"
+      ],
+      "mediaKeys": [],
+      "boundary": "명령 순서를 단계로 나눈 웹 실험입니다. 원작 런타임의 최종 연출과 같은 범위라고 주장하지 않습니다."
+    },
+    {
+      "id": "decor-technical-previews",
+      "title": "실물 장식 후보의 기술 미리보기",
+      "status": "research-projection",
+      "count": 111,
+      "unit": "후보",
+      "group": "decoration",
+      "claim": "37개 선택 슬롯의 111개 실물 프리팹을 메시·UV·재질과 연결해 320px 정적 기술 이미지로 표시합니다.",
+      "impact": "후보 형태 비교가 가능합니다. 원작 셰이더·광원·빌보드·실행 카메라가 적용된 게임 화면과 다릅니다.",
+      "sourceRefs": [
+        "scene-expansion",
+        "containers",
+        "objects"
+      ],
+      "targets": [
+        {
+          "label": "장면 분석",
+          "href": "#scene-analysis"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "원작 장식 완성 화면과 카메라·라이팅·재질 효과 대조"
+      ],
+      "subjectIds": [],
+      "mediaKeys": [],
+      "representation": "packaged-mesh-preview",
+      "originalRuntimeRender": false,
+      "boundary": "원본 메시·전체 맵은 공개하지 않습니다. 평면 부품이 떨어져 보이는 등 기술 렌더 한계가 있습니다."
+    },
+    {
+      "id": "scene-curated-art",
+      "title": "선별한 CG 레이어·스토리 삽화",
+      "status": "curated",
+      "count": 5,
+      "unit": "이미지",
+      "group": "scene",
+      "claim": "CG 구성 레이어 2장과 스토리 삽화 3장을 출처·원본 Sprite 식별 정보가 있는 축소 파생본으로 공개했습니다.",
+      "impact": "장면 분석과 해당 스토리 단계에서 실제 원본 자산 일부를 확인할 수 있습니다.",
+      "sourceRefs": [
+        "scene-expansion",
+        "prior-scene-audit"
+      ],
+      "targets": [
+        {
+          "label": "장면 분석",
+          "href": "#scene-analysis"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [
+        "전체 CG 합성·표정·음향·전환은 원작 화면과 별도로 대조"
+      ],
+      "subjectIds": [],
+      "mediaKeys": [
+        "scene:cg-layer:scene1_1",
+        "scene:cg-layer:scene1_2",
+        "scene:story-image:story_A1D1_1_1_begin",
+        "scene:story-image:story_A1D1_1_3",
+        "scene:story-image:story_A1D1_1_2_begin"
+      ],
+      "boundary": "2개 CG 레이어는 완성된 CG 화면·실제 재생 영상이 아닙니다."
+    },
+    {
+      "id": "base-curated-images",
+      "title": "기본 타입 도감의 선별 이미지",
+      "status": "curated",
+      "count": 544,
+      "unit": "타입",
+      "group": "base-item",
+      "claim": "기본 모델 552타입 가운데 544타입에 기존 공개 이미지 키가 연결되어 있습니다.",
+      "impact": "독립 이미지 키가 없는 8타입의 컴포넌트 표현·등록만 존재하는 항목은 위에서 별도로 설명합니다.",
+      "sourceRefs": [
+        "visual-index",
+        "media",
+        "sprite-name"
+      ],
+      "targets": [
+        {
+          "label": "타입 도감",
+          "href": "#puzzle"
+        },
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        }
+      ],
+      "neededEvidence": [],
+      "subjectIds": [],
+      "mediaKeys": [],
+      "boundary": "공개 이미지 연결 수입니다. 552타입 모두가 서로 다른 단독 그림을 반드시 요구한다는 뜻이 아닙니다."
+    },
+    {
+      "id": "event-shared-curated",
+      "title": "이벤트에서 쓰는 공용 재화 그림",
+      "status": "curated",
+      "count": 24,
+      "unit": "타입",
+      "group": "event",
+      "claim": "기존 공개 공용 재화 24타입은 번들·객체·PNG·디코딩 픽셀 대조를 완료했습니다.",
+      "impact": "이벤트 전용 35타입의 그림 회수 수로 합산하지 않습니다.",
+      "sourceRefs": [
+        "event-audit",
+        "media"
+      ],
+      "targets": [
+        {
+          "label": "게임 시뮬레이션",
+          "href": "#experience"
+        },
+        {
+          "label": "타입 도감",
+          "href": "#puzzle"
+        }
+      ],
+      "neededEvidence": [],
+      "subjectIds": [
+        "main_gem_super_1",
+        "main_gem_super_2",
+        "main_gem_super_3",
+        "main_gem_super_4",
+        "main_gem_super_5",
+        "main_gem_super_6",
+        "main_gem_super_7",
+        "main_gem_super_8",
+        "main_super_energy_1",
+        "main_super_energy_2",
+        "main_super_energy_3",
+        "main_super_energy_4",
+        "main_super_energy_5",
+        "main_super_energy_6",
+        "main_super_energy_7",
+        "main_super_energy_8",
+        "main_super_gold_1",
+        "main_super_gold_2",
+        "main_super_gold_3",
+        "main_super_gold_4",
+        "main_super_gold_5",
+        "main_super_gold_6",
+        "main_super_gold_7",
+        "main_super_gold_8"
+      ],
+      "mediaKeys": [
+        "item:ItemModelConfig:main_gem_super_1",
+        "item:ItemModelConfig:main_gem_super_2",
+        "item:ItemModelConfig:main_gem_super_3",
+        "item:ItemModelConfig:main_gem_super_4",
+        "item:ItemModelConfig:main_gem_super_5",
+        "item:ItemModelConfig:main_gem_super_6",
+        "item:ItemModelConfig:main_gem_super_7",
+        "item:ItemModelConfig:main_gem_super_8",
+        "item:ItemModelConfig:main_super_energy_1",
+        "item:ItemModelConfig:main_super_energy_2",
+        "item:ItemModelConfig:main_super_energy_3",
+        "item:ItemModelConfig:main_super_energy_4",
+        "item:ItemModelConfig:main_super_energy_5",
+        "item:ItemModelConfig:main_super_energy_6",
+        "item:ItemModelConfig:main_super_energy_7",
+        "item:ItemModelConfig:main_super_energy_8",
+        "item:ItemModelConfig:main_super_gold_1",
+        "item:ItemModelConfig:main_super_gold_2",
+        "item:ItemModelConfig:main_super_gold_3",
+        "item:ItemModelConfig:main_super_gold_4",
+        "item:ItemModelConfig:main_super_gold_5",
+        "item:ItemModelConfig:main_super_gold_6",
+        "item:ItemModelConfig:main_super_gold_7",
+        "item:ItemModelConfig:main_super_gold_8"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "inventory",
+      "path": "analysis/followup/assets/inventory-summary.json",
+      "sha256": "9a4c569875558ceb34c518f2f392db91dd8b2a7103fe86139ef393902824a26b",
+      "lineStart": 1,
+      "lineEnd": 43,
+      "kind": "static-audit"
+    },
+    {
+      "id": "objects",
+      "path": "analysis/followup/assets/object-index.json",
+      "sha256": "9706e72ae7c732538667f42dcdcfd6be6e994be87099d5eac0cb98a02f9c1636",
+      "lineStart": 1,
+      "lineEnd": 1310347,
+      "kind": "static-audit",
+      "scope": "Complete existing serialized-object inventory; bounded negative findings apply only to these objects."
+    },
+    {
+      "id": "containers",
+      "path": "analysis/followup/assets/asset-containers.json",
+      "sha256": "00d8f981c9631cf751d67ed157830494a02e85de9bbec26976655999f18935ce",
+      "lineStart": 1,
+      "lineEnd": 110409,
+      "kind": "static-audit"
+    },
+    {
+      "id": "bundles",
+      "path": "analysis/followup/assets/bundle-inventory.json",
+      "sha256": "9181cba411913f555f4ace6ae71d54d4677d4f7ccc9592d3fa4268e13844e08b",
+      "lineStart": 1,
+      "lineEnd": 3548,
+      "kind": "static-audit"
+    },
+    {
+      "id": "scene-expansion",
+      "path": "analysis/followup/scene-expansion-2.json",
+      "sha256": "fb3bd8d01e1a2b660b669652efa46759bd845945680656b7ff305f2c973dd0b9",
+      "lineStart": 1,
+      "lineEnd": 210,
+      "kind": "static-audit"
+    },
+    {
+      "id": "prior-scene-audit",
+      "path": "analysis/followup/remaining-artifact-audit.json",
+      "sha256": "24a55c63416d70ba4595d871b8e826e9123427611e13229fb0d174d52de031ab",
+      "lineStart": 1,
+      "lineEnd": 949,
+      "kind": "static-audit"
+    },
+    {
+      "id": "scene-index",
+      "path": "analysis/followup/packaged-scenes/index.json",
+      "sha256": "d4b891cea321fe179818eba90d083812200f2f9840040e7969cc32a39bd06719",
+      "lineStart": 1,
+      "lineEnd": 739,
+      "kind": "static-audit"
+    },
+    {
+      "id": "event-audit",
+      "path": "analysis/followup/activity-media-audit.json",
+      "sha256": "7ff92c0d62b9e4b9a5049f48f4d11a715f8692122a3948c0d08fa0317753e1cf",
+      "lineStart": 1,
+      "lineEnd": 1751,
+      "kind": "static-audit"
+    },
+    {
+      "id": "media",
+      "path": "sites/harbor-bm-lab/src/data/media.json",
+      "sha256": "f58367175e6fe6d78fb49291d59ba734731e0fde068231ecc30e8a0144f44796",
+      "lineStart": 1,
+      "lineEnd": 25190,
+      "kind": "curated-manifest"
+    },
+    {
+      "id": "visual-index",
+      "path": "sites/harbor-bm-lab/src/data/visual-index.json",
+      "sha256": "830a925a97d0b1aa7d6d7b6aea8aed714787d67dbbfab4685f714d90631a3d94",
+      "lineStart": 1,
+      "lineEnd": 1,
+      "kind": "packaged-config-projection"
+    },
+    {
+      "id": "timeline-path",
+      "path": "analysis/lua/Lua_Core/Model/Task/TimelineModel.lua",
+      "sha256": "5701ca27186283fd430b4283a05b0d9ccda6d10d773a5e3b41c53a813edd03ad",
+      "lineStart": 10,
+      "lineEnd": 32,
+      "kind": "static-code"
+    },
+    {
+      "id": "file-replace",
+      "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+      "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+      "lineStart": 232,
+      "lineEnd": 248,
+      "kind": "static-code"
+    },
+    {
+      "id": "dynamic-loader",
+      "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+      "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+      "lineStart": 689,
+      "lineEnd": 724,
+      "kind": "static-code"
+    },
+    {
+      "id": "sprite-name",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemDataModel.lua",
+      "sha256": "7a199a3ffea516f08a29a765cb030f630161cc4b631d8c5d773087b8d4c72a26",
+      "lineStart": 185,
+      "lineEnd": 198,
+      "kind": "static-code"
+    },
+    {
+      "id": "sprite-load",
+      "path": "analysis/lua/Lua_Base/Common/Utility/SpriteUtil.lua",
+      "sha256": "287bd820f703363b58ebbb0e2478aec23b43484456582cbf8cf396f306981d12",
+      "lineStart": 58,
+      "lineEnd": 81,
+      "kind": "static-code"
+    },
+    {
+      "id": "event-overrides",
+      "path": "analysis/lua/Lua_Activity/AdventureActivity/Board/AdventureActivityBoardView.lua",
+      "sha256": "4f46ee61031aaf9fb139f5d6f77b09cc642fc76f3a4ceb0e652a16da53cfd99f",
+      "lineStart": 4,
+      "lineEnd": 14,
+      "kind": "static-code"
+    },
+    {
+      "id": "item-display",
+      "path": "analysis/lua/Lua_Core/Board/View/Item/ItemView.lua",
+      "sha256": "176ca4e46ae0bacc287577ff0853ff010ff644231f3de884c3f5c22ad45f4aa7",
+      "lineStart": 79,
+      "lineEnd": 107,
+      "kind": "static-code"
+    },
+    {
+      "id": "item-custom-mapping",
+      "path": "analysis/lua/Lua_Core/Board/View/Item/ItemView.lua",
+      "sha256": "176ca4e46ae0bacc287577ff0853ff010ff644231f3de884c3f5c22ad45f4aa7",
+      "lineStart": 150,
+      "lineEnd": 156,
+      "kind": "static-code"
+    },
+    {
+      "id": "component-factory",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemModelFactory.lua",
+      "sha256": "b22cf7c302bc5092e28461749bffe4f5541d4d745190d2976d386e85a98549f2",
+      "lineStart": 120,
+      "lineEnd": 158,
+      "kind": "static-code"
+    },
+    {
+      "id": "bubble-name",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemBubble.lua",
+      "sha256": "64538f4f1f56aec6b4b52e2479e93eb27375996c1ac22810dabeb29eef690e0c",
+      "lineStart": 145,
+      "lineEnd": 147,
+      "kind": "static-code"
+    },
+    {
+      "id": "gift-view-1",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+      "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+      "lineStart": 1120,
+      "lineEnd": 1131,
+      "kind": "static-code"
+    },
+    {
+      "id": "gift-view-2",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+      "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+      "lineStart": 1260,
+      "lineEnd": 1271,
+      "kind": "static-code"
+    },
+    {
+      "id": "event-items",
+      "path": "analysis/config-tables/AdventureItemModelConfig_dogparkpure.json",
+      "sha256": "1f38f7b3193c593b892579f6ff9eb2cbe27e2ff57f68897d4ead9e20c0f40574",
+      "lineStart": 1,
+      "lineEnd": 1839,
+      "kind": "packaged-config"
+    },
+    {
+      "id": "property-bubble-declaration",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+      "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+      "lineStart": 4462,
+      "lineEnd": 4462,
+      "kind": "static-code"
+    },
+    {
+      "id": "bubble-image-name",
+      "path": "analysis/lua/Lua_Base/Data/AssetName/ImageFileConfigName.lua",
+      "sha256": "c4e9cb413d2aad5338e00865b1e980178442d4908c485098ae5b4fe737c2c58e",
+      "lineStart": 769,
+      "lineEnd": 769,
+      "kind": "static-code"
+    },
+    {
+      "id": "temp-image-name",
+      "path": "analysis/lua/Lua_Base/Data/AssetName/ImageFileConfigName.lua",
+      "sha256": "c4e9cb413d2aad5338e00865b1e980178442d4908c485098ae5b4fe737c2c58e",
+      "lineStart": 1753,
+      "lineEnd": 1753,
+      "kind": "static-code"
+    },
+    {
+      "id": "named-branch",
+      "path": "analysis/followup/packaged-scenes/Timeline_branch.lua.json",
+      "sha256": "eb18cdfbf360a056abdda0a59a44045a4c0affab4841b6d400d5c4e0d22aedda",
+      "lineStart": 1,
+      "lineEnd": 80,
+      "kind": "packaged-config"
+    },
+    {
+      "id": "named-special",
+      "path": "analysis/followup/packaged-scenes/Timeline_special.lua.json",
+      "sha256": "fb06eb9eed47719ad93faaa4cd04ee84668b7046485d356b88610f5270a500ea",
+      "lineStart": 1,
+      "lineEnd": 556,
+      "kind": "packaged-config"
+    },
+    {
+      "id": "named-fire",
+      "path": "analysis/followup/packaged-scenes/Timeline_fire.lua.json",
+      "sha256": "c722e8e65826abf03799a4ca80e976fca7f4a647fa6d263f03e89a16b121305f",
+      "lineStart": 1,
+      "lineEnd": 184,
+      "kind": "packaged-config"
+    },
+    {
+      "id": "named-intro",
+      "path": "analysis/followup/packaged-scenes/Timeline_intro.lua.json",
+      "sha256": "333522f0843e750eaea8e7bf1617b6efe8564e7ceae9c5eb70dca231f2709427",
+      "lineStart": 1,
+      "lineEnd": 56,
+      "kind": "packaged-config"
+    },
+    {
+      "id": "fire13-prefab",
+      "path": "analysis/followup/assets/asset-containers.json",
+      "sha256": "00d8f981c9631cf751d67ed157830494a02e85de9bbec26976655999f18935ce",
+      "lineStart": 68502,
+      "lineEnd": 68502,
+      "kind": "packaged-object-reference",
+      "locator": {
+        "container": "Assets/Map/FireTimeline/fire_13_1.prefab",
+        "bundle": "map-localslots_assets_assets/map/firetimeline_a8ee1cd96ef540e802117963b0aab436.bundle",
+        "bundleSha256": "8982ab5113b63e237e635b0b5d940880b08ca21d48e3f2cafb8c294d11fca303",
+        "pathId": "-1053827163250371652",
+        "objectType": "GameObject"
+      }
+    },
+    {
+      "id": "image-Bubble",
+      "path": "analysis/followup/assets/image-config-local-sprite-map.json",
+      "sha256": "3efc9adf0681c8828e9fb67c57fdf5ab7384d3115003834fca1fb26d810a66cf",
+      "lineStart": 15037,
+      "lineEnd": 15043,
+      "kind": "packaged-config-reference",
+      "locator": {
+        "configIndex": 767,
+        "shortName": "Bubble",
+        "fileKey": "Board/ItemMain/Item/Bubble.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      }
+    },
+    {
+      "id": "image-item_temp",
+      "path": "analysis/followup/assets/image-config-local-sprite-map.json",
+      "sha256": "3efc9adf0681c8828e9fb67c57fdf5ab7384d3115003834fca1fb26d810a66cf",
+      "lineStart": 36803,
+      "lineEnd": 36809,
+      "kind": "packaged-config-reference",
+      "locator": {
+        "configIndex": 1751,
+        "shortName": "item_temp",
+        "fileKey": "TempItem/item_temp.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      }
+    },
+    {
+      "id": "image-EventActivityGift2",
+      "path": "analysis/followup/assets/image-config-local-sprite-map.json",
+      "sha256": "3efc9adf0681c8828e9fb67c57fdf5ab7384d3115003834fca1fb26d810a66cf",
+      "lineStart": 22959,
+      "lineEnd": 22965,
+      "kind": "packaged-config-reference",
+      "locator": {
+        "configIndex": 1125,
+        "shortName": "EventActivityGift2",
+        "fileKey": "MainDecorActivity/Common/UI/EventActivityGift2.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      }
+    },
+    {
+      "id": "image-EventActivityGift3",
+      "path": "analysis/followup/assets/image-config-local-sprite-map.json",
+      "sha256": "3efc9adf0681c8828e9fb67c57fdf5ab7384d3115003834fca1fb26d810a66cf",
+      "lineStart": 22978,
+      "lineEnd": 22984,
+      "kind": "packaged-config-reference",
+      "locator": {
+        "configIndex": 1126,
+        "shortName": "EventActivityGift3",
+        "fileKey": "MainDecorActivity/Common/UI/EventActivityGift3.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      }
+    },
+    {
+      "id": "physical-Bubble",
+      "path": "analysis/followup/assets/object-index.json",
+      "sha256": "9706e72ae7c732538667f42dcdcfd6be6e994be87099d5eac0cb98a02f9c1636",
+      "lineStart": 11437,
+      "lineEnd": 11437,
+      "kind": "packaged-object-reference",
+      "locator": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-7915164443339801314",
+        "type": "Sprite",
+        "name": "Bubble",
+        "object_source_sha256": "e07954452a8b27b63cfe652b53b0e8a2e90084df84a4776192564fe51fd6682c"
+      }
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "availability-hypothesis-1",
+      "question": "Timeline13이 다른 named 테이블·유사 프리팹으로 대체되는가?",
+      "outcome": "bounded-negative",
+      "newAssetsRecovered": 0,
+      "result": "13_1의 로더 경로는 Timeline_13이며 FileReplace는 동일 경로에 서버 접미사를 붙입니다. named 4테이블의 131행에 13_ 과제가 없고, fire_13_1.prefab은 GameObject입니다.",
+      "sourceRefs": [
+        "scene-expansion",
+        "timeline-path",
+        "file-replace",
+        "dynamic-loader",
+        "named-branch",
+        "named-special",
+        "named-fire",
+        "named-intro",
+        "fire13-prefab",
+        "containers"
+      ]
+    },
+    {
+      "id": "availability-hypothesis-2",
+      "question": "이벤트35가 packed Sprite/컨테이너 alias/atlas로 실제 객체에 연결되는가?",
+      "outcome": "bounded-negative",
+      "newAssetsRecovered": 0,
+      "result": "전용 타입 exact key/object/container 매핑 0건. Custom mapping은 PaperBox/Cobweb/ObstacleClear 세 보조 타입에 한정됩니다. 기존 인벤토리에 SpriteAtlas 객체와 Sprite atlas PPtr은 모두 0개입니다.",
+      "sourceRefs": [
+        "event-audit",
+        "event-overrides",
+        "item-custom-mapping",
+        "sprite-name",
+        "sprite-load",
+        "objects",
+        "containers"
+      ]
+    },
+    {
+      "id": "availability-hypothesis-3",
+      "question": "기본8타입의 독립 이미지 미연결은 helper 표현 때문인가?",
+      "outcome": "partially-explained-no-new-images",
+      "newAssetsRecovered": 0,
+      "result": "3타입은 컴포넌트 표현이 설명됩니다. 일반 Bubble 실물은 기존에 존재하고 temp 외곽은 미회수, locked 분기는 직접 Sprite를 요청하지 않습니다. gift4는 등록만 존재하고 property_bubble_1은 용도가 미확인입니다.",
+      "sourceRefs": [
+        "component-factory",
+        "item-display",
+        "bubble-name",
+        "image-Bubble",
+        "physical-Bubble",
+        "image-item_temp",
+        "gift-view-1",
+        "gift-view-2",
+        "property-bubble-declaration"
+      ]
+    }
+  ],
+  "boundaries": [
+    "공급된 APK 4.10.5의 기존 정적 인벤토리·리터럴 해석·선별 파생본만 사용했습니다. 원격 서버와 원작 실행에는 접근하지 않았습니다.",
+    "미확보는 제공 자료 안에서 연결하지 못했다는 뜻입니다. 게임 전체에 자료가 존재하지 않는다는 증거가 아닙니다.",
+    "등록·실물 객체·공개 파생본·연구용 규칙 투영·실제 플레이 관측을 서로 구분합니다.",
+    "원본 APK·Lua 전문·전체 서사·원본 메시·전체 맵·개인 플레이 데이터는 공개하지 않습니다."
+  ]
+}

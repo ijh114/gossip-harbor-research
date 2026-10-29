@@ -59,6 +59,8 @@ export function createScreenController({getState,getConfig,getData,domain,persis
   }
   if(action==='game-decor-open'){if(f.phase==='map')f.phase='decor';return true;}
   if(action==='game-decor-close'){if(f.phase==='decor')f.phase='map';return true;}
+  if(action==='game-skins-open'){if(['map','decor'].includes(f.phase)&&!s.pendingQuest&&!s.modal)f.phase='skins';return true;}
+  if(action==='game-skins-close'){if(f.phase==='skins')f.phase='map';return true;}
   if(action==='game-decor-edit'){
    if(f.phase==='decor'){const guide=playGuide(s,config()),r=beginDecorEdit(s,config(),getData().sceneConfig,String(value),{inputLocked:Boolean(guide.input||guide.waitSeconds)});screenNotice=r.message;}return true;
   }
@@ -104,7 +106,7 @@ export function createScreenController({getState,getConfig,getData,domain,persis
  function snapshot(){const s=state(),f=flow();return JSON.stringify([s.questsDone,s.pendingQuest?.id,f.phase,f.task?.id,f.task?.script?.index,f.space]);}
  document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAudio();});
  window.addEventListener('pagehide',stopAudio);
- return {handle,blocked,beforeRender,afterMount,sound,isMapDragging:()=>Boolean(mapInput?.isDragging()),
+ return {handle,blocked,beforeRender,afterMount,sound,isMapDragging:()=>Boolean(mapInput?.isDragging()),researchContext:()=>({entry,loading,taskList,newPrompt}),
   reset(){beforeRender();booted=true;loading=false;entry=false;newPrompt=false;taskList=false;beginOpening(state(),config());},
   imported(){beforeRender();entry=true;newPrompt=false;taskList=false;stopAudio();},
   renderOptions(){if(!booted)loading=true;return {loading,entry,taskList,newPrompt,notice:screenNotice};}

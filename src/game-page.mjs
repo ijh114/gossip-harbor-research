@@ -1,3 +1,5 @@
+import {renderSkinLab,createSkinLab} from './skin-lab.mjs';
+import {renderTutorialPlay,validTutorialPlay} from './tutorial-play.mjs';
 // Game-shaped presentation of the same pure research model. Captures guide the
 // layout; portrait substitutions, CSS effects and map drawings are web artwork.
 import {modal,boundaries} from './play-page.mjs';
@@ -64,10 +66,10 @@ function selected(s,c,d){
  else if(cell&&definition?.sellingPrice)act=button('sell',`${ui(d,'icon_coin')} +${n(definition.sellingPrice)}`,{cls:'game-item-action',title:'선택한 아이템 판매'});
  return `<div class="game-bottom">${button('inventory',`${ui(d,'icon_inventory','<span>보관함</span>')}<span class="sr-only">보관함</span>`,{cls:'game-bottom-icon',disabled:s.wallet.level<(c.inventoryRules?.unlockLevel||2)})}<div class="game-selection">${button('item-info',`${cell?e(name(c,cell.type)):'아이템을 선택하세요'}${definition?.chainLevel?` <small>${definition.chainLevel}레벨 · 정보</small>`:''}`,{cls:'game-item-title',disabled:!cell})}<div><p>${description}</p>${act}</div></div>${button('home',`${'<span class="game-map-label">맵</span>'}<span class="sr-only">맵 진행</span>`,{cls:'game-bottom-icon'})}</div>`;
 }
-function tools(s,c){
+function tools(s,c,d){
  const assistance=[['2401','코인'],['2501','젬'],['2601','에너지'],['time_skip_1','10분 모래시계'],['level_up_piece_1','무지개'],['level_down_piece_1','가위']];
  return `<aside class="game-research-tools" aria-label="플레이 연구 도구">
- <h2>플레이와 근거 비교</h2><p>APK 규칙을 적용하고, 제공 캡처의 배치를 참고한 웹 재현입니다. 현행 서버 설정과 원작 실행 검증은 구분합니다.</p>
+ ${renderTutorialPlay(s.tutorialBridge,d.tutorialConfig)}<h2>플레이와 근거 비교</h2><p>APK 규칙을 적용하고, 제공 캡처의 배치를 참고한 웹 재현입니다. 현행 서버 설정과 원작 실행 검증은 구분합니다.</p>
  <div class="game-toolbar">${button('focus',s.focused?'집중 모드 종료':'게임에 집중')}${button('save','저장')}${button('export','상태 JSON')}<label class="button source-import-label">가져오기<input id="play-import" type="file" accept="application/json,.json" aria-label="플레이 상태 가져오기"></label></div>
  <details><summary>시작 배치와 튜토리얼</summary><p>기존 저장을 백업하고 APK 초기 배치에서 시작합니다. 첫 합성·주문·맵 과제·보상 배치·상자·에너지·상점 안내를 연결합니다. 원본 스토리 연출은 별도입니다.</p>${button('new-game','새 게임 · 튜토리얼')}${button('scenario','연구용 열린 배치',{value:'open'})}</details>
  <details><summary>모든 기본 타입 배치</summary><p>552개 기본 타입을 연구용 보상 대기열로 넣습니다. 원작에서의 획득 시점이나 지급 보상이 아닙니다. 닫힌 상자는 선택 후 열고, 선택 상자는 후보를 확인하세요.</p><label class="game-type-picker">아이템 타입<select data-play-aid-type>${c.items.map(row=>`<option value="${e(row.type)}">${e(row.displayName||row.name)} · ${e(row.type)}</option>`).join('')}</select></label>${button('aid-type','선택 타입을 대기열로')}${button('queue','보상1개 배치')}<p>유효한 앨범 설정이 없는 카드팩 포장은 원본 대체 아이템을 대기열로 지급합니다. 실제 카드 추첨은 미확인입니다.</p></details>
@@ -75,10 +77,11 @@ function tools(s,c){
  <details><summary>생성 부스트 실험</summary><p>아래 배율은 연구 입력입니다. 실제 계정의 부스트 모드·×8 에너지 임계값을 추정하지 않습니다. 원본 허용 타입에서 주문 부족분과 홀수 잉여분을 반영해 실제 산출 배율을 낮출 수 있습니다.</p><div class="game-tool-actions">${[0,1,2,3].map(r=>button('set-boost',`×${2**r}${(s.boostRatio||0)===r?' · 선택':''}`,{value:r})).join('')}</div><p>서버 충전횟수 비용표가 없으면 코드 fallback1회를 사용합니다. 에너지는 실제 산출 배율에 따라 차감합니다.</p></details>
  ${renderProductionLab(s,c)}
  <details><summary>시간과 재화 실험</summary><div class="game-tool-actions">${button('time','2분 경과',{value:120})}${button('time','1시간 경과',{value:3600})}${button('aid-energy','에너지0')}${button('aid-coins','골드+200')}${button('aid-gems','젬+200')}</div><p>보충 버튼은 원작 지급과 구분합니다. 실제 경과는 회복 타이머에 반영하며, 오프라인 최대7일은 웹 정책입니다.</p></details>
- <details><summary>현재 구현과 남은 차이</summary><dl class="game-parity"><div><dt>APK 규칙 적용</dt><dd>초기63칸·생성기163타입·고정16주문·일반 랜덤5종·보관함·기본과제4277개·레벨300행·재화와 특수도구·상점 갱신</dd></div><div><dt>캡처 참고 재구성</dt><dd>로딩·타이틀·오프닝 안내·맵·과제 장면·보상 복귀, HUD·고객 트레이·보드·선택창·드래그·합성 효과. 얼굴 아이콘은 전신 고객의 대체 표현</dd></div><div><dt>별도 작업</dt><dd>첫106과제 이후 장면 자료·전체 대사·완성3D맵·CG·캐릭터 모션, 추가5종 독립 연구 외 활동 튜토리얼·활동 운영값·전체 음향/연출</dd></div></dl><p>보조 지급 없는 별도 모델 실행에서150과제·479주문을 거쳐 레벨21까지 확인했습니다. 원작 계정의 실행 기록이나 실제 소요시간 측정은 아닙니다.</p><p>메인 맵의 캡처3쌍은 독립 시연입니다. 별도로 첫106과제의 원작 명령·선정대사·41슬롯123후보 선택과111개 실물 기술미리보기(12후보 미동봉)를 연결했습니다. 효과음은 기본 꺼짐이며 확인한 발췌만 재생합니다.</p><a href="#tutorial-analysis">추가 튜토리얼 실험</a> · <a href="#captures">캡처 자료와 비교</a> · <a href="#bm-timeline">BM 관측 타임라인</a> · <a href="#bm-validation">BM 조건 실험</a></details>
+ <details><summary>현재 구현과 남은 차이</summary><dl class="game-parity"><div><dt>APK 규칙 적용</dt><dd>초기63칸·생성기163타입·고정16주문·일반 랜덤5종·보관함·기본과제4277개·레벨300행·재화와 특수도구·상점 갱신</dd></div><div><dt>캡처 참고 재구성</dt><dd>로딩·타이틀·오프닝 안내·맵·과제 장면·보상 복귀, HUD·고객 트레이·보드·선택창·드래그·합성 효과. 얼굴 아이콘은 전신 고객의 대체 표현</dd></div><div><dt>별도 작업</dt><dd>첫106과제 이후 장면 자료·전체 대사·완성3D맵·CG·캐릭터 모션, 추가10종 연구 외87개 활동 튜토리얼·활동 운영값·전체 음향/연출</dd></div></dl><p>보조 지급 없는 별도 모델 실행에서150과제·479주문을 거쳐 레벨21까지 확인했습니다. 원작 계정의 실행 기록이나 실제 소요시간 측정은 아닙니다.</p><p>메인 맵의 캡처3쌍은 독립 시연입니다. 별도로 첫106과제의 원작 명령·선정대사·41슬롯123후보 선택과111개 실물 기술미리보기(12후보 미동봉)를 연결했습니다. 효과음은 기본 꺼짐이며 확인한 발췌만 재생합니다.</p><a href="#tutorial-analysis">추가 튜토리얼 실험</a> · <a href="#captures">캡처 자료와 비교</a> · <a href="#bm-timeline">BM 관측 타임라인</a> · <a href="#bm-validation">BM 조건 실험</a></details>
  <details><summary>최근 행동</summary><ol class="game-action-log">${s.log.slice(0,8).map(r=>`<li>${e(r.message)}</li>`).join('')}</ol></details>${boundaries(c)}<p class="game-save-note">${e(s.storageMessage||'이 브라우저에 자동 저장합니다.')}</p></aside>`;
 }
 function confirmation(s,c){if(!s.toolPending)return '';const target=s.board.find(r=>r?.uid===s.toolPending.targetUid);return `<dialog id="tool-dialog" class="source-play-dialog game-tool-dialog" aria-labelledby="game-tool-title"><div class="source-dialog-heading"><h2 id="game-tool-title">도구를 사용할까요?</h2>${button('cancel-tool','취소')}</div><div class="source-dialog-content"><p>${e(target?name(c,target.type):'선택 아이템')}에 ${s.toolPending.kind==='rainbow'?'레벨업 도구':'가위'}를 적용합니다. 확정할 때 대상과 공간을 다시 확인합니다.</p><div class="source-dialog-actions">${button('confirm-tool','사용하기',{cls:'game-confirm'})}${button('cancel-tool','취소')}</div></div></dialog>`;}
+function guideHint(s,d){const b=s.tutorialBridge;if(!d.tutorialConfig||!b||!validTutorialPlay(b,d.tutorialConfig)||!b.enabled||b.selected!=='tutorial_story_recap')return '';return '<div class="tutorial-play-status"><p>'+e(b.message)+'</p><button class="game-button" data-play="guide:clock">안내 지연 진행</button><button class="game-button" data-play="guide:event" data-value="2">회상 설명 계속</button></div>';}
 export function renderGamePlay(s,c,d,{loading=false,notice='',entry=false,taskList=false,newPrompt=false}={}){
  const title=`<header class="studio-intro game-intro"><h1>직접 플레이하며 비교하기</h1><p>APK4.10.5의 규칙과 제공 캡처를 바탕으로 실제 게임에 가까운 플레이를 만들고 있습니다.</p></header>`;
  const flow=screenFlow(s,c);let content;
@@ -89,8 +92,9 @@ export function renderGamePlay(s,c,d,{loading=false,notice='',entry=false,taskLi
  else if(flow.phase.startsWith('space-'))content=renderSpace(s,c,d);
  else if(flow.phase==='decor')content=renderDecor(s,c,d);
  else if(flow.phase==='decor-edit')content=renderDecorEditor(s,c,d);
+ else if(flow.phase==='skins')content=renderSkinLab(s.skinLab===undefined?(d.skinConfig?createSkinLab(d.skinConfig):null):s.skinLab,d.skinConfig);
  else if(s.stage==='home')content=renderMap(s,c,d,hud(s,c,d),tutorial(s,c,d));
  else content=`<div class="game-phone" data-game-screen="board" aria-label="APK 기반 게임형 플레이">${hud(s,c,d)}${orders(s,c,d)}${tutorial(s,c,d)}${board(s,c,d)}${selected(s,c,d)}<p class="game-control-hint">드래그로 이동·합성 · 두 칸 탭도 가능</p></div>`;
  const prompt=newPrompt?`<dialog id="game-new-dialog" class="source-play-dialog" aria-labelledby="game-new-title"><div class="source-dialog-heading"><h2 id="game-new-title">새 게임을 시작할까요?</h2>${button('game-new-cancel','취소')}</div><div class="source-dialog-content"><p>현재 저장을 이전 저장으로 백업한 뒤 초기 배치에서 시작합니다. 보관할 플레이는 상태 JSON으로 내려받으세요.</p>${button('export','현재 상태 JSON')}${button('new-game','백업하고 새 게임 시작',{cls:'game-start'})}</div></dialog>`:'';
- return `<div class="game-play">${title}<div class="game-play-layout"><section class="game-play-stage">${sceneToolbar(s,c)}${content}<div class="game-feedback" role="status" aria-live="polite">${e(notice||s.message)}</div></section>${tools(s,c)}</div>${!entry&&!loading?modal(s,c,d)+confirmation(s,c):''}${taskList?renderTaskList(s,c):''}${prompt}</div>`;
+ return `<div class="game-play">${title}<div class="game-play-layout"><section class="game-play-stage">${sceneToolbar(s,c)}${content}<div class="game-feedback" role="status" aria-live="polite">${e(notice||s.message)}</div></section>${tools(s,c,d)}</div>${!entry&&!loading?modal(s,c,d)+confirmation(s,c):''}${taskList?renderTaskList(s,c,{guideHTML:guideHint(s,d)}):''}${prompt}</div>`;
 }
