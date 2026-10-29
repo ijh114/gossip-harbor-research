@@ -1,0 +1,671 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "scope": "Five independent, explicit research-context tutorial executers. No mutation of original sixteen guides, game wallet, server state or actual input logs.",
+  "guides": [
+    {
+      "id": "tutorial_battlepass",
+      "name": "패스 메인·수령권 안내",
+      "executer": "PassActivity",
+      "declarationOrder": 116,
+      "condition": "",
+      "fields": [
+        {
+          "path": "passActivityId",
+          "label": "명시한 연구 활동 ID",
+          "kind": "string",
+          "default": null
+        },
+        {
+          "path": "passDefinition",
+          "label": "실제 동봉 패스 창 정의",
+          "kind": "object",
+          "default": null
+        },
+        {
+          "path": "openViews",
+          "label": "현재 열려 있다고 명시한 창",
+          "kind": "array",
+          "default": null
+        }
+      ],
+      "researchExample": {
+        "mode": "research",
+        "passActivityId": "research-pass-1",
+        "passDefinition": {
+          "mainWindow": "RoadtripPassMainWindowNew",
+          "newTaskWindow": "RoadtripPassNewTimelimitTaskWindowNew",
+          "finishTaskWindow": "RoadtripPassFinishTaskWindowNew",
+          "buyTicketWindow": "RoadtripPassBuyTicketWindow"
+        },
+        "openViews": [
+          "RoadtripPassMainWindowNew"
+        ]
+      },
+      "eventCatalog": [
+        {
+          "label": "패스 메인 창 열림",
+          "event": {
+            "type": "view-opened",
+            "name": "RoadtripPassMainWindowNew"
+          }
+        },
+        {
+          "label": "정적 지연 경계 진행",
+          "event": {
+            "type": "clock"
+          }
+        },
+        {
+          "label": "안내 마스크 클릭",
+          "event": {
+            "type": "mask-click"
+          }
+        },
+        {
+          "label": "수령권 창 열림",
+          "event": {
+            "type": "view-opened",
+            "name": "PassActivityTicketWindow"
+          }
+        },
+        {
+          "label": "새 과제 창 열림",
+          "event": {
+            "type": "view-opened",
+            "name": "RoadtripPassNewTimelimitTaskWindowNew"
+          }
+        },
+        {
+          "label": "활동 종료 스냅샷",
+          "event": {
+            "type": "pass-state-changed",
+            "activityId": "research-pass-1",
+            "state": "Ended"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "phase": "tip-delay",
+          "sourceStep": "1",
+          "delaySeconds": 1,
+          "label": "등록 후 메인 안내 대기"
+        },
+        {
+          "phase": "main-tip",
+          "sourceStep": "1",
+          "label": "메인 창 설명"
+        },
+        {
+          "phase": "ticket-highlight",
+          "sourceStep": "2",
+          "label": "수령권 영역 강조"
+        }
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPassActivity.lua",
+          "sha256": "352205e44bcb01bf55349d6460843b5461c6fc9c2b0c4814389acf8700773b97",
+          "ranges": [
+            "24–65",
+            "68–113"
+          ],
+          "kind": "static-reconstructed-packaged-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/PassActivity/PassActivityDefinition.lua",
+          "sha256": "d012e5f6d6588322ff4e30bae60d25c62b7e29e3a22d14bc24960317a1ce5edd",
+          "ranges": [
+            "2–139"
+          ],
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_event_energyboost_simple",
+      "name": "간단 에너지 부스트 안내",
+      "executer": "EnergyBoostSimpleSetting",
+      "declarationOrder": 194,
+      "condition": "",
+      "fields": [
+        {
+          "path": "energyBoostLevel",
+          "label": "서버 EnergyBoostLevel",
+          "kind": "integer",
+          "default": null
+        },
+        {
+          "path": "gameMode",
+          "label": "게임 모드",
+          "kind": "string",
+          "default": null
+        },
+        {
+          "path": "allWindowsClosed",
+          "label": "모든 창 닫힘",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "otherStrong",
+          "label": "다른 강제 안내 실행 중",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "energyBoostHudAvailable",
+          "label": "에너지 부스트 HUD 존재",
+          "kind": "boolean",
+          "default": null
+        }
+      ],
+      "researchExample": {
+        "mode": "research",
+        "energyBoostLevel": 1,
+        "gameMode": "Main",
+        "allWindowsClosed": true,
+        "otherStrong": false,
+        "energyBoostHudAvailable": true
+      },
+      "eventCatalog": [
+        {
+          "label": "게임 모드 전환 완료",
+          "event": {
+            "type": "game-mode-change-finished"
+          }
+        },
+        {
+          "label": "정적 지연 경계 진행",
+          "event": {
+            "type": "clock"
+          }
+        },
+        {
+          "label": "부스트 모드 변경",
+          "event": {
+            "type": "energy-mode-changed"
+          }
+        },
+        {
+          "label": "첫 마스크 클릭",
+          "event": {
+            "type": "mask-click"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "phase": "entry-delay",
+          "sourceStep": null,
+          "delaySeconds": 0.5,
+          "label": "활성 조건 재검사 대기"
+        },
+        {
+          "phase": "click-1",
+          "sourceStep": "1",
+          "label": "첫 부스트 전환 안내",
+          "textKey": "tutorial_energy_boost_switch_1"
+        },
+        {
+          "phase": "click-2",
+          "sourceStep": "2",
+          "label": "다음 부스트 버튼 강조",
+          "textKey": "tutorial_energy_boost_switch_2"
+        }
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterEnergyBoostSimpleSetting.lua",
+          "sha256": "b23afddc1c8bd8f9204ff79d02208475047e2f59b95be0fe61ab088217a025a8",
+          "ranges": [
+            "10–31",
+            "34–77"
+          ],
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_generator_factory_Acquire",
+      "name": "생성기 공장 획득 안내",
+      "executer": "GeneratorFactoryAcquire",
+      "declarationOrder": 212,
+      "condition": "TutorialFinished-tutorial_generator_factory",
+      "fields": [
+        {
+          "path": "registeredTutorials",
+          "label": "이미 Finished로 등록된 튜토리얼 ID",
+          "kind": "array",
+          "default": null
+        },
+        {
+          "path": "gameMode",
+          "label": "게임 모드",
+          "kind": "string",
+          "default": null
+        },
+        {
+          "path": "mainBoardViewAvailable",
+          "label": "메인 보드 View 존재",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "generatorFactoryOpen",
+          "label": "생성기 공장 열림",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "allWindowsClosed",
+          "label": "모든 창 닫힘",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "otherStrong",
+          "label": "다른 강제 안내 실행 중",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "factoryCandidates",
+          "label": "ItemGeneratorFactory 컴포넌트 보유 후보",
+          "kind": "array",
+          "default": null
+        },
+        {
+          "path": "factoryRandomRoll",
+          "label": "Table.ListRandomSelectOne에 대응하는 명시 연구 난수",
+          "kind": "number",
+          "default": null
+        }
+      ],
+      "researchExample": {
+        "mode": "research",
+        "registeredTutorials": [
+          "tutorial_generator_factory"
+        ],
+        "gameMode": "Main",
+        "mainBoardViewAvailable": true,
+        "generatorFactoryOpen": true,
+        "allWindowsClosed": true,
+        "otherStrong": false,
+        "factoryCandidates": [
+          {
+            "uid": "research-factory-item-1",
+            "position": {
+              "x": 2,
+              "y": 6
+            },
+            "hasFactoryComponent": true
+          }
+        ],
+        "factoryRandomRoll": 0.25
+      },
+      "eventCatalog": [
+        {
+          "label": "1초 스케줄러 검사",
+          "event": {
+            "type": "factory-poll"
+          }
+        },
+        {
+          "label": "정적 지연 경계 진행",
+          "event": {
+            "type": "clock"
+          }
+        },
+        {
+          "label": "공장 보드 아이템 탭 이벤트",
+          "event": {
+            "type": "factory-item-tapped"
+          }
+        },
+        {
+          "label": "보관함 강조 마스크 클릭",
+          "event": {
+            "type": "mask-click"
+          }
+        },
+        {
+          "label": "공장 닫힘 이벤트",
+          "event": {
+            "type": "factory-state-changed",
+            "isOpen": false
+          }
+        }
+      ],
+      "steps": [
+        {
+          "phase": "factory-delay",
+          "sourceStep": null,
+          "delaySeconds": 0.3,
+          "label": "후보 스냅샷·난수 선택 대기"
+        },
+        {
+          "phase": "tap-item",
+          "sourceStep": "1",
+          "label": "선택한 공장 아이템 강조",
+          "textKey": "generator_factory_guide_2_1"
+        },
+        {
+          "phase": "inventory-highlight",
+          "sourceStep": "2",
+          "label": "보관함 강조",
+          "textKey": "generator_factory_guide_2_2"
+        }
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGeneratorFactoryAcquire.lua",
+          "sha256": "2676db65e6ba375966b4c0dcbf05344dfa7aa14fb3f69b6644cd9c28a1dc7102",
+          "ranges": [
+            "5–45",
+            "48–92"
+          ],
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ],
+      "callbackBoundary": "0.3초 콜백은 캡처 후보를 사용하며 활성 조건을 재검사하지 않습니다. 시각 시작 전 공장 닫힘은 ongoing 문자열이 비어 있어 종료되지 않습니다. FactoryTabBoardItem 콜백은 msg의 UID를 재검사하지 않습니다."
+    },
+    {
+      "id": "tutorial_story_recap",
+      "name": "스토리 회상 입구 안내",
+      "executer": "StoryRecap",
+      "declarationOrder": 218,
+      "condition": "",
+      "fields": [
+        {
+          "path": "storyRecapOpen",
+          "label": "StoryRecapModel:IsOpen 결과",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "storyUnlockedBooks",
+          "label": "해금 책 목록",
+          "kind": "array",
+          "default": null
+        },
+        {
+          "path": "otherStrong",
+          "label": "다른 강제 안내 실행 중",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "openViews",
+          "label": "현재 과제 창 목록",
+          "kind": "array",
+          "default": null
+        }
+      ],
+      "researchExample": {
+        "mode": "research",
+        "storyRecapOpen": true,
+        "storyUnlockedBooks": [
+          1
+        ],
+        "otherStrong": false,
+        "openViews": [
+          "TaskWindow"
+        ]
+      },
+      "eventCatalog": [
+        {
+          "label": "과제 창 열림",
+          "event": {
+            "type": "view-opened",
+            "name": "TaskWindow"
+          }
+        },
+        {
+          "label": "정적 지연 경계 진행",
+          "event": {
+            "type": "clock"
+          }
+        },
+        {
+          "label": "설명 마스크 클릭",
+          "event": {
+            "type": "mask-click"
+          }
+        },
+        {
+          "label": "과제 창 닫힘",
+          "event": {
+            "type": "view-closed",
+            "name": "TaskWindow"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "phase": "recap-delay",
+          "sourceStep": null,
+          "delaySeconds": 1,
+          "label": "회상 조건·창 존재 재검사"
+        },
+        {
+          "phase": "dialogue",
+          "sourceStep": "1",
+          "label": "회상 설명",
+          "textKey": "recap_guide1_1"
+        },
+        {
+          "phase": "recap-highlight",
+          "sourceStep": "2",
+          "label": "회상 입구 강조",
+          "textKey": "recap_guide1_2"
+        }
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterStoryRecap.lua",
+          "sha256": "466bbdd77411c9b2323254205ea0b2f0b6bf50f9069671f35b12aa67240f0be3",
+          "ranges": [
+            "10–37",
+            "40–69"
+          ],
+          "kind": "static-reconstructed-packaged-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/StoryRecap/Model/StoryRecapModel.lua",
+          "sha256": "05192db30e277f1690ab4395649b2089a9e5f32f43c55b2b555059f1cb5fa9e5",
+          "ranges": [
+            "64–75"
+          ],
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_change_decoration",
+      "name": "장식 변경 안내",
+      "executer": "ChangeDecoration",
+      "declarationOrder": 404,
+      "condition": "",
+      "fields": [
+        {
+          "path": "otherStrong",
+          "label": "다른 강제 안내 실행 중",
+          "kind": "boolean",
+          "default": null
+        },
+        {
+          "path": "decorationRewards",
+          "label": "종류·스킨/슬롯·해금 상태를 명시한 보상",
+          "kind": "array",
+          "default": null
+        }
+      ],
+      "researchExample": {
+        "mode": "research",
+        "otherStrong": false,
+        "decorationRewards": [
+          {
+            "category": "Skin",
+            "skinId": "research-skin-2",
+            "slot": "research-slot-1",
+            "unlockedSkins": [
+              "research-skin-1",
+              "research-skin-2"
+            ]
+          }
+        ]
+      },
+      "eventCatalog": [
+        {
+          "label": "장식 보상 이벤트",
+          "event": {
+            "type": "decoration-reward"
+          }
+        },
+        {
+          "label": "정적 지연 경계 진행",
+          "event": {
+            "type": "clock"
+          }
+        },
+        {
+          "label": "설명 마스크 클릭",
+          "event": {
+            "type": "mask-click"
+          }
+        },
+        {
+          "label": "장식 안내 팝업 완료 콜백",
+          "event": {
+            "type": "decoration-popup-completed"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "phase": "dialogue-delay",
+          "sourceStep": "1",
+          "delaySeconds": 0.8,
+          "label": "등록 후 장식 설명 대기"
+        },
+        {
+          "phase": "dialogue",
+          "sourceStep": "1",
+          "label": "장식 변경 설명",
+          "textKey": "deco_guide_bubble"
+        },
+        {
+          "phase": "popup-delay",
+          "sourceStep": "2",
+          "delaySeconds": 0.8,
+          "label": "장식 안내 팝업 대기"
+        },
+        {
+          "phase": "popup-open",
+          "sourceStep": "2",
+          "label": "TutorialChangeDecorationContent 콜백 대기",
+          "popupParameter": 7
+        }
+      ],
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterChangeDecoration.lua",
+          "sha256": "4f241f22d08431c8cd89ccffc1527e0c4133f0f7f0c57659a24c6637a55565d0",
+          "ranges": [
+            "10–24",
+            "27–55"
+          ],
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ],
+      "callbackBoundary": "첫 조건 충족 Skin 보상으로 한 인스턴스를 비교합니다. 여러 보상이 동시에 조건을 만족할 때 원작 중복 Delay 콜백 경합은 재현했다고 주장하지 않습니다. popupParameter7의 단위를 추정하지 않습니다."
+    }
+  ],
+  "registrationBoundary": "SetTutorialFinished를 화면 안내 완료/FinishTutorial과 분리합니다. 일반 시각 진입은 첫 표시 단계에서 먼저 등록하고, Pass의 수령권 창 조기 종료는 메인 안내 표시 없이 Finish 경로에서 등록될 수 있습니다.",
+  "coordinationBoundary": "TutorialModel iterates pairs and source executers can race. No global runtime priority is inferred. This isolated web tool permits one selected guide at a time; it does not claim source listener ordering.",
+  "eventPayloadBoundary": "Event fields are explicit snapshots supplied to the web adapter, not asserted native wire payloads. Missing facts yield unknown and cannot start or advance a guide.",
+  "unsupported": [
+    {
+      "id": "tutorial_album_moon_start",
+      "name": "달 앨범 안내",
+      "reason": "AlbumBase의 0/1/2 진행상태·15번째세트Laser분기·Royal·팩/도움말/카드창·scroll/drag 복원맥락이 추가로 필요합니다. 단순클릭완료로 축약하지 않았습니다.",
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbum_moon.lua",
+          "sha256": "f33f0a6aabbe34518021f3c2cb1dc3be7e5ca67c44345c25dd9bbbc9dda32ecd",
+          "ranges": [
+            "1–5"
+          ],
+          "kind": "static-reconstructed-packaged-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+          "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+          "ranges": [
+            "1–246"
+          ],
+          "kind": "static-reconstructed-packaged-code"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "analysis/lua/Lua_Core/Data/Tutorial/TutorialConfig.lua",
+      "sha256": "2afdb989fba4dc1016c1d33961a928317f2cfb444f806e6977f924bc5996aa85",
+      "ranges": [
+        "116–121",
+        "194–199",
+        "212–223",
+        "236–253",
+        "404–409"
+      ],
+      "kind": "static-reconstructed-packaged-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/Tutorial/TutorialModel.lua",
+      "sha256": "b52c9ca625826500e7a1be78121644a58ad5c7777ab3303e5b604eca67a92766",
+      "ranges": [
+        "85–102",
+        "156–159",
+        "185–222"
+      ],
+      "kind": "static-reconstructed-packaged-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/Tutorial/TutorialExecuterBase.lua",
+      "sha256": "2dbf2af6beb2eac00fa3f4cf8886c3d5cf8b78ec35479ddab982996f9d08c55f",
+      "ranges": [
+        "41–49",
+        "57–77"
+      ],
+      "kind": "static-reconstructed-packaged-code"
+    }
+  ],
+  "passDefinitions": [
+    {
+      "activityType": "RoadtripPass",
+      "mainWindow": "RoadtripPassMainWindowNew",
+      "newTaskWindow": "RoadtripPassNewTimelimitTaskWindowNew",
+      "finishTaskWindow": "RoadtripPassFinishTaskWindowNew",
+      "buyTicketWindow": "RoadtripPassBuyTicketWindow"
+    },
+    {
+      "activityType": "WitchlingPass",
+      "mainWindow": "WitchlingPassMainWindowNew",
+      "newTaskWindow": "WitchlingPassNewTimelimitTaskWindowNew",
+      "finishTaskWindow": "WitchlingPassFinishTaskWindowNew",
+      "buyTicketWindow": "WitchlingPassBuyTicketWindow"
+    },
+    {
+      "activityType": "SplurgePass",
+      "mainWindow": "SplurgePassMainWindowNew",
+      "newTaskWindow": "SplurgePassNewTimelimitTaskWindowNew",
+      "finishTaskWindow": "SplurgePassFinishTaskWindowNew",
+      "buyTicketWindow": "SplurgePassBuyTicketWindow"
+    }
+  ],
+  "revision": "d9e41115ba4465d92f3059600364bb23eccbcebd4a68477969c45c9039e5f504"
+}

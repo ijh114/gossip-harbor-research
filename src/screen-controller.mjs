@@ -1,8 +1,11 @@
 import {screenFlow,beginOpening,beginTaskScene,finishTaskScene,leaveScene,flowBlocksInput,SPACES} from './screen-flow.mjs';
 import {sourceScene,sceneCursor,chooseSceneVariant,advanceScene,canCommitScene,commitSceneChoices} from './scene-script.mjs';
+import {beginDecorEdit,previewDecor,confirmDecorEdit,cancelDecorEdit} from './decor-model.mjs';
+import {playGuide} from './play-guide.mjs';
+import {mountMapInput} from './map-input.mjs';
 
 export function createScreenController({getState,getConfig,getData,domain,persist,render}){
- let booted=false,loading=false,entry=true,taskList=false,newPrompt=false,timer=null,lastScreen='',audio=null,soundFailure='',returnFocus=null;
+ let booted=false,loading=false,entry=true,taskList=false,newPrompt=false,timer=null,lastScreen='',audio=null,screenNotice='',returnFocus=null,mapInput=null;
  const state=()=>getState(),config=()=>getConfig(),flow=()=>screenFlow(state(),config());
  const reduce=()=>window.matchMedia?.('(prefers-reduced-motion: reduce)').matches===true;
  function stopAudio(){if(audio){audio.pause();audio=null;}}
@@ -11,15 +14,15 @@ export function createScreenController({getState,getConfig,getData,domain,persis
   const clip=getData().refinement?.audio?.clips?.find(r=>r.id===id);
   if(!clip||!/^\.\/assets\/media\/refinement\/audio\/[\w-]+\.mp3$/.test(clip.src))return;
   stopAudio();
-  try{const current=new window.Audio(clip.src);audio=current;current.volume=.3;const result=current.play();result?.catch(()=>{soundFailure='브라우저에서 효과음을 재생하지 못했습니다. 효과음을 껐다가 다시 켜보세요.';const node=document.querySelector('.game-feedback');if(node)node.textContent=soundFailure;});}
-  catch{soundFailure='이 환경에서는 효과음을 재생할 수 없습니다.';}
+  try{const current=new window.Audio(clip.src);audio=current;current.volume=.3;const result=current.play();result?.catch(()=>{screenNotice='브라우저에서 효과음을 재생하지 못했습니다. 효과음을 껐다가 다시 켜보세요.';const node=document.querySelector('.game-feedback');if(node)node.textContent=screenNotice;});}
+  catch{screenNotice='이 환경에서는 효과음을 재생할 수 없습니다.';}
  }
  function refresh(){persist();render();}
  function finish(){
   const f=flow();if(f.phase!=='task-building')return;
   const scene=sourceScene(getData().sceneConfig,f.task?.id);if(scene&&!canCommitScene(f.task,scene)){f.phase='task-story';return;}
   const result=domain('quest-finish');
-  if(result.ok){if(scene)commitSceneChoices(f,f.task,scene);finishTaskScene(state(),config());}else{f.phase='task-story';soundFailure=result.message;}
+  if(result.ok){if(scene)commitSceneChoices(f,f.task,scene);finishTaskScene(state(),config());}else{f.phase='task-story';screenNotice=result.message;}
  }
  function handle(action,value){
   const s=state(),f=flow();
@@ -28,7 +31,7 @@ export function createScreenController({getState,getConfig,getData,domain,persis
   if(action==='game-continue'){entry=false;if(s.stage==='title'&&f.phase!=='opening')beginOpening(s,config());return true;}
   if(action==='game-new-prompt'){newPrompt=true;return true;}
   if(action==='game-new-cancel'){newPrompt=false;return true;}
-  if(action==='game-sound'){f.sound=!f.sound;soundFailure='';if(f.sound)sound('button-click');else stopAudio();return true;}
+  if(action==='game-sound'){f.sound=!f.sound;screenNotice='';if(f.sound)sound('button-click');else stopAudio();return true;}
   if(action==='game-task-list-close'){taskList=false;return true;}
   if(entry||loading||newPrompt)return false;
   if(action==='game-opening-next'||action==='game-opening-skip'){
@@ -56,6 +59,12 @@ export function createScreenController({getState,getConfig,getData,domain,persis
   }
   if(action==='game-decor-open'){if(f.phase==='map')f.phase='decor';return true;}
   if(action==='game-decor-close'){if(f.phase==='decor')f.phase='map';return true;}
+  if(action==='game-decor-edit'){
+   if(f.phase==='decor'){const guide=playGuide(s,config()),r=beginDecorEdit(s,config(),getData().sceneConfig,String(value),{inputLocked:Boolean(guide.input||guide.waitSeconds)});screenNotice=r.message;}return true;
+  }
+  if(action==='game-decor-preview'){const r=previewDecor(s,config(),getData().sceneConfig,String(value));screenNotice=r.message;returnFocus=`[data-play="game-decor-preview"][data-value="${['1','2','3'].includes(String(value))?value:'1'}"]`;return true;}
+  if(action==='game-decor-confirm'){const r=confirmDecorEdit(s,config(),getData().sceneConfig);screenNotice=r.message;return true;}
+  if(action==='game-decor-cancel'){const r=cancelDecorEdit(s);screenNotice=r.message;return true;}
   if(action==='game-map-pan'&&f.phase==='map'){const step={left:[-5,0],right:[5,0],up:[0,-5],down:[0,5]}[value];if(step){f.view.x=Math.max(-25,Math.min(25,f.view.x+step[0]));f.view.y=Math.max(-25,Math.min(25,f.view.y+step[1]));}return true;}
   if(action==='game-map-zoom'&&f.phase==='map'){f.view.zoom=Math.max(1,Math.min(1.8,Number(value)||1));return true;}
   if(action==='game-map-reset'&&f.phase==='map'){f.view={x:0,y:0,zoom:1};return true;}
@@ -75,7 +84,7 @@ export function createScreenController({getState,getConfig,getData,domain,persis
   if(['focus','save','export','reset','scenario','new-game'].includes(action))return false;
   return entry||loading||taskList||newPrompt||flowBlocksInput(state(),config());
  }
- function beforeRender(){if(timer!==null){window.clearTimeout(timer);timer=null;}if(!window.location.hash.startsWith('#experience'))stopAudio();}
+ function beforeRender(){if(timer!==null){window.clearTimeout(timer);timer=null;}mapInput?.stop();mapInput=null;if(!window.location.hash.startsWith('#experience'))stopAudio();}
  function afterMount(){
   const root=document.querySelector('.game-play');if(!root)return;
   for(const [id,close]of [['game-task-list','game-task-list-close'],['game-new-dialog','game-new-cancel']]){
@@ -83,6 +92,7 @@ export function createScreenController({getState,getConfig,getData,domain,persis
   }
   if(!booted){loading=true;timer=window.setTimeout(()=>{booted=true;loading=false;render();},350);return;}
   const f=flow();
+  if(f.phase==='map'&&!entry&&!taskList&&!newPrompt)mapInput=mountMapInput(root.querySelector('.game-map-scene'),{getView:()=>flow().view,isLocked:()=>{const g=playGuide(state(),config());return Boolean(state().modal||g.input||g.waitSeconds);},onCommit:view=>{flow().view=view;returnFocus='.game-map-scene';refresh();}});
   if(!entry&&!taskList&&!newPrompt&&['task-building','space-building'].includes(f.phase)){
    const expected=snapshot();timer=window.setTimeout(()=>{if(expected!==snapshot()||entry)return;if(f.phase==='task-building')finish();else{f.spaceAfter=true;f.phase='space-choice';}refresh();},reduce()?0:850);
   }
@@ -94,9 +104,9 @@ export function createScreenController({getState,getConfig,getData,domain,persis
  function snapshot(){const s=state(),f=flow();return JSON.stringify([s.questsDone,s.pendingQuest?.id,f.phase,f.task?.id,f.task?.script?.index,f.space]);}
  document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAudio();});
  window.addEventListener('pagehide',stopAudio);
- return {handle,blocked,beforeRender,afterMount,sound,
+ return {handle,blocked,beforeRender,afterMount,sound,isMapDragging:()=>Boolean(mapInput?.isDragging()),
   reset(){beforeRender();booted=true;loading=false;entry=false;newPrompt=false;taskList=false;beginOpening(state(),config());},
   imported(){beforeRender();entry=true;newPrompt=false;taskList=false;stopAudio();},
-  renderOptions(){if(!booted)loading=true;return {loading,entry,taskList,newPrompt,notice:soundFailure};}
+  renderOptions(){if(!booted)loading=true;return {loading,entry,taskList,newPrompt,notice:screenNotice};}
  };
 }

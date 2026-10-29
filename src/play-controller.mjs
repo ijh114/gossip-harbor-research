@@ -151,7 +151,7 @@ export function createPlayController({getData,render,download}){
     const bubblePrice=document.querySelector('[data-live-bubble-price]'),bubble=state.bubbles?.[state.board[state.selected]?.uid];if(bubblePrice&&bubble){const quote=currentBubbleQuote(state,config(),bubble);bubblePrice.textContent=quote.status==='known'?quote.price.toLocaleString('ko-KR'):'미확인';bubblePrice.closest('button').disabled=quote.status!=='known'||state.wallet.gems<quote.price;}
     const skipCost=document.querySelector('[data-live-speedup-cost]');if(skipCost&&clocks.skipCost!==null){skipCost.textContent=clocks.skipCost.toLocaleString('ko-KR');skipCost.closest('button').disabled=state.wallet.gems<clocks.skipCost;}
     if(Date.now()-lastCheckpoint>=15000){persist();lastCheckpoint=Date.now();}
-    if(before!==signature()&&!drag&&!document.querySelector('dialog[open]')){persist();render();}
+    if(before!==signature()&&!drag&&!screens.isMapDragging()&&!document.querySelector('dialog[open]')){persist();render();}
    },1000);
   }
  }

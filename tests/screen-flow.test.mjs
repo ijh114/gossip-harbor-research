@@ -73,7 +73,7 @@ test('leaving an in-flight task for title cancels its timer; continuing safely f
 
 test('three reference spaces preview and persist changes independently of quest progression, gold, XP and board',async()=>{
  const saved=createPlay(config);saved.stage='home';
- await harness(async({w,act,read,screen})=>{
+ await harness(async({w,act,read,screen,recreate})=>{
   await pause(380);act('game-continue');const before=read();act('game-space-open');assert.equal(screen(),'space-choice');
   act('game-space-select','flowers');assert.equal(w.document.querySelectorAll('.game-space-options button').length,3);
   act('game-space-build');await pause(25);assert.equal(read().screenFlow.spaceAfter,true);assert.equal(screen(),'space-choice');
@@ -104,7 +104,7 @@ test('merging other levels never borrows the verified level4 sound and failed ac
 
 test('source-backed scene requires its real choice, resumes the selected step and commits the chosen physical slot once',async()=>{
  const saved=createPlay(config);saved.stage='home';saved.wallet.coins=26;
- await harness(async({w,act,read,screen})=>{
+ await harness(async({w,act,read,screen,recreate})=>{
   await pause(380);act('game-continue');act('quest-start');act('game-task-build');assert.equal(screen(),'task-story');assert.equal(read().wallet.coins,26);
   for(let i=0;i<30&&!w.document.querySelector('[data-play=game-scene-choice]');i++)act('game-scene-next');
   assert.ok(w.document.querySelector('[data-play=game-scene-choice]'));act('game-scene-choice','2');
@@ -112,6 +112,10 @@ test('source-backed scene requires its real choice, resumes the selected step an
   for(let i=0;i<30&&!w.document.querySelector('[data-play=game-task-build]');i++)act('game-scene-next');
   act('game-task-build');await pause(25);assert.equal(screen(),'task-reward');assert.equal(read().wallet.coins,0);assert.equal(read().screenFlow.decor['1_1'],'2');
   act('game-task-close');act('game-decor-open');assert.equal(screen(),'decor');assert.ok(w.document.querySelector('img[alt*="技术"],img[alt*="기술"]'));assert.equal(read().questsDone,1);
+  act('game-decor-edit','1_1');assert.equal(screen(),'decor-edit');act('game-decor-preview','3');assert.equal(read().screenFlow.decor['1_1'],'2');
+  recreate();await pause(380);act('game-continue');assert.equal(screen(),'decor-edit');assert.equal(read().screenFlow.decorEdit.selected,'3');
+  act('game-decor-cancel');assert.equal(read().screenFlow.decor['1_1'],'2');act('game-decor-edit','1_1');act('game-decor-preview','1');act('game-decor-confirm');assert.equal(read().screenFlow.decor['1_1'],'1');assert.equal(read().wallet.coins,0);assert.equal(read().questsDone,1);
+  act('game-decor-close');const plane=w.document.querySelector('.game-map-scene');plane.focus();plane.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true,cancelable:true}));assert.equal(read().screenFlow.view.x,5);assert.equal(w.document.activeElement.className,'game-scene game-map-scene');w.document.activeElement.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true,cancelable:true}));assert.equal(read().screenFlow.view.x,10);
  },{saved,scenes:true});
 });
 

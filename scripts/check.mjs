@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {mergeResearch,DOMAIN_DEFS,selectDomainFacts} from '../src/domain-model.mjs';
 import {validMedia} from '../src/visual-model.mjs';
+import {createTutorialExtension,validTutorialExtension} from '../src/tutorial-extension.mjs';
 const base=JSON.parse(await readFile('dist/data/research.json','utf8'));
 const extension=JSON.parse(await readFile('dist/data/domains.json','utf8'));
 const followup=JSON.parse(await readFile('dist/data/followup.json','utf8'));
@@ -61,7 +62,7 @@ const completion=JSON.parse(await readFile('dist/data/media-completion.json','ut
 const growth=JSON.parse(await readFile('dist/data/progress-extended.json','utf8'));
 const activities=JSON.parse(await readFile('dist/data/activity-play.json','utf8'));
 const activityMedia=JSON.parse(await readFile('dist/data/activity-media.json','utf8'));
-if(scenes.tasks.length!==60||scenes.summary.taskCommands!==742||scenes.summary.physicalChoiceVariants!==75||scenes.mediaEntries.length!==80)throw new Error('Incomplete packaged scene projection');
+if(scenes.tasks.length!==106||scenes.summary.taskCommands!==1357||scenes.summary.physicalChoiceVariants!==111||scenes.summary.missingPhysicalChoiceVariants!==12||scenes.mediaEntries.length!==116)throw new Error('Incomplete packaged scene projection');
 if(completion.studies.length!==2||completion.mediaEntries.length!==12||completion.studies.some(s=>s.publicReady!==true))throw new Error('Incomplete media completion QA');
 for(const m of [...scenes.mediaEntries,...completion.mediaEntries]){
  if(!validMedia(m))throw new Error('Invalid selected scene/motion asset '+m.key);
@@ -71,4 +72,10 @@ for(const m of [...scenes.mediaEntries,...completion.mediaEntries]){
 if(!growth.success||growth.final.level!==12||growth.final.quests!==60||growth.assistance.aidActions!==0||growth.assistance.paidEnergyPurchases!==0||growth.configRevision!==play.revision)throw new Error('Invalid extended natural progression');
 if(!growth.late?.success||growth.late.final.level!==21||growth.late.final.quests!==150||growth.late.assistance.aidActions!==0||growth.late.assistance.paidEnergyPurchases!==0)throw new Error('Invalid late natural progression');
 if(activities.event.items.length!==35||activities.event.sharedItems.length!==24||activityMedia.summary.eventUnavailable!==35||activityMedia.entries.length!==0)throw new Error('Invalid event image availability boundary');
-console.log('Verified 60 source scenes / 75 physical choice previews, 2 additional motion studies, Lv12/Lv21 growth and explicitly bounded activity play.');
+console.log('Verified 106 source scenes / 111 physical choice previews / 12 explicitly missing, 2 additional motion studies, Lv12/Lv21 growth and explicitly bounded activity play.');
+const tutorials=JSON.parse(await readFile('dist/data/tutorial-extension.json','utf8'));
+const decor=JSON.parse(await readFile('dist/data/decor-edit.json','utf8'));
+if(tutorials.guides.length!==5||!validTutorialExtension(createTutorialExtension(tutorials),tutorials)||decor.sources.length!==4)throw new Error('Invalid additional research boundaries');
+for(const s of [...tutorials.sources,...decor.sources])if(!s.path.startsWith('analysis/')||!/^[a-f0-9]{64}$/.test(s.sha256)||!s.ranges.length)throw new Error('Missing selected code provenance');
+if(followup.tutorialExtension?.remainingPreviouslyUnsupported!==92)throw new Error('Stale tutorial coverage ledger');
+console.log('Verified 5 isolated context-driven tutorials and normal decor edit provenance; no game server or main-wallet connection.');

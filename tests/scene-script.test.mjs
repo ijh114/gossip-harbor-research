@@ -10,11 +10,11 @@ import {renderSceneAnalysis,renderExtendedGrowth} from '../src/research-completi
 const read=async p=>JSON.parse(await readFile(new URL('../src/data/'+p,import.meta.url),'utf8'));
 const [data,c,growth]=await Promise.all(['scene-config.json','play-config.json','progress-extended.json'].map(read));
 
-test('all sixty selected tasks retain source metadata, required choices and physically decoded previews with exact hashes',async()=>{
- assert.equal(data.tasks.length,60);assert.equal(data.summary.taskCommands,742);assert.equal(data.mediaEntries.length,80);
+test('all 106 selected tasks retain source metadata, required choices and physically decoded previews with exact hashes',async()=>{
+ assert.equal(data.tasks.length,106);assert.equal(data.summary.taskCommands,1357);assert.equal(data.mediaEntries.length,116);
  for(const t of data.tasks){assert.equal(t.cost,c.quests.find(q=>q.id===t.id).cost);assert.equal(sceneSteps(t).at(-1).kind,'end');}
- assert.equal(data.tasks.reduce((sum,t)=>sum+t.decorSlots.length,0),25);
- for(const t of data.tasks)for(const slot of t.decorSlots){assert.deepEqual(slot.variants.map(v=>v.id),['1','2','3']);for(const v of slot.variants)assert.ok(data.mediaEntries.some(m=>m.key===v.previewKey));}
+ assert.equal(data.tasks.reduce((sum,t)=>sum+t.decorSlots.length,0),41);
+ for(const t of data.tasks)for(const slot of t.decorSlots){assert.deepEqual(slot.variants.map(v=>v.id),['1','2','3']);for(const v of slot.variants){if(v.previewKey)assert.ok(data.mediaEntries.some(m=>m.key===v.previewKey));else {assert.equal(v.artStatus,'registered-not-physically-included');assert.ok(v.previewUnavailableReason);}}}
  for(const m of data.mediaEntries){const b=await readFile(new URL('../src/'+m.src.slice(2),import.meta.url));assert.equal(createHash('sha256').update(b).digest('hex'),m.sha256,m.key);}
  assert.ok(data.corrections.length);assert.doesNotMatch(JSON.stringify(data),/[CD]:\\/);
 });
@@ -32,14 +32,14 @@ test('corrupt late cursor with missing required choices rewinds to an actionable
  const cursor=sceneCursor(task,scene);assert.equal(cursor.step.kind,'choice');assert.equal(canCommitScene(task,scene),false);assert.equal(chooseSceneVariant(task,scene,'1'),true);assert.equal(advanceScene(task,scene),true);
 });
 
-test('all source sequences commit normal domain costs/rewards once and retain all twenty-five selected slots',()=>{
+test('all source sequences commit normal domain costs/rewards once and retain all 41 registered choice slots',()=>{
  const s=createPlay(c);s.stage='home';s.wallet.coins=data.tasks.reduce((sum,t)=>sum+t.cost,0);const initial=s.wallet.coins;
  for(const scene of data.tasks){assert.equal(playAction(s,'quest-start',null,c).ok,true);beginTaskScene(s,c);const f=screenFlow(s,c);
   for(let steps=0;steps<100&&!canCommitScene(f.task,scene);steps++){const current=sceneCursor(f.task,scene).step;if(current.kind==='choice')assert.equal(chooseSceneVariant(f.task,scene,'3'),true);assert.equal(advanceScene(f.task,scene),true);}
   assert.equal(canCommitScene(f.task,scene),true);assert.equal(playAction(s,'quest-finish',null,c).ok,true);assert.equal(commitSceneChoices(f,f.task,scene),true);leaveScene(s,c);
   assert.equal(playAction(s,'quest-finish',null,c).ok,false);assert.equal(validPlay(s,c),true);
  }
- assert.equal(s.questsDone,60);assert.equal(s.wallet.coins,0);assert.ok(initial>0);assert.equal(Object.keys(s.screenFlow.decor).length,25);
+ assert.equal(s.questsDone,106);assert.equal(s.wallet.coins,0);assert.ok(initial>0);assert.equal(Object.keys(s.screenFlow.decor).length,41);
 });
 
 test('story images preserve their actual source position and are not treated as missing dialogue text',()=>{

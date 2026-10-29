@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "scope": "Completed normal player-choice slots only. Preview/cancel/confirm is separate from quest completion, Skin ownership, purchases and linked-slot variants.",
+  "sources": [
+    {
+      "path": "analysis/lua/Lua_Core/UI/SceneView/EditHud.lua",
+      "ranges": [
+        "65–137",
+        "271–274",
+        "558–580"
+      ],
+      "note": "일반 장식의 선택·확정·취소와 Skin 분기",
+      "kind": "static-reconstructed-packaged-code",
+      "sha256": "852ba3aa30c7de81f6c9036025bde732b8e1ca145b5bdd7a8245ad1c2d7ccd9f"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/MapDataModel.lua",
+      "ranges": [
+        "129–143"
+      ],
+      "note": "과제 중 슬롯 캐시와 완료 후 저장",
+      "kind": "static-reconstructed-packaged-code",
+      "sha256": "9a5cab4fc2000ed436b0995764a338a3eaa463a6d76129899384f1dc66877357"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Map/MapInput.lua",
+      "ranges": [
+        "357–384"
+      ],
+      "note": "타임라인·미리보기·이동 잠금 중 편집 진입 제한",
+      "kind": "static-reconstructed-packaged-code",
+      "sha256": "9c87cb83d233fdeaf25dbb43fc3209e96f9afa96661e76aa0170e30cc22885a6"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Map/MapLayer.lua",
+      "ranges": [
+        "866–876",
+        "929–939"
+      ],
+      "note": "편집 모드와 슬롯 저장 연결",
+      "kind": "static-reconstructed-packaged-code",
+      "sha256": "1f4f81dbd9e15c1addfdad1be5e6ca265a865aeb9b894366507bc32e2839b804"
+    }
+  ],
+  "boundaries": [
+    "선택은 미리보기와 확정으로 구분하며 취소하면 기존 디자인을 유지한다.",
+    "일반 장식만 투영한다. Skin 상품·구매·연결 슬롯과 실제 계정 해금은 미지원이다.",
+    "저장된 장식만 바꾸며 과제 비용·경험치·보상을 다시 처리하지 않는다.",
+    "웹 맵 드래그·방향키·7px 입력 임계는 참고 이미지의 웹 정책이며 원작 월드 좌표·입력 시간을 재현하지 않는다."
+  ]
+}

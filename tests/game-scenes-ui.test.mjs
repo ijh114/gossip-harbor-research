@@ -53,6 +53,9 @@ test('application buttons connect game scenes, dialog focus, spatial preview, ta
   assert.equal(w.document.querySelectorAll('.scene-variant-grid img').length,3);
   w.document.querySelector('[data-scene-select]').value='intro_timeline';w.document.querySelector('[data-scene-select]').dispatchEvent(new w.Event('change',{bubbles:true}));
   assert.match(w.document.querySelector('#app-view').textContent,/CG의 정적 레이어/);
+  const mainSave=w.localStorage.getItem(SAVE_KEY);w.location.hash='#tutorial-analysis';await until(()=>w.document.querySelector('[data-tutorial-context]'));
+  click('[data-tutorial-action=preset]');click('[data-tutorial-action=event][data-value="0"]');click('[data-tutorial-action=event][data-value="1"]');click('[data-tutorial-action=event][data-value="2"]');click('[data-tutorial-action=event][data-value="2"]');
+  assert.match(w.document.querySelector('.tutorial-state').textContent,/안내 흐름 완료완료/);assert.equal(w.localStorage.getItem(SAVE_KEY),mainSave);assert.equal(w.document.querySelector('.research-tree').classList.contains('active-tree'),true);
   assert.deepEqual(errors,[]);
  }finally{w.dispatchEvent(new w.Event('pagehide'));dom.window.close();Object.assign(globalThis,prior);}
 });

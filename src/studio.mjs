@@ -1,3 +1,4 @@
+import {createTutorialWorkbench} from './tutorial-page.mjs';
 import {renderResearch,renderPuzzle,renderPuzzleMotion,renderInteraction,renderDifficulty,renderInterface,renderStructure,renderUIMotion,renderExperience,renderItemCatalog,renderUIRegistry,difficultyOutput,regionDetail} from './studio-pages.mjs';
 import {validMedia,mediaFor} from './visual-model.mjs';
 import {createWalkthrough,walkthroughAction} from './walkthrough.mjs';
@@ -13,6 +14,7 @@ import {renderSceneAnalysis,growthReadout} from './research-completion.mjs';
 export function createStudio({getData,getRoute,render,toast,download}){
  let walkthrough=createWalkthrough(),running=new Map();
  let playMode='game',interactionCleanup=()=>{};
+ const tutorials=createTutorialWorkbench({getData,render,download});
  const production=createProductionController({getData,render,download,toast});
  const auditFilters={query:'',category:'all',status:'all'};
  let lastAuditSource=null;
@@ -28,7 +30,7 @@ export function createStudio({getData,getRoute,render,toast,download}){
  const capturePage=()=>{const id=new URLSearchParams(location.hash.split('?')[1]||'').get('study');if(id!==lastStudySource){lastStudySource=id;if(id&&getData()?.refinement?.studies.some(s=>s.id===id)){Object.assign(studyState,{topic:'all',query:'',selected:id,region:'',frame:''});}}return renderCaptures(getData(),captureFilters,studyState);};
  const timelineFilters={entryId:null,milestoneId:null,baselineId:null};
  const mediaDialog=document.querySelector('#media-dialog'),mediaContent=document.querySelector('#media-content');
- const pages={'scene-analysis':scenePage,'production-assets':()=>production.renderPage(),'media-audit':auditPage,'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:capturePage,puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
+ const pages={'tutorial-analysis':()=>tutorials.renderPage(),'scene-analysis':scenePage,'production-assets':()=>production.renderPage(),'media-audit':auditPage,'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:capturePage,puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
  const renderItem=()=>{document.querySelector('#item-catalog').innerHTML=renderItemCatalog(getData(),itemFilters);};
  const renderUI=()=>{document.querySelector('#ui-registry').innerHTML=renderUIRegistry(getData(),uiFilters);};
  function preserveInput(id,update){const node=document.getElementById(id),start=node.selectionStart,end=node.selectionEnd;update();const next=document.getElementById(id);next.focus({preventScroll:true});if(next.type==='search')next.setSelectionRange(start,end);}
@@ -56,6 +58,7 @@ export function createStudio({getData,getRoute,render,toast,download}){
   if(target.dataset.studySelect){studyState.selected=target.dataset.studySelect;studyState.region='';studyState.frame='';render();document.querySelector('.study-workbench')?.scrollIntoView?.({block:'start'});document.querySelector('.study-workbench h3')?.focus({preventScroll:true});return;}
   if(target.hasAttribute('data-study-frame')||target.hasAttribute('data-study-region')){const isFrame=target.hasAttribute('data-study-frame'),origin=isFrame?'':target.classList.contains('study-hotspot')?'.study-image-plane ':'.study-region-controls ';studyState[isFrame?'frame':'region']=isFrame?target.dataset.studyFrame:target.dataset.studyRegion;render();document.querySelector(`${origin}[data-study-${isFrame?'frame':'region'}="${isFrame?studyState.frame:studyState.region}"]`)?.focus({preventScroll:true});return;}
   if(target.dataset.timelineEntry||target.dataset.timelinePoint){if(target.dataset.timelineEntry){timelineFilters.entryId=target.dataset.timelineEntry;timelineFilters.milestoneId=null;}else timelineFilters.milestoneId=target.dataset.timelinePoint;render();document.querySelector(`[data-timeline-${target.dataset.timelineEntry?'entry':'point'}="${target.dataset.timelineEntry||target.dataset.timelinePoint}"]`)?.focus({preventScroll:true});return;}
+  if(target.hasAttribute('data-tutorial-action')){tutorials.handle(target.dataset.tutorialAction,target.dataset.value);return;}
   if(target.dataset.playMode){playMode=target.dataset.playMode;render();document.querySelector(`[data-play-mode="${playMode}"]`)?.focus({preventScroll:true});return;}
   if(target.hasAttribute('data-activity')){sourcePlay.handle('activity:'+target.dataset.activity,target.dataset.value);return;}
   if(target.hasAttribute('data-play')){sourcePlay.handle(target.dataset.play,target.dataset.value);return;}
