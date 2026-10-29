@@ -13,9 +13,9 @@ function eligible(s,c,scenes,id){
  if(s.stage!=='home'||s.modal||s.pendingQuest)return null;
  return completedDecorSlots(s,c,scenes).find(x=>x.id===id)||null;
 }
-export function beginDecorEdit(s,c,scenes,id,{inputLocked=false}={}){
+export function beginDecorEdit(s,c,scenes,id,{inputLocked=false,returnTo='decor'}={}){
  const slot=eligible(s,c,scenes,id);if(!slot||inputLocked)return result(false,'맵에서 진행 중인 안내·과제를 마친 뒤 완료한 기본 장식을 선택하세요.');
- s.screenFlow.decorEdit={slotId:id,original:slot.current,selected:slot.current};s.screenFlow.phase='decor-edit';
+ s.screenFlow.decorEdit={slotId:id,original:slot.current,selected:slot.current,returnTo:['map','decor'].includes(returnTo)?returnTo:'decor'};s.screenFlow.phase='decor-edit';
  return result(true,slot.historicalUnknown?'이전 웹 저장의 선택 기록이 없습니다. 디자인을 선택하면 새 웹 기록을 만듭니다.':'기존 장식을 미리 보고 다시 선택하세요. 확정 전에는 저장된 디자인을 바꾸지 않습니다.');
 }
 export function decorEditView(s,c,scenes){
@@ -30,10 +30,10 @@ export function previewDecor(s,c,scenes,id){
 }
 export function confirmDecorEdit(s,c,scenes){
  const view=decorEditView(s,c,scenes);if(!view?.canConfirm)return result(false,'선택한 디자인과 현재 장식 기록을 확인하고 다시 열어주세요.');
- s.screenFlow.decor[view.slot.id]=view.selected;s.screenFlow.decorEdit=null;s.screenFlow.phase='decor';
+ s.screenFlow.decor[view.slot.id]=view.selected;const returnTo=s.screenFlow.decorEdit.returnTo==='map'?'map':'decor';s.screenFlow.decorEdit=null;s.screenFlow.phase=returnTo;
  return result(true,'기본 장식 변경을 저장했습니다. 과제·경험치·재화·보상은 바꾸지 않았습니다.');
 }
 export function cancelDecorEdit(s){
  if(s.screenFlow?.phase!=='decor-edit')return result(false,'열린 장식 편집이 없습니다.');
- s.screenFlow.decorEdit=null;s.screenFlow.phase='decor';return result(true,'미리보기를 취소하고 이전 장식을 유지했습니다.');
+ const returnTo=s.screenFlow.decorEdit?.returnTo==='map'?'map':'decor';s.screenFlow.decorEdit=null;s.screenFlow.phase=returnTo;return result(true,'미리보기를 취소하고 이전 장식을 유지했습니다.');
 }

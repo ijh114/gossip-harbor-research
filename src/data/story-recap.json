@@ -2872,7 +2872,12 @@
     "fullTextPublished": false,
     "bodyImageKeysRegisteredOnly": 29,
     "newlyCuratedImages": 9,
-    "newlyCuratedImageBytes": 3679235
+    "newlyCuratedImageBytes": 3679235,
+    "remoteCatalogMatchedMissingImages": 34,
+    "remoteCatalogResolvedURLs": 0,
+    "nativeVisualPrefabsRegisteredRemote": 3,
+    "curatedAudioEffects": 1,
+    "curatedAudioEffectBytes": 62252
   },
   "sources": [
     {
@@ -3512,7 +3517,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_book_face_1",
+          "assetPath": "Assets/AreaRes/StoryBookFace/Area6/story_book_face_1.png",
+          "assetGuid": "455d7c94e5c83c64fa88f6ca9f8bb0e6",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 2856,
+              "internalId": "Assets/AreaRes/StoryBookFace/Area6/story_book_face_1.png",
+              "internalIdIndex": 2846,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1547,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1547,
+              "internalIdIndex": 1547,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storybookface/area6_dbc59d0768d8d48626f5a5f3873768f2.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storybookface/area6_dbc59d0768d8d48626f5a5f3873768f2.bundle",
+              "hashFromFilename": "dbc59d0768d8d48626f5a5f3873768f2",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "dcf18f1c82b302f8830b1a2a743a2c42524d7940e9ec35ecf4fa22b9f7e8bb56",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 98222,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_book_face_2",
@@ -3538,7 +3579,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_book_face_2",
+          "assetPath": "Assets/AreaRes/StoryBookFace/Area11/story_book_face_2.png",
+          "assetGuid": "32b6a7a7c9b5d1548ba5968bd08f5779",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 2852,
+              "internalId": "Assets/AreaRes/StoryBookFace/Area11/story_book_face_2.png",
+              "internalIdIndex": 2842,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1543,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1543,
+              "internalIdIndex": 1543,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storybookface/area11_74b4210d5b00b09e6b2800f3c8584701.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storybookface/area11_74b4210d5b00b09e6b2800f3c8584701.bundle",
+              "hashFromFilename": "74b4210d5b00b09e6b2800f3c8584701",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "a53794e11e399536afbfb33584281903768a7ad4139e51af1c4f9c3db7984dcd",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 111143,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_book_face_3",
@@ -3564,7 +3641,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_book_face_3",
+          "assetPath": "Assets/AreaRes/StoryBookFace/Area12/story_book_face_3.png",
+          "assetGuid": "ca9da9a31f73b5d489d2403ece54c22d",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 2853,
+              "internalId": "Assets/AreaRes/StoryBookFace/Area12/story_book_face_3.png",
+              "internalIdIndex": 2843,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1544,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1544,
+              "internalIdIndex": 1544,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storybookface/area12_064bad5cb7b93ec066187d8924417415.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storybookface/area12_064bad5cb7b93ec066187d8924417415.bundle",
+              "hashFromFilename": "064bad5cb7b93ec066187d8924417415",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "d8175a21152cde7a3299bea775d64f91da4c20c3eae51031de80b17ffa19a7b1",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 102338,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_book_face_4",
@@ -3590,7 +3703,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_book_face_4",
+          "assetPath": "Assets/AreaRes/StoryBookFace/Area13/story_book_face_4.png",
+          "assetGuid": "fc948830b64214d42bb73fbe27589a9c",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 2854,
+              "internalId": "Assets/AreaRes/StoryBookFace/Area13/story_book_face_4.png",
+              "internalIdIndex": 2844,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1545,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1545,
+              "internalIdIndex": 1545,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storybookface/area13_158fdfac2624be43f008bf6fa95d856d.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storybookface/area13_158fdfac2624be43f008bf6fa95d856d.bundle",
+              "hashFromFilename": "158fdfac2624be43f008bf6fa95d856d",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "8f66e8957a4d6cffc9ebfffc0ec3dd2f85e02ecb5bd8691bf1112cc5e92838c4",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 85152,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_book_face_5",
@@ -3616,7 +3765,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_book_face_5",
+          "assetPath": "Assets/AreaRes/StoryBookFace/Area14/story_book_face_5.png",
+          "assetGuid": "a5c86d8154a90584887cb29cd56b6bf7",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 2855,
+              "internalId": "Assets/AreaRes/StoryBookFace/Area14/story_book_face_5.png",
+              "internalIdIndex": 2845,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1546,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1546,
+              "internalIdIndex": 1546,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storybookface/area14_ca7e67cfa73cd68a2a96b7d78beb52ca.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storybookface/area14_ca7e67cfa73cd68a2a96b7d78beb52ca.bundle",
+              "hashFromFilename": "ca7e67cfa73cd68a2a96b7d78beb52ca",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "3532247c2e4e7f16671afd122a9eaa69fa9305dbe6c35dd0faffc3d60b149ec3",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 100057,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A1D1_1_1_begin",
@@ -4044,7 +4229,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A4D12_12_2_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area4/story_A4D12_12_2_end.png",
+          "assetGuid": "b58b2d2dc3953484b9645f535d01e667",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3244,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area4/story_A4D12_12_2_end.png",
+              "internalIdIndex": 3234,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1626,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1626,
+              "internalIdIndex": 1626,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area4_40817ca70991579b8068844bb91b6ecb.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area4_40817ca70991579b8068844bb91b6ecb.bundle",
+              "hashFromFilename": "40817ca70991579b8068844bb91b6ecb",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "79594e30c886088e8839f99628a6ef01b6e7248b41aae3726612e994f7ba05b8",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1347270,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A4D12_12_6",
@@ -4070,7 +4291,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A4D12_12_6",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area4/story_A4D12_12_6.png",
+          "assetGuid": "2c481f9ee6e726747bae3d7a787217f2",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3245,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area4/story_A4D12_12_6.png",
+              "internalIdIndex": 3235,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1626,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1626,
+              "internalIdIndex": 1626,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area4_40817ca70991579b8068844bb91b6ecb.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area4_40817ca70991579b8068844bb91b6ecb.bundle",
+              "hashFromFilename": "40817ca70991579b8068844bb91b6ecb",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "79594e30c886088e8839f99628a6ef01b6e7248b41aae3726612e994f7ba05b8",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1347270,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A4D14_14_5",
@@ -4096,7 +4353,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A4D14_14_5",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area4/story_A4D14_14_5.png",
+          "assetGuid": "c1b5c4e066953164cb9217f933134de5",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3248,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area4/story_A4D14_14_5.png",
+              "internalIdIndex": 3238,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1626,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1626,
+              "internalIdIndex": 1626,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area4_40817ca70991579b8068844bb91b6ecb.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area4_40817ca70991579b8068844bb91b6ecb.bundle",
+              "hashFromFilename": "40817ca70991579b8068844bb91b6ecb",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "79594e30c886088e8839f99628a6ef01b6e7248b41aae3726612e994f7ba05b8",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1347270,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A7D22_22_4",
@@ -4122,7 +4415,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A7D22_22_4",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area7/story_A7D22_22_4.png",
+          "assetGuid": "628617e02c17c6740a7d872a50717e73",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3312,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area7/story_A7D22_22_4.png",
+              "internalIdIndex": 3302,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1639,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1639,
+              "internalIdIndex": 1639,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area7_1323f8dbc7b40fb4790eb98d6f696d30.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area7_1323f8dbc7b40fb4790eb98d6f696d30.bundle",
+              "hashFromFilename": "1323f8dbc7b40fb4790eb98d6f696d30",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "0e25bbe16c87b71ca0153ade3612d0d8a1c5531f98ea79b4290998043cd8d6c3",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1390696,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A5D16_16_3",
@@ -4148,7 +4477,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A5D16_16_3",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area5/story_A5D16_16_3.png",
+          "assetGuid": "78f5bb779d851754eb0903bae8a63b8c",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3297,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area5/story_A5D16_16_3.png",
+              "internalIdIndex": 3287,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1637,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1637,
+              "internalIdIndex": 1637,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area5_592316dee73e1e4f05b61ad8ed15212f.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area5_592316dee73e1e4f05b61ad8ed15212f.bundle",
+              "hashFromFilename": "592316dee73e1e4f05b61ad8ed15212f",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "49a2d7fff83f682635f84a392280679e402c7f18422bcca7e3ddf0d3b64a2968",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1774265,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A5D16_16_4_2",
@@ -4174,7 +4539,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A5D16_16_4_2",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area5/story_A5D16_16_4_2.png",
+          "assetGuid": "1b089ef038d1ead40b2764b51f77e7cd",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3299,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area5/story_A5D16_16_4_2.png",
+              "internalIdIndex": 3289,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1637,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1637,
+              "internalIdIndex": 1637,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area5_592316dee73e1e4f05b61ad8ed15212f.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area5_592316dee73e1e4f05b61ad8ed15212f.bundle",
+              "hashFromFilename": "592316dee73e1e4f05b61ad8ed15212f",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "49a2d7fff83f682635f84a392280679e402c7f18422bcca7e3ddf0d3b64a2968",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1774265,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A5D17_17_7_1",
@@ -4200,7 +4601,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A5D17_17_7_1",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area5/story_A5D17_17_7_1.png",
+          "assetGuid": "8d5b7fd84a74279438fdc6f45d04dcc1",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3301,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area5/story_A5D17_17_7_1.png",
+              "internalIdIndex": 3291,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1637,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1637,
+              "internalIdIndex": 1637,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area5_592316dee73e1e4f05b61ad8ed15212f.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area5_592316dee73e1e4f05b61ad8ed15212f.bundle",
+              "hashFromFilename": "592316dee73e1e4f05b61ad8ed15212f",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "49a2d7fff83f682635f84a392280679e402c7f18422bcca7e3ddf0d3b64a2968",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1774265,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A5D18_18_4",
@@ -4226,7 +4663,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A5D18_18_4",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area5/story_A5D18_18_4.png",
+          "assetGuid": "c0e92e3e8c6d59547ba06b78bd4c98f4",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3303,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area5/story_A5D18_18_4.png",
+              "internalIdIndex": 3293,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1637,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1637,
+              "internalIdIndex": 1637,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area5_592316dee73e1e4f05b61ad8ed15212f.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area5_592316dee73e1e4f05b61ad8ed15212f.bundle",
+              "hashFromFilename": "592316dee73e1e4f05b61ad8ed15212f",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "49a2d7fff83f682635f84a392280679e402c7f18422bcca7e3ddf0d3b64a2968",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1774265,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A6D19_19_2",
@@ -4252,7 +4725,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A6D19_19_2",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area6/story_A6D19_19_2.png",
+          "assetGuid": "501632c322730084aaace96b051fae79",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3305,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area6/story_A6D19_19_2.png",
+              "internalIdIndex": 3295,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1638,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1638,
+              "internalIdIndex": 1638,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area6_be68e7e692fe8558d22ba4f5d954581d.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area6_be68e7e692fe8558d22ba4f5d954581d.bundle",
+              "hashFromFilename": "be68e7e692fe8558d22ba4f5d954581d",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "62d83fe256e87696c5117b6e7f2366f8d50b978bd3c86006d4fa17835e1aa600",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 856411,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A6D19_19_3_end",
@@ -4278,7 +4787,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A6D19_19_3_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area6/story_A6D19_19_3_end.png",
+          "assetGuid": "b2cdee23b158f24488db855023c0d48b",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3306,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area6/story_A6D19_19_3_end.png",
+              "internalIdIndex": 3296,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1638,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1638,
+              "internalIdIndex": 1638,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area6_be68e7e692fe8558d22ba4f5d954581d.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area6_be68e7e692fe8558d22ba4f5d954581d.bundle",
+              "hashFromFilename": "be68e7e692fe8558d22ba4f5d954581d",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "62d83fe256e87696c5117b6e7f2366f8d50b978bd3c86006d4fa17835e1aa600",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 856411,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A6D20_20_2",
@@ -4304,7 +4849,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A6D20_20_2",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area6/story_A6D20_20_2.png",
+          "assetGuid": "f83a2d77cde4e6d45a4c10b4b15e8182",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3308,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area6/story_A6D20_20_2.png",
+              "internalIdIndex": 3298,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1638,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1638,
+              "internalIdIndex": 1638,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area6_be68e7e692fe8558d22ba4f5d954581d.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area6_be68e7e692fe8558d22ba4f5d954581d.bundle",
+              "hashFromFilename": "be68e7e692fe8558d22ba4f5d954581d",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "62d83fe256e87696c5117b6e7f2366f8d50b978bd3c86006d4fa17835e1aa600",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 856411,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A7D21_21_6_end",
@@ -4330,7 +4911,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A7D21_21_6_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area7/story_A7D21_21_6_end.png",
+          "assetGuid": "37421f2130dec984994049358afa0cef",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3309,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area7/story_A7D21_21_6_end.png",
+              "internalIdIndex": 3299,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1639,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1639,
+              "internalIdIndex": 1639,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area7_1323f8dbc7b40fb4790eb98d6f696d30.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area7_1323f8dbc7b40fb4790eb98d6f696d30.bundle",
+              "hashFromFilename": "1323f8dbc7b40fb4790eb98d6f696d30",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "0e25bbe16c87b71ca0153ade3612d0d8a1c5531f98ea79b4290998043cd8d6c3",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1390696,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A2D7_7_2_end",
@@ -4397,7 +5014,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A8D24_24_1_begin",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area8/story_A8D24_24_1_begin.png",
+          "assetGuid": "49664b55ef4550d4991d96374d55cfd9",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3315,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area8/story_A8D24_24_1_begin.png",
+              "internalIdIndex": 3305,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1640,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1640,
+              "internalIdIndex": 1640,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area8_be5992e71bed1ab5d3e16794e5c622af.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area8_be5992e71bed1ab5d3e16794e5c622af.bundle",
+              "hashFromFilename": "be5992e71bed1ab5d3e16794e5c622af",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "ce1da2d0cf69644373bac17bb21e340a6d025e458e9216e939fee9660debc583",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1971676,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A8D24_24_2",
@@ -4423,7 +5076,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A8D24_24_2",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area8/story_A8D24_24_2.png",
+          "assetGuid": "286da46c5f6f1764f82b93ed890316b3",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3317,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area8/story_A8D24_24_2.png",
+              "internalIdIndex": 3307,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1640,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1640,
+              "internalIdIndex": 1640,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area8_be5992e71bed1ab5d3e16794e5c622af.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area8_be5992e71bed1ab5d3e16794e5c622af.bundle",
+              "hashFromFilename": "be5992e71bed1ab5d3e16794e5c622af",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "ce1da2d0cf69644373bac17bb21e340a6d025e458e9216e939fee9660debc583",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1971676,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A8D26_26_6",
@@ -4449,7 +5138,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A8D26_26_6",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area8/story_A8D26_26_6.png",
+          "assetGuid": "f69bef53ce051c14e8612456be264f4e",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3323,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area8/story_A8D26_26_6.png",
+              "internalIdIndex": 3313,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1640,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1640,
+              "internalIdIndex": 1640,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area8_be5992e71bed1ab5d3e16794e5c622af.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area8_be5992e71bed1ab5d3e16794e5c622af.bundle",
+              "hashFromFilename": "be5992e71bed1ab5d3e16794e5c622af",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "ce1da2d0cf69644373bac17bb21e340a6d025e458e9216e939fee9660debc583",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1971676,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A8D26_26_11_end_1",
@@ -4475,7 +5200,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A8D26_26_11_end_1",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area8/story_A8D26_26_11_end_1.png",
+          "assetGuid": "f8ff143444484ee49a25ed7f6a71b359",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3321,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area8/story_A8D26_26_11_end_1.png",
+              "internalIdIndex": 3311,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1640,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1640,
+              "internalIdIndex": 1640,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area8_be5992e71bed1ab5d3e16794e5c622af.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area8_be5992e71bed1ab5d3e16794e5c622af.bundle",
+              "hashFromFilename": "be5992e71bed1ab5d3e16794e5c622af",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "ce1da2d0cf69644373bac17bb21e340a6d025e458e9216e939fee9660debc583",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1971676,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A9D27_27_1_end",
@@ -4501,7 +5262,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A9D27_27_1_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area9/story_A9D27_27_1_end.png",
+          "assetGuid": "eacdd60b9f5416244afb7ee368d00fa1",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3324,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area9/story_A9D27_27_1_end.png",
+              "internalIdIndex": 3314,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1641,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1641,
+              "internalIdIndex": 1641,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area9_2200c3ce4f5d518f3dd37e8af3949564.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area9_2200c3ce4f5d518f3dd37e8af3949564.bundle",
+              "hashFromFilename": "2200c3ce4f5d518f3dd37e8af3949564",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "ba5f8e72e2050105f2980a4e4930db9ca59212ffbd15da0a35e63b50a3f1a10a",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 659969,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A9D27_27_2_end",
@@ -4527,7 +5324,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A9D27_27_2_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area9/story_A9D27_27_2_end.png",
+          "assetGuid": "d5845c7671c6ff0499b43107236d6d81",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3325,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area9/story_A9D27_27_2_end.png",
+              "internalIdIndex": 3315,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1641,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1641,
+              "internalIdIndex": 1641,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area9_2200c3ce4f5d518f3dd37e8af3949564.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area9_2200c3ce4f5d518f3dd37e8af3949564.bundle",
+              "hashFromFilename": "2200c3ce4f5d518f3dd37e8af3949564",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "ba5f8e72e2050105f2980a4e4930db9ca59212ffbd15da0a35e63b50a3f1a10a",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 659969,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A10D33_33_11",
@@ -4553,7 +5386,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A10D33_33_11",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area10/story_A10D33_33_11.png",
+          "assetGuid": "c9b63d0a81769464bb957e3323d5f49e",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3038,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area10/story_A10D33_33_11.png",
+              "internalIdIndex": 3028,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1596,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1596,
+              "internalIdIndex": 1596,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area10_9c9d888f186fabb32d7e21bc622178ab.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area10_9c9d888f186fabb32d7e21bc622178ab.bundle",
+              "hashFromFilename": "9c9d888f186fabb32d7e21bc622178ab",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "346e618f75a53c77c3ae693b5bc3d3c8b7ee0939dfe205bff060b0e63a231eeb",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1345131,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A11D35_35_6_begin",
@@ -4579,7 +5448,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A11D35_35_6_begin",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area11/story_A11D35_35_6_begin.png",
+          "assetGuid": "6c90a7b2c206af3478a524576a236e8a",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3041,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area11/story_A11D35_35_6_begin.png",
+              "internalIdIndex": 3031,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1597,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1597,
+              "internalIdIndex": 1597,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area11_41512672962c369bbf83add5d981ed2b.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area11_41512672962c369bbf83add5d981ed2b.bundle",
+              "hashFromFilename": "41512672962c369bbf83add5d981ed2b",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "999a897f1a4e7e8d4a0774a6613bc50934a78df29923ee172db7f5fdcac13811",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 657841,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A11D37_37_2_end",
@@ -4605,7 +5510,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A11D37_37_2_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area11/story_A11D37_37_2_end.png",
+          "assetGuid": "497761df5a01c944aad8dd2f0eb51cb2",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3042,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area11/story_A11D37_37_2_end.png",
+              "internalIdIndex": 3032,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1597,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1597,
+              "internalIdIndex": 1597,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area11_41512672962c369bbf83add5d981ed2b.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area11_41512672962c369bbf83add5d981ed2b.bundle",
+              "hashFromFilename": "41512672962c369bbf83add5d981ed2b",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "999a897f1a4e7e8d4a0774a6613bc50934a78df29923ee172db7f5fdcac13811",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 657841,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A12D43_43_2_end",
@@ -4631,7 +5572,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A12D43_43_2_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area12/story_A12D43_43_2_end.png",
+          "assetGuid": "9dbb8f0f0931daf4fb18714f76430b9f",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3045,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area12/story_A12D43_43_2_end.png",
+              "internalIdIndex": 3035,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1598,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1598,
+              "internalIdIndex": 1598,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area12_76799a991df47dd25c3dfd8fa69bb2ab.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area12_76799a991df47dd25c3dfd8fa69bb2ab.bundle",
+              "hashFromFilename": "76799a991df47dd25c3dfd8fa69bb2ab",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "6b5076dcac3f318a6dbd06c504b9b2a0f61edb1ab66ef3bcb8e30417facb997d",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 898441,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A13D44_44_begin",
@@ -4657,7 +5634,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A13D44_44_begin",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area12/story_A13D44_44_begin.png",
+          "assetGuid": "ac0e9702fccec3d419b37d7624a6daf2",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3046,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area12/story_A13D44_44_begin.png",
+              "internalIdIndex": 3036,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1598,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1598,
+              "internalIdIndex": 1598,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area12_76799a991df47dd25c3dfd8fa69bb2ab.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area12_76799a991df47dd25c3dfd8fa69bb2ab.bundle",
+              "hashFromFilename": "76799a991df47dd25c3dfd8fa69bb2ab",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "6b5076dcac3f318a6dbd06c504b9b2a0f61edb1ab66ef3bcb8e30417facb997d",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 898441,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A13D47_47_6",
@@ -4683,7 +5696,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A13D47_47_6",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area13/story_A13D47_47_6.png",
+          "assetGuid": "2c151721725409b46a4d724ccca6d1ac",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3047,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area13/story_A13D47_47_6.png",
+              "internalIdIndex": 3037,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1599,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1599,
+              "internalIdIndex": 1599,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area13_014e2a5da7255ffe3300537a7c02d457.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area13_014e2a5da7255ffe3300537a7c02d457.bundle",
+              "hashFromFilename": "014e2a5da7255ffe3300537a7c02d457",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "fbc9b5f86d8c3dac0f7b842fc6b45e750278dd44758f98e97d1dd1f879be7dda",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 182295,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A14D48_48_1_end",
@@ -4709,7 +5758,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A14D48_48_1_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area14/story_A14D48_48_1_end.png",
+          "assetGuid": "a8e7f06d13c2a3d4a8595f5eb78fa1bf",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3048,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area14/story_A14D48_48_1_end.png",
+              "internalIdIndex": 3038,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1600,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1600,
+              "internalIdIndex": 1600,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area14_1a78b260c00e4e0f5dcba4a2f1db1f3a.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area14_1a78b260c00e4e0f5dcba4a2f1db1f3a.bundle",
+              "hashFromFilename": "1a78b260c00e4e0f5dcba4a2f1db1f3a",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "0c2047a6e3c6f72353a53ff20de01c0091b9449f7db3fb3b866ae8ad01ca39ad",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1298075,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A14D49_49_1_end",
@@ -4735,7 +5820,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A14D49_49_1_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area14/story_A14D49_49_1_end.png",
+          "assetGuid": "75e0eede85c4ae943976425fb25fe843",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3049,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area14/story_A14D49_49_1_end.png",
+              "internalIdIndex": 3039,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1600,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1600,
+              "internalIdIndex": 1600,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area14_1a78b260c00e4e0f5dcba4a2f1db1f3a.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area14_1a78b260c00e4e0f5dcba4a2f1db1f3a.bundle",
+              "hashFromFilename": "1a78b260c00e4e0f5dcba4a2f1db1f3a",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "0c2047a6e3c6f72353a53ff20de01c0091b9449f7db3fb3b866ae8ad01ca39ad",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1298075,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A14D50_50_6_end",
@@ -4761,7 +5882,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A14D50_50_6_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area14/story_A14D50_50_6_end.png",
+          "assetGuid": "95d1823ee883b464eb6f89437a820b97",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3050,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area14/story_A14D50_50_6_end.png",
+              "internalIdIndex": 3040,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1600,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1600,
+              "internalIdIndex": 1600,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area14_1a78b260c00e4e0f5dcba4a2f1db1f3a.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area14_1a78b260c00e4e0f5dcba4a2f1db1f3a.bundle",
+              "hashFromFilename": "1a78b260c00e4e0f5dcba4a2f1db1f3a",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "0c2047a6e3c6f72353a53ff20de01c0091b9449f7db3fb3b866ae8ad01ca39ad",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1298075,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A14D51_51_1_end",
@@ -4787,7 +5944,43 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A14D51_51_1_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area14/story_A14D51_51_1_end.png",
+          "assetGuid": "69d503a0e7de0624aaf7be52d4362319",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3051,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area14/story_A14D51_51_1_end.png",
+              "internalIdIndex": 3041,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1600,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1600,
+              "internalIdIndex": 1600,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area14_1a78b260c00e4e0f5dcba4a2f1db1f3a.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area14_1a78b260c00e4e0f5dcba4a2f1db1f3a.bundle",
+              "hashFromFilename": "1a78b260c00e4e0f5dcba4a2f1db1f3a",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "0c2047a6e3c6f72353a53ff20de01c0091b9449f7db3fb3b866ae8ad01ca39ad",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1298075,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       },
       {
         "resourceKey": "story_A14D52_52_8_end",
@@ -4813,16 +6006,592 @@
         "status": "registered-only-not-found-in-supplied-local-inventory",
         "publicMediaKey": null,
         "publicPath": null,
-        "newlyExtracted": false
+        "newlyExtracted": false,
+        "catalog": {
+          "group": "story-recap",
+          "id": "story_A14D52_52_8_end",
+          "assetPath": "Assets/AreaRes/StoryIllustration/Area14/story_A14D52_52_8_end.png",
+          "assetGuid": "60d6f83b084087d4aaf121bbf096b28b",
+          "exactKeyFound": true,
+          "lookup": "exact registered AssetReference.m_AssetGUID",
+          "catalogAssetEntries": [
+            {
+              "index": 3053,
+              "internalId": "Assets/AreaRes/StoryIllustration/Area14/story_A14D52_52_8_end.png",
+              "internalIdIndex": 3043,
+              "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+              "dependencyKeyIndex": 1600,
+              "resourceTypeIndex": 3
+            }
+          ],
+          "bundles": [
+            {
+              "catalogEntryIndex": 1600,
+              "internalIdIndex": 1600,
+              "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/rolesandstoryremote_assets_assets/areares/storyillustration/area14_1a78b260c00e4e0f5dcba4a2f1db1f3a.bundle",
+              "bundleFile": "rolesandstoryremote_assets_assets/areares/storyillustration/area14_1a78b260c00e4e0f5dcba4a2f1db1f3a.bundle",
+              "hashFromFilename": "1a78b260c00e4e0f5dcba4a2f1db1f3a",
+              "hashAlsoPresentInSerializedOptions": true,
+              "optionsRawSha256": "0c2047a6e3c6f72353a53ff20de01c0091b9449f7db3fb3b866ae8ad01ca39ad",
+              "optionsBytes": 92,
+              "resolvedURL": null,
+              "resolutionStatus": "runtime-prefix-and-folder-unknown",
+              "sizeBytes": 1298075,
+              "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+              "crc": null,
+              "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+            }
+          ]
+        }
       }
     ],
     "boundaries": [
       "기존 공개 manifest에 없던 본문9그림이 실제 동봉 Sprite로 확인되어 새로 연결되었다. 이전 미확보 표기는 실물 부재 확정이 아니라 공개 미연결도 포함했다.",
       "표지5키와 본문29키는 명시 ImageFileConfig 등록이 있으나 제공245번들의 exact container와 Sprite1820개의 exact name 대조에서 실물을 찾지 못했다. 이 결과는 원격/추가 업데이트 자산의 부재를 증명하지 않는다.",
       "유사 이름·다른 책 그림·추정 URL을 대체로 사용하지 않았다. 누락 키는 원본 GUID/fileKey와 함께 유지한다.",
-      "본문 발췌22개·생략203블록은 변경하지 않았다. 새 PNG는 원본 Sprite의 native-size RGBA를 무손실 저장했으며 리사이즈·재그림을 하지 않았다."
+      "본문 발췌22개·생략203블록은 변경하지 않았다. 새 PNG는 원본 Sprite의 native-size RGBA를 무손실 저장했으며 리사이즈·재그림을 하지 않았다.",
+      "Addressables catalog에서 미확보34그림과 원본UI prefab3개의 GUID·정확경로·의존bundle hash/선언크기를 연결했다. 런타임 CDN prefix/folder 대입은 미확정이라 원격URL을 추정해 내려받지 않았다."
     ],
-    "originalRuntimeObserved": false
+    "originalRuntimeObserved": false,
+    "remoteCatalog": {
+      "source": {
+        "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/catalog.json",
+        "sha256": "28eb3fae74549e6bf23de58d029499da0e62d9cb714a123c22205da2919dc5ae",
+        "keyCount": 26246,
+        "entryCount": 21873,
+        "internalIdCount": 21556,
+        "method": "decoded exact registered GUID key offsets, bucket entry indices and seven-int entry dependency-key relationships, asserting each resulting internalId==registered asset path; provider0 bundle, provider1 bundledasset; no approximate filename matching",
+        "sizeFieldValidation": {
+          "samples": 245,
+          "allMatch": true,
+          "mismatchCount": 0,
+          "layout": "type7, byte-length ASCII token, byte-length ASCII hash, uint32LE bundle byte count"
+        },
+        "networkRequests": 0
+      },
+      "exactGUIDMatches": 34,
+      "uniqueDependencyBundles": 16,
+      "resolvedURLs": 0,
+      "boundary": "Exact registered GUID → exact internal asset path → dependency bundle hash/declared size. Runtime CDN prefix/folder assignments, remote availability and actual downloaded bytes remain unknown. No network request was made."
+    }
   },
-  "mediaRevision": "21af3af33af91044291261894c17e189d078396fa6bd8f5006cdc377f678db7c"
+  "mediaRevision": "08c276933eecde50e913ee9593121fa10cc0468dba460cb9aa581ed4917d9628",
+  "presentationEvidence": {
+    "prefabs": [
+      {
+        "resourceKey": "StoryRecapBookContentWindow",
+        "assetPath": "Assets/StoryRecap/Prefab/StoryRecapBookContentWindow.prefab",
+        "assetGuid": "151931e800f53a84da3d733d0dce73da",
+        "configIndex1Based": 1353,
+        "status": "registered-remote-prefab-not-in-local-245",
+        "catalogBundles": [
+          {
+            "catalogEntryIndex": 1714,
+            "internalIdIndex": 1714,
+            "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+            "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+            "hashFromFilename": "b938caf2239e76bd55d447729d08f86e",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "655689ca3986ee1992fffc5dbc6099aa43f40b55ed6f8fd9ef8881245efce0ed",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "runtime-prefix-and-folder-unknown",
+            "sizeBytes": 965002,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1845,
+            "internalIdIndex": 1845,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "hashFromFilename": "45a1151fae1ae68b033775f4df8c742a",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "23549806047c3857efb73ca6a9f7f1bf09dca4c96d368ee5d332fde63f42a1a1",
+            "optionsBytes": 104,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 6811,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1888,
+            "internalIdIndex": 1888,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "bundleFile": "effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "hashFromFilename": "4e78c1e63b9e732d9b0245fd9bc8d416",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "2f1d146191d6f00349ed4ae7e2594372dfbf037f432d0713d226ab71eae3b15d",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 9635908,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1848,
+            "internalIdIndex": 1848,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "bundleFile": "builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "hashFromFilename": "387aa8a8b1b6a1f7532a0d6857c9fa61",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "66d854247a4a234ad55e70e381aaecc54bfa8b747eadaebb4b572e22bedd2392",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 3774882,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1892,
+            "internalIdIndex": 1892,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "bundleFile": "font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "hashFromFilename": "5dafffdb9db0165aa02e86cc1eee9a0f",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "a0904bfee37c81508695421f82c47c1245af9edc9a35254f56c81571b4db95b7",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 279126,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 2004,
+            "internalIdIndex": 2004,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/ui-atlas-windows_assets_assets/ui/window/common_cb9a2a9a04a50ed5eeb83ad0071cc208.bundle",
+            "bundleFile": "ui-atlas-windows_assets_assets/ui/window/common_cb9a2a9a04a50ed5eeb83ad0071cc208.bundle",
+            "hashFromFilename": "cb9a2a9a04a50ed5eeb83ad0071cc208",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "cec1d82837a91ac0aa4d91286653410284189e7df04d91cac3e144ceb2433aa7",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 88985,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1939,
+            "internalIdIndex": 1939,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+            "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+            "hashFromFilename": "d8a22a6f416754ad14b2d532fe9eb2f8",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "da98eaed8793d0e7e7506d812111329b9ea9819ee181bcf4606f88db6f5ebfd3",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 390388,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1846,
+            "internalIdIndex": 1846,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "hashFromFilename": "3de25122f950a97eed35b094cd9649d6",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "8c586776cf117524147420fead7a780ca4ea187889aa6034b05d383223f4c21e",
+            "optionsBytes": 112,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 421015,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          }
+        ],
+        "exactBindingsToSpineVerified": false,
+        "originalRuntimeObserved": false
+      },
+      {
+        "resourceKey": "StoryRecapEntry",
+        "assetPath": "Assets/StoryRecap/Prefab/StoryRecapEntry.prefab",
+        "assetGuid": "b104941e8d2225c40aafa3b4e514ab67",
+        "configIndex1Based": 1354,
+        "status": "registered-remote-prefab-not-in-local-245",
+        "catalogBundles": [
+          {
+            "catalogEntryIndex": 1714,
+            "internalIdIndex": 1714,
+            "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+            "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+            "hashFromFilename": "b938caf2239e76bd55d447729d08f86e",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "655689ca3986ee1992fffc5dbc6099aa43f40b55ed6f8fd9ef8881245efce0ed",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "runtime-prefix-and-folder-unknown",
+            "sizeBytes": 965002,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1845,
+            "internalIdIndex": 1845,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "hashFromFilename": "45a1151fae1ae68b033775f4df8c742a",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "23549806047c3857efb73ca6a9f7f1bf09dca4c96d368ee5d332fde63f42a1a1",
+            "optionsBytes": 104,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 6811,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1888,
+            "internalIdIndex": 1888,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "bundleFile": "effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "hashFromFilename": "4e78c1e63b9e732d9b0245fd9bc8d416",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "2f1d146191d6f00349ed4ae7e2594372dfbf037f432d0713d226ab71eae3b15d",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 9635908,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1848,
+            "internalIdIndex": 1848,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "bundleFile": "builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "hashFromFilename": "387aa8a8b1b6a1f7532a0d6857c9fa61",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "66d854247a4a234ad55e70e381aaecc54bfa8b747eadaebb4b572e22bedd2392",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 3774882,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1892,
+            "internalIdIndex": 1892,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "bundleFile": "font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "hashFromFilename": "5dafffdb9db0165aa02e86cc1eee9a0f",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "a0904bfee37c81508695421f82c47c1245af9edc9a35254f56c81571b4db95b7",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 279126,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 2004,
+            "internalIdIndex": 2004,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/ui-atlas-windows_assets_assets/ui/window/common_cb9a2a9a04a50ed5eeb83ad0071cc208.bundle",
+            "bundleFile": "ui-atlas-windows_assets_assets/ui/window/common_cb9a2a9a04a50ed5eeb83ad0071cc208.bundle",
+            "hashFromFilename": "cb9a2a9a04a50ed5eeb83ad0071cc208",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "cec1d82837a91ac0aa4d91286653410284189e7df04d91cac3e144ceb2433aa7",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 88985,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1939,
+            "internalIdIndex": 1939,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+            "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+            "hashFromFilename": "d8a22a6f416754ad14b2d532fe9eb2f8",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "da98eaed8793d0e7e7506d812111329b9ea9819ee181bcf4606f88db6f5ebfd3",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 390388,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1846,
+            "internalIdIndex": 1846,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "hashFromFilename": "3de25122f950a97eed35b094cd9649d6",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "8c586776cf117524147420fead7a780ca4ea187889aa6034b05d383223f4c21e",
+            "optionsBytes": 112,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 421015,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          }
+        ],
+        "exactBindingsToSpineVerified": false,
+        "originalRuntimeObserved": false
+      },
+      {
+        "resourceKey": "StoryRecapMainWindow",
+        "assetPath": "Assets/StoryRecap/Prefab/StoryRecapMainWindow.prefab",
+        "assetGuid": "f84efeb7364d304409cf76d283ce85fe",
+        "configIndex1Based": 1355,
+        "status": "registered-remote-prefab-not-in-local-245",
+        "catalogBundles": [
+          {
+            "catalogEntryIndex": 1714,
+            "internalIdIndex": 1714,
+            "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+            "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+            "hashFromFilename": "b938caf2239e76bd55d447729d08f86e",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "655689ca3986ee1992fffc5dbc6099aa43f40b55ed6f8fd9ef8881245efce0ed",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "runtime-prefix-and-folder-unknown",
+            "sizeBytes": 965002,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1845,
+            "internalIdIndex": 1845,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "hashFromFilename": "45a1151fae1ae68b033775f4df8c742a",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "23549806047c3857efb73ca6a9f7f1bf09dca4c96d368ee5d332fde63f42a1a1",
+            "optionsBytes": 104,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 6811,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1888,
+            "internalIdIndex": 1888,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "bundleFile": "effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "hashFromFilename": "4e78c1e63b9e732d9b0245fd9bc8d416",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "2f1d146191d6f00349ed4ae7e2594372dfbf037f432d0713d226ab71eae3b15d",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 9635908,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1848,
+            "internalIdIndex": 1848,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "bundleFile": "builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "hashFromFilename": "387aa8a8b1b6a1f7532a0d6857c9fa61",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "66d854247a4a234ad55e70e381aaecc54bfa8b747eadaebb4b572e22bedd2392",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 3774882,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1892,
+            "internalIdIndex": 1892,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "bundleFile": "font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "hashFromFilename": "5dafffdb9db0165aa02e86cc1eee9a0f",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "a0904bfee37c81508695421f82c47c1245af9edc9a35254f56c81571b4db95b7",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 279126,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 2004,
+            "internalIdIndex": 2004,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/ui-atlas-windows_assets_assets/ui/window/common_cb9a2a9a04a50ed5eeb83ad0071cc208.bundle",
+            "bundleFile": "ui-atlas-windows_assets_assets/ui/window/common_cb9a2a9a04a50ed5eeb83ad0071cc208.bundle",
+            "hashFromFilename": "cb9a2a9a04a50ed5eeb83ad0071cc208",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "cec1d82837a91ac0aa4d91286653410284189e7df04d91cac3e144ceb2433aa7",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 88985,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1939,
+            "internalIdIndex": 1939,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+            "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+            "hashFromFilename": "d8a22a6f416754ad14b2d532fe9eb2f8",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "da98eaed8793d0e7e7506d812111329b9ea9819ee181bcf4606f88db6f5ebfd3",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 390388,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          },
+          {
+            "catalogEntryIndex": 1846,
+            "internalIdIndex": 1846,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "hashFromFilename": "3de25122f950a97eed35b094cd9649d6",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "8c586776cf117524147420fead7a780ca4ea187889aa6034b05d383223f4c21e",
+            "optionsBytes": 112,
+            "resolvedURL": null,
+            "resolutionStatus": "addressables-runtime-path-local-dependency",
+            "sizeBytes": 421015,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "size/hash decoded and locally cross-validated; remote file unavailable, CRC field meaning not asserted"
+          }
+        ],
+        "exactBindingsToSpineVerified": false,
+        "originalRuntimeObserved": false
+      }
+    ],
+    "spine": [
+      {
+        "role": "책장 Lily 몸",
+        "animation": "Lily_story_finished",
+        "queuedAnimation": "Lily_story_finished_repeat",
+        "queuedLoop": true,
+        "sourceRef": "recap-source-2",
+        "lineStart": 69,
+        "lineEnd": 70,
+        "status": "source-declared-reference; native skeleton asset binding unavailable"
+      },
+      {
+        "role": "책장 Lily 손",
+        "animation": "Lily_story_finished2",
+        "queuedAnimation": "Lily_story_finished_repeat2",
+        "queuedLoop": true,
+        "sourceRef": "recap-source-2",
+        "lineStart": 71,
+        "lineEnd": 72,
+        "status": "source-declared-reference; native skeleton asset binding unavailable"
+      },
+      {
+        "role": "다음 페이지 넘김",
+        "animation": "nextPage",
+        "loop": false,
+        "sourceRef": "recap-source-3",
+        "lineStart": 145,
+        "lineEnd": 153,
+        "status": "source-declared-reference; native skeleton asset binding unavailable"
+      },
+      {
+        "role": "이전 페이지 넘김",
+        "animation": "lastPage",
+        "loop": false,
+        "sourceRef": "recap-source-3",
+        "lineStart": 154,
+        "lineEnd": 157,
+        "status": "source-declared-reference; native skeleton asset binding unavailable"
+      }
+    ],
+    "boundaries": [
+      "The three original StoryRecap prefabs resolve to the remote storyrecap bundle in the packaged catalog. No matching local prefab container exists, so exact skeleton/atlas bindings and visual animation duration are not asserted.",
+      "Animation names and tween callback times are static source facts; no substitute generic page effect is called original Spine playback."
+    ]
+  },
+  "audioEntries": [
+    {
+      "key": "recap:audio:sfxStoryIn",
+      "kind": "audio",
+      "origin": "packaged-audio-clip-derivative",
+      "src": "./assets/media/story-recap/sfxStoryIn.wav",
+      "alt": "회상 책 다음·이전 페이지 전환 효과음 · 동봉 sfxStoryIn",
+      "sha256": "c83d6a652b0c44c1670948927d0b2796c90ba50b92a28623856ee4eb14039e62",
+      "bytes": 62252,
+      "duration": 0.7053061224489796,
+      "declaredDuration": 0.7053061127662659,
+      "channels": 1,
+      "frequency": 44100,
+      "sampleWidthBytes": 2,
+      "version": "4.10.5",
+      "source": "StoryRecapBookContentWindow:ChangePage line142 → AudioFileConfig exact sfxStoryIn → Assets/Audios/Effect/sfxStoryIn.mp3",
+      "sourceRefs": [
+        "recap-source-3"
+      ],
+      "identity": {
+        "bundle": "audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+        "bundle_sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+        "serialized_file": "CAB-235cc430e7de96a522c5da5452135b83",
+        "path_id": "-1844375190007732396",
+        "type": "AudioClip",
+        "object_source_sha256": "ca544fae0a9b8a1b78cf7f890ca7c913a99412f1e023f23eb7fb182793b8faeb"
+      },
+      "mapping": {
+        "shortName": "sfxStoryIn",
+        "fileKey": "Audios/Effect/sfxStoryIn.mp3",
+        "assetGuid": "4310ca6dd8af6df45979713ada50894a",
+        "configIndex1Based": 311
+      },
+      "transform": "UnityPy AudioClip.samples native decode to PCM WAV; exact complete short0.705s effect, no synthesis or retiming",
+      "trigger": {
+        "actions": [
+          "next",
+          "previous"
+        ],
+        "acceptedSwipeAlso": true,
+        "newBookOpen": false,
+        "close": false,
+        "sourceLine": 142
+      },
+      "auditionVerified": false,
+      "runtimeSynchronizationVerified": false,
+      "originalRuntimeObserved": false,
+      "privacyReview": {
+        "status": "static-short-game-effect-only",
+        "excluded": "No voice/story audio, player data or raw bundle published"
+      }
+    }
+  ]
 }

@@ -1,0 +1,23 @@
+import {mapPresentationView,presentationMedia} from './presentation-model.mjs';
+const e=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const button=(action,label,value,disabled=false)=>`<button class="game-button" data-play="${action}"${value===undefined?'':' data-value="'+e(value)+'"'}${disabled?' disabled':''}>${e(label)}</button>`;
+const bounds=b=>b&&['x','y','width','height'].every(k=>Number.isFinite(b[k]))&&b.width>0&&b.height>0&&b.width<=2&&b.height<=2&&b.x>=-1&&b.y>=-1&&b.x<=2&&b.y<=2;
+export function renderSourceMap(s,c,d,options={}){
+ const v=mapPresentationView(s,c,d,options);if(!v.valid)return '<div class="source-map-unavailable"><p>'+e(v.message)+'</p>'+button('map:reset-invalid','백업 후 맵 표시만 초기화')+'</div>';
+ if(!v.map)return '';
+ if(options.checkSurface&&v.settings.surface!=='geometry')return '';
+ const base=presentationMedia(d,v.map.baseMediaKey);if(!base)return '';
+ const layers=v.layers.map(layer=>{const m=presentationMedia(d,layer.mediaKey),b=layer.boundsNormalized;if(!m||!bounds(b))return '';return `<img class="source-map-layer${layer.isPreview?' is-preview':''}" src="${e(m.src)}" alt="${e('슬롯 '+layer.slotId+' · 디자인 '+layer.variant+(layer.isPreview?' · 미리보기':''))}" data-map-slot="${e(layer.slotId)}" data-map-variant="${e(layer.variant)}" style="left:${b.x*100}%;top:${b.y*100}%;width:${b.width*100}%;height:${b.height*100}%" draggable="false">`;}).join('');
+ return `<div class="source-map-world" data-map-id="${e(v.map.id)}" aria-label="원본 맵 기하의 웹 투영"><div class="source-map-plane" style="--map-ratio:${base.width}/${base.height}"><img class="source-map-base" src="${e(base.src)}" width="${base.width}" height="${base.height}" alt="${e(base.alt)}" draggable="false">${layers}</div></div>`;
+}
+export function renderSourceMapControls(s,c,d){
+ const v=mapPresentationView(s,c,d);if(!v.map&&!v.valid)return '';
+ if(!v.map)return '';
+ return `<details class="source-map-controls"><summary>맵 구역 · 저장한 장식 레이어</summary><p>${e(v.message)}</p><label>선별 구역 보기 · 연구<select data-map-select>${(d.presentationAssets?.maps||[]).map(m=>`<option value="${e(m.id)}"${v.map.id===m.id?' selected':''}>${e(m.label||m.name||m.id)}</option>`).join('')}</select></label><div class="game-tool-actions">${button('map:surface','참고 캡처로 보기','capture')}${button('map:surface','원본 기하·선택 레이어 보기','geometry')}</div><div class="game-tool-actions">${button('map:layers','저장한 장식 표시','current')}${button('map:layers','기본 지형만 비교','base')}</div><p>완료 과제의 선택 레이어 ${v.layers.length}개 표시 · 미확인 선택/실물 ${v.unknown.length}개. 구역 선택은 메인 진행을 변경하지 않습니다.</p>${v.completed.length?'<label>완료한 장식<select data-map-slot-select><option value="">장식 선택</option>'+v.completed.map(r=>'<option value="'+e(r.id)+'"'+(v.selectedSlot===r.id?' selected':'')+'>'+e(r.name)+' · '+e(r.id)+'</option>').join('')+'</select></label>':''}${v.selectedSlot&&v.completed.some(r=>r.id===v.selectedSlot)?button('game-map-edit-slot','선택한 장식 편집',v.selectedSlot):''}${v.unknown.length?'<ul>'+v.unknown.map(r=>'<li>'+e(r.slotId)+' · '+e(r.reason)+'</li>').join('')+'</ul>':''}<small>기본 지형은 제공 MapView의 선정 정적 구성입니다. 레이어 숨기기는 원작의 과거 화면 복원이 아닙니다.</small></details>`;
+}
+export function renderSkinArt(s,c,d){
+ if(!c)return '';
+ const selected=c.groups.flatMap(g=>g.skins).find(r=>r.id===s.selected),g=c.groups.find(g=>g.skins.some(r=>r.id===s.selected));if(!selected||!g)return '';
+ const assets=d.presentationAssets?.skins||[],edit=s.edit,rows=g.skins.map(r=>{const a=assets.find(a=>a.id===r.id),m=presentationMedia(d,a?.mediaKey);return {r,a,m};});
+ return `<section class="skin-art-board" aria-label="Skin 실물과 슬롯 적용 비교"><h3>${e(g.area)} · 장식 실물</h3><p>미리보기와 확정 기록을 함께 표시합니다. 그림이 없는 슬롯은 등록된 원본 경로를 보여줍니다.</p><div class="skin-art-grid">${rows.map(({r,a,m})=>`<figure${edit?.preview[r.slot]===r.itemId?' class="is-preview"':''}>${m?`<img src="${e(m.src)}" alt="${e(m.alt||r.slot)}" width="${m.width}" height="${m.height}" loading="lazy">`:'<div class="skin-art-missing"><strong>실물 미확보</strong><span>'+e(r.slot)+'</span></div>'}<figcaption>${e(r.slot)} · Skin ${e(r.id)}<br>저장: ${e(s.slots[r.slot]??'없음')}${edit?.preview[r.slot]!==undefined?'<br>미리보기: '+e(edit.preview[r.slot]):''}<details><summary>자산 연결 근거</summary><code>${e(a?.assetPath||a?.prefab||'정확 원본 키 조사 중')}</code><p>${e(a?.reason||a?.status||r.artStatus||'미확보')}</p></details></figcaption></figure>`).join('')}</div></section>`;
+}

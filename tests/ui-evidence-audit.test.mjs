@@ -10,7 +10,7 @@ test('UI audit covers the selected prefab/controller/clip inventory without prom
  assert.equal(data.prefabs.length,11);assert.equal(data.controllers.length,14);assert.equal(data.clips.length,26);
  assert.equal(data.summary.observedScreenStudies,5);assert.equal(data.observedRegions.length,29);assert.equal(data.comparisons.length,8);
  assert.equal(data.summary.exactRuntimeCoordinateMatches,0);assert.equal(data.summary.confirmedCaptureFontMatches,0);
- assert.equal(data.newNativeFramesReviewed,0);assert.equal(data.newAssetsRecovered,0);
+ assert.equal(data.newNativeFramesReviewed,0);assert.equal(data.newAssetsRecovered,4);
  assert.equal(new Set(data.prefabs.map(p=>p.assetPath)).size,11);
  for(const p of data.prefabs){assert.ok(p.rectTransformCount<=p.gameObjectCount);assert.equal(p.runtimeLoaded,null);for(const c of p.canvases)assert.equal(c.runtimeActive,null);}
  for(const c of data.clips){assert.equal(c.measuredRuntimeSeconds,null);assert.equal(c.runtimePlaybackVerified,false);assert.equal(c.declaredSeconds,c.end-c.start);assert.ok(c.declaredSeconds>0);}

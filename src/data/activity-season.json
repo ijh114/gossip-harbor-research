@@ -1,0 +1,572 @@
+{
+  "schema": 1,
+  "id": "explicit-mock-economy-v1",
+  "revision": "5b2c7148db1d6389c0f615dc5bf130ad23b145a65740f2465f479821147f532a",
+  "origin": "research-example",
+  "label": "설정 검증용 모의 시즌 · 출시 확정·원작 서버 시즌 아님",
+  "schedule": {
+    "clock": "relative-on-start",
+    "start": 0,
+    "end": 600,
+    "release": 900
+  },
+  "pass": {
+    "levels": [
+      {
+        "require": 3,
+        "free": [
+          {
+            "type": "energy",
+            "count": 5
+          }
+        ],
+        "premium": [
+          {
+            "type": "gem",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "require": 5,
+        "free": [
+          {
+            "type": "gold",
+            "count": 10
+          }
+        ],
+        "premium": [
+          {
+            "type": "energy",
+            "count": 10
+          }
+        ]
+      },
+      {
+        "require": 8,
+        "free": [
+          {
+            "type": "104",
+            "count": 1
+          }
+        ],
+        "premium": [
+          {
+            "type": "gem",
+            "count": 2
+          }
+        ]
+      }
+    ],
+    "tasks": [],
+    "cycle": {
+      "id": "orders",
+      "target": "customer",
+      "count": 2,
+      "tokens": 1,
+      "bonus": false
+    },
+    "superMultiplier": 2,
+    "daily": [
+      {
+        "from": 0,
+        "to": 600,
+        "tasks": [
+          {
+            "id": "merge",
+            "target": "merge",
+            "count": 2,
+            "tokens": 1,
+            "bonus": false
+          },
+          {
+            "id": "bonus-1",
+            "target": "customer",
+            "count": 1,
+            "tokens": 1,
+            "bonus": true
+          },
+          {
+            "id": "bonus-2",
+            "target": "energy",
+            "count": 1,
+            "tokens": 1,
+            "bonus": true
+          }
+        ],
+        "extra": [
+          {
+            "type": "energy",
+            "count": 3
+          }
+        ]
+      }
+    ]
+  },
+  "album": {
+    "cards": [
+      {
+        "id": "mock-a",
+        "setId": "mock-set",
+        "stars": 1
+      },
+      {
+        "id": "mock-b",
+        "setId": "mock-set",
+        "stars": 2
+      },
+      {
+        "id": "mock-c",
+        "setId": "mock-set",
+        "stars": 3
+      }
+    ],
+    "sets": [
+      {
+        "id": "mock-set",
+        "reward": [
+          {
+            "type": "energy",
+            "count": 20
+          }
+        ]
+      }
+    ],
+    "reward": [
+      {
+        "type": "gold",
+        "count": 20
+      }
+    ],
+    "packs": [
+      {
+        "id": "mock-selected",
+        "size": 1,
+        "fixed": null
+      },
+      {
+        "id": "mock-fixed",
+        "size": 3,
+        "fixed": [
+          "mock-a",
+          "mock-b",
+          "mock-c"
+        ]
+      }
+    ],
+    "exchanges": [
+      {
+        "id": "mock-duplicates",
+        "stars": 2,
+        "limit": 10,
+        "cooldownSeconds": 30,
+        "reward": [
+          {
+            "type": "gem",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  },
+  "event": {
+    "projectionId": "dogparkpure",
+    "mergeLine": [
+      "adv_dogparkpure_tar_1",
+      "adv_dogparkpure_tar_2",
+      "adv_dogparkpure_tar_3",
+      "adv_dogparkpure_tar_4",
+      "adv_dogparkpure_tar_5",
+      "adv_dogparkpure_tar_6",
+      "adv_dogparkpure_tar_7",
+      "adv_dogparkpure_tar_8",
+      "adv_dogparkpure_tar_9",
+      "adv_dogparkpure_tar_10",
+      "adv_dogparkpure_tar_11",
+      "adv_dogparkpure_tar_12"
+    ],
+    "levelRewards": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+        {
+          "type": "gold",
+          "count": 10
+        }
+      ]
+    ],
+    "scroll": [
+      {
+        "level": 10,
+        "rows": 2
+      },
+      {
+        "level": 11,
+        "rows": 2
+      }
+    ],
+    "fogs": [],
+    "offers": [
+      {
+        "id": "mock-energy-exchange",
+        "cost": [
+          {
+            "type": "gem",
+            "count": 2
+          }
+        ],
+        "reward": [
+          {
+            "type": "energy",
+            "count": 10
+          }
+        ],
+        "limit": 2,
+        "from": 0,
+        "to": 600
+      }
+    ],
+    "endReward": []
+  },
+  "boundaries": [
+    "설정값은 기존 연구 시즌을 확장한 예제입니다. 사용자가 제작 범위를 확정한 출시 밸런스가 아닙니다.",
+    "패스 단계·과제·수령권 배수·앨범 카드·팩 결과·교환·일정·보상·이벤트 목표 체인 배정은 원작 서버 값으로 확인되지 않았습니다.",
+    "dogparkpure 타르 합성 체인과 level10/11 각2행 스크롤 선언은 동봉 자료에 있습니다. 활성 시즌에서 이 체인을 목표로 사용하는 배정은 별도 서버 자료가 필요합니다.",
+    "팩 결과 수동 입력은 명시적 모의 결과이며 실제 확률·보장·레이저·로열·조커 추첨을 구현했다고 주장하지 않습니다."
+  ],
+  "sources": [
+    {
+      "id": "pass-model",
+      "path": "analysis/lua/Lua_Activity/PassActivity/Model/PassActivityModel.lua",
+      "kind": "static-code",
+      "sha256": "3587274cf8ab4269a87f9de5b560126154c21afb5ecaeb500aa877b980b37a9f",
+      "lineRanges": [
+        [
+          64,
+          129
+        ],
+        [
+          235,
+          269
+        ],
+        [
+          317,
+          340
+        ],
+        [
+          471,
+          544
+        ],
+        [
+          620,
+          641
+        ],
+        [
+          651,
+          688
+        ],
+        [
+          755,
+          795
+        ]
+      ],
+      "claim": "server tables, source targets, sequential bonus tasks, per-cycle rounding and one-time claims"
+    },
+    {
+      "id": "pass-task",
+      "path": "analysis/lua/Lua_Activity/PassActivity/Model/PassActivityTask.lua",
+      "kind": "static-code",
+      "sha256": "e4eaf5bf70cd96ed2f04077fe0155ded2078e55b01101fae77cac19be03b693c",
+      "lineRanges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "claim": "typed cycle/timelimit task fields"
+    },
+    {
+      "id": "album-model",
+      "path": "analysis/lua/Lua_Activity/AlbumActivity/Model/AlbumActivityModel.lua",
+      "kind": "static-code",
+      "sha256": "b103213429d85a45936769769811ff0ee3b3ef22f99815a5c3332dfb2b9d9d74",
+      "lineRanges": [
+        [
+          154,
+          237
+        ],
+        [
+          1567,
+          1655
+        ],
+        [
+          1893,
+          1993
+        ],
+        [
+          2520,
+          2604
+        ]
+      ],
+      "claim": "server cards/packs/sets, acquisition duplicate/complete branches and recycle cooldown"
+    },
+    {
+      "id": "activity-state",
+      "path": "analysis/lua/Lua_Core/Model/Activity/BaseActivityModel.lua",
+      "kind": "static-code",
+      "sha256": "d8b6e5908a6c6cb9f68505de5382c9aff6bc43561c0253cd7bb3857db7b5aecb",
+      "lineRanges": [
+        [
+          69,
+          78
+        ],
+        [
+          125,
+          137
+        ]
+      ],
+      "claim": "absolute server start/end/release boundaries"
+    },
+    {
+      "id": "adventure-model",
+      "path": "analysis/lua/Lua_Activity/AdventureActivity/Model/AdventureActivityModel.lua",
+      "kind": "static-code",
+      "sha256": "7c9512f0c973253e7bb1515d70fbeb2a925c689e8a71f88435c7cf19306c51aa",
+      "lineRanges": [
+        [
+          42,
+          89
+        ],
+        [
+          203,
+          257
+        ],
+        [
+          260,
+          305
+        ],
+        [
+          320,
+          340
+        ],
+        [
+          390,
+          428
+        ]
+      ],
+      "claim": "server target-chain/order-score/energy draw config and source level updates"
+    },
+    {
+      "id": "adventure-board",
+      "path": "analysis/lua/Lua_Activity/AdventureActivity/Board/AdventureActivityBoardModel.lua",
+      "kind": "static-code",
+      "sha256": "b2282ba6594db4db78aee086ac09210088aaecaee13412ee27b434f5a5a2be8a",
+      "lineRanges": [
+        [
+          1,
+          8
+        ],
+        [
+          45,
+          105
+        ]
+      ],
+      "claim": "6 columns x8 visible rows and scroll config selection"
+    },
+    {
+      "id": "ui-board",
+      "path": "analysis/lua/Lua_Core/Board/Model/UIBoard/BaseUIBoardModel.lua",
+      "kind": "static-code",
+      "sha256": "1cddeb1b7477322bcac273676e791b26ad210a0a3588c632bdf935041cc79f4a",
+      "lineRanges": [
+        [
+          1,
+          20
+        ],
+        [
+          94,
+          99
+        ],
+        [
+          254,
+          333
+        ],
+        [
+          383,
+          432
+        ],
+        [
+          527,
+          544
+        ]
+      ],
+      "claim": "downward window, bounded scrolling, cache policy and final property settlement"
+    },
+    {
+      "id": "ui-item-layer",
+      "path": "analysis/lua/Lua_Core/Board/Model/UIBoard/BaseUIItemLayerModel.lua",
+      "kind": "static-code",
+      "sha256": "92b21f43bdb4cf17c133efaf3ccd46882dfb3ebaf506d5941f29be74dc0eb432",
+      "lineRanges": [
+        [
+          38,
+          67
+        ]
+      ],
+      "claim": "inverse initial load from final8 rows of source map"
+    },
+    {
+      "id": "ui-fog",
+      "path": "analysis/lua/Lua_Core/Board/Model/UIBoard/BaseUIBoardFogModel.lua",
+      "kind": "static-code",
+      "sha256": "e02ba73f55c8f884a1065511b6bdfbda980e6112d4c5d1735993ed7d2f2a316b",
+      "lineRanges": [
+        [
+          134,
+          157
+        ],
+        [
+          218,
+          246
+        ]
+      ],
+      "claim": "exact source level trigger and source fog replacement"
+    },
+    {
+      "id": "board-final-rewards",
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseActionBoardModel.lua",
+      "kind": "static-code",
+      "sha256": "206d70ead90fde2e03d6859e4ad070c681ca1562b21d314b90080d3f62830b8b",
+      "lineRanges": [
+        [
+          153,
+          259
+        ]
+      ],
+      "claim": "collectable values and remaining disposable generator pools"
+    },
+    {
+      "id": "random-data",
+      "path": "analysis/lua/Lua_Core/RandomReward/Model/RandomRewardData.lua",
+      "kind": "static-code",
+      "sha256": "0224ad49f8ed586994326c6c8770edba2506d8530448cfb7a0679c0302cab6f1",
+      "lineRanges": [
+        [
+          10,
+          25
+        ],
+        [
+          56,
+          71
+        ]
+      ],
+      "claim": "grouped currency weights and inclusive integer count draw"
+    },
+    {
+      "id": "random-model",
+      "path": "analysis/lua/Lua_Core/RandomReward/Model/RandomRewardModel.lua",
+      "kind": "static-code",
+      "sha256": "39c6851653bc93758119d06db4da99cb515fa6b3724b598c2980412ce953648d",
+      "lineRanges": [
+        [
+          8,
+          43
+        ],
+        [
+          54,
+          70
+        ],
+        [
+          90,
+          124
+        ]
+      ],
+      "claim": "server RandomRewardContent and declared fallback kept separate"
+    },
+    {
+      "id": "dogpark-scroll",
+      "path": "analysis/config-tables/AdventureBoardScrollConfig_dogparkpure.json",
+      "kind": "packaged-config",
+      "sha256": "5d0b29d22047b61b5aa93162b61f594c23c1357d5859b22c5215a349db68b599",
+      "lineRanges": [
+        [
+          1,
+          47
+        ]
+      ],
+      "claim": "PK level10→2 rows, level11→2 rows"
+    },
+    {
+      "id": "dogpark-board",
+      "path": "analysis/config-tables/AdventureBoardModelConfig_dogparkpure.json",
+      "kind": "packaged-config",
+      "sha256": "167b646b0be422a82e51631c2f0f86940ec5e490a9c32d608657065ae2e182b5",
+      "lineRanges": [
+        [
+          1,
+          105
+        ]
+      ],
+      "claim": "curated6x12 packaged board already used by isolated research projection"
+    },
+    {
+      "id": "dogpark-items",
+      "path": "analysis/config-tables/AdventureItemModelConfig_dogparkpure.json",
+      "kind": "packaged-config",
+      "sha256": "1f38f7b3193c593b892579f6ff9eb2cbe27e2ff57f68897d4ead9e20c0f40574",
+      "lineRanges": [
+        [
+          1,
+          1839
+        ]
+      ],
+      "claim": "35 source item types, finite pools and feed/merge transformations"
+    }
+  ],
+  "sourceRequirements": [
+    {
+      "checklistId": "3.10",
+      "missing": [
+        "RandomRewardContent for rdm_rwd_mainboard_1",
+        "verified per-currency random result or explicit research draw tape"
+      ],
+      "implemented": "typed config/draw resolver and atomic UID/wallet/Type2 commit; default missing table remains unknown"
+    },
+    {
+      "checklistId": "3.14",
+      "missing": [
+        "active season sTime/eTime/rTime",
+        "battlePassReward/DailyTask/MoreTask/ExtraReward and miscellaneous values",
+        "album_config/card/set/pack/recycle/order-pack/pity/royal/joker/round assignment"
+      ],
+      "implemented": "explicit configured schedule, tokens, sequential bonus tasks, free/premium claims, fixed/explicit pack results, duplicate stars/cooldowns, set+album completion; no invented probability or native activity identity"
+    },
+    {
+      "checklistId": "3.15",
+      "missing": [
+        "active dogparkpure definition/target-chain and initial item assignment",
+        "actual server shop/exchange/event order/energy tables",
+        "35 exact original event images",
+        "measured native timing, pointer geometry and equal-cache-key ordering"
+      ],
+      "implemented": "6x8 active window, source level10/11 scroll declarations, wrapped items/feed/finite spawn/cache identity, configured fog and offers, one-shot confirmed final rewards; target assignment/initial queue remains labelled mock"
+    },
+    {
+      "checklistId": "3.16",
+      "missing": [
+        "release balance and reward destinations for any currently unsupported category",
+        "verified live-server/real-purchase state (outside this web simulation)"
+      ],
+      "implemented": "opt-in atomic shared main mock economy, wallet/known Type2 destination, receipts, idempotent actual progress outbox, expiration/reconnect/retry and JSON config import with history"
+    }
+  ]
+}

@@ -105,6 +105,9 @@ export function createStudio({getData,getRoute,render,toast,download}){
   if(t.hasAttribute('data-visual-depth'))document.querySelector('#difficulty-output').innerHTML=difficultyOutput(Number(t.value));
  });
  document.addEventListener('change',event=>{const t=event.target;
+  if(t.hasAttribute('data-cg-select')){sourcePlay.handle('cg:select',t.value);document.querySelector('[data-cg-select]')?.focus({preventScroll:true});return;}
+  if(t.hasAttribute('data-map-select')){sourcePlay.handle('map:select-map',t.value);document.querySelector('[data-map-select]')?.focus({preventScroll:true});return;}
+  if(t.hasAttribute('data-map-slot-select')&&t.value){sourcePlay.handle('map:select-slot',t.value);document.querySelector('[data-map-slot-select]')?.focus({preventScroll:true});return;}
   if(t.hasAttribute('data-catalog-select')){catalogTutorials.handle('select',t.value);return;}
   if(t.hasAttribute('data-catalog-event')){catalogTutorials.handle('event-select',t.value);return;}
   if(t.hasAttribute('data-checklist-status')){checklistStatus=t.value;render();document.querySelector('[data-checklist-status]')?.focus({preventScroll:true});return;}

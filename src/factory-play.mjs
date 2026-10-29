@@ -1,6 +1,7 @@
 // Generator factory quantities from packaged 4.10.5 Lua. No domain mutation,
 // native API, wallet, network, or invented ownership. The caller commits a plan's
 // removals, queue emissions and nextState together after checking expectedSequence.
+import {resolveFactoryRandomReward} from './factory-random-reward.mjs';
 const obj=v=>v!==null&&typeof v==='object'&&!Array.isArray(v)&&(Object.getPrototypeOf(v)===Object.prototype||Object.getPrototypeOf(v)===null);
 const int=(v,max=1e9)=>Number.isSafeInteger(v)&&v>=0&&v<=max;
 const dense=a=>Array.isArray(a)&&Object.keys(a).length===a.length;
@@ -121,10 +122,10 @@ function lifecyclePlan(state,action,context,config){
     if(!int(cell.uid)||cell.uid===0||cell.uid>=context.nextUid||context.bubbles[cell.uid]||l.replacements.some(r=>r.uid===cell.uid)||seen.has(newUid))return fail('stale-input','교체할 덮개 아이템의 UID/버블 상태를 다시 확인하세요.');
     const extra=cell.cover==='box'?config.lifecycleRules.paperboxRewards[index]:null;
     if(extra&&(!obj(extra)||typeof extra.type!=='string'||!int(extra.count)||extra.count===0))return fail('invalid-config','동봉 상자 보상 항목을 확인하세요.');
-    if(extra?.type.startsWith('rdm_rwd_'))return fail('unknown','이 위치의 랜덤 상자 보상은 서버 RandomRewardContent가 없어 임의 추첨하지 않습니다.',['randomRewardContent.'+extra.type]);
+    let random=null;if(extra?.type.startsWith('rdm_rwd_')){random=resolveFactoryRandomReward(context.randomRewardConfig,extra.type,context.randomRewardDraws?.[cell.uid]);if(!random.ok)return fail('unknown','이 위치의 랜덤 상자 보상은 서버 RandomRewardContent와 명시 난수가 필요합니다. '+random.message,random.unknown);if(extra.count!==1)return fail('unknown','랜덤 보상 반복 횟수별 난수 자료가 필요합니다.',['randomRewardCount']);}
     const r={uid:cell.uid,newUid:newUid++,index,type:cell.type,cover:cell.cover,sequence:next.sequence};
     replacements.push({...r,extraReward:extra?structuredClone(extra):null});l.replacements.push({...r,extraReward:extra?structuredClone(extra):null});
-    if(extra){if(['energy','gem','gold'].includes(extra.type))properties.push({...extra,index,sourceUid:cell.uid});else emissions.push({...extra,cacheType:2});}
+    for(const reward of random?random.rewards:extra?[extra]:[]){if(['energy','gem','gold'].includes(reward.type))properties.push({...reward,index,sourceUid:cell.uid});else emissions.push({...reward,cacheType:2});}if(random)events.push('RandomRewardResolved:'+context.randomRewardConfig.origin+':'+random.revision);
     events.push('ReplaceItem');
    }
    l.checkedCobweb=true;if(replacements.length)events.push('CountItemsCode','UpdateOrderState');

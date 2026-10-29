@@ -52,7 +52,7 @@ test('helper explanation does not invent a missing icon or turn component declar
 test('every exposed artifact claim has source path, exact text anchors and SHA; no guessed asset URL or machine path is published', async () => {
   const sources = new Map(data.sources.map(s => [s.id,s]));
   const statuses = new Set(data.statuses.map(s => s.id)), routes = new Set([...Object.keys(STUDIO_PAGES),...RESEARCH_ROUTES]);
-  const recap=JSON.parse(await readFile(new URL('../src/data/story-recap.json',import.meta.url),'utf8'));const mediaKeys = new Set([...media.entries,...scene.mediaEntries,...recap.mediaEntries].map(m => m.key));
+  const recap=JSON.parse(await readFile(new URL('../src/data/story-recap.json',import.meta.url),'utf8'));const presentation=JSON.parse(await readFile(new URL('../src/data/presentation-assets.json',import.meta.url),'utf8'));const mediaKeys = new Set([...media.entries,...scene.mediaEntries,...recap.mediaEntries,...presentation.mediaEntries].map(m => m.key));
   assert.equal(sources.size,data.sources.length);
   for (const s of sources.values()) {
     assert.match(s.sha256,/^[a-f0-9]{64}$/);

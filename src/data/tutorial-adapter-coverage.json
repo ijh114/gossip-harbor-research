@@ -1,0 +1,1207 @@
+{
+  "revision": "84356cac6cc5ef375682fb0b8e86331f3e8cc85c613ae2aa01dbfe3003986501",
+  "total": 85,
+  "counts": {
+    "native-target-unavailable": 54,
+    "native-model-unimplemented": 2,
+    "source-owner-lock-cleanup": 6,
+    "mounted-factory-ui": 4,
+    "finite-web-misc-db": 9,
+    "finite-web-activity-flag": 10
+  },
+  "rows": [
+    {
+      "guideId": "tutorial_bakeout_2",
+      "id": "effect@TC-S009:50:8",
+      "callee": "self.m_highlightOrderCell:SetOrderIconClickEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBakeOut2.lua",
+        "sha256": "26d5b0a3e6c3c82c43ce94fce98db8d284e799da0e420b79072626ab323df82c",
+        "lineStart": 50,
+        "lineEnd": 50
+      }
+    },
+    {
+      "guideId": "tutorial_bakeout_2",
+      "id": "effect@TC-S009:53:8",
+      "callee": "self.m_highlightOrderCell:SetGoButtonEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBakeOut2.lua",
+        "sha256": "26d5b0a3e6c3c82c43ce94fce98db8d284e799da0e420b79072626ab323df82c",
+        "lineStart": 53,
+        "lineEnd": 53
+      }
+    },
+    {
+      "guideId": "tutorial_bakeout_2",
+      "id": "effect@TC-S009:181:4",
+      "callee": "GM.ActivityManager:GetModel():SetExchangeCoinFree",
+      "effectClass": "board-or-economy-mutation",
+      "category": "native-model-unimplemented",
+      "remaining": "실제 무료 교환 비용·잔액·후속 UI 모델이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBakeOut2.lua",
+        "sha256": "26d5b0a3e6c3c82c43ce94fce98db8d284e799da0e420b79072626ab323df82c",
+        "lineStart": 181,
+        "lineEnd": 181
+      }
+    },
+    {
+      "guideId": "tutorial_bakeout_2",
+      "id": "effect@TC-S009:182:4",
+      "callee": "exchangeWindow:UpdateContent",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBakeOut2.lua",
+        "sha256": "26d5b0a3e6c3c82c43ce94fce98db8d284e799da0e420b79072626ab323df82c",
+        "lineStart": 182,
+        "lineEnd": 182
+      }
+    },
+    {
+      "guideId": "tutorial_character_intimacy_entry",
+      "id": "effect@TC-S011:138:2",
+      "callee": "window:JumpToCell",
+      "effectClass": "ui-viewport",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCharacterIntimacyEntry.lua",
+        "sha256": "0c7eacbc70ab73944bd605370bf00420f572e1a40cbe8d1c2e6772fc1825f856",
+        "lineStart": 138,
+        "lineEnd": 138
+      }
+    },
+    {
+      "guideId": "tutorial_character_intimacy_entry",
+      "id": "effect@TC-S011:139:2",
+      "callee": "window:SetScrollEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCharacterIntimacyEntry.lua",
+        "sha256": "0c7eacbc70ab73944bd605370bf00420f572e1a40cbe8d1c2e6772fc1825f856",
+        "lineStart": 139,
+        "lineEnd": 139
+      }
+    },
+    {
+      "guideId": "tutorial_character_intimacy_entry",
+      "id": "effect@TC-S011:151:2",
+      "callee": "window:SetScrollEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCharacterIntimacyEntry.lua",
+        "sha256": "0c7eacbc70ab73944bd605370bf00420f572e1a40cbe8d1c2e6772fc1825f856",
+        "lineStart": 151,
+        "lineEnd": 151
+      }
+    },
+    {
+      "guideId": "tutorial_wipeout_first_main_window",
+      "id": "effect@TC-S014:78:4",
+      "callee": "window:ShowHarrison",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWipeOut2.lua",
+        "sha256": "04bf279ba1f396e6a1d41d96288b38ed78bf9a5b1ab45395066b8bf446128460",
+        "lineStart": 78,
+        "lineEnd": 78
+      }
+    },
+    {
+      "guideId": "tutorial_wipeout_second_main_window",
+      "id": "effect@TC-S015:54:4",
+      "callee": "window:ShowHarrison",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWipeOut3.lua",
+        "sha256": "b7a022cc5355d70552434e632a4dd8750162887d27eecbf5d7409cc99de1e48d",
+        "lineStart": 54,
+        "lineEnd": 54
+      }
+    },
+    {
+      "guideId": "tutorial_triggerplane",
+      "id": "effect@TC-S017:43:2",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "effectClass": "ui-input-state",
+      "category": "source-owner-lock-cleanup",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTriggerPlane.lua",
+        "sha256": "b2e723c653690a55e221a20f3e9aee1d2086d3626f04efe8f21d32c26c9bd9cf",
+        "lineStart": 43,
+        "lineEnd": 43
+      }
+    },
+    {
+      "guideId": "tutorial_triggerplane",
+      "id": "effect@TC-S017:79:2",
+      "callee": "mainwindow:SetTutorialMaskStatus",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTriggerPlane.lua",
+        "sha256": "b2e723c653690a55e221a20f3e9aee1d2086d3626f04efe8f21d32c26c9bd9cf",
+        "lineStart": 79,
+        "lineEnd": 79
+      }
+    },
+    {
+      "guideId": "tutorial_triggerplane",
+      "id": "effect@TC-S017:92:2",
+      "callee": "mainwindow:SetTutorialMaskStatus",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTriggerPlane.lua",
+        "sha256": "b2e723c653690a55e221a20f3e9aee1d2086d3626f04efe8f21d32c26c9bd9cf",
+        "lineStart": 92,
+        "lineEnd": 92
+      }
+    },
+    {
+      "guideId": "tutorial_checkin_start",
+      "id": "effect@TC-S020:75:2",
+      "callee": "window:SetEffectVisible",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCheckInStart.lua",
+        "sha256": "916f32f7d6ac0243465080290a8a6d06623825b57fefe3ecc6d24900b4a6f804",
+        "lineStart": 75,
+        "lineEnd": 75
+      }
+    },
+    {
+      "guideId": "tutorial_checkin_start",
+      "id": "effect@TC-S020:91:2",
+      "callee": "window:SetEffectVisible",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCheckInStart.lua",
+        "sha256": "916f32f7d6ac0243465080290a8a6d06623825b57fefe3ecc6d24900b4a6f804",
+        "lineStart": 91,
+        "lineEnd": 91
+      }
+    },
+    {
+      "guideId": "tutorial_generator_factory",
+      "id": "effect@TC-S021:102:2",
+      "callee": "inventoryBtn:SetClickActive",
+      "effectClass": "ui-input-state",
+      "category": "mounted-factory-ui",
+      "remaining": "현재 마운트한 보관함·공장 대상에서만 적용합니다. 네이티브 픽셀·연출 검증은 미확인입니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+        "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+        "lineStart": 102,
+        "lineEnd": 102
+      }
+    },
+    {
+      "guideId": "tutorial_generator_factory",
+      "id": "effect@TC-S021:121:2",
+      "callee": "window:StopPrompt",
+      "effectClass": "ui-presentation",
+      "category": "mounted-factory-ui",
+      "remaining": "현재 마운트한 보관함·공장 대상에서만 적용합니다. 네이티브 픽셀·연출 검증은 미확인입니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+        "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+        "lineStart": 121,
+        "lineEnd": 121
+      }
+    },
+    {
+      "guideId": "tutorial_generator_factory",
+      "id": "effect@TC-S021:141:4",
+      "callee": "window:RestartPrompt",
+      "effectClass": "ui-presentation",
+      "category": "mounted-factory-ui",
+      "remaining": "현재 마운트한 보관함·공장 대상에서만 적용합니다. 네이티브 픽셀·연출 검증은 미확인입니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+        "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+        "lineStart": 141,
+        "lineEnd": 141
+      }
+    },
+    {
+      "guideId": "tutorial_generator_factory",
+      "id": "effect@TC-S021:142:4",
+      "callee": "window:StartPrompt",
+      "effectClass": "ui-presentation",
+      "category": "mounted-factory-ui",
+      "remaining": "현재 마운트한 보관함·공장 대상에서만 적용합니다. 네이티브 픽셀·연출 검증은 미확인입니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+        "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+        "lineStart": 142,
+        "lineEnd": 142
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:73:8",
+      "callee": "self.m_mainWindow:SetSliderBtnEnable",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 73,
+        "lineEnd": 73
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:103:4",
+      "callee": "GM.MiscModel:SetHitBricksTutorial",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-misc-db",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 103,
+        "lineEnd": 103
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:136:6",
+      "callee": "topView:SetSliderBtnEnable",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 136,
+        "lineEnd": 136
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:150:6",
+      "callee": "GM.MiscModel:SetHitBricksTutorial",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-misc-db",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 150,
+        "lineEnd": 150
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:152:6",
+      "callee": "GM.UIManager:OpenView",
+      "effectClass": "window-lifecycle",
+      "category": "native-target-unavailable",
+      "remaining": "해당 원작 창과 진입·닫기·완료 수명주기가 없습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 152,
+        "lineEnd": 152
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:167:6",
+      "callee": "mainWindow:GetFireworksAni():Play",
+      "effectClass": "presentation-animation-continuation",
+      "category": "native-target-unavailable",
+      "remaining": "불꽃 재생과 실제 종료 콜백의 컴포넌트가 없습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 167,
+        "lineEnd": 167
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:168:6",
+      "callee": "mainWindow:FireworksTipShow",
+      "effectClass": "presentation-animation-continuation",
+      "category": "native-target-unavailable",
+      "remaining": "불꽃 재생과 실제 종료 콜백의 컴포넌트가 없습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 168,
+        "lineEnd": 168
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:73:8",
+      "callee": "self.m_mainWindow:SetSliderBtnEnable",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 73,
+        "lineEnd": 73
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:103:4",
+      "callee": "GM.MiscModel:SetHitBricksTutorial",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-misc-db",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 103,
+        "lineEnd": 103
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:136:6",
+      "callee": "topView:SetSliderBtnEnable",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 136,
+        "lineEnd": 136
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:150:6",
+      "callee": "GM.MiscModel:SetHitBricksTutorial",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-misc-db",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 150,
+        "lineEnd": 150
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:152:6",
+      "callee": "GM.UIManager:OpenView",
+      "effectClass": "window-lifecycle",
+      "category": "native-target-unavailable",
+      "remaining": "해당 원작 창과 진입·닫기·완료 수명주기가 없습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 152,
+        "lineEnd": 152
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:167:6",
+      "callee": "mainWindow:GetFireworksAni():Play",
+      "effectClass": "presentation-animation-continuation",
+      "category": "native-target-unavailable",
+      "remaining": "불꽃 재생과 실제 종료 콜백의 컴포넌트가 없습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 167,
+        "lineEnd": 167
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:168:6",
+      "callee": "mainWindow:FireworksTipShow",
+      "effectClass": "presentation-animation-continuation",
+      "category": "native-target-unavailable",
+      "remaining": "불꽃 재생과 실제 종료 콜백의 컴포넌트가 없습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 168,
+        "lineEnd": 168
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:29:8",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 29,
+        "lineEnd": 29
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:43:8",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 43,
+        "lineEnd": 43
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:79:6",
+      "callee": "GM.MiscModel:SetAlbumActivityTutorial",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-misc-db",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 79,
+        "lineEnd": 79
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:82:6",
+      "callee": "GM.MiscModel:SetAlbumActivityTutorial",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-misc-db",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 82,
+        "lineEnd": 82
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:120:8",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 120,
+        "lineEnd": 120
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:232:6",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 232,
+        "lineEnd": 232
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:242:4",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "effectClass": "ui-input-state",
+      "category": "source-owner-lock-cleanup",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 242,
+        "lineEnd": 242
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:29:8",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 29,
+        "lineEnd": 29
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:43:8",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 43,
+        "lineEnd": 43
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:79:6",
+      "callee": "GM.MiscModel:SetAlbumActivityTutorial",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-misc-db",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 79,
+        "lineEnd": 79
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:82:6",
+      "callee": "GM.MiscModel:SetAlbumActivityTutorial",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-misc-db",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 82,
+        "lineEnd": 82
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:120:8",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 120,
+        "lineEnd": 120
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:232:6",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 232,
+        "lineEnd": 232
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:242:4",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "effectClass": "ui-input-state",
+      "category": "source-owner-lock-cleanup",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 242,
+        "lineEnd": 242
+      }
+    },
+    {
+      "guideId": "tutorial_temp",
+      "id": "effect@TC-S031:89:2",
+      "callee": "self.m_boardInfoBar:SetTransformButtonEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTemp.lua",
+        "sha256": "3f9ddc965d0a658be30f948da557b54a7639eb827536ecb135a159c93eacbba9",
+        "lineStart": 89,
+        "lineEnd": 89
+      }
+    },
+    {
+      "guideId": "tutorial_temp",
+      "id": "effect@TC-S031:102:4",
+      "callee": "self.m_boardInfoBar:SetTransformButtonEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTemp.lua",
+        "sha256": "3f9ddc965d0a658be30f948da557b54a7639eb827536ecb135a159c93eacbba9",
+        "lineStart": 102,
+        "lineEnd": 102
+      }
+    },
+    {
+      "guideId": "tutorial_bingo_start",
+      "id": "effect@TC-S032:47:2",
+      "callee": "view:OpenHelpWindw",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "해당 원작 창과 진입·닫기·완료 수명주기가 없습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBingoStart.lua",
+        "sha256": "95a35da2c2b45356c15e16eeb53f896d763ac457e840acd1eeeff445ad6bbab1",
+        "lineStart": 47,
+        "lineEnd": 47
+      }
+    },
+    {
+      "guideId": "tutorial_dig_collect",
+      "id": "effect@TC-S039:99:2",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "effectClass": "ui-input-state",
+      "category": "source-owner-lock-cleanup",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterDigCollect.lua",
+        "sha256": "a97aac4fb80bb4250490a566169cce2172b0acb0dac7e488c46278cb6f27eebf",
+        "lineStart": 99,
+        "lineEnd": 99
+      }
+    },
+    {
+      "guideId": "tutorial_mission_open",
+      "id": "effect@TC-S042:62:2",
+      "callee": "window:SetScrollRectEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMissionOpen.lua",
+        "sha256": "0b315af3406615fc8134f53d6a082426faa7206520f8e9f2e1ebbf3c5c20d9a6",
+        "lineStart": 62,
+        "lineEnd": 62
+      }
+    },
+    {
+      "guideId": "tutorial_mission_open",
+      "id": "effect@TC-S042:77:2",
+      "callee": "window:SetScrollRectEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMissionOpen.lua",
+        "sha256": "0b315af3406615fc8134f53d6a082426faa7206520f8e9f2e1ebbf3c5c20d9a6",
+        "lineStart": 77,
+        "lineEnd": 77
+      }
+    },
+    {
+      "guideId": "tutorial_mission_open",
+      "id": "effect@TC-S042:103:4",
+      "callee": "window:SetScrollRectEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMissionOpen.lua",
+        "sha256": "0b315af3406615fc8134f53d6a082426faa7206520f8e9f2e1ebbf3c5c20d9a6",
+        "lineStart": 103,
+        "lineEnd": 103
+      }
+    },
+    {
+      "guideId": "tutorial_puzzle",
+      "id": "effect@TC-S044:55:2",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "effectClass": "ui-input-state",
+      "category": "source-owner-lock-cleanup",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPuzzle.lua",
+        "sha256": "181976702ce646159ae7bc779a0c7e3e732b51be260c8b107da0ef5ded3b3f53",
+        "lineStart": 55,
+        "lineEnd": 55
+      }
+    },
+    {
+      "guideId": "tutorial_puzzle",
+      "id": "effect@TC-S044:87:2",
+      "callee": "rightTopPiece:SetGlow",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPuzzle.lua",
+        "sha256": "181976702ce646159ae7bc779a0c7e3e732b51be260c8b107da0ef5ded3b3f53",
+        "lineStart": 87,
+        "lineEnd": 87
+      }
+    },
+    {
+      "guideId": "tutorial_wheel",
+      "id": "effect@TC-S051:47:4",
+      "callee": "window:SetBtnEnabledForTutorial",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWheel.lua",
+        "sha256": "11b05f32eb932f256b0dace41bdbbdbd609fa976e8d3d457e1328b2ca2b97b53",
+        "lineStart": 47,
+        "lineEnd": 47
+      }
+    },
+    {
+      "guideId": "tutorial_wheel",
+      "id": "effect@TC-S051:53:2",
+      "callee": "GM.MiscModel:SetWheelTutorial",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-misc-db",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWheel.lua",
+        "sha256": "11b05f32eb932f256b0dace41bdbbdbd609fa976e8d3d457e1328b2ca2b97b53",
+        "lineStart": 53,
+        "lineEnd": 53
+      }
+    },
+    {
+      "guideId": "tutorial_wheel",
+      "id": "effect@TC-S051:59:2",
+      "callee": "window:SetBtnEnabledForTutorial",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWheel.lua",
+        "sha256": "11b05f32eb932f256b0dace41bdbbdbd609fa976e8d3d457e1328b2ca2b97b53",
+        "lineStart": 59,
+        "lineEnd": 59
+      }
+    },
+    {
+      "guideId": "tutorial_floatrace_entry",
+      "id": "effect@TC-S056:74:6",
+      "callee": "MainBoardView.GetInstance():GetOrderArea():ScrollToFloatRaceBoardEntry",
+      "effectClass": "ui-viewport",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFloatRaceEntry.lua",
+        "sha256": "e97de0bf167d03f8db05cd7014b13d891531828025faeadab72bfaebbafd0074",
+        "lineStart": 74,
+        "lineEnd": 74
+      }
+    },
+    {
+      "guideId": "tutorial_upward_entry",
+      "id": "effect@TC-S058:96:8",
+      "callee": "MainBoardView.GetInstance():GetOrderArea():ScrollToUpwardBoardEntry",
+      "effectClass": "ui-viewport",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterUpwardEntry.lua",
+        "sha256": "44cb9d66e122240dae8dcc4d83f35a795b5ac32758b56b278fb738ee07f661e9",
+        "lineStart": 96,
+        "lineEnd": 96
+      }
+    },
+    {
+      "guideId": "tutorial_gomeroom_game",
+      "id": "effect@TC-S061:47:2",
+      "callee": "self.m_activityModel:SetGameTutorial",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-activity-flag",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGnomeRoomGame.lua",
+        "sha256": "b844a2e9b8b4c6feeb6ddb5ccf83a00b10221f06d81d935fc8d5b30b8fe0cd1f",
+        "lineStart": 47,
+        "lineEnd": 47
+      }
+    },
+    {
+      "guideId": "tutorial_gomeroom_game",
+      "id": "effect@TC-S061:73:4",
+      "callee": "openView:ShowTimeView",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGnomeRoomGame.lua",
+        "sha256": "b844a2e9b8b4c6feeb6ddb5ccf83a00b10221f06d81d935fc8d5b30b8fe0cd1f",
+        "lineStart": 73,
+        "lineEnd": 73
+      }
+    },
+    {
+      "guideId": "tutorial_weekly_quest_star_reward",
+      "id": "effect@TC-S063:53:6",
+      "callee": "self.m_randomRewardTip:SetCanTouchClose",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestStarReward.lua",
+        "sha256": "8b67db7d14c71d5bbc28c8b579ac3f4cbf512b43e348bc6095acb4e9c5fd4530",
+        "lineStart": 53,
+        "lineEnd": 53
+      }
+    },
+    {
+      "guideId": "tutorial_weekly_quest_star_reward",
+      "id": "effect@TC-S063:107:2",
+      "callee": "randomRewardTip:SetCanTouchClose",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestStarReward.lua",
+        "sha256": "8b67db7d14c71d5bbc28c8b579ac3f4cbf512b43e348bc6095acb4e9c5fd4530",
+        "lineStart": 107,
+        "lineEnd": 107
+      }
+    },
+    {
+      "guideId": "tutorial_weekly_quest_star_reward",
+      "id": "effect@TC-S063:115:6",
+      "callee": "randomRewardTip:SetCanTouchClose",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestStarReward.lua",
+        "sha256": "8b67db7d14c71d5bbc28c8b579ac3f4cbf512b43e348bc6095acb4e9c5fd4530",
+        "lineStart": 115,
+        "lineEnd": 115
+      }
+    },
+    {
+      "guideId": "tutorial_weekly_quest_star_reward",
+      "id": "effect@TC-S063:120:6",
+      "callee": "randomRewardTip:SetCanTouchClose",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestStarReward.lua",
+        "sha256": "8b67db7d14c71d5bbc28c8b579ac3f4cbf512b43e348bc6095acb4e9c5fd4530",
+        "lineStart": 120,
+        "lineEnd": 120
+      }
+    },
+    {
+      "guideId": "tutorial_chest_custom_order_start",
+      "id": "effect@TC-S065:46:2",
+      "callee": "MainBoardView.GetInstance():GetOrderArea():ScrollToMiddle",
+      "effectClass": "ui-viewport",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterChestCustomOrderStart.lua",
+        "sha256": "aa90ffe9144b262ad9fa7fe58b1d1b649df676d710f1423e862b57ba63707089",
+        "lineStart": 46,
+        "lineEnd": 46
+      }
+    },
+    {
+      "guideId": "tutorial_acquire_avatar_frame",
+      "id": "effect@TC-S072:45:4",
+      "callee": "window:ChangeToAvatarFrameTap",
+      "effectClass": "ui-presentation",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAcquireAvatarFrame.lua",
+        "sha256": "587679ce5bcd7cd5775366f4bca5b1ac31ad4507709ccba89367288ca89ee8e2",
+        "lineStart": 45,
+        "lineEnd": 45
+      }
+    },
+    {
+      "guideId": "tutorial_acquire_avatar_frame",
+      "id": "effect@TC-S072:50:8",
+      "callee": "window:SkipToNewAvatarFrame",
+      "effectClass": "ui-viewport",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAcquireAvatarFrame.lua",
+        "sha256": "587679ce5bcd7cd5775366f4bca5b1ac31ad4507709ccba89367288ca89ee8e2",
+        "lineStart": 50,
+        "lineEnd": 50
+      }
+    },
+    {
+      "guideId": "tutorial_acquire_avatar_frame",
+      "id": "effect@TC-S072:51:8",
+      "callee": "window:ScrollViewEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAcquireAvatarFrame.lua",
+        "sha256": "587679ce5bcd7cd5775366f4bca5b1ac31ad4507709ccba89367288ca89ee8e2",
+        "lineStart": 51,
+        "lineEnd": 51
+      }
+    },
+    {
+      "guideId": "tutorial_acquire_avatar_frame",
+      "id": "effect@TC-S072:73:2",
+      "callee": "window:ScrollViewEnabled",
+      "effectClass": "ui-input-state",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAcquireAvatarFrame.lua",
+        "sha256": "587679ce5bcd7cd5775366f4bca5b1ac31ad4507709ccba89367288ca89ee8e2",
+        "lineStart": 73,
+        "lineEnd": 73
+      }
+    },
+    {
+      "guideId": "tutorial_seafood_tutorial_order",
+      "id": "effect@TC-S074:33:2",
+      "callee": "MainBoardView.GetInstance():GetOrderArea():ScrollToMiddle",
+      "effectClass": "ui-viewport",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterSeafoodTutorialOrder.lua",
+        "sha256": "97e1bd82976211a45b147e5d03c048c75f60223c3177d078d5c2c8835f7b6668",
+        "lineStart": 33,
+        "lineEnd": 33
+      }
+    },
+    {
+      "guideId": "tutorial_midfallMapExplore_map",
+      "id": "effect@TC-S081:65:4",
+      "callee": "self.m_activityModel:SetPlayFirstShowBubble",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-activity-flag",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_mapNewBase.lua",
+        "sha256": "741f6dd9c93376ac20e28c0b04b3ba51a819cd0db6af9f7d7f503b94559edf37",
+        "lineStart": 65,
+        "lineEnd": 65
+      }
+    },
+    {
+      "guideId": "tutorial_midfallMapExplore_map",
+      "id": "effect@TC-S081:70:6",
+      "callee": "model:SetTutorialStartFinish",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-activity-flag",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_mapNewBase.lua",
+        "sha256": "741f6dd9c93376ac20e28c0b04b3ba51a819cd0db6af9f7d7f503b94559edf37",
+        "lineStart": 70,
+        "lineEnd": 70
+      }
+    },
+    {
+      "guideId": "tutorial_midfallMapExplore_board",
+      "id": "effect@TC-S083:35:8",
+      "callee": "model:SetTutorialBoardFinish",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-activity-flag",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_boardbase.lua",
+        "sha256": "36e6e3184dc351e9887df2e63926b3fa0724b57599c2949284bb6710988eab5d",
+        "lineStart": 35,
+        "lineEnd": 35
+      }
+    },
+    {
+      "guideId": "tutorial_midfallMapExplore_board",
+      "id": "effect@TC-S083:66:4",
+      "callee": "model:SetTutorialBoardFinish",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-activity-flag",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_boardbase.lua",
+        "sha256": "36e6e3184dc351e9887df2e63926b3fa0724b57599c2949284bb6710988eab5d",
+        "lineStart": 66,
+        "lineEnd": 66
+      }
+    },
+    {
+      "guideId": "tutorial_halloweenMapExplore_map",
+      "id": "effect@TC-S081:65:4",
+      "callee": "self.m_activityModel:SetPlayFirstShowBubble",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-activity-flag",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_mapNewBase.lua",
+        "sha256": "741f6dd9c93376ac20e28c0b04b3ba51a819cd0db6af9f7d7f503b94559edf37",
+        "lineStart": 65,
+        "lineEnd": 65
+      }
+    },
+    {
+      "guideId": "tutorial_halloweenMapExplore_map",
+      "id": "effect@TC-S081:70:6",
+      "callee": "model:SetTutorialStartFinish",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-activity-flag",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_mapNewBase.lua",
+        "sha256": "741f6dd9c93376ac20e28c0b04b3ba51a819cd0db6af9f7d7f503b94559edf37",
+        "lineStart": 70,
+        "lineEnd": 70
+      }
+    },
+    {
+      "guideId": "tutorial_halloweenMapExplore_board",
+      "id": "effect@TC-S083:35:8",
+      "callee": "model:SetTutorialBoardFinish",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-activity-flag",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_boardbase.lua",
+        "sha256": "36e6e3184dc351e9887df2e63926b3fa0724b57599c2949284bb6710988eab5d",
+        "lineStart": 35,
+        "lineEnd": 35
+      }
+    },
+    {
+      "guideId": "tutorial_halloweenMapExplore_board",
+      "id": "effect@TC-S083:66:4",
+      "callee": "model:SetTutorialBoardFinish",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-activity-flag",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_boardbase.lua",
+        "sha256": "36e6e3184dc351e9887df2e63926b3fa0724b57599c2949284bb6710988eab5d",
+        "lineStart": 66,
+        "lineEnd": 66
+      }
+    },
+    {
+      "guideId": "tutorial_team_window",
+      "id": "effect@TC-S087:100:4",
+      "callee": "teamModel:SetCurState",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "native-model-unimplemented",
+      "remaining": "팀 점수·서버시각·전역 사건 모델이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTeamWindow.lua",
+        "sha256": "da3a2b7c396628bd0af5646c33d81e6c44b4007dbf351e96dc7199a522ffac53",
+        "lineStart": 100,
+        "lineEnd": 100
+      }
+    },
+    {
+      "guideId": "tutorial_taskLimitTimeReward_start",
+      "id": "effect@TC-S090:101:2",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "effectClass": "ui-input-state",
+      "category": "source-owner-lock-cleanup",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTaskLimitTimeStart.lua",
+        "sha256": "37aa52bef4753ad2d216a596a79b068c5a33fd84966cba8f166001152aba5409",
+        "lineStart": 101,
+        "lineEnd": 101
+      }
+    },
+    {
+      "guideId": "tutorial_exped_entry",
+      "id": "effect@TC-S093:96:8",
+      "callee": "MainBoardView.GetInstance():GetOrderArea():ScrollToExpedBoardEntry",
+      "effectClass": "ui-viewport",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterExpedEntry.lua",
+        "sha256": "5c2aec2fd72e7f14fcae7da5ec10667dd78f11aae1446d4673512470f188261c",
+        "lineStart": 96,
+        "lineEnd": 96
+      }
+    },
+    {
+      "guideId": "tutorial_extra_customer",
+      "id": "effect@TC-S095:82:6",
+      "callee": "self.m_cell:ScrollToOrder",
+      "effectClass": "ui-viewport",
+      "category": "native-target-unavailable",
+      "remaining": "원본 수신 컴포넌트·대상 identity·필수 인자 또는 원본 화면의 실제 구현이 필요합니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterExtraCustomer.lua",
+        "sha256": "ab1678e0ca8a13b1e86c599e751a5ddd8e66f26702c3e52587678b6d4cf9822b",
+        "lineStart": 82,
+        "lineEnd": 82
+      }
+    },
+    {
+      "guideId": "tutorial_dailyRating_piggyBank_start",
+      "id": "effect@TC-S098:64:4",
+      "callee": "self.m_activityModel:SetPiggyTutorialStart",
+      "effectClass": "activity-or-persistent-tutorial-flag",
+      "category": "finite-web-activity-flag",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다.",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPiggyBankStart.lua",
+        "sha256": "d0ea4c4649581c9035096754d6c8992455036d8e47e00b0d9018fcf7114c4a10",
+        "lineStart": 64,
+        "lineEnd": 64
+      }
+    }
+  ],
+  "originalRuntimeObserved": false,
+  "schemaVersion": 1,
+  "scope": "85 source tutorial operations: handler availability, actual mounted target and model identity are separate requirements. No native gameplay completion is implied."
+}

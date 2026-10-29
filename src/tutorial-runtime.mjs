@@ -4,6 +4,7 @@ import {createTutorialCatalog,tutorialCatalogEvent,tutorialCatalogView,validTuto
 import {onboardingConstraints} from './onboarding-model.mjs';
 import {createFactoryPlay,factoryView} from './factory-play.mjs';
 import {factoryContext} from './factory-transaction.mjs';
+import {createTutorialAdapterSession,validTutorialAdapterState,validTutorialAdapterRegistry,tutorialAdapterInputLocked,tutorialAdapterPermission} from './tutorial-adapter.mjs';
 // TutorialModel.lua:178–217 uses pairs, not a numeric tutorial priority. This
 // coordinator preserves concurrent listeners and asks for a research order only
 // when a source event would acquire multiple visible/strong masks at once.
@@ -110,27 +111,38 @@ export function buildTutorialRuntimeContext(main,data,ui={}){
  knownMainBindings(ctx,main,data);return ctx;
 }
 function strongIds(s,rows,ctx,except=null){return rows.filter(row=>row.id!==except&&row.id!==ctx.manualGuideId&&!s.entries[row.id]?.externalFinished&&s.entries[row.id]&&entryView(s.entries[row.id],row,contextFor(s,row.id,ctx)).strong).map(row=>row.id);}
-function applyEvent(entry,row,event,ctx){
+function applyEvent(entry,row,event,ctx,external=null){
  const state=clone(entry.state),e=translate(event,row),api=adapter(row),next={...clone(entry),state};delete next.blockedContext;
  if(row.id==='tutorial_energyBoosteight_start'&&e.type==='executer-started')ctx={...ctx,persistedOngoingData:state.active?'1':''};
  if(row.id==='tutorial_generator_factory_Acquire'&&event.type==='clock'&&!state.active&&Number.isFinite(entry.pollAt)&&event.now>=entry.pollAt){e.type='factory-poll';next.pollAt=event.now+1;}
- const out=api.event(state,e,ctx,row.config);if(row.id==='tutorial_generator_factory_Acquire'&&state.active)next.pollAt=null;return {entry:next,out,contextFingerprint:fingerprint(ctx),before:entryView(entry,row,ctx),after:entryView(next,row,ctx)};
+ const session=external&&row.bank==='catalog'?createTutorialAdapterSession(clone(external.state),external.registry,{context:ctx,catalog:row.config}):null;
+ const out=api.event(state,e,ctx,row.config,session?{externalAdapter:session}:{});if(row.id==='tutorial_generator_factory_Acquire'&&state.active)next.pollAt=null;return {entry:next,out,contextFingerprint:fingerprint(ctx),before:entryView(entry,row,ctx),after:entryView(next,row,session?{...ctx,adapterInputLocked:session.inputLocked()}:ctx),adapterState:session?.state,adapterWrites:session?.writes||[],adapterReads:session?.reads||[]};
 }
 function ordered(rows,order){const index=new Map(order.map((id,i)=>[id,i]));return [...rows].sort((a,b)=>(index.get(a.id)??1e6)-(index.get(b.id)??1e6));}
+/** Actual mounted target metadata and auxiliary web DB revision. This does not
+ * turn a research season into a native activity assignment. */
+export function tutorialAdapterContext(state,registry,context){
+ if(!validTutorialAdapterState(state)||!validTutorialAdapterRegistry(registry))return {...context,adapterInvalid:true};
+ return {...context,adapterInputLocked:tutorialAdapterInputLocked(state),adapterRevision:fingerprint(state),adapterControls:clone(state.targets),adapterTargets:clone(registry.targets),adapterEpoch:registry.epoch};
+}
 /** Pure coordinator over optional per-guide engines. Main wallet, board, RNG,
  * activity assignments and storage are never changed or invented here. */
-export function tutorialRuntimeEvent(state,event,context,data){
+export function tutorialRuntimeEvent(state,event,context,data,options={}){
  if(!obj(state)||!validTutorialRuntime(state,data))return result(false,'invalid-state','기존 자동 안내 저장을 보존했습니다. 내보내기 후 명시적으로 복구하세요.');
  if(!obj(event)||!text(event.type,100)||!obj(context)||context.mode!=='research'||!bounded(context,400000)||!bounded(event,32768))return result(false,'invalid-input','실제 웹 맥락과 유효한 사건이 필요합니다.');
+ const hasAdapter=options.adapterState!==undefined;if(hasAdapter&&(!validTutorialAdapterState(options.adapterState)||!validTutorialAdapterRegistry(options.registry)))return result(false,'invalid-adapter-state','전용 어댑터 저장·실제 마운트 대상을 확인하기 전에는 기존 기록을 유지합니다.');
+ const external=hasAdapter?{state:clone(options.adapterState),registry:options.registry}:null;
  const now=event.now??state.time;if(!time(now)||now<state.time)return result(false,'invalid-time','자동 안내 시각은 저장 시각 이상이어야 합니다.');
- const s=clone(state),rows=definitions(data),byId=new Map(rows.map(r=>[r.id,r])),output=[],events=[];let ctx=clone(context);const signature=fingerprint(ctx),managerSignature=fingerprint({level:ctx.level??null,functionEnabled:ctx.functionEnabled??null,finishedTasks:ctx.finishedTasks??null,cachedItems:ctx.cachedItems??null,cachedItemCount:ctx.cachedItemCount??null,finishedTutorials:ctx.finishedTutorials??null,BakeOut:ctx.activities?.BakeOut??'unknown',CashDash:ctx.activities?.CashDash??'unknown'}),checkManager=!s.managerStarted||s.lastManagerContext!==managerSignature||event.type==='source-event'&&['FunctionOpen','CacheItems','LevelUp','MainTaskFinished','CashDashStateChanged','BakeOutModeChanged','TutorialFinished'].includes(canonical(event.sourceEvent));s.time=now;s.deferredEvents??=[];s.constraints??=emptyConstraints();
+ const s=clone(state),rows=definitions(data),byId=new Map(rows.map(r=>[r.id,r])),output=[],events=[];let ctx=clone(context);if(external)ctx=tutorialAdapterContext(external.state,external.registry,ctx);const signature=fingerprint(ctx),managerSignature=fingerprint({level:ctx.level??null,functionEnabled:ctx.functionEnabled??null,finishedTasks:ctx.finishedTasks??null,cachedItems:ctx.cachedItems??null,cachedItemCount:ctx.cachedItemCount??null,finishedTutorials:ctx.finishedTutorials??null,BakeOut:ctx.activities?.BakeOut??'unknown',CashDash:ctx.activities?.CashDash??'unknown'}),checkManager=!s.managerStarted||s.lastManagerContext!==managerSignature||event.type==='source-event'&&['FunctionOpen','CacheItems','LevelUp','MainTaskFinished','CashDashStateChanged','BakeOutModeChanged','TutorialFinished'].includes(canonical(event.sourceEvent));s.time=now;s.deferredEvents??=[];s.constraints??=emptyConstraints();
  const eventId=event.eventId??event.id;if(eventId!==undefined){if(!text(eventId,200))return result(false,'invalid-input','사건 ID를 확인하세요.');if(s.seenEvents.includes(eventId)||s.deferredEvents.some(d=>(d.event.eventId??d.event.id)===eventId)||(s.ambiguity?.event.eventId??s.ambiguity?.event.id)===eventId)return result(true,'duplicate-event','같은 사건 ID를 다시 처리하지 않았습니다.');}
  let budget=0,replaying=false;const queue=[];
- function diagnose(id,out,contextFingerprint){s.diagnostics[id]={status:out.status||'waiting',unknown:unique((out.unknown||[]).filter(v=>text(v,500))).slice(0,100),message:String(out.message||'').slice(0,1500),...(contextFingerprint?{contextFingerprint}:{})};}
- function localCtx(id){const c=contextFor(s,id,ctx);c.otherStrong=Boolean(ctx.otherStrong||strongIds(s,rows,ctx,id).length);return c;}
+ function diagnose(id,out,contextFingerprint){s.diagnostics[id]={status:out.status||'waiting',unknown:unique((out.unknown||[]).filter(v=>text(v,500))).slice(0,100),message:String(out.message||'').slice(0,1500),...(out.requiredEffect?{requiredEffect:clone(out.requiredEffect)}:{}),...(contextFingerprint?{contextFingerprint}:{})};}
+ function localCtx(id){const current=external?tutorialAdapterContext(external.state,external.registry,ctx):ctx,c=contextFor(s,id,current);c.otherStrong=Boolean(ctx.otherStrong||strongIds(s,rows,current,id).length);return c;}
+ const probeEvent=(entry,row,event,c)=>applyEvent(entry,row,event,c,external);
  function commit(row,probe){
   if(!probe.out.ok){diagnose(row.id,probe.out,probe.contextFingerprint);if(s.entries[row.id]){s.entries[row.id].blockedContext=probe.contextFingerprint;if(Number.isFinite(probe.entry.pollAt))s.entries[row.id].pollAt=probe.entry.pollAt;}return [];}
   s.entries[row.id]=probe.entry;diagnose(row.id,probe.out);
+  if(external&&probe.adapterState){if(!validTutorialAdapterState(probe.adapterState))throw Error('invalid-adapter-result');external.state=probe.adapterState;}
   for(const delta of probe.out.constraintUpdates||[]){s.constraints=applyConstraint(s.constraints,delta);log(s,'constraint-update',row.id,(delta.action+' '+JSON.stringify(delta.value)).slice(0,1500));}
   const raw=probe.entry.state;for(const id of unique([...(raw.registeredFinished||[]),...(probe.out.registrations||[]).map(r=>typeof r==='string'?r:r.id).filter(Boolean)]))if(!s.registered.includes(id)){s.registered.push(id);log(s,'registered',id,'Finished DB 등록. 시각 종료/전역 TutorialFinished와 구분합니다.');}
   const finished=[];if(probe.after.completed&&!s.completed.includes(row.id)){s.completed.push(row.id);if(!s.registered.includes(row.id))s.registered.push(row.id);finished.push(row.id);}
@@ -141,6 +153,8 @@ export function tutorialRuntimeEvent(state,event,context,data){
   const claims=probes.filter(p=>p.probe.out.ok&&(p.probe.after.strong&&!p.probe.before.strong||p.probe.after.inputLocked&&!p.probe.before.inputLocked||p.probe.after.active?.target&&!p.probe.before.active?.target));
   const writes=p=>{let c=emptyConstraints(),keys=new Set();for(const d of p.probe.out.constraintUpdates||[]){c=applyConstraint(c,d);if(d.action==='ClearTempDatas')Object.keys(c).forEach(k=>keys.add(k));else if(/DragLock/.test(d.action))keys.add('dragLocks');else keys.add({SetForceSourceBoardPosition:'forceSource',SetForceTargetBoardPosition:'forceTarget',SetForceEffectBoardPosition:'forceEffect',SetForceSpreadItemCode:'forceSpreadCode',SetForceSkipCost:'forceSkipCost',SetForceUnlockBubbleCost:'forceBubbleCost'}[d.action]);}return {c,keys};};
   for(let i=0;i<probes.length;i++)for(let j=i+1;j<probes.length;j++){const a=probes[i],b=probes[j];if(!a.probe.out.ok||!b.probe.out.ok)continue;const x=writes(a),y=writes(b);if([...x.keys].some(k=>y.keys.has(k)&&!same(x.c[k],y.c[k]))){if(!claims.includes(a))claims.push(a);if(!claims.includes(b))claims.push(b);}}
+  const overlap=(write,other)=>other.some(x=>x.key===write.key||write.key.startsWith('owner-lock:')&&x.key==='global-input-lock');
+  for(let i=0;i<probes.length;i++)for(let j=i+1;j<probes.length;j++){const a=probes[i],b=probes[j];if(!a.probe.out.ok||!b.probe.out.ok)continue;if(a.probe.adapterWrites.some(w=>overlap(w,[...b.probe.adapterWrites,...b.probe.adapterReads]))||b.probe.adapterWrites.some(w=>overlap(w,a.probe.adapterReads))){if(!claims.includes(a))claims.push(a);if(!claims.includes(b))claims.push(b);}}
   if(claims.length<2)return false;const candidates=claims.map(p=>p.row.id),chosen=s.order.filter(id=>candidates.includes(id));
   if(chosen.length===candidates.length)return false;
   s.ambiguity={kind:'source-pairs-order-unknown',candidates,event:clone({...currentEvent,now:s.time}),context:clone(ctx),message:'동시에 표시/강제 안내가 적격입니다. 원작 pairs 순서는 미확인이라 연구 순서를 명시해야 합니다.'};log(s,'ambiguous',null,candidates.join(' → '));return true;
@@ -148,13 +162,13 @@ export function tutorialRuntimeEvent(state,event,context,data){
  function startEligible(){
   if(++budget>256)throw Error('budget');const probes=[];
   for(const row of rows){if(row.id===ctx.manualGuideId||s.entries[row.id]||s.registered.includes(row.id)||ctx.registeredTutorials?.includes(row.id))continue;const c=localCtx(row.id),sig=fingerprint(c);if(s.diagnostics[row.id]?.contextFingerprint===sig&&['unknown','unimplemented','ineligible'].includes(s.diagnostics[row.id].status))continue;const gate=eligible(row,c);if(!gate.eligible){diagnose(row.id,{...gate,message:gate.status==='unknown'?'시작 조건의 자료가 미확인입니다.':'현재 실제 플레이 시작 조건을 충족하지 않습니다.'},sig);continue;}
-   const entry={bank:row.bank,state:adapter(row).create(row.config,row.id),...(row.id==='tutorial_generator_factory_Acquire'?{pollAt:s.time+1}:{})},probe=applyEvent(entry,row,{type:'executer-started',now:s.time},c);probes.push({row,probe});
+   const entry={bank:row.bank,state:adapter(row).create(row.config,row.id),...(row.id==='tutorial_generator_factory_Acquire'?{pollAt:s.time+1}:{})},probe=probeEvent(entry,row,{type:'executer-started',now:s.time},c);probes.push({row,probe});
   }
-  const startsEvent={type:'reconcile',now:s.time};if(ambiguity(probes,startsEvent)){for(const {row,probe}of probes)if(!probe.after.strong&&!probe.after.active?.target)commit(row,probe);return [];}
+  const startsEvent={type:'reconcile',now:s.time};if(ambiguity(probes,startsEvent)){for(const {row,probe}of probes)if(!s.ambiguity.candidates.includes(row.id)&&!probe.after.strong&&!probe.after.active?.target)commit(row,probe);return [];}
   const completed=[];for(const {row,probe}of ordered(probes.map(x=>({...x,id:x.row.id})),s.order)){
    // A specified order is an analyst input. Re-evaluate each source branch
    // after the previous guide, so CheckOtherTutorialInStrong can finish it.
-   const p=s.order.includes(row.id)?applyEvent({bank:row.bank,state:adapter(row).create(row.config,row.id)},row,{type:'executer-started',now:s.time},localCtx(row.id)):probe;
+   const p=(external||s.order.includes(row.id))?probeEvent({bank:row.bank,state:adapter(row).create(row.config,row.id)},row,{type:'executer-started',now:s.time},localCtx(row.id)):probe;
    completed.push(...commit(row,p));
   }return completed;
  }
@@ -164,11 +178,11 @@ export function tutorialRuntimeEvent(state,event,context,data){
  function dispatch(currentEvent){
   if(++budget>256)throw Error('budget');const targets=currentEvent.guideId?[byId.get(currentEvent.guideId)].filter(Boolean):rows.filter(r=>s.entries[r.id]);const probes=[];
   for(const row of targets){const entry=s.entries[row.id];if(!entry||row.id===ctx.manualGuideId||entry.externalFinished)continue;const v=entryView(entry,row,localCtx(row.id));if(v.completed)continue;if(currentEvent.type==='clock'&&(v.nextDueAt===null||v.nextDueAt>(currentEvent.now??s.time)))continue;
-   const probe=applyEvent(entry,row,currentEvent,localCtx(row.id));probes.push({row,probe});
+   const probe=probeEvent(entry,row,currentEvent,localCtx(row.id));probes.push({row,probe});
   }
   if(ambiguity(probes,currentEvent))return;
   for(const {row,probe}of ordered(probes.map(x=>({...x,id:x.row.id})),s.order)){
-   const next=s.order.includes(row.id)?applyEvent(s.entries[row.id],row,currentEvent,localCtx(row.id)):probe;finishCascade(commit(row,next));
+   const next=(external||s.order.includes(row.id))?probeEvent(s.entries[row.id],row,currentEvent,localCtx(row.id)):probe;finishCascade(commit(row,next));
   }
  }
  function drainBefore(until,includeEqual=false){
@@ -180,9 +194,13 @@ export function tutorialRuntimeEvent(state,event,context,data){
    else if(entry.suspendedForManual){entry.suspendedForManual=false;if(ctx.registeredTutorials?.includes(id)){entry.externalFinished=true;if(!s.registered.includes(id))s.registered.push(id);log(s,'external-registration',id,'수동 안내의 Finished DB를 반영하고 자동 중복 실행을 중단했습니다.');}}
   }
   if(event.type==='disable'){
-   for(const row of rows){const e=s.entries[row.id];if(!e)continue;if(row.bank==='catalog'){const p=applyEvent(e,row,{type:'teardown',now},localCtx(row.id));if(p.out.ok)s.entries[row.id]=p.entry;else diagnose(row.id,p.out);}else e.state.active=null;}
-   log(s,'deferred-cancelled',null,'명시 중지로 경쟁 중 원본 사건과 대기 사건 '+s.deferredEvents.length+'개를 재생하지 않고 보존 이력으로 남깁니다.');s.deferredEvents=[];s.constraints=emptyConstraints();s.enabled=false;s.ambiguity=null;log(s,'disabled',null,'표시·예약·리스너를 중단했습니다. 완료로 등록하지 않았습니다.');
-  }else if(event.type==='enable'){s.enabled=true;s.lastContext=null;finishCascade(startEligible());}
+   for(const row of rows){const e=s.entries[row.id];if(!e)continue;if(row.bank==='catalog'){const p=probeEvent(e,row,{type:'teardown',now},localCtx(row.id));if(p.out.ok)s.entries[row.id]=p.entry;else diagnose(row.id,p.out);}else e.state.active=null;}
+   if(external){external.state.targets={};external.state.ownerLocks={};external.state.anonymousLocks=0;}log(s,'deferred-cancelled',null,'명시 중지로 경쟁 중 원본 사건과 대기 사건 '+s.deferredEvents.length+'개를 재생하지 않고 보존 이력으로 남깁니다.');s.deferredEvents=[];s.constraints=emptyConstraints();s.enabled=false;s.ambiguity=null;log(s,'disabled',null,'표시·예약·리스너를 중단했습니다. 완료로 등록하지 않았습니다.');
+  }else if(event.type==='enable'){
+   s.enabled=true;s.lastContext=null;s.constraints=emptyConstraints();if(external){external.state.targets={};external.state.ownerLocks={};external.state.anonymousLocks=0;}
+   for(const row of rows){const entry=s.entries[row.id];if(!entry||row.id===ctx.manualGuideId||entry.externalFinished)continue;if(row.bank==='catalog')finishCascade(commit(row,probeEvent(entry,row,{type:'resume',now},localCtx(row.id))));else if(!entry.state.registeredFinished.includes(row.id))finishCascade(commit(row,probeEvent(entry,row,{type:'executer-started',now},localCtx(row.id))));}
+   finishCascade(startEligible());
+  }
   else if(event.type==='configure'){
    if(!byId.has(event.guideId)||!obj(event.context)||!bounded(event.context,32768))return result(false,'invalid-input','안내 ID와32KiB 이하의 명시 연구 맥락을 확인하세요.');s.overrides[event.guideId]=clone(event.context);s.lastContext=null;log(s,'explicit-context',event.guideId,'사용자가 직접 명시한 연구 맥락. 자동 예제 적용 아님.');if(s.enabled&&!s.ambiguity)finishCascade(startEligible());
   }else if(event.type==='reset'){
@@ -198,7 +216,8 @@ export function tutorialRuntimeEvent(state,event,context,data){
     if(s.ambiguity){s.deferredEvents=replay.slice(i+1);break;}
    }if(!s.ambiguity)drainBefore(finalNow,true);s.time=finalNow;ctx=finalContext;
   }else if(event.type==='resume'){
-   if(s.ambiguity||s.deferredEvents.length)log(s,'deferred-cancelled',null,'명시 재접속은 원작 manager의 현재 상태로 리스너를 재구성합니다. 이전 경쟁/대기 사건을 임의 재생하지 않습니다.');s.ambiguity=null;s.deferredEvents=[];s.constraints=emptyConstraints();for(const row of rows){const entry=s.entries[row.id];if(!entry||row.id===ctx.manualGuideId||entry.externalFinished)continue;if(row.bank==='catalog')finishCascade(commit(row,applyEvent(entry,row,{type:'resume',now},localCtx(row.id))));else if(entry.state.registeredFinished.includes(row.id)){entry.state.active=null;log(s,'registered-not-restored',row.id,'원작 manager의 Finished 등록 안내는 다시 표시하지 않습니다. 시각 완료로 추가하지 않습니다.');}else if(row.id==='tutorial_energyBoosteight_start')finishCascade(commit(row,applyEvent(entry,row,{type:'executer-started',now}, {...localCtx(row.id),persistedOngoingData:entry.state.active?'1':''})));}
+   if(external){external.state.targets={};external.state.ownerLocks={};external.state.anonymousLocks=0;}
+   if(s.ambiguity||s.deferredEvents.length)log(s,'deferred-cancelled',null,'명시 재접속은 원작 manager의 현재 상태로 리스너를 재구성합니다. 이전 경쟁/대기 사건을 임의 재생하지 않습니다.');s.ambiguity=null;s.deferredEvents=[];s.constraints=emptyConstraints();for(const row of rows){const entry=s.entries[row.id];if(!entry||row.id===ctx.manualGuideId||entry.externalFinished)continue;if(row.bank==='catalog')finishCascade(commit(row,probeEvent(entry,row,{type:'resume',now},localCtx(row.id))));else if(entry.state.registeredFinished.includes(row.id)){entry.state.active=null;log(s,'registered-not-restored',row.id,'원작 manager의 Finished 등록 안내는 다시 표시하지 않습니다. 시각 완료로 추가하지 않습니다.');}else if(row.id==='tutorial_energyBoosteight_start')finishCascade(commit(row,probeEvent(entry,row,{type:'executer-started',now}, {...localCtx(row.id),persistedOngoingData:entry.state.active?'1':''})));}
    finishCascade(startEligible());
   }else{
    const due=rows.some(r=>s.entries[r.id]&&entryView(s.entries[r.id],r,localCtx(r.id)).nextDueAt!==null&&entryView(s.entries[r.id],r,localCtx(r.id)).nextDueAt<=now);
@@ -209,16 +228,19 @@ export function tutorialRuntimeEvent(state,event,context,data){
     s.deferredEvents.push({event:clone({...event,now}),context:clone(ctx)});if(eventId!==undefined){s.seenEvents.push(eventId);s.seenEvents=s.seenEvents.slice(-100);}s.lastContext=signature;s.sequence++;log(s,'source-event-deferred',null,canonical(event.sourceEvent)+' · '+(eventId||'ID 없음'));
     if(!validTutorialRuntime(s,data))return result(false,'deferred-capacity','대기 사건과 맥락의 저장 한도를 넘어 기존 기록을 유지했습니다.');Object.assign(state,s);return result(true,'source-event-deferred','실제 UI 사건을 경쟁 해결 뒤 원래 맥락·시각 순서로 재생하도록 저장했습니다.',{changed:true,deferredEvents:s.deferredEvents.length,ambiguity:clone(s.ambiguity)});
    }
-   if(checkManager){finishCascade(startEligible());s.managerStarted=true;}if(!s.ambiguity&&event.type!=='reconcile')dispatch({...event,now});
+   if(checkManager){finishCascade(startEligible());s.managerStarted=true;}if(!s.ambiguity){if(event.type==='reconcile'&&due)drainBefore(now,true);else if(event.type!=='reconcile')dispatch({...event,now});}
   }
   while(queue.length&&!s.ambiguity){if(++budget>256)throw Error('budget');dispatch(queue.shift());}
   if(eventId!==undefined){s.seenEvents.push(eventId);s.seenEvents=s.seenEvents.slice(-100);}s.lastContext=signature;s.lastManagerContext=managerSignature;s.sequence++;
   if(!validTutorialRuntime(s,data))return result(false,'invalid-result','변경 후 자동 안내 저장 검사가 실패해 기존 기록을 보존했습니다.');
-  const changed=!same(s,state);if(changed)Object.assign(state,s);return result(true,s.ambiguity?'ambiguous-order':'processed',s.ambiguity?.message||'실제 웹 사건과 명시된 연구 조건으로 안내를 처리했습니다.',{changed,events,results:output,ambiguity:s.ambiguity?clone(s.ambiguity):null,researchOrderApplied:replaying});
+  if(external&&!validTutorialAdapterState(external.state))return result(false,'invalid-adapter-result','어댑터 저장 검사 실패로 안내와 전용 상태 모두 유지했습니다.');const adapterChanged=external&&!same(external.state,options.adapterState),changed=!same(s,state)||Boolean(adapterChanged);if(changed)Object.assign(state,s);if(external&&adapterChanged)Object.assign(options.adapterState,external.state);return result(true,s.ambiguity?'ambiguous-order':'processed',s.ambiguity?.message||'실제 웹 사건과 명시된 연구 조건으로 안내를 처리했습니다.',{changed,events,results:output,adapterChanged:Boolean(adapterChanged),ambiguity:s.ambiguity?clone(s.ambiguity):null,researchOrderApplied:replaying});
  }catch(error){return result(false,'capacity-or-handler','안내 재진입·사건 한도 또는 처리 실패로 기존 기록 전체를 유지했습니다.',{diagnostic:String(error?.message||error).slice(0,300)});}
 }
-export function restoreTutorialRuntime(state,context,data){return tutorialRuntimeEvent(state,{type:'resume',now:Math.max(state?.time||0,context.now||0)},context,data);}
+export function restoreTutorialRuntime(state,context,data,options={}){return tutorialRuntimeEvent(state,{type:'resume',now:Math.max(state?.time||0,context.now||0)},context,data,options);}
 function bindingFor(v,ctx){const t=v.active?.target;if(!t)return null;
+ if(v.id==='tutorial_generator_factory'&&t.sourceId==='TC-S021'){
+  const id={1:'hud.inventory',2:'inventory.factory-tab',3:'inventory.factory-detail'}[v.active.phase],target=ctx.adapterTargets?.find(t=>t.id===id);if(target)return {kind:'component',key:id,actions:target.actions,selector:{'hud.inventory':'[data-play="inventory"]','inventory.factory-tab':'.inventory-dialog [data-play="game-factory-open"]','inventory.factory-detail':'.factory-page .factory-groups'}[id],origin:'verified-web-adapter',nativeGeometryResolved:false};
+ }
  if(t.area==='story-recap'&&ctx.recapEntryAvailable===true&&ctx.openViews?.some(n=>['TaskWindow','NoTaskWindow'].includes(n)))return {kind:'hud',key:'StoryRecapEntry',actions:['recap:open-shelf'],selector:'[data-play="recap:open-shelf"]',origin:'verified-web-adapter',nativeGeometryResolved:false};
  if(t.hud&&ctx.availableHud?.[t.hud]){const actions={Inventory:['inventory','game-factory-open'],Task:['game-task-list','home'],EnergyBoost:['set-boost']}[t.hud];if(actions)return {kind:'hud',key:t.hud,actions,selector:t.hud==='Inventory'?'[data-play="inventory"]':t.hud==='Task'?'[data-play="game-task-list"]':'[data-play="set-boost"]',origin:'verified-web-adapter',nativeGeometryResolved:false};}
  if(t.uid!==undefined){const cell=ctx.board?.find(x=>x&&String(x.uid)===String(t.uid));if(cell&&!cell.cover&&!cell.bubbled)return {kind:'cell',uid:cell.uid,index:cell.index,actions:['game-cell','cell','factory:store','game-factory-open'],selector:`[data-play="${ctx.inputMode==='source'?'cell':'game-cell'}"][data-value="${cell.index}"]`,origin:'verified-web-adapter',nativeGeometryResolved:false};}
@@ -243,11 +265,11 @@ function constraintPermission(view,action,value){const c=view.constraints||empty
 }
 export function tutorialRuntimeView(state,context,data){
  if(state===undefined)state=createTutorialRuntime(data);if(!validTutorialRuntime(state,data))return {valid:false,enabled:false,active:[],unknown:['incompatible-save'],nextDueAt:null,rows:[]};const constraints=clone(state.constraints||emptyConstraints()),rows=definitions(data),views=rows.map(row=>{const entry=state.entries[row.id],ctx=contextFor(state,row.id,context||{mode:'research'}),v=entry?entryView(entry,row,ctx):{id:row.id,name:row.guide.name||row.id,active:null,strong:false,inputLocked:false,registered:state.registered.includes(row.id),completed:state.completed.includes(row.id),nextDueAt:null};if(row.id===context?.manualGuideId||entry?.suspendedForManual||entry?.externalFinished){v.active=null;v.strong=false;v.inputLocked=false;v.nextDueAt=null;}return {...v,allowedActions:allowedCallbacks(v),suspended:row.id===context?.manualGuideId||entry?.suspendedForManual===true,externalFinished:entry?.externalFinished===true,bank:row.bank,diagnostic:state.diagnostics[row.id]||null,binding:bindingFor(v,context||{})||positionBinding(constraints,context),sourceRefs:row.guide.sourceRefs||[],researchOverride:Object.hasOwn(state.overrides,row.id)};});const due=views.map(v=>v.nextDueAt).filter(Number.isFinite);
- return {valid:true,enabled:state.enabled,time:state.time,rows:views,active:state.enabled?views.filter(v=>v.active||v.strong||v.inputLocked):[],registered:[...state.registered],completed:[...state.completed],nextDueAt:state.enabled&&due.length?Math.min(...due):null,ambiguity:clone(state.ambiguity),deferredEventCount:state.deferredEvents?.length||0,order:[...state.order],constraints,inputSnapshot:{selectedIndex:context?.selectedIndex??null,board:clone(context?.board||[])},history:clone(state.history),unknown:unique([...views.flatMap(v=>v.diagnostic?.unknown||[]),...['forceSpreadCode','forceSkipCost','forceBubbleCost'].filter(k=>constraints[k]!==null)]),originalRuntimeObserved:false};
+ return {valid:true,enabled:state.enabled,time:state.time,rows:views,active:state.enabled?views.filter(v=>v.active||v.strong||v.inputLocked):[],registered:[...state.registered],completed:[...state.completed],nextDueAt:state.enabled&&due.length?Math.min(...due):null,ambiguity:clone(state.ambiguity),deferredEventCount:state.deferredEvents?.length||0,order:[...state.order],constraints,inputSnapshot:{selectedIndex:context?.selectedIndex??null,board:clone(context?.board||[])},adapterInputLocked:context?.adapterInputLocked===true||context?.eventLocked===true,adapterControls:clone(context?.adapterControls||{}),adapterTargets:clone(context?.adapterTargets||[]),history:clone(state.history),unknown:unique([...views.flatMap(v=>v.diagnostic?.unknown||[]),...['forceSpreadCode','forceSkipCost','forceBubbleCost'].filter(k=>constraints[k]!==null)]),originalRuntimeObserved:false};
 }
 export function tutorialRuntimePermissionFromView(view,action,value){
  const safeActions=['export','save','focus','game-title','game-continue','game-new-prompt','game-new-cancel','new-game','reset','game-sound','cancel-tool','game-task-list-close','game-factory-close','game-recap-close','close-info'];
- if(action.startsWith('runtime:')||safeActions.includes(action))return {allowed:true};if(!view.valid||!view.enabled)return {allowed:true};if(view.ambiguity)return {allowed:false,reason:'ambiguous-order',message:'자동 안내의 경쟁 순서를 연구 입력으로 선택하거나 중지하세요.'};const constraint=constraintPermission(view,action,value);if(constraint)return constraint;const guards=view.active.filter(a=>a.strong||a.inputLocked);if(!guards.length)return {allowed:true};
+ if(safeActions.includes(action)||action.startsWith('runtime:')&&action!=='runtime:mask')return {allowed:true};if(!view.valid||!view.enabled)return {allowed:true};if(view.ambiguity)return {allowed:false,reason:'ambiguous-order',message:'자동 안내의 경쟁 순서를 연구 입력으로 선택하거나 중지하세요.'};if(view.adapterInputLocked)return {allowed:false,reason:'source-event-lock',message:'원작 UIManager의 소유자별 입력 잠금이 남아 있습니다.'};if(action==='runtime:mask')return {allowed:true};const adapterPermission=tutorialAdapterPermission({schema:1,misc:{},activityFlags:{},targets:view.adapterControls||{},ownerLocks:{},anonymousLocks:0,operations:[],sequence:0},{schema:1,epoch:'view',targets:view.adapterTargets||[]},action,value);if(!adapterPermission.allowed)return adapterPermission;const constraint=constraintPermission(view,action,value);if(constraint)return constraint;const guards=view.active.filter(a=>a.strong||a.inputLocked);if(!guards.length)return {allowed:true};
  const bindings=guards.map(g=>g.binding).filter(Boolean);const permitted=bindings.length===guards.length&&bindings.every(b=>{if(!b.actions.includes(action))return false;if(b.kind!=='cell'||action==='game-factory-open')return true;if(['game-cell','cell'].includes(action))return Number(value)===b.index;return String(value).split(':').at(-1)===String(b.uid);});
  return permitted?{allowed:true,bindings}:{allowed:false,reason:bindings.length<guards.length?'target-unresolved':'target-only',message:'자동 안내의 실제 웹 대상만 조작할 수 있습니다. 대상 미확인이면 연구 맥락을 확인하거나 안내를 중지하세요.',bindings};
 }

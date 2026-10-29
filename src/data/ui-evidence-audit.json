@@ -8,7 +8,7 @@
   "scope": "selected11prefabs/14controllers/26clips + five existing annotated historical screen studies; static fonts and runtime layout branches",
   "originalRuntimeObserved": false,
   "newNativeFramesReviewed": 0,
-  "newAssetsRecovered": 0,
+  "newAssetsRecovered": 4,
   "summary": {
     "selectedPrefabs": 11,
     "controllers": 14,
@@ -19,7 +19,11 @@
     "observedRegions": 29,
     "comparisonRows": 8,
     "exactRuntimeCoordinateMatches": 0,
-    "confirmedCaptureFontMatches": 0
+    "confirmedCaptureFontMatches": 0,
+    "newNativeCuratedImages": 4,
+    "nativePlayerStaticCameras": 16,
+    "nativePlayerCanvasScalers": 7,
+    "nativePlayerTypeTreeMatchedBehaviours": 373
   },
   "canvasReference": [
     1080,
@@ -5268,5 +5272,1098 @@
       "sourceRef": "src-2",
       "runtimeScale": null
     }
-  ]
+  ],
+  "nativePlayer": {
+    "schemaVersion": 1,
+    "sourceRefs": [
+      "presentation:native-level0",
+      "presentation:native-sharedassets",
+      "presentation:native-player-settings",
+      "presentation:native-unity-resources"
+    ],
+    "inventory": {
+      "sourceFilesRecovered": 149,
+      "sourceBytesRecovered": 12788264,
+      "gameObjects": 342,
+      "rectTransforms": 296,
+      "cameras": 16,
+      "canvases": 13,
+      "sprites": 42,
+      "typeTreeHashMatchedBehaviours": 373,
+      "typedReadErrors": 0,
+      "templatePolicy": "Only exact old_type_hash match against shipped bundle MonoBehaviour type trees; full byte count consumed, no guessed field offsets"
+    },
+    "selectedLoadingImages": [
+      {
+        "role": "loading_bg",
+        "path": "/LoadingScene/Canvas/bg/bg",
+        "imageIdentity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1096",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "8e0a5c3f657004dfc26f4fda93432d17af3cf06cf7e8d81350ddd7abce614b96"
+        },
+        "spriteIdentity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "sharedassets0.assets",
+          "path_id": "149",
+          "type": "Sprite",
+          "object_source_sha256": "c005f3fc0fd049f3ff32550282fdc7144d6710abb5f1973ed8c78a21f4aa14d0"
+        },
+        "mediaKey": "presentation:native:loading_bg",
+        "serializedActiveSelf": true,
+        "color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "rect": {
+          "AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "AnchoredPosition": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "SizeDelta": {
+            "x": 1332.0,
+            "y": 2048.0
+          },
+          "Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "LocalScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          },
+          "LocalRotation": {
+            "x": -0.0,
+            "y": -0.0,
+            "z": -0.0,
+            "w": 1.0
+          }
+        },
+        "templateTypeHash": "dd9dda1dfd39e605c49e72003342ef5d",
+        "templateSource": {
+          "serialized_file": "CAB-7f144f101b0cd6ea1ffd4dafcef103b5",
+          "path_id": "6721535085349957794"
+        },
+        "runtimeActiveVerified": false
+      },
+      {
+        "role": "loading_logo_en",
+        "path": "/LoadingScene/Canvas/bg/bg/logo",
+        "imageIdentity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "933",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "b0f6334d62d2af4c0108bbd71f88c8a662c9ced9dcf8723b2febb1a7877ea59a"
+        },
+        "spriteIdentity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "sharedassets0.assets",
+          "path_id": "150",
+          "type": "Sprite",
+          "object_source_sha256": "856f6a4cf79862d1fbd21a8ca28264f065a0a5b7d9bcdc24ad0faab51946c21e"
+        },
+        "mediaKey": "presentation:native:loading_logo_en",
+        "serializedActiveSelf": true,
+        "color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "rect": {
+          "AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "AnchoredPosition": {
+            "x": 0.0,
+            "y": 630.0
+          },
+          "SizeDelta": {
+            "x": 897.0,
+            "y": 500.0
+          },
+          "Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "LocalScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          },
+          "LocalRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "templateTypeHash": "dd9dda1dfd39e605c49e72003342ef5d",
+        "templateSource": {
+          "serialized_file": "CAB-7f144f101b0cd6ea1ffd4dafcef103b5",
+          "path_id": "6721535085349957794"
+        },
+        "runtimeActiveVerified": false
+      },
+      {
+        "role": "splash_logo_microfun",
+        "path": "/Splash/info/logo",
+        "imageIdentity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "929",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "60a6647cd77378865853d516317506e35aa828dd328b38c09ffa71a43596550a"
+        },
+        "spriteIdentity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "sharedassets0.assets",
+          "path_id": "136",
+          "type": "Sprite",
+          "object_source_sha256": "f35ee01b06cb8564851d51de5ef23952353215bde5a462f675be4d91f64c8f55"
+        },
+        "mediaKey": "presentation:native:splash_logo_microfun",
+        "serializedActiveSelf": true,
+        "color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "rect": {
+          "AnchorMin": {
+            "x": 0.5,
+            "y": 0.6000000238418579
+          },
+          "AnchorMax": {
+            "x": 0.5,
+            "y": 0.6000000238418579
+          },
+          "AnchoredPosition": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "SizeDelta": {
+            "x": 768.0,
+            "y": 216.0
+          },
+          "Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "LocalScale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          },
+          "LocalRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          }
+        },
+        "templateTypeHash": "dd9dda1dfd39e605c49e72003342ef5d",
+        "templateSource": {
+          "serialized_file": "CAB-7f144f101b0cd6ea1ffd4dafcef103b5",
+          "path_id": "6721535085349957794"
+        },
+        "runtimeActiveVerified": false
+      }
+    ],
+    "playerSplash": {
+      "mediaKey": "presentation:native:splash_mg",
+      "declaredSeconds": 2.0,
+      "showUnitySplashScreen": true,
+      "showUnityLogo": false,
+      "playerSettingsIdentity": {
+        "kind": "native-player-serialized-object",
+        "apk": "com.mergegames.gossipharbor.apk",
+        "serialized_file": "globalgamemanagers",
+        "path_id": "1",
+        "type": "PlayerSettings",
+        "object_source_sha256": "28ae8976d677effd6aef5b2b12931365dd2b3b96e3a354d5f39c24d579b00610"
+      },
+      "spriteIdentity": {
+        "kind": "native-player-serialized-object",
+        "apk": "com.mergegames.gossipharbor.apk",
+        "serialized_file": "globalgamemanagers.assets",
+        "path_id": "1517",
+        "type": "Sprite",
+        "object_source_sha256": "56aa97be58a1f3b3d9475f12b7617c16a99c2e5b2aa2e4d34be392a9298068e8"
+      },
+      "runtimeShownVerified": false
+    },
+    "canvasScalers": [
+      {
+        "path": "/Splash",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "908",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "b794e359935fb5d2bf7afbbdbe95b6ec77f83b35eb19879181dde6b20686dcf1"
+        },
+        "serializedActiveSelf": false,
+        "scaleMode": 1,
+        "referenceResolution": {
+          "x": 1080.0,
+          "y": 1920.0
+        },
+        "screenMatchMode": 0,
+        "matchWidthOrHeight": 0.0,
+        "templateTypeHash": "540882762544409cc4530e60db00e951",
+        "runtimeResolutionVerified": false
+      },
+      {
+        "path": "/LoadingScene/Canvas",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "915",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "86f7697df66f5eaf91bc7888cc6819b96a7da1644fe47e37fdd4ba31d43a87bc"
+        },
+        "serializedActiveSelf": true,
+        "scaleMode": 1,
+        "referenceResolution": {
+          "x": 1080.0,
+          "y": 1920.0
+        },
+        "screenMatchMode": 0,
+        "matchWidthOrHeight": 0.0,
+        "templateTypeHash": "540882762544409cc4530e60db00e951",
+        "runtimeResolutionVerified": false
+      },
+      {
+        "path": "/CSErrorMonitor/Canvas",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "939",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "3a0d2e2d1aad115ab0735eed518a87371db99c72cb10d4174c4330dcb9bcfc44"
+        },
+        "serializedActiveSelf": false,
+        "scaleMode": 0,
+        "referenceResolution": {
+          "x": 800.0,
+          "y": 600.0
+        },
+        "screenMatchMode": 0,
+        "matchWidthOrHeight": 0.0,
+        "templateTypeHash": "540882762544409cc4530e60db00e951",
+        "runtimeResolutionVerified": false
+      },
+      {
+        "path": "/SceneCGManager/Canvas",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "958",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "2ff09942dd16d1b0c37ded0b2b33ca89bc08f1bed60a5f256fea9c01289aa089"
+        },
+        "serializedActiveSelf": true,
+        "scaleMode": 1,
+        "referenceResolution": {
+          "x": 1080.0,
+          "y": 1920.0
+        },
+        "screenMatchMode": 0,
+        "matchWidthOrHeight": 0.0,
+        "templateTypeHash": "540882762544409cc4530e60db00e951",
+        "runtimeResolutionVerified": false
+      },
+      {
+        "path": "/LuaManager/Loading/LoadingMG",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1028",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "8bfcda506fb7c9cb5bc7226e7d9c51e13b148782172f343e579d445f44dcf635"
+        },
+        "serializedActiveSelf": true,
+        "scaleMode": 1,
+        "referenceResolution": {
+          "x": 1080.0,
+          "y": 1920.0
+        },
+        "screenMatchMode": 0,
+        "matchWidthOrHeight": 0.0,
+        "templateTypeHash": "540882762544409cc4530e60db00e951",
+        "runtimeResolutionVerified": false
+      },
+      {
+        "path": "/Profiling",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1138",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "17be89f3487e99a04192cce90764b65383768681bdbbf4b229d9ee12e56ba578"
+        },
+        "serializedActiveSelf": false,
+        "scaleMode": 1,
+        "referenceResolution": {
+          "x": 1080.0,
+          "y": 1920.0
+        },
+        "screenMatchMode": 0,
+        "matchWidthOrHeight": 0.0,
+        "templateTypeHash": "540882762544409cc4530e60db00e951",
+        "runtimeResolutionVerified": false
+      },
+      {
+        "path": "/Profiling/ProfilingWindow",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1150",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "4649da6a8c47720893b81606f05cd3f0259093215b4e0a929f122836160c0361"
+        },
+        "serializedActiveSelf": false,
+        "scaleMode": 0,
+        "referenceResolution": {
+          "x": 800.0,
+          "y": 600.0
+        },
+        "screenMatchMode": 0,
+        "matchWidthOrHeight": 0.0,
+        "templateTypeHash": "540882762544409cc4530e60db00e951",
+        "runtimeResolutionVerified": false
+      }
+    ],
+    "selectedSerializedFonts": [
+      {
+        "path": "/LoadingScene/Canvas/DebugInfo",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "950",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "54a177aa428158d00f03dcc93a9483f02748244015f8c47d386a5796183fba09"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "unity default resources",
+            "path_id": "10102",
+            "type": "Font",
+            "object_source_sha256": "4699bb36a535b42ec7a3f591f554754910b4f659e4ff9947aff9485a29660fcb"
+          },
+          "name": "LegacyRuntime"
+        },
+        "fontReference": {
+          "m_FileID": 3,
+          "m_PathID": "10102"
+        },
+        "fontSize": 40,
+        "bestFit": 0,
+        "textCharacters": 0,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 0.6274510025978088
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LoadingScene/Canvas/PreInitView/LoadingSliderCustom/progressTip",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "963",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "68234d4015a9d87d9672aa7e91f4539d9d68c52a894944c528f76ac41a01ce74"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "unity default resources",
+            "path_id": "10102",
+            "type": "Font",
+            "object_source_sha256": "4699bb36a535b42ec7a3f591f554754910b4f659e4ff9947aff9485a29660fcb"
+          },
+          "name": "LegacyRuntime"
+        },
+        "fontReference": {
+          "m_FileID": 3,
+          "m_PathID": "10102"
+        },
+        "fontSize": 25,
+        "bestFit": 0,
+        "textCharacters": 16,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LoadingScene/Canvas/PreInitView/LoadingSlider/progressTip",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "964",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "2611e944b3f781049f8255f6d0077ae9b0b4b3dae998bf0b5db3f8137877a614"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "unity default resources",
+            "path_id": "10102",
+            "type": "Font",
+            "object_source_sha256": "4699bb36a535b42ec7a3f591f554754910b4f659e4ff9947aff9485a29660fcb"
+          },
+          "name": "LegacyRuntime"
+        },
+        "fontReference": {
+          "m_FileID": 3,
+          "m_PathID": "10102"
+        },
+        "fontSize": 25,
+        "bestFit": 0,
+        "textCharacters": 16,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LoadingScene/Canvas/NetworkErrorWindow/scaleRoot/content/RedSimpleButton/text",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "965",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "db4f5f85ce2039de72e3172174eec04c39e4ca974799975009fa7f3adabec36a"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "sharedassets0.assets",
+            "path_id": "123",
+            "type": "Font",
+            "object_source_sha256": "c3bb966054711523847725401be5aca95cc0a017d8666521c4d843bce25d1224"
+          },
+          "name": "PoetsenOne-Regular"
+        },
+        "fontReference": {
+          "m_FileID": 2,
+          "m_PathID": "123"
+        },
+        "fontSize": 60,
+        "bestFit": 1,
+        "textCharacters": 4,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LoadingScene/Canvas/NetworkErrorWindow/scaleRoot/content/GreenSimpleButton/text",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "973",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "6e8adcea41c1e6152df8702d672ee729b83e583c7ab7a147a003744497baf8f5"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "sharedassets0.assets",
+            "path_id": "123",
+            "type": "Font",
+            "object_source_sha256": "c3bb966054711523847725401be5aca95cc0a017d8666521c4d843bce25d1224"
+          },
+          "name": "PoetsenOne-Regular"
+        },
+        "fontReference": {
+          "m_FileID": 2,
+          "m_PathID": "123"
+        },
+        "fontSize": 60,
+        "bestFit": 1,
+        "textCharacters": 4,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LuaManager/Loading/LoadingMG/WXLoginInfo",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1015",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "08c6b034309b06e1d3972d5de7d63ccc3605aa465228fdf189cef81227450c1f"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "unity default resources",
+            "path_id": "10102",
+            "type": "Font",
+            "object_source_sha256": "4699bb36a535b42ec7a3f591f554754910b4f659e4ff9947aff9485a29660fcb"
+          },
+          "name": "LegacyRuntime"
+        },
+        "fontReference": {
+          "m_FileID": 3,
+          "m_PathID": "10102"
+        },
+        "fontSize": 20,
+        "bestFit": 0,
+        "textCharacters": 0,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LoadingScene/Canvas/NetworkErrorWindow/scaleRoot/content/desc",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1085",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "4745178d6b024590cc241427cb7b66edef9a16dae3445882ef83c0b82075e9ac"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "sharedassets0.assets",
+            "path_id": "123",
+            "type": "Font",
+            "object_source_sha256": "c3bb966054711523847725401be5aca95cc0a017d8666521c4d843bce25d1224"
+          },
+          "name": "PoetsenOne-Regular"
+        },
+        "fontReference": {
+          "m_FileID": 2,
+          "m_PathID": "123"
+        },
+        "fontSize": 56,
+        "bestFit": 0,
+        "textCharacters": 0,
+        "serializedColor": {
+          "r": 0.3450980484485626,
+          "g": 0.3490196168422699,
+          "b": 0.4941176474094391,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LuaManager/Loading/LoadingMG/AccountLogin/content/WXLoginBtn/text",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1119",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "a41a357e02675ffdb242751b43ae6d282c71ed7e8cd46b907770185434b895f4"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "unity default resources",
+            "path_id": "10102",
+            "type": "Font",
+            "object_source_sha256": "4699bb36a535b42ec7a3f591f554754910b4f659e4ff9947aff9485a29660fcb"
+          },
+          "name": "LegacyRuntime"
+        },
+        "fontReference": {
+          "m_FileID": 3,
+          "m_PathID": "10102"
+        },
+        "fontSize": 60,
+        "bestFit": 1,
+        "textCharacters": 4,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LuaManager/Loading/LoadingMG/AccountLogin/DeviceLoginBtn/text",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1172",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "a981366d5e2f4e327365ecd1f4e1c447200f114acf873c2acca924b7110e976b"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "unity default resources",
+            "path_id": "10102",
+            "type": "Font",
+            "object_source_sha256": "4699bb36a535b42ec7a3f591f554754910b4f659e4ff9947aff9485a29660fcb"
+          },
+          "name": "LegacyRuntime"
+        },
+        "fontReference": {
+          "m_FileID": 3,
+          "m_PathID": "10102"
+        },
+        "fontSize": 60,
+        "bestFit": 1,
+        "textCharacters": 12,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LoadingScene/Canvas/PreInitView/LoadingSliderCustom/progress",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1190",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "3a929d0ddce0abf496ae59d115a81513aaf6d5623f4ad5c42c81949f8714d443"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "sharedassets0.assets",
+            "path_id": "122",
+            "type": "Font",
+            "object_source_sha256": "5b265462aa29d7228dc74231ce646138078da03f872fbdedd4af7e5b006f904b"
+          },
+          "name": "fz"
+        },
+        "fontReference": {
+          "m_FileID": 2,
+          "m_PathID": "122"
+        },
+        "fontSize": 32,
+        "bestFit": 0,
+        "textCharacters": 2,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LoadingScene/Canvas/PreInitView/LoadingSlider/progress",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1195",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "2ad5e2a28de5c2af56102469e7e8ecf90cd895aa93a81b1b284a4d8cfb8bd30c"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "sharedassets0.assets",
+            "path_id": "122",
+            "type": "Font",
+            "object_source_sha256": "5b265462aa29d7228dc74231ce646138078da03f872fbdedd4af7e5b006f904b"
+          },
+          "name": "fz"
+        },
+        "fontReference": {
+          "m_FileID": 2,
+          "m_PathID": "122"
+        },
+        "fontSize": 32,
+        "bestFit": 0,
+        "textCharacters": 2,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LuaManager/Loading/LoadingMG/AccountLogin/content/privacy/privacyText/text",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1202",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "3fbf18e6dd7568fe01c3e49e1e172973e9eba74585dc69ac34e0bd949a6ebfb9"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "sharedassets0.assets",
+            "path_id": "122",
+            "type": "Font",
+            "object_source_sha256": "5b265462aa29d7228dc74231ce646138078da03f872fbdedd4af7e5b006f904b"
+          },
+          "name": "fz"
+        },
+        "fontReference": {
+          "m_FileID": 2,
+          "m_PathID": "122"
+        },
+        "fontSize": 28,
+        "bestFit": 0,
+        "textCharacters": 7,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LuaManager/Loading/LoadingMG/AccountLogin/content/privacy/privacyText/privacyPro/text ",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1206",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "b06e0e3837537b467b2357c243ec617da81e895552cdd0e92044a1a32f6fc614"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "sharedassets0.assets",
+            "path_id": "122",
+            "type": "Font",
+            "object_source_sha256": "5b265462aa29d7228dc74231ce646138078da03f872fbdedd4af7e5b006f904b"
+          },
+          "name": "fz"
+        },
+        "fontReference": {
+          "m_FileID": 2,
+          "m_PathID": "122"
+        },
+        "fontSize": 28,
+        "bestFit": 0,
+        "textCharacters": 4,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LuaManager/Loading/LoadingMG/AccountLogin/content/privacy/privacyText/childPro/text ",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1208",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "13d723e2bddf426662ca56b6979af9fd6cfd7632bb5b97b4ede28858f7ae0f05"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "sharedassets0.assets",
+            "path_id": "122",
+            "type": "Font",
+            "object_source_sha256": "5b265462aa29d7228dc74231ce646138078da03f872fbdedd4af7e5b006f904b"
+          },
+          "name": "fz"
+        },
+        "fontReference": {
+          "m_FileID": 2,
+          "m_PathID": "122"
+        },
+        "fontSize": 28,
+        "bestFit": 0,
+        "textCharacters": 8,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LuaManager/Loading/LoadingMG/AccountLogin/content/privacy/privacyText/text (1)",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1210",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "b0610e6d40b0bb453609b9758182f8f701091662916be00b8f46838acf8936b4"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "sharedassets0.assets",
+            "path_id": "122",
+            "type": "Font",
+            "object_source_sha256": "5b265462aa29d7228dc74231ce646138078da03f872fbdedd4af7e5b006f904b"
+          },
+          "name": "fz"
+        },
+        "fontReference": {
+          "m_FileID": 2,
+          "m_PathID": "122"
+        },
+        "fontSize": 28,
+        "bestFit": 0,
+        "textCharacters": 1,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      },
+      {
+        "path": "/LuaManager/Loading/LoadingMG/AccountLogin/content/privacy/privacyText/UserPro/text ",
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "1218",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "af4995a18ff7dd72f8b635fbd1d9a4d9214181ba4aa2746ff6082ba217ab18e8"
+        },
+        "font": {
+          "identity": {
+            "kind": "native-player-serialized-object",
+            "apk": "com.mergegames.gossipharbor.apk",
+            "serialized_file": "sharedassets0.assets",
+            "path_id": "122",
+            "type": "Font",
+            "object_source_sha256": "5b265462aa29d7228dc74231ce646138078da03f872fbdedd4af7e5b006f904b"
+          },
+          "name": "fz"
+        },
+        "fontReference": {
+          "m_FileID": 2,
+          "m_PathID": "122"
+        },
+        "fontSize": 28,
+        "bestFit": 0,
+        "textCharacters": 5,
+        "serializedColor": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        },
+        "localizedRuntimeFontVerified": false,
+        "templateTypeHash": "b5007673bbbdb9d12597a1d8201370f5"
+      }
+    ],
+    "mapCamera": {
+      "serializedIdentityVerified": true,
+      "runtimeCameraFrameVerified": false,
+      "projection": "perspective",
+      "fieldOfViewYDegrees": 19.455158233642578,
+      "nearClip": 25.0,
+      "farClip": 1500.0,
+      "viewport": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "rotationQuaternion": {
+        "x": 0.3173046410083771,
+        "y": -0.0,
+        "z": -0.0,
+        "w": 0.948323667049408
+      },
+      "serializedLocalPosition": {
+        "x": -1146.9000244140625,
+        "y": -261.5740051269531,
+        "z": -311.79998779296875
+      },
+      "identity": {
+        "kind": "native-player-serialized-object",
+        "apk": "com.mergegames.gossipharbor.apk",
+        "serialized_file": "level0",
+        "path_id": "374",
+        "type": "Camera",
+        "object_source_sha256": "b93fcc92c18951fa0783d984fef1f82df39c9f54f8abbe987b82d4fba4e27d6d"
+      },
+      "transformIdentity": {
+        "kind": "native-player-serialized-object",
+        "apk": "com.mergegames.gossipharbor.apk",
+        "serialized_file": "level0",
+        "path_id": "347",
+        "type": "Transform",
+        "object_source_sha256": "cd885f83bea1f39f850f949a6c6de115aa7d5380718a2fb4f0e97713a8f40dc7"
+      },
+      "modeBinding": {
+        "identity": {
+          "kind": "native-player-serialized-object",
+          "apk": "com.mergegames.gossipharbor.apk",
+          "serialized_file": "level0",
+          "path_id": "970",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "a83d0044880cf730b9c6f77ea47534eb887304dd27c6ce372aed4673202caeed"
+        },
+        "class": "LuaComponent",
+        "luaType": "ModeViewController",
+        "field": "m_mapCam",
+        "cameraPathId": "374",
+        "templateTypeHash": "9496f3ee1ffbfaedfe142d31417dc179"
+      },
+      "positionBoundary": "Serialized load-state position is not substituted for Timeline camera positions or a verified actual gameplay frame. MapLayer:SetCamera/MoveCamera can change it.",
+      "researchProjectionMatchesThisCamera": false,
+      "sourceRefs": [
+        "presentation:native-level0",
+        "presentation:map-camera",
+        "presentation:map-view-loading"
+      ]
+    },
+    "boundaries": [
+      "Native level0 and sharedassets were physically inside the supplied original APK but outside the earlier245 Addressables-bundle inventory. This is a newly expanded static source boundary, not a new game capture.",
+      "The source starts with LoadingScene/Canvas at1080x1920; source loading art and company/game logos are not proof of a separate interactive original title screen.",
+      "Serialized activeSelf and fonts may change through ApplicationManager, LoadingBackground, localization or runtime canvas adjustments. No actual frame, click coordinate or active Korean font match is claimed."
+    ]
+  },
+  "nativePlayerSourceRefs": [
+    {
+      "id": "presentation:native-level0",
+      "kind": "packaged-player-serialized",
+      "path": "analysis/followup/presentation-assets/native-data/level0",
+      "sha256": "cc96fbb4b6f034e94d234e0fff9a24fe02c128f01059ae29825ebcac5df7e5b4",
+      "apkSource": "com.mergegames.gossipharbor.apk/assets/bin/Data/level0",
+      "originalRuntimeObserved": false
+    },
+    {
+      "id": "presentation:native-sharedassets",
+      "kind": "packaged-player-serialized",
+      "path": "analysis/followup/presentation-assets/native-data/sharedassets0.assets",
+      "sha256": "a9aa3ddc0e621a6ca4d339a9b2d95dd4bea76416735c6959e87280440aa10ed5",
+      "apkSource": "com.mergegames.gossipharbor.apk/assets/bin/Data/sharedassets0.assets",
+      "originalRuntimeObserved": false
+    },
+    {
+      "id": "presentation:native-player-settings",
+      "kind": "packaged-player-serialized",
+      "path": "analysis/followup/presentation-assets/native-data/globalgamemanagers",
+      "sha256": "5e49ff232428b964087e37308d187a0ac58a5e146335022a5b70fdb115c7d79e",
+      "apkSource": "com.mergegames.gossipharbor.apk/assets/bin/Data/globalgamemanagers",
+      "originalRuntimeObserved": false
+    },
+    {
+      "id": "presentation:native-unity-resources",
+      "kind": "packaged-player-serialized",
+      "path": "analysis/followup/presentation-assets/native-data/unity default resources",
+      "sha256": "a9a74ab363888de3ea14ef01e780f851a395d4c6f5d5bcebad74a2a3e4785d16",
+      "apkSource": "com.mergegames.gossipharbor.apk/assets/bin/Data/unity default resources",
+      "originalRuntimeObserved": false
+    }
+  ],
+  "revision": "918db69d6aadd0991fd12e1519fc3b46253a69414895537e74bd81059f30474d"
 }

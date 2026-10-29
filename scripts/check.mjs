@@ -1,3 +1,5 @@
+import {validActivitySeasonConfig} from '../src/activity-season.mjs';
+import {activityConfigRevision} from '../src/activity-config.mjs';
 import {readFile,readdir,stat} from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
@@ -106,3 +108,13 @@ if(master.tasks.length!==100||new Set(master.tasks.map(t=>t.id)).size!==100||mas
 if(uiAudit.summary.comparisonRows!==8||uiAudit.originalRuntimeObserved!==false||recap.books.length!==5||recap.summary.pages!==22||recap.mediaEntries.length!==9||tutorials87.guides.length!==87)throw Error('Invalid requested0/3 coverage');
 for(const m of recap.mediaEntries){if(!validMedia(m))throw Error('Invalid recap media '+m.key);const bytes=await readFile(path.join('dist',m.src));if(createHash('sha256').update(bytes).digest('hex')!==m.sha256)throw Error('Recap image hash mismatch '+m.key);}
 console.log('Verified fixed100 checklist, UI8 bounded comparisons,87 source executers,5 recap books/22pages and9 new exact Sprite PNGs; runtime completeness remains separately classified.');
+
+const presentation=JSON.parse(await readFile('dist/data/presentation-assets.json','utf8'));
+const season=JSON.parse(await readFile('dist/data/activity-season.json','utf8'));
+const coverage=JSON.parse(await readFile('dist/data/tutorial-adapter-coverage.json','utf8'));
+if(presentation.mediaEntries.length!==151||presentation.maps[0].slots.length!==41||presentation.audit.curatedVisibleSlotVariants!==124||presentation.nativePlayer.inventory.typeTreeHashMatchedBehaviours!==373||presentation.opening.frames.length!==24||presentation.opening.introLinkedToCG!==false||presentation.skins.some(s=>s.mediaKey!==null))throw Error('Invalid common map/CG/native source boundary');
+if(!validActivitySeasonConfig(season)||season.origin!=='research-example'||season.revision!==activityConfigRevision(season)||coverage.total!==85||coverage.counts['native-target-unavailable']!==54||coverage.counts['native-model-unimplemented']!==2)throw Error('Invalid configured season or external-effect coverage');
+for(const m of presentation.mediaEntries){if(!validMedia(m))throw Error('Invalid curated presentation media '+m.key);const bytes=await readFile(path.join('dist',m.src));if(createHash('sha256').update(bytes).digest('hex')!==m.sha256)throw Error('Presentation derivative mismatch '+m.key);}
+if(recap.audioEntries?.length!==1)throw Error('Missing exact page-turn effect');
+for(const m of recap.audioEntries){if(m.kind!=='audio'||!/^\.\/assets\/media\/story-recap\/[\w-]+\.wav$/.test(m.src)||m.duration>3||m.auditionVerified!==false||m.runtimeSynchronizationVerified!==false)throw Error('Unverified recap audio upgrade');const bytes=await readFile(path.join('dist',m.src));if(createHash('sha256').update(bytes).digest('hex')!==m.sha256)throw Error('Recap audio derivative mismatch');}
+console.log('Verified151 common-map/CG/native images, source Camera PPtr, exact short page-turn audio, source-shaped opt-in mock season and85 external-effect rows (29 handlers,56 unavailable native targets/models).');

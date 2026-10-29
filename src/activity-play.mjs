@@ -6,6 +6,7 @@ const allItems=c=>[...c.event.items,...(c.event.sharedItems||[])];
 const def=(c,type)=>allItems(c).find(r=>r.type===type);
 const types=c=>new Set([...allItems(c).flatMap(r=>[r.type,r.next,...r.pool.map(x=>x.type),...r.transforms.map(x=>x.type),...r.feeds.map(x=>x.type)]),...c.event.board.filter(Boolean).map(x=>x.type)].filter(Boolean));
 const clone=v=>structuredClone(v);
+const allowedIndex=(context,index)=>context.eventAllowedIndices===undefined||Array.isArray(context.eventAllowedIndices)&&context.eventAllowedIndices.includes(index);
 const next=(a)=>{let x=a.event.rng|0;x^=x<<13;x^=x>>>17;x^=x<<5;a.event.rng=x>>>0||1;return a.event.rng/4294967296;};
 function counted(rows){const out=[];for(const r of rows){const old=out.find(x=>x.type===r.type);if(old)old.count+=r.count;else out.push({...r});}return out;}
 function makeCell(a,c,type,cover=null,innerCover=null){const row=def(c,type);return {uid:a.event.nextUid++,type,cover,innerCover,...(row?.pool.length?{remaining:counted(row.pool),used:0}:{})};}
@@ -66,23 +67,23 @@ function apply(a,c,action,value,context){
  }
  if(action==='open-pack'){if(a.album.packs<1)return result(false,'먼저 주문을 완료해 연구 팩을 모으세요.');return addCards(a,c,typeof value==='string'?[value]:value);}
  if(action==='event-pop'){
-  const index=a.event.board.findIndex(x=>x===null),first=a.event.queue[0];if(index<0)return result(false,'이벤트 보드에 빈칸이 없습니다.');if(!first)return result(false,'보상 대기열이 비었습니다.');
+  const index=a.event.board.findIndex((x,i)=>x===null&&allowedIndex(context,i)),first=a.event.queue[0];if(index<0)return result(false,'이벤트 보드에 빈칸이 없습니다.');if(!first)return result(false,'보상 대기열이 비었습니다.');
   a.event.board[index]=makeCell(a,c,first.type);if(--first.count===0)a.event.queue.shift();return result(true,'이벤트 대기열 조각1개를 배치했습니다.');
  }
  if(action==='event-research-item'){
   if(!allItems(c).some(x=>x.type===value))return result(false,'동봉 이벤트/공용 타입만 연구 입력할 수 있습니다.');a.event.queue.push({type:value,count:1});a.researchInputUsed=true;return result(true,'선택한 동봉 타입을 연구 대기열에 추가했습니다.');
  }
  if(action==='event-cell'){
-  const index=Number(value);if(!int(index,a.event.board.length-1))return result(false,'유효한 보드 칸을 선택하세요.');
+  const index=Number(value);if(!int(index,a.event.board.length-1)||!allowedIndex(context,index))return result(false,'현재 열린 보드 칸을 선택하세요.');
   const cell=a.event.board[index];if(a.event.selected===null){if(!cell||cell.cover)return result(false,'덮개 없는 아이템을 먼저 선택하세요.');a.event.selected=index;return result(true,'이벤트 아이템 선택');}
   if(a.event.selected===index){a.event.selected=null;return result(true,'선택 해제');}
   return move(a,c,a.event.selected,index);
  }
  if(action==='event-move'){
   const parsed=typeof value==='string'&&/^\d{1,3},\d{1,3}$/.test(value)?{from:value.split(',')[0],to:value.split(',')[1]}:value;
-  if(!obj(parsed))return result(false,'이동할 두 칸이 필요합니다.');return move(a,c,Number(parsed.from),Number(parsed.to));
+  if(!obj(parsed)||!allowedIndex(context,Number(parsed.from))||!allowedIndex(context,Number(parsed.to)))return result(false,'현재 열린 이동할 두 칸이 필요합니다.');return move(a,c,Number(parsed.from),Number(parsed.to));
  }
- if(action==='event-spawn')return spawn(a,c,a.event.selected);
+ if(action==='event-spawn')return spawn(a,c,a.event.selected,context);
  if(action==='event-collect'){
   const index=a.event.selected,cell=index===null?null:a.event.board[index],d=cell&&def(c,cell.type);
   if(!cell||cell.cover||!d?.collectRewards?.length)return result(false,'동봉 수집값이 확인된 재화 아이템을 선택하세요.');
@@ -116,10 +117,10 @@ function move(a,c,from,to){
  if(target.cover)return result(false,'같은 타입을 가져와 거미줄을 해제하세요.');
  a.event.board[from]=target;a.event.board[to]=source;a.event.selected=to;return result(true,'이벤트 아이템 교환');
 }
-function spawn(a,c,index){
+function spawn(a,c,index,context={}){
  if(!int(index,a.event.board.length-1))return result(false,'생성기를 먼저 선택하세요.');
  const cell=a.event.board[index],d=cell&&def(c,cell.type);if(!cell||cell.cover||!d?.pool.length||d.weightType!==2||d.cost!==0)return result(false,'무에너지 유한 풀 생성기만 지원합니다.');
- const slot=a.event.board.findIndex(x=>x===null);if(slot<0)return result(false,'빈칸이 없어 생성하지 않았습니다.');
+ const slot=a.event.board.findIndex((x,i)=>x===null&&allowedIndex(context,i));if(slot<0)return result(false,'빈칸이 없어 생성하지 않았습니다.');
  const count=cell.remaining?.reduce((n,r)=>n+r.count,0)||0;if(count<1)return result(false,'생성기 풀이 비었습니다.');
  const row=weighted(a,cell.remaining);row.count--;cell.used++;a.event.board[slot]=makeCell(a,c,row.type);a.event.generated++;
  if(d.transformAfter===cell.used&&d.transforms.length){const transformed=weighted(a,d.transforms);a.event.board[index]=makeCell(a,c,transformed.type);}

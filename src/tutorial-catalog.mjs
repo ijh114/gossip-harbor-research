@@ -1,3 +1,4 @@
+import {SOURCE_EXTERNAL_CALLS} from './tutorial-adapter-contracts.mjs';
 // Source-shaped progression projections for 87 tutorial executers. This module
 // does not execute Lua, contact a game service, render native UI or issue items.
 // Unknown predicates / external effects stop the transaction, never act as true.
@@ -27,7 +28,7 @@ export function createTutorialCatalog(config,guideId=config?.guides?.[0]?.id){
 }
 export function validTutorialCatalog(s,c){try{
  const g=definition(c,s?.guideId);
- if(!object(s)||s.schema!==1||s.revision!==c.revision||!time(s.time)||typeof s.started!=='boolean'||!object(s.variables)||!string(s.persistedData,4000)||!(s.phase===null||string(s.phase,200))||typeof s.strong!=='boolean'||typeof s.inputLocked!=='boolean'||!Number.isSafeInteger(s.sequence)||s.sequence<0||s.sequence>1e9)return false;
+ if(!object(s)||s.schema!==1||s.revision!==c.revision||!time(s.time)||typeof s.started!=='boolean'||!object(s.variables)||!string(s.persistedData,4000)||!(s.phase===null||string(s.phase,200))||typeof s.strong!=='boolean'||typeof s.inputLocked!=='boolean'||s.adapterInputLockManaged!==undefined&&typeof s.adapterInputLockManaged!=='boolean'||!Number.isSafeInteger(s.sequence)||s.sequence<0||s.sequence>1e9)return false;
  if(!object(s.cells)||Object.keys(s.cells).length>4096||!Number.isSafeInteger(s.nextCell)||s.nextCell<1||s.nextCell>1e9||Object.keys(s.cells).some(k=>!/^c[1-9]\d*$/.test(k)||Number(k.slice(1))>=s.nextCell))return false;
  if(!validConstraints(s.constraints))return false;
  if(!list(s.registeredFinished,1)||!list(s.completed,1)||s.registeredFinished.some(x=>x!==s.guideId)||s.completed.some(x=>x!==s.guideId)||s.completed.length>s.registeredFinished.length)return false;
@@ -47,7 +48,7 @@ function finish(s){register(s);if(!s.completed.includes(s.guideId))s.completed.p
 function collectCells(s){const retained=new Set();function visit(v){if(v===null||typeof v!=='object')return;if(own(v,'$cell')){const id=v.$cell;if(retained.has(id))return;retained.add(id);if(own(s.cells,id))visit(s.cells[id]);return;}for(const x of Object.values(v))visit(x);}visit(s.variables);visit(s.subscriptions);visit(s.pending);visit(s.mask);for(const id of Object.keys(s.cells))if(!retained.has(id))delete s.cells[id];}
 function symbol(path,ctx,config){if(own(ctx.constants,path))return ctx.constants[path];const [root,key]=path.split('.');if(config?.enums?.[root])return own(config.enums[root],key)?config.enums[root][key]:null;return {$symbol:path,value:path.split('.').at(-1)};}
 function refPath(expr){if(!expr)return null;if(expr.ref)return expr.ref;if(expr.get&&expr.key){const b=refPath(expr.get);return b?b+'.'+expr.key:null;}return null;}
-function runtime(s,g,ctx,config){
+function runtime(s,g,ctx,config,externalAdapter=null){
  let budget=0;const stack=[],emitted=[],effects=[],registrations=[],constraintUpdates=[],cancelledHandlers=new Set();let removing=false;
  const tick=()=>{if(++budget>3000)unimplemented('execution-budget','한 사건의 원작 분기 실행 한도를 넘어 기존 상태를 유지했습니다.');};
  function get(base,key,at){
@@ -88,7 +89,7 @@ function runtime(s,g,ctx,config){
    if(!Number.isFinite(v)||!Number.isFinite(b))unknown('arithmetic:'+e.op);const n=e.op==='+'?v+b:e.op==='-'?v-b:e.op==='*'?v*b:e.op==='/'?v/b:e.op==='//'?Math.floor(v/b):e.op==='%'?v%b:e.op==='^'?v**b:NaN;if(!Number.isFinite(n))unimplemented('arithmetic:'+e.op);return n;
   }unimplemented('expression-shape');
  }
- function callValue(e,locals){const c=e.call,m=c.split(/[:.]/).at(-1);if(own(ctx.facts,e.factId))return clone(ctx.facts[e.factId]);
+ function callValue(e,locals){const c=e.call,m=c.split(/[:.]/).at(-1);if(externalAdapter?.read){const value=externalAdapter.read({guideId:s.guideId,call:e.call,factId:e.factId,label:e.label,sourceId:e.sourceId,lineStart:e.lineStart},{receiver:()=>{try{return {known:true,value:e.base?evaluate(e.base,locals):null};}catch(error){if(error instanceof Halt)return {known:false,unknown:error.unknown};throw error;}},arguments:()=>e.args.map(a=>evaluate(a,locals))});if(value?.handled){if(!value.known)unknown(value.unknown?.[0]||e.factId,value.message);return clone(value.value);}}if(own(ctx.facts,e.factId))return clone(ctx.facts[e.factId]);
   if(c==='self:GetTutorialId')return s.guideId;
   if(c==='self:IsInStrongTutorial')return s.strong;
   if(c==='self:CheckOtherTutorialInStrong'){if(typeof ctx.otherStrong!=='boolean')unknown('otherStrong');if(!s.strong&&ctx.otherStrong){finishSource();return true;}return false;}
@@ -121,7 +122,7 @@ function runtime(s,g,ctx,config){
  function set(target,value,locals,isLocal=false){const parts=target.split('.');if(parts[0]==='self'&&parts.length===2){if(!safe(parts[1]))unimplemented('unsafe-state-key');s.variables[parts[1]]=clone(value??null);return;}if(parts.length===1&&safe(target)){if(isLocal||!own(locals,target))locals[target]=cell(value);else if(object(locals[target])&&own(locals[target],'$cell'))s.cells[locals[target].$cell]=clone(value??null);else locals[target]=cell(value);return;}unimplemented('assignment:'+target);}
  function expressionValues(expressions,locals,{tupleRequired=false}={}){const values=[];for(let index=0;index<expressions.length;index++){const expr=expressions[index],raw=rawEvaluate(expr,locals),last=index===expressions.length-1;if(last&&isTuple(raw))values.push(...raw.$luaTuple);else{if(last&&tupleRequired&&expr?.call&&!isTuple(raw))unknown('return-tuple:'+expr.factId,'복수 반환은 일반 배열과 구분한 {$luaTuple:[...]} 및 명시 arity가 필요합니다.');values.push(first(raw));}}return values;}
  function addEffect(i,locals){const targetBinding=own(ctx.targetBindings,i.id)?ctx.targetBindings[i.id]:null;if(targetBinding!==null&&!object(targetBinding))unknown('targetBindings.'+i.id);const effect={id:i.id,kind:i.kind,callee:i.callee,sourceId:i.sourceId,lineStart:i.lineStart,lineEnd:i.lineEnd,args:i.args||[],targetBinding:clone(targetBinding)};effects.push(effect);s.effects.push(effect);s.effects=s.effects.slice(-80);return effect;}
- function run(body,locals){for(const i of body){tick();if(s.completed.length)return {kind:'return',value:null};
+ function run(body,locals){for(const raw of body){tick();const extra=externalAdapter&&raw.op==='unimplemented'?SOURCE_EXTERNAL_CALLS[raw.sourceId+':'+raw.lineStart]:null,i=extra&&extra.callee===raw.callee?{...raw,op:'effect-required',arguments:extra.arguments,receiverExpression:extra.receiver}:raw;
   if(i.op==='assign'){
    if(i.multiReturn&&!i.values.at(-1)?.call)unimplemented('multiple-return-layout','원작 마지막 호출의 복수 반환 위치가 보존되지 않은 프로그램입니다.');
    const values=expressionValues(i.values,locals,{tupleRequired:i.multiReturn===true});for(let n=0;n<i.targets.length;n++)set(i.targets[n],values[n]??null,locals,i.isLocal===true);updateActive(s);continue;
@@ -151,7 +152,7 @@ function runtime(s,g,ctx,config){
   }
   if(i.op==='table-insert'){const args=i.args.map(a=>evaluate(a,locals)),array=args[0];if(!Array.isArray(array)||array.length>=128||args.length<2||args.length>3)unknown('table.insert');const position=args.length===2?array.length+1:Number(args[1]),value=args.at(-1);if(!Number.isInteger(position)||position<1||position>array.length+1)unknown('table.insert.position');array.splice(position-1,0,clone(value));continue;}
   if(i.op==='strong'){s.strong=truth(evaluate(i.value,locals));emitted.push({event:'EEventType.TutorialAnyStrongTutorialUpdated',payload:s.strong});updateActive(s);continue;}
-  if(i.op==='input-lock'){s.inputLocked=truth(evaluate(i.value,locals));updateActive(s);continue;}
+  if(i.op==='input-lock'){const locked=truth(evaluate(i.value,locals));if(externalAdapter?.inputLock){const applied=externalAdapter.inputLock({guideId:s.guideId,locked,sourceId:i.sourceId,lineStart:i.lineStart},{evaluate:expr=>evaluate(expr,locals)});if(!applied?.ok)throw new Halt(applied?.status||'unknown',applied?.message||'입력 잠금 소유자가 미확인입니다.',applied?.unknown||[]);s.inputLocked=applied.inputLocked;s.adapterInputLockManaged=true;}else s.inputLocked=locked;updateActive(s);continue;}
   if(i.op==='save-ongoing'){const v=s.variables.m_strOngoingDatas;if(!string(v,4000))unknown('ongoingData');s.persistedData=v;record(s,'saved-ongoing',v);continue;}
   if(i.op==='log'){record(s,'source-step',String(scalar(evaluate(i.value,locals))),{sourceId:i.sourceId,lineStart:i.lineStart});continue;}
   if(i.op==='listen'){const event=String(scalar(evaluate(i.event,locals))),fn=callback(i.handler,locals);if(!s.subscriptions.some(r=>r.event===event&&r.handler===fn.handler))s.subscriptions.push({event,handler:fn.handler,locals:fn.locals,sourceId:i.sourceId,lineStart:i.lineStart});continue;}
@@ -161,7 +162,9 @@ function runtime(s,g,ctx,config){
   if(i.op==='unschedule'){if(i.all){for(const p of s.pending)cancelledHandlers.add(p.handler);cancelledHandlers.add('*');s.pending=[];}else{const fn=callback(i.handler,locals);cancelledHandlers.add(fn.handler);s.pending=s.pending.filter(r=>r.handler!==fn.handler);}continue;}
   if(i.op==='mask'){const ef=addEffect(i,locals),fn=i.callback?callback(i.callback,locals):null;s.mask={id:i.id,callback:fn?.handler??null,locals:fn?.locals||{},target:{kind:'source-mask',sourceCall:i.callee,argumentLabels:i.args,geometryResolved:false,...(ef.targetBinding||{})},sourceId:i.sourceId,lineStart:i.lineStart};updateActive(s);continue;}
   if(i.op==='effect'){addEffect(i,locals);if(i.clearMask){s.mask=null;updateActive(s);}continue;}
-  if(i.op==='effect-required'){if(!own(ctx.effectResults,i.id)||ctx.effectResults[i.id]?.applied!==true||!['research','verified-web-adapter'].includes(ctx.effectResults[i.id]?.origin)){const requiredEffect={id:i.id,guideId:s.guideId,effectClass:i.effectClass||'unclassified-external',callee:i.callee,sourceId:i.sourceId,lineStart:i.lineStart,lineEnd:i.lineEnd,arguments:(i.arguments||[]).map((arg,index)=>{try{return {index,known:true,value:clone(evaluate(arg,locals))};}catch(e){if(e instanceof Halt)return {index,known:false,unknown:e.unknown};throw e;}})};unimplemented(i.id,i.callee+'는 외부 연산을 요구합니다. 실제 어댑터 결과 없이 성공 처리하지 않습니다.',{requiredEffect});}addEffect({...i,kind:'acknowledged-external-effect'},locals);continue;}
+  if(i.op==='effect-required'){const requiredEffect={id:i.id,guideId:s.guideId,effectClass:i.effectClass||'unclassified-external',callee:i.callee,sourceId:i.sourceId,lineStart:i.lineStart,lineEnd:i.lineEnd,arguments:(i.arguments||[]).map((arg,index)=>{try{return {index,known:true,value:clone(evaluate(arg,locals))};}catch(e){if(e instanceof Halt)return {index,known:false,unknown:e.unknown};throw e;}})};const receiver=i.callee.slice(0,i.callee.lastIndexOf(':'));if(i.receiverExpression||/^(?:self\.)?[A-Za-z_][A-Za-z0-9_.]*$/.test(receiver)){try{const parts=receiver.split('.');let expr=i.receiverExpression||{ref:parts.shift()};if(!i.receiverExpression)for(const key of parts)expr={get:expr,key};requiredEffect.receiver={known:true,value:clone(evaluate(expr,locals))};}catch(e){if(e instanceof Halt)requiredEffect.receiver={known:false,unknown:e.unknown};else throw e;}}
+   if(externalAdapter?.apply){const applied=externalAdapter.apply(requiredEffect);if(applied?.handled){if(!applied.ok)throw new Halt(applied.status||'unknown',applied.message||'실제 웹 대상에 연산을 적용하지 못했습니다.',applied.unknown||[i.id],{requiredEffect});if(typeof applied.inputLocked==='boolean'){s.inputLocked=applied.inputLocked;s.adapterInputLockManaged=true;}addEffect({...i,kind:'applied-web-adapter-effect'},locals);continue;}}
+   if(!own(ctx.effectResults,i.id)||ctx.effectResults[i.id]?.applied!==true||!['research','verified-web-adapter'].includes(ctx.effectResults[i.id]?.origin))unimplemented(i.id,i.callee+'는 외부 연산을 요구합니다. 실제 어댑터 결과 없이 성공 처리하지 않습니다.',{requiredEffect});addEffect({...i,kind:'acknowledged-external-effect'},locals);continue;}
   if(i.op==='loop'){
    let values;if(i.iterator){if(!own(ctx.collections,i.id)||!Array.isArray(ctx.collections[i.id]))unknown(i.id,'원작 반복 대상과 순서를 명시해야 합니다: '+i.iterator);values=ctx.collections[i.id];}
    else{const start=Number(scalar(evaluate(i.start,locals))),end=Number(scalar(evaluate(i.end,locals))),step=i.step?Number(scalar(evaluate(i.step,locals))):1;if(![start,end,step].every(Number.isFinite)||step===0||Math.abs((end-start)/step)>128)unimplemented(i.id,'수치 반복 범위가 웹 실행 한도를 넘습니다.');values=[];for(let v=start;step>0?v<=end:v>=end;v+=step)values.push([v]);}
@@ -184,13 +187,13 @@ function startCondition(g,ctx,s){for(const c of g.configConditions||[]){let pass
  else unknown('config-condition:'+c.raw);
  if(!pass)return false;
  }return true;}
-export function tutorialCatalogEvent(state,event,context,config){
+export function tutorialCatalogEvent(state,event,context,config,options={}){
  if(!validTutorialCatalog(state,config))return result(false,'invalid-state','호환되지 않는 안내 저장은 변경하지 않았습니다.');
  if(!knownContext(context)||!object(event)||!jsonSafe(event,65536)||!string(event.type,100))return result(false,'invalid-input','mode=research의 유효한 컨텍스트와 사건이 필요합니다.');
  const g=definition(config,state.guideId),s=clone(state),ctx={facts:{},definitions:{},constants:{},effectResults:{},collections:{},targetBindings:{},...context};
  if(own(ctx,'globalConstraints'))s.constraints=clone(ctx.globalConstraints);
  if(event.now!==undefined){if(!time(event.now)||event.now<s.time)return result(false,'invalid-time','안내 시각은 유효한 순방향 초여야 합니다.');s.time=event.now;}
- const r=runtime(s,g,ctx,config);let status='ignored';
+ const r=runtime(s,g,ctx,config,options.externalAdapter||null);let status='ignored';
  try{
   if(event.type==='reset'){const fresh=createTutorialCatalog(config,state.guideId);Object.assign(state,fresh);return result(true,'reset','이 안내 연구만 초기화했습니다.',{changed:true});}
   if(event.type==='executer-started'){
@@ -202,14 +205,14 @@ export function tutorialCatalogEvent(state,event,context,config){
    if(!string(event.sourceEvent,500))return result(false,'invalid-input','원작 구독 사건 이름이 필요합니다.');
    const canonical=event.sourceEvent.startsWith('EEventType.')?event.sourceEvent.slice(11):event.sourceEvent;
    const matches=s.subscriptions.filter(x=>x.event===event.sourceEvent||x.event===canonical);
-   for(const listener of matches)r.invoke(listener.handler,[event.payload??{}],listener.locals||{});status=matches.length?'event-dispatched':'ignored';
+   for(const listener of matches){if(s.completed.length)break;r.invoke(listener.handler,[event.payload??{}],listener.locals||{});}status=matches.length?'event-dispatched':'ignored';
   }else if(event.type==='mask-click'){
    if(!s.mask?.callback)return result(false,'blocked','현재 원작 마스크에는 진행 콜백이 없습니다. 일반 다음 단계로 바꾸지 않았습니다.');
    if(event.callbackId!==undefined&&event.callbackId!==s.mask.id)return result(false,'stale-callback','이미 바뀐 마스크 콜백입니다.');
    const m=s.mask;r.invoke(m.callback,[],m.locals);status='mask-callback';
   }else if(event.type==='clock'){
    const tasks=s.pending.filter(p=>p.dueAt<=s.time);if(tasks.length>64)unimplemented('clock-capacity');
-   for(const pending of tasks){s.pending=s.pending.filter(p=>p!==pending);r.invoke(pending.handler,[],pending.locals);if(pending.repeatSeconds!==null&&!s.completed.length&&!r.cancelledHandlers.has('*')&&!r.cancelledHandlers.has(pending.handler)&&!s.pending.some(p=>p.id===pending.id))s.pending.push({...pending,dueAt:s.time+pending.repeatSeconds});}status=tasks.length?'scheduled-callback':'waiting';
+   for(const pending of tasks){if(!s.pending.includes(pending))continue;s.pending=s.pending.filter(p=>p!==pending);r.invoke(pending.handler,[],pending.locals);if(pending.repeatSeconds!==null&&!s.completed.length&&!r.cancelledHandlers.has('*')&&!r.cancelledHandlers.has(pending.handler)&&!s.pending.some(p=>p.id===pending.id))s.pending.push({...pending,dueAt:s.time+pending.repeatSeconds});}status=tasks.length?'scheduled-callback':'waiting';
   }else if(event.type==='resume'){
    s.subscriptions=[];s.pending=[];s.mask=null;s.strong=false;s.inputLocked=false;s.active=null;if(!own(ctx,'globalConstraints'))s.constraints=emptyConstraints();
    if(s.registeredFinished.length){s.variables={m_strOngoingDatas:''};s.cells={};s.nextCell=1;s.phase=null;status='registered-not-restored';record(s,'resume','Finished 등록 안내는 원작 manager에서 다시 시작하지 않습니다. 시각 완료로 추가하지 않았습니다.');}
@@ -227,5 +230,6 @@ export function tutorialCatalogView(s,context={},config){
  if(!validTutorialCatalog(s,config))return {valid:false,status:'invalid-state',active:null,unknown:[],eventOptions:[],allowedActions:[],nextDueAt:null};
  if(own(context,'globalConstraints')&&!validConstraints(context.globalConstraints))return {valid:false,status:'invalid-global-constraints',active:null,unknown:['globalConstraints'],eventOptions:[],allowedActions:[],nextDueAt:null};
  const g=find(config,s.guideId),pending=s.pending.map(x=>({...x,locals:undefined}));
- return {valid:true,id:s.guideId,status:s.status,started:s.started,registered:s.registeredFinished.includes(s.guideId),completed:s.completed.includes(s.guideId),active:clone(s.active),strong:s.strong,inputLocked:s.inputLocked,constraints:clone(context.globalConstraints||s.constraints),time:s.time,ongoingData:s.variables.m_strOngoingDatas,persistedData:s.persistedData,unknown:[...s.unknown],eventOptions:s.subscriptions.map(x=>({type:'source-event',sourceEvent:x.event,handler:x.handler,sourceId:x.sourceId,lineStart:x.lineStart})),allowedActions:s.mask?.callback?[{type:'mask-click',callbackId:s.mask.id,label:'원작 마스크 콜백'}]:[],nextDueAt:pending.length?Math.min(...pending.map(p=>p.dueAt)):null,pending,effects:clone(s.effects),history:clone(s.history),support:g.support,unimplemented:g.unimplemented,sourceRefs:g.sourceRefs,originalRuntimeObserved:false};
+ const inputLocked=s.adapterInputLockManaged&&typeof context.adapterInputLocked==='boolean'?context.adapterInputLocked&&s.started&&!s.completed.length&&s.status!=='torn-down':s.inputLocked;let active=clone(s.active);if(active){active.inputLocked=inputLocked;if(!inputLocked&&!s.strong&&!s.mask&&s.phase===null)active=null;}
+ return {valid:true,id:s.guideId,status:s.status,started:s.started,registered:s.registeredFinished.includes(s.guideId),completed:s.completed.includes(s.guideId),active,strong:s.strong,inputLocked,constraints:clone(context.globalConstraints||s.constraints),time:s.time,ongoingData:s.variables.m_strOngoingDatas,persistedData:s.persistedData,unknown:[...s.unknown],eventOptions:s.subscriptions.map(x=>({type:'source-event',sourceEvent:x.event,handler:x.handler,sourceId:x.sourceId,lineStart:x.lineStart})),allowedActions:s.mask?.callback?[{type:'mask-click',callbackId:s.mask.id,label:'원작 마스크 콜백'}]:[],nextDueAt:pending.length?Math.min(...pending.map(p=>p.dueAt)):null,pending,effects:clone(s.effects),history:clone(s.history),support:g.support,unimplemented:g.unimplemented,sourceRefs:g.sourceRefs,originalRuntimeObserved:false};
 }

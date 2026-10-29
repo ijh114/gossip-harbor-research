@@ -68,7 +68,7 @@ test('registered-finished, displayed completion and reload remain separate state
  const clicked=tutorialCatalogEvent(first.s,{type:'mask-click',callbackId:'mask1'},first.ctx,c);assert.equal(clicked.ok,true);assert.equal(tutorialCatalogView(first.s,first.ctx,c).completed,true);
 });
 test('another strong tutorial finishes and runs source teardown rather than treating the collision as a no-op',()=>{
- const c=fixture([{op:'invoke',handler:'CheckOtherTutorialInStrong',args:[]},assign(['self.shouldNotRun'],[v(true)])],{OnRemove:program([assign(['self.removed'],[v(true)])])});
+ const c=fixture([{op:'if',cases:[{test:{call:'self:CheckOtherTutorialInStrong',args:[]},body:[{op:'return',values:[]}]}],otherwise:[]},assign(['self.shouldNotRun'],[v(true)])],{OnRemove:program([assign(['self.removed'],[v(true)])])});
  const {s,out}=start(c,{otherStrong:true});assert.equal(out.ok,true);assert.deepEqual(s.completed,['independent-probe']);assert.equal(s.variables.removed,true);assert.equal(Object.hasOwn(s.variables,'shouldNotRun'),false);
 });
 test('non-JSON snapshots and nested prototype fields are rejected before cloning/evaluation can crash',()=>{

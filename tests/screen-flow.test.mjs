@@ -4,6 +4,8 @@ import {readFile} from 'node:fs/promises';
 import {JSDOM} from 'jsdom';
 import {createPlay,playAction,validPlay} from '../src/play-model.mjs';
 import {createPlayController} from '../src/play-controller.mjs';
+import {createActivitySeason,activitySeasonAction} from '../src/activity-season.mjs';
+import {createActivityLinkInputs} from '../src/activity-transaction.mjs';
 import {createStoryRecap} from '../src/story-recap.mjs';
 import {configureFactoryTransaction} from '../src/factory-transaction.mjs';
 import {writeSession,SAVE_KEY} from '../src/session-store.mjs';
@@ -19,9 +21,11 @@ const tutorialMoreConfig=JSON.parse(await readFile(new URL('../src/data/tutorial
 const factoryConfig=JSON.parse(await readFile(new URL('../src/data/factory-play.json',import.meta.url),'utf8'));
 const tutorialCatalogConfig=JSON.parse(await readFile(new URL('../src/data/tutorial-catalog.json',import.meta.url),'utf8'));
 const storyRecapConfig=JSON.parse(await readFile(new URL('../src/data/story-recap.json',import.meta.url),'utf8'));
+const seasonConfig=JSON.parse(await readFile(new URL('../src/data/activity-season.json',import.meta.url),'utf8'));
+const presentationAssets=JSON.parse(await readFile(new URL('../src/data/presentation-assets.json',import.meta.url),'utf8'));
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 async function waitForState(predicate,label){const deadline=Date.now()+6000;while(!predicate()&&Date.now()<deadline)await pause(25);assert.ok(predicate(),label);}
-async function harness(run,{saved=null,raw=null,reduced=true,scenes=false,activities=false,tutorials=false,skins=false,more=false,factory=false,recap=false,runtime=false}={}){
+async function harness(run,{saved=null,raw=null,reduced=true,scenes=false,activities=false,tutorials=false,skins=false,more=false,factory=false,recap=false,runtime=false,season=false,presentation=false}={}){
  const dom=new JSDOM('<main></main>',{url:'https://example.test/project/#experience',pretendToBeVisual:true}),w=dom.window,prior={window:globalThis.window,document:globalThis.document};
  Object.assign(globalThis,{window:w,document:w.document});
  w.matchMedia=()=>({matches:reduced});w.HTMLElement.prototype.scrollIntoView=()=>{};
@@ -32,7 +36,7 @@ async function harness(run,{saved=null,raw=null,reduced=true,scenes=false,activi
  if(raw)w.localStorage.setItem(SAVE_KEY,raw);
  let controller,skin='game';
  function render(){controller.beforeRender();w.document.querySelector('main').innerHTML=controller.render(skin);controller.afterMount();}
- const create=()=>{controller=createPlayController({getData:()=>({playConfig:config,media,refinement,...(scenes?{sceneConfig}:{}),...(activities?{activityConfig}:{}),...(tutorials?{tutorialConfig}:{}),...(skins?{skinConfig}:{}),...(more?{tutorialMoreConfig}:{}),...(factory?{factoryConfig}:{}),...(recap?{storyRecapConfig}:{}),...(runtime?{tutorialCatalogConfig}:{})}),render,download(){}});return controller;};
+ const create=()=>{controller=createPlayController({getData:()=>({playConfig:config,media,refinement,...(scenes?{sceneConfig}:{}),...((activities||season)?{activityConfig}:{}),...(season?{activitySeasonConfig:seasonConfig}:{}),...(presentation?{presentationAssets}:{}),...(tutorials?{tutorialConfig}:{}),...(skins?{skinConfig}:{}),...(more?{tutorialMoreConfig}:{}),...(factory?{factoryConfig}:{}),...(recap?{storyRecapConfig}:{}),...(runtime?{tutorialCatalogConfig}:{})}),render,download(){}});return controller;};
  create();render();
  const read=()=>JSON.parse(w.localStorage.getItem(SAVE_KEY)).state;
  const act=(action,value)=>controller.handle(action,value);
@@ -192,4 +196,40 @@ test('the highlighted factory part taps into storage and the masked inventory ta
  let saved=createPlay(config);saved.stage='play';saved.wallet.level=2;const index=saved.board.findIndex(x=>x===null);saved.board[index]={uid:saved.nextUid++,type:'103',cover:null};const configured=configureFactoryTransaction(saved,{schema:1,mode:'research',serverEnabled:true,unlockMode:'assumed'},factoryConfig,{playConfig:config});assert.equal(configured.ok,true);saved=configured.state;
  await harness(async({w,act,read,screen})=>{await pause(380);act('game-continue');w.document.querySelector('[data-guide-select]').value='tutorial_generator_factory_Acquire';act('guide:configure');act('guide:factory-poll');act('guide:clock');const target=read().tutorialBridge.engine.active.target,selected=read().board.findIndex(c=>String(c?.uid)===target.uid);assert.ok(selected>=0);assert.ok(w.document.querySelector('.game-cell[data-value="'+selected+'"]').classList.contains('tutorial-linked-target'));const uid=read().board[selected].uid;act('game-cell',String(selected));assert.equal(read().board.some(c=>c?.uid===uid),false);assert.equal(read().tutorialBridge.engine.active.phase,'inventory-highlight');act('inventory');assert.ok(read().tutorialBridge.engine.completed.includes('tutorial_generator_factory_Acquire'));assert.equal(read().modal,null,'clipRectClickable=false consumes this click for mask completion');act('inventory');assert.equal(read().modal,'inventory');assert.equal(screen(),'board');
  },{saved,factory:true,tutorials:true});
+});
+
+test('source intro survives title and reload, resumes the same command and skips without changing the domain',async()=>{
+ await harness(async({w,act,read,recreate,screen})=>{await pause(380);act('new-game');assert.equal(screen(),'opening');assert.equal(read().sourceOpening.index,0);act('game-intro-next');assert.equal(read().sourceOpening.index,1);act('game-title');assert.equal(read().sourceOpening.phase,'paused');recreate();await pause(380);act('game-continue');assert.equal(read().sourceOpening.phase,'playing');assert.equal(read().sourceOpening.index,1);act('game-intro-skip');assert.equal(screen(),'map');assert.equal(read().sourceOpening.phase,'skipped');assert.equal(read().wallet.coins,0);assert.equal(read().questsDone,0);assert.equal(read().tutorialStep,0);
+ },{scenes:true});
+});
+
+test('configured season opts into real main success records, settles album once and uses visible event window',async()=>{
+ const saved=createPlay(config,{scenario:'initial',guide:true});playAction(saved,'start',null,config);
+ await harness(async({w,act,read,showMode,recreate})=>{await pause(380);showMode('activities');act('season:configure','true');assert.equal(read().activityLink,undefined);w.document.querySelector('[data-season-accept]').checked=true;act('season:configure','true');act('season:start');assert.equal(read().activityLink.enabled,true);assert.equal(w.document.querySelectorAll('[data-season-cell]').length,48);
+ showMode('game');act('game-continue');for(const step of config.tutorialSteps){if(step.kind==='generate')act('game-cell',step.index);else act('move',step.from+','+step.to);}act('deliver');assert.equal(read().wallet.orders,1);assert.equal(read().activitySeason.pass.progress.orders,1);assert.ok(read().activityOutbox.applied.length>0);assert.equal(read().activityOutbox.queue.length,0);
+ showMode('activities');w.document.querySelector('[data-season-pack]').value='mock-fixed';act('season:grant-pack');const coins=read().wallet.coins;act('season:open-pack');assert.equal(read().activitySeason.album.complete,true,JSON.stringify({season:read().activitySeason.album,feedback:w.document.querySelector('.game-feedback')?.textContent,pack:w.document.querySelector('[data-season-pack]')?.value}));assert.equal(read().wallet.coins,coins+20);const receipts=read().activitySeason.receipts.length;act('season:open-pack');assert.equal(read().activitySeason.receipts.length,receipts);assert.equal(read().wallet.coins,coins+20);recreate();await pause(380);showMode('activities');assert.equal(read().activitySeason.receipts.length,receipts);assert.equal(read().wallet.coins,coins+20);
+ },{saved,season:true});
+});
+
+test('a full retained activity outbox rolls back the main merge and its random/UID/economy effects',async()=>{
+ const saved=createPlay(config,{scenario:'open'});saved.stage='play';saved.activityLink={...createActivityLinkInputs(),enabled:true,acceptedConfigRevision:seasonConfig.revision};saved.activitySeason=createActivitySeason(seasonConfig);activitySeasonAction(saved.activitySeason,'start',undefined,seasonConfig,{now:0});saved.activitySeason.pass.tokens=16;activitySeasonAction(saved.activitySeason,'claim-pass',{tier:3,track:'free'},seasonConfig,{now:0});saved.queue=Array.from({length:1000},()=>({type:'201',count:1,cacheType:2}));saved.activityOutbox={schema:1,queue:Array.from({length:256},(_,i)=>({eventId:'retained-'+i,kind:'customer',count:1,at:0})),applied:[]};const spots=[];for(let i=0;i<2;i++){const at=saved.board.findIndex(x=>x===null);saved.board[at]={uid:saved.nextUid++,type:'201',cover:null};spots.push(at);}
+ await harness(async({act,read})=>{await pause(380);act('game-continue');const before=read();act('move',spots.join(','));const after=read();assert.deepEqual(after.board,before.board);assert.equal(after.nextUid,before.nextUid);assert.deepEqual(after.bubbles,before.bubbles);assert.equal(after.wallet.seed,before.wallet.seed);assert.equal(after.activityOutbox.queue.length,256);assert.equal(after.queue.length,1000);assert.equal(after.activitySeason.receipts.length,0);
+ },{saved,season:true});
+});
+
+test('CG layer inspection returns to title or opening and preserves main progression',async()=>{
+ await harness(async({act,read,screen})=>{await pause(380);act('game-cg-open');assert.equal(screen(),'cg');act('cg:select','cg-scene2');assert.equal(read().cgPresentation.sceneId,'cg-scene2');act('game-cg-close');assert.equal(screen(),'title');act('new-game');act('game-intro-next');const index=read().sourceOpening.index;act('game-cg-open');assert.equal(screen(),'cg');act('game-cg-close');assert.equal(screen(),'opening');assert.equal(read().sourceOpening.index,index);assert.equal(read().sourceOpening.phase,'playing');assert.equal(read().questsDone,0);assert.equal(read().wallet.coins,0);
+ },{scenes:true,presentation:true});
+});
+
+test('a corrupt linked season preserves its raw field and queues successful main facts without paying rewards',async()=>{
+ const saved=createPlay(config,{scenario:'open'});saved.stage='play';saved.activityLink={...createActivityLinkInputs(),enabled:true,acceptedConfigRevision:seasonConfig.revision};saved.activitySeason=null;const indices=[];for(let i=0;i<2;i++){const at=saved.board.findIndex(x=>x===null);saved.board[at]={uid:saved.nextUid++,type:'201',cover:null};indices.push(at);}
+ await harness(async({act,read})=>{await pause(380);act('game-continue');act('move',indices.join(','));assert.equal(read().activitySeason,null);assert.equal(read().board[indices[1]].type,'202');assert.ok(read().activityOutbox.queue.some(r=>r.kind==='merge'));assert.ok(read().activityOutbox.queue.some(r=>r.kind==='202'));assert.equal(read().wallet.coins,0);
+ },{saved,season:true});
+});
+
+test('actual factory catalog guide locks and re-enables Inventory, consumes real tab entry and preserves post-Finish prompt work',async()=>{
+ let saved=createPlay(config,{scenario:'open'});saved.stage='play';saved.wallet.level=2;const r=configureFactoryTransaction(saved,{schema:1,mode:'research',serverEnabled:true,unlockMode:'assumed'},factoryConfig,{playConfig:config});assert.equal(r.ok,true);saved=r.state;
+ await harness(async({w,act,read,screen})=>{await pause(380);act('game-continue');await waitForState(()=>read().tutorialRuntime?.entries.tutorial_generator_factory?.state.phase==='1'&&read().tutorialAdapter.anonymousLocks===0&&read().tutorialAdapter.targets['hud.inventory']?.enabled===true,'factory source should highlight the actual Inventory HUD');assert.equal(w.document.querySelector('.game-bottom [data-play=inventory]').disabled,false,JSON.stringify({button:w.document.querySelector('.game-bottom [data-play=inventory]').outerHTML,runtime:read().tutorialRuntime.constraints,adapter:read().tutorialAdapter,active:Object.fromEntries(Object.entries(read().tutorialRuntime.entries).filter(([k,v])=>v.state.active))}));act('inventory');assert.equal(read().modal,'inventory');await waitForState(()=>read().tutorialRuntime?.entries.tutorial_generator_factory?.state.phase==='2','source should wait for the real inventory open');assert.equal(read().tutorialAdapter.targets['inventory.window'].promptStopped,true);act('game-factory-open');assert.equal(screen(),'factory');assert.equal(read().tutorialRuntime.entries.tutorial_generator_factory.state.phase,'3');const cb=w.document.querySelector('[data-play="runtime:mask"]');assert.ok(cb);act('runtime:mask',cb.dataset.value);assert.ok(read().tutorialRuntime.completed.includes('tutorial_generator_factory'));assert.equal(read().tutorialAdapter.targets['inventory.window'].promptStopped,false);assert.equal(read().tutorialAdapter.targets['inventory.window'].promptGeneration,1);assert.equal(read().wallet.coins,0);
+ },{saved,factory:true,runtime:true,tutorials:true,more:true});
 });

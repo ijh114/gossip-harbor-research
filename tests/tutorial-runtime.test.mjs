@@ -76,7 +76,7 @@ test('registered open guides do not replay or gain visual completion on reload; 
  const broken=structuredClone(s);broken.entries[id].state.pending=[{handler:'does-not-exist'}];const before=structuredClone(broken);assert.equal(validTutorialRuntime(broken,data),false);assert.equal(tutorialRuntimeEvent(broken,{type:'reset',guideId:id,now:0},ctx,data).status,'invalid-state');assert.deepEqual(broken,before);
 });
 test('runtime panel exposes active source callbacks, explicit contexts, all97 statuses and corrupted-save recovery controls',()=>{
- const s=createTutorialRuntime(full),ctx=basic(),dom=new JSDOM(renderTutorialRuntimePanel(s,ctx,full));try{const d=dom.window.document;assert.equal(d.querySelector('[data-runtime-guide]').options.length,97);assert.equal(d.querySelector('[data-runtime-context]').value,'{}');assert.ok(d.querySelector('[data-play="runtime:disable"]'));assert.equal(d.querySelectorAll('tbody tr').length,97);}finally{dom.window.close();}
+ const s=createTutorialRuntime(full),ctx=basic(),dom=new JSDOM(renderTutorialRuntimePanel(s,ctx,full));try{const d=dom.window.document;assert.equal(d.querySelector('[data-runtime-guide]').options.length,97);assert.equal(d.querySelector('[data-runtime-context]').value,'{}');assert.ok(d.querySelector('[data-play="runtime:disable"]'));assert.equal(d.querySelectorAll('[aria-label="자동 안내 상태 목록"] tbody tr').length,97);}finally{dom.window.close();}
  const broken=new JSDOM(renderTutorialRuntimePanel(null,ctx,full));try{assert.ok(broken.window.document.querySelector('[data-play="runtime:clear-invalid"]'));assert.ok(broken.window.document.querySelector('[data-play=export]'));}finally{broken.window.close();}
 });
 test('source constraint deltas update the shared singleton and clear in actual source event order without changing board data',()=>{
@@ -101,4 +101,8 @@ test('recap shelf and book map to exact source windows while a closed research p
  let ctx=buildTutorialRuntimeContext(main,full,{presentation:'recap'});assert.deepEqual(ctx.openViews,['StoryRecapMainWindow']);assert.equal(ctx.topView,'StoryRecapMainWindow');
  main.storyRecap.phase='book';ctx=buildTutorialRuntimeContext(main,full,{presentation:'recap'});assert.deepEqual(ctx.openViews,['StoryRecapMainWindow','StoryRecapBookContentWindow']);assert.equal(ctx.topView,'StoryRecapBookContentWindow');
  main.storyRecap.phase='closed';ctx=buildTutorialRuntimeContext(main,full,{presentation:'recap',recapOpen:true});assert.deepEqual(ctx.openViews,[]);assert.equal(ctx.allWindowsClosed,false);delete main.storyRecap;assert.deepEqual(main,before);
+});
+
+test('mount reconciliation drains a due source poll once and reaches an unchanged fixed point',()=>{
+ const guide=base.guides.find(g=>g.id==='tutorial_generator_factory_Acquire'),data={tutorialConfig:{...base,guides:[guide]}},ctx={...basic(),gameMode:'Main',allWindowsClosed:true,mainBoardViewAvailable:true,generatorFactoryOpen:true,registeredTutorials:['tutorial_generator_factory'],factoryCandidates:[{uid:'1',hasFactoryComponent:true,position:{x:1,y:1}}]},s=createTutorialRuntime(data);send(s,{type:'reconcile',now:0},ctx,data);assert.equal(tutorialRuntimeView(s,ctx,data).nextDueAt,1);const first=send(s,{type:'reconcile',now:1.4},ctx,data);assert.ok(first.ok);const second=send(s,{type:'reconcile',now:1.4},ctx,data);assert.equal(second.changed,false);assert.equal(second.status,'unchanged');
 });

@@ -21,7 +21,8 @@ test('application buttons connect game scenes, dialog focus, spatial preview, ta
  try{
   await import('../src/app.js');await until(()=>screen()==='title');
   click('.game-entry [data-play=new-game]');assert.equal(screen(),'opening');
-  click('[data-play=game-opening-next]');click('[data-play=game-opening-next]');assert.equal(screen(),'map');
+  for(let i=0;i<7;i++){assert.equal(saved().sourceOpening.index,i);click('[data-play=game-intro-next]');}assert.equal(saved().sourceOpening.phase,'done');assert.equal(screen(),'map');
+  const mapWallet=structuredClone(saved().wallet);click('[data-play="map:surface"][data-value=geometry]');assert.equal(w.document.querySelector('[data-map-id]').dataset.mapId,'main-map-early');assert.ok(w.document.querySelector('.source-map-base'));for(const key of ['energy','gems','coins','level','energyBuys','freeUsed','price','generated','orders','seed'])assert.equal(saved().wallet[key],mapWallet[key],key);click('[data-play="map:surface"][data-value=capture]');assert.equal(w.document.querySelector('[data-map-id]'),null);
   click('[data-play=game-task-list]');assert.ok(w.document.querySelector('#game-task-list').open);
   w.document.querySelector('#game-task-list').dispatchEvent(new w.Event('cancel',{cancelable:true}));
   assert.equal(w.document.activeElement.dataset.play,'game-task-list');
