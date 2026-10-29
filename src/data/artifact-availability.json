@@ -28,11 +28,11 @@
   ],
   "summary": {
     "newlyRecoveredAssets": 0,
-    "records": 16,
+    "records": 17,
     "statusRecords": {
       "missing": 3,
       "registered-only": 6,
-      "curated": 3,
+      "curated": 4,
       "research-projection": 4
     },
     "sourceBundles": 245,
@@ -51,7 +51,9 @@
     "baseUnknownPurpose": 1,
     "baseGiftTypesRegisteredOnly": 4,
     "eventTypesMissing": 35,
-    "eventSharedImagesVerified": 24
+    "eventSharedImagesVerified": 24,
+    "factoryImageTypesCurated": 29,
+    "factoryDirectTaggedVideoCandidates": 0
   },
   "entries": [
     {
@@ -705,6 +707,108 @@
         "item:ItemModelConfig:main_super_gold_7",
         "item:ItemModelConfig:main_super_gold_8"
       ]
+    },
+    {
+      "id": "factory-curated-types",
+      "title": "생성기 공장6종·조각23종 이미지 재분류",
+      "group": "factory",
+      "status": "curated",
+      "count": 29,
+      "unit": "타입 이미지 참조",
+      "claim": "기존에 연결된 APK Sprite29타입을 여섯 공장별 이미지·점수·격리 규칙 시연으로 재분류했습니다. 이번 신규 원본 자산 회수는0개입니다.",
+      "impact": "공장 보관·점수 합산·획득·일괄 반환을 시각 자료와 웹 플레이에서 비교합니다. 시연의 조각·서버·해금은 별도 연구 입력입니다.",
+      "neededEvidence": [
+        "원작 공장 보관·합산·획득·반환의 성공 영상 표본",
+        "원작 비행·슬라이더·입력 잠금 시간"
+      ],
+      "subjectIds": [
+        "104",
+        "101",
+        "102",
+        "103",
+        "404",
+        "401",
+        "402",
+        "403",
+        "705",
+        "701",
+        "702",
+        "703",
+        "704",
+        "1006",
+        "1001",
+        "1002",
+        "1003",
+        "1004",
+        "1005",
+        "1205",
+        "1201",
+        "1202",
+        "1203",
+        "1204",
+        "1705",
+        "1701",
+        "1702",
+        "1703",
+        "1704"
+      ],
+      "mediaKeys": [
+        "item:ItemModelConfig:104",
+        "item:ItemModelConfig:101",
+        "item:ItemModelConfig:102",
+        "item:ItemModelConfig:103",
+        "item:ItemModelConfig:404",
+        "item:ItemModelConfig:401",
+        "item:ItemModelConfig:402",
+        "item:ItemModelConfig:403",
+        "item:ItemModelConfig:705",
+        "item:ItemModelConfig:701",
+        "item:ItemModelConfig:702",
+        "item:ItemModelConfig:703",
+        "item:ItemModelConfig:704",
+        "item:ItemModelConfig:1006",
+        "item:ItemModelConfig:1001",
+        "item:ItemModelConfig:1002",
+        "item:ItemModelConfig:1003",
+        "item:ItemModelConfig:1004",
+        "item:ItemModelConfig:1005",
+        "item:ItemModelConfig:1205",
+        "item:ItemModelConfig:1201",
+        "item:ItemModelConfig:1202",
+        "item:ItemModelConfig:1203",
+        "item:ItemModelConfig:1204",
+        "item:ItemModelConfig:1705",
+        "item:ItemModelConfig:1701",
+        "item:ItemModelConfig:1702",
+        "item:ItemModelConfig:1703",
+        "item:ItemModelConfig:1704"
+      ],
+      "targets": [
+        {
+          "href": "#factory-reference",
+          "label": "공장 시각 도감·규칙 시연"
+        },
+        {
+          "href": "#experience",
+          "label": "실제 보유 조각으로 웹 실험"
+        }
+      ],
+      "sourceRefs": [
+        "factory-rule-0",
+        "factory-rule-1",
+        "factory-rule-2",
+        "factory-rule-3",
+        "factory-rule-4",
+        "factory-rule-5",
+        "factory-rule-6",
+        "factory-rule-7",
+        "factory-rule-8",
+        "factory-rule-9",
+        "factory-rule-10",
+        "factory-rule-11",
+        "factory-rule-12"
+      ],
+      "boundary": "원작 녹화나 현행 서버 설정이 아닙니다. 이미지 실물과 규칙 투영의 출처를 각각 보존합니다."
     }
   ],
   "sources": [
@@ -1064,6 +1168,110 @@
         "name": "Bubble",
         "object_source_sha256": "e07954452a8b27b63cfe652b53b0e8a2e90084df84a4776192564fe51fd6682c"
       }
+    },
+    {
+      "id": "factory-rule-0",
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/ItemGeneratorFactoryModel.lua",
+      "sha256": "bfcea52b9c5058e056679cbe12a0ee7624e6f142afd834b4b8e06609897ce5d7",
+      "lineStart": 3,
+      "lineEnd": 390,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-1",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemGeneratorFactory.lua",
+      "sha256": "54611b3307f19ec901c5d78a7aa8040c2155b24ba04eacbb92b8bc88253324fc",
+      "lineStart": 12,
+      "lineEnd": 26,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-2",
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+      "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+      "lineStart": 891,
+      "lineEnd": 986,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-3",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemDataModel.lua",
+      "sha256": "7a199a3ffea516f08a29a765cb030f630161cc4b631d8c5d773087b8d4c72a26",
+      "lineStart": 8,
+      "lineEnd": 355,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-4",
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/InventoryFactoryItem.lua",
+      "sha256": "e7538f487b45d7cefa885c7d735208c07e6265067c6703c525609d84bc112e1c",
+      "lineStart": 24,
+      "lineEnd": 45,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-5",
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GeneratorFactoryDetailCell.lua",
+      "sha256": "91eee6a53b01027f337227c2aafc0910d1d5688e58b477afce92d65dc903c823",
+      "lineStart": 40,
+      "lineEnd": 144,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-6",
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GeneratorFactoryContent.lua",
+      "sha256": "5da80e69b0a1ebe7c83313e68acfe7cb27f067d710b611a9face04e7842b3103",
+      "lineStart": 4,
+      "lineEnd": 42,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-7",
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GenFactoryItemCell.lua",
+      "sha256": "08ca4d71392ac9479d30689c9a6a277bc261dc355acab9e617cf8ffed7279f9c",
+      "lineStart": 17,
+      "lineEnd": 44,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-8",
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/InventoryCell.lua",
+      "sha256": "036ad415064eaf678f7685655b10ec17d5641f8e99365b009891890d2f3c860f",
+      "lineStart": 4,
+      "lineEnd": 34,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-9",
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/ItemCacheModel.lua",
+      "sha256": "2d8233814e1bd76a393c8eec3d6b87cbf3297a421dc93280269029533377d5f5",
+      "lineStart": 1,
+      "lineEnd": 50,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-10",
+      "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+      "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+      "lineStart": 21,
+      "lineEnd": 149,
+      "kind": "packaged-static-code"
+    },
+    {
+      "id": "factory-rule-11",
+      "path": "analysis/config-tables/ItemModelConfig.json",
+      "sha256": "9c9463a970e3097beff553cf08e0c1a37d5e83ecc18711a1d5a3928ddfc86eb7",
+      "lineStart": 1,
+      "lineEnd": 25,
+      "kind": "packaged-static-configuration"
+    },
+    {
+      "id": "factory-rule-12",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+      "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+      "lineStart": 3,
+      "lineEnd": 1774,
+      "kind": "packaged-static-code"
     }
   ],
   "hypotheses": [
@@ -1126,5 +1334,12 @@
     "미확보는 제공 자료 안에서 연결하지 못했다는 뜻입니다. 게임 전체에 자료가 존재하지 않는다는 증거가 아닙니다.",
     "등록·실물 객체·공개 파생본·연구용 규칙 투영·실제 플레이 관측을 서로 구분합니다.",
     "원본 APK·Lua 전문·전체 서사·원본 메시·전체 맵·개인 플레이 데이터는 공개하지 않습니다."
-  ]
+  ],
+  "factoryObservationSearch": {
+    "status": "metadata-only-no-direct-candidate",
+    "newObservedFactoryActions": 0,
+    "nativeFramesReviewed": 0,
+    "scope": "기존110영상 시간순 장부와 자료 정리의 직접 공장/보관함 태그 검색. 직접 후보가 없어 추정 영상 세 개를 임의로 선정하지 않았다.",
+    "boundary": "전체 영상에 공장 장면이 없다는 판정이 아니며, 새 원작 사용 표본은 미확인이다."
+  }
 }

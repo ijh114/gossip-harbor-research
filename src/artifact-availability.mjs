@@ -1,6 +1,6 @@
 const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const STATUS_LABELS = Object.freeze({missing:'자료 미확보','registered-only':'등록만 확인',curated:'선별 자료 있음','research-projection':'연구용 투영'});
-const GROUP_LABELS = Object.freeze({scene:'과제·스토리',decoration:'장식 후보',event:'이벤트', 'base-item':'기본 타입'});
+const GROUP_LABELS = Object.freeze({scene:'과제·스토리',decoration:'장식 후보',event:'이벤트',factory:'생성기 공장', 'base-item':'기본 타입'});
 const safeTarget = value => typeof value === 'string' && /^#[a-z0-9-]+(?:\?[a-z0-9_=&%.-]*)?$/i.test(value) ? value : null;
 const normalizedFilter = filter => typeof filter === 'string' ? {status:filter} : filter && typeof filter === 'object' ? filter : {};
 const ledgerData = data => data?.artifactAvailability ?? data;

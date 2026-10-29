@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "evidenceType": "packaged-static-projection",
+  "scope": "Six factory groups and 23 fragment types. Pure research transaction plans; no original game runtime, server snapshot, factory ownership, or account data.",
+  "serverControl": "generator_factory",
+  "serverMissingDefault": false,
+  "groups": [
+    {
+      "targetType": "104",
+      "chainId": "1",
+      "targetLevel": 4,
+      "targetScore": 8,
+      "fragments": [
+        {
+          "type": "101",
+          "chainId": "1",
+          "level": 1,
+          "points": 1
+        },
+        {
+          "type": "102",
+          "chainId": "1",
+          "level": 2,
+          "points": 2
+        },
+        {
+          "type": "103",
+          "chainId": "1",
+          "level": 3,
+          "points": 4
+        }
+      ]
+    },
+    {
+      "targetType": "404",
+      "chainId": "4",
+      "targetLevel": 4,
+      "targetScore": 8,
+      "fragments": [
+        {
+          "type": "401",
+          "chainId": "4",
+          "level": 1,
+          "points": 1
+        },
+        {
+          "type": "402",
+          "chainId": "4",
+          "level": 2,
+          "points": 2
+        },
+        {
+          "type": "403",
+          "chainId": "4",
+          "level": 3,
+          "points": 4
+        }
+      ]
+    },
+    {
+      "targetType": "705",
+      "chainId": "7",
+      "targetLevel": 5,
+      "targetScore": 16,
+      "fragments": [
+        {
+          "type": "701",
+          "chainId": "7",
+          "level": 1,
+          "points": 1
+        },
+        {
+          "type": "702",
+          "chainId": "7",
+          "level": 2,
+          "points": 2
+        },
+        {
+          "type": "703",
+          "chainId": "7",
+          "level": 3,
+          "points": 4
+        },
+        {
+          "type": "704",
+          "chainId": "7",
+          "level": 4,
+          "points": 8
+        }
+      ]
+    },
+    {
+      "targetType": "1006",
+      "chainId": "10",
+      "targetLevel": 6,
+      "targetScore": 32,
+      "fragments": [
+        {
+          "type": "1001",
+          "chainId": "10",
+          "level": 1,
+          "points": 1
+        },
+        {
+          "type": "1002",
+          "chainId": "10",
+          "level": 2,
+          "points": 2
+        },
+        {
+          "type": "1003",
+          "chainId": "10",
+          "level": 3,
+          "points": 4
+        },
+        {
+          "type": "1004",
+          "chainId": "10",
+          "level": 4,
+          "points": 8
+        },
+        {
+          "type": "1005",
+          "chainId": "10",
+          "level": 5,
+          "points": 16
+        }
+      ]
+    },
+    {
+      "targetType": "1205",
+      "chainId": "12",
+      "targetLevel": 5,
+      "targetScore": 16,
+      "fragments": [
+        {
+          "type": "1201",
+          "chainId": "12",
+          "level": 1,
+          "points": 1
+        },
+        {
+          "type": "1202",
+          "chainId": "12",
+          "level": 2,
+          "points": 2
+        },
+        {
+          "type": "1203",
+          "chainId": "12",
+          "level": 3,
+          "points": 4
+        },
+        {
+          "type": "1204",
+          "chainId": "12",
+          "level": 4,
+          "points": 8
+        }
+      ]
+    },
+    {
+      "targetType": "1705",
+      "chainId": "17",
+      "targetLevel": 5,
+      "targetScore": 16,
+      "fragments": [
+        {
+          "type": "1701",
+          "chainId": "17",
+          "level": 1,
+          "points": 1
+        },
+        {
+          "type": "1702",
+          "chainId": "17",
+          "level": 2,
+          "points": 2
+        },
+        {
+          "type": "1703",
+          "chainId": "17",
+          "level": 3,
+          "points": 4
+        },
+        {
+          "type": "1704",
+          "chainId": "17",
+          "level": 4,
+          "points": 8
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "maxCountPerType": 100000,
+    "maxScore": 1000000000,
+    "maxRecords": 100000
+  },
+  "fields": [
+    {
+      "path": "mode",
+      "label": "실행 경계",
+      "kind": "string",
+      "default": "research"
+    },
+    {
+      "path": "serverEnabled",
+      "label": "generator_factory 서버 플래그 가정",
+      "kind": "boolean",
+      "default": null
+    },
+    {
+      "path": "unlockedTypes",
+      "label": "여섯 목표 타입 해금 스냅샷",
+      "kind": "object",
+      "default": null
+    },
+    {
+      "path": "board",
+      "label": "UID가 포함된 현재 보드",
+      "kind": "array",
+      "default": null
+    },
+    {
+      "path": "inventory",
+      "label": "UID가 포함된 현재 일반 창고",
+      "kind": "array",
+      "default": null
+    },
+    {
+      "path": "bubbles",
+      "label": "별도 버블 상태",
+      "kind": "object",
+      "default": null
+    }
+  ],
+  "boundaries": [
+    "서버 플래그 기본값 false는 원문 기본 처리이며, 라이브 서버 활성 여부는 확인하지 않았다. 연구 입력의 미확인(null/누락)을 false나 true로 간주하지 않는다.",
+    "여섯 목표 타입은 각각의 체인 최고 레벨이 아니라 공장 보상 기준 타입이다. 체인의 나머지 상위 생성기 레벨을 공장 목표로 대체하지 않는다.",
+    "StoreItem은 조각 수량만 증가한다. AddScore는 보관 조각 1개를 소비한다. TryReward 1회는 목표 점수 1회분만 차감해 생성기 1개를 Type2로 내보낸다.",
+    "CanMerge와 기본 탭 선택은 보관 조각의 잠재 점수까지 포함한다. 실제 획득은 이미 합산된 score에만 근거한다.",
+    "반환은 공장 폐쇄 시 _TryReturnItem의 일괄 정산이다. 개별 조각 인출이나 사용자 지정 반환은 원문에서 확인되지 않았다.",
+    "반환 시 수량·점수 분해는 보존한다. 원문의 pairs 순서가 미확인이라 웹 출력은 공장 목록 순으로 정렬하며 원작 대기열 순서를 주장하지 않는다.",
+    "UID 영수증·sequence·질량 보존 검사와 명시적 연구 모드는 웹 원자성 보호이다. 원작 genData 저장 형식이나 서버 권한 검사를 재현한 것으로 제시하지 않는다.",
+    "반환 후 원작 m_data는 비우지만 본 웹 감사장부는 중복 UID 방지를 위해 보존한다. 한 번 확인한 전체 해금의 캐시는 유지한다. 순수 조회는 상태를 변경하지 않으므로 화면 열기·설정 적용 시 observe-open 계획을 확정해 IsOpen의 캐시 관측을 보존한다.",
+    "공장 보관 데이터가 없는 구형 저장은 허용하지만 null·손상된 저장은 빈 데이터로 자동 폐기하지 않는다. 슬롯·조각 소유·공장 재료를 기본 지급하지 않는다.",
+    "수량·점수·감사장부 한도는 웹 저장 보호 한도이며 원작 경제 한도가 아니다.",
+    "CheckCobweb의 공장 개방 시 상자·거미줄 변환과 추가 보상, 원작 0.4초 비행·슬라이더·0.5초 입력 잠금·음성/진동, LateInit/LoginFinished 자동 호출 시점은 별도 통합 범위이다."
+  ],
+  "sources": [
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/ItemGeneratorFactoryModel.lua",
+      "sha256": "bfcea52b9c5058e056679cbe12a0ee7624e6f142afd834b4b8e06609897ce5d7",
+      "ranges": [
+        "3–32",
+        "102–108",
+        "170–226",
+        "228–300",
+        "310–390"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemGeneratorFactory.lua",
+      "sha256": "54611b3307f19ec901c5d78a7aa8040c2155b24ba04eacbb92b8bc88253324fc",
+      "ranges": [
+        "12–26"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+      "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+      "ranges": [
+        "891–906",
+        "924–943",
+        "966–986"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemDataModel.lua",
+      "sha256": "7a199a3ffea516f08a29a765cb030f630161cc4b631d8c5d773087b8d4c72a26",
+      "ranges": [
+        "8–24",
+        "216–227",
+        "320–332",
+        "342–355"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/InventoryFactoryItem.lua",
+      "sha256": "e7538f487b45d7cefa885c7d735208c07e6265067c6703c525609d84bc112e1c",
+      "ranges": [
+        "24–45"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GeneratorFactoryDetailCell.lua",
+      "sha256": "91eee6a53b01027f337227c2aafc0910d1d5688e58b477afce92d65dc903c823",
+      "ranges": [
+        "40–81",
+        "92–144"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GeneratorFactoryContent.lua",
+      "sha256": "5da80e69b0a1ebe7c83313e68acfe7cb27f067d710b611a9face04e7842b3103",
+      "ranges": [
+        "4–42"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GenFactoryItemCell.lua",
+      "sha256": "08ca4d71392ac9479d30689c9a6a277bc261dc355acab9e617cf8ffed7279f9c",
+      "ranges": [
+        "17–44"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/InventoryCell.lua",
+      "sha256": "036ad415064eaf678f7685655b10ec17d5641f8e99365b009891890d2f3c860f",
+      "ranges": [
+        "4–34"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/ItemCacheModel.lua",
+      "sha256": "2d8233814e1bd76a393c8eec3d6b87cbf3297a421dc93280269029533377d5f5",
+      "ranges": [
+        "1–5",
+        "34–50"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+      "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+      "ranges": [
+        "21–62",
+        "72–149"
+      ],
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/config-tables/ItemModelConfig.json",
+      "sha256": "9c9463a970e3097beff553cf08e0c1a37d5e83ecc18711a1d5a3928ddfc86eb7",
+      "ranges": [
+        "1–25"
+      ],
+      "evidenceType": "packaged-static-configuration"
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+      "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+      "ranges": [
+        "3–27",
+        "381–405",
+        "746–778",
+        "1063–1103",
+        "1250–1282",
+        "1742–1774"
+      ],
+      "evidenceType": "packaged-static-code"
+    }
+  ],
+  "revision": "9d2a433b9c6a95beb29aa84c2c838ee5ec1c4fc3ef11a77431106f6cdc9c5e65"
+}

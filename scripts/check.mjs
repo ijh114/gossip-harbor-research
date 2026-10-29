@@ -84,7 +84,16 @@ const more=JSON.parse(await readFile('dist/data/tutorial-more.json','utf8'));
 const skins=JSON.parse(await readFile('dist/data/skin-lab.json','utf8'));
 const observation=JSON.parse(await readFile('dist/data/bm-observation-audit.json','utf8'));
 const availability=JSON.parse(await readFile('dist/data/artifact-availability.json','utf8'));
-if(more.guides.length!==5||skins.groups.flatMap(g=>g.skins).length!==26||observation.rows.length!==54||availability.entries.length!==16)throw new Error('Incomplete 1-4 followup data');
+if(more.guides.length!==5||skins.groups.flatMap(g=>g.skins).length!==26||observation.rows.length!==54||availability.entries.length!==17)throw new Error('Incomplete 1-4 followup data');
 for(const m of observation.mediaEntries){if(!validMedia(m))throw new Error('Invalid BM excerpt '+m.key);const bytes=await readFile(path.join('dist',m.src));if(createHash('sha256').update(bytes).digest('hex')!==m.sha256)throw new Error('BM excerpt hash mismatch '+m.key);if(m.poster)await stat(path.join('dist',m.poster));}
 if(observation.summary.automaticReappearanceConfirmed!==0||observation.summary.expiryTransitionsConfirmed!==0||availability.summary.newlyRecoveredAssets!==0)throw new Error('Unreviewed evidence upgrade');
-console.log('Verified 10 additional research guides (5 play-linked), selected26 Skin identities, 54 BM evidence cells and 16 availability records.');
+console.log('Verified 10 additional research guides (10 explicit-context play-linked), selected26 Skin identities, 54 BM evidence cells and 17 availability records.');
+
+const lifecycle=JSON.parse(await readFile('dist/data/bm-lifecycle.json','utf8'));
+const factory=JSON.parse(await readFile('dist/data/factory-play.json','utf8'));
+const progression=JSON.parse(await readFile('dist/data/progression-validation.json','utf8'));
+if(lifecycle.presets.length!==3||lifecycle.presets.reduce((sum,p)=>sum+p.events.length,0)!==27||lifecycle.originalRuntimeObserved!==false)throw new Error('Invalid BM lifecycle boundary');
+if(factory.groups.length!==6||factory.groups.flatMap(g=>g.fragments).length!==23||factory.sources.length!==13)throw new Error('Incomplete factory source projection');
+if(progression.configRevision!==play.revision||progression.continuation.final.level!==26||progression.continuation.final.quests!==210||progression.continuation.points.length!==210||progression.seedComparison.seeds.length!==3)throw new Error('Stale continuation/seed comparison');
+if(followup.tutorialExtension.playConnected!==10||followup.followup2to5?.factoryCuratedImages!==29)throw new Error('Stale followup status');
+console.log('Verified 3 BM lifecycle scenarios / 27 events, factory6/23, Lv26/210-task continuation and 3 Lv21 seed runs.');

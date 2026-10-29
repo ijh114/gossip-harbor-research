@@ -6,7 +6,7 @@ export const SPACES=[
  {id:'flowers',name:'실내 화분',study:'scene-indoor-planters',before:'capture:scene-indoor-planter-before',after:'capture:scene-indoor-planter-after'},
  {id:'furniture',name:'낮은 가구',study:'scene-room-furniture',before:'capture:scene-room-table-before',after:'capture:scene-room-table-after'}
 ];
-const phases=new Set(['opening','map','board','task-story','task-building','task-reward','space-choice','space-building','decor','decor-edit','skins']);
+const phases=new Set(['opening','map','board','task-story','task-building','task-reward','space-choice','space-building','decor','decor-edit','skins','factory']);
 const tasks=new Set(['task-story','task-building','task-reward']);
 const validIndex=n=>Number.isSafeInteger(n)&&n>=0&&n<=5000;
 export function screenFlow(s,c){
@@ -29,10 +29,11 @@ export function screenFlow(s,c){
   else if(committed)f.phase='task-reward';
   else if(f.phase==='task-reward')f.phase='task-story';
  }
- if(!tasks.has(f.phase)&&!['opening','decor','decor-edit','skins'].includes(f.phase)&&!f.phase.startsWith('space-'))f.phase=base;
+ if(!tasks.has(f.phase)&&!['opening','decor','decor-edit','skins','factory'].includes(f.phase)&&!f.phase.startsWith('space-'))f.phase=base;
  if(f.phase==='decor'&&s.stage!=='home')f.phase=base;
  if(f.phase==='decor-edit'&&(s.stage!=='home'||s.pendingQuest||s.modal))f.phase=base;
  if(f.phase==='skins'&&(s.stage!=='home'||s.pendingQuest||s.modal))f.phase=base;
+ if(f.phase==='factory'&&(s.stage!=='play'||s.modal||s.toolPending))f.phase=base;
  if(f.phase.startsWith('space-')&&s.stage!=='home')f.phase=base;
  return f;
 }
@@ -43,7 +44,7 @@ export function beginTaskScene(s,c){
  if(f.task?.id!==q.id||f.task?.index!==s.questsDone)f.task={id:q.id,index:s.questsDone};f.phase='task-story';return true;
 }
 export function taskForFlow(s,c){const f=screenFlow(s,c);return f.task?c.quests[f.task.index]:null;}
-export function flowBlocksInput(s,c){return ['opening','task-story','task-building','task-reward','space-choice','space-building','decor','decor-edit','skins'].includes(screenFlow(s,c).phase);}
+export function flowBlocksInput(s,c){return ['opening','task-story','task-building','task-reward','space-choice','space-building','decor','decor-edit','skins','factory'].includes(screenFlow(s,c).phase);}
 export function finishTaskScene(s,c){const f=screenFlow(s,c);if(!f.task||s.questsDone!==f.task.index+1||s.pendingQuest)return false;f.phase='task-reward';return true;}
 export function leaveScene(s,c){const f=screenFlow(s,c);f.phase=s.stage==='home'?'map':'board';if(!s.pendingQuest||f.task?.id!==s.pendingQuest.id)f.task=null;}
 

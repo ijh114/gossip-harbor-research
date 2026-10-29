@@ -13,8 +13,10 @@ const sceneConfig=JSON.parse(await readFile(new URL('../src/data/scene-config.js
 const activityConfig=JSON.parse(await readFile(new URL('../src/data/activity-play.json',import.meta.url),'utf8'));
 const tutorialConfig=JSON.parse(await readFile(new URL('../src/data/tutorial-extension.json',import.meta.url),'utf8'));
 const skinConfig=JSON.parse(await readFile(new URL('../src/data/skin-lab.json',import.meta.url),'utf8'));
+const tutorialMoreConfig=JSON.parse(await readFile(new URL('../src/data/tutorial-more.json',import.meta.url),'utf8'));
+const factoryConfig=JSON.parse(await readFile(new URL('../src/data/factory-play.json',import.meta.url),'utf8'));
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-async function harness(run,{saved=null,raw=null,reduced=true,scenes=false,activities=false,tutorials=false,skins=false}={}){
+async function harness(run,{saved=null,raw=null,reduced=true,scenes=false,activities=false,tutorials=false,skins=false,more=false,factory=false}={}){
  const dom=new JSDOM('<main></main>',{url:'https://example.test/project/#experience',pretendToBeVisual:true}),w=dom.window,prior={window:globalThis.window,document:globalThis.document};
  Object.assign(globalThis,{window:w,document:w.document});
  w.matchMedia=()=>({matches:reduced});w.HTMLElement.prototype.scrollIntoView=()=>{};
@@ -25,7 +27,7 @@ async function harness(run,{saved=null,raw=null,reduced=true,scenes=false,activi
  if(raw)w.localStorage.setItem(SAVE_KEY,raw);
  let controller,skin='game';
  function render(){controller.beforeRender();w.document.querySelector('main').innerHTML=controller.render(skin);controller.afterMount();}
- const create=()=>{controller=createPlayController({getData:()=>({playConfig:config,media,refinement,...(scenes?{sceneConfig}:{}),...(activities?{activityConfig}:{}),...(tutorials?{tutorialConfig}:{}),...(skins?{skinConfig}:{})}),render,download(){}});return controller;};
+ const create=()=>{controller=createPlayController({getData:()=>({playConfig:config,media,refinement,...(scenes?{sceneConfig}:{}),...(activities?{activityConfig}:{}),...(tutorials?{tutorialConfig}:{}),...(skins?{skinConfig}:{}),...(more?{tutorialMoreConfig}:{}),...(factory?{factoryConfig}:{})}),render,download(){}});return controller;};
  create();render();
  const read=()=>JSON.parse(w.localStorage.getItem(SAVE_KEY)).state;
  const act=(action,value)=>controller.handle(action,value);
@@ -159,4 +161,12 @@ test('synthetic touch drag interruption removes the ghost and cannot move or mer
 test('defined corrupt linked-guide and Skin saves stay intact until an explicit backed-up reset',async()=>{
  const saved=createPlay(config);saved.stage='home';saved.tutorialBridge=null;saved.skinLab=null;saved.wallet.coins=37;
  await harness(async({w,act,read,screen})=>{await pause(380);act('game-continue');assert.match(w.document.body.textContent,/연결 안내 저장을 보존/);act('guide:configure');assert.equal(read().tutorialBridge,null);act('game-decor-open');act('game-skins-open');assert.equal(screen(),'skins');assert.match(w.document.body.textContent,/장식 연구 저장을 보존/);act('game-skins-close');assert.equal(screen(),'map');act('guide:reset-invalid');assert.equal(JSON.parse(w.localStorage.getItem(SAVE_KEY+'-previous')).state.tutorialBridge,null);act('skin:reset-invalid');assert.equal(JSON.parse(w.localStorage.getItem(SAVE_KEY+'-previous')).state.skinLab,null);assert.equal(read().wallet.coins,37);},{saved,tutorials:true,skins:true});
+});
+test('newer play-linked guide uses actual successful boost actions, blocks unrelated input and follows source restore completion',async()=>{
+ const saved=createPlay(config);saved.stage='play';
+ await harness(async({w,act,read,recreate})=>{await pause(380);act('game-continue');assert.equal(w.document.querySelector('[data-guide-select]').options.length,10);w.document.querySelector('[data-guide-select]').value='tutorial_energyBoosteight_start';act('guide:configure');act('guide:event','0');assert.equal(read().tutorialBridge.engine.active.phase,'boost-highlight');const generated=read().wallet.generated;act('generate');assert.equal(read().wallet.generated,generated);assert.match(w.document.querySelector('.game-feedback').textContent,/대상 조작/);act('set-boost',1);assert.equal(read().tutorialBridge.engine.completed.includes('tutorial_energyBoosteight_start'),true);act('guide:reset');act('guide:event','0');recreate();await pause(380);assert.equal(read().tutorialBridge.engine.active,null);assert.equal(read().tutorialBridge.engine.completed.includes('tutorial_energyBoosteight_start'),true);},{saved,tutorials:true,more:true});
+});
+test('factory screen transfers real pieces, converts points, grants one queued generator, restores and returns to the board',async()=>{
+ const saved=createPlay(config);saved.stage='play';const indexes=[];for(let i=0;i<2;i++){const index=saved.board.findIndex(x=>x===null);saved.board[index]={uid:saved.nextUid++,type:'103',cover:null};indexes.push(index);}
+ await harness(async({w,act,read,recreate,screen})=>{await pause(380);act('game-continue');act('game-factory-open');assert.equal(screen(),'factory');w.document.querySelector('[data-factory-flag]').value='true';w.document.querySelector('[data-factory-assume]').checked=true;act('factory:configure');assert.equal(read().factoryPlay.unlockedLatched,true);const wallet=structuredClone(read().wallet);for(const index of indexes){const uid=read().board[index].uid;act('factory:store',`board:${index}:${uid}`);assert.equal(read().board[index],null);act('factory:add-score','104:103');}act('factory:reward','104');assert.equal(read().queue.find(q=>q.type==='104').count,1);assert.deepEqual(read().wallet,wallet);recreate();await pause(380);act('game-continue');assert.equal(screen(),'factory');assert.equal(read().factoryPlay.genData['104'].score,0);act('game-factory-close');assert.equal(screen(),'board');},{saved,factory:true});
 });

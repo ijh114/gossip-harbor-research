@@ -1,0 +1,25 @@
+import {createFactoryPlay,factoryPlan,factoryView,validFactoryPlay} from './factory-play.mjs';
+import {validPlay} from './play-model.mjs';
+const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
+const fail=message=>({ok:false,message});
+export const createFactoryInputs=()=>({schema:1,mode:'research',serverEnabled:null,unlockMode:'main'});
+export function validFactoryInputs(x){return object(x)&&x.schema===1&&x.mode==='research'&&(x.serverEnabled===null||typeof x.serverEnabled==='boolean')&&['main','assumed'].includes(x.unlockMode)&&Object.keys(x).every(k=>['schema','mode','serverEnabled','unlockMode'].includes(k));}
+export function factoryContext(s,c){const input=s.factoryInputs===undefined?createFactoryInputs():s.factoryInputs;if(!validFactoryInputs(input))return null;return {mode:'research',serverEnabled:input.serverEnabled,unlockedTypes:Object.fromEntries(c.groups.map(g=>[g.targetType,input.unlockMode==='assumed'?true:object(s.itemUnlocks)?s.itemUnlocks[g.targetType]===true:null])),board:s.board,inventory:s.inventory?.items||[],bubbles:s.bubbles||{}};}
+export function validFactoryIntegration(s,c){if(s.factoryInputs!==undefined&&!validFactoryInputs(s.factoryInputs))return false;if(s.factoryPlay===undefined)return true;if(!validFactoryPlay(s.factoryPlay,c))return false;const uids=new Set([...(s.board||[]),...(s.inventory?.items||[])].filter(Boolean).map(x=>x.uid));return !s.factoryPlay.receipts.some(r=>uids.has(r.uid));}
+function finish(draft,c,playConfig,message,plan){if(!validPlay(draft,playConfig)||!validFactoryIntegration(draft,c))return fail('공장 변경 후 전체 상태 검사가 통과하지 않아 기존 기록을 유지했습니다.');return {ok:true,state:draft,message,plan};}
+export function configureFactoryTransaction(s,input,c,{playConfig}){
+ if(!validPlay(s,playConfig)||!validFactoryIntegration(s,c)||!validFactoryInputs(input))return fail('공장·연구 설정 저장을 보존 중입니다. JSON으로 보관한 뒤 명시적으로 초기화하세요.');
+ const draft=structuredClone(s);draft.factoryInputs=structuredClone(input);if(draft.factoryPlay===undefined)draft.factoryPlay=createFactoryPlay(c);const context=factoryContext(draft,c),view=factoryView(draft.factoryPlay,context,c);draft.generatorFactoryOpen=view.state==='open'?true:view.state==='closed'?false:null;
+ if(view.state==='open'&&!draft.factoryPlay.unlockedLatched){const p=factoryPlan(draft.factoryPlay,{type:'observe-open'},context,c);if(!p.ok)return p;draft.factoryPlay=p.nextState;}
+ return finish(draft,c,playConfig,'공장 연구 조건을 적용했습니다. 해금 가정은 원작 계정 소유·서버 설정과 구분합니다.');
+}
+export function commitFactoryTransaction(s,action,c,{playConfig}){
+ if(!validPlay(s,playConfig)||!validFactoryIntegration(s,c))return fail('기존 메인·공장 저장을 보존했습니다. 상태를 보관한 뒤 공장 연구만 초기화하세요.');
+ const current=s.factoryPlay===undefined?createFactoryPlay(c):s.factoryPlay,context=factoryContext(s,c);if(!context)return fail('공장 연구 설정을 먼저 확인하세요.');
+ const plan=factoryPlan(current,action,context,c);if(!plan.ok)return plan;if(plan.expectedSequence!==current.sequence)return fail('공장 기록 순서가 변경됐습니다. 다시 선택하세요.');
+ const draft=structuredClone(s);
+ for(const r of plan.removals){const cells=r.source==='board'?draft.board:draft.inventory.items,cell=cells[r.index];if(!cell||cell.uid!==r.uid||cell.type!==r.type)return fail('이동할 아이템이 바뀌어 공장 보관을 취소했습니다.');if(r.source==='board'){cells[r.index]=null;if(draft.selected===r.index)draft.selected=null;}else cells.splice(r.index,1);if(draft.generatorState)delete draft.generatorState[r.uid];}
+ for(const emitted of plan.emissions){if(!playConfig.items.some(i=>i.type===emitted.type)||emitted.cacheType!==2||!Number.isSafeInteger(emitted.count)||emitted.count<=0||emitted.count>100000)return fail('공장 보상 타입·수량 또는 웹 대기열 한도를 확인하세요.');const existing=draft.queue.find(q=>q.type===emitted.type&&q.cacheType===2&&q.origin===undefined);if(existing){if(existing.count+emitted.count>100000)return fail('대기열 수량 한도를 넘어 기존 공장과 대기열을 유지했습니다.');existing.count+=emitted.count;}else{if(draft.queue.length>=1000)return fail('대기열1000칸 한도에 도달해 공장 보상을 확정하지 않았습니다.');draft.queue.unshift({...emitted});}}
+ draft.factoryPlay=plan.nextState;draft.generatorFactoryOpen=factoryView(draft.factoryPlay,factoryContext(draft,c),c).state==='open';
+ return finish(draft,c,playConfig,plan.message,plan);
+}

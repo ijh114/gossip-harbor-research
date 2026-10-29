@@ -38,7 +38,7 @@ test('historical evidence preserves unknown build identity, extraction ranges an
 });
 
 test('published work status matches current configuration, replay scope and media origins without stale implementation gaps',async()=>{
- const [config,progress,audit]=await Promise.all(['play-config.json','play-progress.json','media-audit.json'].map(read));
+ const [config,progress,audit,extended]=await Promise.all(['play-config.json','play-progress.json','media-audit.json','progression-validation.json'].map(read));
  const work=new Map(followup.work.map(row=>[row.step,row]));
  assert.equal(work.size,followup.work.length);
  for(const row of followup.work){assert.ok(['partial','held','waiting','working','done'].includes(row.state),row.step+' has a rendered status');assert.ok(row.done);assert.ok(row.remaining);}
@@ -52,8 +52,8 @@ test('published work status matches current configuration, replay scope and medi
  });
  const growth=work.get('맵·성장 연결');
  assert.deepEqual(growth.metrics,{quests:config.quests.length,levelRows:config.levels.length,naturalOrders:progress.natural.final.orders,
-  naturalQuests:progress.natural.final.quests,naturalLevel:progress.natural.final.level,fixedDone:progress.fixed16.final.fixedDone});
- assert.match(growth.remaining,/Lv21 이후/);
+  naturalQuests:progress.natural.final.quests,naturalLevel:progress.natural.final.level,fixedDone:progress.fixed16.final.fixedDone,extendedNaturalLevel:extended.continuation.final.level,extendedNaturalQuests:extended.continuation.final.quests,extendedNaturalOrders:extended.continuation.final.orders,comparedSeeds:extended.seedComparison.seeds.map(r=>r.seed)});
+ assert.match(growth.remaining,/Lv26 이후/);
  const images=work.get('APK 이미지·UI 자산').metrics;
  assert.deepEqual(images,{baseTypes:config.items.length,available:config.imageCoverage.available,variants:config.imageCoverage.variants,unavailable:config.items.length-config.imageCoverage.available});
  const observed=media.entries.filter(row=>row.origin==='observed-user-capture'),replays=media.entries.filter(row=>row.origin==='apk-rule-replay');

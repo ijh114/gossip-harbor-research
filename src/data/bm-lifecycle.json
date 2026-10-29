@@ -1,0 +1,911 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-29",
+  "title": "BM 수명주기 · 기존 웹 모델 시간순 검증",
+  "mode": "research",
+  "targetApkVersion": "4.10.5",
+  "captureVersion": null,
+  "originalRuntimeObserved": false,
+  "presets": [
+    {
+      "id": "duration-boundaries",
+      "label": "상품·그룹·쿨다운 경계",
+      "mode": "research",
+      "summary": "상품60초, 그룹120초, 쿨다운60초라는 명시 연구 입력이다. 정확 만료 경계·기존상품 재선택·미지원구매를 기록한다.",
+      "initial": {
+        "wallet": {
+          "time": 0,
+          "energy": 0,
+          "gems": 200,
+          "coins": 0,
+          "level": 3,
+          "price": 20,
+          "freeUsed": 1,
+          "freeTotal": 1,
+          "recoveryRemainder": 0
+        }
+      },
+      "sourceInputs": {
+        "lateInited": true
+      },
+      "input": {
+        "energyGift": {
+          "enabled": true,
+          "groupDuration": 2,
+          "groupCD": 1,
+          "giftDuration": 1,
+          "triggerEnergyPrice": 20,
+          "dailyTriggerUpper": 3,
+          "poptype": 1
+        }
+      },
+      "events": [
+        {
+          "id": "create",
+          "at": 0,
+          "kind": "commerceAction",
+          "label": "부족 분기·신규 생성",
+          "action": "commerce-trigger",
+          "value": "lack"
+        },
+        {
+          "id": "close-existing",
+          "at": 10,
+          "kind": "commerceAction",
+          "label": "후속 조건으로 기존 상품 선택",
+          "action": "commerce-trigger",
+          "value": "close"
+        },
+        {
+          "id": "item-equality",
+          "at": 60,
+          "kind": "probe",
+          "label": "상품 종료시각과 정확히 같음"
+        },
+        {
+          "id": "item-after",
+          "at": 61,
+          "kind": "probe",
+          "label": "상품 종료시각 다음 초"
+        },
+        {
+          "id": "regenerate",
+          "at": 61,
+          "kind": "commerceAction",
+          "label": "그룹 안 상품 재생성",
+          "action": "commerce-trigger",
+          "value": "lack"
+        },
+        {
+          "id": "group-boundary",
+          "at": 120,
+          "kind": "probe",
+          "label": "그룹 종료·CoolingDown 진입"
+        },
+        {
+          "id": "second-item-equality",
+          "at": 121,
+          "kind": "probe",
+          "label": "두 번째 상품의 정확 만료 경계"
+        },
+        {
+          "id": "cooldown-boundary",
+          "at": 180,
+          "kind": "probe",
+          "label": "그룹 쿨다운 종료"
+        },
+        {
+          "id": "research-drain",
+          "at": 181,
+          "kind": "playAction",
+          "label": "연구 보조로 에너지0 입력",
+          "action": "aid-energy"
+        },
+        {
+          "id": "third-create",
+          "at": 181,
+          "kind": "commerceAction",
+          "label": "새 그룹·세 번째 생성",
+          "action": "commerce-trigger",
+          "value": "lack"
+        },
+        {
+          "id": "quota-existing",
+          "at": 182,
+          "kind": "commerceAction",
+          "label": "생성상한 소진 뒤 기존 상품 선택",
+          "action": "commerce-trigger",
+          "value": "close"
+        },
+        {
+          "id": "purchase-unsupported",
+          "at": 182,
+          "kind": "commerceAction",
+          "label": "EnergyGift IAP 요청 미지원",
+          "action": "commerce-purchase-energy",
+          "value": "energy-gift"
+        },
+        {
+          "id": "purchase-duplicate",
+          "at": 182,
+          "kind": "commerceAction",
+          "label": "같은 미지원 요청 반복·무지급",
+          "action": "commerce-purchase-energy",
+          "value": "energy-gift"
+        }
+      ]
+    },
+    {
+      "id": "day-and-config",
+      "label": "일 경계와 같은 그룹 설정 변경",
+      "mode": "research",
+      "summary": "86390초 시작·그룹5분·상한1을 가정한다. 날짜는 연구 타임스탬프이며 한국 자정이나 실계정이 아니다.",
+      "initial": {
+        "wallet": {
+          "time": 86390,
+          "energy": 0,
+          "gems": 200,
+          "coins": 0,
+          "level": 3,
+          "price": 20,
+          "freeUsed": 1,
+          "freeTotal": 1,
+          "recoveryRemainder": 0
+        }
+      },
+      "sourceInputs": {
+        "lateInited": true
+      },
+      "input": {
+        "energyGift": {
+          "enabled": true,
+          "groupDuration": 5,
+          "groupCD": 2,
+          "giftDuration": 2,
+          "triggerEnergyPrice": 20,
+          "dailyTriggerUpper": 1,
+          "poptype": 1
+        }
+      },
+      "events": [
+        {
+          "id": "before-midnight",
+          "at": 86390,
+          "kind": "commerceAction",
+          "label": "일 경계10초 전 생성",
+          "action": "commerce-trigger",
+          "value": "lack"
+        },
+        {
+          "id": "day-probe",
+          "at": 86400,
+          "kind": "advanceClock",
+          "label": "정확86400초·probe 전 일별 갱신"
+        },
+        {
+          "id": "same-group-edit",
+          "at": 86400,
+          "kind": "commerceAction",
+          "label": "같은groupID라는 명시 가정의 임계값 변경",
+          "action": "commerce-input",
+          "value": {
+            "field": "energyGift.triggerEnergyPrice",
+            "value": 10
+          },
+          "sourceAssumption": {
+            "sameGroupID": true,
+            "md5Changed": true
+          }
+        },
+        {
+          "id": "recreate-after-edit",
+          "at": 86400,
+          "kind": "commerceAction",
+          "label": "변경 뒤 현재 웹의 새 생성",
+          "action": "commerce-trigger",
+          "value": "lack"
+        },
+        {
+          "id": "same-time-read",
+          "at": 86400,
+          "kind": "probe",
+          "label": "동일시각 읽기·추가tick 없음"
+        }
+      ]
+    },
+    {
+      "id": "followup-priority",
+      "label": "후속 우선순위·가격 미입력·쿨다운",
+      "mode": "research",
+      "summary": "Plenty/체인/주간 후보를 분석자가 활성으로 가정한다. 실제 서버 적격성과 화면 노출을 관측한 것이 아니다.",
+      "initial": {
+        "wallet": {
+          "time": 100,
+          "energy": 0,
+          "gems": 200,
+          "coins": 0,
+          "level": 3,
+          "price": 20,
+          "freeUsed": 1,
+          "freeTotal": 1,
+          "recoveryRemainder": 0
+        }
+      },
+      "sourceInputs": {
+        "lateInited": true
+      },
+      "input": {
+        "energyGift": {
+          "enabled": false
+        },
+        "candidates": {
+          "invite": false,
+          "gemOffer": false,
+          "plenty": true,
+          "chain": true,
+          "weekly": true,
+          "chainPrice": null,
+          "weeklyPrice": null,
+          "chainHasNextPayId": true
+        },
+        "more": {
+          "threshold": 20,
+          "cooldownMinutes": 1,
+          "nextChainPrice": null,
+          "canShowAfterClose": true,
+          "popupForLackingEnergy": true,
+          "hasServerTime": true
+        }
+      },
+      "events": [
+        {
+          "id": "plenty-first",
+          "at": 100,
+          "kind": "commerceAction",
+          "label": "Plenty가 먼저 선택됨",
+          "action": "commerce-trigger",
+          "value": "close"
+        },
+        {
+          "id": "cooldown-blocked",
+          "at": 101,
+          "kind": "commerceAction",
+          "label": "동일 일·쿨다운 차단",
+          "action": "commerce-trigger",
+          "value": "close"
+        },
+        {
+          "id": "disable-plenty",
+          "at": 160,
+          "kind": "commerceAction",
+          "label": "Plenty 비활성 가정",
+          "action": "commerce-input",
+          "value": {
+            "field": "candidates.plenty",
+            "value": false
+          }
+        },
+        {
+          "id": "prices-unknown",
+          "at": 160,
+          "kind": "commerceAction",
+          "label": "쿨다운 경계지만 두 가격 미입력",
+          "action": "commerce-trigger",
+          "value": "close"
+        },
+        {
+          "id": "set-chain-price",
+          "at": 161,
+          "kind": "commerceAction",
+          "label": "체인 기준가격 가정4.99",
+          "action": "commerce-input",
+          "value": {
+            "field": "candidates.chainPrice",
+            "value": 4.99
+          }
+        },
+        {
+          "id": "set-weekly-price",
+          "at": 161,
+          "kind": "commerceAction",
+          "label": "주간 기준가격 가정4.99",
+          "action": "commerce-input",
+          "value": {
+            "field": "candidates.weeklyPrice",
+            "value": 4.99
+          }
+        },
+        {
+          "id": "tie-chain",
+          "at": 161,
+          "kind": "commerceAction",
+          "label": "가격 동률이면 체인",
+          "action": "commerce-trigger",
+          "value": "close"
+        },
+        {
+          "id": "no-next-chain-payid-input",
+          "at": 222,
+          "kind": "commerceAction",
+          "label": "체인 다음 유료ID 없음 가정",
+          "action": "commerce-input",
+          "value": {
+            "field": "candidates.chainHasNextPayId",
+            "value": false
+          }
+        },
+        {
+          "id": "no-next-chain-payid",
+          "at": 222,
+          "kind": "commerceAction",
+          "label": "다음 유료ID 없으면 주간",
+          "action": "commerce-trigger",
+          "value": "close"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-CONFIG-LOAD",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+      "line_start": 27,
+      "line_end": 38,
+      "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "MD5 변경 때 energyGift[1]을 읽고 설정 검사를 호출한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "28:   local configMD5 = GM.ConfigModel:GetServerConfigMD5(ServerConfigKey.EnergyGift)\n31:     local energyConfig = (GM.ConfigModel:GetServerConfig(ServerConfigKey.EnergyGift) or Table.Empty)[1]\n37:     self:_CheckBundleConfigs()"
+    },
+    {
+      "id": "SRC-GROUP-TICK",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+      "line_start": 45,
+      "line_end": 62,
+      "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "group end 도달 시 CoolingDown; now>groupEnd+CD이면 직접 clear. CoolingDown에서는 now>=nextStateTime에 clear.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "51:   if nextStateTime ~= nil and curTime >= nextStateTime then\n53:       if curTime > nextStateTime + self.m_dataGroup:GetRefreshDuration() then\n56:         self.m_metaDBTable:Set(EBundleMetaKey.EnergyGroupState, BundleMetaDBColumnValue, EBundleEnergyState.CoolingDown)\n57:         self.m_metaDBTable:Set(EBundleMetaKey.EnergyNextStateTime, BundleMetaDBColumnValue, nextStateTime + self.m_dataGroup:GetRefreshDuration())\n59:     elseif self:_GetCurState() == EBundleEnergyState.CoolingDown then"
+    },
+    {
+      "id": "SRC-PRODUCT-ROTATION",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+      "line_start": 109,
+      "line_end": 121,
+      "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "현재 그룹 상품ID 행과 leftCount로 다음 상품 인덱스를 고르며 순환한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "114:       if self.m_dbTable:GetValue(bundleId, EBundleDBKey.DBColumnLeftCount, 0) == 0 then\n115:         curBundleIndex = index % #bundleIds + 1\n117:         curBundleIndex = index\n121:   return curBundleIndex ~= nil and self.m_dataGroup:GetConfigData(bundleIds[curBundleIndex]) or nil"
+    },
+    {
+      "id": "SRC-CREATE",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+      "line_start": 124,
+      "line_end": 148,
+      "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "첫 생성에서만 groupEnd를 고정하며, 매 상품 생성마다 itemEnd와 left1 및 일별 생성횟수를 기록한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "126:     if self:_GetCurState() == EBundleEnergyState.None then\n129:       self.m_metaDBTable:Set(EBundleMetaKey.EnergyNextStateTime, BundleMetaDBColumnValue, GM.GameModel:GetServerTime() + self.m_dataGroup:GetGroupLastDuration())\n139:         [EBundleDBKey.DBColumnLeftCount] = 1,\n141:         [EBundleDBKey.DBColumnLastTime] = GM.GameModel:GetServerTime() + self.m_dataGroup:GetBundleLastDuration(),\n147:     self.m_metaDBTable:Set(EBundleMetaKey.EnergyTriggerCount, BundleMetaDBColumnValue, self:_GetTriggerCount() + 1)"
+    },
+    {
+      "id": "SRC-CONFIG-IDENTITY",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+      "line_start": 152,
+      "line_end": 163,
+      "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "설정 groupID가 저장 groupID와 다를 때 clear/retrigger; 설정이 없으면 clear와 triggerCount 제거.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "154:     if self.m_dataGroup:GetGroupId() ~= self:GetGroupId() then\n155:       self:_ClearState()\n156:       self:Try2TriggerEnergyBundle()\n160:     self:_ClearState()\n161:     self.m_metaDBTable:Remove(EBundleMetaKey.EnergyTriggerCount)"
+    },
+    {
+      "id": "SRC-CREATE-GATES",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+      "line_start": 166,
+      "line_end": 201,
+      "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "LateInit 뒤 trigger 판정 시 일별 갱신을 시도하고 상한·쿨다운·무료·가격·기존상품·생성비용·ChainEnergy를 검사한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "167:   if not self.m_bLateInited then\n170:   self:_Try2UpdateTriggerCount()\n171:   if self.m_dataGroup == nil or self:_GetTriggerCount() >= self.m_dataGroup:GetTriggerMaxNum() then\n192:   if GM.ShopModel:IsChainEnergyOpen() then\n199:   if self:_NeedRefreshTriggerCount() then"
+    },
+    {
+      "id": "SRC-DAY-QUOTIENT",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+      "line_start": 223,
+      "line_end": 224,
+      "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "일별 갱신은 refreshTime과 serverTime의86400초 일 번호 불일치를 사용한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "224:   return self:_GetRefreshTime() // Sec2Day ~= GM.GameModel:GetServerTime() // Sec2Day"
+    },
+    {
+      "id": "SRC-VALID-ROW",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleManager.lua",
+      "line_start": 175,
+      "line_end": 187,
+      "sha256": "045765f5267b8aa157127bbd9ea20140f4af9259c6f5bd676b6e6494fe055455",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "행 존재·미만료·leftCount!=0이면 유효하다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "176:   if not self.m_bundleDataTable:HasRow(bundleId) then\n179:   if self:IsBundleDataExpired(bundleId) then\n183:   if leftCount == 0 then"
+    },
+    {
+      "id": "SRC-EXPIRY-STRICT",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleManager.lua",
+      "line_start": 213,
+      "line_end": 221,
+      "sha256": "045765f5267b8aa157127bbd9ea20140f4af9259c6f5bd676b6e6494fe055455",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "lastTime < serverTime일 때만 만료한다. 정확한 lastTime에서는 아직 미만료다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "214:   local lastTime = self:GetBundleExpireTime(bundleId)\n218:   if lastTime ~= INVALID_TIME and lastTime < GM.GameModel:GetServerTime() then\n219:     return true"
+    },
+    {
+      "id": "SRC-IAP-SUCCESS",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleManager.lua",
+      "line_start": 238,
+      "line_end": 258,
+      "sha256": "045765f5267b8aa157127bbd9ea20140f4af9259c6f5bd676b6e6494fe055455",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "IAP 성공 콜백에서 보상 Logic 지급 뒤 CostLeftCount 및 successCallback을 호출한다. 이 범위만으로 SDK/영수증 중복 방지를 증명할 수 없다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "252:     GM.InAppPurchaseModel:StartPurchase(purchaseId, function()\n254:       RewardApi.AcquireRewardsLogic(bundleData:GetGoods(), EPropertySource.Buy, EBIType.IAP, EGameMode.Main, CacheItemType.Type2)\n255:       self:CostLeftCount(bundleId)\n257:         successCallback(bundleInfo.rewards)"
+    },
+    {
+      "id": "SRC-LEFT-COST",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleManager.lua",
+      "line_start": 275,
+      "line_end": 286,
+      "sha256": "045765f5267b8aa157127bbd9ea20140f4af9259c6f5bd676b6e6494fe055455",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "유효 행의 양수 leftCount를 줄인 뒤 OnLeftCountCost 및 BundleDataRefreshed를 보낸다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "276:   if not self:IsBundleDataValid(bundleId) then\n280:   if 0 < leftCount then\n281:     leftCount = leftCount - 1\n283:     self:OnLeftCountCost(bundleId)"
+    },
+    {
+      "id": "SRC-RETRIGGER-HOOK",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleEnergyModel.lua",
+      "line_start": 65,
+      "line_end": 68,
+      "sha256": "96aa42ac0ea5e8158f794a637b4e4a4cb4cb84f62581ac4bf060cd2d06852157",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "해당 그룹 상품의 left 소비 이벤트가 새 생성 trigger를 다시 시도한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "66:   if self:GetBundleConfigData(bundleId) ~= nil then\n67:     self:Try2TriggerEnergyBundle()"
+    },
+    {
+      "id": "SRC-BUNDLE-CLOSE",
+      "path": "analysis/lua/Lua_Core/UI/Window/Bundle/BundleEnergyWindow.lua",
+      "line_start": 76,
+      "line_end": 85,
+      "sha256": "085f7780aa808b8356e56edaad970d508336fe3daa13c9d50ea864dbf2c2e346",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "미구매 EnergyBundle 닫기는 poptype별 기본충전 또는 후속 Plenty/체인/신주간 경로를 호출한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "78:   if not self.m_bBuySuccess then\n79:     if self.m_model == nil or not self.m_model:IsBundleWindowPopupAfterEnergyWindow() then\n80:       GM.ShopModel:OpenEnergyWindow(EnergyType.Main, self.m_popupForLackingEnergy)\n82:       EnergyWindowPopupHelper.TryPopGlobalEnergyGiftBundleChainAfterBundleEnergyWindow(self)"
+    },
+    {
+      "id": "SRC-MORE-GATE",
+      "path": "analysis/lua/Lua_Core/UI/UIFramework/EnergyWindowPopupHelper.lua",
+      "line_start": 23,
+      "line_end": 34,
+      "sha256": "2417400ae4f77332e68bba0df5a94dfe56c49ae56385ea22a7a6cd9b974ebe2f",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "후속 가격 임계와 분 단위 쿨다운은 서버시각과 일 경계 예외를 함께 검사한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "24:   local gemCostNum = GM.ConfigModel:GetGeneralConfByType(EGeneralConfType.NoEnergyGiftGem)\n25:   local popupCd = GM.ConfigModel:GetGeneralConfByType(EGeneralConfType.NoEnergyGiftCoolDown)\n26:   if gemCostNum and popupCd and gemCostNum <= GM.ShopModel:GetEnergyCostExcludeFree() and EnergyWindowPopupHelper._IsMoreBundleCdExpired(popupCd) then\n34:   return GM.GameModel:HasServerTime() and (nextPopupTime == 0 or nextPopupTime <= GM.GameModel:GetServerTime() or GM.GameModel:GetServerTime() // Sec2Day ~= (nextPopupTime - popupCd * 60) // Sec2Day)"
+    },
+    {
+      "id": "SRC-MORE-CONTEXT",
+      "path": "analysis/lua/Lua_Core/UI/UIFramework/EnergyWindowPopupHelper.lua",
+      "line_start": 37,
+      "line_end": 59,
+      "sha256": "2417400ae4f77332e68bba0df5a94dfe56c49ae56385ea22a7a6cd9b974ebe2f",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "기본/추가 후보는 닫기 허용·부족창 문맥을 검사하며 추가 popup 성공 때만 다음시각을 저장한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "40:       return not window or window.m_canShowGiftWindowAfterClose\n49:       return (not window or window.m_canShowGiftWindowAfterClose and window.m_popupForLackingEnergy) and EnergyWindowPopupHelper._CanShowMoreBundle()\n52:       if func() then\n54:         GM.MiscModel:SetBundleWindowPopUpTimeAfterBuyEnergyWindow(GM.GameModel:GetServerTime() + popupCd * 60)"
+    },
+    {
+      "id": "SRC-GLOBAL-PRIORITY",
+      "path": "analysis/lua/Lua_Core/UI/UIFramework/EnergyWindowPopupHelper.lua",
+      "line_start": 62,
+      "line_end": 79,
+      "sha256": "2417400ae4f77332e68bba0df5a94dfe56c49ae56385ea22a7a6cd9b974ebe2f",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "글로벌 경로는 Invite 비동기→EnergyGemOffer→EnergyBundle→Plenty→Chain/NewWeekly 순서다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "63:   GetGlobalMoreBundlePopChainArgs(UIHelper.TryOpenPlentyBundleWindow),\n64:   GetGlobalMoreBundlePopChainArgs(UIHelper.TryOpenChainOrNewWeeklyBundleWindow)\n73:       UIHelper.TryOpenInviteFriendWindow(callback)\n76:   GetGlobalDefaultPopChainArgs(UIHelper.TryOpenNoPayBundleEnergyWindow),\n77:   GetGlobalDefaultPopChainArgs(UIHelper.TryOpenBundleEnergyWindow)"
+    },
+    {
+      "id": "SRC-NORMAL-PRICE",
+      "path": "analysis/lua/Lua_Core/Model/Shop/ShopModel.lua",
+      "line_start": 736,
+      "line_end": 752,
+      "sha256": "fadfb986ab7f732628fe3063f54fc7d7ed7efaec9b7e86fad19ef951cd872d38",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "GetEnergyCostExcludeFree는 저장 일반 가격과 현재 이후 첫 양수 ChainEnergy 단계 중 큰 값을 반환한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "737:   local energyData = self:GetEnergyData(EnergyType.Main)\n738:   local maxCost = energyData.costNum\n739:   if not self:IsChainEnergyOpen() then\n740:     return maxCost\n745:     if self.m_chainEnergyConfig.contentList[i].price > 0 then\n747:         maxCost = self.m_chainEnergyConfig.contentList[i].price\n749:       break"
+    },
+    {
+      "id": "SRC-CHAIN-WEEKLY",
+      "path": "analysis/lua/Lua_Core/UI/UIFramework/UIHelper.lua",
+      "line_start": 84,
+      "line_end": 118,
+      "sha256": "9ff93d99d1e6ce0d0c569adc9c080a75d266bf21c5046f275204814ed1382637",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "동시 후보이면 체인 nextPayID 유무와 GetFixedMoney를 비교하며 동률은 체인이다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "95:     local chainPayId = bundleChainModel:GetNextBundlePayID()\n96:     if not chainPayId then\n99:       local chainPrice = GM.InAppPurchaseModel:GetFixedMoney(chainPayId)\n100:       local newWeeklyPrice = GM.InAppPurchaseModel:GetFixedMoney(bundleNewWeeklyGiftModel:GetCurGiftBundleData():GetPurchaseId())\n101:       if chainPrice <= newWeeklyPrice then"
+    },
+    {
+      "id": "SRC-WIRE-DURATIONS",
+      "path": "analysis/lua/Lua_Core/Model/Bundle/BundleServerConfigData.lua",
+      "line_start": 148,
+      "line_end": 155,
+      "sha256": "8569a8932cb8f47149b0eef15bf01e7ea055e8b779340ea78d340fa3e7fcdb88",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "groupDuration/groupCD/giftDuration은 분→초이며 threshold와daily upper/poptype은 별도 원문 필드다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "150:   self.groupLastDuration = groupData.groupDuration * 60\n151:   self.groupRefreshDuration = groupData.groupCD * 60\n152:   self.triggerEnergyPrice = groupData.triggerEnergyPrice\n153:   self.dailyTriggerUpper = groupData.dailyTriggerUpper\n154:   self.singleGiftLastDuration = groupData.giftDuration * 60\n155:   self.popType = groupData.poptype"
+    },
+    {
+      "id": "SRC-BASIC-CLOSE",
+      "path": "analysis/lua/Lua_Core/UI/Window/BuyEnergy/BuyEnergyWindow.lua",
+      "line_start": 156,
+      "line_end": 167,
+      "sha256": "8abf10ded55a7b1d6d2068d1d8b41b655bfad3075051a01c608f180b6844aa80",
+      "hashPolicy": "raw-file-bytes",
+      "evidenceType": "static-code",
+      "claim": "일반 충전창은 성공/실패/구매미시도(nil) 닫기 결과를 구분한다.",
+      "version": "4.10.5",
+      "runtimeObserved": false,
+      "excerpt": "157:   if self.m_bBuySuccess then\n161:   elseif self.m_bBuySuccess == false then\n163:   elseif GLOBAL_APP then\n164:     EnergyWindowPopupHelper.TryPopGlobalEnergyGiftBundleChain(self)"
+    }
+  ],
+  "webSources": [
+    {
+      "id": "WEB-ENERGY-TICK",
+      "path": "src/commerce-model.mjs",
+      "line_start": 162,
+      "line_end": 172,
+      "sha256": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
+      "hashPolicy": "UTF-8/LF",
+      "evidenceType": "research-implementation",
+      "claim": "현재 웹 reconcile은 전체 입력 signature와 모든 호출의 일별 갱신을 적용한다."
+    },
+    {
+      "id": "WEB-VALIDITY",
+      "path": "src/commerce-model.mjs",
+      "line_start": 205,
+      "line_end": 220,
+      "sha256": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
+      "hashPolicy": "UTF-8/LF",
+      "evidenceType": "research-implementation",
+      "claim": "현재 웹 기존 상품 판정은 now<itemEnd이며 원작 LateInit 필드는 없다."
+    },
+    {
+      "id": "WEB-ROUTE",
+      "path": "src/commerce-model.mjs",
+      "line_start": 222,
+      "line_end": 249,
+      "sha256": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
+      "hashPolicy": "UTF-8/LF",
+      "evidenceType": "research-implementation",
+      "claim": "현재 웹 후속 후보 boolean·가격·쿨다운을 평가하며 무료이면normalCost0을 사용한다."
+    },
+    {
+      "id": "WEB-DISPATCH",
+      "path": "src/commerce-model.mjs",
+      "line_start": 338,
+      "line_end": 371,
+      "sha256": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
+      "hashPolicy": "UTF-8/LF",
+      "evidenceType": "research-implementation",
+      "claim": "현재 commerce trigger는 생성·route를 갱신한다. EnergyGift IAP 성공/left소비/상품ID회전은 지원하지 않는다."
+    },
+    {
+      "id": "WEB-PLAY-CLOSE",
+      "path": "src/play-model.mjs",
+      "line_start": 374,
+      "line_end": 384,
+      "sha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+      "hashPolicy": "UTF-8/LF",
+      "evidenceType": "research-implementation",
+      "claim": "현재 play close-offer는 닫기만 하며 EnergyBundle 전용 후속 체인을 호출하지 않는다."
+    },
+    {
+      "id": "WEB-ADVANCE",
+      "path": "src/play-model.mjs",
+      "line_start": 142,
+      "line_end": 161,
+      "sha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+      "hashPolicy": "UTF-8/LF",
+      "evidenceType": "research-implementation",
+      "claim": "기존 advancePlay가 wallet 시간과 연결된 순수 상태를 갱신한다. harness는 이 함수를 재사용한다."
+    },
+    {
+      "id": "WEB-STATIC-PREDICATE",
+      "path": "src/bm-rules.mjs",
+      "line_start": 1,
+      "line_end": 32,
+      "sha256": "29937573b8bd526d298445582c720fb23b16701b5d8fe53189abaa55eeec05fe",
+      "hashPolicy": "UTF-8/LF",
+      "evidenceType": "research-implementation",
+      "claim": "기존 evaluateEnergyGift를 현재 웹 상태의 정적 조건 비교에만 재사용한다."
+    },
+    {
+      "id": "WEB-ENGINE-TIME",
+      "path": "src/engine.mjs",
+      "line_start": 22,
+      "line_end": 44,
+      "sha256": "a12b859b61e544cceb41ff7985d57c912d55c897f9b2bd6d39fb6fb36f41ae19",
+      "hashPolicy": "UTF-8/LF",
+      "evidenceType": "research-implementation",
+      "claim": "기존 wallet 회복·일일가격·무료/유료 충전을 재사용한다."
+    }
+  ],
+  "gaps": [
+    {
+      "id": "item-expiry-equality",
+      "title": "상품 만료의 == 경계",
+      "summary": "원작 manager는 itemEnd<now에서 만료하지만 현재 웹은 now<itemEnd를 유효 조건으로 쓴다. ==에서만 판정이 다르다.",
+      "sourceIds": [
+        "SRC-VALID-ROW",
+        "SRC-EXPIRY-STRICT"
+      ],
+      "webSourceIds": [
+        "WEB-VALIDITY"
+      ],
+      "reproduce": {
+        "presetId": "duration-boundaries",
+        "eventId": "item-equality"
+      },
+      "status": "reproduced-web-static-gap",
+      "coreChanged": false
+    },
+    {
+      "id": "daily-reset-timing",
+      "title": "일별 횟수 갱신의 호출 시점",
+      "summary": "원작은 LateInit 뒤 생성 판정 호출 중 갱신한다. 웹은 시계 전진 등 reconcile마다 갱신한다. 다음 trigger 전 DB 표본에 차이가 난다.",
+      "sourceIds": [
+        "SRC-CREATE-GATES",
+        "SRC-DAY-QUOTIENT"
+      ],
+      "webSourceIds": [
+        "WEB-ENERGY-TICK",
+        "WEB-ADVANCE"
+      ],
+      "reproduce": {
+        "presetId": "day-and-config",
+        "eventId": "day-probe"
+      },
+      "status": "reproduced-web-static-gap",
+      "coreChanged": false
+    },
+    {
+      "id": "config-identity-reset",
+      "title": "groupID/MD5와 전체 입력 signature",
+      "summary": "원작은 다른 groupID 또는 설정 제거 때 clear한다. 웹은 전체 입력 JSON이 바뀌면 그룹과 상품을 비운다. 같은groupID/변경MD5라는 명시 가정일 때 차이를 재현한다.",
+      "sourceIds": [
+        "SRC-CONFIG-LOAD",
+        "SRC-CONFIG-IDENTITY"
+      ],
+      "webSourceIds": [
+        "WEB-ENERGY-TICK"
+      ],
+      "reproduce": {
+        "presetId": "day-and-config",
+        "eventId": "same-group-edit"
+      },
+      "status": "conditional-reproduced-gap",
+      "coreChanged": false
+    },
+    {
+      "id": "energy-iap-unsupported",
+      "title": "EnergyGift IAP·left 소비·다음 상품 회전 미구현",
+      "summary": "원작에는 구매 성공·보상·left감소·재trigger·include 순환 경로가 있다. 현재 웹은 실제 IAP와 상품ID 배열을 연결하지 않는다. 새 지급 시나리오를 발명하지 않고 미지원 요청의 무변경을 기록한다.",
+      "sourceIds": [
+        "SRC-IAP-SUCCESS",
+        "SRC-LEFT-COST",
+        "SRC-RETRIGGER-HOOK",
+        "SRC-PRODUCT-ROTATION"
+      ],
+      "webSourceIds": [
+        "WEB-DISPATCH"
+      ],
+      "reproduce": {
+        "presetId": "duration-boundaries",
+        "eventId": "purchase-unsupported"
+      },
+      "status": "unimplemented-web-path",
+      "coreChanged": false
+    },
+    {
+      "id": "close-offer-routing",
+      "title": "EnergyBundle 전용 미구매 닫기 후속 경로",
+      "summary": "원작 BundleEnergyWindow는 poptype별 충전/추가오퍼 경로로 가지만 현재 play close-offer는 닫기만 한다. 일반 충전창 닫기와 같은 동작으로 대체하지 않는다.",
+      "sourceIds": [
+        "SRC-BUNDLE-CLOSE",
+        "SRC-BASIC-CLOSE",
+        "SRC-MORE-CONTEXT"
+      ],
+      "webSourceIds": [
+        "WEB-PLAY-CLOSE"
+      ],
+      "reproduce": {
+        "customCase": "playAction open-energy → close-energy → close-offer; tests/bm-lifecycle.test.mjs"
+      },
+      "status": "unimplemented-web-path",
+      "coreChanged": false
+    },
+    {
+      "id": "more-free-normal-price",
+      "title": "무료 잔여 시 후속 gate의 일반 가격",
+      "summary": "원작 GetEnergyCostExcludeFree는 저장 일반costNum부터 시작하지만 웹은 무료잔여면0으로 바꾼다. ChainEnergy가 꺼지고 높은 우선순위가 선택되지 않았을 때 연구 입력으로 비교한다.",
+      "sourceIds": [
+        "SRC-NORMAL-PRICE",
+        "SRC-MORE-GATE"
+      ],
+      "webSourceIds": [
+        "WEB-ROUTE"
+      ],
+      "reproduce": {
+        "customCase": "followup-priority initial.wallet.freeUsed=0; first close event only"
+      },
+      "status": "reproduced-web-static-gap",
+      "coreChanged": false
+    }
+  ],
+  "api": {
+    "function": "runBMLifecycle(scenario,catalog,{playConfig})",
+    "scenario": "preset ID 또는 {id,label,mode:research,initial:{wallet},input,sourceInputs,events}",
+    "eventKinds": [
+      "advanceClock",
+      "commerceAction",
+      "playAction",
+      "probe"
+    ],
+    "clockPolicy": "at는 절대 연구초·정수·비감소. 사건 전 필요한 delta를 기존advancePlay로 한 번 전진. 한 단계최대7일. 동일시각probe는 추가tick하지 않음.",
+    "returns": [
+      "ok",
+      "status",
+      "unknown",
+      "events[{id,now,action,before,after,result,comparisons}]",
+      "boundaries",
+      "initial",
+      "final"
+    ]
+  },
+  "reuse": {
+    "stateMachine": "기존 commerce-model의 energy 상태와 dispatch/reconcile만 재생한다. 별도 EnergyGift 상태 머신을 만들지 않았다.",
+    "wallet": "기존 engine.mjs를 호출하는 advancePlay/playAction을 사용한다.",
+    "predicate": "evaluateEnergyGift는 현재 웹 투영 상태의 정적 조건 비교용이다. 별도 원작 상태를 유지하지 않는다.",
+    "noCoreEdits": true,
+    "naturalTraceRebaseline": false
+  },
+  "requiredServerFields": [
+    {
+      "field": "groupDuration",
+      "status": "scenario-input-only",
+      "meaning": "연구 프리셋에서만 명시하며 현행 서버값은 미확인"
+    },
+    {
+      "field": "groupCD",
+      "status": "scenario-input-only",
+      "meaning": "연구 프리셋에서만 명시하며 현행 서버값은 미확인"
+    },
+    {
+      "field": "giftDuration",
+      "status": "scenario-input-only",
+      "meaning": "연구 프리셋에서만 명시하며 현행 서버값은 미확인"
+    },
+    {
+      "field": "triggerEnergyPrice",
+      "status": "scenario-input-only",
+      "meaning": "연구 프리셋에서만 명시하며 현행 서버값은 미확인"
+    },
+    {
+      "field": "dailyTriggerUpper",
+      "status": "scenario-input-only",
+      "meaning": "연구 프리셋에서만 명시하며 현행 서버값은 미확인"
+    },
+    {
+      "field": "poptype",
+      "status": "scenario-input-only",
+      "meaning": "연구 프리셋에서만 명시하며 현행 서버값은 미확인"
+    }
+  ],
+  "missingModelFields": [
+    {
+      "field": "groupID/MD5",
+      "status": "not-modeled",
+      "effect": "같은 그룹과 교체 그룹의 식별·정확한 설정 갱신"
+    },
+    {
+      "field": "include/giftContent/giftID/payID",
+      "status": "not-modeled",
+      "effect": "다음 상품 회전·실SKU/보상 연결"
+    },
+    {
+      "field": "IAP success/restore/receipt identity",
+      "status": "not-modeled",
+      "effect": "실제 구매·복구·중복 성공 방지 검증"
+    },
+    {
+      "field": "LateInit/실제 UI window identity",
+      "status": "not-modeled",
+      "effect": "원작 호출 시점·전용 닫기와 실제 창 적격성"
+    }
+  ],
+  "observationBaseline": {
+    "path": "src/data/bm-observation-audit.json",
+    "sha256": "56333fa0023636a140a471fd503af8b63390da16414b94ec8b0b9e033b6b84fd",
+    "hashPolicy": "UTF-8/LF",
+    "matrixCells": 54,
+    "accountFirstExposureConfirmed": 0,
+    "automaticReappearanceConfirmed": 0,
+    "expiryTransitionsConfirmed": 0,
+    "competingPopupPriorityConfirmed": 0,
+    "changedByThisResearch": false
+  },
+  "boundaries": [
+    "모든 프리셋 값·사건시각·후보 적격성은 분석자 연구 입력이다. 내장 기본값·현행 서버값·실계정 상태로 표시하지 않는다.",
+    "현재 웹 동작, 정적 코드 조건 비교, 입력 미확인, 웹 미지원 경로를 분리한다. 원작 관측 완료로 승격하지 않는다.",
+    "IAP·서버·계정·광고·결제·영수증과 연결하지 않는다. 반복 미지원 요청 무지급은 원작 exactly-once 보증이 아니다.",
+    "전체 입력signature·정확만료·day reset·닫기 차이는 현재 핵심코어를 변경하지 않고 보존한다. 기존 자연trace/설정 해시를 갱신하지 않는다.",
+    "현재 상품ID 배열·groupID·원작 UI identity가 없으므로 구매 뒤다음SKU·동일상품 재노출·만료교체 원작 결과를 생성하지 않는다.",
+    "소스의 Open→CoolingDown은 tick 한 번의 분기다. 웹 dispatch/play는 reconcile을 여러 번 호출할 수 있어 같은시각 재검사 수와 실제 프레임 스케줄을 동일시하지 않는다.",
+    "그룹duration과 상품duration을 인위적으로 min으로 잘라 맞추지 않는다. 같은 그룹 안 재생성은 기존groupEnd를 연장하지 않는 현재 웹 동작을 기록한다."
+  ],
+  "unknowns": [
+    "실제 energyGift 서버레코드·groupID/MD5·SKU·보상 배열·현재운영 값은 미확인이다.",
+    "원작 계정 생애 최초·자동재노출·만료·경쟁팝업 선택의 신규 실행 근거는 없다.",
+    "LateInit·클릭·비동기 Invite/리소스·실제 창 identity·원작 frame/tick 스케줄은 실행 관측하지 않았다.",
+    "소스 일부의 구매성공 콜백으로 서버·SDK 중복방지/원장정합성/매출을 증명할 수 없다."
+  ]
+}

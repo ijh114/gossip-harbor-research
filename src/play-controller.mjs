@@ -7,33 +7,38 @@ import {createScreenController} from './screen-controller.mjs';
 import {soundForAction} from './screen-flow.mjs';
 import {createActivityPlay,activityAction,recordActivityProgress,validActivityPlay,activityView} from './activity-play.mjs';
 import {renderActivityPlay} from './activity-page.mjs';
-import {createTutorialPlay,validTutorialPlay,configureTutorialPlay,tutorialPlayEvent,renderTutorialPlay} from './tutorial-play.mjs';
+import {createTutorialPlay,validTutorialPlay,configureTutorialPlay,tutorialPlayEvent,renderTutorialPlay,playTutorialCatalog,restoreTutorialPlay,tutorialPlayPermission,tutorialPlayView} from './tutorial-play.mjs';
 import {createSkinLab,validSkinLab,skinLabAction} from './skin-lab.mjs';
 import {playGuide} from './play-guide.mjs';
+import {createFactoryPlay,factoryView} from './factory-play.mjs';
+import {createFactoryInputs,factoryContext,configureFactoryTransaction,commitFactoryTransaction} from './factory-transaction.mjs';
 
 export function createPlayController({getData,render,download}){
  let state,wallAt=0,storage,canWrite=true,ticker=null,guideTicker=null,lastGuideSkin='',notice='',drag=null,suppressClick=false,lastCheckpoint=0,skin='source';
  const config=()=>getData().playConfig;
+ const tutorialCatalog=()=>playTutorialCatalog(getData());
  const screens=createScreenController({getState:()=>state,getConfig:config,getData,domain:commit,persist,render});
  function guideContext(){
   const b=state.tutorialBridge;if(!b)return {};const ui=screens.researchContext(),g=playGuide(state,config()),ctx={};
   if(Object.hasOwn(b.context,'gameMode'))ctx.gameMode=state.stage==='play'?'Main':'Map';
   if(Object.hasOwn(b.context,'mainBoardViewAvailable'))ctx.mainBoardViewAvailable=state.stage==='play'&&!ui.entry&&!ui.loading;
-  if(Object.hasOwn(b.context,'allWindowsClosed'))ctx.allWindowsClosed=!state.modal&&!state.toolPending&&!ui.entry&&!ui.loading&&!ui.taskList&&!ui.newPrompt;
+  if(Object.hasOwn(b.context,'allWindowsClosed'))ctx.allWindowsClosed=!state.modal&&!state.toolPending&&!ui.entry&&!ui.loading&&!ui.taskList&&!ui.newPrompt&&!['factory','skins','decor','decor-edit'].includes(ui.presentation);
   if(Object.hasOwn(b.context,'otherStrong'))ctx.otherStrong=Boolean(g.input||g.waitSeconds);
-  if(Object.hasOwn(b.context,'openViews'))ctx.openViews=[...(ui.taskList?['TaskWindow']:[]),...(skin==='activities'&&state.activityPlay?.tab==='pass'&&b.context.passDefinition?[b.context.passDefinition.mainWindow]:[])];
+  if(Object.hasOwn(b.context,'openViews')){const mapped=new Set(['TaskWindow','NoTaskWindow',b.context.passDefinition?.mainWindow].filter(Boolean));ctx.openViews=[...(Array.isArray(b.context.openViews)?b.context.openViews.filter(name=>!mapped.has(name)):[]),...(ui.taskList?['TaskWindow']:[]),...(skin==='activities'&&state.activityPlay?.tab==='pass'&&b.context.passDefinition?[b.context.passDefinition.mainWindow]:[])];}
+  if(b.selected==='tutorial_generator_factory_Acquire'&&getData().factoryConfig&&state.factoryInputs!==undefined){const fc=getData().factoryConfig,fstate=state.factoryPlay===undefined?createFactoryPlay(fc):state.factoryPlay,context=factoryContext(state,fc),v=context?factoryView(fstate,context,fc):{state:'unknown'},types=new Set(fc.groups.flatMap(g=>g.fragments.map(f=>f.type)));ctx.generatorFactoryOpen=v.state==='open'?true:v.state==='closed'?false:null;ctx.factoryCandidates=state.board.flatMap((cell,index)=>cell&&types.has(cell.type)&&!cell.cover&&!state.bubbles?.[cell.uid]?[{uid:String(cell.uid),hasFactoryComponent:v.state==='open',position:{x:index%7+1,y:Math.floor(index/7)+1}}]:[]);}
   return ctx;
  }
- function guideEvent(event,context={}){const c=getData().tutorialConfig,b=state.tutorialBridge;if(!c||!b||!validTutorialPlay(b,c)||!b.enabled)return null;return tutorialPlayEvent(b,event,c,{context:{...guideContext(),...context}});}
+ function guideEvent(event,context={}){const c=tutorialCatalog(),b=state.tutorialBridge;if(!c||!b||!validTutorialPlay(b,c)||!b.enabled)return null;return tutorialPlayEvent(b,event,c,{context:{...guideContext(),...context}});}
  function guideUI(action){
   const b=state.tutorialBridge;if(!b?.enabled)return;
   if(action==='game-task-list'&&screens.researchContext().taskList)guideEvent({type:'view-opened',name:'TaskWindow'});
   else if(action==='game-task-list-close')guideEvent({type:'view-closed',name:'TaskWindow'});
   else if(['main','home','game-continue'].includes(action))guideEvent({type:'game-mode-change-finished'});
   else if(action==='pass-open'&&state.activityPlay&&state.activityPlay.startedAt!==null)guideEvent({type:'view-opened',name:b.context.passDefinition?.mainWindow});
+  else if(action==='game-factory-close'&&b.selected==='tutorial_generator_factory_Acquire')guideEvent({type:'factory-poll'});
  }
  function handleGuide(action,value){
-  const c=getData().tutorialConfig;if(!c)return;
+  const c=tutorialCatalog();if(!c)return;
   if(action==='reset-invalid'){if(backup())state.tutorialBridge=createTutorialPlay(c);return;}
   if(state.tutorialBridge===undefined)state.tutorialBridge=createTutorialPlay(c);const b=state.tutorialBridge;
   if(!validTutorialPlay(b,c)){notice='연결 안내 저장을 보존 중입니다. JSON으로 보관한 뒤 초기화하세요.';return;}
@@ -47,6 +52,14 @@ export function createPlayController({getData,render,download}){
   if(action==='clock'){const r=guideEvent({type:'clock',now:b.engine.active?.dueAt??b.engine.time});notice=r?.message||'';return;}
   if(action==='event'){const ev=c.guides.find(g=>g.id===b.selected)?.eventCatalog[Number(value)]?.event;if(ev){const r=guideEvent(ev);notice=r?.message||'';}return;}
   if(action==='factory-poll'||action==='factory-tap'){const r=guideEvent({type:action==='factory-poll'?'factory-poll':'factory-item-tapped'});notice=r?.message||'';}
+ }
+ function handleFactory(kind,value){
+  const c=getData().factoryConfig;if(!c||state.stage!=='play'||state.modal||state.toolPending){notice='퍼즐의 선택창을 닫은 뒤 생성기 공장에서 진행하세요.';return;}
+  if(kind==='reset-invalid'){if(backup()){state.factoryPlay=createFactoryPlay(c);state.factoryInputs=createFactoryInputs();state.generatorFactoryOpen=null;notice='기존 저장을 백업하고 공장 연구만 초기화했습니다.';}return;}
+  let out;
+  if(kind==='configure'){const raw=document.querySelector('[data-factory-flag]')?.value,input=createFactoryInputs();input.serverEnabled=raw==='true'?true:raw==='false'?false:null;input.unlockMode=document.querySelector('[data-factory-assume]')?.checked?'assumed':'main';out=configureFactoryTransaction(state,input,c,{playConfig:config()});}
+  else{let action;if(kind==='store'){const parts=/^(board|inventory):(\d+):(\d+)$/.exec(String(value));if(parts)action={type:'store',source:parts[1],index:Number(parts[2]),uid:Number(parts[3])};}else if(kind==='add-score'){const parts=/^(\d+):(\d+)$/.exec(String(value));if(parts)action={type:'add-score',targetType:parts[1],itemType:parts[2]};}else if(kind==='reward')action={type:'reward',targetType:String(value)};else if(kind==='return-closed')action={type:'return-closed'};if(!action){notice='공장 행동의 타입·위치·UID를 확인하세요.';return;}out=commitFactoryTransaction(state,action,c,{playConfig:config()});}
+  notice=out.message;if(out.ok){state=out.state;if(kind==='store')guideEvent({type:'factory-item-tapped'});}
  }
  function commit(action,value){
   const [from,to]=action==='move'?String(value).split(',').map(Number):[state.selected,Number(value)];
@@ -91,13 +104,15 @@ export function createPlayController({getData,render,download}){
   let saved=readSession(storage,options());
   if(saved.reason==='revision-mismatch'){try{saved=compatible(storage.getItem(SAVE_KEY));}catch{}}
   wallAt=Date.now();
-  if(saved.ok){state=saved.state;if(saved.migrated)backup();advancePlay(state,saved.elapsedSeconds,config(),{silent:true});state.message=`이전 실험 복원 · ${saved.elapsedSeconds}초 경과${saved.capped?' (웹 정책7일 상한)':''}${saved.migrated?' · 원본 저장을 백업하고 새 규칙으로 이전':''}`;persist();}
+  if(saved.ok){state=saved.state;if(tutorialCatalog()&&state.tutorialBridge)restoreTutorialPlay(state.tutorialBridge,tutorialCatalog());if(saved.migrated)backup();advancePlay(state,saved.elapsedSeconds,config(),{silent:true});state.message=`이전 실험 복원 · ${saved.elapsedSeconds}초 경과${saved.capped?' (웹 정책7일 상한)':''}${saved.migrated?' · 원본 저장을 백업하고 새 규칙으로 이전':''}`;persist();}
   else{state=createPlay(config(),{scenario:'initial'});canWrite=['missing','storage-unavailable'].includes(saved.reason);state.storageMessage=saved.reason==='missing'?'연구 상태를 이 브라우저에 자동 저장합니다.':saved.message;}
  }
  function handle(action,value){
   const disclosures=[...document.querySelectorAll('.source-play details,.game-play details')].map((node,i)=>({i,open:node.open}));
   ensure();syncTime();notice='';
+  if(['game','activities'].includes(skin)){const permission=tutorialPlayPermission(state.tutorialBridge,action,tutorialCatalog());if(!permission.allowed){notice=permission.message;render();return;}}
   if(action.startsWith('guide:')){handleGuide(action.slice(6),value);persist();render();return;}
+  if(action.startsWith('factory:')){handleFactory(action.slice(8),value);persist();render();return;}
   if(action.startsWith('skin:')){
    const c=getData().skinConfig,kind=action.slice(5);if(!c||state.stage!=='home'||state.pendingQuest||state.modal)return;
    if(kind==='reset-invalid'){if(backup())state.skinLab=createSkinLab(c);}
@@ -158,6 +173,7 @@ export function createPlayController({getData,render,download}){
  }
  document.addEventListener('pointerdown',ev=>{
   const node=ev.target.closest?.('.game-cell');if(!node||ev.button!==0||skin==='game'&&screens.blocked('move'))return;
+  if(['game','activities'].includes(skin)&&!tutorialPlayPermission(state?.tutorialBridge,'move',tutorialCatalog()).allowed)return;
   ensure();const cell=state.board[Number(node.dataset.value)];if(!cell||cell.cover||state.modal||state.toolPending||state.bubbles?.[cell.uid])return;
   drag={id:ev.pointerId,from:Number(node.dataset.value),x:ev.clientX,y:ev.clientY,node,moving:false};node.setPointerCapture?.(ev.pointerId);
  });
@@ -184,8 +200,10 @@ export function createPlayController({getData,render,download}){
  function beforeRender(){if(ticker)window.clearInterval(ticker);ticker=null;if(guideTicker)window.clearInterval(guideTicker);guideTicker=null;stopDrag();screens.beforeRender();}
  function afterMount(){
   if(skin==='game')screens.afterMount();
+  const linked=state?.tutorialBridge,tc=tutorialCatalog(),target=linked&&tc?tutorialPlayView(linked,tc).active?.target:null;
+  if(linked?.enabled){const selector={EnergyBoost:'[data-play="set-boost"]',Inventory:'[data-play="inventory"]',Task:'[data-play="game-task-list"]'}[target?.hud];if(selector)for(const node of document.querySelectorAll(selector))node.classList.add('tutorial-linked-target');}
   if(lastGuideSkin!==skin){lastGuideSkin=skin;if(skin==='activities'&&state.activityPlay?.tab==='pass'){const before=JSON.stringify(state.tutorialBridge);guideUI('pass-open');if(before!==JSON.stringify(state.tutorialBridge)){persist();render();return;}}}
-  if(['game','activities'].includes(skin)&&state.tutorialBridge?.enabled&&validTutorialPlay(state.tutorialBridge,getData().tutorialConfig)){
+  if(['game','activities'].includes(skin)&&state.tutorialBridge?.enabled&&validTutorialPlay(state.tutorialBridge,tutorialCatalog())){
    let at=Date.now();guideTicker=window.setInterval(()=>{const now=Date.now(),delta=(now-at)/1000;at=now;const b=state.tutorialBridge;if(document.hidden||!b?.enabled||b.engine.active?.dueAt==null)return;const r=guideEvent({type:'clock',now:Math.round((b.engine.time+delta)*1000)/1000});if(r?.changed&&r.status!=='waiting'){persist();render();}},100);
   }
   document.body.dataset.playFocus=String(skin==='activities'?false:Boolean(state?.focused));
@@ -220,7 +238,7 @@ export function createPlayController({getData,render,download}){
   }
   if(input.id!=='play-import'||!input.files?.[0])return;ensure();const file=input.files[0];
   if(file.size>2*1024*1024){state.storageMessage='가져올 상태 JSON은2MB 이하여야 합니다.';render();return;}
-  try{const saved=compatible(await file.text());if(!saved.ok){state.storageMessage=saved.message;render();return;}backup();state=saved.state;advancePlay(state,saved.elapsedSeconds,config(),{silent:true});wallAt=Date.now();screens.imported();persist();render();}
+  try{const saved=compatible(await file.text());if(!saved.ok){state.storageMessage=saved.message;render();return;}backup();state=saved.state;advancePlay(state,saved.elapsedSeconds,config(),{silent:true});if(tutorialCatalog()&&state.tutorialBridge)restoreTutorialPlay(state.tutorialBridge,tutorialCatalog());wallAt=Date.now();screens.imported();persist();render();}
   catch{state.storageMessage='상태 파일을 읽지 못했습니다. 기존 실험을 유지합니다.';render();}
  });
  window.addEventListener('pagehide',()=>{if(state){syncTime();persist();}});
@@ -230,7 +248,7 @@ export function createPlayController({getData,render,download}){
    if(state.activityPlay===undefined)state.activityPlay=createActivityPlay(ac);
    if(!validActivityPlay(state.activityPlay,ac))return '<section><h1>활동 저장을 보존했습니다</h1><p>호환되지 않는 연구 활동 상태입니다. 현재 상태 JSON을 보관한 뒤 활동만 다시 시작할 수 있습니다. 메인 보드는 유지합니다.</p><button class="button" data-play="export">현재 상태 JSON</button><button class="button" data-play="activity:reset-invalid">백업하고 활동 초기화</button></section>';
    const activity=activityView(state.activityPlay,ac,{now:state.wallet.time});
-   return renderActivityPlay(state.activityPlay,ac,getData(),{now:state.wallet.time})+`<p class="game-feedback" role="status">${String(notice).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</p>`+renderTutorialPlay(state.tutorialBridge,getData().tutorialConfig);
+   return renderActivityPlay(state.activityPlay,ac,getData(),{now:state.wallet.time})+`<p class="game-feedback" role="status">${String(notice).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</p>`+renderTutorialPlay(state.tutorialBridge,tutorialCatalog());
   }
   const options=skin==='game'?screens.renderOptions():{};return skin==='game'?renderGamePlay(state,config(),getData(),{...options,notice:notice||options.notice}):renderSourcePlay(state,config(),getData());},handle,afterMount,beforeRender};
 }
