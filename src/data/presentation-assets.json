@@ -3489,7 +3489,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": -6171731620245006000
+          "m_PathID": "-6171731620245006317"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -3560,7 +3560,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 7861097808226551000
+          "m_PathID": "7861097808226550983"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -3631,7 +3631,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 6237003249271498000
+          "m_PathID": "6237003249271497714"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -3702,7 +3702,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": -5173273384216441000
+          "m_PathID": "-5173273384216440661"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -3773,7 +3773,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 2134115283743979800
+          "m_PathID": "2134115283743979734"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -3844,7 +3844,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": -5147192773062857000
+          "m_PathID": "-5147192773062856737"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -3915,7 +3915,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 8252995868146824000
+          "m_PathID": "8252995868146824222"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -3986,7 +3986,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": -8115400623588810000
+          "m_PathID": "-8115400623588810051"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4057,7 +4057,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": -6307659189234924000
+          "m_PathID": "-6307659189234923669"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4128,7 +4128,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 4679064416546983000
+          "m_PathID": "4679064416546983251"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4199,7 +4199,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 595175912941958000
+          "m_PathID": "595175912941957997"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4270,7 +4270,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 8696267873871744000
+          "m_PathID": "8696267873871743624"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4341,7 +4341,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 8549441948122684000
+          "m_PathID": "8549441948122684127"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4412,7 +4412,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 103658356543193470
+          "m_PathID": "103658356543193479"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4483,7 +4483,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 4143323357396076000
+          "m_PathID": "4143323357396076217"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4554,7 +4554,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 8834468111231382000
+          "m_PathID": "8834468111231381976"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4625,7 +4625,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": -6434231013073118000
+          "m_PathID": "-6434231013073118384"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4696,7 +4696,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": -6991288999792447000
+          "m_PathID": "-6991288999792447057"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4767,7 +4767,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 7576956481933364000
+          "m_PathID": "7576956481933364034"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -4838,7 +4838,7 @@
         },
         "texture": {
           "m_FileID": 0,
-          "m_PathID": 39665503003913280
+          "m_PathID": "39665503003913283"
         },
         "alphaTexture": {
           "m_FileID": 0,
@@ -13227,7 +13227,6 @@
     "nativeTypedBehaviours": 373,
     "nativeTypedReadErrors": 0
   },
-  "revision": "8f891c0314c0ae6f0966e92a4fce9affeb915bedbb3ebf4455f89d0a4aa14716",
   "opening": {
     "titleMediaKey": null,
     "loadingMediaKey": "presentation:native:loading_bg",
@@ -13672,10 +13671,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -13746,10 +13741,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -13876,10 +13867,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -13950,10 +13937,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -14080,10 +14063,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -14154,10 +14133,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -14458,10 +14433,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -14674,10 +14645,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -14916,10 +14883,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -15102,10 +15065,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -15176,10 +15135,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -15306,10 +15261,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -15380,10 +15331,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -15454,10 +15401,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -15755,10 +15698,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -16102,10 +16041,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -16462,10 +16397,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -16536,10 +16467,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -16723,10 +16650,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -16909,10 +16832,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -17098,10 +17017,6 @@
               "game_object": {
                 "m_FileID": 0,
                 "m_PathID": 0
-              },
-              "script": {
-                "m_FileID": 1,
-                "m_PathID": 8302033850027404000
               }
             },
             "skeletonDataScale": 1,
@@ -30199,5 +30114,6 @@
       "The source starts with LoadingScene/Canvas at1080x1920; source loading art and company/game logos are not proof of a separate interactive original title screen.",
       "Serialized activeSelf and fonts may change through ApplicationManager, LoadingBackground, localization or runtime canvas adjustments. No actual frame, click coordinate or active Korean font match is claimed."
     ]
-  }
+  },
+  "revision": "ff2dd13255f412ec26840e0aaabe2ff2b470425e9d34251073099b12c88fdae4"
 }

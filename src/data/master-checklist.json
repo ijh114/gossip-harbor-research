@@ -3,7 +3,7 @@
   "reviewDate": "2026-10-29",
   "source": "docs/MASTER-CHECKLIST.md",
   "sourceHashPolicy": "UTF-8/LF",
-  "sourceSha256": "f1625b1aac532bea989840374655b814cc411e89bb2a40b829de38068576ced7",
+  "sourceSha256": "cd686acca22295b36ed4dc2768f570032652927e6b5da3a7da3467032517f8dc",
   "states": [
     "완료",
     "부분",
@@ -508,7 +508,7 @@
     {
       "id": "4.10",
       "group": 4,
-      "status": "자료 필요",
+      "status": "부분",
       "title": "CG·Skin·캐릭터 모션·3D맵의 최종 표현 자료",
       "acceptance": "기술 투영과 최종 렌더를 구분하고 필요한 실물/시연 자료 확보"
     },

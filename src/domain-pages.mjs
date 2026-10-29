@@ -1,3 +1,4 @@
+import {renderAPKMediaLinks} from './apk-media-review.mjs';
 import {DOMAIN_DEFS,domainStats,selectDomainFacts,baseMergeUnits} from './domain-model.mjs';
 import {renderStudyLinks} from './capture-study.mjs';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -67,6 +68,7 @@ export function renderDomainPage(id,data,filters={}){
  <section class="domain-ledger"><div class="section-heading"><h2>규칙과 근거</h2><span>${facts.length} / ${all.length} FINDINGS</span></div><div class="domain-filter" role="group" aria-label="분석 근거 유형">${[['all','전체'],...Object.entries(labels)].map(([kind,label])=>`<button class="button small ${filters.kind===kind||(!filters.kind&&kind==='all')?'primary':''}" data-domain-kind="${kind}" aria-pressed="${filters.kind===kind||(!filters.kind&&kind==='all')}">${label}</button>`).join('')}</div>
  ${page.sections?.length?page.sections.map(section=>{const rows=facts.filter(f=>section.factIds.includes(f.id));return rows.length?`<section class="domain-section" id="section-${escape(section.id)}"><div class="domain-section-title"><span class="mono">${escape(section.id.toUpperCase())}</span><h2>${escape(section.title)}</h2></div>${section.intro?`<p class="section-description">${escape(section.intro)}</p>`:''}<div class="domain-findings">${rows.map(factArticle).join('')}</div></section>`:'';}).join(''):`<div class="domain-findings">${facts.map(factArticle).join('')}</div>`}
  ${facts.length?'':`<div class="empty-state"><h3>조건에 맞는 분석 항목이 없습니다</h3><p>검색어 또는 근거 유형을 바꿔보세요.</p><button class="button" data-action="clear-filters">검색 초기화</button></div>`}</section>
+ ${renderAPKMediaLinks(data,id)}
  ${page.next?.length?`<section class="domain-next"><div class="section-heading"><h2>다음 관측에서 확인할 것</h2><span>STATIC → RUNTIME</span></div>${page.next.map((item,i)=>`<article><span class="mono">${String(i+1).padStart(2,'0')}</span><div><h3>${escape(typeof item==='string'?item:item.title)}</h3>${item.detail?`<p>${escape(item.detail)}</p>`:''}</div></article>`).join('')}</section>`:''}
  <div class="section-heading"><h2>다른 시스템과 연결하기</h2><span>RELATED CHAPTERS</span></div><div class="related-chapters">${def.related.map(key=>{const d=DOMAIN_DEFS.find(x=>x.id===key);return `<a href="#${key}"><strong>${d.title}<span>↗</span></strong><p>${d.subtitle}</p></a>`;}).join('')}</div>`;
 }

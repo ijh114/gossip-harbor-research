@@ -6,11 +6,11 @@ import {renderFactoryPage} from '../src/factory-page.mjs';
 import {JSDOM} from 'jsdom';
 const c=JSON.parse(await readFile(new URL('../src/data/factory-play.json',import.meta.url),'utf8'));
 const start=(s,sequence,now=0,fromScore=4)=>startFactoryMotion(s,{now,sequence,targetType:'104',itemType:'103',fromScore,toScore:fromScore+4},c);
-test('threshold clock exposes source0.4 arrival,0.5 unlock,0.95 reward view and non-cumulative boolean locks',()=>{
+test('web compatibility clock exposes0.4 arrival and0.95 reward view; its boolean lock is explicitly distinct from source counters',()=>{
  const raw=createFactoryMotion(),started=start(raw,1);assert.equal(started.ok,true);assert.equal(raw.motions.length,0);let s=started.state;assert.equal(s.locked,true);
  let out=advanceFactoryMotion(s,0.399,c);assert.equal(out.events.length,0);assert.equal(factoryMotionView(out.state,0.2,c).flights[0].progress,0.5);
  out=advanceFactoryMotion(out.state,0.4,c);assert.equal(out.events.find(e=>e.type==='slider-update').requestReward,true);assert.equal(out.state.locked,true);
- out=advanceFactoryMotion(out.state,0.5,c);assert.equal(out.state.locked,false,'original click callback unlocks the shared boolean before slider callback');
+ out=advanceFactoryMotion(out.state,0.5,c);assert.equal(out.state.locked,false,'current web approximation unlocks a boolean; native source counters remain locked until0.95');
  out=advanceFactoryMotion(out.state,0.95,c);assert.equal(out.events.filter(e=>e.type==='reward-view').length,1);assert.equal(factoryMotionView(out.state,1,c).groups[0].displayScore,0);
  out=advanceFactoryMotion(out.state,2,c);assert.equal(out.state.motions.length,0);assert.equal(out.state.locked,false);assert.equal(validFactoryMotion(out.state,c),true);
 });

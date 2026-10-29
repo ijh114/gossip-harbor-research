@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile} from 'node:fs/promises';
+import {readFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const c=JSON.parse(await readFile(new URL('../src/data/presentation-assets.json',import.meta.url),'utf8'));
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
@@ -37,4 +37,15 @@ test('all26 Skin prefabs and34 missing recap images have exact catalog GUID depe
  assert.equal(c.remoteResourceAudit.catalog.networkRequests,0);assert.equal(c.remoteResourceAudit.catalog.sizeFieldValidation.samples,245);assert.equal(c.remoteResourceAudit.catalog.sizeFieldValidation.mismatchCount,0);
  for(const s of c.skins){assert.equal(s.mediaKey,null);assert.match(s.status,/not-in-local/);assert.equal(s.resourceKey,s.slot+'_'+s.itemId);assert.equal(s.catalog.assetPath,s.prefab);}
  for(const t of c.remoteResourceAudit.targets){assert.equal(t.exactKeyFound,true);assert.match(t.assetGuid,/^[a-f0-9]{32}$/);assert.ok(t.bundles.length);for(const b of t.bundles){assert.equal(b.resolvedURL,null);assert.ok(b.uriTemplate.startsWith('{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/')||b.uriTemplate.startsWith('{UnityEngine.AddressableAssets.Addressables.RuntimePath}/'));assert.equal(b.hashAlsoPresentInSerializedOptions,true);assert.match(b.hashFromFilename,/^[a-f0-9]{32}$/);assert.ok(Number.isInteger(b.sizeBytes)&&b.sizeBytes>0);}}
+});
+test('original CG Sprite texture PPtrs remain exact strings and redundant skeleton scripts stay omitted',()=>{
+ const rows=c.mediaEntries.filter(m=>m.src.startsWith('./assets/media/presentation-cg/'));assert.equal(rows.length,20);for(const m of rows){assert.equal(typeof m.identity.path_id,'string');assert.equal(typeof m.identity.texture.m_PathID,'string');assert.match(m.identity.texture.m_PathID,/^-?\d+$/);assert.equal(m.identity.texture.m_FileID,0);}
+ assert.equal(rows.find(m=>m.key==='presentation:cg:sprite:mianbao').identity.texture.m_PathID,'-6171731620245006317');assert.equal(rows.find(m=>m.key==='presentation:cg:sprite:cg_dialog_tip_bg').identity.texture.m_PathID,'7861097808226550983');
+ const spine=c.opening.cgScenes.flatMap(s=>s.nodes).filter(n=>n.kind==='spine-skeleton-graphic');assert.equal(spine.length,21);for(const n of spine){assert.equal(typeof n.skeletonAssetIdentity.path_id,'string');assert.equal(Object.hasOwn(n.skeletonAssetIdentity,'script'),false);}
+ assert.equal(c.mediaEntries.length,151);
+});
+test('all public src/data JSON files avoid unsafe64bit integer numbers',async()=>{
+ const failures=[];function inspect(value,path){if(typeof value==='number'&&Number.isInteger(value)&&!Number.isSafeInteger(value))failures.push(path);else if(value&&typeof value==='object')for(const[k,v]of Object.entries(value))inspect(v,path+'.'+k);}
+ async function visit(dir){for(const entry of await readdir(dir,{withFileTypes:true})){const url=new URL(entry.name+(entry.isDirectory()?'/':''),dir);if(entry.isDirectory())await visit(url);else if(entry.name.endsWith('.json'))inspect(JSON.parse(await readFile(url,'utf8')),url.pathname);}}
+ await visit(new URL('../src/data/',import.meta.url));assert.deepEqual(failures,[]);
 });

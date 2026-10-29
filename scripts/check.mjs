@@ -118,3 +118,11 @@ for(const m of presentation.mediaEntries){if(!validMedia(m))throw Error('Invalid
 if(recap.audioEntries?.length!==1)throw Error('Missing exact page-turn effect');
 for(const m of recap.audioEntries){if(m.kind!=='audio'||!/^\.\/assets\/media\/story-recap\/[\w-]+\.wav$/.test(m.src)||m.duration>3||m.auditionVerified!==false||m.runtimeSynchronizationVerified!==false)throw Error('Unverified recap audio upgrade');const bytes=await readFile(path.join('dist',m.src));if(createHash('sha256').update(bytes).digest('hex')!==m.sha256)throw Error('Recap audio derivative mismatch');}
 console.log('Verified151 common-map/CG/native images, source Camera PPtr, exact short page-turn audio, source-shaped opt-in mock season and85 external-effect rows (29 handlers,56 unavailable native targets/models).');
+
+const apkReview=JSON.parse(await readFile('dist/data/apk-media-review.json','utf8'));
+if(apkReview.tasks.length!==11||apkReview.tasks[0].id!=='4.03'||apkReview.tasks.at(-1).id!=='4.13'||apkReview.originalRuntimeObserved!==false||apkReview.listenedSeconds!==0)throw Error('APK review completion boundary drift');
+for(const m of apkReview.mediaEntries){
+ if(!validMedia(m))throw Error('Invalid APK review media '+m.key);
+ for(const [file,sha]of [[m.src,m.sha256],...(m.poster?[[m.poster,m.posterSha256]]:[])]){const bytes=await readFile(path.join('dist',file));if(createHash('sha256').update(bytes).digest('hex')!==sha)throw Error('APK review derivative mismatch '+m.key);}
+}
+console.log(`Verified11 fixed APK-media checklist identities and${apkReview.mediaEntries.length}curated entries; original runtime, source-missing assets and zero audition remain explicit.`);

@@ -1,0 +1,1641 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "reviewDate": "2026-10-29",
+  "scope": "4.06 merge hint/cobweb/paperbox, 4.07 scissors/hourglass, 4.08 factory static motion; curated source declarations and bounded compiled curves",
+  "evidenceType": "packaged-static-code-and-serialized-clips",
+  "originalRuntimeObserved": false,
+  "boundaries": [
+    "모든카드의완성GIF는APK규칙재현이며원작플레이녹화가아니다.",
+    "초수는Lua또는serializedclip선언이다. 실제사용자영상전체원속도검증4.11은별도이며완료로승격하지않는다.",
+    "Ease=null은미지정기본값으로곡선미확인이다. 임의linear/ease를원작이라고표시하지않는다.",
+    "source model소비/지급은view연출시점과분리한다.",
+    "world 좌표20/30/60/80을CSS픽셀과동일시하지않는다.",
+    "fullsource/원본bundle/completeclip/서버계정상태는게시하지않는다."
+  ],
+  "sources": [
+    {
+      "id": "item",
+      "path": "analysis/lua/Lua_Core/Board/View/Item/ItemView.lua",
+      "sha256": "176ca4e46ae0bacc287577ff0853ff010ff644231f3de884c3f5c22ad45f4aa7",
+      "ranges": [
+        [
+          720,
+          760
+        ],
+        [
+          779,
+          800
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "mainView",
+      "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+      "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+      "ranges": [
+        [
+          1,
+          5
+        ],
+        [
+          637,
+          662
+        ],
+        [
+          1464,
+          1498
+        ],
+        [
+          1601,
+          1653
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "boardView",
+      "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+      "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+      "ranges": [
+        [
+          109,
+          151
+        ],
+        [
+          289,
+          380
+        ],
+        [
+          392,
+          445
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "prompt",
+      "path": "analysis/lua/Lua_Core/Board/View/BoardPrompt.lua",
+      "sha256": "20639d11f227695ff34a4716059374a80e163c740a91b3c700806df4ee80831b",
+      "ranges": [
+        [
+          94,
+          155
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "baseModel",
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+      "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+      "ranges": [
+        [
+          181,
+          215
+        ],
+        [
+          235,
+          258
+        ],
+        [
+          310,
+          353
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "mainModel",
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+      "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+      "ranges": [
+        [
+          289,
+          298
+        ],
+        [
+          374,
+          429
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "itemModel",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemModel.lua",
+      "sha256": "5bdded307eba2913754b8b25e9abb4ebcf4217d398723d16a3d367b1138916ec",
+      "ranges": [
+        [
+          137,
+          153
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "split",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSplit.lua",
+      "sha256": "cb73c0d13f1d34758003ea683cf038638592e601de83afcf7d90a42bf2cf12c2",
+      "ranges": [
+        [
+          1,
+          32
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "collect",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemCollectable.lua",
+      "sha256": "40a4e14428b1fbf1c2e0a656b489e4614980145a64709bef3a18efa1f4b49896",
+      "ranges": [
+        [
+          37,
+          54
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "spread",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+      "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+      "ranges": [
+        [
+          196,
+          213
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "box",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemPaperBox.lua",
+      "sha256": "a5468609f1990ae888dfaa61f62d8c50e608b4cc9aa33bf7ef6b6f06d70d1422",
+      "ranges": [
+        [
+          18,
+          29
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "boxView",
+      "path": "analysis/lua/Lua_Core/Board/View/Item/ItemPaperBoxView.lua",
+      "sha256": "6a485a6c9165ff402663db618fe5a816c269d5ccce7fe5ce0b494071ad0ee7c4",
+      "ranges": [
+        [
+          1,
+          10
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "webView",
+      "path": "analysis/lua/Lua_Core/Board/View/Item/ItemCobwebView.lua",
+      "sha256": "7680f6b3468f5431a9bd26f4bd6a225b1f077e0f8071091277252c9cd4b022fe",
+      "ranges": [
+        [
+          8,
+          16
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "pool",
+      "path": "analysis/lua/Lua_Core/Board/View/ItemViewFactory.lua",
+      "sha256": "7ad7cc3d7f97bcf83f92297434089470e10b78351f1d6bb552d48736ca5cb785",
+      "ranges": [
+        [
+          101,
+          151
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "factoryCell",
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GeneratorFactoryDetailCell.lua",
+      "sha256": "91eee6a53b01027f337227c2aafc0910d1d5688e58b477afce92d65dc903c823",
+      "ranges": [
+        [
+          81,
+          162
+        ],
+        [
+          204,
+          231
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "factoryItem",
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/InventoryFactoryItem.lua",
+      "sha256": "e7538f487b45d7cefa885c7d735208c07e6265067c6703c525609d84bc112e1c",
+      "ranges": [
+        [
+          24,
+          45
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "factoryContent",
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GeneratorFactoryContent.lua",
+      "sha256": "5da80e69b0a1ebe7c83313e68acfe7cb27f067d710b611a9face04e7842b3103",
+      "ranges": [
+        [
+          1,
+          80
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "factoryOverview",
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GenFactoryItemCell.lua",
+      "sha256": "08ca4d71392ac9479d30689c9a6a277bc261dc355acab9e617cf8ffed7279f9c",
+      "ranges": [
+        [
+          17,
+          43
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "factoryModel",
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/ItemGeneratorFactoryModel.lua",
+      "sha256": "bfcea52b9c5058e056679cbe12a0ee7624e6f142afd834b4b8e06609897ce5d7",
+      "ranges": [
+        [
+          201,
+          230
+        ],
+        [
+          260,
+          310
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "locks",
+      "path": "analysis/lua/Lua_Core/UI/UIFramework/UIManager.lua",
+      "sha256": "2d8036bf9684418897d2ea1b08a8e4d2af2827cd16db92f3c9d98874fb73f6cb",
+      "ranges": [
+        [
+          655,
+          695
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "inventory",
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/InventoryWindow.lua",
+      "sha256": "30b435eae914337bd204f393feb27f2ebc69e463e439b1da5e4a5e032b3a53e0",
+      "ranges": [
+        [
+          296,
+          319
+        ]
+      ],
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "id": "itemConfig",
+      "path": "analysis/config-tables/ItemModelConfig.json",
+      "sha256": "9c9463a970e3097beff553cf08e0c1a37d5e83ecc18711a1d5a3928ddfc86eb7",
+      "selectors": [
+        "table[Type=level_down_piece_1]",
+        "table[Type=time_skip_1..5]"
+      ],
+      "evidenceType": "packaged-config-decoded-json"
+    }
+  ],
+  "media": [
+    {
+      "key": "item:ItemModelConfig:201",
+      "src": "./assets/media/apk-Flour01.png",
+      "sha256": "24eb3b650b61ac22d5778be2112ad25d23ea94f4385732496acf222e763fabaf",
+      "origin": "packaged-sprite",
+      "source": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5942478146542824120"
+    },
+    {
+      "key": "item:ItemModelConfig:202",
+      "src": "./assets/media/apk-Flour02.png",
+      "sha256": "9c95c5acccc30c3a40184809d722776192e43d63ca2217660c779d397ab42ad7",
+      "origin": "packaged-sprite",
+      "source": "Gossip Harbor 4.10.5 APK · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 7001515343319629134"
+    },
+    {
+      "key": "item:ItemModelConfig:103",
+      "src": "./assets/media/apk-sim-GroceryBag03.png",
+      "sha256": "122ce06cc3b0271be2b6634c08f849d20ce2c2f721a4242d5785c5aa03d56171",
+      "origin": "packaged-sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1309128055502851620"
+    },
+    {
+      "key": "item:ItemModelConfig:104",
+      "src": "./assets/media/apk-sim-GroceryBag04.png",
+      "sha256": "8420425e3e3df928d0687e83c108fa823404d8253038722bffdf92fde1d51fb4",
+      "origin": "packaged-sprite",
+      "source": "Gossip Harbor4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -8326935537270922532"
+    },
+    {
+      "key": "item:ItemModelConfig:level_down_piece_1",
+      "src": "./assets/media/apk-play-item-level_down_piece_1.png",
+      "sha256": "34c8ad3024c652ac5ff61e34f61cc6a33713fac26370e512bdff633d61ec0f25",
+      "origin": "packaged-sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1874462593635924693"
+    },
+    {
+      "key": "item:ItemModelConfig:time_skip_1",
+      "src": "./assets/media/apk-play-item-time_skip_1.png",
+      "sha256": "3a95bc14959e2c4fc77228685588238411fb1fd43ac1f18a0972da3d5b6f2fa1",
+      "origin": "packaged-sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5172776586136651539"
+    },
+    {
+      "key": "item:ItemModelConfig:time_skip_2",
+      "src": "./assets/media/apk-play-item-time_skip_2.png",
+      "sha256": "8a45ea10444d29bbf7e94246640ead7e2a94b619cf994d4e739d3608673a0674",
+      "origin": "packaged-sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 1946561204657768639"
+    },
+    {
+      "key": "item:ItemModelConfig:time_skip_3",
+      "src": "./assets/media/apk-play-item-time_skip_3.png",
+      "sha256": "a0d263fa6d5f46e94333ebb3ca71da6d1239c7b4fd7fe111a8a32957febc241d",
+      "origin": "packaged-sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id -6548711642689035496"
+    },
+    {
+      "key": "item:ItemModelConfig:time_skip_4",
+      "src": "./assets/media/apk-play-item-time_skip_4.png",
+      "sha256": "d8227ee52bd5a0fd43faafbc67cca65396ac508d6ec8ea12567bc160f2ef60ed",
+      "origin": "packaged-sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 6479435884196317343"
+    },
+    {
+      "key": "item:ItemModelConfig:time_skip_5",
+      "src": "./assets/media/apk-play-item-time_skip_5.png",
+      "sha256": "3a19ee79a4d8b9cad408d43e1a3588a795133184f48d48816ea9904ee4af0086",
+      "origin": "packaged-sprite",
+      "source": "Gossip Harbor 4.10.5 · board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle · Sprite path_id 5483409564795541684"
+    }
+  ],
+  "cards": [
+    {
+      "origin": "apk-rule-replay",
+      "evidenceType": "packaged-static-motion-specification",
+      "originalRuntimeObserved": false,
+      "label": "APK 규칙 재현 · 실제 플레이 녹화 아님",
+      "fullPlaybackValidation": "4.11 사용자 영상의 원속도·전구간 대조 별도 필요",
+      "id": "hint",
+      "checklistId": "4.06",
+      "kind": "merge-hint",
+      "title": "합성 힌트 · 3회 강조와 휴지",
+      "durationSeconds": 5,
+      "loop": true,
+      "mediaKeys": [
+        "item:ItemModelConfig:201",
+        "item:ItemModelConfig:201"
+      ],
+      "sourceRefs": [
+        "item",
+        "mainView",
+        "prompt"
+      ],
+      "trigger": {
+        "normalIdleSeconds": 2.3,
+        "newUserIdleSeconds": 0.7,
+        "newUserCondition": "MainTaskModel:IsTaskFinished(1,3)==false",
+        "conditions": [
+          "OpenHint 기본1, 실제 설정0이면 금지",
+          "FindMergePair 결과와 실제 대상 view가 존재",
+          "레벨1은 hand-drag 분기로 교체",
+          "prompt config CloseCondition 및 prompt lock 확인"
+        ]
+      },
+      "phases": [
+        {
+          "name": "pulse-triplet",
+          "startSeconds": 0,
+          "durationSeconds": 3,
+          "repeat": 3,
+          "cycleSeconds": 1,
+          "tweens": [
+            {
+              "property": "scale",
+              "from": 1,
+              "to": 1.15,
+              "startSeconds": 0,
+              "durationSeconds": 0.25,
+              "ease": "OutCubic"
+            },
+            {
+              "property": "localPosition",
+              "from": [
+                0,
+                0
+              ],
+              "to": "20 * normalized(targetWorldPos - spriteWorldPos)",
+              "startSeconds": 0,
+              "durationSeconds": 0.45,
+              "ease": "OutCubic"
+            },
+            {
+              "property": "hold",
+              "startSeconds": 0.45,
+              "durationSeconds": 0.05
+            },
+            {
+              "property": "scale",
+              "from": 1.15,
+              "to": 1,
+              "startSeconds": 0.5,
+              "durationSeconds": 0.25,
+              "ease": null
+            },
+            {
+              "property": "localPosition",
+              "from": "movePos",
+              "to": [
+                0,
+                0
+              ],
+              "startSeconds": 0.5,
+              "durationSeconds": 0.5,
+              "ease": null
+            }
+          ]
+        },
+        {
+          "name": "rest",
+          "startSeconds": 3,
+          "durationSeconds": 2
+        }
+      ],
+      "stateWire": [
+        "start: StopPromptAnimation(false)로 기존순환을즉시원복",
+        "두대상 각각상대worldposition으로시작",
+        "cobweb 또는 target=nil이면movePos=0,scale만강조",
+        "stop: scale기준가변복귀duration=(scaleX-1)/0.2*0.4 또는ignoreAnim=false면즉시원복"
+      ],
+      "inputLock": {
+        "declared": false,
+        "notes": "힌트 자체의 source 전역 입력잠금은 없음"
+      },
+      "known": [
+        "주기5초,3pulse,1.15배,20world-unit,OutCubic"
+      ],
+      "unknown": [
+        "SetEase가없는복귀 tween의실행당시DOTween기본곡선",
+        "실제viewport상world-unit→pixel비율",
+        "현재서버prompt선택·현재사용자task상태"
+      ]
+    },
+    {
+      "origin": "apk-rule-replay",
+      "evidenceType": "packaged-static-motion-specification",
+      "originalRuntimeObserved": false,
+      "label": "APK 규칙 재현 · 실제 플레이 녹화 아님",
+      "fullPlaybackValidation": "4.11 사용자 영상의 원속도·전구간 대조 별도 필요",
+      "id": "unlock-web",
+      "checklistId": "4.06",
+      "kind": "cobweb-merge",
+      "title": "거미줄 봉인 · 같은 타입 합성",
+      "durationSeconds": 0.4,
+      "loop": false,
+      "mediaKeys": [
+        "item:ItemModelConfig:201",
+        "item:ItemModelConfig:202"
+      ],
+      "sourceRefs": [
+        "baseModel",
+        "boardView",
+        "webView",
+        "pool"
+      ],
+      "phases": [
+        {
+          "name": "consume-source-and-target",
+          "startSeconds": 0,
+          "durationSeconds": 0.1,
+          "tweens": [
+            {
+              "property": "source.localPosition",
+              "to": "target.localPosition",
+              "durationSeconds": 0.1,
+              "ease": null
+            },
+            {
+              "property": "source.scale",
+              "to": 0.3,
+              "durationSeconds": 0.1,
+              "ease": null
+            },
+            {
+              "property": "target.scale",
+              "to": 0.3,
+              "durationSeconds": 0.1,
+              "ease": null
+            }
+          ]
+        },
+        {
+          "name": "new-pops",
+          "startSeconds": 0.1,
+          "durationSeconds": 0.2,
+          "from": 0.3,
+          "to": 1.3,
+          "ease": null
+        },
+        {
+          "name": "settle",
+          "startSeconds": 0.3,
+          "durationSeconds": 0.1,
+          "from": 1.3,
+          "to": 1,
+          "ease": null
+        }
+      ],
+      "stateWire": [
+        "거미줄은CanItemMove=false이므로고정된합성target",
+        "CanItemMerge는innerItemCode와source type일치및mergedType존재검사",
+        "논리는먼저source삭제→target을mergedType으로교체→MergeItem사건",
+        "view는두oldview를0.1초에제거하고새sprite를확대",
+        "일반merge경로이며거미줄전용가위/찢기clip확인은없음"
+      ],
+      "inputLock": {
+        "declared": false,
+        "notes": "일반합성은고유잠금없음; 서버ConfNewGenerator+첫생성기해금이면별도원작팝업잠금분기"
+      },
+      "known": [
+        "합성본체0.4초",
+        "Cobwebview는sprite만갱신",
+        "PaperBox/Cobweb는itempool재활용제외"
+      ],
+      "unknown": [
+        "별도거미줄해제particle의native appearance",
+        "실제녹화와0.4초대조"
+      ]
+    },
+    {
+      "origin": "apk-rule-replay",
+      "evidenceType": "packaged-static-motion-specification",
+      "originalRuntimeObserved": false,
+      "label": "APK 규칙 재현 · 실제 플레이 녹화 아님",
+      "fullPlaybackValidation": "4.11 사용자 영상의 원속도·전구간 대조 별도 필요",
+      "id": "unlock-box",
+      "checklistId": "4.06",
+      "kind": "paperbox-collapse",
+      "title": "상자 봉인 · 인접 충격과 교체",
+      "durationSeconds": null,
+      "loop": false,
+      "mediaKeys": [
+        "item:ItemModelConfig:201"
+      ],
+      "sourceRefs": [
+        "baseModel",
+        "box",
+        "boxView",
+        "mainView",
+        "pool"
+      ],
+      "phases": [
+        {
+          "name": "logical-replace",
+          "startSeconds": 0,
+          "durationSeconds": 0,
+          "operation": "ReplaceItem(source,innerCode,false)"
+        },
+        {
+          "name": "unlock-shock-hook",
+          "startSeconds": 0,
+          "durationSeconds": 0,
+          "operation": "PlayUnlockShockedAnimation() returns 0"
+        },
+        {
+          "name": "remove-cover-create-inner",
+          "startSeconds": 0,
+          "durationSeconds": null,
+          "prefab": "effect_zhixiang_boom",
+          "operation": "oldview제거→newview생성→비동기effect prefab로드"
+        }
+      ],
+      "stateWire": [
+        "합성후인접4방향OnShock",
+        "잠금해제조건이맞는ItemPaperBox만CollapseItem",
+        "논리는innercode로교체후CollapseItem/PaperboxDisappear사건",
+        "unlockShocked=true이면MainBoardView소유잠금→0초지연콜백에서해제/표현교체",
+        "현재ItemPaperBoxView의shockedhook은실제로return0; 임의흔들림시간을붙이지않음",
+        "CollapseReward있으면별도extra reward분기"
+      ],
+      "inputLock": {
+        "declared": true,
+        "owner": "MainBoardView self",
+        "startSeconds": 0,
+        "endSeconds": 0,
+        "condition": "UnlockShocked && ItemPaperBoxView exists",
+        "notes": "0초지연스케줄의실제프레임시점은미확인"
+      },
+      "known": [
+        "unlockhook반환0",
+        "effect_zhixiang_boom비동기로드",
+        "일반OnShock은추가잠금없음"
+      ],
+      "unknown": [
+        "particle실제수명/곡선/texture조합",
+        "동봉PaperboxExtraReward clip은기본상자붕괴clip이아님",
+        "실기frame정합"
+      ]
+    },
+    {
+      "origin": "apk-rule-replay",
+      "evidenceType": "packaged-static-motion-specification",
+      "originalRuntimeObserved": false,
+      "label": "APK 규칙 재현 · 실제 플레이 녹화 아님",
+      "fullPlaybackValidation": "4.11 사용자 영상의 원속도·전구간 대조 별도 필요",
+      "id": "scissors",
+      "checklistId": "4.07",
+      "kind": "scissors-split",
+      "title": "가위 · 확인 후 한 단계 아래 두 아이템",
+      "durationSeconds": 0.9,
+      "loop": false,
+      "mediaKeys": [
+        "item:ItemModelConfig:level_down_piece_1",
+        "item:ItemModelConfig:202",
+        "item:ItemModelConfig:201"
+      ],
+      "sourceRefs": [
+        "mainModel",
+        "itemModel",
+        "split",
+        "mainView",
+        "boardView",
+        "itemConfig"
+      ],
+      "phases": [
+        {
+          "name": "confirm",
+          "startSeconds": null,
+          "durationSeconds": null,
+          "operation": "UseSpecialItemConfirmWindow callback",
+          "excludedFromMotionDuration": true
+        },
+        {
+          "name": "consume-and-create-models",
+          "startSeconds": 0,
+          "durationSeconds": 0,
+          "operation": "CostSplitUseCount→필요시가위삭제→target삭제→prevType두개생성→SplitItem"
+        },
+        {
+          "name": "target-disappears",
+          "startSeconds": 0,
+          "durationSeconds": 0.1,
+          "from": 1,
+          "to": 0.3,
+          "ease": null
+        },
+        {
+          "name": "new1-pop",
+          "startSeconds": 0.1,
+          "durationSeconds": 0.2,
+          "from": 0.3,
+          "to": 1.3,
+          "ease": null
+        },
+        {
+          "name": "new1-settle",
+          "startSeconds": 0.3,
+          "durationSeconds": 0.1,
+          "from": 1.3,
+          "to": 1,
+          "ease": null
+        },
+        {
+          "name": "new2-jump",
+          "startSeconds": 0.05,
+          "durationSeconds": 0.6,
+          "to": "source+0.9*(dest-source)",
+          "jumpPower": 60,
+          "numJumps": 1,
+          "ease": null
+        },
+        {
+          "name": "new2-land",
+          "startSeconds": 0.65,
+          "durationSeconds": 0.25,
+          "to": "dest",
+          "ease": "OutQuad"
+        }
+      ],
+      "stateWire": [
+        "가위끼리합치면count합산하는별도merge분기",
+        "다른target은CanSpecialTypeAffect와boardfull검사후확인창",
+        "확인콜백에서재검사; 취소/부적합이면소비없음",
+        "사용횟수1감소,0이면가위제거",
+        "target하위chain type2개,두번째는FindEmptyPositionInSpreadOrder",
+        "논리변경후view연출. 0.1초에target제거/첫newspreadlight; 두번째jump의총선언끝0.9초"
+      ],
+      "inputLock": {
+        "declared": false,
+        "notes": "이SplitItem view코드자체는추가SetEventLock없음. 확인modal은별도입력경계"
+      },
+      "known": [
+        "사용횟수default1",
+        "sourceAllowedTargetmap필수",
+        "분해1회당도구count1감소"
+      ],
+      "unknown": [
+        "확인창입력대기시간",
+        "SetEase미지정구간DOTween기본곡선",
+        "jumpnativecurve와픽셀스케일대조"
+      ]
+    },
+    {
+      "origin": "apk-rule-replay",
+      "evidenceType": "packaged-static-motion-specification",
+      "originalRuntimeObserved": false,
+      "label": "APK 규칙 재현 · 실제 플레이 녹화 아님",
+      "fullPlaybackValidation": "4.11 사용자 영상의 원속도·전구간 대조 별도 필요",
+      "id": "hourglass",
+      "checklistId": "4.07",
+      "kind": "hourglass-time-skip",
+      "title": "모래시계 · 논리 즉시 가속과 순차 파문",
+      "durationSeconds": null,
+      "durationFormula": "max(targetDelaySeconds)+1",
+      "loop": false,
+      "mediaKeys": [
+        "item:ItemModelConfig:time_skip_1",
+        "item:ItemModelConfig:103"
+      ],
+      "sourceRefs": [
+        "collect",
+        "mainModel",
+        "spread",
+        "mainView",
+        "item",
+        "itemConfig"
+      ],
+      "phases": [
+        {
+          "name": "consume-clock",
+          "startSeconds": 0,
+          "durationSeconds": 0,
+          "operation": "RemoveItem→SkipItems→모든item OnTimeSkip→TimeSkip view사건"
+        },
+        {
+          "name": "wave-delay",
+          "startSeconds": 0,
+          "durationSeconds": null,
+          "formula": "max(abs(dx)-1,abs(dy)-1)*0.25",
+          "validTarget": "같은source제외; CanItemMove(item) && itemView exists",
+          "gridDistance": "Chebyshev; 가까운8칸 delay0"
+        },
+        {
+          "name": "target-rise",
+          "startSeconds": "delay",
+          "durationSeconds": 0.25,
+          "from": 0,
+          "to": 30,
+          "ease": "OutCubic"
+        },
+        {
+          "name": "target-fall",
+          "startSeconds": "delay+0.25",
+          "durationSeconds": 0.25,
+          "from": 30,
+          "to": 0,
+          "ease": "InCubic"
+        },
+        {
+          "name": "time-skip-effect",
+          "startSeconds": "delay",
+          "durationSeconds": 1,
+          "prefabField": "m_timeSkipEffectPrefab",
+          "endOperation": "RemoveSelf"
+        }
+      ],
+      "stateWire": [
+        "ItemCollectable confirmed면source도구삭제후skip reward초수적용",
+        "MainBoardModel은모든비어있지않은item에OnTimeSkip을보내고사건발행",
+        "ItemSpread는startTimer가있을때만duration을빼고저장/UpdatePerSecond",
+        "view는별개로movable대상에파문연출; 타이머없는아이템도시각파문가능",
+        "논리쿨다운감소는파문도착을기다리지않음"
+      ],
+      "inputLock": {
+        "declared": false,
+        "notes": "시간가속파문코드는추가전역SetEventLock없음"
+      },
+      "skipSecondsByType": {
+        "time_skip_1": 600,
+        "time_skip_2": 1200,
+        "time_skip_3": 2400,
+        "time_skip_4": 4800,
+        "time_skip_5": 9600
+      },
+      "known": [
+        "각대상상하이동0.5초,effectcleanup1초",
+        "7×9에서최대delay1.75초(유효다른대상전제)"
+      ],
+      "unknown": [
+        "실제m_timeSkipEffectPrefab→am_time_1연결은미확정",
+        "동봉clip0.75초를Luaeffect수명1초로대체하지않음",
+        "실기/모든컴포넌트가속결과대조"
+      ]
+    },
+    {
+      "origin": "apk-rule-replay",
+      "evidenceType": "packaged-static-motion-specification",
+      "originalRuntimeObserved": false,
+      "label": "APK 규칙 재현 · 실제 플레이 녹화 아님",
+      "fullPlaybackValidation": "4.11 사용자 영상의 원속도·전구간 대조 별도 필요",
+      "id": "factory-flight",
+      "checklistId": "4.08",
+      "kind": "factory-fragment-flight",
+      "title": "공장 · 조각 소비와 점수 비행",
+      "durationSeconds": 1.9,
+      "loop": false,
+      "mediaKeys": [
+        "item:ItemModelConfig:103",
+        "item:ItemModelConfig:104"
+      ],
+      "sourceRefs": [
+        "factoryItem",
+        "factoryCell",
+        "factoryModel"
+      ],
+      "phases": [
+        {
+          "name": "consume-fragment-add-score",
+          "startSeconds": 0,
+          "durationSeconds": 0,
+          "operation": "AddScore에서items[type]-1,score+=2^(level-1),SaveData"
+        },
+        {
+          "name": "bezier-flight",
+          "startSeconds": 0,
+          "durationSeconds": 0.4,
+          "path": "cubicBezier(from,mid+(-80,-80),mid+(-80,-80),to)",
+          "ease": "BezierEaseType.Sin",
+          "space": "World"
+        },
+        {
+          "name": "arrival",
+          "startSeconds": 0.4,
+          "durationSeconds": 0,
+          "clip": "FlyItem",
+          "audio": "SfxProgressCrush",
+          "vibration": "VibrationLight",
+          "operation": "UpdateSlider"
+        },
+        {
+          "name": "remove-fly-object",
+          "startSeconds": 1.9,
+          "durationSeconds": 0,
+          "operation": "arrival+1.5秒RemoveSelf"
+        }
+      ],
+      "stateWire": [
+        "count<=0면실패sfx/진동/메시지후return소비없음",
+        "성공시논리점수/개수변경은비행전에완료",
+        "scoreText=+score; sprite는해당fragment",
+        "비행0.4초종료에FlyItem clip시작및slider갱신",
+        "FlyItem클립1.95초이나Lua가1.5초후object제거; 끝구간재생을보장하지않음"
+      ],
+      "inputLock": {
+        "declared": false,
+        "notes": "threshold미만비행은고유잠금없음"
+      },
+      "known": [
+        "0.4초flight",
+        "도착후1.5초제거",
+        "control1=control2=mid+(-80,-80)"
+      ],
+      "unknown": [
+        "실제from/to worldtransform",
+        "BezierEaseType.Sin내부함수의정확수식",
+        "nativeUI완성합성과마스크/particle"
+      ]
+    },
+    {
+      "origin": "apk-rule-replay",
+      "evidenceType": "packaged-static-motion-specification",
+      "originalRuntimeObserved": false,
+      "label": "APK 규칙 재현 · 실제 플레이 녹화 아님",
+      "fullPlaybackValidation": "4.11 사용자 영상의 원속도·전구간 대조 별도 필요",
+      "id": "factory-threshold",
+      "checklistId": "4.08",
+      "kind": "factory-threshold-reward",
+      "title": "공장 · 임계 점수와 생성기 획득",
+      "durationSeconds": 1.45,
+      "sliderEndSeconds": 1.15,
+      "loop": false,
+      "mediaKeys": [
+        "item:ItemModelConfig:103",
+        "item:ItemModelConfig:104"
+      ],
+      "sourceRefs": [
+        "factoryItem",
+        "factoryCell",
+        "factoryModel",
+        "locks"
+      ],
+      "phases": [
+        {
+          "name": "consume-and-lock",
+          "startSeconds": 0,
+          "durationSeconds": 0,
+          "anonymousLockDelta": 1
+        },
+        {
+          "name": "fragment-flight",
+          "startSeconds": 0,
+          "durationSeconds": 0.4
+        },
+        {
+          "name": "logical-reward-and-second-lock",
+          "startSeconds": 0.4,
+          "durationSeconds": 0,
+          "anonymousLockDelta": 1,
+          "operation": "TryReward deductmaxScore+AcquireRewardsLogic"
+        },
+        {
+          "name": "slider-to-full",
+          "startSeconds": 0.4,
+          "durationSeconds": 0.3,
+          "from": "previousScore/max",
+          "to": 1,
+          "ease": null
+        },
+        {
+          "name": "shake-token",
+          "startSeconds": 0.7,
+          "durationSeconds": 0.75,
+          "clip": "DetailCell_shake",
+          "overrunsDeclaredSliderEnd": true
+        },
+        {
+          "name": "source-initial-unlock",
+          "startSeconds": 0.5,
+          "durationSeconds": 0,
+          "anonymousLockDelta": -1
+        },
+        {
+          "name": "reward-pause",
+          "startSeconds": 0.7,
+          "durationSeconds": 0.25
+        },
+        {
+          "name": "reward-view-and-unlock",
+          "startSeconds": 0.95,
+          "durationSeconds": 0,
+          "anonymousLockDelta": -1,
+          "operation": "slider=0; rewardview+inventorydisplay"
+        },
+        {
+          "name": "remainder-slider",
+          "startSeconds": 0.95,
+          "durationSeconds": 0.2,
+          "to": "(curScore-maxScore)/maxScore",
+          "ease": null
+        }
+      ],
+      "stateWire": [
+        "AddScore가bReward면caller무소유잠금+1,0.5초후-1",
+        "0.4초도착UpdateSlider는무소유잠금+1후TryReward논리지급",
+        "0.7초slider완료에shake_token재생,0.25초쉼",
+        "0.95초에시각보상/slider0/잔량0.2초보간/무소유잠금-1",
+        "기본임계flow의입력차단은0..0.95초연속(count2는0.4..0.5)",
+        "clipshake는0.7..1.45초선언;1.15초slider끝과다르다"
+      ],
+      "inputLock": {
+        "declared": true,
+        "owner": null,
+        "counter": true,
+        "intervals": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 0.4,
+            "count": 1
+          },
+          {
+            "startSeconds": 0.4,
+            "endSeconds": 0.5,
+            "count": 2
+          },
+          {
+            "startSeconds": 0.5,
+            "endSeconds": 0.95,
+            "count": 1
+          },
+          {
+            "startSeconds": 0.95,
+            "endSeconds": 1.15,
+            "count": 0
+          }
+        ],
+        "notes": "다른UI소유자/무소유잠금이없다는가정의정적합성. 원작runtime관측아님"
+      },
+      "known": [
+        "TryReward논리지급0.4초",
+        "보상view0.95초",
+        "remainingfill끝1.15초",
+        "shakeclip끝1.45초"
+      ],
+      "unknown": [
+        "동시다른UI잠금/서버활성/원작같은프레임callback순서",
+        "AcquireRewardsInView내부비행완료시점"
+      ]
+    },
+    {
+      "origin": "apk-rule-replay",
+      "evidenceType": "packaged-static-motion-specification",
+      "originalRuntimeObserved": false,
+      "label": "APK 규칙 재현 · 실제 플레이 녹화 아님",
+      "fullPlaybackValidation": "4.11 사용자 영상의 원속도·전구간 대조 별도 필요",
+      "id": "factory-idle",
+      "checklistId": "4.08",
+      "kind": "factory-availability-loop",
+      "title": "공장 · 획득 가능 아이콘 반복 강조",
+      "durationSeconds": 3,
+      "loop": true,
+      "mediaKeys": [
+        "item:ItemModelConfig:104"
+      ],
+      "sourceRefs": [
+        "factoryOverview",
+        "factoryCell",
+        "factoryContent"
+      ],
+      "clip": "GenFactoryItemCell",
+      "phases": [
+        {
+          "name": "icon-pulse",
+          "startSeconds": 0,
+          "durationSeconds": 3,
+          "curveIds": [
+            "GenFactoryItemCell:0",
+            "GenFactoryItemCell:3"
+          ]
+        }
+      ],
+      "stateWire": [
+        "총 점수+보관 조각 점수 >= maxScore일 때 desc 활성. controller의 동봉 clip 참조 확인",
+        "desc scale1→1.1→1,glowalpha0.50196→1→0.50196",
+        "선택 그룹과 일치할 때 glow 활성. 실제 계정 점수/창 상태는 미확인"
+      ],
+      "inputLock": {
+        "declared": false
+      },
+      "known": [
+        "3초loop",
+        "정적60sampleRate선언"
+      ],
+      "unknown": [
+        "실제window활성/재생속도/최종한국어레이아웃"
+      ]
+    }
+  ],
+  "clips": [
+    {
+      "identity": {
+        "bundle": "prefabs_assets_assets/prefabs/window_18e8e20632a8c5e6cbe0ebea10e4957d.bundle",
+        "bundleSha256": "1e0326b8b26f7e9a938fc40c9ebb9fdf8e2581dbd20d6f8f59973ef488bbbaa6",
+        "serializedFile": "CAB-0d09e4e9e72336a5db0dd69929ac9bb5",
+        "pathId": "-7759391965776062811",
+        "type": "AnimationClip",
+        "name": "DetailCell_shake",
+        "objectSha256": "fb926d2bcb6a36ef291d40ba842338874bc89e664d0820d300139b30f4cab611"
+      },
+      "durationSeconds": 0.75,
+      "loop": false,
+      "sampleRate": 60,
+      "controllerName": "DetailCell",
+      "controllerUse": [
+        {
+          "identity": {
+            "bundle": "prefabs_assets_assets/prefabs/window_18e8e20632a8c5e6cbe0ebea10e4957d.bundle",
+            "bundleSha256": "1e0326b8b26f7e9a938fc40c9ebb9fdf8e2581dbd20d6f8f59973ef488bbbaa6",
+            "serializedFile": "CAB-0d09e4e9e72336a5db0dd69929ac9bb5",
+            "pathId": "3498251137812027924",
+            "type": "AnimatorController",
+            "name": "DetailCell",
+            "objectSha256": "ad0b8aa2320b02214ab114a30aa266714ede538448b5095f388e3e5779ba9d97"
+          },
+          "animatorNodePath": "/InventoryWindow/scaleRoot/content/bg/GenFactoryContent/DetailCell",
+          "clipReferenceMatched": true,
+          "declaredStateSpeeds": [
+            1
+          ]
+        }
+      ],
+      "curveCountPublished": 2,
+      "curves": [
+        {
+          "id": "DetailCell_shake:0",
+          "index": 0,
+          "nodePath": "bg/Progress/Token",
+          "pathHash": 493932383,
+          "typeId": 4,
+          "attribute": 3,
+          "property": "m_LocalScale.x",
+          "initialValue": 0.6499999761581421,
+          "keyframes": [
+            {
+              "time": 0.23333333432674408,
+              "coefficients": [
+                -118.51856994628906,
+                26.666677474975586,
+                0,
+                0.6499999761581421
+              ],
+              "value": 0.6499999761581421
+            },
+            {
+              "time": 0.38333332538604736,
+              "coefficients": [
+                129.5999755859375,
+                -32.39999771118164,
+                0,
+                0.8500000238418579
+              ],
+              "value": 0.8500000238418579
+            },
+            {
+              "time": 0.550000011920929,
+              "coefficients": [
+                -25,
+                7.499999046325684,
+                0,
+                0.550000011920929
+              ],
+              "value": 0.550000011920929
+            },
+            {
+              "time": 0.75,
+              "coefficients": [
+                0,
+                0,
+                0,
+                0.6499999761581421
+              ],
+              "value": 0.6499999761581421
+            }
+          ]
+        },
+        {
+          "id": "DetailCell_shake:3",
+          "index": 3,
+          "nodePath": "bg/Progress/Token",
+          "pathHash": 493932383,
+          "typeId": 224,
+          "attribute": 1460864421,
+          "property": "m_AnchoredPosition.x",
+          "initialValue": 306.6000061035156,
+          "keyframes": [
+            {
+              "time": 0,
+              "coefficients": [
+                -361798.9375,
+                18089.947265625,
+                0,
+                306.6000061035156
+              ],
+              "value": 306.6000061035156
+            },
+            {
+              "time": 0.03333333507180214,
+              "coefficients": [
+                696599.5625,
+                -34829.98046875,
+                0,
+                313.29998779296875
+              ],
+              "value": 313.29998779296875
+            },
+            {
+              "time": 0.06666667014360428,
+              "coefficients": [
+                -696599.8125,
+                34829.98828125,
+                0,
+                300.3999938964844
+              ],
+              "value": 300.3999938964844
+            },
+            {
+              "time": 0.10000000149011612,
+              "coefficients": [
+                696599.25,
+                -34829.96875,
+                0,
+                313.29998779296875
+              ],
+              "value": 313.29998779296875
+            },
+            {
+              "time": 0.13333334028720856,
+              "coefficients": [
+                -696599.8125,
+                34829.98828125,
+                0,
+                300.3999938964844
+              ],
+              "value": 300.3999938964844
+            },
+            {
+              "time": 0.1666666716337204,
+              "coefficients": [
+                696599.8125,
+                -34829.98828125,
+                0,
+                313.29998779296875
+              ],
+              "value": 313.29998779296875
+            },
+            {
+              "time": 0.20000000298023224,
+              "coefficients": [
+                -696599.8125,
+                34829.98828125,
+                0,
+                300.3999938964844
+              ],
+              "value": 300.3999938964844
+            },
+            {
+              "time": 0.23333333432674408,
+              "coefficients": [
+                0,
+                0,
+                0,
+                313.29998779296875
+              ],
+              "value": 313.29998779296875
+            }
+          ]
+        }
+      ],
+      "curveInterpretation": "Compiled StreamedClip coefficients [a,b,c,d] apply value=((a*dt+b)*dt+c)*dt+d within each span. Key times/values are static native data; no runtime render proof.",
+      "unknowns": [
+        "initialValue는원본streamedclip의음수sentinel값이다. 실제scene의런타임대입값은별도이다.",
+        "selectedcurvesonly;fullclip/prefabnotpublished"
+      ]
+    },
+    {
+      "identity": {
+        "bundle": "prefabs_assets_assets/prefabs/window_18e8e20632a8c5e6cbe0ebea10e4957d.bundle",
+        "bundleSha256": "1e0326b8b26f7e9a938fc40c9ebb9fdf8e2581dbd20d6f8f59973ef488bbbaa6",
+        "serializedFile": "CAB-0d09e4e9e72336a5db0dd69929ac9bb5",
+        "pathId": "-7333950103881113301",
+        "type": "AnimationClip",
+        "name": "GenFactoryItemCell",
+        "objectSha256": "46c062cfce3f0e9f0fa1e9325c6d5d45eb11885a32dd31ea01be6dc37a2ce582"
+      },
+      "durationSeconds": 3,
+      "loop": true,
+      "sampleRate": 60,
+      "controllerName": "GenFactoryItemCell",
+      "controllerUse": [
+        {
+          "identity": {
+            "bundle": "prefabs_assets_assets/prefabs/window_18e8e20632a8c5e6cbe0ebea10e4957d.bundle",
+            "bundleSha256": "1e0326b8b26f7e9a938fc40c9ebb9fdf8e2581dbd20d6f8f59973ef488bbbaa6",
+            "serializedFile": "CAB-0d09e4e9e72336a5db0dd69929ac9bb5",
+            "pathId": "-6059579350206577551",
+            "type": "AnimatorController",
+            "name": "GenFactoryItemCell",
+            "objectSha256": "d474165fd91051b1155b02f85041aa36faa6a7db20a97322fb694bfec957d945"
+          },
+          "animatorNodePath": "/GenFactoryItemCell",
+          "clipReferenceMatched": true,
+          "declaredStateSpeeds": [
+            1
+          ]
+        }
+      ],
+      "curveCountPublished": 2,
+      "curves": [
+        {
+          "id": "GenFactoryItemCell:0",
+          "index": 0,
+          "nodePath": "desc",
+          "pathHash": 196455508,
+          "typeId": 4,
+          "attribute": 3,
+          "property": "m_LocalScale.x",
+          "initialValue": 1,
+          "keyframes": [
+            {
+              "time": 0,
+              "coefficients": [
+                -0.057327065616846085,
+                0.1304190754890442,
+                0,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "time": 1.5166666507720947,
+              "coefficients": [
+                0.061279311776161194,
+                -0.1363464593887329,
+                0,
+                1.100000023841858
+              ],
+              "value": 1.100000023841858
+            },
+            {
+              "time": 3,
+              "coefficients": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "GenFactoryItemCell:3",
+          "index": 3,
+          "nodePath": "bg1/glow",
+          "pathHash": 4268886032,
+          "typeId": 114,
+          "attribute": 304273561,
+          "property": "m_Color.a",
+          "initialValue": 0.501960813999176,
+          "keyframes": [
+            {
+              "time": 0,
+              "coefficients": [
+                -0.28551119565963745,
+                0.6495379209518433,
+                0,
+                0.501960813999176
+              ],
+              "value": 0.501960813999176
+            },
+            {
+              "time": 1.5166666507720947,
+              "coefficients": [
+                0.3051949143409729,
+                -0.6790586113929749,
+                0,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "time": 3,
+              "coefficients": [
+                0,
+                0,
+                0,
+                0.501960813999176
+              ],
+              "value": 0.501960813999176
+            }
+          ]
+        }
+      ],
+      "curveInterpretation": "Compiled StreamedClip coefficients [a,b,c,d] apply value=((a*dt+b)*dt+c)*dt+d within each span. Key times/values are static native data; no runtime render proof.",
+      "unknowns": [
+        "initialValue는원본streamedclip의음수sentinel값이다. 실제scene의런타임대입값은별도이다.",
+        "selectedcurvesonly;fullclip/prefabnotpublished"
+      ]
+    },
+    {
+      "identity": {
+        "bundle": "prefabs_assets_assets/prefabs/window_18e8e20632a8c5e6cbe0ebea10e4957d.bundle",
+        "bundleSha256": "1e0326b8b26f7e9a938fc40c9ebb9fdf8e2581dbd20d6f8f59973ef488bbbaa6",
+        "serializedFile": "CAB-0d09e4e9e72336a5db0dd69929ac9bb5",
+        "pathId": "-2721760445933000617",
+        "type": "AnimationClip",
+        "name": "FlyItem",
+        "objectSha256": "9ea23d8269767265de53c74583c7dac8c6488ca16c8d20b12d87e91362bb165e"
+      },
+      "durationSeconds": 1.9500000476837158,
+      "loop": false,
+      "sampleRate": 60,
+      "controllerName": "FlyItem",
+      "controllerUse": [
+        {
+          "identity": {
+            "bundle": "prefabs_assets_assets/prefabs/window_18e8e20632a8c5e6cbe0ebea10e4957d.bundle",
+            "bundleSha256": "1e0326b8b26f7e9a938fc40c9ebb9fdf8e2581dbd20d6f8f59973ef488bbbaa6",
+            "serializedFile": "CAB-0d09e4e9e72336a5db0dd69929ac9bb5",
+            "pathId": "-2477605211362456451",
+            "type": "AnimatorController",
+            "name": "FlyItem",
+            "objectSha256": "4353f7305a33d90e80294dde0a9fb6a557dda78d4e2cc3e9adfecaf966dde24e"
+          },
+          "animatorNodePath": "/InventoryWindow/scaleRoot/content/bg/GenFactoryContent/DetailCell/GenFlyItem",
+          "clipReferenceMatched": true,
+          "declaredStateSpeeds": [
+            1,
+            1
+          ]
+        }
+      ],
+      "curveCountPublished": 3,
+      "curves": [
+        {
+          "id": "FlyItem:1",
+          "index": 1,
+          "nodePath": "icon",
+          "pathHash": 1704208859,
+          "typeId": 225,
+          "attribute": 1574349066,
+          "property": "m_Alpha",
+          "initialValue": 1,
+          "keyframes": [
+            {
+              "time": 0.1666666716337204,
+              "coefficients": [
+                0.3526405990123749,
+                -0.943313717842102,
+                0,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "time": 1.9500000476837158,
+              "coefficients": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "FlyItem:2",
+          "index": 2,
+          "nodePath": "score",
+          "pathHash": 848901969,
+          "typeId": 224,
+          "attribute": 538195251,
+          "property": "m_AnchoredPosition.y",
+          "initialValue": 0,
+          "keyframes": [
+            {
+              "time": 0.1666666716337204,
+              "coefficients": [
+                -61.35946273803711,
+                164.13658142089844,
+                0,
+                0
+              ],
+              "value": 0
+            },
+            {
+              "time": 1.9500000476837158,
+              "coefficients": [
+                0,
+                0,
+                0,
+                174
+              ],
+              "value": 174
+            }
+          ]
+        },
+        {
+          "id": "FlyItem:3",
+          "index": 3,
+          "nodePath": "score",
+          "pathHash": 848901969,
+          "typeId": 114,
+          "attribute": 304273561,
+          "property": "m_Color.a",
+          "initialValue": 1,
+          "keyframes": [
+            {
+              "time": 1.2999999523162842,
+              "coefficients": [
+                7.282655239105225,
+                -7.100589752197266,
+                0,
+                1
+              ],
+              "value": 1
+            },
+            {
+              "time": 1.9500000476837158,
+              "coefficients": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "value": 0
+            }
+          ]
+        }
+      ],
+      "curveInterpretation": "Compiled StreamedClip coefficients [a,b,c,d] apply value=((a*dt+b)*dt+c)*dt+d within each span. Key times/values are static native data; no runtime render proof.",
+      "unknowns": [
+        "initialValue는원본streamedclip의음수sentinel값이다. 실제scene의런타임대입값은별도이다.",
+        "selectedcurvesonly;fullclip/prefabnotpublished"
+      ]
+    }
+  ],
+  "configSamples": [
+    {
+      "Type": "level_down_piece_1",
+      "SpecialType": 2
+    },
+    {
+      "Type": "time_skip_1",
+      "MergedType": "time_skip_2",
+      "CollectRewards": [
+        "skip-600"
+      ],
+      "BubbleChance": 0
+    },
+    {
+      "Type": "time_skip_2",
+      "MergedType": "time_skip_3",
+      "CollectRewards": [
+        "skip-1200"
+      ],
+      "BubbleChance": 0,
+      "LevelDownPiece": 1
+    },
+    {
+      "Type": "time_skip_3",
+      "MergedType": "time_skip_4",
+      "CollectRewards": [
+        "skip-2400"
+      ],
+      "BubbleChance": 0,
+      "LevelDownPiece": 1
+    },
+    {
+      "Type": "time_skip_4",
+      "MergedType": "time_skip_5",
+      "CollectRewards": [
+        "skip-4800"
+      ],
+      "BubbleChance": 0,
+      "LevelDownPiece": 1
+    },
+    {
+      "Type": "time_skip_5",
+      "CollectRewards": [
+        "skip-9600"
+      ],
+      "BubbleChance": 0,
+      "LevelDownPiece": 1
+    }
+  ],
+  "poolPolicy": {
+    "sourceRefs": [
+      "pool",
+      "item"
+    ],
+    "itemViewPool": "종류별 LIFO, 재사용시 OnRecycle 후 비활성 부모로 이동. 서버 DisableItemViewPool=true이면 파괴한다.",
+    "excludedItemTypes": [
+      "PaperBox",
+      "Cobweb",
+      "shooting_star_1",
+      "Temp",
+      "Fog",
+      "ObstacleClear"
+    ],
+    "timeSkipEffect": "PlayTimeSkipAnimation 호출마다 이전 효과 RemoveSelf 후 Instantiate; delay+1초 RemoveSelf",
+    "factoryFly": "Object.Instantiate 및 도착+1.5초 RemoveSelf. generic board fly pool과 같은 경로로 단정하지 않는다."
+  },
+  "corrections": [
+    {
+      "topic": "factory-input-lock",
+      "previousClaim": "원본SetEventLock은boolean;0.5초initialunlock이sliderlock도해제한다",
+      "corrected": "UIManager.lua655–695는무소유카운터와대상별카운터이다. 임계0초+1/도착0.4초+1/초기0.5초-1/보상0.95초-1이므로0..0.95초연속잠금이다.",
+      "sourceRefs": [
+        "locks",
+        "factoryItem",
+        "factoryCell"
+      ],
+      "runtimeVerified": false
+    }
+  ],
+  "revision": "d904849820fe9ac80eb4ea5df681f9803fcac20cf1b8389561576176bb428dca"
+}

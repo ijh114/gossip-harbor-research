@@ -502,7 +502,20 @@
       "y": -80
     },
     "worldCoordinatesAvailable": false,
-    "eventLockPolicy": "Original SetEventLock is a boolean: threshold click lock at0, slider lock at0.4, initial callback unlock at0.5, slider callback unlock at0.95. These source callbacks are preserved rather than summed into a longer exclusive lease."
+    "eventLockPolicy": "Original UIManager SetEventLock uses anonymous and target-owned counters. Threshold click adds1 at0; slider arrival adds1 at0.4; click callback removes1 at0.5; reward callback removes1 at0.95. With no other locks, input remains blocked through0.95. The current factory-motion.mjs boolean presentation is a known web compatibility approximation and does not yet implement these original overlapping counters.",
+    "inputLockSourceCorrection": {
+      "source": "analysis/lua/Lua_Core/UI/UIFramework/UIManager.lua",
+      "ranges": [
+        [
+          655,
+          695
+        ]
+      ],
+      "kind": "packaged-static-not-runtime",
+      "actualCounter": true,
+      "currentWebModel": "boolean-approximation-unverified",
+      "expectedThresholdUnlockSeconds": 0.95
+    }
   },
   "lifecycleSources": [
     {
