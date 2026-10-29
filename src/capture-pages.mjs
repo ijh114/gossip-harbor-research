@@ -1,4 +1,5 @@
 import {validMedia} from './visual-model.mjs';
+import {renderCaptureStudies,renderAudioStudy} from './capture-study.mjs';
 
 const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const asArray = value => Array.isArray(value) ? value : [];
@@ -67,13 +68,14 @@ function chainDiagram(entries) {
   </section>`;
 }
 
-export function renderCaptures(data, filters = {}) {
+export function renderCaptures(data, filters = {}, studyState) {
   const result = selectCaptures(data, filters);
   const audit=data.mediaAudit?.summary;
   return `<header class="studio-intro capture-intro"><span class="capture-eyebrow">사용자 제공 플레이 기록</span><h1>실제 화면으로 보는 가십하버</h1><p>퍼즐의 조작, UI 배치, 맵과 판매 흐름을 이미지와 짧은 영상으로 확인합니다. 각 자료에서 출처와 관측 범위를 함께 볼 수 있습니다.</p></header>
     <div class="capture-boundary"><strong>APK 분석과 구분해서 읽기</strong><p>이 페이지는 과거 사용자 캡처의 관측입니다. 캡처 버전과 실제 촬영일은 미확인이며, APK 4.10.5의 실행 검증으로 간주하지 않습니다. 파일명 날짜·가격·레벨은 캡처 당시 표본입니다.</p></div>
     ${audit?`<section class="capture-boundary"><h2>영상 전 구간 검토 장부</h2><p>전체 디코드 ${audit.decodedVideos}/${audit.totalVideos}개 · 가십하버 시간순 시각 검토 ${audit.visualTimelineReviewedVideos}/${audit.inScopeVideos}개. 약 0.5초 간격 표본 검토와 원속도 전체 재생·오디오 청취를 구분합니다.</p><a class="text-link" href="#media-audit">원본별 구간·동작·검토 범위 확인 →</a></section>`:''}
-    <section class="capture-gallery" aria-labelledby="capture-gallery-title"><div class="capture-section-heading"><div><h2 id="capture-gallery-title">화면·동작 자료</h2><p class="capture-counts"><span>이미지 <strong>${result.images}</strong></span><span>영상 <strong>${result.videos}</strong></span><span>현재 표시 <strong>${result.rows.length}</strong></span></p></div><a class="text-link" href="#puzzle">퍼즐 도감에서 보기 →</a></div>
+    ${renderCaptureStudies(data,studyState)}${renderAudioStudy(data)}
+    <section class="capture-gallery" aria-labelledby="capture-gallery-title"><div class="capture-section-heading"><div><h2 id="capture-gallery-title">기존 선정 화면·동작 자료</h2><p class="capture-counts"><span>이미지 <strong>${result.images}</strong></span><span>영상 <strong>${result.videos}</strong></span><span>현재 표시 <strong>${result.rows.length}</strong></span></p></div><a class="text-link" href="#puzzle">퍼즐 도감에서 보기 →</a></div>
       <div class="capture-filters"><div role="group" aria-label="자료 주제">${CATEGORIES.map(category => `<button type="button" class="button small" data-capture-category="${category}" aria-pressed="${category === result.category}">${category === 'all' ? '전체 주제' : category}</button>`).join('')}</div><div role="group" aria-label="자료 형식">${KINDS.map(kind => `<button type="button" class="button small" data-capture-kind="${kind}" aria-pressed="${kind === result.kind}">${{all:'모든 형식',image:'이미지',video:'영상'}[kind]}</button>`).join('')}</div></div>
       <p class="sr-only" role="status" aria-live="polite">조건에 맞는 자료 ${result.rows.length}개</p>
       ${result.rows.length ? `<div class="capture-grid">${result.rows.map(captureCard).join('')}</div>` : '<div class="empty-state"><strong>이 조건의 자료는 아직 연결되지 않았습니다</strong><p>전체 주제 또는 모든 형식으로 바꾸면 다른 관측 자료를 볼 수 있습니다.</p></div>'}

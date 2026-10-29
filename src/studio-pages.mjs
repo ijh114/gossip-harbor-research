@@ -3,6 +3,7 @@ import {PUZZLE_DEMOS,UI_DEMOS,UI_REGIONS,ROLE_NAMES,UI_CATEGORY_NAMES,filterVisu
 import {STAGE_NAMES,STAGES,RENOVATIONS} from './walkthrough.mjs';
 import {renderActionGallery} from './action-gallery.mjs';
 import {renderPlayProgress} from './play-progress.mjs';
+import {renderStudyLinks} from './capture-study.mjs';
 import {renderInteractionGallery} from './interaction-gallery.mjs';
 
 const e=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -75,11 +76,12 @@ export function renderPuzzle(data,filters){
 }
 export function renderPuzzleMotion(data){
  return intro('연출 도감','생성·합성·보상·팝업의 모습을 비교합니다. 실제 캡처와 APK 규칙으로 만든 웹 시연을 출처별로 구분합니다.')+
+ renderStudyLinks(data,['puzzle'],'원본 프레임으로 비교하는 퍼즐 연출')+
  renderActionGallery(data)+coverage(data,PUZZLE_DEMOS.map(x=>'effect:'+x.id))+
  `<section class="studio-section"><div class="section-heading"><h2>동작·기믹 연출</h2><a class="text-link" href="#puzzle-fx">연출 상세 연구</a></div><p class="section-copy">아래 모식도는 동작의 구조를 설명합니다. 실제 아이템 이미지로 반복 재생되는 입력 동작은 <a href="#puzzle-interaction">상호작용 도감</a>에서 비교하세요.</p>${demoCards(PUZZLE_DEMOS,data)}</section>`;
 }
 export function renderInteraction(data){
- return intro('상호작용','선택·이동·합성부터 봉인 해제까지, 12개 동작을 반복 GIF로 비교하세요.')+renderInteractionGallery(data);
+ return intro('상호작용','선택·이동·합성부터 봉인 해제까지, 12개 동작을 반복 GIF로 비교하세요.')+renderInteractionGallery(data)+renderStudyLinks(data,['puzzle'],'실제 플레이·도움말 시연의 정밀 비교');
 }
 export function difficultyOutput(level=8){return `<strong>${baseMergeUnits(level).toLocaleString('ko-KR')}<span>개</span></strong><p>레벨 ${level} 한 개에 필요한 레벨1 아이템의 이론 최소량</p><code>2^(${level} − 1)</code>`;}
 export function renderDifficulty(data){
@@ -90,11 +92,11 @@ export function renderDifficulty(data){
 export function renderInterface(data,filters){return intro('UI','상점·확인창·재화 충전 화면을 먼저 비교합니다. 실제 관측 이미지와 아래 APK 프리팹 목록의 연결은 각각의 출처로 확인합니다.')+pageLinks('interface','ui')+observedGallery(data,['UI','BM'],'상점과 팝업의 실제 배치')+
  `<div class="ui-entry-links"><a href="#interface-structure"><h2>UI 구조</h2><p>배치 모식도·앵커·컴포넌트</p>${arrow}</a><a href="#interface-motion"><h2>UI 연출</h2><p>창·HUD·마스크 동작 비교</p>${arrow}</a></div><section class="studio-section"><h2>화면·컴포넌트 도감</h2><div id="ui-registry">${renderUIRegistry(data,filters)}</div></section>${apkAssetGallery(data,true)}`;}
 export function regionDetail(id='top'){
- const r=UI_REGIONS.find(r=>r.id===id)||UI_REGIONS[0];return `<h3>${r.title}</h3><p>${r.note}</p>${source(r.source)}<div class="region-capture-note">실제 화면 이미지가 전달되면 이 영역에 캡처와 좌표 주석을 연결합니다.</div>`;
+ const r=UI_REGIONS.find(r=>r.id===id)||UI_REGIONS[0];return `<h3>${r.title}</h3><p>${r.note}</p>${source(r.source)}<div class="region-capture-note">실제 배치는 위의 원본 화면 주석에서 비교하세요. 이 배치도는 웹 모식도입니다.</div>`;
 }
-export function renderStructure(data){return intro('UI · 구조','영역을 눌러 역할과 연결 근거를 확인하세요. 배치도는 비교를 위한 웹 모식도이며 원작 화면 좌표나 컴포넌트 크기를 복원한 결과는 아닙니다.')+pageLinks('interface-structure','ui')+
+export function renderStructure(data){return intro('UI · 구조','실제 캡처의 영역 주석과 웹 모식도를 구분해 비교합니다. 원본 프리팹 좌표는 최종 화면 픽셀 좌표와 다릅니다.')+pageLinks('interface-structure','ui')+renderStudyLinks(data,['ui'],'실제 화면의 UI 영역과 상태')+
  `<section class="studio-section"><h2>화면 배치와 컴포넌트</h2><div class="ui-anatomy"><div class="anatomy-screen" role="group" aria-label="화면 영역 선택"><span class="screen-caption">화면 배치 모식도</span>${UI_REGIONS.map(r=>`<button class="anatomy-region region-${r.id}" data-ui-region="${r.id}" aria-pressed="${r.id==='top'}">${r.title}</button>`).join('')}</div><aside class="region-inspector" id="region-inspector" aria-live="polite">${regionDetail()}</aside></div></section><section class="studio-section"><h2>겹쳐지는 UI 계층</h2><div class="layer-chart">${Object.entries(data.domainAnalysis.models.uiSorting.fixed).sort((a,b)=>b[1]-a[1]).map(([name,n])=>`<div><strong>${name}</strong><span class="layer-line" style="--layer:${50+n/640}%"></span><code>${n}</code></div>`).join('')}</div><p class="section-copy">특수 레이어의 코드 정렬값입니다. 화면 높이·깊이나 실제 픽셀 좌표를 뜻하지 않습니다. 일반 창 정렬 간격은 10입니다.</p>${source('UI-008')}</section>${apkUIFields(data)}<section class="studio-section"><h2>실제 메인 화면 비교</h2>${mediaPreview(data,'screen:play','실제 퍼즐 HUD 화면')}<a class="button" href="#ui">UI 구조 상세 연구</a></section>`;}
-export function renderUIMotion(data){return intro('UI · 연출','창, HUD, 팝업과 튜토리얼의 움직임을 카드로 비교합니다. 웹 모식도는 재생 버튼으로 확인하고 실제 이미지·GIF는 같은 카드 아래에 연결합니다.')+pageLinks('interface-motion','ui')+renderActionGallery(data,{scope:'ui'})+coverage(data,UI_DEMOS.map(x=>'effect:'+x.id))+`<section class="studio-section"><h2>UI 동작 갤러리</h2>${demoCards(UI_DEMOS,data)}</section>${apkClipTable(data)}`;}
+export function renderUIMotion(data){return intro('UI · 연출','창, HUD, 팝업과 튜토리얼의 움직임을 카드로 비교합니다. 웹 모식도는 재생 버튼으로 확인하고 실제 이미지·GIF는 같은 카드 아래에 연결합니다.')+pageLinks('interface-motion','ui')+renderStudyLinks(data,['ui','puzzle'],'원본 프레임으로 비교하는 UI·보상 상태',{ids:['motion-bubble','motion-order','motion-blocked','motion-collect','motion-help-rainbow','motion-help-frozen']})+renderActionGallery(data,{scope:'ui'})+coverage(data,UI_DEMOS.map(x=>'effect:'+x.id))+`<section class="studio-section"><h2>UI 동작 갤러리</h2>${demoCards(UI_DEMOS,data)}</section>${apkClipTable(data)}`;}
 
 const tileIcon=(family,level)=>`<span class="play-item ${family==='tea'?'tea':'bread'}"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">${family==='tea'?'<path d="M8 11h21v14a7 7 0 0 1-7 7h-7a7 7 0 0 1-7-7Zm21 3h4a5 5 0 0 1 0 10h-4M14 3v4m9-4v4"/>':'<path d="M7 17C0 13 3 6 10 6h20c7 0 10 7 3 11v18H7Z"/><path d="M15 21v6m10-6v6"/>'}</svg><b>${level}</b></span>`;
 function homeScene(level,style='sage'){return `<div class="home-scene home-level-${level} style-${style}" role="img" aria-label="웹 공간 모식도. 발전 ${level}단계"><div class="room-wall"><span>공간 변화 모식도</span><div class="room-window"></div>${level>=2?'<div class="room-trim"></div>':''}</div><div class="room-floor">${level>=1?'<div class="room-rug"></div>':''}${level>=3?'<div class="room-table"></div><div class="room-chair"></div>':''}</div><span class="room-caption">${['변경 전','바닥 정리','벽면 보수','가구 배치'][level]} · 웹 시연</span></div>`;}

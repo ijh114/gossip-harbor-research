@@ -26,6 +26,11 @@
       "path": "analysis/media-review/continuous/verification.json",
       "sha256": "6f67263bd3efefe80e021183e9a38be20c7893298a5a24501da7b516972246a5",
       "errorCount": 0
+    },
+    "refinement": {
+      "path": "src/data/media-refinement.json",
+      "sha256": "c5cfc5dfc27d7651553cb6df4d9c11401ae6e2b56e824111350df6d15e526a5c",
+      "scope": "선정 native 프레임 정정·추가 관측. 기존 디코드/표본/음량 검증 카운터와 구분하며 이전 분류를 보존한다."
     }
   },
   "summary": {
@@ -68,7 +73,7 @@
         "status": "success",
         "frames": 6504,
         "declaredFrames": 6504,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 55.494322,
         "videoCodec": "hevc",
         "width": 1080,
@@ -84,7 +89,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0001-01.jpg",
             "sha256": "95b6013e846cd2f72f6475d3c8d7ac5f334d0a55b5f394a0451a0f13c79af7a4",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3065,
             "samples": 64
           },
@@ -278,7 +283,7 @@
         "status": "success",
         "frames": 20211,
         "declaredFrames": 20211,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 171.967033,
         "videoCodec": "hevc",
         "width": 1080,
@@ -294,7 +299,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0002-01.jpg",
             "sha256": "cbbbcd2412c63ddde0fae537d759bf8acee076392749819e6d584183f29b082b",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2815,
             "samples": 64
           },
@@ -575,7 +580,7 @@
         "status": "success",
         "frames": 3004,
         "declaredFrames": 3004,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 26.456878,
         "videoCodec": "hevc",
         "width": 1080,
@@ -591,7 +596,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0003-01.jpg",
             "sha256": "0f464118e32f819ddd1174544b826d064ca0d2e188705f61502226682b6eac18",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 26.775,
             "samples": 53
           }
@@ -756,7 +761,7 @@
         "sampleRate": 44100,
         "channels": 2,
         "meanVolumeDb": -24.9,
-        "maxVolumeDb": -0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -788,7 +793,7 @@
         "status": "success",
         "frames": 2061,
         "declaredFrames": 2061,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 17.151622,
         "videoCodec": "hevc",
         "width": 1080,
@@ -804,7 +809,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0004-01.jpg",
             "sha256": "abadb2024137397fa3cc991af9288e38d0b9149970de7039135d8190f0035fc4",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 17.502,
             "samples": 35
           }
@@ -1001,7 +1006,7 @@
         "status": "success",
         "frames": 2038,
         "declaredFrames": 2038,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 17.628756,
         "videoCodec": "hevc",
         "width": 1080,
@@ -1017,7 +1022,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0005-01.jpg",
             "sha256": "d78b1efa27a0596588a9e2e6dc9a6a28f944c168e1aa816a9901dbb55080dfde",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 17.687,
             "samples": 36
           }
@@ -1192,7 +1197,7 @@
         "status": "success",
         "frames": 5059,
         "declaredFrames": 5059,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 50.158411,
         "videoCodec": "hevc",
         "width": 1080,
@@ -1208,7 +1213,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0006-01.jpg",
             "sha256": "dfecfb804e110610853f718c3cd7f2b21318ee9c121d2ec22b1deab7c48c27c5",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 34.0211,
             "samples": 64
           },
@@ -1435,7 +1440,7 @@
         "status": "success",
         "frames": 2149,
         "declaredFrames": 2149,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 25.0912,
         "videoCodec": "hevc",
         "width": 1080,
@@ -1451,7 +1456,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0007-01.jpg",
             "sha256": "780577bed92e80ef787910d94f264dbac9daad76dc706b856ffb4d4f01c252b1",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 25.377,
             "samples": 50
           }
@@ -1648,7 +1653,7 @@
         "status": "success",
         "frames": 8880,
         "declaredFrames": 8880,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 74.636378,
         "videoCodec": "hevc",
         "width": 1080,
@@ -1664,7 +1669,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0008-01.jpg",
             "sha256": "55aa90cd1d2e87da6f8861e81f46a0724adca99d27f10a2be2b26dbbb8ba6845",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2786,
             "samples": 64
           },
@@ -1823,7 +1828,7 @@
         "sampleRate": 44100,
         "channels": 2,
         "meanVolumeDb": -24.6,
-        "maxVolumeDb": -4.0,
+        "maxVolumeDb": -4,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -1855,7 +1860,7 @@
         "status": "success",
         "frames": 9333,
         "declaredFrames": 9333,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 88.464356,
         "videoCodec": "hevc",
         "width": 1080,
@@ -1871,7 +1876,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0009-01.jpg",
             "sha256": "7a4990f4201fd25d611f740748b4a6b7dece7bbe975183613619d57ae4d6f6fa",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3751,
             "samples": 64
           },
@@ -2085,7 +2090,7 @@
         "sampleRate": 44100,
         "channels": 2,
         "meanVolumeDb": -24.7,
-        "maxVolumeDb": -3.0,
+        "maxVolumeDb": -3,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -2117,7 +2122,7 @@
         "status": "success",
         "frames": 1607,
         "declaredFrames": 1607,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 13.1293,
         "videoCodec": "hevc",
         "width": 1080,
@@ -2133,7 +2138,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0010-01.jpg",
             "sha256": "6956bc96d128cec90174b26291aed7ad5c5b4d6c399a3975a1211d222db9a1bc",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 13.538,
             "samples": 27
           }
@@ -2265,7 +2270,7 @@
         "sampleRate": 44100,
         "channels": 2,
         "meanVolumeDb": -23.5,
-        "maxVolumeDb": -5.0,
+        "maxVolumeDb": -5,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -2297,7 +2302,7 @@
         "status": "success",
         "frames": 5339,
         "declaredFrames": 5339,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 49.558478,
         "videoCodec": "hevc",
         "width": 1080,
@@ -2313,7 +2318,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0011-01.jpg",
             "sha256": "4d4d95a3e1d6668d6aed8056cbac951b20f80b3d5e5bd12ec984bce4c5b780c7",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3265,
             "samples": 64
           },
@@ -2529,7 +2534,7 @@
         "status": "success",
         "frames": 416,
         "declaredFrames": 416,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 13.5,
         "videoCodec": "hevc",
         "width": 1920,
@@ -2545,7 +2550,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0012-01.jpg",
             "sha256": "2c876e7e899deee4e3ce7bd73ddd0d56dee67349fe21c558c6d9968853f84b9c",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 13.9,
             "samples": 28
           }
@@ -2597,15 +2602,15 @@
         ],
         "candidateChanges": [
           {
-            "at": 12.0,
+            "at": 12,
             "meanLumaDifference": 27.944
           },
           {
-            "at": 5.0,
+            "at": 5,
             "meanLumaDifference": 3.868
           },
           {
-            "at": 11.0,
+            "at": 11,
             "meanLumaDifference": 3.732
           },
           {
@@ -2613,7 +2618,7 @@
             "meanLumaDifference": 3.66
           },
           {
-            "at": 8.0,
+            "at": 8,
             "meanLumaDifference": 3.351
           },
           {
@@ -2621,7 +2626,7 @@
             "meanLumaDifference": 2.865
           },
           {
-            "at": 10.0,
+            "at": 10,
             "meanLumaDifference": 2.796
           },
           {
@@ -2637,7 +2642,7 @@
             "meanLumaDifference": 1.741
           },
           {
-            "at": 4.0,
+            "at": 4,
             "meanLumaDifference": 1.739
           },
           {
@@ -2645,7 +2650,7 @@
             "meanLumaDifference": 1.735
           },
           {
-            "at": 9.0,
+            "at": 9,
             "meanLumaDifference": 1.68
           },
           {
@@ -2653,11 +2658,11 @@
             "meanLumaDifference": 1.625
           },
           {
-            "at": 1.0,
+            "at": 1,
             "meanLumaDifference": 1.609
           },
           {
-            "at": 6.0,
+            "at": 6,
             "meanLumaDifference": 1.608
           },
           {
@@ -2665,15 +2670,15 @@
             "meanLumaDifference": 1.444
           },
           {
-            "at": 7.0,
+            "at": 7,
             "meanLumaDifference": 1.418
           },
           {
-            "at": 3.0,
+            "at": 3,
             "meanLumaDifference": 1.408
           },
           {
-            "at": 2.0,
+            "at": 2,
             "meanLumaDifference": 1.355
           }
         ],
@@ -2723,7 +2728,7 @@
         "status": "success",
         "frames": 284,
         "declaredFrames": 284,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 9.5,
         "videoCodec": "hevc",
         "width": 1920,
@@ -2739,7 +2744,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0013-01.jpg",
             "sha256": "bb3db00a993ec8b778be5feb5e94e9864c8b4002f8f02fcab4f01d872a2e9da8",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 9.533,
             "samples": 20
           }
@@ -2802,7 +2807,7 @@
         ],
         "candidateChanges": [
           {
-            "at": 2.0,
+            "at": 2,
             "meanLumaDifference": 104.191
           },
           {
@@ -2818,7 +2823,7 @@
             "meanLumaDifference": 73.602
           },
           {
-            "at": 4.0,
+            "at": 4,
             "meanLumaDifference": 3.122
           },
           {
@@ -2826,7 +2831,7 @@
             "meanLumaDifference": 1.719
           },
           {
-            "at": 3.0,
+            "at": 3,
             "meanLumaDifference": 1.511
           },
           {
@@ -2838,19 +2843,19 @@
             "meanLumaDifference": 1.148
           },
           {
-            "at": 1.0,
+            "at": 1,
             "meanLumaDifference": 1.147
           },
           {
-            "at": 7.0,
+            "at": 7,
             "meanLumaDifference": 1.08
           },
           {
-            "at": 5.0,
+            "at": 5,
             "meanLumaDifference": 1.052
           },
           {
-            "at": 9.0,
+            "at": 9,
             "meanLumaDifference": 0.995
           },
           {
@@ -2858,7 +2863,7 @@
             "meanLumaDifference": 0.924
           },
           {
-            "at": 6.0,
+            "at": 6,
             "meanLumaDifference": 0.867
           },
           {
@@ -2866,7 +2871,7 @@
             "meanLumaDifference": 0.841
           },
           {
-            "at": 8.0,
+            "at": 8,
             "meanLumaDifference": 0.764
           },
           {
@@ -2924,8 +2929,8 @@
         "status": "success",
         "frames": 214,
         "declaredFrames": 214,
-        "firstPts": 0.0,
-        "lastSamplePts": 7.0,
+        "firstPts": 0,
+        "lastSamplePts": 7,
         "videoCodec": "hevc",
         "width": 1920,
         "height": 886,
@@ -2940,7 +2945,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0014-01.jpg",
             "sha256": "a4133183db4c0d3c01671e46970e8f801f7059569ece313da3e054416dbd3b96",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 7.167,
             "samples": 15
           }
@@ -2996,7 +3001,7 @@
             "meanLumaDifference": 69.497
           },
           {
-            "at": 1.0,
+            "at": 1,
             "meanLumaDifference": 64.158
           },
           {
@@ -3004,7 +3009,7 @@
             "meanLumaDifference": 9.326
           },
           {
-            "at": 3.0,
+            "at": 3,
             "meanLumaDifference": 6.412
           },
           {
@@ -3012,11 +3017,11 @@
             "meanLumaDifference": 5.236
           },
           {
-            "at": 2.0,
+            "at": 2,
             "meanLumaDifference": 4.952
           },
           {
-            "at": 4.0,
+            "at": 4,
             "meanLumaDifference": 4.294
           },
           {
@@ -3028,7 +3033,7 @@
             "meanLumaDifference": 1.525
           },
           {
-            "at": 6.0,
+            "at": 6,
             "meanLumaDifference": 1.413
           },
           {
@@ -3036,7 +3041,7 @@
             "meanLumaDifference": 1.348
           },
           {
-            "at": 7.0,
+            "at": 7,
             "meanLumaDifference": 1.344
           },
           {
@@ -3044,7 +3049,7 @@
             "meanLumaDifference": 1.223
           },
           {
-            "at": 5.0,
+            "at": 5,
             "meanLumaDifference": 1.192
           }
         ],
@@ -3094,7 +3099,7 @@
         "status": "success",
         "frames": 2149,
         "declaredFrames": 2149,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 25.0912,
         "videoCodec": "h264",
         "width": 1080,
@@ -3110,7 +3115,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0015-01.jpg",
             "sha256": "4b7c7a57ea32ca395515d6d9c78c41a52c1223957e0a01aaf32a8c67212018ed",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 25.45,
             "samples": 50
           }
@@ -3275,7 +3280,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -27.1,
-        "maxVolumeDb": -4.0,
+        "maxVolumeDb": -4,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -3307,7 +3312,7 @@
         "status": "success",
         "frames": 8880,
         "declaredFrames": 8880,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 74.636378,
         "videoCodec": "h264",
         "width": 1080,
@@ -3323,7 +3328,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0016-01.jpg",
             "sha256": "6836d269b98d44a8044919b7715b4499081aef22cb3bad3b1ccb1405e574563b",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2786,
             "samples": 64
           },
@@ -3514,7 +3519,7 @@
         "status": "success",
         "frames": 701,
         "declaredFrames": 701,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 10.6763,
         "videoCodec": "h264",
         "width": 1080,
@@ -3530,7 +3535,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0017-01.jpg",
             "sha256": "859ee63d4a688181ad31c8e3cab01d06e47990c6712dfa43606041964cc12dc0",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 10.995,
             "samples": 22
           }
@@ -3660,7 +3665,7 @@
         "status": "success",
         "frames": 3887,
         "declaredFrames": 3887,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 49.448144,
         "videoCodec": "h264",
         "width": 1080,
@@ -3676,7 +3681,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0018-01.jpg",
             "sha256": "62e0d82820f4b6d8cbadfe45dca68ed1a1bc714d7d46f0e5efcd1f01136704e1",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 34.8086,
             "samples": 64
           },
@@ -3903,7 +3908,7 @@
         "status": "success",
         "frames": 5059,
         "declaredFrames": 5059,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 50.616711,
         "videoCodec": "h264",
         "width": 1080,
@@ -3919,7 +3924,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0019-01.jpg",
             "sha256": "94a1901d4dae4922d760e847ee3e17c794dcc7da2710267c7b49e9111ed3dcb4",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 34.0211,
             "samples": 64
           },
@@ -4170,7 +4175,7 @@
         "status": "success",
         "frames": 2038,
         "declaredFrames": 2038,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 17.628756,
         "videoCodec": "h264",
         "width": 1080,
@@ -4186,7 +4191,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0020-01.jpg",
             "sha256": "80a26db050cbd8678994f5b69f4718f0b18ff52e2d8be7114c3ff467da036176",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 17.762,
             "samples": 36
           }
@@ -4361,7 +4366,7 @@
         "status": "success",
         "frames": 2061,
         "declaredFrames": 2061,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 17.151622,
         "videoCodec": "h264",
         "width": 1080,
@@ -4377,7 +4382,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0021-01.jpg",
             "sha256": "9ae58c1f3c8e16eca0861d40f4e53dedaa50106054967a919252ed17e1e8a412",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 17.596,
             "samples": 35
           }
@@ -4574,7 +4579,7 @@
         "status": "success",
         "frames": 3004,
         "declaredFrames": 3004,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 26.456878,
         "videoCodec": "h264",
         "width": 1080,
@@ -4590,7 +4595,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0022-01.jpg",
             "sha256": "84324d9fe5f6f37722e11e271382825ebb1d8f26e34d97e4e839e0a966f85ff5",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 26.841,
             "samples": 53
           }
@@ -4755,7 +4760,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -24.7,
-        "maxVolumeDb": 0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -4787,7 +4792,7 @@
         "status": "success",
         "frames": 1265,
         "declaredFrames": 1265,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 11.042122,
         "videoCodec": "h264",
         "width": 1080,
@@ -4803,7 +4808,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0023-01.jpg",
             "sha256": "5a55176d537eddf6176312e6f74cec0aba38b3be85d1944bf95f76e0523848b8",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 11.139,
             "samples": 23
           }
@@ -4990,7 +4995,7 @@
         "codec": "aac",
         "sampleRate": 48000,
         "channels": 2,
-        "meanVolumeDb": -26.0,
+        "meanVolumeDb": -26,
         "maxVolumeDb": -8.7,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
@@ -5024,7 +5029,7 @@
         "status": "success",
         "frames": 20211,
         "declaredFrames": 20211,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 171.967033,
         "videoCodec": "h264",
         "width": 1080,
@@ -5040,7 +5045,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0024-01.jpg",
             "sha256": "23e4bd60da2e064b469c77fe41347396e131f3ff82ebd169ac5aab89bc689240",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2815,
             "samples": 64
           },
@@ -5321,7 +5326,7 @@
         "status": "success",
         "frames": 871,
         "declaredFrames": 871,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 7.553711,
         "videoCodec": "h264",
         "width": 1080,
@@ -5337,7 +5342,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0025-01.jpg",
             "sha256": "b723e05927481966553470506fa17f44b7a0d50f4d8c4d9945d15aaa1174fa59",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 7.644,
             "samples": 16
           }
@@ -5470,8 +5475,8 @@
         "codec": "aac",
         "sampleRate": 48000,
         "channels": 2,
-        "meanVolumeDb": -26.0,
-        "maxVolumeDb": -8.0,
+        "meanVolumeDb": -26,
+        "maxVolumeDb": -8,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -5503,7 +5508,7 @@
         "status": "success",
         "frames": 6504,
         "declaredFrames": 6504,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 55.494322,
         "videoCodec": "h264",
         "width": 1080,
@@ -5519,7 +5524,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0026-01.jpg",
             "sha256": "4554d5b4f6a6a88f67ea589e7b9909a35b54294bdc001eb12a74f9f13c6c36f6",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3065,
             "samples": 64
           },
@@ -5713,7 +5718,7 @@
         "status": "success",
         "frames": 5984,
         "declaredFrames": 5984,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 51.914956,
         "videoCodec": "h264",
         "width": 1080,
@@ -5729,7 +5734,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0027-01.jpg",
             "sha256": "b58819c97128ba3920b5212d2e31884dc20fd744ea6a432e4707afc4952234da",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2769,
             "samples": 64
           },
@@ -5935,7 +5940,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -24.3,
-        "maxVolumeDb": -1.0,
+        "maxVolumeDb": -1,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -5967,7 +5972,7 @@
         "status": "success",
         "frames": 854,
         "declaredFrames": 854,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 7.0768,
         "videoCodec": "h264",
         "width": 1080,
@@ -5983,7 +5988,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0028-01.jpg",
             "sha256": "218474841dd4f858e0e8fa1d7dd18174fe1faf6ffa432079d0f4a0d3a64bbfa9",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 7.44,
             "samples": 15
           }
@@ -6133,7 +6138,7 @@
         "status": "success",
         "frames": 1674,
         "declaredFrames": 1674,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 14.1497,
         "videoCodec": "h264",
         "width": 1080,
@@ -6149,7 +6154,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0029-01.jpg",
             "sha256": "2b914b0fee6af3fac9df2c63fb0053b0751b28c3880260b285fdf93fc7e5754f",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 14.395,
             "samples": 29
           }
@@ -6331,7 +6336,7 @@
         "status": "success",
         "frames": 2210,
         "declaredFrames": 2210,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 19.223022,
         "videoCodec": "h264",
         "width": 1080,
@@ -6347,7 +6352,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0030-01.jpg",
             "sha256": "e256f6729dd48257a6893c768292394d0dde856fd5386bb3f4c96363fbadef67",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 19.44,
             "samples": 39
           }
@@ -6539,7 +6544,7 @@
         "status": "success",
         "frames": 845,
         "declaredFrames": 845,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 7.076611,
         "videoCodec": "h264",
         "width": 1080,
@@ -6555,7 +6560,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0031-01.jpg",
             "sha256": "3370ee376f2f14a48845d48d5b9329eefa506aaaac893decbfca8bdb9647c14a",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 7.262,
             "samples": 15
           }
@@ -6704,7 +6709,7 @@
         "status": "success",
         "frames": 2984,
         "declaredFrames": 2984,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 50.468111,
         "videoCodec": "h264",
         "width": 1080,
@@ -6720,7 +6725,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0032-01.jpg",
             "sha256": "c9556e2531973cec4cc23d4e258e5d9014a50bc4bf6ded1a49d1e379c4a05770",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 35.1423,
             "samples": 64
           },
@@ -6959,7 +6964,7 @@
         "status": "success",
         "frames": 1764,
         "declaredFrames": 1764,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 14.621511,
         "videoCodec": "h264",
         "width": 1080,
@@ -6975,7 +6980,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0033-01.jpg",
             "sha256": "46ba06687a9af4865381480a96723146b4991e74d4e08f082db337a5d10b6e7e",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 15.039,
             "samples": 30
           }
@@ -7175,7 +7180,7 @@
         "status": "success",
         "frames": 1111,
         "declaredFrames": 1111,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 10.104211,
         "videoCodec": "h264",
         "width": 1080,
@@ -7191,7 +7196,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0034-01.jpg",
             "sha256": "3d3865d7e01cf7b375059bf3b422ff8364af2ffd1e489d7e4a5f52a25253ca41",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 10.283,
             "samples": 21
           }
@@ -7364,7 +7369,7 @@
         "status": "success",
         "frames": 3416,
         "declaredFrames": 3416,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 33.618089,
         "videoCodec": "h264",
         "width": 1080,
@@ -7380,7 +7385,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0036-01.jpg",
             "sha256": "05f8b4a6da3aa8cf118215a29750ad3a9b108490478cb246bda09e08378d4561",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 33.1016,
             "samples": 64
           },
@@ -7592,7 +7597,7 @@
         "status": "success",
         "frames": 1144,
         "declaredFrames": 1144,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 9.085689,
         "videoCodec": "h264",
         "width": 1080,
@@ -7608,7 +7613,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0037-01.jpg",
             "sha256": "627dd29dddab915c37305e40c2359fdc17c02845930bc45d8cba49cff676ebe1",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 9.5857,
             "samples": 19
           }
@@ -7743,7 +7748,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -23.7,
-        "maxVolumeDb": -3.0,
+        "maxVolumeDb": -3,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -7775,7 +7780,7 @@
         "status": "success",
         "frames": 4068,
         "declaredFrames": 4068,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 38.421311,
         "videoCodec": "h264",
         "width": 1080,
@@ -7791,7 +7796,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0038-01.jpg",
             "sha256": "21a19cc74d137d58ae1096bbae7ff67f7b60d03cc3cfe4754af55079338d787c",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 33.8694,
             "samples": 64
           },
@@ -8004,7 +8009,7 @@
         "status": "success",
         "frames": 2669,
         "declaredFrames": 2669,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 31.0789,
         "videoCodec": "h264",
         "width": 1080,
@@ -8020,7 +8025,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0039-01.jpg",
             "sha256": "55b6bf82a831b23f381a718bc5191f0f8b528a469e58fee06c85d91800aa4265",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 31.414,
             "samples": 57
           }
@@ -8206,7 +8211,7 @@
         "status": "success",
         "frames": 9070,
         "declaredFrames": 9070,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 75.844511,
         "videoCodec": "h264",
         "width": 1080,
@@ -8222,7 +8227,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0040-01.jpg",
             "sha256": "2d5885bc549a9af7c00b8a076206ed78a72eddc6f085aaefdfa4971d53c4dfba",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3381,
             "samples": 64
           },
@@ -8444,7 +8449,7 @@
         "status": "success",
         "frames": 1631,
         "declaredFrames": 1631,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 13.667989,
         "videoCodec": "h264",
         "width": 1080,
@@ -8460,7 +8465,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0041-01.jpg",
             "sha256": "c0aa373e74c7558242d6f2965054310b6f54a4d8ee71e4e4f173254f57f2f31d",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 14.075,
             "samples": 28
           }
@@ -8642,7 +8647,7 @@
         "status": "success",
         "frames": 7928,
         "declaredFrames": 7928,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 68.4761,
         "videoCodec": "h264",
         "width": 1080,
@@ -8658,7 +8663,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0042-01.jpg",
             "sha256": "f9f0d2a9e98ed83c052e147e79056b51d0bfa17754d619e443bbc7c21ff245e3",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.6507,
             "samples": 64
           },
@@ -8919,7 +8924,7 @@
         "status": "success",
         "frames": 7084,
         "declaredFrames": 7084,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 59.036911,
         "videoCodec": "h264",
         "width": 1080,
@@ -8935,7 +8940,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0043-01.jpg",
             "sha256": "f8fc13938741512564882446daaebc43e3bdfdd460671834257f338203798483",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2869,
             "samples": 64
           },
@@ -9154,7 +9159,7 @@
         "status": "success",
         "frames": 1607,
         "declaredFrames": 1607,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 13.1293,
         "videoCodec": "h264",
         "width": 1080,
@@ -9170,7 +9175,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0044-01.jpg",
             "sha256": "0f884193e092cedf3de56f1d4a77e349df81d710d377e95a24060f3171caa8d0",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 13.586,
             "samples": 27
           }
@@ -9353,7 +9358,7 @@
         "status": "success",
         "frames": 5130,
         "declaredFrames": 5130,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 43.918633,
         "videoCodec": "h264",
         "width": 1080,
@@ -9369,7 +9374,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0045-01.jpg",
             "sha256": "5d607d1c74b03955155ef054f2c923d88e8bbfc3b5fa535e50a11aadd8ee9014",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3202,
             "samples": 64
           },
@@ -9580,7 +9585,7 @@
         "status": "success",
         "frames": 1404,
         "declaredFrames": 1404,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 11.593222,
         "videoCodec": "h264",
         "width": 1080,
@@ -9596,7 +9601,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0046-01.jpg",
             "sha256": "d0e000e10309a79d0e22b086c5f5c197e04adefa0e0bcce2d027f2d42bd9aa67",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 12.084,
             "samples": 24
           }
@@ -9757,7 +9762,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -26.5,
-        "maxVolumeDb": -9.0,
+        "maxVolumeDb": -9,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -9790,7 +9795,7 @@
         "status": "success",
         "frames": 4650,
         "declaredFrames": 4650,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 39.439667,
         "videoCodec": "h264",
         "width": 1080,
@@ -9806,7 +9811,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0047-01.jpg",
             "sha256": "61e7638bf943c779fb745e49a35cb403413cfafab7bae7cf00cb925c8cef85b6",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3402,
             "samples": 64
           },
@@ -10019,7 +10024,7 @@
         "status": "success",
         "frames": 3292,
         "declaredFrames": 3292,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 29.761444,
         "videoCodec": "h264",
         "width": 1080,
@@ -10035,7 +10040,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0048-01.jpg",
             "sha256": "9b3da98a07206dde409eceb9bbf23740f14bc6521bbc95fde26d819fed75918a",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 30.243,
             "samples": 60
           }
@@ -10208,8 +10213,8 @@
         "codec": "aac",
         "sampleRate": 48000,
         "channels": 2,
-        "meanVolumeDb": -26.0,
-        "maxVolumeDb": -9.0,
+        "meanVolumeDb": -26,
+        "maxVolumeDb": -9,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -10242,7 +10247,7 @@
         "status": "success",
         "frames": 7231,
         "declaredFrames": 7231,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 62.640978,
         "videoCodec": "h264",
         "width": 1080,
@@ -10258,7 +10263,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0049-01.jpg",
             "sha256": "d89136e24a1b8c5a42dd609aaf925cdd44cf7e7536c8549940da0ee24d9b0887",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2928,
             "samples": 64
           },
@@ -10404,7 +10409,7 @@
           },
           {
             "at": 23.74,
-            "meanLumaDifference": 80.0
+            "meanLumaDifference": 80
           },
           {
             "at": 25.249,
@@ -10511,7 +10516,7 @@
         "status": "success",
         "frames": 2287,
         "declaredFrames": 2287,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 19.180522,
         "videoCodec": "h264",
         "width": 1080,
@@ -10527,7 +10532,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0050-01.jpg",
             "sha256": "b4a0aed72e0307e2697cbc548d15eb1588102b1a25ada7d66fd0d5780067926f",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 19.484,
             "samples": 39
           }
@@ -10719,7 +10724,7 @@
         "status": "success",
         "frames": 6018,
         "declaredFrames": 6018,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 49.956278,
         "videoCodec": "h264",
         "width": 1080,
@@ -10735,7 +10740,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0052-01.jpg",
             "sha256": "adaf6b96e3818524826ce6e5021fae96a50c198cf89d6ac098cf09456f51b617",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2729,
             "samples": 64
           },
@@ -10926,7 +10931,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -25.9,
-        "maxVolumeDb": -5.0,
+        "maxVolumeDb": -5,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -10959,7 +10964,7 @@
         "status": "success",
         "frames": 11981,
         "declaredFrames": 11981,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 101.555044,
         "videoCodec": "h264",
         "width": 1080,
@@ -10975,7 +10980,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0053-01.jpg",
             "sha256": "c03e9c6fb294550f36fac3556a53a83931c445ceb0ddb30d9a76ac198d6c9fe4",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.4216,
             "samples": 64
           },
@@ -11198,7 +11203,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -23.9,
-        "maxVolumeDb": -0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -11232,7 +11237,7 @@
         "status": "success",
         "frames": 8593,
         "declaredFrames": 8593,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 104.563533,
         "videoCodec": "h264",
         "width": 1080,
@@ -11248,7 +11253,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0054-01.jpg",
             "sha256": "68db27ce2c9d6353f17a348e90b3fae96738efce67950be59b7efcb6d0371264",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3706,
             "samples": 64
           },
@@ -11455,7 +11460,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -24.1,
-        "maxVolumeDb": 0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -11474,6 +11479,19 @@
         "캡처 버전·실제 촬영일·서버 상품 배정은 미확인이다.",
         "기존카탈로그제목의도구소모·발굴기믹은새검토에서확정하지않고실제보이는생성·합성·초록봉인영역으로기술했다.",
         "과거 캡처의 버전·실제 촬영일·입력 로그는 미확인. 파일명 날짜를 촬영일로 확정하지 않음."
+      ],
+      "refinementObservations": [
+        {
+          "id": "COR-MOTION-003",
+          "kind": "confirmation",
+          "sourceRange": {
+            "startSeconds": 4,
+            "endSeconds": 5.1
+          },
+          "observation": "해당 짧은 구간은 갈퀴 카운터10→9, 타격 그림·광채와 다중 드롭을 확인했다. 메인 상자/거미줄 해제는 여전히 미확인이다.",
+          "basis": "121개 native PTS 프레임에서 숫자 감소와 타격·드롭의 전후를 대조했다.",
+          "studyId": "motion-rake"
+        }
       ]
     },
     {
@@ -11489,7 +11507,7 @@
         "status": "success",
         "frames": 9430,
         "declaredFrames": 9430,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 85.925367,
         "videoCodec": "h264",
         "width": 1080,
@@ -11505,7 +11523,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0056-01.jpg",
             "sha256": "37fb8cd520041b3ecf0d5a9f2ae42960f1a81df8185a05f13feee485f93ce54e",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3098,
             "samples": 64
           },
@@ -11627,7 +11645,7 @@
           },
           {
             "at": 13.616,
-            "meanLumaDifference": 109.0
+            "meanLumaDifference": 109
           },
           {
             "at": 3.533,
@@ -11685,7 +11703,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -24.5,
-        "maxVolumeDb": 0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -11717,7 +11735,7 @@
         "status": "success",
         "frames": 5130,
         "declaredFrames": 5130,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 52.168533,
         "videoCodec": "h264",
         "width": 1080,
@@ -11733,7 +11751,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0058-01.jpg",
             "sha256": "9c7be755a73f283f19068c95563d79348a11307e09a06554d20f43d5e4b311e1",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.9525,
             "samples": 64
           },
@@ -11939,7 +11957,7 @@
         "status": "success",
         "frames": 4360,
         "declaredFrames": 4360,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 37.893433,
         "videoCodec": "h264",
         "width": 1080,
@@ -11955,7 +11973,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0059-01.jpg",
             "sha256": "a1a8f77c39971786211c83e1e680f2ddd5e1bdccc1b7d564ce1becd2ba95b2cb",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3521,
             "samples": 64
           },
@@ -12150,7 +12168,7 @@
         "status": "success",
         "frames": 1782,
         "declaredFrames": 1782,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 17.232956,
         "videoCodec": "h264",
         "width": 1080,
@@ -12166,7 +12184,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0060-01.jpg",
             "sha256": "1582fec06d1a1cfa86597583da9c80e8bf9805c3187b06613835803baf00b9cf",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 17.666,
             "samples": 35
           }
@@ -12344,7 +12362,7 @@
         "status": "success",
         "frames": 1968,
         "declaredFrames": 1968,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 21.317378,
         "videoCodec": "h264",
         "width": 1080,
@@ -12360,7 +12378,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0061-01.jpg",
             "sha256": "6575e399fedaf80939a11516fc42b0d4bba69fdd4f45d97d0530fb35d758f572",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 21.561,
             "samples": 43
           }
@@ -12538,7 +12556,7 @@
         "status": "success",
         "frames": 6476,
         "declaredFrames": 6476,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 53.985922,
         "videoCodec": "h264",
         "width": 1080,
@@ -12554,7 +12572,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0062-01.jpg",
             "sha256": "84e0c344f18e43f8def8127a7c6b766b714ab0db1f8ca0ccc5337ffb6b1f9164",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2798,
             "samples": 64
           },
@@ -12731,7 +12749,7 @@
         "status": "success",
         "frames": 2662,
         "declaredFrames": 2662,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 23.232267,
         "videoCodec": "h264",
         "width": 1080,
@@ -12747,7 +12765,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0063-01.jpg",
             "sha256": "3296033041a3ec2523b1ea50b5e27476a4c42e19e8b7cc9a859f9e9a48a50a1c",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 23.457,
             "samples": 47
           }
@@ -12916,7 +12934,7 @@
         "status": "success",
         "frames": 46115,
         "declaredFrames": 46115,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 428.508044,
         "videoCodec": "h264",
         "width": 1080,
@@ -12932,7 +12950,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0064-01.jpg",
             "sha256": "bc684b081995a99aa4c712e3d7150e4efa87ca6ff092ab1068ecc0a12b7f3d24",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2763,
             "samples": 64
           },
@@ -13317,7 +13335,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -24.3,
-        "maxVolumeDb": 0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -13351,7 +13369,7 @@
         "status": "success",
         "frames": 1006,
         "declaredFrames": 1006,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 8.059967,
         "videoCodec": "h264",
         "width": 1080,
@@ -13367,7 +13385,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0065-01.jpg",
             "sha256": "7e5f70c526d9ab6735ae3fea8641c218ef8bc3d9cc490849d7de8fedcfc6d1e7",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 8.466,
             "samples": 17
           }
@@ -13529,7 +13547,7 @@
         "status": "success",
         "frames": 1605,
         "declaredFrames": 1605,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 15.680156,
         "videoCodec": "h264",
         "width": 1080,
@@ -13545,7 +13563,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0068-01.jpg",
             "sha256": "5796c5fe5ab768cb2a8907bd77c8fa511602d6d3b5c67068b9b20a2cfd8abb8b",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 15.835,
             "samples": 32
           }
@@ -13724,7 +13742,7 @@
         "status": "success",
         "frames": 1938,
         "declaredFrames": 1938,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 16.136767,
         "videoCodec": "h264",
         "width": 1080,
@@ -13740,7 +13758,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0069-01.jpg",
             "sha256": "b665473381a623f1e776ddf4e8d7812375d7286750e8b845451761a60c43a11b",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 16.426,
             "samples": 33
           }
@@ -13909,7 +13927,7 @@
         "status": "success",
         "frames": 7544,
         "declaredFrames": 7544,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 69.442422,
         "videoCodec": "h264",
         "width": 1080,
@@ -13925,7 +13943,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0070-01.jpg",
             "sha256": "ec66ec902b0395420cff1d3e879944c2503cd3d9be47636856bcd9932469d0cc",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2922,
             "samples": 64
           },
@@ -14105,7 +14123,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -24.2,
-        "maxVolumeDb": 0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -14137,7 +14155,7 @@
         "status": "success",
         "frames": 7152,
         "declaredFrames": 7152,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 60.229556,
         "videoCodec": "h264",
         "width": 1080,
@@ -14153,7 +14171,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0071-01.jpg",
             "sha256": "95609fce3216f05c83b4c11b474e18359b394c8d7ee87e83380e7a103323d9dd",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.4563,
             "samples": 64
           },
@@ -14333,7 +14351,7 @@
         "codec": "aac",
         "sampleRate": 48000,
         "channels": 2,
-        "meanVolumeDb": -25.0,
+        "meanVolumeDb": -25,
         "maxVolumeDb": -1.8,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
@@ -14367,7 +14385,7 @@
         "status": "success",
         "frames": 2241,
         "declaredFrames": 2241,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 18.652944,
         "videoCodec": "h264",
         "width": 1080,
@@ -14383,7 +14401,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0072-01.jpg",
             "sha256": "561b9cbb532f2698153f8181ff102a38bb4ecfe0d576608f424a435bba6a9d58",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 18.875,
             "samples": 38
           }
@@ -14561,7 +14579,7 @@
         "status": "success",
         "frames": 2522,
         "declaredFrames": 2522,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 26.194922,
         "videoCodec": "h264",
         "width": 1080,
@@ -14577,7 +14595,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0073-01.jpg",
             "sha256": "bb3ccfc21d6bfefb946fa187b0b5a8f39ab6351e593c60490d70c86be620f112",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 26.594,
             "samples": 51
           }
@@ -14765,7 +14783,7 @@
         "status": "success",
         "frames": 619,
         "declaredFrames": 619,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 5.048289,
         "videoCodec": "h264",
         "width": 1080,
@@ -14781,7 +14799,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0074-01.jpg",
             "sha256": "4bf2f5c3323dbd1ab1427b43b1a3b7aa9eb9cb088d4491e8fb202bad8cb196a7",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 5.327,
             "samples": 11
           }
@@ -14910,7 +14928,7 @@
         "status": "success",
         "frames": 28217,
         "declaredFrames": 28217,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 242.053411,
         "videoCodec": "h264",
         "width": 1080,
@@ -14926,7 +14944,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0075-01.jpg",
             "sha256": "389c3e2d784afe86899bea0bff3fbf391ae6b923dfd200360b9cb4a593505003",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 33.026,
             "samples": 64
           },
@@ -15225,7 +15243,7 @@
         "status": "success",
         "frames": 14499,
         "declaredFrames": 14499,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 125.532744,
         "videoCodec": "h264",
         "width": 1080,
@@ -15241,7 +15259,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0076-01.jpg",
             "sha256": "d75cd9cb82dad6e0c709c24415239672ea2f48e4e12008437b9091fe257c9eca",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.709,
             "samples": 64
           },
@@ -15480,7 +15498,7 @@
         "status": "success",
         "frames": 670,
         "declaredFrames": 670,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 5.564356,
         "videoCodec": "h264",
         "width": 1080,
@@ -15496,7 +15514,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0077-01.jpg",
             "sha256": "98ce869c060e5eb2a7f619b7c177e61688bb6d7cfc148d626fbc7dfc8cbeb65c",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 5.74,
             "samples": 12
           }
@@ -15629,7 +15647,7 @@
         "status": "success",
         "frames": 1522,
         "declaredFrames": 1522,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 23.356444,
         "videoCodec": "h264",
         "width": 1080,
@@ -15645,7 +15663,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0078-01.jpg",
             "sha256": "4cae1fe65eadb63eb443a16ba3bad8e49599b13e0c5c025931c62aaf9ef4ab1b",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 23.548,
             "samples": 47
           }
@@ -15746,7 +15764,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -18.1,
-        "maxVolumeDb": 0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -15776,7 +15794,7 @@
         "status": "success",
         "frames": 5919,
         "declaredFrames": 5919,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 52.684111,
         "videoCodec": "h264",
         "width": 1080,
@@ -15792,7 +15810,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0079-01.jpg",
             "sha256": "77abae6038a7c8be9ecf1dddfeddf9ee129fec0968fd5d607e414dc5d43a6e87",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.5342,
             "samples": 64
           },
@@ -16021,7 +16039,7 @@
         "status": "success",
         "frames": 944,
         "declaredFrames": 944,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 12.729356,
         "videoCodec": "h264",
         "width": 1080,
@@ -16037,7 +16055,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0080-01.jpg",
             "sha256": "4dc397369615a1c41d966d8a6221ef7f39e655097aa439f73f3b6eb8331eed9b",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 13.205,
             "samples": 26
           }
@@ -16138,7 +16156,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -20.6,
-        "maxVolumeDb": 0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -16168,7 +16186,7 @@
         "status": "success",
         "frames": 15623,
         "declaredFrames": 15623,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 131.958578,
         "videoCodec": "h264",
         "width": 1080,
@@ -16184,7 +16202,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0081-01.jpg",
             "sha256": "d5eeb487ec413054c14f633807f0421cd3346f3290286a87832259f65233d052",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.485,
             "samples": 64
           },
@@ -16416,7 +16434,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -24.3,
-        "maxVolumeDb": 0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -16448,7 +16466,7 @@
         "status": "success",
         "frames": 8290,
         "declaredFrames": 8290,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 87.660267,
         "videoCodec": "h264",
         "width": 1080,
@@ -16464,7 +16482,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0082-01.jpg",
             "sha256": "2331106f5af644b21301364a90f860c9ee66398f4afc926b07e34fe4400c25ad",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 33.1493,
             "samples": 64
           },
@@ -16714,7 +16732,7 @@
         "status": "success",
         "frames": 24810,
         "declaredFrames": 24810,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 208.846544,
         "videoCodec": "h264",
         "width": 1080,
@@ -16730,7 +16748,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0083-01.jpg",
             "sha256": "95cc74936ce083cc54a0173dce2faf07554fc254139fb3c3118b44fc71b7e80a",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.296,
             "samples": 64
           },
@@ -17030,7 +17048,7 @@
         "status": "success",
         "frames": 7104,
         "declaredFrames": 7104,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 60.649156,
         "videoCodec": "h264",
         "width": 1080,
@@ -17046,7 +17064,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0084-01.jpg",
             "sha256": "a5d4daf7cddd3f23e3126725ae10fa9de315f19771557bfe7b9ceb11944bceae",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3993,
             "samples": 64
           },
@@ -17259,7 +17277,7 @@
         "status": "success",
         "frames": 1166,
         "declaredFrames": 1166,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 9.608233,
         "videoCodec": "h264",
         "width": 1080,
@@ -17275,7 +17293,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0085-01.jpg",
             "sha256": "f0359635c923cc2cc497cd7d5b22214dcb964362cb552c4575aef848d34f70de",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 9.909,
             "samples": 20
           }
@@ -17438,7 +17456,7 @@
         "status": "success",
         "frames": 1004,
         "declaredFrames": 1004,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 8.592289,
         "videoCodec": "h264",
         "width": 1080,
@@ -17454,7 +17472,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0086-01.jpg",
             "sha256": "2019d9a204439cb804b80c67ad4884f66aaf5f44d8232e0e6a8bd28db290393a",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 9.086,
             "samples": 18
           }
@@ -17627,7 +17645,7 @@
         "status": "success",
         "frames": 8536,
         "declaredFrames": 8536,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 73.6196,
         "videoCodec": "h264",
         "width": 1080,
@@ -17643,7 +17661,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0087-01.jpg",
             "sha256": "b14b615b1b147b83538b4305427f8dd267646aabb33e3087aaf92baa5f75b7c0",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2611,
             "samples": 64
           },
@@ -17878,7 +17896,7 @@
         "status": "success",
         "frames": 1305,
         "declaredFrames": 1305,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 10.595789,
         "videoCodec": "h264",
         "width": 1080,
@@ -17894,7 +17912,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0088-01.jpg",
             "sha256": "3ef58fad136106fe85129e232b74da19dd31c650cba2010bac5781a632cbbad1",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 10.942,
             "samples": 22
           }
@@ -18057,7 +18075,7 @@
         "status": "success",
         "frames": 1256,
         "declaredFrames": 1256,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 11.130256,
         "videoCodec": "h264",
         "width": 1080,
@@ -18073,7 +18091,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0089-01.jpg",
             "sha256": "ddd45acb2525565040a68ac018d886115743e5ae3041cc52c29ecf40b3202b27",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 11.552,
             "samples": 23
           }
@@ -18247,7 +18265,7 @@
         "status": "success",
         "frames": 1500,
         "declaredFrames": 1500,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 12.579378,
         "videoCodec": "h264",
         "width": 1080,
@@ -18263,7 +18281,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0090-01.jpg",
             "sha256": "07b46b96897814fab976ad302cb5cb483a5be7af625dcd3b7d1243aa20a67764",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 12.653,
             "samples": 26
           }
@@ -18439,7 +18457,7 @@
         "codec": "aac",
         "sampleRate": 48000,
         "channels": 2,
-        "meanVolumeDb": -24.0,
+        "meanVolumeDb": -24,
         "maxVolumeDb": -5.9,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
@@ -18473,7 +18491,7 @@
         "status": "success",
         "frames": 862,
         "declaredFrames": 862,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 7.081711,
         "videoCodec": "h264",
         "width": 1080,
@@ -18489,7 +18507,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0091-01.jpg",
             "sha256": "c42cc98cfd6ab5ddd36b07f3e7aaa4aed84dd17beb4d9b1019177cebbcf134ad",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 7.518,
             "samples": 15
           }
@@ -18518,7 +18536,7 @@
           },
           {
             "fromSeconds": 0.5,
-            "toSeconds": 7.0,
+            "toSeconds": 7,
             "scene": "에너지 도전 보상 트랙 탐색",
             "observations": [
               "캐릭터/풍선 헤더와 유료 권한 버튼 아래로 보상 행을 위아래로 스크롤한다. 수령 가능 행·진행 중 행·체크 표시가 공존한다."
@@ -18639,7 +18657,7 @@
         "status": "success",
         "frames": 2692,
         "declaredFrames": 2692,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 22.716633,
         "videoCodec": "h264",
         "width": 1080,
@@ -18655,7 +18673,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0093-01.jpg",
             "sha256": "fff720fde3240312d3e7b41527d31908cadd70e837fedab7bc6b3952369e0ccc",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 23.037,
             "samples": 46
           }
@@ -18829,7 +18847,7 @@
         "status": "success",
         "frames": 1196,
         "declaredFrames": 1196,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 10.072367,
         "videoCodec": "h264",
         "width": 1080,
@@ -18845,7 +18863,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0094-01.jpg",
             "sha256": "20d0885870e0d889cf912da131f4274f67dfd3e29796d112f7995387f35c4f1e",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 10.207,
             "samples": 21
           }
@@ -19019,7 +19037,7 @@
         "status": "success",
         "frames": 1184,
         "declaredFrames": 1184,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 9.581911,
         "videoCodec": "h264",
         "width": 1080,
@@ -19035,7 +19053,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0095-01.jpg",
             "sha256": "2f6709fa80bde30982a0ea2796e80a08b5b8eb3cdd617190d8fd566ea97009e3",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 10.047,
             "samples": 20
           }
@@ -19206,7 +19224,7 @@
         "status": "success",
         "frames": 1872,
         "declaredFrames": 1872,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 15.655811,
         "videoCodec": "h264",
         "width": 1080,
@@ -19222,7 +19240,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0096-01.jpg",
             "sha256": "1176564e5657241f0f4cd537e268b13916a2e0282ab14e8a73bd286eba7a0be1",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 16.037,
             "samples": 32
           }
@@ -19398,7 +19416,7 @@
         "status": "success",
         "frames": 3828,
         "declaredFrames": 3828,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 37.131367,
         "videoCodec": "h264",
         "width": 1080,
@@ -19414,7 +19432,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0097-01.jpg",
             "sha256": "d6e449adbff5660d21733efdb84709df80c3617985ab4a1d7d4bd56c8792f564",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 34.1148,
             "samples": 64
           },
@@ -19609,7 +19627,7 @@
         "status": "success",
         "frames": 2460,
         "declaredFrames": 2460,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 20.1517,
         "videoCodec": "h264",
         "width": 1080,
@@ -19625,7 +19643,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0100-01.jpg",
             "sha256": "ab7244693e28e04a1dc30038838716a7589aa5af17825c2ee02973575eaea986",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 20.65,
             "samples": 41
           }
@@ -19800,7 +19818,7 @@
         "status": "success",
         "frames": 3519,
         "declaredFrames": 3519,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 33.0759,
         "videoCodec": "h264",
         "width": 1080,
@@ -19816,7 +19834,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0102-01.jpg",
             "sha256": "a9112b2523ce388944343d615bfb87d9660415024ecd82186f82e0495ef6bcdd",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.561,
             "samples": 64
           },
@@ -20011,7 +20029,7 @@
         "status": "success",
         "frames": 4307,
         "declaredFrames": 4307,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 42.225022,
         "videoCodec": "h264",
         "width": 1080,
@@ -20027,7 +20045,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0103-01.jpg",
             "sha256": "873d645afdd8f4caa191ed1b2df263b3ab0107908b2a30f6d57ea8a4c6e9e7bb",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 34.6593,
             "samples": 64
           },
@@ -20210,7 +20228,7 @@
         "codec": "aac",
         "sampleRate": 48000,
         "channels": 2,
-        "meanVolumeDb": -27.0,
+        "meanVolumeDb": -27,
         "maxVolumeDb": -4.4,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
@@ -20244,7 +20262,7 @@
         "status": "success",
         "frames": 1907,
         "declaredFrames": 1907,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 16.6083,
         "videoCodec": "h264",
         "width": 1080,
@@ -20260,7 +20278,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0104-01.jpg",
             "sha256": "32a58aba9f3cfd47249ae1b5fce94194fb6b599fd8c86149be780d8fdda32034",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 16.673,
             "samples": 34
           }
@@ -20426,7 +20444,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -25.6,
-        "maxVolumeDb": -8.0,
+        "maxVolumeDb": -8,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -20459,7 +20477,7 @@
         "status": "success",
         "frames": 1957,
         "declaredFrames": 1957,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 22.077622,
         "videoCodec": "h264",
         "width": 1080,
@@ -20475,7 +20493,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0105-01.jpg",
             "sha256": "f624d46f05460b6f9a5fba33fa076fd55988d68021b867e408774ab57ed36d61",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 22.212,
             "samples": 41
           }
@@ -20662,7 +20680,7 @@
         "status": "success",
         "frames": 5974,
         "declaredFrames": 5974,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 55.180678,
         "videoCodec": "h264",
         "width": 1080,
@@ -20678,7 +20696,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0106-01.jpg",
             "sha256": "2c529245aaa2766f7bf72adf57d9a934330f13d5091882a45fdc902bb01c4646",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 34.018,
             "samples": 64
           },
@@ -20772,7 +20790,7 @@
             "meanLumaDifference": 77.454
           },
           {
-            "at": 4.0,
+            "at": 4,
             "meanLumaDifference": 68.47
           },
           {
@@ -20829,7 +20847,7 @@
           },
           {
             "at": 13.355,
-            "meanLumaDifference": 10.0
+            "meanLumaDifference": 10
           },
           {
             "at": 17.89,
@@ -20850,7 +20868,7 @@
         "codec": "aac",
         "sampleRate": 48000,
         "channels": 2,
-        "meanVolumeDb": -25.0,
+        "meanVolumeDb": -25,
         "maxVolumeDb": -2.5,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
@@ -20884,7 +20902,7 @@
         "status": "success",
         "frames": 1851,
         "declaredFrames": 1851,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 15.600278,
         "videoCodec": "h264",
         "width": 1080,
@@ -20900,7 +20918,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0107-01.jpg",
             "sha256": "6e57823c471d8ecfd43a0702238c0e0c4267f07972f848a4d13f7e6e15c8489e",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 15.821,
             "samples": 32
           }
@@ -21053,7 +21071,7 @@
         "codec": "aac",
         "sampleRate": 48000,
         "channels": 2,
-        "meanVolumeDb": -26.0,
+        "meanVolumeDb": -26,
         "maxVolumeDb": -7.7,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
@@ -21062,7 +21080,7 @@
       "priorObservations": [
         "00:00.00~00:01.27 · 113레벨 보상 상자2종 수령 상태가 나타난다.",
         "00:03.16~00:07.91 · 113레벨 초특가 패키지 ₩49,000과 약1시간 타이머가 보인다.",
-        "00:10.28 · 만능 젬 12레벨 설명에 다른 아이템으로 드래그하면 레벨이 향상되며 생성기에는 사용 불가하다고 표시된다."
+        "00:10.28 · 만능젬 1레벨 [원본 문구 정밀 정정] 설명에 다른 아이템으로 드래그하면 레벨이 향상되며 생성기에는 사용 불가하다고 표시된다."
       ],
       "priorObservationMethod": "Earlier nine time-distributed stills; not this ordered timeline review.",
       "uncertainties": [
@@ -21071,6 +21089,24 @@
         "약0.5초 시간순 정지 표본을 검토했다. 원속도 전체 재생·전프레임 육안 검수·오디오 정밀 청취는 수행하지 않았다.",
         "표본 사이의 짧은 동작과 정확한 클릭 시각·연출 길이·모든 작은 가격/재화 숫자는 확정하지 않는다.",
         "과거 캡처의 버전·실제 촬영일·입력 로그는 미확인. 파일명 날짜를 촬영일로 확정하지 않음."
+      ],
+      "refinementObservations": [
+        {
+          "id": "COR-MOTION-002",
+          "kind": "correction",
+          "sourceRange": {
+            "startSeconds": 10.45,
+            "endSeconds": 10.48
+          },
+          "observation": "원본 도움말 제목 아래 표기는 1레벨이다.",
+          "basis": "10.457667초 원본 native 프레임의 이름·레벨·설명 전체 크롭을 확인했다. 캡처 워터마크를 앱 버전으로 단정하지 않는다.",
+          "studyId": "motion-help-rainbow"
+        }
+      ],
+      "priorObservationsBeforeRefinement": [
+        "00:00.00~00:01.27 · 113레벨 보상 상자2종 수령 상태가 나타난다.",
+        "00:03.16~00:07.91 · 113레벨 초특가 패키지 ₩49,000과 약1시간 타이머가 보인다.",
+        "00:10.28 · 만능 젬 12레벨 설명에 다른 아이템으로 드래그하면 레벨이 향상되며 생성기에는 사용 불가하다고 표시된다."
       ]
     },
     {
@@ -21086,7 +21122,7 @@
         "status": "success",
         "frames": 878,
         "declaredFrames": 878,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 7.060589,
         "videoCodec": "h264",
         "width": 1080,
@@ -21102,7 +21138,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0108-01.jpg",
             "sha256": "d79a1fa0dbe6236ff04c49418de0095e6e8a1da44e0eda4a5f2d2f42a59302ca",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 7.538,
             "samples": 15
           }
@@ -21210,7 +21246,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -25.2,
-        "maxVolumeDb": -7.0,
+        "maxVolumeDb": -7,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -21243,7 +21279,7 @@
         "status": "success",
         "frames": 1481,
         "declaredFrames": 1481,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 12.098789,
         "videoCodec": "h264",
         "width": 1080,
@@ -21259,7 +21295,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0109-01.jpg",
             "sha256": "c12a2cb5b137cbe0d5b1cd49926289e284ff7a475c9ff904817f43ed4fbcae81",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 12.5988,
             "samples": 25
           }
@@ -21334,7 +21370,7 @@
             "meanLumaDifference": 72.609
           },
           {
-            "at": 1.0,
+            "at": 1,
             "meanLumaDifference": 72.567
           },
           {
@@ -21445,7 +21481,7 @@
         "status": "success",
         "frames": 3627,
         "declaredFrames": 3627,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 38.051556,
         "videoCodec": "h264",
         "width": 1080,
@@ -21461,7 +21497,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0110-01.jpg",
             "sha256": "0f1551902d7f5947cb8cbe89d4ad3b5cb0508fe2d3ec90ab51a766f73f00bf03",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 34.3781,
             "samples": 64
           },
@@ -21644,7 +21680,7 @@
         "status": "success",
         "frames": 32615,
         "declaredFrames": 32615,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 287.724411,
         "videoCodec": "h264",
         "width": 1080,
@@ -21660,7 +21696,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0111-01.jpg",
             "sha256": "4ac076f865489a7a82fb4257879e23fda3522760c1aee3a7cbda9f12be55a8b0",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 33.126,
             "samples": 64
           },
@@ -21928,7 +21964,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -19.5,
-        "maxVolumeDb": 0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -21960,7 +21996,7 @@
         "status": "success",
         "frames": 19428,
         "declaredFrames": 19428,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 166.799767,
         "videoCodec": "h264",
         "width": 1080,
@@ -21976,7 +22012,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0113-01.jpg",
             "sha256": "9ffaffe95ccf57dd1df1edab329afef4680661208eddfcdfca9d7d7084ea75e6",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 33.6487,
             "samples": 64
           },
@@ -22268,7 +22304,7 @@
         "status": "success",
         "frames": 7784,
         "declaredFrames": 7784,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 65.076378,
         "videoCodec": "h264",
         "width": 1080,
@@ -22284,7 +22320,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0114-01.jpg",
             "sha256": "595ae19f26bc41d2816716b615dfe09f7f14e5e92df9954132a61e3d6c93f5fa",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.2792,
             "samples": 64
           },
@@ -22341,24 +22377,38 @@
           {
             "fromSeconds": 18.3,
             "toSeconds": 19.3,
-            "scene": "도구 사용 확인창",
+            "scene": "버블 삭제 확인창",
             "observations": [
-              "작은 아이템 그림과 취소/확인 두 버튼의 창이 잠시 열렸다 닫힌다."
+              "거품을 터뜨리고 골드1개를 획득하는 확인창. 터뜨리기/취소 버튼이며, 닫힌 뒤 버블 자리의 코인을 관측했다."
             ],
             "unknowns": [
               "장면 경계는 약0.5초 표본의 대략적 구분이다."
-            ]
+            ],
+            "beforeRefinement": {
+              "scene": "도구 사용 확인창",
+              "observations": [
+                "작은 아이템 그림과 취소/확인 두 버튼의 창이 잠시 열렸다 닫힌다."
+              ]
+            },
+            "refinementId": "COR-MOTION-001"
           },
           {
             "fromSeconds": 19.3,
             "toSeconds": 22.4,
             "scene": "추가 조작과 확인",
             "observations": [
-              "다시 보드 조작을 거쳐 같은 형태의 사용 확인창을 한 번 더 표시한다."
+              "다시 보드 조작을 거쳐 확인창을 한 번 더 표시한다."
             ],
             "unknowns": [
-              "장면 경계는 약0.5초 표본의 대략적 구분이다."
-            ]
+              "장면 경계는 약0.5초 표본의 대략적 구분이다.",
+              "첫 확인창의 버블 삭제 정정과 이후 확인창의 유형 확인을 구분한다."
+            ],
+            "beforeRefinement": {
+              "scene": "추가 조작과 확인",
+              "observations": [
+                "다시 보드 조작을 거쳐 같은 형태의 사용 확인창을 한 번 더 표시한다."
+              ]
+            }
           },
           {
             "fromSeconds": 22.4,
@@ -22526,6 +22576,19 @@
         "약0.5초 시간순 정지 표본을 검토했다. 원속도 전체 재생·전프레임 육안 검수·오디오 정밀 청취는 수행하지 않았다.",
         "표본 사이의 짧은 동작과 정확한 클릭 시각·연출 길이·모든 작은 가격/재화 숫자는 확정하지 않는다.",
         "과거 캡처의 버전·실제 촬영일·입력 로그는 미확인. 파일명 날짜를 촬영일로 확정하지 않음."
+      ],
+      "refinementObservations": [
+        {
+          "id": "COR-MOTION-001",
+          "kind": "correction",
+          "sourceRange": {
+            "startSeconds": 17.8,
+            "endSeconds": 19.15
+          },
+          "observation": "거품을 터뜨리고 골드1개를 획득하는 확인창. 터뜨리기/취소 버튼이며, 닫힌 뒤 버블 자리의 코인을 관측했다.",
+          "basis": "원본 native PTS 크롭에서 확인창 문구·버튼·버블→코인 전이를 확인했다. 가위·만능젬·모래시계 사용으로 해석하지 않는다.",
+          "studyId": "motion-bubble"
+        }
       ]
     },
     {
@@ -22541,7 +22604,7 @@
         "status": "success",
         "frames": 6840,
         "declaredFrames": 6840,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 57.034678,
         "videoCodec": "h264",
         "width": 1080,
@@ -22557,7 +22620,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0115-01.jpg",
             "sha256": "3588d82c0660cf8a8b0a66a1fa49f3ba6c67306210207f796f12586167e837a1",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3093,
             "samples": 64
           },
@@ -22752,7 +22815,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -23.9,
-        "maxVolumeDb": 0.0,
+        "maxVolumeDb": 0,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -22784,7 +22847,7 @@
         "status": "success",
         "frames": 11504,
         "declaredFrames": 11504,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 96.356367,
         "videoCodec": "h264",
         "width": 1080,
@@ -22800,7 +22863,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0116-01.jpg",
             "sha256": "75e60334ce8baa5fc0e145ba91671c00665b9311705f0d5d4f5d7bb00804db8a",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.3067,
             "samples": 64
           },
@@ -23057,7 +23120,7 @@
         "status": "success",
         "frames": 1780,
         "declaredFrames": 1780,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 14.627933,
         "videoCodec": "h264",
         "width": 1080,
@@ -23073,7 +23136,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0117-01.jpg",
             "sha256": "a5512717c1e97ff8944c1e39616200ee7c3076bbab87de21543f37f81ea74dbf",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 14.942,
             "samples": 30
           }
@@ -23102,7 +23165,7 @@
           },
           {
             "fromSeconds": 3.5,
-            "toSeconds": 14.0,
+            "toSeconds": 14,
             "scene": "동결 아이템 도움말 시연",
             "observations": [
               "정보창 안 작은 파란 격자에서 도구/아이템이 이동하고 빛 뒤 튜브 결과가 드러나는 예시가 반복된다. 이는 도움말 애니메이션이며 실제 플레이 보드 사용이 아니다."
@@ -23248,7 +23311,7 @@
         "status": "success",
         "frames": 15577,
         "declaredFrames": 15577,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 141.806078,
         "videoCodec": "h264",
         "width": 1080,
@@ -23264,7 +23327,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0118-01.jpg",
             "sha256": "180c6dbbee6594e8a80a471a9d74556ec2c7cfbd08a80f3fcdcf5af1a320b85c",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.6455,
             "samples": 64
           },
@@ -23555,7 +23618,7 @@
         "status": "success",
         "frames": 752,
         "declaredFrames": 752,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 6.041422,
         "videoCodec": "h264",
         "width": 1080,
@@ -23571,7 +23634,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0120-01.jpg",
             "sha256": "924a00174a86f1aa841142b3bad298198f62b04cd1422dcd67e1e954c056dd75",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 6.378,
             "samples": 13
           }
@@ -23693,7 +23756,7 @@
         "sampleRate": 48000,
         "channels": 2,
         "meanVolumeDb": -22.4,
-        "maxVolumeDb": -1.0,
+        "maxVolumeDb": -1,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
       },
@@ -23724,7 +23787,7 @@
         "status": "success",
         "frames": 4170,
         "declaredFrames": 4170,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 40.255533,
         "videoCodec": "h264",
         "width": 1080,
@@ -23740,7 +23803,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0121-01.jpg",
             "sha256": "ff9e68cf6702218c8e8a49631baf46814398653a938657bb6bd94490bd9d692d",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.6718,
             "samples": 64
           },
@@ -23980,7 +24043,7 @@
         "status": "success",
         "frames": 5479,
         "declaredFrames": 5479,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 54.263822,
         "videoCodec": "h264",
         "width": 1080,
@@ -23996,7 +24059,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0122-01.jpg",
             "sha256": "1c6010ef20e9a975f4794b1117414529a67d13b72c9337751e1f477f4f1b3b40",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 33.0243,
             "samples": 64
           },
@@ -24234,7 +24297,7 @@
         "codec": "aac",
         "sampleRate": 48000,
         "channels": 2,
-        "meanVolumeDb": -26.0,
+        "meanVolumeDb": -26,
         "maxVolumeDb": -2.3,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
@@ -24267,7 +24330,7 @@
         "status": "success",
         "frames": 4637,
         "declaredFrames": 4637,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 47.062278,
         "videoCodec": "h264",
         "width": 1080,
@@ -24283,7 +24346,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0123-01.jpg",
             "sha256": "7a41a05cc56a4b04797550061985490099c478537462b3bcb212d1761565d49e",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.6815,
             "samples": 64
           },
@@ -24473,7 +24536,7 @@
             "meanLumaDifference": 27.525
           },
           {
-            "at": 16.0,
+            "at": 16,
             "meanLumaDifference": 15.942
           },
           {
@@ -24499,7 +24562,7 @@
         "codec": "aac",
         "sampleRate": 48000,
         "channels": 2,
-        "meanVolumeDb": -27.0,
+        "meanVolumeDb": -27,
         "maxVolumeDb": -2.4,
         "measurementStatus": "success",
         "listeningStatus": "not-reviewed"
@@ -24532,7 +24595,7 @@
         "status": "success",
         "frames": 10944,
         "declaredFrames": 10944,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 95.310356,
         "videoCodec": "h264",
         "width": 1080,
@@ -24548,7 +24611,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0124-01.jpg",
             "sha256": "5a175ae468d6efd99455afd9ae19affd42f8f58e9b684339eee543b8167bf1ea",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.7573,
             "samples": 64
           },
@@ -24795,7 +24858,7 @@
         "status": "success",
         "frames": 7936,
         "declaredFrames": 7936,
-        "firstPts": 0.0,
+        "firstPts": 0,
         "lastSamplePts": 98.804189,
         "videoCodec": "h264",
         "width": 1080,
@@ -24811,7 +24874,7 @@
           {
             "path": "analysis/media-review/continuous/sheets/GH-V0125-01.jpg",
             "sha256": "a94d6e89d9afae6df7624a325e75ec847fbc83921151b783bfd8b4ccb4c34787",
-            "fromSeconds": 0.0,
+            "fromSeconds": 0,
             "toSeconds": 32.7212,
             "samples": 64
           },
@@ -25154,7 +25217,7 @@
       "id": "GH-V0105",
       "fromSeconds": 7.490944,
       "toSeconds": 8.984056,
-      "originalFrameGapSeconds": 1.0
+      "originalFrameGapSeconds": 1
     },
     "finalSheetPadding": "Unused blank bottom rows removed from derived final sheets; samples and source frames unchanged."
   }

@@ -1,4 +1,5 @@
 import {DOMAIN_DEFS,domainStats,selectDomainFacts,baseMergeUnits} from './domain-model.mjs';
+import {renderStudyLinks} from './capture-study.mjs';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const labels={code:'코드 확인',config:'내장 설정',text:'설명문',capture:'제공 캡처 관측',runtime:'실행 환경 확인',inference:'분석 추론'};
 const list=v=>Array.isArray(v)?v:v?[v]:[];
@@ -60,6 +61,7 @@ export function renderDomainPage(id,data,filters={}){
  <div class="domain-boundary"><strong>근거 범위</strong><span>제공 APK 4.10.5: ${stats.code}개 코드 / ${stats.config}개 설정 / ${stats.text}개 설명문. 별도 근거: ${stats.capture}개 과거 캡처 / ${stats.runtime}개 실행 환경 / ${stats.inference}개 추론. 캡처 버전·현행 서버 배정은 미확인입니다. <a href="#captures">실제 화면과 관측 범위 보기 →</a></span></div>
  ${page.sections?.length?`<nav class="chapter-jumps" aria-label="이 페이지 분석 항목">${page.sections.map(s=>`<a href="#${id}?section=${encodeURIComponent(s.id)}" data-domain-jump="${escape(s.id)}">${escape(s.title)} <span>↓</span></a>`).join('')}</nav>`:''}
  ${id==='difficulty'?mergeExperiment():''}
+ ${['map','map-fx'].includes(id)?renderStudyLinks(data,['map'],'실제 맵 변경과 카메라 이동 비교'):id==='events'?renderStudyLinks(data,['event'],'이벤트 전용 화면과 보드 비교'):['ui','puzzle-fx','interaction'].includes(id)?renderStudyLinks(data,id==='ui'?['ui']:['puzzle'],'원본 프레임 정밀 관측 자료'):''}
  <div class="domain-visuals">${list(page.visuals).map(v=>v.type==='day-browser'?`<section class="domain-visual panel"><div class="panel-head"><h2>${escape(v.title)}</h2>${badge('config')}</div><div class="panel-body">${renderDayBrowser(v,data)}<div class="visual-sources">${sourceLinks(v.sourceIds,data.facts)}</div></div></section>`:renderVisual(v,data.facts)).join('')}</div>
 
  <section class="domain-ledger"><div class="section-heading"><h2>규칙과 근거</h2><span>${facts.length} / ${all.length} FINDINGS</span></div><div class="domain-filter" role="group" aria-label="분석 근거 유형">${[['all','전체'],...Object.entries(labels)].map(([kind,label])=>`<button class="button small ${filters.kind===kind||(!filters.kind&&kind==='all')?'primary':''}" data-domain-kind="${kind}" aria-pressed="${filters.kind===kind||(!filters.kind&&kind==='all')}">${label}</button>`).join('')}</div>

@@ -7,6 +7,7 @@ import {renderBMTimeline} from './bm-timeline.mjs';
 import {mountInteractionLoops} from './interaction-gallery.mjs';
 import {createProductionController} from './production-controller.mjs';
 import {renderMediaAudit} from './media-audit-page.mjs';
+import {renderAudioReadout} from './capture-study.mjs';
 
 export function createStudio({getData,getRoute,render,toast,download}){
  let walkthrough=createWalkthrough(),running=new Map();
@@ -20,9 +21,11 @@ export function createStudio({getData,getRoute,render,toast,download}){
  const itemFilters={query:'',table:'ItemModelConfig',role:'all',page:1};
  const uiFilters={query:'',category:'all',page:1};
  const captureFilters={category:'all',kind:'all'};
+ const studyState={topic:'all',query:'',selected:'',region:'',frame:''};let lastStudySource=null,studyLoopsPaused;
+ const capturePage=()=>{const id=new URLSearchParams(location.hash.split('?')[1]||'').get('study');if(id!==lastStudySource){lastStudySource=id;if(id&&getData()?.refinement?.studies.some(s=>s.id===id)){Object.assign(studyState,{topic:'all',query:'',selected:id,region:'',frame:''});}}return renderCaptures(getData(),captureFilters,studyState);};
  const timelineFilters={entryId:null,milestoneId:null,baselineId:null};
  const mediaDialog=document.querySelector('#media-dialog'),mediaContent=document.querySelector('#media-content');
- const pages={'production-assets':()=>production.renderPage(),'media-audit':auditPage,'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:()=>renderCaptures(getData(),captureFilters),puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
+ const pages={'production-assets':()=>production.renderPage(),'media-audit':auditPage,'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:capturePage,puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
  const renderItem=()=>{document.querySelector('#item-catalog').innerHTML=renderItemCatalog(getData(),itemFilters);};
  const renderUI=()=>{document.querySelector('#ui-registry').innerHTML=renderUIRegistry(getData(),uiFilters);};
  function preserveInput(id,update){const node=document.getElementById(id),start=node.selectionStart,end=node.selectionEnd;update();const next=document.getElementById(id);next.focus({preventScroll:true});if(next.type==='search')next.setSelectionRange(start,end);}
@@ -47,6 +50,8 @@ export function createStudio({getData,getRoute,render,toast,download}){
  }
  document.addEventListener('click',event=>{
   const target=event.target.closest('button,a');if(!target)return;
+  if(target.dataset.studySelect){studyState.selected=target.dataset.studySelect;studyState.region='';studyState.frame='';render();document.querySelector('.study-workbench')?.scrollIntoView?.({block:'start'});document.querySelector('.study-workbench h3')?.focus({preventScroll:true});return;}
+  if(target.hasAttribute('data-study-frame')||target.hasAttribute('data-study-region')){const isFrame=target.hasAttribute('data-study-frame'),origin=isFrame?'':target.classList.contains('study-hotspot')?'.study-image-plane ':'.study-region-controls ';studyState[isFrame?'frame':'region']=isFrame?target.dataset.studyFrame:target.dataset.studyRegion;render();document.querySelector(`${origin}[data-study-${isFrame?'frame':'region'}="${isFrame?studyState.frame:studyState.region}"]`)?.focus({preventScroll:true});return;}
   if(target.dataset.timelineEntry||target.dataset.timelinePoint){if(target.dataset.timelineEntry){timelineFilters.entryId=target.dataset.timelineEntry;timelineFilters.milestoneId=null;}else timelineFilters.milestoneId=target.dataset.timelinePoint;render();document.querySelector(`[data-timeline-${target.dataset.timelineEntry?'entry':'point'}="${target.dataset.timelineEntry||target.dataset.timelinePoint}"]`)?.focus({preventScroll:true});return;}
   if(target.dataset.playMode){playMode=target.dataset.playMode;render();document.querySelector(`[data-play-mode="${playMode}"]`)?.focus({preventScroll:true});return;}
   if(target.hasAttribute('data-play')){sourcePlay.handle(target.dataset.play,target.dataset.value);return;}
@@ -64,12 +69,15 @@ export function createStudio({getData,getRoute,render,toast,download}){
   if(target.dataset.mediaKey)openMedia(target.dataset.mediaKey);
  });
  document.addEventListener('input',event=>{const t=event.target;
+  if(t.hasAttribute('data-audio-bin')){const r=getData()?.refinement?.audio?.recordings.find(r=>r.sourceId===t.dataset.audioBin);if(!r)return;const index=Number(t.value),output=document.querySelector(`[data-audio-readout="${r.sourceId}"]`),cursor=document.querySelector(`[data-audio-cursor="${r.sourceId}"]`);if(output)output.innerHTML=renderAudioReadout(r,index);if(cursor){const x=600*index/Math.max(1,r.timeline.peakDbfs.length-1);cursor.setAttribute('x1',String(x));cursor.setAttribute('x2',String(x));}return;}
+  if(t.hasAttribute('data-study-query')){if(event.isComposing)return;const start=t.selectionStart;studyState.query=t.value;studyState.frame='';studyState.region='';render();const next=document.querySelector('[data-study-query]');next?.focus({preventScroll:true});next?.setSelectionRange(start,start);return;}
   if(t.hasAttribute('data-audit-query')){if(event.isComposing)return;const start=t.selectionStart; auditFilters.query=t.value;render();const next=document.querySelector('[data-audit-query]');next.focus({preventScroll:true});next.setSelectionRange(start,start);return;}
   if(t.id==='item-query'){itemFilters.query=t.value;itemFilters.page=1;preserveInput(t.id,renderItem);}
   if(t.id==='ui-query'){uiFilters.query=t.value;uiFilters.page=1;preserveInput(t.id,renderUI);}
   if(t.hasAttribute('data-visual-depth'))document.querySelector('#difficulty-output').innerHTML=difficultyOutput(Number(t.value));
  });
  document.addEventListener('change',event=>{const t=event.target;
+  if(t.hasAttribute('data-study-topic')){studyState.topic=t.value;studyState.frame='';studyState.region='';render();document.querySelector('[data-study-topic]')?.focus({preventScroll:true});return;}
   if(t.hasAttribute('data-audit-category')||t.hasAttribute('data-audit-status')){const key=t.hasAttribute('data-audit-category')?'category':'status';auditFilters[key]=t.value;render();document.querySelector('[data-audit-'+key+']')?.focus({preventScroll:true});return;}
   if(t.hasAttribute('data-timeline-baseline')){timelineFilters.baselineId=t.value;render();document.querySelector('[data-timeline-baseline]')?.focus({preventScroll:true});return;}
   if(t.id==='item-table'){itemFilters.table=t.value;itemFilters.page=1;renderItem();document.querySelector('#item-table').focus({preventScroll:true});}
@@ -80,5 +88,5 @@ export function createStudio({getData,getRoute,render,toast,download}){
  mediaDialog.addEventListener('close',clearMedia);
  mediaDialog.addEventListener('cancel',clearMedia);
  function afterRender(){interactionCleanup();interactionCleanup=()=>{};sourcePlay.beforeRender();for(const [id,timer]of running){clearTimeout(timer);}running.clear();}
- return {renderPage:id=>pages[id]?.()||'',afterRender,afterMount(){if(getRoute()==='puzzle-interaction')interactionCleanup=mountInteractionLoops();if(getRoute()==='experience'&&playMode!=='prototype')sourcePlay.afterMount();}};
+ return {renderPage:id=>pages[id]?.()||'',afterRender,afterMount(){if(getRoute()==='puzzle-interaction')interactionCleanup=mountInteractionLoops();if(getRoute()==='captures')interactionCleanup=mountInteractionLoops(document,{gallerySelector:'[data-study-loop-gallery]',cardSelector:'[data-study-select]',initialPaused:studyLoopsPaused,onPauseChange:value=>{studyLoopsPaused=value;}});if(getRoute()==='experience'&&playMode!=='prototype')sourcePlay.afterMount();}};
 }

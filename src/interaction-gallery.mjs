@@ -18,21 +18,22 @@ export function renderInteractionGallery(data){
 
 // GIF files have no native pause API. Replace them with their verified poster
 // when paused, offscreen, hidden, or leaving this route to stop decoding too.
-export function mountInteractionLoops(root=document){
- const gallery=root.querySelector('[data-interaction-gallery]');if(!gallery)return ()=>{};
+export function mountInteractionLoops(root=document,{gallerySelector='[data-interaction-gallery]',cardSelector='[data-interaction-card]',initialPaused,onPauseChange}={}){
+ const gallery=root.querySelector(gallerySelector);if(!gallery)return ()=>{};
  const doc=gallery.ownerDocument,win=doc.defaultView,images=[...gallery.querySelectorAll('[data-loop-src]')],control=gallery.querySelector('[data-loop-all]'),status=gallery.querySelector('[data-loop-status]');
  const preference=win.matchMedia?.('(prefers-reduced-motion: reduce)');
- let paused=Boolean(preference?.matches),reason=paused?'preference':'',destroyed=false;
+ let paused=initialPaused??Boolean(preference?.matches),reason=paused?(initialPaused===undefined?'preference':'user'):'',destroyed=false;
  const visible=new Set(),failed=new Set();
  const Observer=win.IntersectionObserver;
- const sync=()=>{if(destroyed)return;for(const img of images){const playing=!paused&&!doc.hidden&&visible.has(img)&&!failed.has(img);const path=playing?img.dataset.loopSrc:img.dataset.loopPoster;if(img.getAttribute('src')!==path)img.setAttribute('src',path);img.dataset.loopState=playing?'playing':'paused';}control.textContent=paused?'모두 재생':'모두 일시정지';control.setAttribute('aria-pressed',String(paused));status.textContent=paused?(reason==='preference'?'움직임 줄이기 설정에 따라 멈췄습니다. 원하면 재생할 수 있습니다.':'GIF를 모두 멈췄습니다. 정지 이미지로 비교하세요.'):'보이는 GIF를 자동 반복 재생합니다.';};
+ const expanded=img=>{for(let node=img.parentElement;node;node=node.parentElement){if(node.tagName==='DETAILS'&&!node.open)return false;if(node===gallery)break;}return true;};
+ const sync=()=>{if(destroyed)return;for(const img of images){const playing=!paused&&!doc.hidden&&visible.has(img)&&!failed.has(img)&&expanded(img);const path=playing?img.dataset.loopSrc:img.dataset.loopPoster;if(img.getAttribute('src')!==path)img.setAttribute('src',path);img.dataset.loopState=playing?'playing':'paused';}control.textContent=paused?'모두 재생':'모두 일시정지';control.setAttribute('aria-pressed',String(paused));status.textContent=paused?(reason==='preference'?'움직임 줄이기 설정에 따라 멈췄습니다. 원하면 재생할 수 있습니다.':'GIF를 모두 멈췄습니다. 정지 이미지로 비교하세요.'):'보이는 GIF를 자동 반복 재생합니다.';};
  const observer=Observer?new Observer(entries=>{for(const entry of entries){if(entry.isIntersecting)visible.add(entry.target);else visible.delete(entry.target);}sync();},{rootMargin:'80px 0px',threshold:0.01}):null;
  for(const img of images){if(observer)observer.observe(img);else visible.add(img);}
- const toggle=()=>{paused=!paused;reason='user';sync();};
- const motionChange=event=>{if(event?.matches??preference?.matches){paused=true;reason='preference';sync();}};
+ const toggle=()=>{paused=!paused;reason='user';onPauseChange?.(paused);sync();};
+ const motionChange=event=>{if(event?.matches??preference?.matches){paused=true;reason='preference';onPauseChange?.(paused);sync();}};
  const visibilityChange=()=>sync();
- const imageError=event=>{const img=event.currentTarget;if(img.getAttribute('src')!==img.dataset.loopSrc)return;failed.add(img);img.closest('[data-interaction-card]').querySelector('[data-loop-error]').hidden=false;sync();};
+ const imageError=event=>{const img=event.currentTarget;if(img.getAttribute('src')!==img.dataset.loopSrc)return;failed.add(img);const error=img.closest(cardSelector)?.querySelector('[data-loop-error]');if(error)error.hidden=false;sync();};
  for(const img of images)img.addEventListener('error',imageError);
- control.addEventListener('click',toggle);preference?.addEventListener?.('change',motionChange);doc.addEventListener('visibilitychange',visibilityChange);sync();
- return ()=>{destroyed=true;observer?.disconnect();control.removeEventListener('click',toggle);preference?.removeEventListener?.('change',motionChange);doc.removeEventListener('visibilitychange',visibilityChange);for(const img of images){img.removeEventListener('error',imageError);img.src=img.dataset.loopPoster;img.dataset.loopState='paused';}};
+ control.addEventListener('click',toggle);gallery.addEventListener('toggle',sync,true);preference?.addEventListener?.('change',motionChange);doc.addEventListener('visibilitychange',visibilityChange);sync();
+ return ()=>{destroyed=true;observer?.disconnect();control.removeEventListener('click',toggle);gallery.removeEventListener('toggle',sync,true);preference?.removeEventListener?.('change',motionChange);doc.removeEventListener('visibilitychange',visibilityChange);for(const img of images){img.removeEventListener('error',imageError);img.src=img.dataset.loopPoster;img.dataset.loopState='paused';}};
 }

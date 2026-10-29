@@ -49,3 +49,9 @@ if(auditData.summary.decodedVideos!==113||auditData.summary.visualTimelineReview
 if(auditData.meta.verification?.errorCount!==0)throw new Error('Timeline source/range verification has unresolved errors');
 if(auditData.summary.audioListenedVideos!==0||auditData.summary.nativeRealtimePlaybackVideos!==0)throw new Error('Unverified listening or playback claim');
 console.log('Verified 43 production request rows and 113 decoded sources / 110 sampled visual timelines, with unperformed listening kept separate.');
+const refinement=JSON.parse(await readFile('dist/data/media-refinement.json','utf8'));
+if(refinement.studies.length!==25||refinement.coverage.length!==11||refinement.corrections.length!==3||refinement.audio.recordings.length!==110||refinement.audio.clips.length!==14||refinement.audio.summary.recordingsListened!==0)throw new Error('Incomplete media refinement or unverified listening');
+if(refinement.studies.filter(s=>s.id.startsWith('motion-')).some(s=>s.publicReady!==true))throw new Error('Motion derivatives have not completed public QA');
+for(const m of refinement.mediaEntries){if(!validMedia(m)||!m.originalSha256)throw new Error('Invalid refined capture '+m.key);await stat(path.join('dist',m.src));if(m.poster)await stat(path.join('dist',m.poster));}
+for(const clip of refinement.audio.clips){for(const src of [clip.src,clip.waveformImage.src,clip.spectrogram.src]){if(!/^\.\/assets\/media\/refinement\/audio\/[\w.-]+\.(mp3|svg|png)$/.test(src))throw new Error('Invalid curated audio asset path');await stat(path.join('dist',src));}}
+console.log(`Verified ${refinement.studies.length} refined studies, ${refinement.mediaEntries.length} capture derivatives and 14 bounded packaged audio excerpts; recorded audio remains unpublished.`);

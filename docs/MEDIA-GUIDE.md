@@ -1,5 +1,7 @@
 # 이미지·GIF·영상 연결 안내
 
+최신 정밀 자료는 [MEDIA-REFINEMENT.md](MEDIA-REFINEMENT.md)를 따른다. `media-refinement.json`의25개 연구·신규 시각86참조·동봉 음향14발췌는 아래 기존 manifest의42개 과거 선정 자료와 분리한다. 프레임별 주석과 음향 그래프는 원본 녹화 시각/해시를 보존하고 직접 청취 미확인 경계를 유지한다.
+
 `src/data/media.json`에 APK 정적 이미지와 과거 사용자 캡처를 각각 등록했다. `#captures`에서 주제/형식 필터와 실제 화면을 볼 수 있다. 갤러리의 웹 모식도와 독립 시뮬레이션은 원작 영상과 별도로 표시한다. 같은 소스로 GitHub Pages와 Cloudflare Pages에 게시하며 로컬 디스크 경로를 웹 URL에 넣지 않는다.
 
 ## 등록 구조

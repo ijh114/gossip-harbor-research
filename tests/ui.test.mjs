@@ -91,6 +91,10 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   await go('interface-structure');click('[data-ui-region="overlay"]');assert.match(w.document.querySelector('#region-inspector').textContent,/정렬 간격 10/);
   await go('interface-motion');assert.equal(w.document.querySelectorAll('.motion-card').length,6);
   await go('captures');assert.equal(w.document.querySelectorAll('.capture-card').length,42);
+  assert.ok(w.document.querySelector('[data-study-selected]'));
+  click('.study-region-controls [data-study-region]');assert.ok(w.document.activeElement.closest('.study-region-controls'));
+  const frameButton=w.document.querySelector('[data-study-frame]:not([data-study-frame=""])');frameButton.click();assert.equal(w.document.querySelectorAll('[data-study-frame][aria-pressed="true"]').length,1);
+  const audioBin=w.document.querySelector('[data-audio-bin]');audioBin.value='5';audioBin.dispatchEvent(new w.Event('input',{bubbles:true}));assert.match(w.document.querySelector('[data-audio-readout]').textContent,/RMS/);
   click('[data-capture-kind="video"]');assert.equal(w.document.querySelectorAll('.capture-card').length,11);
   click('[data-capture-category="BM"]');assert.equal(w.document.querySelectorAll('.capture-card').length,1);
   click('.capture-card [data-media-key="capture:energy-chain"]');

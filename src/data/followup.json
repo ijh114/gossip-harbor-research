@@ -4165,8 +4165,8 @@
     {
       "step": "플레이 영상·스크린샷",
       "state": "partial",
-      "done": "가십하버 110개·5,657.265초의 전 구간 시간순 표본 1차 검토. 전체 113개 원본 해시·624,314프레임 디코드와 음량 측정. 기존 BM 9유형·42관측점, 공개 과거 캡처 42키와 규칙 재현 GIF 11개 보존",
-      "remaining": "약 0.5초 목표 표본(실제 최대 1.493112초) 사이 짧은 입력·효과의 정밀 검수, 오디오 청취, 실제 가위/모래시계 사용 등 미확보 표본·촬영 버전 확인. 원속도 전체 재생/전프레임 육안 검수는 수행하지 않음",
+      "done": "110개 녹화 시간순 표본 1차 검토에 정밀 자료 25건·새 시각 파생 86개를 추가. UI 영역57개·맵 전후3쌍·카메라2구간·이벤트판2종, 110개 음향 정량 분석과 APK 음향14발췌. 기존42관측 파생과11규칙 재현 GIF 보존",
+      "remaining": "오디오 직접 청취·대사/음색 판정은 세션 미지원. 실제 가위/모래시계 사용·정확한 입력 시각/잠금·촬영 버전/일시는 제공 자료에서 미확인. 표본·신호 유사도 후보를 원작 전체 실행 검증으로 표시하지 않음",
       "metrics": {
         "observedReferences": 42,
         "images": 30,
@@ -4184,7 +4184,18 @@
         "sampleFrames": 11167,
         "reviewSheets": 233,
         "audioListenedVideos": 0,
-        "nativeRealtimePlaybackVideos": 0
+        "nativeRealtimePlaybackVideos": 0,
+        "refinedStudies": 25,
+        "refinedVisualReferences": 86,
+        "refinedImages": 60,
+        "refinedVideos": 14,
+        "refinedGifs": 12,
+        "annotatedRegions": 57,
+        "mapComparisons": 3,
+        "packagedAudioExcerpts": 14,
+        "audioTracksAnalyzed": 110,
+        "directAudioListeningSeconds": 0,
+        "signalSimilarityCandidates": 5
       }
     },
     {
