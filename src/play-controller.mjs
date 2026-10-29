@@ -3,10 +3,18 @@ import {renderSourcePlay} from './play-page.mjs';
 import {renderGamePlay,gameClocks} from './game-page.mjs';
 import {onboardingConstraints} from './onboarding-model.mjs';
 import {readSession,writeSession,encodeSave,decodeSave,SAVE_KEY,MAX_OFFLINE_SECONDS} from './session-store.mjs';
+import {createScreenController} from './screen-controller.mjs';
+import {soundForAction} from './screen-flow.mjs';
 
 export function createPlayController({getData,render,download}){
- let state,wallAt=0,storage,canWrite=true,ticker=null,loading=false,notice='',drag=null,suppressClick=false,lastCheckpoint=0,loadingTimer=null;
+ let state,wallAt=0,storage,canWrite=true,ticker=null,notice='',drag=null,suppressClick=false,lastCheckpoint=0,skin='source';
  const config=()=>getData().playConfig;
+ const screens=createScreenController({getState:()=>state,getConfig:config,getData,domain:commit,persist,render});
+ function commit(action,value){
+  const before={coins:state.wallet.coins,uids:new Set(state.board.filter(Boolean).map(x=>x.uid))};
+  const result=playAction(state,action,value,config());
+  if(skin==='game')screens.sound(soundForAction(action,before,state,result,config()));return result;
+ }
  const options=()=>({revision:config().revision,now:Date.now(),validate:s=>validPlay(s,config())});
  function syncTime(){
   if(!state||!wallAt)return;
@@ -41,13 +49,15 @@ export function createPlayController({getData,render,download}){
  function handle(action,value){
   const disclosures=[...document.querySelectorAll('.source-play details,.game-play details')].map((node,i)=>({i,open:node.open}));
   ensure();syncTime();notice='';
+  if(skin==='game'&&screens.handle(action,value)){persist();render();return;}
+  if(skin==='game'&&screens.blocked(action)){notice='현재 장면을 마치거나 맵으로 돌아간 뒤 조작하세요.';render();return;}
   if(action==='new-game'){
-   const backed=backup();state=createPlay(config(),{scenario:'initial',guide:true});wallAt=Date.now();loading=true;
+   const backed=backup();const sound=state.screenFlow?.sound===true;state=createPlay(config(),{scenario:'initial',guide:true});wallAt=Date.now();
    state.storageMessage=backed?'이전 저장을 백업하고 새 게임을 시작했습니다.':'기존 저장을 보존하기 위해 메모리에서만 진행합니다.';
-   clearTimeout(loadingTimer);loadingTimer=setTimeout(()=>{loading=false;playAction(state,'start',undefined,config());persist();render();},450);render();return;
+   if(skin==='game'){screens.reset();state.screenFlow.sound=sound;}else commit('start');persist();render();return;
   }
   if(action==='reset'||action==='scenario'){
-   clearTimeout(loadingTimer);loading=false;
+   screens.imported();
    const scenario=action==='scenario'&&['open','initial'].includes(value)?value:state.scenario;
    const backed=backup();state=createPlay(config(),{scenario});wallAt=Date.now();
    state.storageMessage=backed?'이전 저장을 별도 보관하고 새 실험을 준비했습니다.':'기존 저장을 보존하기 위해 새 실험은 메모리에서만 진행합니다.';
@@ -55,17 +65,17 @@ export function createPlayController({getData,render,download}){
   else if(action==='export'){
    const result=encodeSave(state,options());if(result.ok)download('harbor-play-session.json',JSON.parse(result.raw));else state.storageMessage=result.message;
   }else if(action==='set-modifiers'){
-   playAction(state,action,value??document.querySelector('[data-modifier-json]')?.value,config());
+   commit(action,value??document.querySelector('[data-modifier-json]')?.value);
   }else if(action==='aid-type'){
-   playAction(state,action,document.querySelector('[data-play-aid-type]')?.value,config());
+   commit(action,document.querySelector('[data-play-aid-type]')?.value);
   }else if(action==='game-cell'){
    const index=Number(value),cell=state.board[index],definition=config().items.find(r=>r.type===cell?.type);
    if(state.stage==='play'&&!state.modal&&definition?.generator&&!cell.cover&&!state.bubbles?.[cell.uid]&&(state.selected===null||state.selected===index)){
     const constraint=state.tutorialStep!==undefined&&!state.guidanceSkipped?onboardingConstraints(state,config()):{},phase=state.generatorState[cell.uid]?.phase;
-    if(constraint.input?.kind==='select'||phase==='closed'&&state.selected!==index)playAction(state,'cell',value,config());
-    else{state.selected=index;playAction(state,phase==='closed'?'open-item':'generate',undefined,config());}
-   }else playAction(state,'cell',value,config());
-  }else playAction(state,action,value,config());
+    if(constraint.input?.kind==='select'||phase==='closed'&&state.selected!==index)commit('cell',value);
+    else{state.selected=index;commit(phase==='closed'?'open-item':'generate');}
+   }else commit('cell',value);
+  }else commit(action,value);
   persist();render();for(const {i,open}of disclosures){const node=document.querySelectorAll('.source-play details,.game-play details')[i];if(node)node.open=open;}
   if(!state.modal&&!state.toolPending){
    const returnTo={'close-info':'item-info','close-choice':'open-choice','close-inventory':'inventory','close-shop':'shop','close-energy':'open-energy','close-offer':'open-energy'},focusAction=returnTo[action]||action;
@@ -79,7 +89,7 @@ export function createPlayController({getData,render,download}){
   try{drag.node?.releasePointerCapture(drag.id);}catch{}drag=null;
  }
  document.addEventListener('pointerdown',ev=>{
-  const node=ev.target.closest?.('.game-cell');if(!node||ev.button!==0||loading)return;
+  const node=ev.target.closest?.('.game-cell');if(!node||ev.button!==0||skin==='game'&&screens.blocked('move'))return;
   ensure();const cell=state.board[Number(node.dataset.value)];if(!cell||cell.cover||state.modal||state.toolPending||state.bubbles?.[cell.uid])return;
   drag={id:ev.pointerId,from:Number(node.dataset.value),x:ev.clientX,y:ev.clientY,node,moving:false};node.setPointerCapture?.(ev.pointerId);
  });
@@ -101,11 +111,12 @@ export function createPlayController({getData,render,download}){
   const node=ev.target.closest?.('.game-cell');if(!node)return;const index=Number(node.dataset.value),offset={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[ev.key];if(!offset)return;
   const next=index+offset;if(next<0||next>62||(Math.abs(offset)===1&&Math.floor(next/7)!==Math.floor(index/7)))return;ev.preventDefault();document.querySelector(`.game-cell[data-value="${next}"]`)?.focus();
  });
- function beforeRender(){if(ticker)window.clearInterval(ticker);ticker=null;stopDrag();}
+ function beforeRender(){if(ticker)window.clearInterval(ticker);ticker=null;stopDrag();screens.beforeRender();}
  function afterMount(){
+  if(skin==='game')screens.afterMount();
   document.body.dataset.playFocus=String(Boolean(state?.focused));
   for(const id of ['play-dialog','tool-dialog']){const dialog=document.getElementById(id);if(dialog&&!dialog.open){dialog.showModal();dialog.addEventListener('cancel',ev=>{ev.preventDefault();handle(id==='tool-dialog'?'cancel-tool':state.modal==='energy'?'close-energy':state.modal==='offer'?'close-offer':state.modal==='inventory'?'close-inventory':state.modal==='item-info'?'close-info':state.modal==='choice'?'close-choice':'close-shop');});}}
-  if(document.querySelector('.game-phone')&&state?.stage==='play'){
+  if(document.querySelector('.game-phone')&&['play','home'].includes(state?.stage)){
    const signature=()=>JSON.stringify([state.board.map(c=>c&&[c.uid,c.type]),Object.values(state.generatorState).map(r=>r.charges),state.wallet.price,state.orders?.slots.map(o=>o.id),state.onboarding?.phases,Object.values(state.generatorState).map(r=>r.phase)]);
    ticker=window.setInterval(()=>{
     const before=signature();syncTime();const clocks=gameClocks(state,config());
@@ -130,9 +141,9 @@ export function createPlayController({getData,render,download}){
   }
   if(input.id!=='play-import'||!input.files?.[0])return;ensure();const file=input.files[0];
   if(file.size>2*1024*1024){state.storageMessage='가져올 상태 JSON은2MB 이하여야 합니다.';render();return;}
-  try{const saved=compatible(await file.text());if(!saved.ok){state.storageMessage=saved.message;render();return;}backup();state=saved.state;advancePlay(state,saved.elapsedSeconds,config(),{silent:true});wallAt=Date.now();persist();render();}
+  try{const saved=compatible(await file.text());if(!saved.ok){state.storageMessage=saved.message;render();return;}backup();state=saved.state;advancePlay(state,saved.elapsedSeconds,config(),{silent:true});wallAt=Date.now();screens.imported();persist();render();}
   catch{state.storageMessage='상태 파일을 읽지 못했습니다. 기존 실험을 유지합니다.';render();}
  });
  window.addEventListener('pagehide',()=>{if(state){syncTime();persist();}});
- return {render(skin='source'){ensure();return skin==='game'?renderGamePlay(state,config(),getData(),{loading,notice}):renderSourcePlay(state,config(),getData());},handle,afterMount,beforeRender};
+ return {render(nextSkin='source'){skin=nextSkin;ensure();const options=skin==='game'?screens.renderOptions():{};return skin==='game'?renderGamePlay(state,config(),getData(),{...options,notice:notice||options.notice}):renderSourcePlay(state,config(),getData());},handle,afterMount,beforeRender};
 }
