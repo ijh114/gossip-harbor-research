@@ -35,7 +35,7 @@ test('file-local reappearance does not certify automatic delivery, first ever ex
 });
 
 test('public projection retains source identity, timestamps, static anchors and uncertainty without private paths',async()=>{
- for(const input of data.inputRefs){const bytes=await readFile(new URL('../'+input.path,import.meta.url));assert.equal(digest(bytes),input.sha256,input.id);}
+ for(const input of data.inputRefs){const text=await readFile(new URL('../'+input.path,import.meta.url),'utf8'),lf=text.replace(/\r\n/g,'\n');assert.equal(input.sha256Encoding,'utf8-lf');for(const representation of [lf,lf.replace(/\n/g,'\r\n')])assert.equal(digest(Buffer.from(representation.replace(/\r\n/g,'\n'))),input.sha256,input.id);}
  const sourceHashes=new Map(mediaAudit.videos.map(v=>[v.id,v.sha256]));
  for(const observation of data.observations){if(sourceHashes.has(observation.sourceId))assert.equal(sourceHashes.get(observation.sourceId),observation.originalSha256);if(observation.sourceRange){const video=mediaAudit.videos.find(v=>v.id===observation.sourceId);assert.ok(observation.sourceRange.startSeconds>=0);assert.ok(observation.sourceRange.endSeconds>observation.sourceRange.startSeconds);assert.ok(observation.sourceRange.endSeconds<=video.duration);}}
  for(const source of data.staticAnchors){assert.match(source.sha256,/^[a-f0-9]{64}$/);assert.ok(source.path.startsWith('analysis/lua/'));assert.ok(source.line_start>=1&&source.line_end>=source.line_start);assert.equal(source.evidenceType,'static-code');assert.equal(source.captureObjectIdentityConfirmed,false);}

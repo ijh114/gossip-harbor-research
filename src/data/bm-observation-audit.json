@@ -11,7 +11,8 @@
     "static": "APK4.10.5 복원 Lua의 조건부 경로",
     "researchExamples": "웹·Unity 연구 예제의 입력/난수/시간 전진은 원작 성공 근거에 포함하지 않는다.",
     "creditRule": "각 관측 단위는 한 typeId와 한 questionId에만 배정한다. 42개 맥락 표본은 완료 건수로 세지 않는다.",
-    "counterMeaning": "관측 구간/셀 수는 노출 빈도·계정 수·결제 횟수·커버리지 완료율이 아니다."
+    "counterMeaning": "관측 구간/셀 수는 노출 빈도·계정 수·결제 횟수·커버리지 완료율이 아니다.",
+    "inputHashEncoding": "Public JSON input hashes use the Git UTF-8/LF representation. localWorkingCopySha256 preserves the original local working-copy bytes; this normalization does not apply to original media or recovered Lua anchors."
   },
   "summary": {
     "typeCount": 9,
@@ -42,22 +43,30 @@
     {
       "id": "bm-timeline",
       "path": "src/data/bm-timeline.json",
-      "sha256": "335838638d8485f7bb0fb7225667f91647095404238984e20fa86056db9e41d5"
+      "sha256": "f1fce97eeed84ac180f251cb06540672b82ca43f9e3c6ebd703303a914d838d6",
+      "localWorkingCopySha256": "335838638d8485f7bb0fb7225667f91647095404238984e20fa86056db9e41d5",
+      "sha256Encoding": "utf8-lf"
     },
     {
       "id": "media-audit",
       "path": "src/data/media-audit.json",
-      "sha256": "35eeaee449e9ec1b16eea1f9171ae1ea56e2ab462db6cf958c4e87c92ee35c90"
+      "sha256": "35eeaee449e9ec1b16eea1f9171ae1ea56e2ab462db6cf958c4e87c92ee35c90",
+      "localWorkingCopySha256": "35eeaee449e9ec1b16eea1f9171ae1ea56e2ab462db6cf958c4e87c92ee35c90",
+      "sha256Encoding": "utf8-lf"
     },
     {
       "id": "media-refinement",
       "path": "src/data/media-refinement.json",
-      "sha256": "c5cfc5dfc27d7651553cb6df4d9c11401ae6e2b56e824111350df6d15e526a5c"
+      "sha256": "c5cfc5dfc27d7651553cb6df4d9c11401ae6e2b56e824111350df6d15e526a5c",
+      "localWorkingCopySha256": "c5cfc5dfc27d7651553cb6df4d9c11401ae6e2b56e824111350df6d15e526a5c",
+      "sha256Encoding": "utf8-lf"
     },
     {
       "id": "media-completion",
       "path": "src/data/media-completion.json",
-      "sha256": "3301e0b0259e835d8f0f0ab82f04cb62f0bb07dd6a1f81d075003294588c2dec"
+      "sha256": "1d23af25a45c6d4aa810864a82a6d630d334ed7322ef46b164a91a5929ec32a3",
+      "localWorkingCopySha256": "3301e0b0259e835d8f0f0ab82f04cb62f0bb07dd6a1f81d075003294588c2dec",
+      "sha256Encoding": "utf8-lf"
     }
   ],
   "types": [
@@ -295,7 +304,7 @@
       "typeId": "energy-chain",
       "milestoneId": "chain-20",
       "sourceId": "GH-V0030",
-      "atSeconds": 6.0,
+      "atSeconds": 6,
       "mediaKeys": [
         "capture:energy-chain"
       ],
@@ -431,7 +440,7 @@
       "typeId": "energy-chain",
       "milestoneId": "chain-blue",
       "sourceId": "GH-V0030",
-      "atSeconds": 14.0,
+      "atSeconds": 14,
       "mediaKeys": [
         "capture:energy-chain"
       ],
@@ -499,7 +508,7 @@
       "typeId": "energy-chain",
       "milestoneId": "chain-80",
       "sourceId": "GH-V0030",
-      "atSeconds": 17.0,
+      "atSeconds": 17,
       "mediaKeys": [
         "capture:energy-chain"
       ],
@@ -533,7 +542,7 @@
       "typeId": "energy-chain",
       "milestoneId": "chain-after",
       "sourceId": "GH-V0030",
-      "atSeconds": 19.0,
+      "atSeconds": 19,
       "mediaKeys": [
         "capture:chain-after"
       ],
@@ -599,7 +608,7 @@
       "typeId": "energy-challenge",
       "milestoneId": "challenge-before",
       "sourceId": "GH-V0097",
-      "atSeconds": 0.0,
+      "atSeconds": 0,
       "mediaKeys": [],
       "evidenceType": "observed-user-capture",
       "originalSha256": "2f2142b05ec16736d1f8fe18e8a0fbbd261c51ed0ed3eb4f5499016afb7e0aba",
@@ -824,7 +833,7 @@
       "typeId": "reward-tower",
       "milestoneId": "tower-other-start",
       "sourceId": "GH-V0125",
-      "atSeconds": 0.0,
+      "atSeconds": 0,
       "mediaKeys": [],
       "evidenceType": "observed-user-capture",
       "originalSha256": "713231f39ee24f7f18f9fbc9da84fdfc71f8dc7933436b9d2b49562cd269f287",
@@ -986,7 +995,7 @@
       "typeId": "level-offer",
       "milestoneId": "level113-before",
       "sourceId": "GH-V0107",
-      "atSeconds": 0.0,
+      "atSeconds": 0,
       "mediaKeys": [
         "capture:level113-before",
         "capture:level-offer-transition"
@@ -1191,7 +1200,7 @@
       "typeId": "selected-card",
       "milestoneId": "card-offer",
       "sourceId": "GH-V0121",
-      "atSeconds": 0.0,
+      "atSeconds": 0,
       "mediaKeys": [
         "capture:card-offer-before"
       ],
@@ -1295,7 +1304,7 @@
       "typeId": "low-energy",
       "milestoneId": "low-before",
       "sourceId": "GH-V0047",
-      "atSeconds": 20.0,
+      "atSeconds": 20,
       "mediaKeys": [
         "capture:low-energy-before"
       ],
@@ -1330,7 +1339,7 @@
       "typeId": "low-energy",
       "milestoneId": "low-generated",
       "sourceId": "GH-V0047",
-      "atSeconds": 25.0,
+      "atSeconds": 25,
       "mediaKeys": [
         "effect:generate"
       ],
@@ -1365,7 +1374,7 @@
       "typeId": "low-energy",
       "milestoneId": "low-full",
       "sourceId": "GH-V0047",
-      "atSeconds": 30.0,
+      "atSeconds": 30,
       "mediaKeys": [
         "capture:board-full-energy1"
       ],
@@ -1400,7 +1409,7 @@
       "typeId": "low-energy",
       "milestoneId": "low-still-board",
       "sourceId": "GH-V0047",
-      "atSeconds": 36.0,
+      "atSeconds": 36,
       "mediaKeys": [
         "capture:low-energy-popup-motion"
       ],
@@ -4477,7 +4486,7 @@
       "bytes": 31026,
       "width": 360,
       "height": 720,
-      "frameAtSeconds": 3.0,
+      "frameAtSeconds": 3,
       "transform": {
         "crop": {
           "x": 0,
