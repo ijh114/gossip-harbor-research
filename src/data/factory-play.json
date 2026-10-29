@@ -247,7 +247,8 @@
     "반환 후 원작 m_data는 비우지만 본 웹 감사장부는 중복 UID 방지를 위해 보존한다. 한 번 확인한 전체 해금의 캐시는 유지한다. 순수 조회는 상태를 변경하지 않으므로 화면 열기·설정 적용 시 observe-open 계획을 확정해 IsOpen의 캐시 관측을 보존한다.",
     "공장 보관 데이터가 없는 구형 저장은 허용하지만 null·손상된 저장은 빈 데이터로 자동 폐기하지 않는다. 슬롯·조각 소유·공장 재료를 기본 지급하지 않는다.",
     "수량·점수·감사장부 한도는 웹 저장 보호 한도이며 원작 경제 한도가 아니다.",
-    "CheckCobweb의 공장 개방 시 상자·거미줄 변환과 추가 보상, 원작 0.4초 비행·슬라이더·0.5초 입력 잠금·음성/진동, LateInit/LoginFinished 자동 호출 시점은 별도 통합 범위이다."
+    "CheckCobweb는 실제 보드의 공장 조각 상자/거미줄을 새 UID로 교체하고 동봉 위치별 추가 보상을 원자적으로 반영한다. RandomRewardContent가 필요한 위치는 미확인으로 보존한다. 웹 session-start/LateInit/SceneLoaded/LoginFinished/Main진입 어댑터는 원작 정적 생명주기의 투영이며 실제 계정 실행 관측이 아니다.",
+    "0.4초 비행·0.5초 임계 잠금·0.3/0.25/0.2초 슬라이더/보상 선언을 사용한다. 원작 화면 좌표·베지어 최종 경로·그래픽·사운드·진동과 실제 프레임 시간은 아직 직접 검수하지 않았다."
   ],
   "sources": [
     {
@@ -372,5 +373,231 @@
       "evidenceType": "packaged-static-code"
     }
   ],
-  "revision": "9d2a433b9c6a95beb29aa84c2c838ee5ec1c4fc3ef11a77431106f6cdc9c5e65"
+  "revision": "9d2a433b9c6a95beb29aa84c2c838ee5ec1c4fc3ef11a77431106f6cdc9c5e65",
+  "lifecycleRules": {
+    "schemaVersion": 1,
+    "sourceRuntimeObserved": false,
+    "paperboxRewards": [
+      {
+        "type": "energy",
+        "count": 20
+      },
+      null,
+      null,
+      {
+        "type": "energy",
+        "count": 10
+      },
+      null,
+      null,
+      {
+        "type": "main_order_chest_s_1",
+        "count": 1
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "type": "energy",
+        "count": 30
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "type": "2504",
+        "count": 1
+      },
+      {
+        "type": "energy",
+        "count": 50
+      },
+      null,
+      null,
+      null,
+      {
+        "type": "energy",
+        "count": 100
+      },
+      null,
+      null,
+      {
+        "type": "main_order_chest_m_1",
+        "count": 1
+      },
+      null,
+      null,
+      {
+        "type": "rdm_rwd_mainboard_1",
+        "count": 1
+      },
+      null,
+      null,
+      {
+        "type": "level_up_piece_1",
+        "count": 1
+      }
+    ],
+    "boardIndexPolicy": "web index = (source y-1)*7+(source x-1), same row-major orientation as play-config.initialBoard",
+    "runtimeEvents": [
+      "session-start",
+      "late-init",
+      "scene-loaded",
+      "login-finished",
+      "game-mode-main",
+      "item-merged",
+      "open-state-changed",
+      "check-cobweb"
+    ],
+    "randomRewards": "RandomRewardContent missing: affected transaction is unknown and preserves covered source; no fabricated roll",
+    "quantityRevisionPolicy": "Existing quantity-core revision is unchanged for old-save compatibility; lifecycle rules are fingerprinted separately."
+  },
+  "motionRules": {
+    "evidenceType": "packaged-static-code-not-observed-timing",
+    "flightSeconds": 0.4,
+    "initialThresholdLockSeconds": 0.5,
+    "sliderSeconds": 0.3,
+    "rewardPauseSeconds": 0.25,
+    "remainderSliderSeconds": 0.2,
+    "flightRemoveDelaySeconds": 1.5,
+    "promptAfterSeconds": 2,
+    "detailFadeSeconds": 0.3,
+    "detailFadeDelaySeconds": 0.1,
+    "bezierControlOffset": {
+      "x": -80,
+      "y": -80
+    },
+    "worldCoordinatesAvailable": false,
+    "eventLockPolicy": "Original SetEventLock is a boolean: threshold click lock at0, slider lock at0.4, initial callback unlock at0.5, slider callback unlock at0.95. These source callbacks are preserved rather than summed into a longer exclusive lease."
+  },
+  "lifecycleSources": [
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/ItemGeneratorFactoryModel.lua",
+      "ranges": [
+        "36–67",
+        "69–81",
+        "110–168",
+        "260–274",
+        "330–390"
+      ],
+      "sha256": "bfcea52b9c5058e056679cbe12a0ee7624e6f142afd834b4b8e06609897ce5d7",
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+      "ranges": [
+        "154–157"
+      ],
+      "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseActionBoardModel.lua",
+      "ranges": [
+        "268–311"
+      ],
+      "sha256": "206d70ead90fde2e03d6859e4ad070c681ca1562b21d314b90080d3f62830b8b",
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/MainBoardModel.lua",
+      "ranges": [
+        "1900–1902"
+      ],
+      "sha256": "9bf6c609062081c7e3e5f91e06e5aad404f73860723c2ab095fcee97024520e2",
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/MainPaperboxExtraRewardConfig.lua",
+      "ranges": [
+        "1–83"
+      ],
+      "sha256": "619e1b6438715a0c4c2af9ed9c134e059fc15a9f246df0b1fc06ca1b891dadf4",
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/UserData/RewardApi.lua",
+      "ranges": [
+        "67–106",
+        "262–312"
+      ],
+      "sha256": "f08765218b68e81c8a423bcb6036fd864396135167dc98fbee608034f3290410",
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/RewardHandler/RewardCategoryHandler/PropertyRewardCategoryHandler.lua",
+      "ranges": [
+        "99–101"
+      ],
+      "sha256": "bb79f04bc81686f1a888b39ac5ac6f4713c12edc645177749fb5f832b36a5e64",
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Model/RewardHandler/RewardCategoryHandler/ItemRewardCategoryHandler.lua",
+      "ranges": [
+        "9–21"
+      ],
+      "sha256": "06f0b628b70ccbc68cdcbd5c973d987fd9333ff7ed89ee4369fcbff9a8b7a914",
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/RandomReward/Model/RandomRewardModel.lua",
+      "ranges": [
+        "26–76"
+      ],
+      "sha256": "39c6851653bc93758119d06db4da99cb515fa6b3724b598c2980412ce953648d",
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/InventoryFactoryItem.lua",
+      "ranges": [
+        "24–45"
+      ],
+      "sha256": "e7538f487b45d7cefa885c7d735208c07e6265067c6703c525609d84bc112e1c",
+      "evidenceType": "packaged-static-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GeneratorFactoryDetailCell.lua",
+      "ranges": [
+        "80–159"
+      ],
+      "sha256": "91eee6a53b01027f337227c2aafc0910d1d5688e58b477afce92d65dc903c823",
+      "evidenceType": "packaged-static-code"
+    }
+  ],
+  "lifecycleRevision": "cd31e70c57aba6cb8d91040d17ee71bd02fd77118eb2588cecd899f41defb72d"
 }

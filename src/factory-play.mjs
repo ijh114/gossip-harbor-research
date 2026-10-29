@@ -9,6 +9,9 @@ const groups=c=>c.groups;
 const groupFor=(c,type)=>groups(c).find(g=>g.targetType===type);
 const fragmentFor=(c,type)=>groups(c).flatMap(g=>g.fragments.map(f=>({...f,targetType:g.targetType}))).find(f=>f.type===type);
 const valueFor=(c,type)=>groupFor(c,type)?.targetScore??fragmentFor(c,type)?.points;
+const life=state=>state.lifecycle||{schema:1,lateInit:false,sceneLoaded:false,openState:null,checkedCobweb:false,replacements:[]};
+const lifecycleActions=new Set(['session-start','late-init','scene-loaded','login-finished','game-mode-main','item-merged','open-state-changed','check-cobweb']);
+const sameReward=(a,b)=>a===null&&b===null||obj(a)&&obj(b)&&Object.keys(a).length===2&&a.type===b.type&&a.count===b.count;
 function validConfig(c){
  try{
   if(!obj(c)||c.schemaVersion!==1||typeof c.revision!=='string'||!/^[a-f0-9]{64}$/.test(c.revision)||c.serverControl!=='generator_factory'||!dense(c.groups)||c.groups.length!==6||!obj(c.limits))return false;
@@ -35,7 +38,12 @@ export function validFactoryPlay(state,config){
  try{
   if(state===undefined)return true; // Optional field keeps pre-factory saves valid.
   if(!validConfig(config)||!obj(state)||state.schema!==1||state.revision!==config.revision||!int(state.sequence)||typeof state.unlockedLatched!=='boolean'||!obj(state.genData)||!dense(state.receipts)||!dense(state.emitted)||state.receipts.length>config.limits.maxRecords||state.emitted.length>config.limits.maxRecords)return false;
-  if(Object.keys(state).some(k=>!['schema','revision','sequence','unlockedLatched','genData','receipts','emitted'].includes(k)))return false;
+  if(Object.keys(state).some(k=>!['schema','revision','sequence','unlockedLatched','genData','receipts','emitted','lifecycle'].includes(k)))return false;
+  if(state.lifecycle!==undefined){
+   const l=state.lifecycle;if(!obj(l)||Object.keys(l).length!==6||l.schema!==1||['lateInit','sceneLoaded','checkedCobweb'].some(k=>typeof l[k]!=='boolean')||!(l.openState===null||typeof l.openState==='boolean')||!dense(l.replacements)||l.replacements.length>config.limits.maxRecords)return false;
+   const seen=new Set();let sequence=0;
+   for(const r of l.replacements){if(!obj(r)||Object.keys(r).length!==7||!int(r.uid)||r.uid===0||!int(r.newUid)||r.newUid<=r.uid||seen.has(r.uid)||seen.has(r.newUid)||!int(r.index,62)||!fragmentFor(config,r.type)||!['box','web'].includes(r.cover)||!int(r.sequence,state.sequence)||r.sequence===0||r.sequence<sequence)return false;if(!sameReward(r.extraReward,r.cover==='box'?config.lifecycleRules?.paperboxRewards?.[r.index]:null))return false;seen.add(r.uid);seen.add(r.newUid);sequence=r.sequence;}
+  }
   const uids=new Set(),incoming={},outgoing={};let previous=0;
   for(const r of state.receipts){
    const f=fragmentFor(config,r?.type);
@@ -78,7 +86,52 @@ export function factoryView(state,context,config){
   const itemScore=fragments.reduce((n,f)=>n+f.points*f.count,0);
   return {...g,fragments,score,itemScore,totalScore:score+itemScore,canMerge:score+itemScore>=g.targetScore,canReward:score>=g.targetScore,remaining:Math.max(0,g.targetScore-score),storedCount:fragments.reduce((n,f)=>n+f.count,0)};
  });
- return {valid:true,...opened,sequence:state.sequence,unlockedLatched:state.unlockedLatched,groups:rows,defaultIndex:Math.max(0,rows.findIndex(g=>g.canMerge)),canMerge:rows.some(g=>g.canMerge),canReturn:opened.state==='closed'&&Object.keys(state.genData).length>0,emitted:structuredClone(state.emitted)};
+ return {valid:true,...opened,sequence:state.sequence,unlockedLatched:state.unlockedLatched,groups:rows,defaultIndex:Math.max(0,rows.findIndex(g=>g.canMerge)),canMerge:rows.some(g=>g.canMerge),canReturn:opened.state==='closed'&&Object.keys(state.genData).length>0,emitted:structuredClone(state.emitted),lifecycle:structuredClone(life(state))};
+}
+function lifecyclePlan(state,action,context,config){
+ const next=structuredClone(state),l=next.lifecycle=structuredClone(life(state)),replacements=[],emissions=[],properties=[],events=[],opened=gate(state,context,config);
+ if(action.type==='session-start'){l.lateInit=false;l.sceneLoaded=false;l.openState=null;}
+ else if(action.type==='scene-loaded'){if(l.sceneLoaded)return {ok:true,status:'unchanged',message:'장면 준비 기록이 이미 있습니다.',expectedSequence:state.sequence,nextState:next,removals:[],emissions:[],replacements:[],properties:[],events:[]};l.sceneLoaded=true;}
+ else if(action.type==='login-finished'&&(!l.lateInit||!l.sceneLoaded))return {ok:true,status:'waiting-lifecycle',message:'LateInit과 SceneViewLoaded 이후에 로그인 후 처리를 실행합니다.',expectedSequence:state.sequence,nextState:structuredClone(state),removals:[],emissions:[],replacements:[],properties:[],events:[]};
+ else if(opened.state==='unknown')return fail('unknown','공장 생명주기의 활성/해금 조건이 미확인입니다.',opened.unknown);
+ next.sequence++;
+ const emit=(type,count,reason)=>{if(count){emissions.push({type,count,cacheType:2});next.emitted.push({type,count,reason,sequence:next.sequence});}};
+ const rewardOnce=g=>{const d=next.genData[g.targetType];if(d?.score>=g.targetScore){d.score-=g.targetScore;emit(g.targetType,1,'reward');}};
+ const returnClosed=()=>{
+  if(opened.state!=='closed'||!Object.keys(next.genData).length)return;
+  for(const g of config.groups){const d=next.genData[g.targetType];if(!d)continue;for(const f of g.fragments)emit(f.type,d.items[f.type]||0,'return-closed');let score=d.score;const n=Math.floor(score/g.targetScore);emit(g.targetType,n,'return-closed');score-=n*g.targetScore;for(const f of [...g.fragments].reverse())if(score>=f.points){score-=f.points;emit(f.type,1,'return-closed');}}
+  next.genData={};events.push('GeneratorFactoryReturnReward');
+ };
+ let check=false;
+ if(action.type==='late-init'){for(const g of config.groups)rewardOnce(g);returnClosed();l.lateInit=true;l.openState=opened.state==='open';events.push('GeneratorFactoryLateInit');}
+ if(action.type==='login-finished'||action.type==='open-state-changed'||action.type==='item-merged'){
+  if(action.type==='item-merged'&&(context.serverEnabled!==true||state.unlockedLatched||!groupFor(config,action.itemType)))return {ok:true,status:'unchanged',message:'해당 합성은 공장 해금 갱신 대상이 아닙니다.',expectedSequence:state.sequence,nextState:structuredClone(state),removals:[],emissions:[],replacements:[],properties:[],events:[]};
+  const nowOpen=opened.state==='open';if(l.openState!==nowOpen){l.openState=nowOpen;events.push('GeneratorFactoryStateChanged');check=nowOpen;}
+  if(action.type==='login-finished')returnClosed();
+ }
+ if(action.type==='game-mode-main'||action.type==='check-cobweb')check=true;
+ if(opened.state==='open')next.unlockedLatched=true;
+ if(check&&opened.state==='open'){
+  if(typeof context.mainMode!=='boolean'||typeof context.viewReady!=='boolean')return fail('unknown','원작 Main 모드·MainBoardView 준비 상태가 필요합니다.',['mainMode','viewReady']);
+  if(context.mainMode&&context.viewReady){
+   if(!dense(context.board)||context.board.length!==63||!int(context.nextUid)||context.nextUid===0||!obj(context.bubbles)||!Array.isArray(config.lifecycleRules?.paperboxRewards)||config.lifecycleRules.paperboxRewards.length!==63)return fail('unknown','실제63칸·다음 UID·동봉 위치별 추가 보상표가 필요합니다.',['board','nextUid','bubbles','paperboxRewards']);
+   let newUid=context.nextUid;const seen=new Set([...context.board,...(context.inventory||[])].filter(Boolean).map(c=>c.uid));
+   for(let index=0;index<context.board.length;index++){
+    const cell=context.board[index];if(!cell||!['box','web'].includes(cell.cover)||!fragmentFor(config,cell.type))continue;
+    if(!int(cell.uid)||cell.uid===0||cell.uid>=context.nextUid||context.bubbles[cell.uid]||l.replacements.some(r=>r.uid===cell.uid)||seen.has(newUid))return fail('stale-input','교체할 덮개 아이템의 UID/버블 상태를 다시 확인하세요.');
+    const extra=cell.cover==='box'?config.lifecycleRules.paperboxRewards[index]:null;
+    if(extra&&(!obj(extra)||typeof extra.type!=='string'||!int(extra.count)||extra.count===0))return fail('invalid-config','동봉 상자 보상 항목을 확인하세요.');
+    if(extra?.type.startsWith('rdm_rwd_'))return fail('unknown','이 위치의 랜덤 상자 보상은 서버 RandomRewardContent가 없어 임의 추첨하지 않습니다.',['randomRewardContent.'+extra.type]);
+    const r={uid:cell.uid,newUid:newUid++,index,type:cell.type,cover:cell.cover,sequence:next.sequence};
+    replacements.push({...r,extraReward:extra?structuredClone(extra):null});l.replacements.push({...r,extraReward:extra?structuredClone(extra):null});
+    if(extra){if(['energy','gem','gold'].includes(extra.type))properties.push({...extra,index,sourceUid:cell.uid});else emissions.push({...extra,cacheType:2});}
+    events.push('ReplaceItem');
+   }
+   l.checkedCobweb=true;if(replacements.length)events.push('CountItemsCode','UpdateOrderState');
+  }
+ }
+ if(!validFactoryPlay(next,config))return fail('limit','공장 생명주기·교체 감사장부의 검사가 통과하지 않았습니다.');
+ return {ok:true,status:'planned',message:'원작 생명주기의 해금·보상·반환·덮개 교체 계획을 만들었습니다.',expectedSequence:state.sequence,nextState:next,removals:[],emissions,replacements,properties,events,transactionId:`factory:${config.revision}:${next.sequence}`};
 }
 function storageInput(state,action,context,config){
  if(!['board','inventory'].includes(action.source)||!int(action.index,999)||!int(action.uid)||action.uid===0)return fail('invalid-input','이동할 원본 위치와 UID를 지정하세요.');
@@ -108,6 +161,7 @@ function storageInput(state,action,context,config){
 export function factoryPlan(state,action,context,config){
  if(!validConfig(config)||state===undefined||!validFactoryPlay(state,config))return fail('invalid-state','공장 규칙·저장 검사가 통과하지 않아 변경하지 않았습니다.');
  if(!obj(action)||context?.mode!=='research')return fail('research-required','명시적인 연구 모드에서만 공장 동작을 실행합니다.');
+ if(lifecycleActions.has(action.type))return lifecyclePlan(state,action,context,config);
  if(!['observe-open','store','add-score','reward','return-closed'].includes(action.type))return fail('unsupported','지원하지 않는 공장 동작입니다.');
  const opened=gate(state,context,config);
  if(opened.state==='unknown')return fail('unknown','서버 플래그 또는 여섯 해금 상태가 미확인입니다.',opened.unknown);

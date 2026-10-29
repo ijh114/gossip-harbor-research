@@ -1,9 +1,11 @@
 import {cp, mkdir, rm, readdir, stat} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
+import {syncChecklist} from './checklist-data.mjs';
 const root = fileURLToPath(new URL('..', import.meta.url));
 const output = path.join(root, 'dist');
 if (path.relative(root, output) !== 'dist') throw new Error('Invalid output path');
+await syncChecklist();
 await rm(output, {recursive:true, force:true});
 await mkdir(output, {recursive:true});
 await cp(path.join(root,'src'), output, {recursive:true});

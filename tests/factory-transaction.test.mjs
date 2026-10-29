@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
 import {createPlay,validPlay,playAction} from '../src/play-model.mjs';
-import {createFactoryInputs,configureFactoryTransaction,commitFactoryTransaction,validFactoryIntegration} from '../src/factory-transaction.mjs';
+import {createFactoryInputs,configureFactoryTransaction,commitFactoryTransaction,validFactoryIntegration,factoryLifecycleTransaction} from '../src/factory-transaction.mjs';
 const read=async p=>JSON.parse(await readFile(new URL('../src/data/'+p,import.meta.url),'utf8'));
 const [playConfig,c]=await Promise.all(['play-config.json','factory-play.json'].map(read));
 function initial(){const s=createPlay(playConfig);s.stage='play';const indexes=[];for(let i=0;i<2;i++){const index=s.board.findIndex(x=>x===null);s.board[index]={uid:s.nextUid++,type:'103',cover:null};indexes.push(index);}assert.equal(validPlay(s,playConfig),true);const input={...createFactoryInputs(),serverEnabled:true,unlockMode:'assumed'},out=configureFactoryTransaction(s,input,c,{playConfig});assert.equal(out.ok,true);return {s:out.state,indexes};}
@@ -10,3 +10,44 @@ test('factory commits actual board removals, score and generator queue once with
 test('full queue and stale source UID reject the entire factory mutation',()=>{const s=earned();s.queue=Array.from({length:1000},()=>({type:'201',count:1,cacheType:2}));assert.equal(validPlay(s,playConfig),true);const before=structuredClone(s);assert.equal(commitFactoryTransaction(s,{type:'reward',targetType:'104'},c,{playConfig}).ok,false);assert.deepEqual(s,before);const a=initial();assert.equal(commitFactoryTransaction(a.s,{type:'store',source:'board',index:a.indexes[0],uid:999999},c,{playConfig}).ok,false);});
 test('unknown flag cannot transfer pieces; closed-return settles source quantities and corrupt optional journals are preserved',()=>{const s=earned(),off=configureFactoryTransaction(s,{...createFactoryInputs(),serverEnabled:false,unlockMode:'main'},c,{playConfig});assert.equal(off.ok,true);const returned=commitFactoryTransaction(off.state,{type:'return-closed'},c,{playConfig});assert.equal(returned.ok,true);assert.equal(returned.state.queue.find(x=>x.type==='104').count,1);assert.deepEqual(returned.state.factoryPlay.genData,{});assert.equal(commitFactoryTransaction(returned.state,{type:'return-closed'},c,{playConfig}).ok,false);const raw=initial().s;raw.factoryPlay=null;const before=structuredClone(raw);assert.equal(commitFactoryTransaction(raw,{type:'reward',targetType:'104'},c,{playConfig}).ok,false);assert.deepEqual(raw,before);});
 test('reimported factory receipt UID cannot coexist on the main board or inventory',()=>{const {s,indexes}=initial(),cell=structuredClone(s.board[indexes[0]]),out=store(s,indexes[0]);assert.equal(out.ok,true);out.state.board[indexes[0]]=cell;assert.equal(validFactoryIntegration(out.state,c),false);});
+test('opening scans actual factory fragments in web and box covers, replaces UIDs and awards only source-position box extras',()=>{
+ const s=createPlay(playConfig,{scenario:'initial'});s.stage='play';const before=structuredClone(s),parts=new Set(c.groups.flatMap(g=>g.fragments.map(f=>f.type))),targets=s.board.flatMap((cell,index)=>cell?.cover&&parts.has(cell.type)?[index]:[]);
+ const out=configureFactoryTransaction(s,{...createFactoryInputs(),serverEnabled:true,unlockMode:'assumed'},c,{playConfig});assert.equal(out.ok,true,out.message);assert.deepEqual(s,before);
+ assert.equal(out.state.factoryPlay.lifecycle.replacements.length,targets.length);assert.equal(out.state.nextUid,s.nextUid+targets.length);assert.equal(out.state.wallet.energy,s.wallet.energy+50);
+ for(const index of targets){assert.equal(out.state.board[index].type,s.board[index].type);assert.equal(out.state.board[index].cover,null);assert.notEqual(out.state.board[index].uid,s.board[index].uid);}
+ assert.equal(out.state.board[1].cover,'box','unrelated chain stays covered');assert.equal(validPlay(out.state,playConfig),true);
+ const repeat=factoryLifecycleTransaction(out.state,'check-cobweb',c,{playConfig});assert.equal(repeat.ok,true);assert.deepEqual(repeat.state.wallet,out.state.wallet);assert.deepEqual(repeat.state.queue,out.state.queue);assert.deepEqual(repeat.state.board,out.state.board);
+ const stale=structuredClone(out.state);stale.board[targets[0]]=s.board[targets[0]];assert.equal(validFactoryIntegration(stale,c),false);
+});
+test('box item reward queue exhaustion and unresolved random reward reject all replacements and all direct rewards',()=>{
+ for(const mode of ['full','random']){
+  const s=createPlay(playConfig,{scenario:'initial'});s.stage='play';const index=mode==='full'?6:59;s.board[index]={uid:s.nextUid++,type:'103',cover:'box'};
+  if(mode==='full')s.queue=Array.from({length:1000},()=>({type:'201',count:1,cacheType:2}));
+  const before=structuredClone(s),out=configureFactoryTransaction(s,{...createFactoryInputs(),serverEnabled:true,unlockMode:'assumed'},c,{playConfig});assert.equal(out.ok,false);assert.deepEqual(s,before);if(mode==='random'){assert.equal(out.status,'unknown');assert.match(out.message,/RandomRewardContent/);}
+ }
+});
+test('known box item reward follows Type2 queue and web-only cover awards no box property',()=>{
+ const s=createPlay(playConfig);s.stage='play';s.board=Array(63).fill(null);s.generatorState={};s.board[6]={uid:s.nextUid++,type:'103',cover:'box'};s.board[0]={uid:s.nextUid++,type:'102',cover:'web'};
+ const out=configureFactoryTransaction(s,{...createFactoryInputs(),serverEnabled:true,unlockMode:'assumed'},c,{playConfig});assert.equal(out.ok,true,out.message);
+ assert.ok(out.state.queue.some(q=>q.type==='main_order_chest_s_1'&&q.cacheType===2&&q.count===1));assert.equal(out.state.wallet.energy,s.wallet.energy);
+});
+test('startup and resume order are explicit, gated and conservative; closed LateInit rewards once per group then returns remainder',()=>{
+ let s=earned();s.factoryInputs.serverEnabled=false;const before=structuredClone(s),early=factoryLifecycleTransaction(s,'login-finished',c,{playConfig});assert.equal(early.ok,true);assert.equal(early.plan.status,'waiting-lifecycle');assert.deepEqual(early.state.queue,s.queue);
+ const started=factoryLifecycleTransaction(s,'session-start',c,{playConfig});assert.equal(started.ok,true);s=started.state;
+ const late=factoryLifecycleTransaction(s,'late-init',c,{playConfig});assert.equal(late.ok,true,late.message);assert.equal(late.state.queue.find(q=>q.type==='104').count,1);assert.deepEqual(late.state.factoryPlay.genData,{});assert.equal(late.state.factoryPlay.lifecycle.lateInit,true);
+ const loaded=factoryLifecycleTransaction(late.state,'scene-loaded',c,{playConfig}),logged=factoryLifecycleTransaction(loaded.state,'login-finished',c,{playConfig});assert.equal(logged.ok,true);assert.deepEqual(logged.state.queue,late.state.queue);assert.deepEqual(s.wallet,before.wallet);
+ const reset=factoryLifecycleTransaction(logged.state,'session-start',c,{playConfig});assert.equal(reset.state.factoryPlay.lifecycle.sceneLoaded,false);assert.equal(reset.state.factoryPlay.lifecycle.lateInit,false);
+});
+test('unknown gates and missing view readiness do not fabricate replacements or reset corrupt fields',()=>{
+ const raw=createPlay(playConfig,{scenario:'initial'});raw.stage='play';const unknown=configureFactoryTransaction(raw,createFactoryInputs(),c,{playConfig});assert.equal(unknown.ok,true);assert.equal(unknown.state.generatorFactoryOpen,null);assert.deepEqual(unknown.state.board,raw.board);
+ const offscreen=configureFactoryTransaction(raw,{...createFactoryInputs(),serverEnabled:true,unlockMode:'assumed'},c,{playConfig,mainMode:false,viewReady:false});assert.equal(offscreen.ok,true);assert.deepEqual(offscreen.state.board,raw.board);
+ const entered=factoryLifecycleTransaction(offscreen.state,'game-mode-main',c,{playConfig,mainMode:true,viewReady:true});assert.equal(entered.ok,true);assert.ok(entered.state.factoryPlay.lifecycle.replacements.length>0);
+ const broken=structuredClone(entered.state);broken.factoryPlay.lifecycle.replacements[0].extraReward={type:'energy',count:999};const before=structuredClone(broken);assert.equal(validFactoryIntegration(broken,c),false);assert.equal(factoryLifecycleTransaction(broken,'late-init',c,{playConfig}).ok,false);assert.deepEqual(broken,before);
+});
+
+test('an unknown new session resets preparation flags independently and defers all economic LateInit work until explicitly known',()=>{
+ let s=earned();s.factoryPlay.lifecycle.lateInit=true;s.factoryPlay.lifecycle.sceneLoaded=true;s.factoryInputs.serverEnabled=null;const original=structuredClone(s),economic=x=>({board:x.board,queue:x.queue,wallet:x.wallet,nextUid:x.nextUid,genData:x.factoryPlay.genData,emitted:x.factoryPlay.emitted});
+ const start=factoryLifecycleTransaction(s,'session-start',c,{playConfig});assert.equal(start.ok,true);assert.equal(start.state.factoryPlay.lifecycle.lateInit,false);assert.equal(start.state.factoryPlay.lifecycle.sceneLoaded,false);assert.deepEqual(economic(start.state),economic(original));assert.deepEqual(s,original);
+ const loaded=factoryLifecycleTransaction(start.state,'scene-loaded',c,{playConfig});assert.equal(loaded.ok,true);assert.equal(loaded.state.factoryPlay.lifecycle.sceneLoaded,true);const before=structuredClone(loaded.state),unknown=factoryLifecycleTransaction(loaded.state,'late-init',c,{playConfig});assert.equal(unknown.ok,false);assert.equal(unknown.status,'unknown');assert.deepEqual(loaded.state,before);assert.equal(loaded.state.factoryPlay.lifecycle.lateInit,false);
+ const configured=configureFactoryTransaction(loaded.state,{...createFactoryInputs(),serverEnabled:true,unlockMode:'assumed'},c,{playConfig});assert.equal(configured.ok,true);const retry=factoryLifecycleTransaction(configured.state,'late-init',c,{playConfig});assert.equal(retry.ok,true);assert.equal(retry.state.factoryPlay.lifecycle.lateInit,true);assert.equal(retry.state.queue.find(q=>q.type==='104').count,1);
+});

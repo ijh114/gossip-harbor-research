@@ -3,7 +3,7 @@
   "targetVersion": "4.10.5",
   "reviewDate": "2026-10-29",
   "title": "자료 가용성 · 필요한 추가 근거",
-  "scope": "기존 감사 재사용 + 세 가지 후속 가설의 제한된 정적 확인",
+  "scope": "기존 자산 감사와 후속 가설 확인, 생성기 공장 재분류 및 회상 책 exact alias 실물 회수",
   "statuses": [
     {
       "id": "missing",
@@ -27,12 +27,12 @@
     }
   ],
   "summary": {
-    "newlyRecoveredAssets": 0,
-    "records": 17,
+    "newlyRecoveredAssets": 9,
+    "records": 18,
     "statusRecords": {
       "missing": 3,
       "registered-only": 6,
-      "curated": 4,
+      "curated": 5,
       "research-projection": 4
     },
     "sourceBundles": 245,
@@ -53,7 +53,10 @@
     "eventTypesMissing": 35,
     "eventSharedImagesVerified": 24,
     "factoryImageTypesCurated": 29,
-    "factoryDirectTaggedVideoCandidates": 0
+    "factoryDirectTaggedVideoCandidates": 0,
+    "storyRecapImagesCurated": 11,
+    "storyRecapBodyImagesMissing": 29,
+    "storyRecapCoversMissing": 5
   },
   "entries": [
     {
@@ -809,6 +812,101 @@
         "factory-rule-12"
       ],
       "boundary": "원작 녹화나 현행 서버 설정이 아닙니다. 이미지 실물과 규칙 투영의 출처를 각각 보존합니다."
+    },
+    {
+      "id": "story-recap-book-art",
+      "title": "스토리 회상 책 본문·표지",
+      "status": "curated",
+      "count": 11,
+      "unit": "본문 고유 그림",
+      "group": "scene",
+      "claim": "동봉 회상 책5권22페이지의 본문40고유키 중11그림을 연결했습니다. 기존2그림과 새로 exact alias/원본PPtr로 회수한9PNG를 구분합니다. 표지5개와 본문29키는 등록을 확인했으나 제공 번들의 실물은 확보하지 못했습니다.",
+      "impact": "책 기능·선정 본문 발췌·실물 그림의 확보 상태를 분리합니다.",
+      "sourceRefs": [
+        "recap-art-recap-source-1",
+        "recap-art-recap-source-2",
+        "recap-art-recap-source-3",
+        "recap-art-recap-source-4",
+        "recap-art-recap-source-5",
+        "recap-art-recap-source-6",
+        "recap-art-recap-source-7",
+        "recap-art-recap-source-8"
+      ],
+      "targets": [
+        {
+          "label": "웹 시뮬레이션 · 회상 책",
+          "href": "#experience"
+        },
+        {
+          "label": "전체 작업3.13",
+          "href": "#checklist"
+        }
+      ],
+      "neededEvidence": [
+        "본문29고유키의 실제 그림",
+        "story_book_face_1~5 표지 실물",
+        "원작 책/Spine/음향·활성 화면 검증"
+      ],
+      "subjectIds": [
+        "story_book_face_1",
+        "story_A1D1_1_1_begin",
+        "story_A1D1_1_3",
+        "story_A1D1_1_6_end",
+        "story_A2D2_2_6",
+        "story_A2D3_3_1_end",
+        "story_A2D4_4_3_end",
+        "story_A2D5_5_4",
+        "story_A2D7_7_7",
+        "story_A3D8_8_8_begin",
+        "story_A3D11_11_5",
+        "story_A4D12_12_2_end",
+        "story_A4D12_12_6",
+        "story_A4D14_14_5",
+        "story_A7D22_22_4",
+        "story_A5D16_16_3",
+        "story_A5D16_16_4_2",
+        "story_A5D17_17_7_1",
+        "story_A5D18_18_4",
+        "story_A6D19_19_2",
+        "story_A6D19_19_3_end",
+        "story_A6D20_20_2",
+        "story_book_face_2",
+        "story_A7D21_21_6_end",
+        "story_A2D7_7_2_end",
+        "story_A8D24_24_1_begin",
+        "story_A8D24_24_2",
+        "story_A8D26_26_6",
+        "story_A8D26_26_11_end_1",
+        "story_A9D27_27_1_end",
+        "story_A9D27_27_2_end",
+        "story_A10D33_33_11",
+        "story_A11D35_35_6_begin",
+        "story_A11D37_37_2_end",
+        "story_book_face_3",
+        "story_A12D43_43_2_end",
+        "story_book_face_4",
+        "story_A13D44_44_begin",
+        "story_A13D47_47_6",
+        "story_book_face_5",
+        "story_A14D48_48_1_end",
+        "story_A14D49_49_1_end",
+        "story_A14D50_50_6_end",
+        "story_A14D51_51_1_end",
+        "story_A14D52_52_8_end"
+      ],
+      "mediaKeys": [
+        "recap:image:story_A1D1_1_6_end",
+        "recap:image:story_A2D2_2_6",
+        "recap:image:story_A2D3_3_1_end",
+        "recap:image:story_A2D4_4_3_end",
+        "recap:image:story_A2D5_5_4",
+        "recap:image:story_A2D7_7_7",
+        "recap:image:story_A3D8_8_8_begin",
+        "recap:image:story_A3D11_11_5",
+        "recap:image:story_A2D7_7_2_end"
+      ],
+      "newlyRecoveredAssets": 9,
+      "originalRuntimeObserved": false
     }
   ],
   "sources": [
@@ -1272,6 +1370,174 @@
       "lineStart": 3,
       "lineEnd": 1774,
       "kind": "packaged-static-code"
+    },
+    {
+      "id": "recap-art-recap-source-1",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/Model/StoryRecapModel.lua",
+      "sha256": "05192db30e277f1690ab4395649b2089a9e5f32f43c55b2b555059f1cb5fa9e5",
+      "evidenceType": "packaged-static-code",
+      "ranges": [
+        [
+          18,
+          21
+        ],
+        [
+          22,
+          63
+        ],
+        [
+          64,
+          76
+        ],
+        [
+          81,
+          89
+        ],
+        [
+          90,
+          98
+        ],
+        [
+          99,
+          102
+        ],
+        [
+          103,
+          111
+        ]
+      ],
+      "originalRuntimeObserved": false,
+      "lineStart": 18,
+      "lineEnd": 111
+    },
+    {
+      "id": "recap-art-recap-source-2",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapMainWindow.lua",
+      "sha256": "27b0d53b304fdf964a489a2bb9724f4f43c33fde11ecea92edfad983e1c29323",
+      "evidenceType": "packaged-static-code",
+      "ranges": [
+        [
+          4,
+          10
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          16,
+          43
+        ],
+        [
+          54,
+          74
+        ]
+      ],
+      "originalRuntimeObserved": false,
+      "lineStart": 4,
+      "lineEnd": 74
+    },
+    {
+      "id": "recap-art-recap-source-3",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapBookContentWindow.lua",
+      "sha256": "b8ec7994617cca745646bc91ffa63cb4b923b668a30a6901114518df6c410a75",
+      "evidenceType": "packaged-static-code",
+      "ranges": [
+        [
+          10,
+          45
+        ],
+        [
+          58,
+          83
+        ],
+        [
+          101,
+          109
+        ],
+        [
+          110,
+          118
+        ],
+        [
+          139,
+          173
+        ]
+      ],
+      "originalRuntimeObserved": false,
+      "lineStart": 10,
+      "lineEnd": 173
+    },
+    {
+      "id": "recap-art-recap-source-4",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapBookCell.lua",
+      "sha256": "6ca1ba32d13c028012a1d328573bd6b3b168c8886b5988f6029bdf6c43bd6b26",
+      "evidenceType": "packaged-static-code",
+      "ranges": [
+        [
+          4,
+          28
+        ],
+        [
+          29,
+          36
+        ]
+      ],
+      "originalRuntimeObserved": false,
+      "lineStart": 4,
+      "lineEnd": 36
+    },
+    {
+      "id": "recap-art-recap-source-5",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapEntry.lua",
+      "sha256": "cdb152843bfc33cc6b9befcafaf3d75ad4b6f60e9378b9c8c62fbc3f91c11cac",
+      "evidenceType": "packaged-static-code",
+      "ranges": [
+        [
+          4,
+          8
+        ],
+        [
+          9,
+          14
+        ]
+      ],
+      "originalRuntimeObserved": false,
+      "lineStart": 4,
+      "lineEnd": 14
+    },
+    {
+      "id": "recap-art-recap-source-6",
+      "path": "analysis/lua/Lua_Config/Data/Config/StoryRecapConfig.lua",
+      "sha256": "f1bbcc68e9d97323b2840e964a78871af9d0385e172908e183a7e3d755e573df",
+      "evidenceType": "packaged-static-config",
+      "ranges": [],
+      "originalRuntimeObserved": false,
+      "lineStart": 1,
+      "lineEnd": 2166,
+      "anchorScope": "entire existing decoded UTF-8 source by raw SHA; no original body published"
+    },
+    {
+      "id": "recap-art-recap-source-7",
+      "path": "analysis/config-tables/StoryRecapConfig.json",
+      "sha256": "e56fdb27ab1977f51da8eacab6aadbceb98cd8a8336ccb9d161fce1bace2b8cb",
+      "evidenceType": "derived-config-table",
+      "ranges": [],
+      "originalRuntimeObserved": false,
+      "lineStart": 1,
+      "lineEnd": 11443,
+      "anchorScope": "entire existing decoded UTF-8 source by raw SHA; no original body published"
+    },
+    {
+      "id": "recap-art-recap-source-8",
+      "path": "analysis/decoded/game_text_ko.bin",
+      "sha256": "c36f297fa46f926601ea5625540cbbf524f0c01dbe445e903d802ed6ba97623a",
+      "evidenceType": "decoded-localization-minimal-excerpts",
+      "ranges": [],
+      "originalRuntimeObserved": false,
+      "lineStart": 1,
+      "lineEnd": 12762,
+      "anchorScope": "entire existing decoded UTF-8 source by raw SHA; no original body published"
     }
   ],
   "hypotheses": [

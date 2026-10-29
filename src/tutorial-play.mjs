@@ -25,13 +25,16 @@ export function tutorialPlayEvent(s,event,c,{context={}}={}){
 export function resetTutorialPlay(s,c){return tutorialPlayEvent(s,{type:'reset'},c);}
 export function tutorialPlayView(s,c){return validTutorialPlay(s,c)?view(s,c):{valid:false,active:null};}
 export function restoreTutorialPlay(s,c){if(!validTutorialPlay(s,c)||!s.enabled)return result(false,'복원할 연결 안내가 없습니다.');return s.selected==='tutorial_energyBoosteight_start'&&s.engine.active?tutorialPlayEvent(s,{type:'executer-started'},c):result(true,'기존 연결 안내 초안을 복원했습니다.');}
-export function tutorialPlayPermission(s,action,c){
+export function tutorialPlayPermission(s,action,c,value){
  if(!validTutorialPlay(s,c)||!s.enabled)return {allowed:true};const a=s.engine.active;if(!a||!a.strong&&a.dueAt===null)return {allowed:true};
  const free=['export','save','focus','reset','scenario','new-game','game-title','game-continue','game-new-prompt','game-new-cancel','game-sound','game-task-list-close','game-factory-close','game-skins-close','game-decor-close','close-energy','close-offer','close-shop','close-info','close-inventory','cancel-tool'];
- if(action.startsWith('guide:')||free.includes(action))return {allowed:true};
+ if(action.startsWith('guide:')||action.startsWith('runtime:')||free.includes(action))return {allowed:true};
  const hud=a.target?.hud,phase=a.phase;
  if(hud==='EnergyBoost'&&action==='set-boost')return {allowed:true};
- if(s.selected==='tutorial_generator_factory_Acquire'&&phase==='tap-item'&&['game-factory-open','factory:store'].includes(action))return {allowed:true};
+ if(s.selected==='tutorial_story_recap'&&phase==='recap-highlight'&&action==='recap:open-shelf')return {allowed:true};
+ if(s.selected==='tutorial_generator_factory_Acquire'&&phase==='tap-item'&&action==='game-factory-open')return {allowed:true};
+ if(s.selected==='tutorial_generator_factory_Acquire'&&phase==='tap-item'&&['game-cell','cell'].includes(action)){const p=a.target?.position;return p&&Number(value)===(p.y-1)*7+p.x-1?{allowed:true}:{allowed:false,message:'강조한 공장 조각만 탭할 수 있습니다.'};}
+ if(s.selected==='tutorial_generator_factory_Acquire'&&phase==='tap-item'&&action==='factory:store'){const uid=String(value).split(':').at(-1);return String(a.target?.uid)===uid?{allowed:true}:{allowed:false,message:'안내에서 강조한 조각만 보관할 수 있습니다.'};}
  if(hud==='Inventory'&&['inventory','game-factory-open'].includes(action))return {allowed:true};
  if(hud==='Task'&&['home','game-task-list'].includes(action))return {allowed:true};
  if(s.selected==='tutorial_battlepass'&&phase==='ticket-highlight'&&action==='activity:premium')return {allowed:true};

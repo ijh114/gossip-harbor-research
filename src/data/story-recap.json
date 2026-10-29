@@ -1,0 +1,4828 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "checklistId": "3.13",
+  "reviewDate": "2026-10-29",
+  "title": "스토리 회상 책 · 동봉 규칙과 선정 발췌",
+  "scope": "5 packaged books /22 pages; 1 short excerpt per page; no full recovered localization, no inferred art",
+  "originalRuntimeObserved": false,
+  "serverControl": "story_recap",
+  "timing": {
+    "next": {
+      "contentAfter": 0.1,
+      "unlockAfter": 0.25
+    },
+    "previous": {
+      "contentAfter": 0.3,
+      "unlockAfter": 0.5
+    },
+    "bookStartDeclaredSeconds": 0.5,
+    "shelfSpineDelaySeconds": 0.4,
+    "cellYoyoDelaySeconds": 0.16
+  },
+  "swipe": {
+    "minSeconds": 0.01,
+    "minHorizontalSpeedExclusive": 1000,
+    "horizontalVerticalRatioExclusive": 1.5
+  },
+  "shelf": {
+    "minimumSlots": 9,
+    "columns": 3,
+    "comingSoon": "book_coming_soon",
+    "empty": "book_empty"
+  },
+  "books": [
+    {
+      "id": 1,
+      "unlockTask": {
+        "day": 20,
+        "id": 11
+      },
+      "unlockTaskKey": "20_11",
+      "coverResourceKey": "story_book_face_1",
+      "coverMediaKey": null,
+      "pages": [
+        {
+          "id": 1,
+          "titleKey": "recap_title_1_1",
+          "title": "식중독 사건 ",
+          "subtitleKey": "recap_subtitle_1_1",
+          "subtitle": "1일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_1_1_1",
+              "text": "정말 대단한 사건이에요! 바로 얼마 전, 브림웨이브에서 최고의 인기를 자랑하는 레스토랑의 셰프, 퀸 카스틸로가 자신의 일상이 갑자기 엉망으로 변",
+              "truncated": true,
+              "sourceRow": 3,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A1D1_1_1_begin",
+              "mediaKey": "scene:story-image:story_A1D1_1_1_begin",
+              "media": {
+                "key": "scene:story-image:story_A1D1_1_1_begin",
+                "src": "./assets/media/completion-scene/story_A1D1_1_1_begin.webp",
+                "sha256": "04b20be277ec15062550a5d4a9f9a0203826a48d147717401b086fe9a6f1a542",
+                "alt": "스토리 삽화 story_A1D1_1_1_begin · APK 원본 Sprite 발췌",
+                "width": 720,
+                "height": 479
+              },
+              "available": true,
+              "sourceRow": 4,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 5,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A1D1_1_3",
+              "mediaKey": "scene:story-image:story_A1D1_1_3",
+              "media": {
+                "key": "scene:story-image:story_A1D1_1_3",
+                "src": "./assets/media/completion-scene/story_A1D1_1_3.webp",
+                "sha256": "50fdf3463bcb07f15d9217a13e23c5f979518f4e392875d60d2c531637ffd46c",
+                "alt": "스토리 삽화 story_A1D1_1_3 · APK 원본 Sprite 발췌",
+                "width": 720,
+                "height": 479
+              },
+              "available": true,
+              "sourceRow": 6,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 7,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 8,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 4,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 3,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 2,
+          "titleKey": "recap_title_1_2",
+          "title": "숨겨진 비밀 ",
+          "subtitleKey": "recap_subtitle_1_2",
+          "subtitle": "2~4일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_1_2_1",
+              "text": "문을 두드리고 있는 건 누구일까요? 아, 퀸의 어린 시절 친구 해리슨 타일러네요. 멋지고 건강미가 넘치는 어부인 그가 퀸의 레스토랑에 갓 잡아 ",
+              "truncated": true,
+              "sourceRow": 11,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A1D1_1_6_end",
+              "mediaKey": "recap:image:story_A1D1_1_6_end",
+              "media": {
+                "key": "recap:image:story_A1D1_1_6_end",
+                "src": "./assets/media/story-recap/story_A1D1_1_6_end.png",
+                "sha256": "e0b4b009f7e42e134b0fa3fbea6c413daa7383042b84476dfd7b9c99c56003dc",
+                "alt": "동봉 회상 책 1권 2페이지 삽화 · story_A1D1_1_6_end",
+                "width": 960,
+                "height": 638
+              },
+              "available": true,
+              "sourceRow": 12,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 13,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 14,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A2D2_2_6",
+              "mediaKey": "recap:image:story_A2D2_2_6",
+              "media": {
+                "key": "recap:image:story_A2D2_2_6",
+                "src": "./assets/media/story-recap/story_A2D2_2_6.png",
+                "sha256": "8f7df1c07a1059af21d05a681e009196171bdd9e572a62594006a5fc3e14d79c",
+                "alt": "동봉 회상 책 1권 2페이지 삽화 · story_A2D2_2_6",
+                "width": 960,
+                "height": 638
+              },
+              "available": true,
+              "sourceRow": 15,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 16,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 17,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A2D3_3_1_end",
+              "mediaKey": "recap:image:story_A2D3_3_1_end",
+              "media": {
+                "key": "recap:image:story_A2D3_3_1_end",
+                "src": "./assets/media/story-recap/story_A2D3_3_1_end.png",
+                "sha256": "f277a308b3f780794f0b186224cadd73426621a525930146a6d21da3da9ff9d3",
+                "alt": "동봉 회상 책 1권 2페이지 삽화 · story_A2D3_3_1_end",
+                "width": 960,
+                "height": 638
+              },
+              "available": true,
+              "sourceRow": 18,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 19,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 20,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A2D4_4_3_end",
+              "mediaKey": "recap:image:story_A2D4_4_3_end",
+              "media": {
+                "key": "recap:image:story_A2D4_4_3_end",
+                "src": "./assets/media/story-recap/story_A2D4_4_3_end.png",
+                "sha256": "4df4a206325599c1dbc5cffa128a552e560ec73251f68348d31da9b9d35455d1",
+                "alt": "동봉 회상 책 1권 2페이지 삽화 · story_A2D4_4_3_end",
+                "width": 960,
+                "height": 638
+              },
+              "available": true,
+              "sourceRow": 21,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 22,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 23,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 9,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 8,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 3,
+          "titleKey": "recap_title_1_3",
+          "title": "홀로 대처하는 곤경 ",
+          "subtitleKey": "recap_subtitle_1_3",
+          "subtitle": "5~7일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_1_3_1",
+              "text": "이 작은 칸막이 방은 대체 뭘까요?! 마크가 조사하러 왔을 때, 그는 누군가 억지로 이 방에 침입했던 흔적을 발견했지만... 대체 누가 그런 짓",
+              "truncated": true,
+              "sourceRow": 26,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 27,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 28,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 29,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 30,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 31,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 32,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A2D5_5_4",
+              "mediaKey": "recap:image:story_A2D5_5_4",
+              "media": {
+                "key": "recap:image:story_A2D5_5_4",
+                "src": "./assets/media/story-recap/story_A2D5_5_4.png",
+                "sha256": "53757dc8cbcf98816a8796772713d26741c0de926edafe215dd03e5a3cdd0c68",
+                "alt": "동봉 회상 책 1권 3페이지 삽화 · story_A2D5_5_4",
+                "width": 960,
+                "height": 638
+              },
+              "available": true,
+              "sourceRow": 33,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 34,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A2D7_7_7",
+              "mediaKey": "recap:image:story_A2D7_7_7",
+              "media": {
+                "key": "recap:image:story_A2D7_7_7",
+                "src": "./assets/media/story-recap/story_A2D7_7_7.png",
+                "sha256": "74fa87ef247b5cf51625585e8a9ca419587743bffcdca44f641465ad3b2dd9dd",
+                "alt": "동봉 회상 책 1권 3페이지 삽화 · story_A2D7_7_7",
+                "width": 960,
+                "height": 638
+              },
+              "available": true,
+              "sourceRow": 35,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 36,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 9,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 8,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 4,
+          "titleKey": "recap_title_1_4",
+          "title": "익명의 전화",
+          "subtitleKey": "recap_subtitle_1_4",
+          "subtitle": "8~10일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_1_4_1",
+              "text": "여론의 소용돌이 한 가운데에 떨어진 가련한 퀸은 곧 심연으로 빠질 것만 같았어요! 그녀의 전남편이 곧 경찰에게 기소당해 독극물 투입죄가 확정되려",
+              "truncated": true,
+              "sourceRow": 39,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 40,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 41,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A3D8_8_8_begin",
+              "mediaKey": "recap:image:story_A3D8_8_8_begin",
+              "media": {
+                "key": "recap:image:story_A3D8_8_8_begin",
+                "src": "./assets/media/story-recap/story_A3D8_8_8_begin.png",
+                "sha256": "4b1b33e30a9d88c8bfe61d1dab397868cb7d1bd5a618e4a4a3d95b0152ebf4d7",
+                "alt": "동봉 회상 책 1권 4페이지 삽화 · story_A3D8_8_8_begin",
+                "width": 960,
+                "height": 638
+              },
+              "available": true,
+              "sourceRow": 42,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 43,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 44,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 45,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 6,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 5,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 5,
+          "titleKey": "recap_title_1_5",
+          "title": "신뢰의 위기",
+          "subtitleKey": "recap_subtitle_1_5",
+          "subtitle": "11~12일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_1_5_1",
+              "text": "당신이 퀸이었다면 어떻게 했을까요? 문제는 대체 누구를 믿어야 할지 모른다는 사실이고, 퀸은 이런 곤경에 빠져 있었어요! ",
+              "truncated": false,
+              "sourceRow": 48,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 49,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 50,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 51,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A3D11_11_5",
+              "mediaKey": "recap:image:story_A3D11_11_5",
+              "media": {
+                "key": "recap:image:story_A3D11_11_5",
+                "src": "./assets/media/story-recap/story_A3D11_11_5.png",
+                "sha256": "aec00e05455342eaeefac528add816e0744e95746360d6246c0fa97dad3812a1",
+                "alt": "동봉 회상 책 1권 5페이지 삽화 · story_A3D11_11_5",
+                "width": 960,
+                "height": 638
+              },
+              "available": true,
+              "sourceRow": 52,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 53,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 54,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A4D12_12_2_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 55,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 56,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 57,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A4D12_12_6",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 58,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 59,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 60,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 61,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 11,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 10,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 6,
+          "titleKey": "recap_title_1_6",
+          "title": "사건 조사 진행 중 ",
+          "subtitleKey": "recap_subtitle_1_6",
+          "subtitle": "13~16일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_1_6_1",
+              "text": "삽을 들고 일하던 퀸에게 분노의 노움이 또다시 전화를 걸어, 친절히도 그녀에게 비밀을 파헤치는 걸 그만두라고 경고했어요. 그렇지만 모두가 알고 ",
+              "truncated": true,
+              "sourceRow": 64,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 65,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 66,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A4D14_14_5",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 67,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 68,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 69,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 70,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A7D22_22_4",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 71,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 72,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 73,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A5D16_16_3",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 74,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 75,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A5D16_16_4_2",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 76,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 77,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 78,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 11,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 10,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 7,
+          "titleKey": "recap_title_1_7",
+          "title": "차츰 밝혀지는 진상 ",
+          "subtitleKey": "recap_subtitle_1_7",
+          "subtitle": "17~18일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_1_7_1",
+              "text": "퀸은 이제 막 데이트를 시작한 상대에게 배신당했다는 두 가지 고통을 한꺼번에 겪고 있었고, 친구를 위로하고자 아말라가 급히 달려왔지만, 퀸의 마",
+              "truncated": true,
+              "sourceRow": 81,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 82,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 83,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A5D17_17_7_1",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 84,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 85,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 86,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 87,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 88,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 89,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A5D18_18_4",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 90,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 91,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 92,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 93,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 11,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 10,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 8,
+          "titleKey": "recap_title_1_8",
+          "title": "이제 시작이야",
+          "subtitleKey": "recap_subtitle_1_8",
+          "subtitle": "19~20일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_1_8_1",
+              "text": "퀸은 레스토랑 뒤에서 잘 사용하지 않는 방을 발견했고, 그곳을 개조해 샘의 사무실 겸 영구적인 주거 공간으로 개조해 주기로 마음먹었어요. 그러나",
+              "truncated": true,
+              "sourceRow": 96,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A6D19_19_2",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 97,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 98,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A6D19_19_3_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 99,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 100,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 101,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 102,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 103,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A6D20_20_2",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 104,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 105,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 106,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 107,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 108,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 109,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 110,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 111,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 112,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 14,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 13,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        }
+      ],
+      "sourceRefs": [
+        "recap-source-1",
+        "recap-source-6",
+        "recap-source-7"
+      ],
+      "title": "식중독 사건 "
+    },
+    {
+      "id": 2,
+      "unlockTask": {
+        "day": 37,
+        "id": 10
+      },
+      "unlockTaskKey": "37_10",
+      "coverResourceKey": "story_book_face_2",
+      "coverMediaKey": null,
+      "pages": [
+        {
+          "id": 1,
+          "titleKey": "recap_title_2_1",
+          "title": "서퍼 ",
+          "subtitleKey": "recap_subtitle_2_1",
+          "subtitle": "21일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_2_1_1",
+              "text": "팩과 오이는 정말로 마력을 가지고 있었어요! 하룻밤 푹 쉬자, 모두 새로운 에너지를 충전했답니다. 그렇지만 이런 산뜻한 기분은 곧이어 발생한 뜻",
+              "truncated": true,
+              "sourceRow": 115,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 116,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 117,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 118,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 119,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A7D21_21_6_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 120,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 121,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 122,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 7,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 6,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 2,
+          "titleKey": "recap_title_2_2",
+          "title": "용의자 추리기",
+          "subtitleKey": "recap_subtitle_2_2",
+          "subtitle": "22~23일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_2_2_1",
+              "text": "어쩌다 이렇게 많은 스캔들에 휘말리게 된 걸까요?! 퀸은 도저히 알 수가 없었어요. ",
+              "truncated": false,
+              "sourceRow": 125,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 126,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 127,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 128,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 129,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A2D7_7_2_end",
+              "mediaKey": "recap:image:story_A2D7_7_2_end",
+              "media": {
+                "key": "recap:image:story_A2D7_7_2_end",
+                "src": "./assets/media/story-recap/story_A2D7_7_2_end.png",
+                "sha256": "031faee235b6495e52936d80cd17885f482ee9f96714d96125ef9d2f957e6cc7",
+                "alt": "동봉 회상 책 2권 2페이지 삽화 · story_A2D7_7_2_end",
+                "width": 960,
+                "height": 638
+              },
+              "available": true,
+              "sourceRow": 130,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 131,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 132,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 133,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 134,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 135,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 136,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 11,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 10,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 3,
+          "titleKey": "recap_title_2_3",
+          "title": "배후의 조종자",
+          "subtitleKey": "recap_subtitle_2_3",
+          "subtitle": "24~25일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_2_3_1",
+              "text": "퀸은 콜튼이 보트 사고와 관련돼 있지 않을까 의심하기 시작했어요... 용의선상을 벗어날 수 있는 사람은 아무도 없었어요. 음, 잠깐! 누가 퀸을",
+              "truncated": true,
+              "sourceRow": 139,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A8D24_24_1_begin",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 140,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 141,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 142,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A8D24_24_2",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 143,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 144,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 145,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 146,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 147,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 148,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 149,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 150,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 151,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A8D26_26_6",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 152,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 153,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 154,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 13,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 12,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 4,
+          "titleKey": "recap_title_2_4",
+          "title": "어려운 선택",
+          "subtitleKey": "recap_subtitle_2_4",
+          "subtitle": "26~28일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_2_4_1",
+              "text": "반스가 또 레스토랑에 찾아왔을 때, 퀸은 장난으로 그를 '긍지의 반스'라고 불렀어요. 반스는 퀸에게 로리에 대해 쉼 없이 이야기하기 시작했고, ",
+              "truncated": true,
+              "sourceRow": 157,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 158,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 159,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A8D26_26_11_end_1",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 160,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 161,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A9D27_27_1_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 162,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 163,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A9D27_27_2_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 164,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 165,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 166,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 167,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 168,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 169,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 170,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 171,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 172,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 173,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 14,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 13,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 5,
+          "titleKey": "recap_title_2_5",
+          "title": "꿈을 이루다",
+          "subtitleKey": "recap_subtitle_2_5",
+          "subtitle": "29~30일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_2_5_1",
+              "text": "지바는 마지막 신간 발표 사인회를 마치고 정식으로 도시로 향하게 됐어요. 카멘은 그녀의 우상을 따라가려고 했답니다. 이 얼마나 대단한 팬심인가요",
+              "truncated": true,
+              "sourceRow": 176,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 177,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 178,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 179,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 180,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 181,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 182,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 183,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 184,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 185,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 186,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 187,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 12,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 11,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 6,
+          "titleKey": "recap_title_2_6",
+          "title": "속이 시원해진 콜튼",
+          "subtitleKey": "recap_subtitle_2_6",
+          "subtitle": "31~32일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_2_6_1",
+              "text": "퀸은 개막식에서 카멘이 반드시 주목받게 만들겠다고 결심했고, 그 대형 개막식을 위해 만반의 준비를 갖췄어요. 샘은 일하는 중에도 카멘을 격려해 ",
+              "truncated": true,
+              "sourceRow": 190,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 191,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 192,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 193,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 194,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 195,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 196,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 197,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 198,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 199,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 10,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 9,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 7,
+          "titleKey": "recap_title_2_7",
+          "title": "개막식 공연",
+          "subtitleKey": "recap_subtitle_2_7",
+          "subtitle": "33일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_2_7_1",
+              "text": "연주회 날이 어느덧 다가왔어요! 퀸, 샘, 아말라는 열심히 마지막 준비를 하며 이야기를 나눴어요. 그리고 이야기를 하다 보니 또 퀸의 전남편 콜",
+              "truncated": true,
+              "sourceRow": 202,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 203,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 204,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 205,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 206,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 207,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 208,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 209,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A10D33_33_11",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 210,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 211,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 212,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 10,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 9,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 8,
+          "titleKey": "recap_title_2_8",
+          "title": "좋아지는 운",
+          "subtitleKey": "recap_subtitle_2_8",
+          "subtitle": "34~35일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_2_8_1",
+              "text": "보트 사건을 계속 살펴보도록 하죠. 퀸은 다시 기묘한 범죄 현장을 찾았고 그곳에서 선글라스를 하나 발견했어요. 선글라스를 썼던 건 반스였어도, ",
+              "truncated": true,
+              "sourceRow": 215,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 216,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 217,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 218,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 219,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 220,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 221,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A11D35_35_6_begin",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 222,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 223,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 224,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 9,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 8,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 9,
+          "titleKey": "recap_title_2_9",
+          "title": "노움의 음모",
+          "subtitleKey": "recap_subtitle_2_9",
+          "subtitle": "36~37일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_2_9_1",
+              "text": "이제 반스와 대치할 시간이 됐어요. ",
+              "truncated": false,
+              "sourceRow": 227,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 228,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 229,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 230,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 231,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 232,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A11D37_37_2_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 233,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 234,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 235,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 236,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 237,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 238,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 239,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 12,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 11,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        }
+      ],
+      "sourceRefs": [
+        "recap-source-1",
+        "recap-source-6",
+        "recap-source-7"
+      ],
+      "title": "서퍼 "
+    },
+    {
+      "id": 3,
+      "unlockTask": {
+        "day": 43,
+        "id": 11
+      },
+      "unlockTaskKey": "43_11",
+      "coverResourceKey": "story_book_face_3",
+      "coverMediaKey": null,
+      "pages": [
+        {
+          "id": 1,
+          "titleKey": "recap_title_3_1",
+          "title": "맞선 프로그램",
+          "subtitleKey": "recap_subtitle_3_1",
+          "subtitle": "38~40일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_3_1_1",
+              "text": "새로운 날이 찾아왔으니 일을 시작해야죠! 오늘, 퀸은 레스토랑 옆의 오래된 온실을 새롭게 단장할 생각이었어요. 이건 큰 프로젝트인 만큼 도움이 ",
+              "truncated": true,
+              "sourceRow": 242,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 243,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 244,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 245,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 246,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 247,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 248,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 249,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 8,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 7,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 2,
+          "titleKey": "recap_title_3_2",
+          "title": "기묘한 데이트",
+          "subtitleKey": "recap_subtitle_3_2",
+          "subtitle": "41~43일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_3_2_1",
+              "text": "마크는 온실 리모델링 작업에 열중하고 있었지만, 퀸의 마음엔 여전히 의문점이 남았어요. 마크는 진짜 휴가를 받은 게 아니라, 스스로 휴가를 신청",
+              "truncated": true,
+              "sourceRow": 252,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 253,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 254,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 255,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 256,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 257,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 258,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 259,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A12D43_43_2_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 260,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 261,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 262,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 10,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 9,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        }
+      ],
+      "sourceRefs": [
+        "recap-source-1",
+        "recap-source-6",
+        "recap-source-7"
+      ],
+      "title": "맞선 프로그램"
+    },
+    {
+      "id": 4,
+      "unlockTask": {
+        "day": 47,
+        "id": 11
+      },
+      "unlockTaskKey": "47_11",
+      "coverResourceKey": "story_book_face_4",
+      "coverMediaKey": null,
+      "pages": [
+        {
+          "id": 1,
+          "titleKey": "recap_title_4_1",
+          "title": "빅 비치볼 쇼핑몰 ",
+          "subtitleKey": "recap_subtitle_4_1",
+          "subtitle": "44~47일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_4_1_1",
+              "text": "요즘은 꽤 평온했어요. 그렇지만 불길한 종이 한 장이 이 평온함을 산산 조각냈죠. 퀸의 집 문 앞에 나타난 그 종이 위에는 '역사는 반복될 것이",
+              "truncated": true,
+              "sourceRow": 265,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A13D44_44_begin",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 266,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 267,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 268,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 269,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 270,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 271,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 272,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 273,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A13D47_47_6",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 274,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 275,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 276,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 277,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 11,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 10,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        }
+      ],
+      "sourceRefs": [
+        "recap-source-1",
+        "recap-source-6",
+        "recap-source-7"
+      ],
+      "title": "빅 비치볼 쇼핑몰 "
+    },
+    {
+      "id": 5,
+      "unlockTask": {
+        "day": 52,
+        "id": 11
+      },
+      "unlockTaskKey": "52_11",
+      "coverResourceKey": "story_book_face_5",
+      "coverMediaKey": null,
+      "pages": [
+        {
+          "id": 1,
+          "titleKey": "recap_title_5_1",
+          "title": "헬스마니아 콜튼 ",
+          "subtitleKey": "recap_subtitle_5_1",
+          "subtitle": "48~50일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_5_1_1",
+              "text": "콜튼의 복귀는 피할 수 없어 보였어요. 그는 자신만의 계획이 있었죠. ",
+              "truncated": false,
+              "sourceRow": 280,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 281,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A14D48_48_1_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 282,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 283,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A14D49_49_1_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 284,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 285,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 286,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 287,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 288,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 289,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 290,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A14D50_50_6_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 291,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 292,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 293,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 11,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 10,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        },
+        {
+          "id": 2,
+          "titleKey": "recap_title_5_2",
+          "title": "괴물이다! ",
+          "subtitleKey": "recap_subtitle_5_2",
+          "subtitle": "51~52일 차",
+          "elements": [
+            {
+              "kind": "text-excerpt",
+              "key": "recap_text_5_2_1",
+              "text": "헬스장을 위한 공간을 조금 확보하려고 퀸과 콜튼은 쓰레기를 정리했어요. 그러다 갑자기 새로운 단서가 등장했어요. 두 사람 앞에 작은 생선 뼈가 ",
+              "truncated": true,
+              "sourceRow": 296,
+              "sourceRefs": [
+                "recap-source-7",
+                "recap-source-8"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A14D51_51_1_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 297,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 298,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 299,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 300,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 301,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 302,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 303,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 304,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 305,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "image",
+              "resourceKey": "story_A14D52_52_8_end",
+              "mediaKey": null,
+              "media": null,
+              "available": false,
+              "sourceRow": 306,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 307,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 308,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            },
+            {
+              "kind": "omitted-text",
+              "blocks": 1,
+              "sourceRow": 309,
+              "sourceRefs": [
+                "recap-source-7"
+              ]
+            }
+          ],
+          "originalTextBlocks": 12,
+          "publishedExcerptBlocks": 1,
+          "omittedTextBlocks": 11,
+          "sourceRefs": [
+            "recap-source-7",
+            "recap-source-8"
+          ]
+        }
+      ],
+      "sourceRefs": [
+        "recap-source-1",
+        "recap-source-6",
+        "recap-source-7"
+      ],
+      "title": "헬스마니아 콜튼 "
+    }
+  ],
+  "summary": {
+    "books": 5,
+    "pages": 22,
+    "configRows": 309,
+    "originalTextBlocks": 225,
+    "publishedExcerptBlocks": 22,
+    "imageReferences": 40,
+    "imageReferencesWithCuratedMedia": 11,
+    "uniqueImageKeys": 40,
+    "uniqueCuratedImages": 11,
+    "coverImagesAvailable": 0,
+    "fullTextPublished": false,
+    "bodyImageKeysRegisteredOnly": 29,
+    "newlyCuratedImages": 9,
+    "newlyCuratedImageBytes": 3679235
+  },
+  "sources": [
+    {
+      "id": "recap-source-1",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/Model/StoryRecapModel.lua",
+      "sha256": "05192db30e277f1690ab4395649b2089a9e5f32f43c55b2b555059f1cb5fa9e5",
+      "evidenceType": "packaged-static-code",
+      "ranges": [
+        [
+          18,
+          21
+        ],
+        [
+          22,
+          63
+        ],
+        [
+          64,
+          76
+        ],
+        [
+          81,
+          89
+        ],
+        [
+          90,
+          98
+        ],
+        [
+          99,
+          102
+        ],
+        [
+          103,
+          111
+        ]
+      ],
+      "originalRuntimeObserved": false
+    },
+    {
+      "id": "recap-source-2",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapMainWindow.lua",
+      "sha256": "27b0d53b304fdf964a489a2bb9724f4f43c33fde11ecea92edfad983e1c29323",
+      "evidenceType": "packaged-static-code",
+      "ranges": [
+        [
+          4,
+          10
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          16,
+          43
+        ],
+        [
+          54,
+          74
+        ]
+      ],
+      "originalRuntimeObserved": false
+    },
+    {
+      "id": "recap-source-3",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapBookContentWindow.lua",
+      "sha256": "b8ec7994617cca745646bc91ffa63cb4b923b668a30a6901114518df6c410a75",
+      "evidenceType": "packaged-static-code",
+      "ranges": [
+        [
+          10,
+          45
+        ],
+        [
+          58,
+          83
+        ],
+        [
+          101,
+          109
+        ],
+        [
+          110,
+          118
+        ],
+        [
+          139,
+          173
+        ]
+      ],
+      "originalRuntimeObserved": false
+    },
+    {
+      "id": "recap-source-4",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapBookCell.lua",
+      "sha256": "6ca1ba32d13c028012a1d328573bd6b3b168c8886b5988f6029bdf6c43bd6b26",
+      "evidenceType": "packaged-static-code",
+      "ranges": [
+        [
+          4,
+          28
+        ],
+        [
+          29,
+          36
+        ]
+      ],
+      "originalRuntimeObserved": false
+    },
+    {
+      "id": "recap-source-5",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapEntry.lua",
+      "sha256": "cdb152843bfc33cc6b9befcafaf3d75ad4b6f60e9378b9c8c62fbc3f91c11cac",
+      "evidenceType": "packaged-static-code",
+      "ranges": [
+        [
+          4,
+          8
+        ],
+        [
+          9,
+          14
+        ]
+      ],
+      "originalRuntimeObserved": false
+    },
+    {
+      "id": "recap-source-6",
+      "path": "analysis/lua/Lua_Config/Data/Config/StoryRecapConfig.lua",
+      "sha256": "f1bbcc68e9d97323b2840e964a78871af9d0385e172908e183a7e3d755e573df",
+      "evidenceType": "packaged-static-config",
+      "ranges": [],
+      "originalRuntimeObserved": false
+    },
+    {
+      "id": "recap-source-7",
+      "path": "analysis/config-tables/StoryRecapConfig.json",
+      "sha256": "e56fdb27ab1977f51da8eacab6aadbceb98cd8a8336ccb9d161fce1bace2b8cb",
+      "evidenceType": "derived-config-table",
+      "ranges": [],
+      "originalRuntimeObserved": false
+    },
+    {
+      "id": "recap-source-8",
+      "path": "analysis/decoded/game_text_ko.bin",
+      "sha256": "c36f297fa46f926601ea5625540cbbf524f0c01dbe445e903d802ed6ba97623a",
+      "evidenceType": "decoded-localization-minimal-excerpts",
+      "ranges": [],
+      "originalRuntimeObserved": false
+    }
+  ],
+  "boundaries": [
+    "개방 조건은 StoryRecap 설정==1이다. 누락된 서버 플래그를 활성으로 추정하지 않는다.",
+    "해금은 현재 과제가 책의 기준 과제보다 엄격히 뒤일 때이며 현재 과제nil은 전부 완료 상태다. 초기 과제에서 연구용으로 자동 해금하지 않는다.",
+    "원작 새 책 열기는 항상1페이지이며 읽음 비트는 책을 열 때 기록한다. 웹 새로고침의 현재 페이지/전환 잔여시간 복원은 명시된 웹 저장 정책이다.",
+    "목록은 해금한 책+ComingSoon+빈칸으로 최소9칸/3열이다. 잠긴 미래 책을 해금된 실제 표지처럼 표시하지 않는다.",
+    "페이지 전환 시간은 동봉 DOTween 선언0.25초/0.5초다. 실제 기기 측정·원작 Spine 모션/음향을 확인한 수치가 아니다.",
+    "본문은 페이지당 최대80자 선정 발췌1개이며 나머지는 생략한 블록 수로 표시한다. 원문 전체와 로컬라이제이션 전체를 게시하지 않는다.",
+    "정확히 연결되는 기존 공개 삽화만 재사용한다. 미확보 그림·표지·Spine은 원본 리소스 키와 자료 없음으로 표시한다.",
+    "페이지/읽음·연구 설정 외 메인 과제·지갑·보상·게임 계정·서버를 변경하지 않는다. 연구 과제 스냅샷은 메인 진행과 별개다."
+  ],
+  "unresolved": [
+    "원작 표지5종·미확보 본문 이미지와 정확한 최종 스토리 UI/Spine 연출",
+    "전체 원문 재생·음향·캐릭터 동기화는 현재 선정 공개 범위를 넘어 미구현",
+    "실제 계정의서버활성·도달과제와 원작입력/재접속 동작 대조 미수행"
+  ],
+  "revision": "b50b9632580ed375b205bd7cf9e12fc27a1fb551bc39f4b865bff5856d886907",
+  "mediaEntries": [
+    {
+      "key": "recap:image:story_A1D1_1_6_end",
+      "kind": "image",
+      "origin": "packaged-sprite",
+      "src": "./assets/media/story-recap/story_A1D1_1_6_end.png",
+      "alt": "동봉 회상 책 1권 2페이지 삽화 · story_A1D1_1_6_end",
+      "width": 960,
+      "height": 638,
+      "sha256": "e0b4b009f7e42e134b0fa3fbea6c413daa7383042b84476dfd7b9c99c56003dc",
+      "bytes": 334455,
+      "source": "APK4.10.5 ImageFileConfig[3995] → exact Assets/ container → Sprite path_id -8014378583918728050",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area1_e969bf15bfa905cf4bad6432081550d7.bundle",
+        "bundle_sha256": "63686c040d5e85ca338952f50e1d12670436758c6b81531b8466fbcaabafb9fd",
+        "serialized_file": "CAB-0519f79df5f0281329387830f1dba47f",
+        "path_id": "-8014378583918728050",
+        "type": "Sprite",
+        "name": "story_A1D1_1_6_end",
+        "object_source_sha256": "010e16cd5dafc96455e69c9b127adfb0175be64c6217b54c57cbd2e15b213933"
+      },
+      "mapping": {
+        "shortName": "story_A1D1_1_6_end",
+        "fileKey": "AreaRes/StoryIllustration/Area1/story_A1D1_1_6_end.png",
+        "imageFileConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      },
+      "transform": "UnityPy decoded Sprite native-size RGBA → lossless PNG; no resize/crop/redraw beyond serialized Sprite rect",
+      "rgbaSha256": "87cac0e1dc4ba35ad1c642e46731f513540144294adf131cc8c30c5a2a514c66",
+      "originalRuntimeObserved": false,
+      "privacyReview": {
+        "status": "reviewed-static-illustration",
+        "method": "decoded Sprite provenance and public-image visual review",
+        "excluded": "No user/account capture, original source bundle or geometry is published"
+      }
+    },
+    {
+      "key": "recap:image:story_A2D2_2_6",
+      "kind": "image",
+      "origin": "packaged-sprite",
+      "src": "./assets/media/story-recap/story_A2D2_2_6.png",
+      "alt": "동봉 회상 책 1권 2페이지 삽화 · story_A2D2_2_6",
+      "width": 960,
+      "height": 638,
+      "sha256": "8f7df1c07a1059af21d05a681e009196171bdd9e572a62594006a5fc3e14d79c",
+      "bytes": 399884,
+      "source": "APK4.10.5 ImageFileConfig[4002] → exact Assets/ container → Sprite path_id -2358309172610628191",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+        "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+        "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+        "path_id": "-2358309172610628191",
+        "type": "Sprite",
+        "name": "story_A2D2_2_6",
+        "object_source_sha256": "24718941021f4e85169e75540f50b90c4f68b0cad281b386de6a1d81ebdc3f34"
+      },
+      "mapping": {
+        "shortName": "story_A2D2_2_6",
+        "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D2_2_6.png",
+        "imageFileConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      },
+      "transform": "UnityPy decoded Sprite native-size RGBA → lossless PNG; no resize/crop/redraw beyond serialized Sprite rect",
+      "rgbaSha256": "076e6172499378bb4a37a9d4a64a8709ba709d667287028b248ce7c9dd43cd3e",
+      "originalRuntimeObserved": false,
+      "privacyReview": {
+        "status": "reviewed-static-illustration",
+        "method": "decoded Sprite provenance and public-image visual review",
+        "excluded": "No user/account capture, original source bundle or geometry is published"
+      }
+    },
+    {
+      "key": "recap:image:story_A2D3_3_1_end",
+      "kind": "image",
+      "origin": "packaged-sprite",
+      "src": "./assets/media/story-recap/story_A2D3_3_1_end.png",
+      "alt": "동봉 회상 책 1권 2페이지 삽화 · story_A2D3_3_1_end",
+      "width": 960,
+      "height": 638,
+      "sha256": "f277a308b3f780794f0b186224cadd73426621a525930146a6d21da3da9ff9d3",
+      "bytes": 490983,
+      "source": "APK4.10.5 ImageFileConfig[4003] → exact Assets/ container → Sprite path_id -6147260486083153737",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+        "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+        "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+        "path_id": "-6147260486083153737",
+        "type": "Sprite",
+        "name": "story_A2D3_3_1_end",
+        "object_source_sha256": "e32120a2fe742d0e9cbd7489c570034fe6b45d8c3e1be18ef94b523421904a43"
+      },
+      "mapping": {
+        "shortName": "story_A2D3_3_1_end",
+        "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D3_3_1_end.png",
+        "imageFileConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      },
+      "transform": "UnityPy decoded Sprite native-size RGBA → lossless PNG; no resize/crop/redraw beyond serialized Sprite rect",
+      "rgbaSha256": "854801adb158f61601c6b0a0864f29b63def24d4496dadc259dfab8453b8db80",
+      "originalRuntimeObserved": false,
+      "privacyReview": {
+        "status": "reviewed-static-illustration",
+        "method": "decoded Sprite provenance and public-image visual review",
+        "excluded": "No user/account capture, original source bundle or geometry is published"
+      }
+    },
+    {
+      "key": "recap:image:story_A2D4_4_3_end",
+      "kind": "image",
+      "origin": "packaged-sprite",
+      "src": "./assets/media/story-recap/story_A2D4_4_3_end.png",
+      "alt": "동봉 회상 책 1권 2페이지 삽화 · story_A2D4_4_3_end",
+      "width": 960,
+      "height": 638,
+      "sha256": "4df4a206325599c1dbc5cffa128a552e560ec73251f68348d31da9b9d35455d1",
+      "bytes": 455188,
+      "source": "APK4.10.5 ImageFileConfig[4008] → exact Assets/ container → Sprite path_id 1570708237250050131",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+        "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+        "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+        "path_id": "1570708237250050131",
+        "type": "Sprite",
+        "name": "story_A2D4_4_3_end",
+        "object_source_sha256": "9bf5d20b378a8a6a22eaf1a9c989d79fa623b41557adfc84cd31e29afe48f583"
+      },
+      "mapping": {
+        "shortName": "story_A2D4_4_3_end",
+        "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D4_4_3_end.png",
+        "imageFileConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      },
+      "transform": "UnityPy decoded Sprite native-size RGBA → lossless PNG; no resize/crop/redraw beyond serialized Sprite rect",
+      "rgbaSha256": "20be4c6a095b8104869f1821158bd0d545dd17ec415c972f9bbcb4ec1935a5d6",
+      "originalRuntimeObserved": false,
+      "privacyReview": {
+        "status": "reviewed-static-illustration",
+        "method": "decoded Sprite provenance and public-image visual review",
+        "excluded": "No user/account capture, original source bundle or geometry is published"
+      }
+    },
+    {
+      "key": "recap:image:story_A2D5_5_4",
+      "kind": "image",
+      "origin": "packaged-sprite",
+      "src": "./assets/media/story-recap/story_A2D5_5_4.png",
+      "alt": "동봉 회상 책 1권 3페이지 삽화 · story_A2D5_5_4",
+      "width": 960,
+      "height": 638,
+      "sha256": "53757dc8cbcf98816a8796772713d26741c0de926edafe215dd03e5a3cdd0c68",
+      "bytes": 462050,
+      "source": "APK4.10.5 ImageFileConfig[4011] → exact Assets/ container → Sprite path_id 8050636343339237938",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+        "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+        "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+        "path_id": "8050636343339237938",
+        "type": "Sprite",
+        "name": "story_A2D5_5_4",
+        "object_source_sha256": "1ae4e005a1bbf6754216be65b9ae01a5b9985dd6e5e9241d893b2ec0abfc9370"
+      },
+      "mapping": {
+        "shortName": "story_A2D5_5_4",
+        "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D5_5_4.png",
+        "imageFileConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      },
+      "transform": "UnityPy decoded Sprite native-size RGBA → lossless PNG; no resize/crop/redraw beyond serialized Sprite rect",
+      "rgbaSha256": "e86c802952c5643dd90a2d30978234f80bc15f47c38bfd73ad875f5980d114d3",
+      "originalRuntimeObserved": false,
+      "privacyReview": {
+        "status": "reviewed-static-illustration",
+        "method": "decoded Sprite provenance and public-image visual review",
+        "excluded": "No user/account capture, original source bundle or geometry is published"
+      }
+    },
+    {
+      "key": "recap:image:story_A2D7_7_7",
+      "kind": "image",
+      "origin": "packaged-sprite",
+      "src": "./assets/media/story-recap/story_A2D7_7_7.png",
+      "alt": "동봉 회상 책 1권 3페이지 삽화 · story_A2D7_7_7",
+      "width": 960,
+      "height": 638,
+      "sha256": "74fa87ef247b5cf51625585e8a9ca419587743bffcdca44f641465ad3b2dd9dd",
+      "bytes": 244626,
+      "source": "APK4.10.5 ImageFileConfig[4016] → exact Assets/ container → Sprite path_id 4748882603023038610",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+        "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+        "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+        "path_id": "4748882603023038610",
+        "type": "Sprite",
+        "name": "story_A2D7_7_7",
+        "object_source_sha256": "995b622b50331771aa5add2b0118a8c92aecd70cc37470f16553d3a315b403d2"
+      },
+      "mapping": {
+        "shortName": "story_A2D7_7_7",
+        "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D7_7_7.png",
+        "imageFileConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      },
+      "transform": "UnityPy decoded Sprite native-size RGBA → lossless PNG; no resize/crop/redraw beyond serialized Sprite rect",
+      "rgbaSha256": "b19c3d182e74c434b9412a595982541c7ca76d0f7c758dc942b9aa0359e5b041",
+      "originalRuntimeObserved": false,
+      "privacyReview": {
+        "status": "reviewed-static-illustration",
+        "method": "decoded Sprite provenance and public-image visual review",
+        "excluded": "No user/account capture, original source bundle or geometry is published"
+      }
+    },
+    {
+      "key": "recap:image:story_A3D8_8_8_begin",
+      "kind": "image",
+      "origin": "packaged-sprite",
+      "src": "./assets/media/story-recap/story_A3D8_8_8_begin.png",
+      "alt": "동봉 회상 책 1권 4페이지 삽화 · story_A3D8_8_8_begin",
+      "width": 960,
+      "height": 638,
+      "sha256": "4b1b33e30a9d88c8bfe61d1dab397868cb7d1bd5a618e4a4a3d95b0152ebf4d7",
+      "bytes": 442160,
+      "source": "APK4.10.5 ImageFileConfig[4019] → exact Assets/ container → Sprite path_id -6723828308604962579",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area3_abafc0ef2c8ce8974199f8a23ffeb636.bundle",
+        "bundle_sha256": "4af53a2a35a74122ec3e138a87bc69beb1f602c13eeebb7c70a4accbd02253b1",
+        "serialized_file": "CAB-1b6c95a4020b61578b2c23c365d91dad",
+        "path_id": "-6723828308604962579",
+        "type": "Sprite",
+        "name": "story_A3D8_8_8_begin",
+        "object_source_sha256": "680d6629c4d264274dcf4c21e5f468c950ea82bf21b1e047fcd06330aa7f137d"
+      },
+      "mapping": {
+        "shortName": "story_A3D8_8_8_begin",
+        "fileKey": "AreaRes/StoryIllustration/Area3/story_A3D8_8_8_begin.png",
+        "imageFileConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      },
+      "transform": "UnityPy decoded Sprite native-size RGBA → lossless PNG; no resize/crop/redraw beyond serialized Sprite rect",
+      "rgbaSha256": "545eb6dd0cc62af0df401fc2475f20fbb9248e2dd1fab8f1a44ddab63a52c2df",
+      "originalRuntimeObserved": false,
+      "privacyReview": {
+        "status": "reviewed-static-illustration",
+        "method": "decoded Sprite provenance and public-image visual review",
+        "excluded": "No user/account capture, original source bundle or geometry is published"
+      }
+    },
+    {
+      "key": "recap:image:story_A3D11_11_5",
+      "kind": "image",
+      "origin": "packaged-sprite",
+      "src": "./assets/media/story-recap/story_A3D11_11_5.png",
+      "alt": "동봉 회상 책 1권 5페이지 삽화 · story_A3D11_11_5",
+      "width": 960,
+      "height": 638,
+      "sha256": "aec00e05455342eaeefac528add816e0744e95746360d6246c0fa97dad3812a1",
+      "bytes": 484801,
+      "source": "APK4.10.5 ImageFileConfig[4024] → exact Assets/ container → Sprite path_id -6178627183158485002",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area3_abafc0ef2c8ce8974199f8a23ffeb636.bundle",
+        "bundle_sha256": "4af53a2a35a74122ec3e138a87bc69beb1f602c13eeebb7c70a4accbd02253b1",
+        "serialized_file": "CAB-1b6c95a4020b61578b2c23c365d91dad",
+        "path_id": "-6178627183158485002",
+        "type": "Sprite",
+        "name": "story_A3D11_11_5",
+        "object_source_sha256": "421ca1102f2259a42fbb8c8f4968bc8b44e10bd5792c2b33cce9583033131bf1"
+      },
+      "mapping": {
+        "shortName": "story_A3D11_11_5",
+        "fileKey": "AreaRes/StoryIllustration/Area3/story_A3D11_11_5.png",
+        "imageFileConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      },
+      "transform": "UnityPy decoded Sprite native-size RGBA → lossless PNG; no resize/crop/redraw beyond serialized Sprite rect",
+      "rgbaSha256": "a4f6f0bd064fdd70d8b8df49c52e0466a510beb36005aad8176929f1f720e1fc",
+      "originalRuntimeObserved": false,
+      "privacyReview": {
+        "status": "reviewed-static-illustration",
+        "method": "decoded Sprite provenance and public-image visual review",
+        "excluded": "No user/account capture, original source bundle or geometry is published"
+      }
+    },
+    {
+      "key": "recap:image:story_A2D7_7_2_end",
+      "kind": "image",
+      "origin": "packaged-sprite",
+      "src": "./assets/media/story-recap/story_A2D7_7_2_end.png",
+      "alt": "동봉 회상 책 2권 2페이지 삽화 · story_A2D7_7_2_end",
+      "width": 960,
+      "height": 638,
+      "sha256": "031faee235b6495e52936d80cd17885f482ee9f96714d96125ef9d2f957e6cc7",
+      "bytes": 365088,
+      "source": "APK4.10.5 ImageFileConfig[4014] → exact Assets/ container → Sprite path_id 5611965152379211472",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+        "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+        "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+        "path_id": "5611965152379211472",
+        "type": "Sprite",
+        "name": "story_A2D7_7_2_end",
+        "object_source_sha256": "98a8ad7287784d26b8575dfcdcc1e60b361b6049c518cf494b6efde266d0063d"
+      },
+      "mapping": {
+        "shortName": "story_A2D7_7_2_end",
+        "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D7_7_2_end.png",
+        "imageFileConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        }
+      },
+      "transform": "UnityPy decoded Sprite native-size RGBA → lossless PNG; no resize/crop/redraw beyond serialized Sprite rect",
+      "rgbaSha256": "c9bab0b57b1e97638939312be46abd0647bc5ef0217feb284bb38e55abbd422c",
+      "originalRuntimeObserved": false,
+      "privacyReview": {
+        "status": "reviewed-static-illustration",
+        "method": "decoded Sprite provenance and public-image visual review",
+        "excluded": "No user/account capture, original source bundle or geometry is published"
+      }
+    }
+  ],
+  "resourceAudit": {
+    "scope": "Existing supplied245bundle/110632object/1820Sprite/10037container audit; exact ImageFileConfig shortName + Assets/fileKey container PPtr, exact Sprite name crosscheck",
+    "sourceInventory": {
+      "bundles": 245,
+      "objects": 110632,
+      "sprites": 1820,
+      "containers": 10037
+    },
+    "requestedCoverKeys": 5,
+    "requestedBodyReferences": 40,
+    "requestedUniqueBodyKeys": 40,
+    "exactLocalSprites": 11,
+    "registeredOnlyKeys": [
+      "story_book_face_1",
+      "story_book_face_2",
+      "story_book_face_3",
+      "story_book_face_4",
+      "story_book_face_5",
+      "story_A4D12_12_2_end",
+      "story_A4D12_12_6",
+      "story_A4D14_14_5",
+      "story_A7D22_22_4",
+      "story_A5D16_16_3",
+      "story_A5D16_16_4_2",
+      "story_A5D17_17_7_1",
+      "story_A5D18_18_4",
+      "story_A6D19_19_2",
+      "story_A6D19_19_3_end",
+      "story_A6D20_20_2",
+      "story_A7D21_21_6_end",
+      "story_A8D24_24_1_begin",
+      "story_A8D24_24_2",
+      "story_A8D26_26_6",
+      "story_A8D26_26_11_end_1",
+      "story_A9D27_27_1_end",
+      "story_A9D27_27_2_end",
+      "story_A10D33_33_11",
+      "story_A11D35_35_6_begin",
+      "story_A11D37_37_2_end",
+      "story_A12D43_43_2_end",
+      "story_A13D44_44_begin",
+      "story_A13D47_47_6",
+      "story_A14D48_48_1_end",
+      "story_A14D49_49_1_end",
+      "story_A14D50_50_6_end",
+      "story_A14D51_51_1_end",
+      "story_A14D52_52_8_end"
+    ],
+    "sourceRefs": [
+      {
+        "path": "analysis/followup/assets/image-config-local-sprite-map.json",
+        "sha256": "3efc9adf0681c8828e9fb67c57fdf5ab7384d3115003834fca1fb26d810a66cf"
+      },
+      {
+        "path": "analysis/followup/assets/asset-containers.json",
+        "sha256": "00d8f981c9631cf751d67ed157830494a02e85de9bbec26976655999f18935ce"
+      },
+      {
+        "path": "analysis/followup/assets/object-index.json",
+        "sha256": "9706e72ae7c732538667f42dcdcfd6be6e994be87099d5eac0cb98a02f9c1636"
+      },
+      {
+        "path": "analysis/followup/assets/bundle-inventory.json",
+        "sha256": "9181cba411913f555f4ace6ae71d54d4677d4f7ccc9592d3fa4268e13844e08b"
+      }
+    ],
+    "records": [
+      {
+        "resourceKey": "story_book_face_1",
+        "kind": "cover",
+        "configIndex": 4314,
+        "imageFileConfig": {
+          "shortName": "story_book_face_1",
+          "fileKey": "AreaRes/StoryBookFace/Area6/story_book_face_1.png",
+          "assetGuid": "455d7c94e5c83c64fa88f6ca9f8bb0e6",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_book_face_2",
+        "kind": "cover",
+        "configIndex": 4315,
+        "imageFileConfig": {
+          "shortName": "story_book_face_2",
+          "fileKey": "AreaRes/StoryBookFace/Area11/story_book_face_2.png",
+          "assetGuid": "32b6a7a7c9b5d1548ba5968bd08f5779",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_book_face_3",
+        "kind": "cover",
+        "configIndex": 4316,
+        "imageFileConfig": {
+          "shortName": "story_book_face_3",
+          "fileKey": "AreaRes/StoryBookFace/Area12/story_book_face_3.png",
+          "assetGuid": "ca9da9a31f73b5d489d2403ece54c22d",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_book_face_4",
+        "kind": "cover",
+        "configIndex": 4317,
+        "imageFileConfig": {
+          "shortName": "story_book_face_4",
+          "fileKey": "AreaRes/StoryBookFace/Area13/story_book_face_4.png",
+          "assetGuid": "fc948830b64214d42bb73fbe27589a9c",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_book_face_5",
+        "kind": "cover",
+        "configIndex": 4318,
+        "imageFileConfig": {
+          "shortName": "story_book_face_5",
+          "fileKey": "AreaRes/StoryBookFace/Area14/story_book_face_5.png",
+          "assetGuid": "a5c86d8154a90584887cb29cd56b6bf7",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A1D1_1_1_begin",
+        "kind": "body-image",
+        "configIndex": 3991,
+        "imageFileConfig": {
+          "shortName": "story_A1D1_1_1_begin",
+          "fileKey": "AreaRes/StoryIllustration/Area1/story_A1D1_1_1_begin.png",
+          "assetGuid": "0ab1cfbe3edd71c458362a71bb3b66d3",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area1_e969bf15bfa905cf4bad6432081550d7.bundle",
+            "bundle_sha256": "63686c040d5e85ca338952f50e1d12670436758c6b81531b8466fbcaabafb9fd",
+            "serialized_file": "CAB-0519f79df5f0281329387830f1dba47f",
+            "path_id": "-9093038604881078398",
+            "type": "Sprite",
+            "name": "story_A1D1_1_1_begin",
+            "object_source_sha256": "af73db2b271f4eeefbedd0f9a90cfb2253dc485af5b1a26959fecd1d26eb99a1"
+          }
+        ],
+        "status": "existing-curated-exact-sprite",
+        "publicMediaKey": "scene:story-image:story_A1D1_1_1_begin",
+        "publicPath": "./assets/media/completion-scene/story_A1D1_1_1_begin.webp",
+        "newlyExtracted": false,
+        "sha256": "04b20be277ec15062550a5d4a9f9a0203826a48d147717401b086fe9a6f1a542"
+      },
+      {
+        "resourceKey": "story_A1D1_1_3",
+        "kind": "body-image",
+        "configIndex": 3993,
+        "imageFileConfig": {
+          "shortName": "story_A1D1_1_3",
+          "fileKey": "AreaRes/StoryIllustration/Area1/story_A1D1_1_3.png",
+          "assetGuid": "c7a58bb83d046ff459ea25290297080d",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area1_e969bf15bfa905cf4bad6432081550d7.bundle",
+            "bundle_sha256": "63686c040d5e85ca338952f50e1d12670436758c6b81531b8466fbcaabafb9fd",
+            "serialized_file": "CAB-0519f79df5f0281329387830f1dba47f",
+            "path_id": "-2075097529451528798",
+            "type": "Sprite",
+            "name": "story_A1D1_1_3",
+            "object_source_sha256": "246841b95a1bfa398c14cf947d5a636b68aeec24f8fef6683674bb172c9a97a8"
+          }
+        ],
+        "status": "existing-curated-exact-sprite",
+        "publicMediaKey": "scene:story-image:story_A1D1_1_3",
+        "publicPath": "./assets/media/completion-scene/story_A1D1_1_3.webp",
+        "newlyExtracted": false,
+        "sha256": "50fdf3463bcb07f15d9217a13e23c5f979518f4e392875d60d2c531637ffd46c"
+      },
+      {
+        "resourceKey": "story_A1D1_1_6_end",
+        "kind": "body-image",
+        "configIndex": 3995,
+        "imageFileConfig": {
+          "shortName": "story_A1D1_1_6_end",
+          "fileKey": "AreaRes/StoryIllustration/Area1/story_A1D1_1_6_end.png",
+          "assetGuid": "2d7da93177a31cb48bc6ae8de7fd3f04",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area1_e969bf15bfa905cf4bad6432081550d7.bundle",
+            "bundle_sha256": "63686c040d5e85ca338952f50e1d12670436758c6b81531b8466fbcaabafb9fd",
+            "serialized_file": "CAB-0519f79df5f0281329387830f1dba47f",
+            "path_id": "-8014378583918728050",
+            "type": "Sprite",
+            "name": "story_A1D1_1_6_end",
+            "object_source_sha256": "010e16cd5dafc96455e69c9b127adfb0175be64c6217b54c57cbd2e15b213933"
+          }
+        ],
+        "status": "newly-curated-exact-sprite",
+        "publicMediaKey": "recap:image:story_A1D1_1_6_end",
+        "publicPath": "./assets/media/story-recap/story_A1D1_1_6_end.png",
+        "newlyExtracted": true,
+        "sha256": "e0b4b009f7e42e134b0fa3fbea6c413daa7383042b84476dfd7b9c99c56003dc",
+        "width": 960,
+        "height": 638,
+        "bytes": 334455,
+        "rgbaSha256": "87cac0e1dc4ba35ad1c642e46731f513540144294adf131cc8c30c5a2a514c66"
+      },
+      {
+        "resourceKey": "story_A2D2_2_6",
+        "kind": "body-image",
+        "configIndex": 4002,
+        "imageFileConfig": {
+          "shortName": "story_A2D2_2_6",
+          "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D2_2_6.png",
+          "assetGuid": "b5fd0ec6221175f4fbfcd078f4b70355",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+            "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+            "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+            "path_id": "-2358309172610628191",
+            "type": "Sprite",
+            "name": "story_A2D2_2_6",
+            "object_source_sha256": "24718941021f4e85169e75540f50b90c4f68b0cad281b386de6a1d81ebdc3f34"
+          }
+        ],
+        "status": "newly-curated-exact-sprite",
+        "publicMediaKey": "recap:image:story_A2D2_2_6",
+        "publicPath": "./assets/media/story-recap/story_A2D2_2_6.png",
+        "newlyExtracted": true,
+        "sha256": "8f7df1c07a1059af21d05a681e009196171bdd9e572a62594006a5fc3e14d79c",
+        "width": 960,
+        "height": 638,
+        "bytes": 399884,
+        "rgbaSha256": "076e6172499378bb4a37a9d4a64a8709ba709d667287028b248ce7c9dd43cd3e"
+      },
+      {
+        "resourceKey": "story_A2D3_3_1_end",
+        "kind": "body-image",
+        "configIndex": 4003,
+        "imageFileConfig": {
+          "shortName": "story_A2D3_3_1_end",
+          "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D3_3_1_end.png",
+          "assetGuid": "0013c711cb1ec724aba0a034388573c3",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+            "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+            "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+            "path_id": "-6147260486083153737",
+            "type": "Sprite",
+            "name": "story_A2D3_3_1_end",
+            "object_source_sha256": "e32120a2fe742d0e9cbd7489c570034fe6b45d8c3e1be18ef94b523421904a43"
+          }
+        ],
+        "status": "newly-curated-exact-sprite",
+        "publicMediaKey": "recap:image:story_A2D3_3_1_end",
+        "publicPath": "./assets/media/story-recap/story_A2D3_3_1_end.png",
+        "newlyExtracted": true,
+        "sha256": "f277a308b3f780794f0b186224cadd73426621a525930146a6d21da3da9ff9d3",
+        "width": 960,
+        "height": 638,
+        "bytes": 490983,
+        "rgbaSha256": "854801adb158f61601c6b0a0864f29b63def24d4496dadc259dfab8453b8db80"
+      },
+      {
+        "resourceKey": "story_A2D4_4_3_end",
+        "kind": "body-image",
+        "configIndex": 4008,
+        "imageFileConfig": {
+          "shortName": "story_A2D4_4_3_end",
+          "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D4_4_3_end.png",
+          "assetGuid": "a0864bb6a3ce85f479f2f86fdfd1a5fd",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+            "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+            "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+            "path_id": "1570708237250050131",
+            "type": "Sprite",
+            "name": "story_A2D4_4_3_end",
+            "object_source_sha256": "9bf5d20b378a8a6a22eaf1a9c989d79fa623b41557adfc84cd31e29afe48f583"
+          }
+        ],
+        "status": "newly-curated-exact-sprite",
+        "publicMediaKey": "recap:image:story_A2D4_4_3_end",
+        "publicPath": "./assets/media/story-recap/story_A2D4_4_3_end.png",
+        "newlyExtracted": true,
+        "sha256": "4df4a206325599c1dbc5cffa128a552e560ec73251f68348d31da9b9d35455d1",
+        "width": 960,
+        "height": 638,
+        "bytes": 455188,
+        "rgbaSha256": "20be4c6a095b8104869f1821158bd0d545dd17ec415c972f9bbcb4ec1935a5d6"
+      },
+      {
+        "resourceKey": "story_A2D5_5_4",
+        "kind": "body-image",
+        "configIndex": 4011,
+        "imageFileConfig": {
+          "shortName": "story_A2D5_5_4",
+          "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D5_5_4.png",
+          "assetGuid": "13fc578f97655874ab801724f953c9dc",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+            "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+            "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+            "path_id": "8050636343339237938",
+            "type": "Sprite",
+            "name": "story_A2D5_5_4",
+            "object_source_sha256": "1ae4e005a1bbf6754216be65b9ae01a5b9985dd6e5e9241d893b2ec0abfc9370"
+          }
+        ],
+        "status": "newly-curated-exact-sprite",
+        "publicMediaKey": "recap:image:story_A2D5_5_4",
+        "publicPath": "./assets/media/story-recap/story_A2D5_5_4.png",
+        "newlyExtracted": true,
+        "sha256": "53757dc8cbcf98816a8796772713d26741c0de926edafe215dd03e5a3cdd0c68",
+        "width": 960,
+        "height": 638,
+        "bytes": 462050,
+        "rgbaSha256": "e86c802952c5643dd90a2d30978234f80bc15f47c38bfd73ad875f5980d114d3"
+      },
+      {
+        "resourceKey": "story_A2D7_7_7",
+        "kind": "body-image",
+        "configIndex": 4016,
+        "imageFileConfig": {
+          "shortName": "story_A2D7_7_7",
+          "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D7_7_7.png",
+          "assetGuid": "c63858c3f14b8e04dac1d4934701eae8",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+            "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+            "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+            "path_id": "4748882603023038610",
+            "type": "Sprite",
+            "name": "story_A2D7_7_7",
+            "object_source_sha256": "995b622b50331771aa5add2b0118a8c92aecd70cc37470f16553d3a315b403d2"
+          }
+        ],
+        "status": "newly-curated-exact-sprite",
+        "publicMediaKey": "recap:image:story_A2D7_7_7",
+        "publicPath": "./assets/media/story-recap/story_A2D7_7_7.png",
+        "newlyExtracted": true,
+        "sha256": "74fa87ef247b5cf51625585e8a9ca419587743bffcdca44f641465ad3b2dd9dd",
+        "width": 960,
+        "height": 638,
+        "bytes": 244626,
+        "rgbaSha256": "b19c3d182e74c434b9412a595982541c7ca76d0f7c758dc942b9aa0359e5b041"
+      },
+      {
+        "resourceKey": "story_A3D8_8_8_begin",
+        "kind": "body-image",
+        "configIndex": 4019,
+        "imageFileConfig": {
+          "shortName": "story_A3D8_8_8_begin",
+          "fileKey": "AreaRes/StoryIllustration/Area3/story_A3D8_8_8_begin.png",
+          "assetGuid": "f4d2390330ee66e46a4ed736f26eeb91",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area3_abafc0ef2c8ce8974199f8a23ffeb636.bundle",
+            "bundle_sha256": "4af53a2a35a74122ec3e138a87bc69beb1f602c13eeebb7c70a4accbd02253b1",
+            "serialized_file": "CAB-1b6c95a4020b61578b2c23c365d91dad",
+            "path_id": "-6723828308604962579",
+            "type": "Sprite",
+            "name": "story_A3D8_8_8_begin",
+            "object_source_sha256": "680d6629c4d264274dcf4c21e5f468c950ea82bf21b1e047fcd06330aa7f137d"
+          }
+        ],
+        "status": "newly-curated-exact-sprite",
+        "publicMediaKey": "recap:image:story_A3D8_8_8_begin",
+        "publicPath": "./assets/media/story-recap/story_A3D8_8_8_begin.png",
+        "newlyExtracted": true,
+        "sha256": "4b1b33e30a9d88c8bfe61d1dab397868cb7d1bd5a618e4a4a3d95b0152ebf4d7",
+        "width": 960,
+        "height": 638,
+        "bytes": 442160,
+        "rgbaSha256": "545eb6dd0cc62af0df401fc2475f20fbb9248e2dd1fab8f1a44ddab63a52c2df"
+      },
+      {
+        "resourceKey": "story_A3D11_11_5",
+        "kind": "body-image",
+        "configIndex": 4024,
+        "imageFileConfig": {
+          "shortName": "story_A3D11_11_5",
+          "fileKey": "AreaRes/StoryIllustration/Area3/story_A3D11_11_5.png",
+          "assetGuid": "a1e54a1118e5ee246bf6aec4fe03dbb8",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area3_abafc0ef2c8ce8974199f8a23ffeb636.bundle",
+            "bundle_sha256": "4af53a2a35a74122ec3e138a87bc69beb1f602c13eeebb7c70a4accbd02253b1",
+            "serialized_file": "CAB-1b6c95a4020b61578b2c23c365d91dad",
+            "path_id": "-6178627183158485002",
+            "type": "Sprite",
+            "name": "story_A3D11_11_5",
+            "object_source_sha256": "421ca1102f2259a42fbb8c8f4968bc8b44e10bd5792c2b33cce9583033131bf1"
+          }
+        ],
+        "status": "newly-curated-exact-sprite",
+        "publicMediaKey": "recap:image:story_A3D11_11_5",
+        "publicPath": "./assets/media/story-recap/story_A3D11_11_5.png",
+        "newlyExtracted": true,
+        "sha256": "aec00e05455342eaeefac528add816e0744e95746360d6246c0fa97dad3812a1",
+        "width": 960,
+        "height": 638,
+        "bytes": 484801,
+        "rgbaSha256": "a4f6f0bd064fdd70d8b8df49c52e0466a510beb36005aad8176929f1f720e1fc"
+      },
+      {
+        "resourceKey": "story_A4D12_12_2_end",
+        "kind": "body-image",
+        "configIndex": 4027,
+        "imageFileConfig": {
+          "shortName": "story_A4D12_12_2_end",
+          "fileKey": "AreaRes/StoryIllustration/Area4/story_A4D12_12_2_end.png",
+          "assetGuid": "b58b2d2dc3953484b9645f535d01e667",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A4D12_12_6",
+        "kind": "body-image",
+        "configIndex": 4028,
+        "imageFileConfig": {
+          "shortName": "story_A4D12_12_6",
+          "fileKey": "AreaRes/StoryIllustration/Area4/story_A4D12_12_6.png",
+          "assetGuid": "2c481f9ee6e726747bae3d7a787217f2",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A4D14_14_5",
+        "kind": "body-image",
+        "configIndex": 4031,
+        "imageFileConfig": {
+          "shortName": "story_A4D14_14_5",
+          "fileKey": "AreaRes/StoryIllustration/Area4/story_A4D14_14_5.png",
+          "assetGuid": "c1b5c4e066953164cb9217f933134de5",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A7D22_22_4",
+        "kind": "body-image",
+        "configIndex": 4047,
+        "imageFileConfig": {
+          "shortName": "story_A7D22_22_4",
+          "fileKey": "AreaRes/StoryIllustration/Area7/story_A7D22_22_4.png",
+          "assetGuid": "628617e02c17c6740a7d872a50717e73",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A5D16_16_3",
+        "kind": "body-image",
+        "configIndex": 4033,
+        "imageFileConfig": {
+          "shortName": "story_A5D16_16_3",
+          "fileKey": "AreaRes/StoryIllustration/Area5/story_A5D16_16_3.png",
+          "assetGuid": "78f5bb779d851754eb0903bae8a63b8c",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A5D16_16_4_2",
+        "kind": "body-image",
+        "configIndex": 4035,
+        "imageFileConfig": {
+          "shortName": "story_A5D16_16_4_2",
+          "fileKey": "AreaRes/StoryIllustration/Area5/story_A5D16_16_4_2.png",
+          "assetGuid": "1b089ef038d1ead40b2764b51f77e7cd",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A5D17_17_7_1",
+        "kind": "body-image",
+        "configIndex": 4037,
+        "imageFileConfig": {
+          "shortName": "story_A5D17_17_7_1",
+          "fileKey": "AreaRes/StoryIllustration/Area5/story_A5D17_17_7_1.png",
+          "assetGuid": "8d5b7fd84a74279438fdc6f45d04dcc1",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A5D18_18_4",
+        "kind": "body-image",
+        "configIndex": 4039,
+        "imageFileConfig": {
+          "shortName": "story_A5D18_18_4",
+          "fileKey": "AreaRes/StoryIllustration/Area5/story_A5D18_18_4.png",
+          "assetGuid": "c0e92e3e8c6d59547ba06b78bd4c98f4",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A6D19_19_2",
+        "kind": "body-image",
+        "configIndex": 4041,
+        "imageFileConfig": {
+          "shortName": "story_A6D19_19_2",
+          "fileKey": "AreaRes/StoryIllustration/Area6/story_A6D19_19_2.png",
+          "assetGuid": "501632c322730084aaace96b051fae79",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A6D19_19_3_end",
+        "kind": "body-image",
+        "configIndex": 4042,
+        "imageFileConfig": {
+          "shortName": "story_A6D19_19_3_end",
+          "fileKey": "AreaRes/StoryIllustration/Area6/story_A6D19_19_3_end.png",
+          "assetGuid": "b2cdee23b158f24488db855023c0d48b",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A6D20_20_2",
+        "kind": "body-image",
+        "configIndex": 4044,
+        "imageFileConfig": {
+          "shortName": "story_A6D20_20_2",
+          "fileKey": "AreaRes/StoryIllustration/Area6/story_A6D20_20_2.png",
+          "assetGuid": "f83a2d77cde4e6d45a4c10b4b15e8182",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A7D21_21_6_end",
+        "kind": "body-image",
+        "configIndex": 4045,
+        "imageFileConfig": {
+          "shortName": "story_A7D21_21_6_end",
+          "fileKey": "AreaRes/StoryIllustration/Area7/story_A7D21_21_6_end.png",
+          "assetGuid": "37421f2130dec984994049358afa0cef",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A2D7_7_2_end",
+        "kind": "body-image",
+        "configIndex": 4014,
+        "imageFileConfig": {
+          "shortName": "story_A2D7_7_2_end",
+          "fileKey": "AreaRes/StoryIllustration/Area2/story_A2D7_7_2_end.png",
+          "assetGuid": "b7b22efb7bdc3c44784066a9063c536b",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 2,
+        "exactSpriteNameMatches": 1,
+        "caseInsensitiveContainerMatches": 2,
+        "physicalSprites": [
+          {
+            "bundle": "rolesandstorylocal_assets_assets/areares/storyillustration/area2_0ebfa173bb6ed6b2471f65d4790eefe9.bundle",
+            "bundle_sha256": "4a32c9643bf8b75b0d194cd6912d85c35cef7da0c012d3b50106ac627a7a778e",
+            "serialized_file": "CAB-d3c3e590b259bc0fed52dedabb9161eb",
+            "path_id": "5611965152379211472",
+            "type": "Sprite",
+            "name": "story_A2D7_7_2_end",
+            "object_source_sha256": "98a8ad7287784d26b8575dfcdcc1e60b361b6049c518cf494b6efde266d0063d"
+          }
+        ],
+        "status": "newly-curated-exact-sprite",
+        "publicMediaKey": "recap:image:story_A2D7_7_2_end",
+        "publicPath": "./assets/media/story-recap/story_A2D7_7_2_end.png",
+        "newlyExtracted": true,
+        "sha256": "031faee235b6495e52936d80cd17885f482ee9f96714d96125ef9d2f957e6cc7",
+        "width": 960,
+        "height": 638,
+        "bytes": 365088,
+        "rgbaSha256": "c9bab0b57b1e97638939312be46abd0647bc5ef0217feb284bb38e55abbd422c"
+      },
+      {
+        "resourceKey": "story_A8D24_24_1_begin",
+        "kind": "body-image",
+        "configIndex": 4051,
+        "imageFileConfig": {
+          "shortName": "story_A8D24_24_1_begin",
+          "fileKey": "AreaRes/StoryIllustration/Area8/story_A8D24_24_1_begin.png",
+          "assetGuid": "49664b55ef4550d4991d96374d55cfd9",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A8D24_24_2",
+        "kind": "body-image",
+        "configIndex": 4052,
+        "imageFileConfig": {
+          "shortName": "story_A8D24_24_2",
+          "fileKey": "AreaRes/StoryIllustration/Area8/story_A8D24_24_2.png",
+          "assetGuid": "286da46c5f6f1764f82b93ed890316b3",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A8D26_26_6",
+        "kind": "body-image",
+        "configIndex": 4056,
+        "imageFileConfig": {
+          "shortName": "story_A8D26_26_6",
+          "fileKey": "AreaRes/StoryIllustration/Area8/story_A8D26_26_6.png",
+          "assetGuid": "f69bef53ce051c14e8612456be264f4e",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A8D26_26_11_end_1",
+        "kind": "body-image",
+        "configIndex": 4058,
+        "imageFileConfig": {
+          "shortName": "story_A8D26_26_11_end_1",
+          "fileKey": "AreaRes/StoryIllustration/Area8/story_A8D26_26_11_end_1.png",
+          "assetGuid": "f8ff143444484ee49a25ed7f6a71b359",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A9D27_27_1_end",
+        "kind": "body-image",
+        "configIndex": 4060,
+        "imageFileConfig": {
+          "shortName": "story_A9D27_27_1_end",
+          "fileKey": "AreaRes/StoryIllustration/Area9/story_A9D27_27_1_end.png",
+          "assetGuid": "eacdd60b9f5416244afb7ee368d00fa1",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A9D27_27_2_end",
+        "kind": "body-image",
+        "configIndex": 4061,
+        "imageFileConfig": {
+          "shortName": "story_A9D27_27_2_end",
+          "fileKey": "AreaRes/StoryIllustration/Area9/story_A9D27_27_2_end.png",
+          "assetGuid": "d5845c7671c6ff0499b43107236d6d81",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A10D33_33_11",
+        "kind": "body-image",
+        "configIndex": 4068,
+        "imageFileConfig": {
+          "shortName": "story_A10D33_33_11",
+          "fileKey": "AreaRes/StoryIllustration/Area10/story_A10D33_33_11.png",
+          "assetGuid": "c9b63d0a81769464bb957e3323d5f49e",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A11D35_35_6_begin",
+        "kind": "body-image",
+        "configIndex": 4070,
+        "imageFileConfig": {
+          "shortName": "story_A11D35_35_6_begin",
+          "fileKey": "AreaRes/StoryIllustration/Area11/story_A11D35_35_6_begin.png",
+          "assetGuid": "6c90a7b2c206af3478a524576a236e8a",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A11D37_37_2_end",
+        "kind": "body-image",
+        "configIndex": 4071,
+        "imageFileConfig": {
+          "shortName": "story_A11D37_37_2_end",
+          "fileKey": "AreaRes/StoryIllustration/Area11/story_A11D37_37_2_end.png",
+          "assetGuid": "497761df5a01c944aad8dd2f0eb51cb2",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A12D43_43_2_end",
+        "kind": "body-image",
+        "configIndex": 4074,
+        "imageFileConfig": {
+          "shortName": "story_A12D43_43_2_end",
+          "fileKey": "AreaRes/StoryIllustration/Area12/story_A12D43_43_2_end.png",
+          "assetGuid": "9dbb8f0f0931daf4fb18714f76430b9f",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A13D44_44_begin",
+        "kind": "body-image",
+        "configIndex": 4075,
+        "imageFileConfig": {
+          "shortName": "story_A13D44_44_begin",
+          "fileKey": "AreaRes/StoryIllustration/Area12/story_A13D44_44_begin.png",
+          "assetGuid": "ac0e9702fccec3d419b37d7624a6daf2",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A13D47_47_6",
+        "kind": "body-image",
+        "configIndex": 4076,
+        "imageFileConfig": {
+          "shortName": "story_A13D47_47_6",
+          "fileKey": "AreaRes/StoryIllustration/Area13/story_A13D47_47_6.png",
+          "assetGuid": "2c151721725409b46a4d724ccca6d1ac",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A14D48_48_1_end",
+        "kind": "body-image",
+        "configIndex": 4077,
+        "imageFileConfig": {
+          "shortName": "story_A14D48_48_1_end",
+          "fileKey": "AreaRes/StoryIllustration/Area14/story_A14D48_48_1_end.png",
+          "assetGuid": "a8e7f06d13c2a3d4a8595f5eb78fa1bf",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A14D49_49_1_end",
+        "kind": "body-image",
+        "configIndex": 4078,
+        "imageFileConfig": {
+          "shortName": "story_A14D49_49_1_end",
+          "fileKey": "AreaRes/StoryIllustration/Area14/story_A14D49_49_1_end.png",
+          "assetGuid": "75e0eede85c4ae943976425fb25fe843",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A14D50_50_6_end",
+        "kind": "body-image",
+        "configIndex": 4079,
+        "imageFileConfig": {
+          "shortName": "story_A14D50_50_6_end",
+          "fileKey": "AreaRes/StoryIllustration/Area14/story_A14D50_50_6_end.png",
+          "assetGuid": "95d1823ee883b464eb6f89437a820b97",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A14D51_51_1_end",
+        "kind": "body-image",
+        "configIndex": 4080,
+        "imageFileConfig": {
+          "shortName": "story_A14D51_51_1_end",
+          "fileKey": "AreaRes/StoryIllustration/Area14/story_A14D51_51_1_end.png",
+          "assetGuid": "69d503a0e7de0624aaf7be52d4362319",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      },
+      {
+        "resourceKey": "story_A14D52_52_8_end",
+        "kind": "body-image",
+        "configIndex": 4082,
+        "imageFileConfig": {
+          "shortName": "story_A14D52_52_8_end",
+          "fileKey": "AreaRes/StoryIllustration/Area14/story_A14D52_52_8_end.png",
+          "assetGuid": "60d6f83b084087d4aaf121bbf096b28b",
+          "identity": {
+            "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+            "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+            "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+            "path_id": "-5540980183981676075",
+            "type": "MonoBehaviour",
+            "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+          }
+        },
+        "exactContainerMatches": 0,
+        "exactSpriteNameMatches": 0,
+        "caseInsensitiveContainerMatches": 0,
+        "physicalSprites": [],
+        "status": "registered-only-not-found-in-supplied-local-inventory",
+        "publicMediaKey": null,
+        "publicPath": null,
+        "newlyExtracted": false
+      }
+    ],
+    "boundaries": [
+      "기존 공개 manifest에 없던 본문9그림이 실제 동봉 Sprite로 확인되어 새로 연결되었다. 이전 미확보 표기는 실물 부재 확정이 아니라 공개 미연결도 포함했다.",
+      "표지5키와 본문29키는 명시 ImageFileConfig 등록이 있으나 제공245번들의 exact container와 Sprite1820개의 exact name 대조에서 실물을 찾지 못했다. 이 결과는 원격/추가 업데이트 자산의 부재를 증명하지 않는다.",
+      "유사 이름·다른 책 그림·추정 URL을 대체로 사용하지 않았다. 누락 키는 원본 GUID/fileKey와 함께 유지한다.",
+      "본문 발췌22개·생략203블록은 변경하지 않았다. 새 PNG는 원본 Sprite의 native-size RGBA를 무손실 저장했으며 리사이즈·재그림을 하지 않았다."
+    ],
+    "originalRuntimeObserved": false
+  },
+  "mediaRevision": "21af3af33af91044291261894c17e189d078396fa6bd8f5006cdc377f678db7c"
+}

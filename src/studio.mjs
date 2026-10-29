@@ -1,3 +1,5 @@
+import {createTutorialCatalogWorkbench} from './tutorial-catalog-page.mjs';
+import {renderMasterChecklist} from './checklist-page.mjs';
 import {renderProgressionStudy} from './progression-study.mjs';
 import {createFactoryReference} from './factory-reference.mjs';
 import {createMoreTutorials,moreTutorialEvent,moreTutorialView,validMoreTutorials} from './tutorial-more.mjs';
@@ -20,10 +22,12 @@ export function createStudio({getData,getRoute,render,toast,download}){
  let walkthrough=createWalkthrough(),running=new Map();
  let playMode='game',interactionCleanup=()=>{};
  const tutorials=createTutorialWorkbench({getData,render,download});
+ const catalogTutorials=createTutorialCatalogWorkbench({getData,render,download});
  const moreTutorials=createTutorialWorkbench({getData,render,download,storageKey:'harbor-tutorial-more-v1',configKey:'tutorialMoreConfig',model:{create:createMoreTutorials,event:moreTutorialEvent,view:moreTutorialView,valid:validMoreTutorials},title:'추가 튜토리얼 · 두 번째 조건 실험'});
+ let checklistStatus='all';
  let growthMetric='actions',growthSeed=42;
  let tutorialPack='first',availabilityFilter={status:'all',group:'all',query:''};
- const tutorialPage=()=>'<nav class="studio-tabs" aria-label="추가 안내 자료 묶음"><button class="button" data-tutorial-pack="first" aria-pressed="'+(tutorialPack==='first')+'">기존 추가 안내 5종</button><button class="button" data-tutorial-pack="more" aria-pressed="'+(tutorialPack==='more')+'">신규 추가 안내 5종</button></nav>'+(tutorialPack==='more'?moreTutorials:tutorials).renderPage();
+ const tutorialPage=()=>'<nav class="studio-tabs" aria-label="추가 안내 자료 묶음"><button class="button" data-tutorial-pack="first" aria-pressed="'+(tutorialPack==='first')+'">기존 추가 안내 5종</button><button class="button" data-tutorial-pack="more" aria-pressed="'+(tutorialPack==='more')+'">신규 추가 안내 5종</button><button class="button" data-tutorial-pack="catalog" aria-pressed="'+(tutorialPack==='catalog')+'">나머지 안내87종</button></nav>'+(tutorialPack==='catalog'?catalogTutorials:tutorialPack==='more'?moreTutorials:tutorials).renderPage();
  const production=createProductionController({getData,render,download,toast});
  const auditFilters={query:'',category:'all',status:'all'};
  let lastAuditSource=null;
@@ -40,7 +44,7 @@ export function createStudio({getData,getRoute,render,toast,download}){
  const capturePage=()=>{const id=new URLSearchParams(location.hash.split('?')[1]||'').get('study');if(id!==lastStudySource){lastStudySource=id;if(id&&getData()?.refinement?.studies.some(s=>s.id===id)){Object.assign(studyState,{topic:'all',query:'',selected:id,region:'',frame:''});}}return renderCaptures(getData(),captureFilters,studyState);};
  const timelineFilters={entryId:null,milestoneId:null,baselineId:null};
  const mediaDialog=document.querySelector('#media-dialog'),mediaContent=document.querySelector('#media-content');
- const pages={'growth-validation':()=>renderProgressionStudy(getData(),{metric:growthMetric,seed:growthSeed}),'factory-reference':()=>factoryReference.renderPage(),'tutorial-analysis':tutorialPage,'bm-observation':()=>renderBMObservationAudit(getData()),'artifact-availability':()=>'<header class="studio-intro"><h1>자산·장면 확보 현황</h1><p>등록·실물·선별 공개·연구 투영을 구분하고 필요한 추가 자료를 확인합니다.</p></header>'+renderArtifactAvailability(getData(),{filter:availabilityFilter}),'scene-analysis':scenePage,'production-assets':()=>production.renderPage(),'media-audit':auditPage,'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:capturePage,puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
+ const pages={checklist:()=>renderMasterChecklist(getData(),{status:checklistStatus}),'growth-validation':()=>renderProgressionStudy(getData(),{metric:growthMetric,seed:growthSeed}),'factory-reference':()=>factoryReference.renderPage(),'tutorial-analysis':tutorialPage,'bm-observation':()=>renderBMObservationAudit(getData()),'artifact-availability':()=>'<header class="studio-intro"><h1>자산·장면 확보 현황</h1><p>등록·실물·선별 공개·연구 투영을 구분하고 필요한 추가 자료를 확인합니다.</p></header>'+renderArtifactAvailability(getData(),{filter:availabilityFilter}),'scene-analysis':scenePage,'production-assets':()=>production.renderPage(),'media-audit':auditPage,'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:capturePage,puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
  const renderItem=()=>{document.querySelector('#item-catalog').innerHTML=renderItemCatalog(getData(),itemFilters);};
  const renderUI=()=>{document.querySelector('#ui-registry').innerHTML=renderUIRegistry(getData(),uiFilters);};
  function preserveInput(id,update){const node=document.getElementById(id),start=node.selectionStart,end=node.selectionEnd;update();const next=document.getElementById(id);next.focus({preventScroll:true});if(next.type==='search')next.setSelectionRange(start,end);}
@@ -70,7 +74,8 @@ export function createStudio({getData,getRoute,render,toast,download}){
   if(target.dataset.timelineEntry||target.dataset.timelinePoint){if(target.dataset.timelineEntry){timelineFilters.entryId=target.dataset.timelineEntry;timelineFilters.milestoneId=null;}else timelineFilters.milestoneId=target.dataset.timelinePoint;render();document.querySelector(`[data-timeline-${target.dataset.timelineEntry?'entry':'point'}="${target.dataset.timelineEntry||target.dataset.timelinePoint}"]`)?.focus({preventScroll:true});return;}
   if(target.hasAttribute('data-growth-seed')){growthSeed=Number(target.dataset.growthSeed);render();document.querySelector('#seed-detail-heading')?.focus({preventScroll:true});return;}
   if(target.hasAttribute('data-factory-ref-action')){factoryReference.handle(target.dataset.factoryRefAction,target.dataset.value);return;}
-  if(target.hasAttribute('data-tutorial-pack')){tutorialPack=target.dataset.tutorialPack==='more'?'more':'first';render();document.querySelector('[data-tutorial-pack="'+tutorialPack+'"]')?.focus({preventScroll:true});return;}
+  if(target.hasAttribute('data-catalog-action')){catalogTutorials.handle(target.dataset.catalogAction,target.dataset.value);return;}
+  if(target.hasAttribute('data-tutorial-pack')){tutorialPack=['more','catalog'].includes(target.dataset.tutorialPack)?target.dataset.tutorialPack:'first';render();document.querySelector('[data-tutorial-pack="'+tutorialPack+'"]')?.focus({preventScroll:true});return;}
   if(target.hasAttribute('data-tutorial-action')){(tutorialPack==='more'?moreTutorials:tutorials).handle(target.dataset.tutorialAction,target.dataset.value);return;}
   if(target.hasAttribute('data-artifact-filter')){availabilityFilter.status=target.dataset.artifactFilter;render();document.querySelector('[data-artifact-filter="'+availabilityFilter.status+'"]')?.focus({preventScroll:true});return;}
   if(target.dataset.playMode){playMode=target.dataset.playMode;render();document.querySelector(`[data-play-mode="${playMode}"]`)?.focus({preventScroll:true});return;}
@@ -100,6 +105,9 @@ export function createStudio({getData,getRoute,render,toast,download}){
   if(t.hasAttribute('data-visual-depth'))document.querySelector('#difficulty-output').innerHTML=difficultyOutput(Number(t.value));
  });
  document.addEventListener('change',event=>{const t=event.target;
+  if(t.hasAttribute('data-catalog-select')){catalogTutorials.handle('select',t.value);return;}
+  if(t.hasAttribute('data-catalog-event')){catalogTutorials.handle('event-select',t.value);return;}
+  if(t.hasAttribute('data-checklist-status')){checklistStatus=t.value;render();document.querySelector('[data-checklist-status]')?.focus({preventScroll:true});return;}
   if(t.hasAttribute('data-growth-metric')){growthMetric=t.value;render();document.querySelector('[data-growth-metric]')?.focus({preventScroll:true});return;}
   if(t.hasAttribute('data-factory-ref-group')){factoryReference.handle('group',t.value);return;}
   if(t.hasAttribute('data-artifact-group')){availabilityFilter.group=t.value;render();document.querySelector('[data-artifact-group]')?.focus({preventScroll:true});return;}

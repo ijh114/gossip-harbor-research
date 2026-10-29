@@ -4093,14 +4093,14 @@
     {
       "step": "문서·공개 상태표",
       "state": "done",
-      "done": "최신 설정·공개 검증 요약·미디어 manifest와 구현 대응표를 대조해 완료 범위와 남은 차이를 동기화. 과거 검증 기록은 시점을 명시해 보존",
+      "done": "고정100개 ID 전체 장부와 웹 체크리스트/문서해시/빌드 동기화, 과거 검수 기록의 이력 표시와 상위 완료 오표시 정정",
       "remaining": "기능·자료·검수 범위가 바뀌면 같은 기준으로 함께 갱신"
     },
     {
       "step": "웹 보드·고정 주문",
       "state": "partial",
-      "done": "기본 552타입·생성기 163종, 고정 16주문·일반 랜덤 5종의 복수 슬롯·필터·쿨다운·보상, 보관함 입출고/확장, 부스트·Lucky/Disco/Smart/FishNet/Extra/NoCD, 자연 버블과 특수도구 연결; 생성기 공장6종·조각23종의 실제 UID 소비/점수/보상/닫힘 반환을 단일 저장에 반영",
-      "remaining": "가이드 18개 논리 노드 중 시작 2개는 원작 연출 미재현. 기존 미지원97개 중10개는 독립 연구로 추가(10개는 명시 연구 맥락/웹 사건 연결). 나머지87개 ID의 활동·원작 장면, 활동 전용 보드와 실계정 보정 입력·원작 난수열 검증",
+      "done": "기본 552타입·생성기 163종, 고정 16주문·일반 랜덤 5종의 복수 슬롯·필터·쿨다운·보상, 보관함 입출고/확장, 부스트·Lucky/Disco/Smart/FishNet/Extra/NoCD, 자연 버블과 특수도구 연결; 생성기 공장6종·조각23종의 실제 UID 소비/점수/보상/닫힘 반환을 단일 저장에 반영; 나머지87종 소스 제어 흐름/개별 연구 UI와 전역 안내 조정기, 실제 UID 탭·강제 위치·드래그 잠금/미지원 비용 차단 연결",
+      "remaining": "가이드 18개 논리 노드 중 시작 2개는 원작 연출 미재현. 기존 미지원97개 중10개는 독립 연구로 추가(10개는 명시 연구 맥락/웹 사건 연결). 87개 ID의 실제 활동·85개 외부 어댑터·원작 장면, 활동 전용 보드와 실계정 보정 입력·원작 난수열 검증",
       "metrics": {
         "baseTypes": 552,
         "generators": 163,
@@ -4137,8 +4137,8 @@
     {
       "step": "웹 화면·동선",
       "state": "partial",
-      "done": "로딩→타이틀→두 단계 동봉 인트로 대사 발췌→맵↔퍼즐→실제 동봉106과제의 선정 명령·카메라·대사·삽화·장식선택→확정/보상/복귀. 슬롯41개·등록123후보 중111실물 기술미리보기(12미동봉), 선택 저장·기본 장식 재선택, 장면 보류/재개/손상 커서 복구, 웹 시점 조작; 추가10안내의 명시 컨텍스트/플레이 이벤트 연결, 선정 Skin2세트26개 소유권·연동 슬롯 미리보기/취소/확정; 안내 bank 전환/복귀·강한 안내 입력 허용 목록·공장 진입/반환과 손상 필드 보존",
-      "remaining": "원작 완성3D맵·CG·캐릭터/모션·전체 서사/음향/실시간 입력 복원과 실제 브라우저 검수. 기술투영·정적발췌를 원작 실행 관측으로 계산하지 않음"
+      "done": "로딩→타이틀→두 단계 동봉 인트로 대사 발췌→맵↔퍼즐→실제 동봉106과제의 선정 명령·카메라·대사·삽화·장식선택→확정/보상/복귀. 슬롯41개·등록123후보 중111실물 기술미리보기(12미동봉), 선택 저장·기본 장식 재선택, 장면 보류/재개/손상 커서 복구, 웹 시점 조작; 추가10안내의 명시 컨텍스트/플레이 이벤트 연결, 선정 Skin2세트26개 소유권·연동 슬롯 미리보기/취소/확정; 안내 bank 전환/복귀·강한 안내 입력 허용 목록·공장 진입/반환과 손상 필드 보존; 회상5권22페이지의 과제 해금·책장·읽음·페이지/재열람/저장, 실제 TaskWindow 자동 안내와 책 입구 연결",
+      "remaining": "원작 완성3D맵·CG·캐릭터/모션·전체 서사/음향/실시간 입력 복원과 실제 브라우저 검수. 기술투영·정적발췌를 원작 실행 관측으로 계산하지 않음; 회상 책 본문29그림·표지5·Spine/소리·공개에서 생략한 본문203블록"
     },
     {
       "step": "플레이→상점·오퍼",
@@ -4167,7 +4167,7 @@
     {
       "step": "APK 이미지·UI 자산",
       "state": "partial",
-      "done": "기본 552타입 중 이미지 544타입·3201 별도 6변형, 미확보 8타입 사유. UI 프리팹 11종·원시 좌표·controller 14개/clip 26개와 UI 선정 자산 연결; 실물 선택슬롯25×3후보 메시/UV 기술미리보기75장·CG레이어2·실제삽화3장. 이벤트 이미지35종 미동봉 사유·공용24종 RGBA/원본객체 재검증",
+      "done": "기본 552타입 중 이미지 544타입·3201 별도 6변형, 미확보 8타입 사유. UI 프리팹 11종·원시 좌표·controller 14개/clip 26개와 UI 선정 자산 연결; 실물 선택슬롯25×3후보 메시/UV 기술미리보기75장·CG레이어2·실제삽화3장. 이벤트 이미지35종 미동봉 사유·공용24종 RGBA/원본객체 재검증; UI8대조/5화면29영역·정적폰트16컴포넌트와20출처, 회상 책 exact alias/PPtr 실물 PNG9개 회수·본문11/40연결",
       "remaining": "미포함/원격 자산, 원작 최종 배치·활성 레이아웃·캐릭터 동작·장면·속도·소리. 기본 타입 이미지 감사 완료와 전체 게임 자산 제작 완료를 구분",
       "metrics": {
         "baseTypes": 552,
@@ -5254,7 +5254,11 @@
     "remainingPreviouslyUnsupported": 87,
     "kind": "two-research-banks-with-explicit-context-and-web-input-policy",
     "route": "#tutorial-analysis",
-    "actualAccountObserved": false
+    "actualAccountObserved": false,
+    "sourceProjected": 87,
+    "sourceProjectedMethods": 669,
+    "externalAdapterOperationsRemaining": 85,
+    "automaticCoordinator": "actual-web-context-with-explicit-ambiguity-and-unknowns"
   },
   "observationAudit": {
     "route": "#bm-observation",
@@ -5288,5 +5292,36 @@
     "originalRuntimeObserved": false,
     "newlyRecoveredAssets": 0,
     "nativeBrowserQA": "not-performed-local-browser-use-disabled"
+  },
+  "requested0And3": {
+    "checklistIds": [
+      "0.01",
+      "0.02",
+      "0.03",
+      "0.04",
+      "0.05",
+      "0.06",
+      "3.04",
+      "3.05",
+      "3.06",
+      "3.07",
+      "3.08",
+      "3.09",
+      "3.10",
+      "3.11",
+      "3.12",
+      "3.13"
+    ],
+    "uiComparisons": 8,
+    "catalogGuides": 87,
+    "sourceReferences": 98,
+    "externalOperationsRemaining": 85,
+    "recapBooks": 5,
+    "recapPages": 22,
+    "recapImagesCurated": 11,
+    "newlyRecoveredPNGs": 9,
+    "nativeRuntimeObserved": false,
+    "mainGameCoreHashesChanged": false,
+    "remainingReference": "docs/MASTER-CHECKLIST.md"
   }
 }
