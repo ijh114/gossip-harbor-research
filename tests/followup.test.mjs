@@ -53,7 +53,7 @@ test('published work status matches current configuration, replay scope and medi
  const growth=work.get('맵·성장 연결');
  assert.deepEqual(growth.metrics,{quests:config.quests.length,levelRows:config.levels.length,naturalOrders:progress.natural.final.orders,
   naturalQuests:progress.natural.final.quests,naturalLevel:progress.natural.final.level,fixedDone:progress.fixed16.final.fixedDone});
- assert.match(growth.remaining,/레벨 5 이후/);
+ assert.match(growth.remaining,/Lv21 이후/);
  const images=work.get('APK 이미지·UI 자산').metrics;
  assert.deepEqual(images,{baseTypes:config.items.length,available:config.imageCoverage.available,variants:config.imageCoverage.variants,unavailable:config.items.length-config.imageCoverage.available});
  const observed=media.entries.filter(row=>row.origin==='observed-user-capture'),replays=media.entries.filter(row=>row.origin==='apk-rule-replay');

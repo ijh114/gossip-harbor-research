@@ -2,7 +2,7 @@
 // layout; portrait substitutions, CSS effects and map drawings are web artwork.
 import {modal,boundaries} from './play-page.mjs';
 import {screenFlow} from './screen-flow.mjs';
-import {renderEntry,renderOpening,renderMap,renderTask,renderSpace,sceneToolbar,renderTaskList} from './game-scenes.mjs';
+import {renderEntry,renderOpening,renderMap,renderTask,renderSpace,renderDecor,sceneToolbar,renderTaskList} from './game-scenes.mjs';
 import {orderStock,orderStatus} from './order-model.mjs';
 import {getSpeedUpCost,spreadFor} from './spread-model.mjs';
 import {playGuide,renderPlayGuide} from './play-guide.mjs';
@@ -75,7 +75,7 @@ function tools(s,c){
  <details><summary>생성 부스트 실험</summary><p>아래 배율은 연구 입력입니다. 실제 계정의 부스트 모드·×8 에너지 임계값을 추정하지 않습니다. 원본 허용 타입에서 주문 부족분과 홀수 잉여분을 반영해 실제 산출 배율을 낮출 수 있습니다.</p><div class="game-tool-actions">${[0,1,2,3].map(r=>button('set-boost',`×${2**r}${(s.boostRatio||0)===r?' · 선택':''}`,{value:r})).join('')}</div><p>서버 충전횟수 비용표가 없으면 코드 fallback1회를 사용합니다. 에너지는 실제 산출 배율에 따라 차감합니다.</p></details>
  ${renderProductionLab(s,c)}
  <details><summary>시간과 재화 실험</summary><div class="game-tool-actions">${button('time','2분 경과',{value:120})}${button('time','1시간 경과',{value:3600})}${button('aid-energy','에너지0')}${button('aid-coins','골드+200')}${button('aid-gems','젬+200')}</div><p>보충 버튼은 원작 지급과 구분합니다. 실제 경과는 회복 타이머에 반영하며, 오프라인 최대7일은 웹 정책입니다.</p></details>
- <details><summary>현재 구현과 남은 차이</summary><dl class="game-parity"><div><dt>APK 규칙 적용</dt><dd>초기63칸·생성기163타입·고정16주문·일반 랜덤5종·보관함·기본과제4277개·레벨300행·재화와 특수도구·상점 갱신</dd></div><div><dt>캡처 참고 재구성</dt><dd>로딩·타이틀·오프닝 안내·맵·과제 장면·보상 복귀, HUD·고객 트레이·보드·선택창·드래그·합성 효과. 얼굴 아이콘은 전신 고객의 대체 표현</dd></div><div><dt>별도 작업</dt><dd>원작 CG·대사·과제별 타임라인·장식 후보·캐릭터 동작, 전체 후속 튜토리얼·활동·현행 서버값·전체 음향/연출 시간</dd></div></dl><p>보조 지급 없는 모델 실행에서15과제를 거쳐 레벨5까지 확인했습니다. 원작 계정의 실행 기록이나 실제 소요시간 측정은 아닙니다.</p><p>메인 맵의 공간 변화는 실제 캡처3쌍의 독립 시연이며 과제별 장식 변경과 연결하지 않습니다. 효과음은 기본 꺼짐이며 확인한 발췌만 재생합니다.</p><a href="#captures">캡처 자료와 비교</a> · <a href="#bm-timeline">BM 관측 타임라인</a> · <a href="#bm-validation">BM 조건 실험</a></details>
+ <details><summary>현재 구현과 남은 차이</summary><dl class="game-parity"><div><dt>APK 규칙 적용</dt><dd>초기63칸·생성기163타입·고정16주문·일반 랜덤5종·보관함·기본과제4277개·레벨300행·재화와 특수도구·상점 갱신</dd></div><div><dt>캡처 참고 재구성</dt><dd>로딩·타이틀·오프닝 안내·맵·과제 장면·보상 복귀, HUD·고객 트레이·보드·선택창·드래그·합성 효과. 얼굴 아이콘은 전신 고객의 대체 표현</dd></div><div><dt>별도 작업</dt><dd>첫60과제 이후 장면 투영·전체 대사·완성3D맵·CG·캐릭터 모션, 남은97튜토리얼·활동 운영값·전체 음향/연출</dd></div></dl><p>보조 지급 없는 모델 실행에서15과제를 거쳐 레벨5까지 확인했습니다. 원작 계정의 실행 기록이나 실제 소요시간 측정은 아닙니다.</p><p>메인 맵의 캡처3쌍은 독립 시연입니다. 별도로 첫60과제의 원작 명령·선정대사·25슬롯75후보 선택과 기술미리보기를 연결했습니다. 효과음은 기본 꺼짐이며 확인한 발췌만 재생합니다.</p><a href="#captures">캡처 자료와 비교</a> · <a href="#bm-timeline">BM 관측 타임라인</a> · <a href="#bm-validation">BM 조건 실험</a></details>
  <details><summary>최근 행동</summary><ol class="game-action-log">${s.log.slice(0,8).map(r=>`<li>${e(r.message)}</li>`).join('')}</ol></details>${boundaries(c)}<p class="game-save-note">${e(s.storageMessage||'이 브라우저에 자동 저장합니다.')}</p></aside>`;
 }
 function confirmation(s,c){if(!s.toolPending)return '';const target=s.board.find(r=>r?.uid===s.toolPending.targetUid);return `<dialog id="tool-dialog" class="source-play-dialog game-tool-dialog" aria-labelledby="game-tool-title"><div class="source-dialog-heading"><h2 id="game-tool-title">도구를 사용할까요?</h2>${button('cancel-tool','취소')}</div><div class="source-dialog-content"><p>${e(target?name(c,target.type):'선택 아이템')}에 ${s.toolPending.kind==='rainbow'?'레벨업 도구':'가위'}를 적용합니다. 확정할 때 대상과 공간을 다시 확인합니다.</p><div class="source-dialog-actions">${button('confirm-tool','사용하기',{cls:'game-confirm'})}${button('cancel-tool','취소')}</div></div></dialog>`;}
@@ -87,6 +87,7 @@ export function renderGamePlay(s,c,d,{loading=false,notice='',entry=false,taskLi
  else if(flow.phase==='opening')content=renderOpening(s,c,d);
  else if(flow.phase.startsWith('task-'))content=renderTask(s,c,d);
  else if(flow.phase.startsWith('space-'))content=renderSpace(s,c,d);
+ else if(flow.phase==='decor')content=renderDecor(s,c,d);
  else if(s.stage==='home')content=renderMap(s,c,d,hud(s,c,d),tutorial(s,c,d));
  else content=`<div class="game-phone" data-game-screen="board" aria-label="APK 기반 게임형 플레이">${hud(s,c,d)}${orders(s,c,d)}${tutorial(s,c,d)}${board(s,c,d)}${selected(s,c,d)}<p class="game-control-hint">드래그로 이동·합성 · 두 칸 탭도 가능</p></div>`;
  const prompt=newPrompt?`<dialog id="game-new-dialog" class="source-play-dialog" aria-labelledby="game-new-title"><div class="source-dialog-heading"><h2 id="game-new-title">새 게임을 시작할까요?</h2>${button('game-new-cancel','취소')}</div><div class="source-dialog-content"><p>현재 저장을 이전 저장으로 백업한 뒤 초기 배치에서 시작합니다. 보관할 플레이는 상태 JSON으로 내려받으세요.</p>${button('export','현재 상태 JSON')}${button('new-game','백업하고 새 게임 시작',{cls:'game-start'})}</div></dialog>`:'';

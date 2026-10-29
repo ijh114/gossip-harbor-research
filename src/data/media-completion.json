@@ -1,0 +1,1312 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "reviewDate": "2026-10-29",
+  "status": "reviewed",
+  "studies": [
+    {
+      "id": "motion-swap-observed",
+      "title": "서로 다른 두 빵의 실제 위치 교환",
+      "topic": "puzzle",
+      "evidenceType": "actual-play",
+      "sourceId": "GH-V0124",
+      "sourceRange": {
+        "startSeconds": 82.25,
+        "endSeconds": 83.3
+      },
+      "observations": [
+        "교환 전 긴 빵은4행4열, 둥근 빵은5행1열에 있다.",
+        "긴 빵이 둥근 빵 위치로 이동한 뒤 둥근 빵이 원래 긴 빵 칸으로 돌아간다.",
+        "교환 후 두 아이템의 위치가 맞바뀌고 두 형태가 모두 남는다. 뒤83.45초 이후의 별도 합성은 발췌에서 제외했다."
+      ],
+      "unknowns": [
+        "손 입력 로그가 없어 탭·드래그 방식과 정확한 입력 시작/종료 시각은 미확인이다.",
+        "녹화 버전과 두 빵의 APK 타입 코드는 미확인이다.",
+        "한 번의 시각 표본이며 모든 아이템의 교환 허용 조건을 확정하지 않는다."
+      ],
+      "mediaEntries": [
+        {
+          "sourceId": "GH-V0124",
+          "source": "버전 미확인 사용자 제공 녹화의 원본 PTS 구간",
+          "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+          "origin": "observed-user-capture-completion",
+          "version": null,
+          "capturedAt": null,
+          "evidenceType": "actual-play",
+          "category": "퍼즐",
+          "poster": "./assets/media/completion/motion-swap-observed-poster.webp",
+          "posterSha256": "227d17ce2ffd5db814094781c60af55c004b930c9712c2088dba3ca8b733c9d9",
+          "sourceRange": {
+            "startSeconds": 82.25,
+            "endSeconds": 83.3
+          },
+          "transform": {
+            "crop": {
+              "x": 20,
+              "y": 1050,
+              "width": 800,
+              "height": 580
+            },
+            "width": 480,
+            "height": 348,
+            "fps": 24,
+            "speed": 1,
+            "audioRemoved": true,
+            "purpose": "핵심 조작 영역만 발췌. 빌드·계정 워터마크·OS·결제 화면 제외.",
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0,
+            "holdEndSeconds": 0
+          },
+          "key": "refinement:motion-swap-observed:video",
+          "kind": "video",
+          "src": "./assets/media/completion/motion-swap-observed.mp4",
+          "alt": "서로 다른 두 빵의 실제 위치 교환 원속도 발췌",
+          "sha256": "a6736d8e76f0db00302fc3e3eed3e14061e613939f878a2e8330efc7a9af517d",
+          "bytes": 43048,
+          "width": 480,
+          "height": 348,
+          "encodedVerification": {
+            "durationSeconds": 1.041667,
+            "frames": 25,
+            "fps": "24/1",
+            "hasAudio": false,
+            "sourceNativeFrames": 125,
+            "firstSourcePts": 82.256933,
+            "lastSourcePts": 83.298744
+          }
+        },
+        {
+          "sourceId": "GH-V0124",
+          "source": "버전 미확인 사용자 제공 녹화의 원본 PTS 구간",
+          "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+          "origin": "observed-user-capture-completion",
+          "version": null,
+          "capturedAt": null,
+          "evidenceType": "actual-play",
+          "category": "퍼즐",
+          "poster": "./assets/media/completion/motion-swap-observed-poster.webp",
+          "posterSha256": "227d17ce2ffd5db814094781c60af55c004b930c9712c2088dba3ca8b733c9d9",
+          "sourceRange": {
+            "startSeconds": 82.25,
+            "endSeconds": 83.3
+          },
+          "transform": {
+            "crop": {
+              "x": 20,
+              "y": 1050,
+              "width": 800,
+              "height": 580
+            },
+            "width": 400,
+            "height": 290,
+            "fps": 12,
+            "speed": 1,
+            "audioRemoved": true,
+            "purpose": "핵심 조작 영역만 발췌. 빌드·계정 워터마크·OS·결제 화면 제외.",
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0.35,
+            "holdEndSeconds": 0.65,
+            "holdStartRequestedSeconds": 0.35,
+            "holdEndRequestedSeconds": 0.65,
+            "nominalHoldStartFrames": 4,
+            "nominalHoldEndFrames": 8,
+            "gifDelayQuantizationSeconds": 0.01
+          },
+          "key": "refinement:motion-swap-observed:gif",
+          "kind": "gif",
+          "src": "./assets/media/completion/motion-swap-observed.gif",
+          "alt": "서로 다른 두 빵의 실제 위치 교환 반복 GIF",
+          "sha256": "70e0202d447130a6c94636b7aaa56ad902c25b6ffa772adc9b3e5f0d07143832",
+          "bytes": 165426,
+          "loop": true,
+          "notes": "동작은 원속도. 보기 쉽게 앞0.35초·뒤0.65초 정지 프레임을 추가했으며 측정은 원본 PTS를 사용한다.",
+          "width": 400,
+          "height": 290,
+          "encodedVerification": {
+            "frames": 25,
+            "loop": 0,
+            "durationSeconds": 2.08
+          }
+        }
+      ],
+      "mediaKeys": [
+        "refinement:motion-swap-observed:video",
+        "refinement:motion-swap-observed:gif"
+      ],
+      "imageKey": "refinement:motion-swap-observed:frame:1",
+      "frames": [
+        {
+          "key": "refinement:motion-swap-observed:frame:1",
+          "src": "./assets/media/completion/motion-swap-observed-frame-1.webp",
+          "timeSeconds": 82.298889,
+          "sha256": "a596d879835502500b1c386be9402b38e2525f983110c83e510a6ee873779195",
+          "caption": "교환 전 · A(4행4열) 긴 빵 / B(5행1열) 둥근 빵",
+          "transform": {
+            "crop": {
+              "x": 20,
+              "y": 1050,
+              "width": 800,
+              "height": 580
+            },
+            "width": 600,
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0,
+            "holdEndSeconds": 0
+          },
+          "nativeFrameIndex": 5,
+          "analysisFrameSha256": "50868679ad85e344fffa4bc9e8337861a7fe04848ed8cba93b428de91785bb85",
+          "annotations": [
+            {
+              "id": "swap-slot-a",
+              "label": "A · 교환 전 긴 빵 자리",
+              "x": 0.56,
+              "y": 0.14,
+              "width": 0.18,
+              "height": 0.22,
+              "note": "크롭 기준의 관측 영역이다. 교환 전 긴 빵이 있고 교환 후 둥근 빵이 남는다. 실제 터치 영역은 아니다."
+            },
+            {
+              "id": "swap-slot-b",
+              "label": "B · 교환 전 둥근 빵 자리",
+              "x": 0.01,
+              "y": 0.39,
+              "width": 0.2,
+              "height": 0.23,
+              "note": "크롭 기준의 관측 영역이다. 교환 전 둥근 빵이 있고 교환 후 긴 빵이 남는다. 실제 터치 영역은 아니다."
+            }
+          ]
+        },
+        {
+          "key": "refinement:motion-swap-observed:frame:2",
+          "src": "./assets/media/completion/motion-swap-observed-frame-2.webp",
+          "timeSeconds": 82.675578,
+          "sha256": "1a3b66f31ce7c6b176bd4baf6f399dde0290c1918f82d85931f690bf20293847",
+          "caption": "긴 빵이 B 쪽으로 이동하는 궤적",
+          "transform": {
+            "crop": {
+              "x": 20,
+              "y": 1050,
+              "width": 800,
+              "height": 580
+            },
+            "width": 600,
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0,
+            "holdEndSeconds": 0
+          },
+          "nativeFrameIndex": 49,
+          "analysisFrameSha256": "8a519cab623f9d31eff1cd3610e3ca12916aabdcd460e19f190f0f01731bf712",
+          "annotations": [
+            {
+              "id": "swap-slot-a",
+              "label": "A · 교환 전 긴 빵 자리",
+              "x": 0.56,
+              "y": 0.14,
+              "width": 0.18,
+              "height": 0.22,
+              "note": "크롭 기준의 관측 영역이다. 교환 전 긴 빵이 있고 교환 후 둥근 빵이 남는다. 실제 터치 영역은 아니다."
+            },
+            {
+              "id": "swap-slot-b",
+              "label": "B · 교환 전 둥근 빵 자리",
+              "x": 0.01,
+              "y": 0.39,
+              "width": 0.2,
+              "height": 0.23,
+              "note": "크롭 기준의 관측 영역이다. 교환 전 둥근 빵이 있고 교환 후 긴 빵이 남는다. 실제 터치 영역은 아니다."
+            }
+          ]
+        },
+        {
+          "key": "refinement:motion-swap-observed:frame:3",
+          "src": "./assets/media/completion/motion-swap-observed-frame-3.webp",
+          "timeSeconds": 82.867711,
+          "sha256": "74cb7a22a41f7fe39c348f2088c401544a22dea9039cd4b37fdd342e3ebe3a63",
+          "caption": "밀려난 둥근 빵이 A 쪽으로 돌아가는 궤적",
+          "transform": {
+            "crop": {
+              "x": 20,
+              "y": 1050,
+              "width": 800,
+              "height": 580
+            },
+            "width": 600,
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0,
+            "holdEndSeconds": 0
+          },
+          "nativeFrameIndex": 72,
+          "analysisFrameSha256": "578d26f7521599bd7b07d91c5eb2c284bcaa91d39c9c22535b380ade20acd2c3",
+          "annotations": [
+            {
+              "id": "swap-slot-a",
+              "label": "A · 교환 전 긴 빵 자리",
+              "x": 0.56,
+              "y": 0.14,
+              "width": 0.18,
+              "height": 0.22,
+              "note": "크롭 기준의 관측 영역이다. 교환 전 긴 빵이 있고 교환 후 둥근 빵이 남는다. 실제 터치 영역은 아니다."
+            },
+            {
+              "id": "swap-slot-b",
+              "label": "B · 교환 전 둥근 빵 자리",
+              "x": 0.01,
+              "y": 0.39,
+              "width": 0.2,
+              "height": 0.23,
+              "note": "크롭 기준의 관측 영역이다. 교환 전 둥근 빵이 있고 교환 후 긴 빵이 남는다. 실제 터치 영역은 아니다."
+            }
+          ]
+        },
+        {
+          "key": "refinement:motion-swap-observed:frame:4",
+          "src": "./assets/media/completion/motion-swap-observed-frame-4.webp",
+          "timeSeconds": 83.0987,
+          "sha256": "c0bfbdcba151317840e77a7cc51f35bdfc381b66fc360b17581722c311392f76",
+          "caption": "교환 후 · A 둥근 빵 / B 긴 빵, 두 형태가 모두 남음",
+          "transform": {
+            "crop": {
+              "x": 20,
+              "y": 1050,
+              "width": 800,
+              "height": 580
+            },
+            "width": 600,
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0,
+            "holdEndSeconds": 0
+          },
+          "nativeFrameIndex": 100,
+          "analysisFrameSha256": "13d3925bd9f61366af879e73f828d037fa257f28e715f8a8359c3b9332d97a11",
+          "annotations": [
+            {
+              "id": "swap-slot-a",
+              "label": "A · 교환 전 긴 빵 자리",
+              "x": 0.56,
+              "y": 0.14,
+              "width": 0.18,
+              "height": 0.22,
+              "note": "크롭 기준의 관측 영역이다. 교환 전 긴 빵이 있고 교환 후 둥근 빵이 남는다. 실제 터치 영역은 아니다."
+            },
+            {
+              "id": "swap-slot-b",
+              "label": "B · 교환 전 둥근 빵 자리",
+              "x": 0.01,
+              "y": 0.39,
+              "width": 0.2,
+              "height": 0.23,
+              "note": "크롭 기준의 관측 영역이다. 교환 전 둥근 빵이 있고 교환 후 긴 빵이 남는다. 실제 터치 영역은 아니다."
+            }
+          ]
+        }
+      ],
+      "measurements": [
+        {
+          "label": "교환 대상 둥근 빵의 반환 비행 관측",
+          "fromSeconds": 82.817144,
+          "toSeconds": 83.000678,
+          "method": "원본 native PTS 프레임 크롭을 시간순 육안 대조. 보간·클릭 로그 없음.",
+          "uncertaintySeconds": 0.02,
+          "note": "선택한1회 반환 비행의 시각 구간이다. 입력 지연·전체 교환 처리시간·잠금시간이 아니다.",
+          "sampleCount": 1,
+          "fromFrameIndex": 66,
+          "toFrameIndex": 88,
+          "nativeReviewRange": {
+            "startSeconds": 82.25,
+            "endSeconds": 83.3
+          },
+          "nativeFramesInReview": 125
+        }
+      ],
+      "publicReady": true,
+      "review": {
+        "method": "후보0.25초 간격 확대검토+선정native구간 모든프레임 정지시각검토",
+        "nativeFrames": 125,
+        "nativeRange": {
+          "startSeconds": 82.25,
+          "endSeconds": 83.3
+        },
+        "inputLogAvailable": false,
+        "nativeRealtimePlayback": false,
+        "publicReview": "인코딩된 MP4/GIF의 모든 출력 프레임과 포스터·선정 정지를 직접 시각 대조. OS/계정/외부결제/워터마크 없음."
+      },
+      "method": "기존 시간순 표본 장부에 추가 확대 후보 검색 후 선정 구간의 원본 native 프레임을 시각 대조했다. 입력 로그·원속도 전수 재생은 없음.",
+      "productionRowIds": [],
+      "annotations": [
+        {
+          "id": "swap-slot-a",
+          "label": "A · 교환 전 긴 빵 자리",
+          "x": 0.56,
+          "y": 0.14,
+          "width": 0.18,
+          "height": 0.22,
+          "note": "크롭 기준의 관측 영역이다. 교환 전 긴 빵이 있고 교환 후 둥근 빵이 남는다. 실제 터치 영역은 아니다."
+        },
+        {
+          "id": "swap-slot-b",
+          "label": "B · 교환 전 둥근 빵 자리",
+          "x": 0.01,
+          "y": 0.39,
+          "width": 0.2,
+          "height": 0.23,
+          "note": "크롭 기준의 관측 영역이다. 교환 전 둥근 빵이 있고 교환 후 긴 빵이 남는다. 실제 터치 영역은 아니다."
+        }
+      ]
+    },
+    {
+      "id": "motion-choice-observed",
+      "title": "선택 상자 세 후보·체크·확정",
+      "topic": "puzzle",
+      "evidenceType": "actual-play",
+      "sourceId": "GH-V0124",
+      "sourceRange": {
+        "startSeconds": 46,
+        "endSeconds": 47.25
+      },
+      "observations": [
+        "선택상자 창에 세 아이템 후보와 보상을 하나 선택하라는 문구가 보인다.",
+        "중앙 후보에 노란 테두리와 초록 체크가 생기며 선택 버튼이 표시된다.",
+        "확인창이 사라지고 보드의 아이템·빛 표현이 나타난다."
+      ],
+      "unknowns": [
+        "후보 타입 코드와 정적/동적 선택상자 종류는 영상만으로 확정하지 않는다.",
+        "손 입력 시각·실제 클릭 횟수·선택 보상의 서버 지급 기록은 미확인이다.",
+        "창 퇴장 뒤 빛이 겹치므로 이 발췌만으로 모든 보상 착지 칸을 추정하지 않는다."
+      ],
+      "mediaEntries": [
+        {
+          "sourceId": "GH-V0124",
+          "source": "버전 미확인 사용자 제공 녹화의 원본 PTS 구간",
+          "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+          "origin": "observed-user-capture-completion",
+          "version": null,
+          "capturedAt": null,
+          "evidenceType": "actual-play",
+          "category": "퍼즐",
+          "poster": "./assets/media/completion/motion-choice-observed-poster.webp",
+          "posterSha256": "1d4f38208514bc7700b47435daa3027cfe7a0e9c5a53f00a014662d7a83ce649",
+          "sourceRange": {
+            "startSeconds": 46,
+            "endSeconds": 47.25
+          },
+          "transform": {
+            "crop": {
+              "x": 50,
+              "y": 550,
+              "width": 980,
+              "height": 1530
+            },
+            "width": 480,
+            "height": 750,
+            "fps": 24,
+            "speed": 1,
+            "audioRemoved": true,
+            "purpose": "핵심 조작 영역만 발췌. 빌드·계정 워터마크·OS·결제 화면 제외.",
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0,
+            "holdEndSeconds": 0
+          },
+          "key": "refinement:motion-choice-observed:video",
+          "kind": "video",
+          "src": "./assets/media/completion/motion-choice-observed.mp4",
+          "alt": "선택 상자 세 후보·체크·확정 원속도 발췌",
+          "sha256": "3818691f0fcd80abc9ada282f3b29081cdeb585a1d90028d9c98c603e3ba43dc",
+          "bytes": 162174,
+          "width": 480,
+          "height": 750,
+          "encodedVerification": {
+            "durationSeconds": 1.25,
+            "frames": 30,
+            "fps": "24/1",
+            "hasAudio": false,
+            "sourceNativeFrames": 147,
+            "firstSourcePts": 46.001,
+            "lastSourcePts": 47.248633
+          }
+        },
+        {
+          "sourceId": "GH-V0124",
+          "source": "버전 미확인 사용자 제공 녹화의 원본 PTS 구간",
+          "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+          "origin": "observed-user-capture-completion",
+          "version": null,
+          "capturedAt": null,
+          "evidenceType": "actual-play",
+          "category": "퍼즐",
+          "poster": "./assets/media/completion/motion-choice-observed-poster.webp",
+          "posterSha256": "1d4f38208514bc7700b47435daa3027cfe7a0e9c5a53f00a014662d7a83ce649",
+          "sourceRange": {
+            "startSeconds": 46,
+            "endSeconds": 47.25
+          },
+          "transform": {
+            "crop": {
+              "x": 50,
+              "y": 550,
+              "width": 980,
+              "height": 1530
+            },
+            "width": 400,
+            "height": 626,
+            "fps": 12,
+            "speed": 1,
+            "audioRemoved": true,
+            "purpose": "핵심 조작 영역만 발췌. 빌드·계정 워터마크·OS·결제 화면 제외.",
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0.35,
+            "holdEndSeconds": 0.65,
+            "holdStartRequestedSeconds": 0.35,
+            "holdEndRequestedSeconds": 0.65,
+            "nominalHoldStartFrames": 4,
+            "nominalHoldEndFrames": 8,
+            "gifDelayQuantizationSeconds": 0.01
+          },
+          "key": "refinement:motion-choice-observed:gif",
+          "kind": "gif",
+          "src": "./assets/media/completion/motion-choice-observed.gif",
+          "alt": "선택 상자 세 후보·체크·확정 반복 GIF",
+          "sha256": "8e0c0cc4dcdfd586eb83ff8a49167c9b16c87cc2e5d49e26bc165d2f0fe59e4e",
+          "bytes": 578279,
+          "loop": true,
+          "notes": "동작은 원속도. 보기 쉽게 앞0.35초·뒤0.65초 정지 프레임을 추가했으며 측정은 원본 PTS를 사용한다.",
+          "width": 400,
+          "height": 626,
+          "encodedVerification": {
+            "frames": 27,
+            "loop": 0,
+            "durationSeconds": 2.25
+          }
+        }
+      ],
+      "mediaKeys": [
+        "refinement:motion-choice-observed:video",
+        "refinement:motion-choice-observed:gif"
+      ],
+      "imageKey": "refinement:motion-choice-observed:frame:1",
+      "frames": [
+        {
+          "key": "refinement:motion-choice-observed:frame:1",
+          "src": "./assets/media/completion/motion-choice-observed-frame-1.webp",
+          "timeSeconds": 46.001,
+          "sha256": "74900b7d12b02759b2922357c35608a4f9a08721e8def53f48a8fd83d1a1c8bc",
+          "caption": "세 후보가 표시되고 아직 중앙 후보의 체크가 없음",
+          "transform": {
+            "crop": {
+              "x": 50,
+              "y": 550,
+              "width": 980,
+              "height": 1530
+            },
+            "width": 490,
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0,
+            "holdEndSeconds": 0
+          },
+          "nativeFrameIndex": 0,
+          "analysisFrameSha256": "f4a4300bbffb0449c73728391ae0cb15a2042abf8d88c7185b6b87a84ade293c",
+          "annotations": [
+            {
+              "id": "choice-options",
+              "label": "세 보상 후보",
+              "x": 0.04,
+              "y": 0.3,
+              "width": 0.92,
+              "height": 0.25,
+              "note": "보상 하나를 고르는 세 후보가 보인다. 실제 터치 영역이나 타입 코드는 이 사각형으로 확정하지 않는다."
+            }
+          ]
+        },
+        {
+          "key": "refinement:motion-choice-observed:frame:2",
+          "src": "./assets/media/completion/motion-choice-observed-frame-2.webp",
+          "timeSeconds": 46.050622,
+          "sha256": "88ac99ca6cb0147fdf17636c8a4726015c7b44ddd6dda1fe4eb55cafc54d9f6b",
+          "caption": "중앙 후보의 노란 테두리·초록 체크·선택 버튼",
+          "transform": {
+            "crop": {
+              "x": 50,
+              "y": 550,
+              "width": 980,
+              "height": 1530
+            },
+            "width": 490,
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0,
+            "holdEndSeconds": 0
+          },
+          "nativeFrameIndex": 6,
+          "analysisFrameSha256": "3865b5e89910f2c6e9b780944b9a3eb1b60d74fc7fe75304255ab90ddd80da0f",
+          "annotations": [
+            {
+              "id": "choice-selected",
+              "label": "중앙 후보의 선택 표시",
+              "x": 0.37,
+              "y": 0.3,
+              "width": 0.27,
+              "height": 0.26,
+              "note": "노란 테두리와 초록 체크를 관측한 영역."
+            },
+            {
+              "id": "choice-confirm",
+              "label": "선택 확정 버튼",
+              "x": 0.24,
+              "y": 0.58,
+              "width": 0.52,
+              "height": 0.12,
+              "note": "초록 선택 버튼이 표시되는 영역. 실제 입력 시각은 미확인."
+            }
+          ]
+        },
+        {
+          "key": "refinement:motion-choice-observed:frame:3",
+          "src": "./assets/media/completion/motion-choice-observed-frame-3.webp",
+          "timeSeconds": 46.723533,
+          "sha256": "bbdf098061c816a9f1f7983e3006aef112a8a9560a792a650f27f0175bf52ca2",
+          "caption": "선택창이 흐려지며 닫히는 전이",
+          "transform": {
+            "crop": {
+              "x": 50,
+              "y": 550,
+              "width": 980,
+              "height": 1530
+            },
+            "width": 490,
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0,
+            "holdEndSeconds": 0
+          },
+          "nativeFrameIndex": 87,
+          "analysisFrameSha256": "193a02c819461329ec99d1383c2c5e48dc72186af3a5b63a9d0f9958e2499391",
+          "annotations": []
+        },
+        {
+          "key": "refinement:motion-choice-observed:frame:4",
+          "src": "./assets/media/completion/motion-choice-observed-frame-4.webp",
+          "timeSeconds": 46.948422,
+          "sha256": "8f8e9228defc2e6cd99fab02eeaadb9c89858db2916599cd855e861a57c777dd",
+          "caption": "창이 사라진 뒤 보드와 아이템·빛 표현",
+          "transform": {
+            "crop": {
+              "x": 50,
+              "y": 550,
+              "width": 980,
+              "height": 1530
+            },
+            "width": 490,
+            "bodySpeed": 1,
+            "timingIsMeasurementSource": false,
+            "holdStartSeconds": 0,
+            "holdEndSeconds": 0
+          },
+          "nativeFrameIndex": 110,
+          "analysisFrameSha256": "8920899541fef434d9a01f63a5c880ed505550b4c6a4f7f96b756dd1983a65d7",
+          "annotations": [
+            {
+              "id": "choice-board",
+              "label": "창 닫힘 뒤 보드의 아이템·빛",
+              "x": 0.73,
+              "y": 0.12,
+              "width": 0.24,
+              "height": 0.16,
+              "note": "확인창 퇴장 뒤 보드가 드러나고 선택 후보와 같은 모양·빛이 보인다. 서버 지급 영수증을 확인한 것은 아니다."
+            }
+          ]
+        }
+      ],
+      "measurements": [
+        {
+          "label": "중앙 후보 체크가 처음 보이는 경계",
+          "fromSeconds": 46.0258,
+          "toSeconds": 46.0338,
+          "method": "원본 native PTS 프레임 크롭을 시간순 육안 대조. 보간·클릭 로그 없음.",
+          "uncertaintySeconds": 0.01,
+          "note": "체크가 없는 마지막 프레임과 있는 첫 프레임 사이. 클릭 시각이 아니다.",
+          "sampleCount": 1,
+          "fromFrameIndex": 3,
+          "toFrameIndex": 4,
+          "nativeReviewRange": {
+            "startSeconds": 46,
+            "endSeconds": 47.25
+          },
+          "nativeFramesInReview": 147
+        },
+        {
+          "label": "선택창 퇴장과 보드 복귀 관측 구간",
+          "fromSeconds": 46.675433,
+          "toSeconds": 46.906222,
+          "method": "원본 native PTS 프레임 크롭을 시간순 육안 대조. 보간·클릭 로그 없음.",
+          "uncertaintySeconds": 0.02,
+          "note": "창이 흐려지는 전이부터 보드가 다시 드러난 시각 구간. 전체 창 수명·입력 잠금이 아니다.",
+          "sampleCount": 1,
+          "fromFrameIndex": 81,
+          "toFrameIndex": 105,
+          "nativeReviewRange": {
+            "startSeconds": 46,
+            "endSeconds": 47.25
+          },
+          "nativeFramesInReview": 147
+        }
+      ],
+      "publicReady": true,
+      "review": {
+        "method": "후보0.25초 간격 확대검토+선정native구간 모든프레임 정지시각검토",
+        "nativeFrames": 147,
+        "nativeRange": {
+          "startSeconds": 46,
+          "endSeconds": 47.25
+        },
+        "inputLogAvailable": false,
+        "nativeRealtimePlayback": false,
+        "publicReview": "인코딩된 MP4/GIF의 모든 출력 프레임과 포스터·선정 정지를 직접 시각 대조. OS/계정/외부결제/워터마크 없음."
+      },
+      "method": "기존 시간순 표본 장부에 추가 확대 후보 검색 후 선정 구간의 원본 native 프레임을 시각 대조했다. 입력 로그·원속도 전수 재생은 없음.",
+      "productionRowIds": [],
+      "annotations": [
+        {
+          "id": "choice-options",
+          "label": "세 보상 후보",
+          "x": 0.04,
+          "y": 0.3,
+          "width": 0.92,
+          "height": 0.25,
+          "note": "보상 하나를 고르는 세 후보가 보인다. 실제 터치 영역이나 타입 코드는 이 사각형으로 확정하지 않는다."
+        }
+      ]
+    }
+  ],
+  "mediaEntries": [
+    {
+      "sourceId": "GH-V0124",
+      "source": "버전 미확인 사용자 제공 녹화의 원본 PTS 구간",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "evidenceType": "actual-play",
+      "category": "퍼즐",
+      "poster": "./assets/media/completion/motion-swap-observed-poster.webp",
+      "posterSha256": "227d17ce2ffd5db814094781c60af55c004b930c9712c2088dba3ca8b733c9d9",
+      "sourceRange": {
+        "startSeconds": 82.25,
+        "endSeconds": 83.3
+      },
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 1050,
+          "width": 800,
+          "height": 580
+        },
+        "width": 480,
+        "height": 348,
+        "fps": 24,
+        "speed": 1,
+        "audioRemoved": true,
+        "purpose": "핵심 조작 영역만 발췌. 빌드·계정 워터마크·OS·결제 화면 제외.",
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0,
+        "holdEndSeconds": 0
+      },
+      "key": "refinement:motion-swap-observed:video",
+      "kind": "video",
+      "src": "./assets/media/completion/motion-swap-observed.mp4",
+      "alt": "서로 다른 두 빵의 실제 위치 교환 원속도 발췌",
+      "sha256": "a6736d8e76f0db00302fc3e3eed3e14061e613939f878a2e8330efc7a9af517d",
+      "bytes": 43048,
+      "width": 480,
+      "height": 348,
+      "encodedVerification": {
+        "durationSeconds": 1.041667,
+        "frames": 25,
+        "fps": "24/1",
+        "hasAudio": false,
+        "sourceNativeFrames": 125,
+        "firstSourcePts": 82.256933,
+        "lastSourcePts": 83.298744
+      }
+    },
+    {
+      "sourceId": "GH-V0124",
+      "source": "버전 미확인 사용자 제공 녹화의 원본 PTS 구간",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "evidenceType": "actual-play",
+      "category": "퍼즐",
+      "poster": "./assets/media/completion/motion-swap-observed-poster.webp",
+      "posterSha256": "227d17ce2ffd5db814094781c60af55c004b930c9712c2088dba3ca8b733c9d9",
+      "sourceRange": {
+        "startSeconds": 82.25,
+        "endSeconds": 83.3
+      },
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 1050,
+          "width": 800,
+          "height": 580
+        },
+        "width": 400,
+        "height": 290,
+        "fps": 12,
+        "speed": 1,
+        "audioRemoved": true,
+        "purpose": "핵심 조작 영역만 발췌. 빌드·계정 워터마크·OS·결제 화면 제외.",
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0.35,
+        "holdEndSeconds": 0.65,
+        "holdStartRequestedSeconds": 0.35,
+        "holdEndRequestedSeconds": 0.65,
+        "nominalHoldStartFrames": 4,
+        "nominalHoldEndFrames": 8,
+        "gifDelayQuantizationSeconds": 0.01
+      },
+      "key": "refinement:motion-swap-observed:gif",
+      "kind": "gif",
+      "src": "./assets/media/completion/motion-swap-observed.gif",
+      "alt": "서로 다른 두 빵의 실제 위치 교환 반복 GIF",
+      "sha256": "70e0202d447130a6c94636b7aaa56ad902c25b6ffa772adc9b3e5f0d07143832",
+      "bytes": 165426,
+      "loop": true,
+      "notes": "동작은 원속도. 보기 쉽게 앞0.35초·뒤0.65초 정지 프레임을 추가했으며 측정은 원본 PTS를 사용한다.",
+      "width": 400,
+      "height": 290,
+      "encodedVerification": {
+        "frames": 25,
+        "loop": 0,
+        "durationSeconds": 2.08
+      }
+    },
+    {
+      "key": "refinement:motion-swap-observed:frame:1",
+      "kind": "image",
+      "src": "./assets/media/completion/motion-swap-observed-frame-1.webp",
+      "alt": "교환 전 · A(4행4열) 긴 빵 / B(5행1열) 둥근 빵 · 원본 82.298889초",
+      "sourceId": "GH-V0124",
+      "source": "원본 native PTS 프레임의 크롭·축소",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "sha256": "a596d879835502500b1c386be9402b38e2525f983110c83e510a6ee873779195",
+      "bytes": 49320,
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 82.298889,
+        "endSeconds": 82.298889
+      },
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 1050,
+          "width": 800,
+          "height": 580
+        },
+        "width": 600,
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0,
+        "holdEndSeconds": 0
+      },
+      "width": 600,
+      "height": 436
+    },
+    {
+      "key": "refinement:motion-swap-observed:frame:2",
+      "kind": "image",
+      "src": "./assets/media/completion/motion-swap-observed-frame-2.webp",
+      "alt": "긴 빵이 B 쪽으로 이동하는 궤적 · 원본 82.675578초",
+      "sourceId": "GH-V0124",
+      "source": "원본 native PTS 프레임의 크롭·축소",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "sha256": "1a3b66f31ce7c6b176bd4baf6f399dde0290c1918f82d85931f690bf20293847",
+      "bytes": 48274,
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 82.675578,
+        "endSeconds": 82.675578
+      },
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 1050,
+          "width": 800,
+          "height": 580
+        },
+        "width": 600,
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0,
+        "holdEndSeconds": 0
+      },
+      "width": 600,
+      "height": 436
+    },
+    {
+      "key": "refinement:motion-swap-observed:frame:3",
+      "kind": "image",
+      "src": "./assets/media/completion/motion-swap-observed-frame-3.webp",
+      "alt": "밀려난 둥근 빵이 A 쪽으로 돌아가는 궤적 · 원본 82.867711초",
+      "sourceId": "GH-V0124",
+      "source": "원본 native PTS 프레임의 크롭·축소",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "sha256": "74cb7a22a41f7fe39c348f2088c401544a22dea9039cd4b37fdd342e3ebe3a63",
+      "bytes": 48892,
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 82.867711,
+        "endSeconds": 82.867711
+      },
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 1050,
+          "width": 800,
+          "height": 580
+        },
+        "width": 600,
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0,
+        "holdEndSeconds": 0
+      },
+      "width": 600,
+      "height": 436
+    },
+    {
+      "key": "refinement:motion-swap-observed:frame:4",
+      "kind": "image",
+      "src": "./assets/media/completion/motion-swap-observed-frame-4.webp",
+      "alt": "교환 후 · A 둥근 빵 / B 긴 빵, 두 형태가 모두 남음 · 원본 83.0987초",
+      "sourceId": "GH-V0124",
+      "source": "원본 native PTS 프레임의 크롭·축소",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "sha256": "c0bfbdcba151317840e77a7cc51f35bdfc381b66fc360b17581722c311392f76",
+      "bytes": 49068,
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 83.0987,
+        "endSeconds": 83.0987
+      },
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 1050,
+          "width": 800,
+          "height": 580
+        },
+        "width": 600,
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0,
+        "holdEndSeconds": 0
+      },
+      "width": 600,
+      "height": 436
+    },
+    {
+      "sourceId": "GH-V0124",
+      "source": "버전 미확인 사용자 제공 녹화의 원본 PTS 구간",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "evidenceType": "actual-play",
+      "category": "퍼즐",
+      "poster": "./assets/media/completion/motion-choice-observed-poster.webp",
+      "posterSha256": "1d4f38208514bc7700b47435daa3027cfe7a0e9c5a53f00a014662d7a83ce649",
+      "sourceRange": {
+        "startSeconds": 46,
+        "endSeconds": 47.25
+      },
+      "transform": {
+        "crop": {
+          "x": 50,
+          "y": 550,
+          "width": 980,
+          "height": 1530
+        },
+        "width": 480,
+        "height": 750,
+        "fps": 24,
+        "speed": 1,
+        "audioRemoved": true,
+        "purpose": "핵심 조작 영역만 발췌. 빌드·계정 워터마크·OS·결제 화면 제외.",
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0,
+        "holdEndSeconds": 0
+      },
+      "key": "refinement:motion-choice-observed:video",
+      "kind": "video",
+      "src": "./assets/media/completion/motion-choice-observed.mp4",
+      "alt": "선택 상자 세 후보·체크·확정 원속도 발췌",
+      "sha256": "3818691f0fcd80abc9ada282f3b29081cdeb585a1d90028d9c98c603e3ba43dc",
+      "bytes": 162174,
+      "width": 480,
+      "height": 750,
+      "encodedVerification": {
+        "durationSeconds": 1.25,
+        "frames": 30,
+        "fps": "24/1",
+        "hasAudio": false,
+        "sourceNativeFrames": 147,
+        "firstSourcePts": 46.001,
+        "lastSourcePts": 47.248633
+      }
+    },
+    {
+      "sourceId": "GH-V0124",
+      "source": "버전 미확인 사용자 제공 녹화의 원본 PTS 구간",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "evidenceType": "actual-play",
+      "category": "퍼즐",
+      "poster": "./assets/media/completion/motion-choice-observed-poster.webp",
+      "posterSha256": "1d4f38208514bc7700b47435daa3027cfe7a0e9c5a53f00a014662d7a83ce649",
+      "sourceRange": {
+        "startSeconds": 46,
+        "endSeconds": 47.25
+      },
+      "transform": {
+        "crop": {
+          "x": 50,
+          "y": 550,
+          "width": 980,
+          "height": 1530
+        },
+        "width": 400,
+        "height": 626,
+        "fps": 12,
+        "speed": 1,
+        "audioRemoved": true,
+        "purpose": "핵심 조작 영역만 발췌. 빌드·계정 워터마크·OS·결제 화면 제외.",
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0.35,
+        "holdEndSeconds": 0.65,
+        "holdStartRequestedSeconds": 0.35,
+        "holdEndRequestedSeconds": 0.65,
+        "nominalHoldStartFrames": 4,
+        "nominalHoldEndFrames": 8,
+        "gifDelayQuantizationSeconds": 0.01
+      },
+      "key": "refinement:motion-choice-observed:gif",
+      "kind": "gif",
+      "src": "./assets/media/completion/motion-choice-observed.gif",
+      "alt": "선택 상자 세 후보·체크·확정 반복 GIF",
+      "sha256": "8e0c0cc4dcdfd586eb83ff8a49167c9b16c87cc2e5d49e26bc165d2f0fe59e4e",
+      "bytes": 578279,
+      "loop": true,
+      "notes": "동작은 원속도. 보기 쉽게 앞0.35초·뒤0.65초 정지 프레임을 추가했으며 측정은 원본 PTS를 사용한다.",
+      "width": 400,
+      "height": 626,
+      "encodedVerification": {
+        "frames": 27,
+        "loop": 0,
+        "durationSeconds": 2.25
+      }
+    },
+    {
+      "key": "refinement:motion-choice-observed:frame:1",
+      "kind": "image",
+      "src": "./assets/media/completion/motion-choice-observed-frame-1.webp",
+      "alt": "세 후보가 표시되고 아직 중앙 후보의 체크가 없음 · 원본 46.001초",
+      "sourceId": "GH-V0124",
+      "source": "원본 native PTS 프레임의 크롭·축소",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "sha256": "74900b7d12b02759b2922357c35608a4f9a08721e8def53f48a8fd83d1a1c8bc",
+      "bytes": 52354,
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 46.001,
+        "endSeconds": 46.001
+      },
+      "transform": {
+        "crop": {
+          "x": 50,
+          "y": 550,
+          "width": 980,
+          "height": 1530
+        },
+        "width": 490,
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0,
+        "holdEndSeconds": 0
+      },
+      "width": 490,
+      "height": 766
+    },
+    {
+      "key": "refinement:motion-choice-observed:frame:2",
+      "kind": "image",
+      "src": "./assets/media/completion/motion-choice-observed-frame-2.webp",
+      "alt": "중앙 후보의 노란 테두리·초록 체크·선택 버튼 · 원본 46.050622초",
+      "sourceId": "GH-V0124",
+      "source": "원본 native PTS 프레임의 크롭·축소",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "sha256": "88ac99ca6cb0147fdf17636c8a4726015c7b44ddd6dda1fe4eb55cafc54d9f6b",
+      "bytes": 54108,
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 46.050622,
+        "endSeconds": 46.050622
+      },
+      "transform": {
+        "crop": {
+          "x": 50,
+          "y": 550,
+          "width": 980,
+          "height": 1530
+        },
+        "width": 490,
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0,
+        "holdEndSeconds": 0
+      },
+      "width": 490,
+      "height": 766
+    },
+    {
+      "key": "refinement:motion-choice-observed:frame:3",
+      "kind": "image",
+      "src": "./assets/media/completion/motion-choice-observed-frame-3.webp",
+      "alt": "선택창이 흐려지며 닫히는 전이 · 원본 46.723533초",
+      "sourceId": "GH-V0124",
+      "source": "원본 native PTS 프레임의 크롭·축소",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "sha256": "bbdf098061c816a9f1f7983e3006aef112a8a9560a792a650f27f0175bf52ca2",
+      "bytes": 46864,
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 46.723533,
+        "endSeconds": 46.723533
+      },
+      "transform": {
+        "crop": {
+          "x": 50,
+          "y": 550,
+          "width": 980,
+          "height": 1530
+        },
+        "width": 490,
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0,
+        "holdEndSeconds": 0
+      },
+      "width": 490,
+      "height": 766
+    },
+    {
+      "key": "refinement:motion-choice-observed:frame:4",
+      "kind": "image",
+      "src": "./assets/media/completion/motion-choice-observed-frame-4.webp",
+      "alt": "창이 사라진 뒤 보드와 아이템·빛 표현 · 원본 46.948422초",
+      "sourceId": "GH-V0124",
+      "source": "원본 native PTS 프레임의 크롭·축소",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "sha256": "8f8e9228defc2e6cd99fab02eeaadb9c89858db2916599cd855e861a57c777dd",
+      "bytes": 94048,
+      "origin": "observed-user-capture-completion",
+      "version": null,
+      "capturedAt": null,
+      "sourceRange": {
+        "startSeconds": 46.948422,
+        "endSeconds": 46.948422
+      },
+      "transform": {
+        "crop": {
+          "x": 50,
+          "y": 550,
+          "width": 980,
+          "height": 1530
+        },
+        "width": 490,
+        "bodySpeed": 1,
+        "timingIsMeasurementSource": false,
+        "holdStartSeconds": 0,
+        "holdEndSeconds": 0
+      },
+      "width": 490,
+      "height": 766
+    }
+  ],
+  "coverage": [
+    {
+      "interaction": "교환",
+      "action": "교환",
+      "status": "실제 성공 교환 관측",
+      "statusLabel": "실제 성공 교환 관측",
+      "candidateIds": [
+        "GH-V0124"
+      ],
+      "scopeVideos": 110,
+      "observation": "V0124에서 긴 빵과 둥근 빵이 서로의 칸으로 바뀌고 두 형태가 남는 전후와 연속 궤적을 확인했다. 정확한 입력 방식은 미확인이다.",
+      "description": "V0124 82.25–83.30초의 두 일반 아이템 위치 교환. 타입 코드·입력 방식·전체 허용 조건은 별도 미확인.",
+      "studyIds": [
+        "motion-swap-observed"
+      ],
+      "beforeCompletion": {
+        "interaction": "교환",
+        "status": "성공 교환 표본 미확보",
+        "statusLabel": "성공 교환 표본 미확보",
+        "candidateIds": [
+          "GH-V0049",
+          "GH-V0114"
+        ],
+        "scopeVideos": 110,
+        "observation": "서로 다른 두 일반 아이템의 전후 위치가 맞바뀐 동작을 고립해 확정하지 못했다.",
+        "actualVersusHelp": "study.evidenceType 참조. 실제/도움말/미확보를 구분.",
+        "action": "교환",
+        "description": "서로 다른 두 일반 아이템의 전후 위치가 맞바뀐 동작을 고립해 확정하지 못했다.",
+        "studyIds": []
+      }
+    },
+    {
+      "interaction": "선택 상자",
+      "action": "선택 상자",
+      "status": "세 후보·선택·확정 관측",
+      "statusLabel": "실제 선택·확정 관측",
+      "candidateIds": [
+        "GH-V0124"
+      ],
+      "scopeVideos": 110,
+      "observation": "세 후보 가운데 한 후보의 테두리·체크, 선택 버튼과 창 퇴장·보드 복귀를 native 프레임으로 확인했다.",
+      "description": "동적/정적 상자 구분과 후보 타입 코드·서버 지급 결과는 미확인이다.",
+      "studyIds": [
+        "motion-choice-observed"
+      ]
+    }
+  ],
+  "boundaries": [
+    "녹화 빌드·실제 촬영일·입력 로그는 미확인이다.",
+    "실제 위치 교환은 전후 두 아이템이 모두 남고 칸을 바꾼 영상 표본이다. 탭/드래그 방식은 별도 미확인이다.",
+    "보기용 GIF의 앞뒤 정지 구간은 연출 시간 측정에 사용하지 않는다.",
+    "오디오 직접 청취와 혼합 녹화 음원의 공개는 수행하지 않았다."
+  ],
+  "inventoryReview": {
+    "originalFiles": 453,
+    "uniqueVideos": 113,
+    "inScopeVideos": 110,
+    "addedFiles": 0,
+    "missingUniqueFiles": 0,
+    "changedByteSizes": 0,
+    "comparisonMethod": "카탈로그 경로·파일 존재·바이트 크기 전체 대조. 전체453개 바이트 해시를 이번에 다시 계산했다는 의미가 아니다.",
+    "sourceHashRechecks": [
+      {
+        "id": "GH-V0124",
+        "sha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+        "bytes": 146449126,
+        "matchesCatalog": true
+      },
+      {
+        "id": "GH-V0049",
+        "sha256": "17562134ed8cdc4d748d2a36ddc074f68c9298088dad9909a430b8650d48621e",
+        "bytes": 97041753,
+        "matchesCatalog": true
+      },
+      {
+        "id": "GH-V0114",
+        "sha256": "835b2aed1ad36dd02f25ffbdc9a82edc796e1c78d66c759aacd0e62a399baae7",
+        "bytes": 116576467,
+        "matchesCatalog": true
+      }
+    ],
+    "catalogSha256": "2b12c746cd669b4f2d5af65d1f461bb13358078ad09a74883383d51f035c4145"
+  },
+  "remaining": [
+    {
+      "action": "가위",
+      "status": "unconfirmed",
+      "needed": "대상 분할 전후와 도구의 소모/횟수 변화를 같은 실제 사용 구간에서 확인",
+      "newSearch": "V0124 46.0–95.37초0.25초 확대 표본에서 가위 아이콘 존속을 확인했으나 실제 사용 전이는 확보하지 못함"
+    },
+    {
+      "action": "모래시계",
+      "status": "unconfirmed",
+      "needed": "도구 소모와 생성기 대기 시간 단축을 함께 보이는 실제 구간",
+      "newSearch": "신규 파일 없음. 이전 V0117 동결 도움말의 제한시간 표시는 도구 사용으로 바꾸지 않음"
+    },
+    {
+      "action": "자동 합성 힌트",
+      "status": "unconfirmed",
+      "needed": "입력이 없는 대기 및 힌트 발생 트리거를 확인할 입력 기록 또는 통제된 실행",
+      "newSearch": "V0049 31.25–32.00초89 native 프레임에서 같은 모양의 궤적을 보았지만 자동 힌트와 사용자 이동/취소를 분리할 수 없음"
+    },
+    {
+      "action": "메인 봉인 해제",
+      "status": "unconfirmed",
+      "needed": "메인 상자→거미줄→해제의 실제 전후 표본",
+      "newSearch": "추가 자료 없음. 현재 선정된 메인 보드의 해당 전이를 확보하지 못함"
+    },
+    {
+      "action": "입력·잠금 시간",
+      "status": "unconfirmed",
+      "needed": "시각 전이 외에 정확한 입력 시작/종료 로그와 잠금 상태 관측",
+      "newSearch": "새3개 시각 측정도 클릭 지연·서버 응답·입력 잠금 시간으로 해석하지 않음"
+    },
+    {
+      "action": "오디오 청취",
+      "status": "unsupported",
+      "needed": "직접 청취가 가능한 환경과 검토자 확인",
+      "newSearch": "모델 오디오 입력 미지원. 녹화/파형 분석을 청취 완료로 바꾸지 않음"
+    }
+  ],
+  "summary": {
+    "studies": 2,
+    "actualPlayStudies": 2,
+    "helpDemoStudies": 0,
+    "mediaEntries": 12,
+    "images": 8,
+    "videos": 2,
+    "gifs": 2,
+    "posterFiles": 2,
+    "selectedNativeFrames": 272,
+    "newSourceFiles": 0,
+    "confirmedInteractionGaps": 1,
+    "directListeningSeconds": 0
+  },
+  "supplementaryObservations": [
+    {
+      "sourceId": "GH-V0114",
+      "range": {
+        "startSeconds": 20,
+        "endSeconds": 22.5
+      },
+      "observation": "두 번째 확인창 역시 거품을 터뜨리고 골드1개를 획득한다는 문구와 터뜨리기/취소 버튼이다. 가위/모래시계 확인창으로 해석하지 않는다.",
+      "method": "0.1초 간격 확대 원본 PTS 표본24개 시각 대조",
+      "nativeFrameByFrame": false,
+      "publicClipCreated": false
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import {DOMAIN_DEFS} from './domain-model.mjs';
 
-export const STUDIO_PAGES={research:'연구','production-assets':'제작 리소스','media-audit':'영상 전 구간 검토',captures:'실제 화면 · 관측 자료','bm-validation':'후속 검증 · BM 조건','bm-timeline':'BM 관측 타임라인',puzzle:'타입 도감','puzzle-motion':'연출 도감','puzzle-interaction':'퍼즐 · 상호작용','puzzle-difficulty':'퍼즐 · 난이도',interface:'UI 도감','interface-structure':'UI · 구조','interface-motion':'UI · 연출',experience:'게임 시뮬레이션'};
-export const VISUAL_ROUTES=Object.keys(STUDIO_PAGES).filter(id=>!['research','media-audit','bm-validation','bm-timeline'].includes(id));
+export const STUDIO_PAGES={research:'연구','scene-analysis':'원작 장면·선택 분석','production-assets':'제작 리소스','media-audit':'영상 전 구간 검토',captures:'실제 화면 · 관측 자료','bm-validation':'후속 검증 · BM 조건','bm-timeline':'BM 관측 타임라인',puzzle:'타입 도감','puzzle-motion':'연출 도감','puzzle-interaction':'퍼즐 · 상호작용','puzzle-difficulty':'퍼즐 · 난이도',interface:'UI 도감','interface-structure':'UI · 구조','interface-motion':'UI · 연출',experience:'게임 시뮬레이션'};
+export const VISUAL_ROUTES=Object.keys(STUDIO_PAGES).filter(id=>!['research','scene-analysis','media-audit','bm-validation','bm-timeline'].includes(id));
 export const RESEARCH_ROUTES=['research','media-audit','bm-validation','bm-timeline','overview',...DOMAIN_DEFS.map(d=>d.id),'wiki','catalog','triggers','simulator','evidence'];
 const link=(id,label)=>`<a href="#${id}" data-route="${id}">${label}</a>`;
 export function renderNavigation(){
@@ -10,7 +10,7 @@ export function renderNavigation(){
  ${link('experience','게임 시뮬레이션')}
  ${link('captures','실제 화면 · 관측 자료')}
  ${link('production-assets','제작 리소스')}
- <details class="nav-tree research-tree" data-nav-group="research"><summary>연구 <small>상세 분석 문서</small></summary><div class="nav-children">${link('research','연구 홈')}${link('media-audit','영상 전 구간 검토')}${link('bm-validation','후속 검증 · BM 조건')}${link('bm-timeline','BM 관측 타임라인')}${link('overview','연구 개요')}<details class="nav-subtree" open><summary>시스템 분석</summary><div class="nav-children">${DOMAIN_DEFS.map(d=>link(d.id,d.title)).join('')}</div></details><details class="nav-subtree" open><summary>근거와 실험</summary><div class="nav-children">${link('wiki','전체 근거 위키')}${link('catalog','상품 카탈로그')}${link('triggers','오퍼 트리거 실험')}${link('simulator','규칙 시뮬레이션')}${link('evidence','근거 · Unity 이식')}</div></details></div></details>`;
+ <details class="nav-tree research-tree" data-nav-group="research"><summary>연구 <small>상세 분석 문서</small></summary><div class="nav-children">${link('research','연구 홈')}${link('scene-analysis','원작 장면·선택 분석')}${link('media-audit','영상 전 구간 검토')}${link('bm-validation','후속 검증 · BM 조건')}${link('bm-timeline','BM 관측 타임라인')}${link('overview','연구 개요')}<details class="nav-subtree" open><summary>시스템 분석</summary><div class="nav-children">${DOMAIN_DEFS.map(d=>link(d.id,d.title)).join('')}</div></details><details class="nav-subtree" open><summary>근거와 실험</summary><div class="nav-children">${link('wiki','전체 근거 위키')}${link('catalog','상품 카탈로그')}${link('triggers','오퍼 트리거 실험')}${link('simulator','규칙 시뮬레이션')}${link('evidence','근거 · Unity 이식')}</div></details></div></details>`;
 }
 let previous='';
 export function syncNavigation(route){

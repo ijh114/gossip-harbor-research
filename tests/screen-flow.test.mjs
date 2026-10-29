@@ -2,15 +2,17 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {JSDOM} from 'jsdom';
-import {createPlay,validPlay} from '../src/play-model.mjs';
+import {createPlay,playAction,validPlay} from '../src/play-model.mjs';
 import {createPlayController} from '../src/play-controller.mjs';
 import {writeSession,SAVE_KEY} from '../src/session-store.mjs';
 import {screenFlow,soundForAction} from '../src/screen-flow.mjs';
 const config=JSON.parse(await readFile(new URL('../src/data/play-config.json',import.meta.url),'utf8'));
 const refinement=JSON.parse(await readFile(new URL('../src/data/media-refinement.json',import.meta.url),'utf8'));
 const media=JSON.parse(await readFile(new URL('../src/data/media.json',import.meta.url),'utf8'));
+const sceneConfig=JSON.parse(await readFile(new URL('../src/data/scene-config.json',import.meta.url),'utf8'));
+const activityConfig=JSON.parse(await readFile(new URL('../src/data/activity-play.json',import.meta.url),'utf8'));
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-async function harness(run,{saved=null,raw=null,reduced=true}={}){
+async function harness(run,{saved=null,raw=null,reduced=true,scenes=false,activities=false}={}){
  const dom=new JSDOM('<main></main>',{url:'https://example.test/project/#experience',pretendToBeVisual:true}),w=dom.window,prior={window:globalThis.window,document:globalThis.document};
  Object.assign(globalThis,{window:w,document:w.document});
  w.matchMedia=()=>({matches:reduced});w.HTMLElement.prototype.scrollIntoView=()=>{};
@@ -19,14 +21,14 @@ async function harness(run,{saved=null,raw=null,reduced=true}={}){
  const played=[];w.Audio=class{constructor(src){this.src=src;}play(){played.push(this.src);return Promise.resolve();}pause(){}};
  if(saved)writeSession(w.localStorage,saved,{revision:config.revision,now:Date.now(),validate:x=>validPlay(x,config)});
  if(raw)w.localStorage.setItem(SAVE_KEY,raw);
- let controller;
- function render(){controller.beforeRender();w.document.querySelector('main').innerHTML=controller.render('game');controller.afterMount();}
- const create=()=>{controller=createPlayController({getData:()=>({playConfig:config,media,refinement}),render,download(){}});return controller;};
+ let controller,skin='game';
+ function render(){controller.beforeRender();w.document.querySelector('main').innerHTML=controller.render(skin);controller.afterMount();}
+ const create=()=>{controller=createPlayController({getData:()=>({playConfig:config,media,refinement,...(scenes?{sceneConfig}:{}),...(activities?{activityConfig}:{})}),render,download(){}});return controller;};
  create();render();
  const read=()=>JSON.parse(w.localStorage.getItem(SAVE_KEY)).state;
  const act=(action,value)=>controller.handle(action,value);
  const screen=()=>w.document.querySelector('[data-game-screen]')?.dataset.gameScreen;
- try{await run({w,act,read,screen,played,render,recreate(){controller.beforeRender();create();render();}});}
+ try{await run({w,act,read,screen,played,render,showMode(mode){skin=mode;render();},recreate(){controller.beforeRender();create();render();}});}
  finally{controller.beforeRender();w.close();Object.assign(globalThis,prior);}
 }
 
@@ -98,4 +100,35 @@ test('merging other levels never borrows the verified level4 sound and failed ac
  assert.equal(soundForAction('aid-coins',before,after,{ok:true},config),null);
  after.board[0]={uid:99999,type:'202',cover:null};assert.equal(soundForAction('move',before,after,{ok:true},config),null);
  after.board[0].type='204';assert.equal(soundForAction('move',before,after,{ok:true},config),'merge-level-4');
+});
+
+test('source-backed scene requires its real choice, resumes the selected step and commits the chosen physical slot once',async()=>{
+ const saved=createPlay(config);saved.stage='home';saved.wallet.coins=26;
+ await harness(async({w,act,read,screen})=>{
+  await pause(380);act('game-continue');act('quest-start');act('game-task-build');assert.equal(screen(),'task-story');assert.equal(read().wallet.coins,26);
+  for(let i=0;i<30&&!w.document.querySelector('[data-play=game-scene-choice]');i++)act('game-scene-next');
+  assert.ok(w.document.querySelector('[data-play=game-scene-choice]'));act('game-scene-choice','2');
+  const script=structuredClone(read().screenFlow.task.script);act('game-task-hold');act('game-task-resume');assert.deepEqual(read().screenFlow.task.script,script);
+  for(let i=0;i<30&&!w.document.querySelector('[data-play=game-task-build]');i++)act('game-scene-next');
+  act('game-task-build');await pause(25);assert.equal(screen(),'task-reward');assert.equal(read().wallet.coins,0);assert.equal(read().screenFlow.decor['1_1'],'2');
+  act('game-task-close');act('game-decor-open');assert.equal(screen(),'decor');assert.ok(w.document.querySelector('img[alt*="技术"],img[alt*="기술"]'));assert.equal(read().questsDone,1);
+ },{saved,scenes:true});
+});
+
+test('real successful main-board orders advance the opt-in research pass while separate activity clocks keep updating',async()=>{
+ const saved=createPlay(config,{scenario:'initial',guide:true});playAction(saved,'start',null,config);
+ await harness(async({w,act,read,showMode})=>{
+  await pause(380);showMode('activities');act('activity:start');const first=w.document.querySelector('[data-activity-clock]').textContent;
+  await pause(1100);assert.notEqual(w.document.querySelector('[data-activity-clock]').textContent,first);
+  showMode('game');act('game-continue');for(const step of config.tutorialSteps){if(step.kind==='generate')act('game-cell',step.index);else act('move',`${step.from},${step.to}`);}act('deliver');
+  assert.equal(read().wallet.orders,1);assert.equal(read().activityPlay.pass.taskProgress,1);assert.deepEqual(read().activityPlay.ledger,{energy:0,gold:0,gem:0});
+ },{saved,activities:true});
+});
+
+test('defined invalid optional activity saves are preserved until a backed-up activity-only reset',async()=>{
+ const saved=createPlay(config);saved.stage='play';saved.activityPlay=null;saved.wallet.coins=27;
+ await harness(async({w,act,read,showMode})=>{
+  showMode('activities');assert.match(w.document.body.textContent,/활동 저장을 보존/);act('save');assert.equal(read().activityPlay,null);
+  act('activity:reset-invalid');assert.equal(read().activityPlay.schema,1);assert.equal(read().wallet.coins,27);assert.equal(JSON.parse(w.localStorage.getItem(SAVE_KEY+'-previous')).state.activityPlay,null);
+ },{saved,activities:true});
 });

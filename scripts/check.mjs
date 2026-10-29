@@ -1,5 +1,6 @@
 import {readFile,readdir,stat} from 'node:fs/promises';
 import path from 'node:path';
+import {createHash} from 'node:crypto';
 import {mergeResearch,DOMAIN_DEFS,selectDomainFacts} from '../src/domain-model.mjs';
 import {validMedia} from '../src/visual-model.mjs';
 const base=JSON.parse(await readFile('dist/data/research.json','utf8'));
@@ -55,3 +56,19 @@ if(refinement.studies.filter(s=>s.id.startsWith('motion-')).some(s=>s.publicRead
 for(const m of refinement.mediaEntries){if(!validMedia(m)||!m.originalSha256)throw new Error('Invalid refined capture '+m.key);await stat(path.join('dist',m.src));if(m.poster)await stat(path.join('dist',m.poster));}
 for(const clip of refinement.audio.clips){for(const src of [clip.src,clip.waveformImage.src,clip.spectrogram.src]){if(!/^\.\/assets\/media\/refinement\/audio\/[\w.-]+\.(mp3|svg|png)$/.test(src))throw new Error('Invalid curated audio asset path');await stat(path.join('dist',src));}}
 console.log(`Verified ${refinement.studies.length} refined studies, ${refinement.mediaEntries.length} capture derivatives and 14 bounded packaged audio excerpts; recorded audio remains unpublished.`);
+const scenes=JSON.parse(await readFile('dist/data/scene-config.json','utf8'));
+const completion=JSON.parse(await readFile('dist/data/media-completion.json','utf8'));
+const growth=JSON.parse(await readFile('dist/data/progress-extended.json','utf8'));
+const activities=JSON.parse(await readFile('dist/data/activity-play.json','utf8'));
+const activityMedia=JSON.parse(await readFile('dist/data/activity-media.json','utf8'));
+if(scenes.tasks.length!==60||scenes.summary.taskCommands!==742||scenes.summary.physicalChoiceVariants!==75||scenes.mediaEntries.length!==80)throw new Error('Incomplete packaged scene projection');
+if(completion.studies.length!==2||completion.mediaEntries.length!==12||completion.studies.some(s=>s.publicReady!==true))throw new Error('Incomplete media completion QA');
+for(const m of [...scenes.mediaEntries,...completion.mediaEntries]){
+ if(!validMedia(m))throw new Error('Invalid selected scene/motion asset '+m.key);
+ const bytes=await readFile(path.join('dist',m.src));if(createHash('sha256').update(bytes).digest('hex')!==m.sha256)throw new Error('Derivative hash mismatch '+m.key);
+ if(m.poster)await stat(path.join('dist',m.poster));
+}
+if(!growth.success||growth.final.level!==12||growth.final.quests!==60||growth.assistance.aidActions!==0||growth.assistance.paidEnergyPurchases!==0||growth.configRevision!==play.revision)throw new Error('Invalid extended natural progression');
+if(!growth.late?.success||growth.late.final.level!==21||growth.late.final.quests!==150||growth.late.assistance.aidActions!==0||growth.late.assistance.paidEnergyPurchases!==0)throw new Error('Invalid late natural progression');
+if(activities.event.items.length!==35||activities.event.sharedItems.length!==24||activityMedia.summary.eventUnavailable!==35||activityMedia.entries.length!==0)throw new Error('Invalid event image availability boundary');
+console.log('Verified 60 source scenes / 75 physical choice previews, 2 additional motion studies, Lv12/Lv21 growth and explicitly bounded activity play.');

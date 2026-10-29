@@ -5,14 +5,25 @@ import {onboardingConstraints} from './onboarding-model.mjs';
 import {readSession,writeSession,encodeSave,decodeSave,SAVE_KEY,MAX_OFFLINE_SECONDS} from './session-store.mjs';
 import {createScreenController} from './screen-controller.mjs';
 import {soundForAction} from './screen-flow.mjs';
+import {createActivityPlay,activityAction,recordActivityProgress,validActivityPlay,activityView} from './activity-play.mjs';
+import {renderActivityPlay} from './activity-page.mjs';
 
 export function createPlayController({getData,render,download}){
  let state,wallAt=0,storage,canWrite=true,ticker=null,notice='',drag=null,suppressClick=false,lastCheckpoint=0,skin='source';
  const config=()=>getData().playConfig;
  const screens=createScreenController({getState:()=>state,getConfig:config,getData,domain:commit,persist,render});
  function commit(action,value){
-  const before={coins:state.wallet.coins,uids:new Set(state.board.filter(Boolean).map(x=>x.uid))};
+  const [from,to]=action==='move'?String(value).split(',').map(Number):[state.selected,Number(value)];
+  const oldPair=['cell','move'].includes(action)&&from!==null&&from!==to&&state.board[from]&&state.board[to]&&state.board[from].type===state.board[to].type;
+  const before={coins:state.wallet.coins,orders:state.wallet.orders,energy:state.wallet.energy,gems:state.wallet.gems,uids:new Set(state.board.filter(Boolean).map(x=>x.uid))};
   const result=playAction(state,action,value,config());
+  const ac=getData().activityConfig,a=state.activityPlay;
+  if(result.ok&&ac&&a&&validActivityPlay(a,ac)&&!action.startsWith('aid-')&&action!=='time'){
+   const sequence=Math.max(Number.isSafeInteger(state.activityEventSequence)&&state.activityEventSequence>=0&&state.activityEventSequence<1e9?state.activityEventSequence:0,...Object.values(a.lastSequences))+1;state.activityEventSequence=sequence;
+   const fresh=state.board.some(x=>x&&!before.uids.has(x.uid)),merge=oldPair&&fresh;
+   const events=[['customer',state.wallet.orders-before.orders],['merge',merge?1:0],['energy',result.costEnergy&&result.debitSucceeded?result.requestedEnergy:Math.max(0,before.energy-state.wallet.energy)],['gold',action==='sell'?0:Math.max(0,state.wallet.coins-before.coins)],['gem',Math.max(0,before.gems-state.wallet.gems)]];
+   for(const [kind,count]of events)if(count>0)recordActivityProgress(a,{kind,count,sequence},ac,{now:state.wallet.time});
+  }
   if(skin==='game')screens.sound(soundForAction(action,before,state,result,config()));return result;
  }
  const options=()=>({revision:config().revision,now:Date.now(),validate:s=>validPlay(s,config())});
@@ -49,6 +60,17 @@ export function createPlayController({getData,render,download}){
  function handle(action,value){
   const disclosures=[...document.querySelectorAll('.source-play details,.game-play details')].map((node,i)=>({i,open:node.open}));
   ensure();syncTime();notice='';
+  if(action.startsWith('activity:')){
+   const ac=getData().activityConfig,kind=action.slice(9);if(!ac)return;
+   if(kind==='reset-invalid'){if(backup()){state.activityPlay=createActivityPlay(ac);notice='기존 저장을 백업하고 활동 연구 상태를 새로 만들었습니다.';}}
+   else{
+    if(state.activityPlay===undefined)state.activityPlay=createActivityPlay(ac);
+    if(kind==='open-pack')value=document.querySelector('[data-activity-card]')?.value;
+    if(kind==='event-research-item')value=document.querySelector('[data-activity-type]')?.value;
+    const r=activityAction(state.activityPlay,kind,value,ac,{now:state.wallet.time});notice=r.message;
+   }
+   persist();render();return;
+  }
   if(skin==='game'&&screens.handle(action,value)){persist();render();return;}
   if(skin==='game'&&screens.blocked(action)){notice='현재 장면을 마치거나 맵으로 돌아간 뒤 조작하세요.';render();return;}
   if(action==='new-game'){
@@ -114,7 +136,11 @@ export function createPlayController({getData,render,download}){
  function beforeRender(){if(ticker)window.clearInterval(ticker);ticker=null;stopDrag();screens.beforeRender();}
  function afterMount(){
   if(skin==='game')screens.afterMount();
-  document.body.dataset.playFocus=String(Boolean(state?.focused));
+  document.body.dataset.playFocus=String(skin==='activities'?false:Boolean(state?.focused));
+  if(skin==='activities'&&state?.activityPlay&&validActivityPlay(state.activityPlay,getData().activityConfig)){
+   let phase=activityView(state.activityPlay,getData().activityConfig,{now:state.wallet.time}).phase;
+   ticker=window.setInterval(()=>{syncTime();const v=activityView(state.activityPlay,getData().activityConfig,{now:state.wallet.time});const clock=document.querySelector('[data-activity-clock]');if(clock)clock.textContent=v.phase==='Started'?`플레이 남은 시간 ${Math.floor(v.remainingSeconds/60)}:${String(v.remainingSeconds%60).padStart(2,'0')}`:v.phase;if(Date.now()-lastCheckpoint>=15000){persist();lastCheckpoint=Date.now();}if(v.phase!==phase){phase=v.phase;persist();render();}},1000);
+  }
   for(const id of ['play-dialog','tool-dialog']){const dialog=document.getElementById(id);if(dialog&&!dialog.open){dialog.showModal();dialog.addEventListener('cancel',ev=>{ev.preventDefault();handle(id==='tool-dialog'?'cancel-tool':state.modal==='energy'?'close-energy':state.modal==='offer'?'close-offer':state.modal==='inventory'?'close-inventory':state.modal==='item-info'?'close-info':state.modal==='choice'?'close-choice':'close-shop');});}}
   if(document.querySelector('.game-phone')&&['play','home'].includes(state?.stage)){
    const signature=()=>JSON.stringify([state.board.map(c=>c&&[c.uid,c.type]),Object.values(state.generatorState).map(r=>r.charges),state.wallet.price,state.orders?.slots.map(o=>o.id),state.onboarding?.phases,Object.values(state.generatorState).map(r=>r.phase)]);
@@ -145,5 +171,13 @@ export function createPlayController({getData,render,download}){
   catch{state.storageMessage='상태 파일을 읽지 못했습니다. 기존 실험을 유지합니다.';render();}
  });
  window.addEventListener('pagehide',()=>{if(state){syncTime();persist();}});
- return {render(nextSkin='source'){skin=nextSkin;ensure();const options=skin==='game'?screens.renderOptions():{};return skin==='game'?renderGamePlay(state,config(),getData(),{...options,notice:notice||options.notice}):renderSourcePlay(state,config(),getData());},handle,afterMount,beforeRender};
+ return {render(nextSkin='source'){skin=nextSkin;ensure();
+  if(skin==='activities'){
+   const ac=getData().activityConfig;if(!ac)return '<p>활동 자료를 준비하고 있습니다.</p>';
+   if(state.activityPlay===undefined)state.activityPlay=createActivityPlay(ac);
+   if(!validActivityPlay(state.activityPlay,ac))return '<section><h1>활동 저장을 보존했습니다</h1><p>호환되지 않는 연구 활동 상태입니다. 현재 상태 JSON을 보관한 뒤 활동만 다시 시작할 수 있습니다. 메인 보드는 유지합니다.</p><button class="button" data-play="export">현재 상태 JSON</button><button class="button" data-play="activity:reset-invalid">백업하고 활동 초기화</button></section>';
+   const activity=activityView(state.activityPlay,ac,{now:state.wallet.time});
+   return renderActivityPlay(state.activityPlay,ac,getData(),{now:state.wallet.time})+`<p class="game-feedback" role="status">${String(notice).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</p>`;
+  }
+  const options=skin==='game'?screens.renderOptions():{};return skin==='game'?renderGamePlay(state,config(),getData(),{...options,notice:notice||options.notice}):renderSourcePlay(state,config(),getData());},handle,afterMount,beforeRender};
 }

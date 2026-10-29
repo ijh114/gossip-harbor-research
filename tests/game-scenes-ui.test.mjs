@@ -34,6 +34,25 @@ test('application buttons connect game scenes, dialog focus, spatial preview, ta
   click('[data-play=game-new-cancel]');assert.equal(w.document.activeElement.dataset.play,'game-new-prompt');assert.equal(saved().tutorialStep,1);
   click('[data-play=game-new-prompt]');click('#game-new-dialog [data-play=new-game]');assert.equal(screen(),'opening');
   assert.equal(JSON.parse(w.localStorage.getItem(SAVE_KEY+'-previous')).state.tutorialStep,1);assert.equal(saved().tutorialStep,0);
+  click('[data-play-mode=activities]');click('[data-activity=start]');
+  for(let i=0;i<3;i++)click('[data-activity=research-progress]');
+  click('[data-activity=claim-pass][data-value="1:free"]');assert.equal(saved().activityPlay.ledger.energy,5);
+  assert.equal(w.document.querySelector('[data-activity=claim-pass][data-value="1:free"]').disabled,true);
+  click('[data-activity=tab][data-value=album]');
+  for(let i=1;i<=3;i++){w.document.querySelector('[data-activity-card]').value='research-card-'+i;click('[data-activity=open-pack]');}
+  assert.equal(saved().activityPlay.album.albumClaimed,true);assert.equal(saved().wallet.coins,0);
+  click('[data-activity=tab][data-value=event]');assert.equal(w.document.querySelectorAll('.activity-cell').length,72);
+  click('[data-activity=event-pop]');click('[data-activity=event-pop]');
+  for(const [from,to]of [[67,66],[66,60],[60,23],[23,8],[68,62],[62,56]]){
+   const selected=w.document.querySelector('.activity-cell[aria-pressed=true]');if(selected&&Number(selected.dataset.value)!==from)selected.click();
+   if(!w.document.querySelector(`.activity-cell[aria-pressed=true][data-value="${from}"]`))click(`[data-activity=event-cell][data-value="${from}"]`);
+   click(`[data-activity=event-cell][data-value="${to}"]`);
+  }
+  click('[data-activity=event-claim]');assert.equal(saved().activityPlay.event.goalClaimed,true);assert.equal(saved().wallet.coins,0);
+  w.location.hash='#scene-analysis?task=1_4';await until(()=>w.document.querySelector('[data-scene-select]'));
+  assert.equal(w.document.querySelectorAll('.scene-variant-grid img').length,3);
+  w.document.querySelector('[data-scene-select]').value='intro_timeline';w.document.querySelector('[data-scene-select]').dispatchEvent(new w.Event('change',{bubbles:true}));
+  assert.match(w.document.querySelector('#app-view').textContent,/CG의 정적 레이어/);
   assert.deepEqual(errors,[]);
  }finally{w.dispatchEvent(new w.Event('pagehide'));dom.window.close();Object.assign(globalThis,prior);}
 });

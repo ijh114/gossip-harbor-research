@@ -1,4 +1,5 @@
 import {screenFlow,beginOpening,beginTaskScene,finishTaskScene,leaveScene,flowBlocksInput,SPACES} from './screen-flow.mjs';
+import {sourceScene,sceneCursor,chooseSceneVariant,advanceScene,canCommitScene,commitSceneChoices} from './scene-script.mjs';
 
 export function createScreenController({getState,getConfig,getData,domain,persist,render}){
  let booted=false,loading=false,entry=true,taskList=false,newPrompt=false,timer=null,lastScreen='',audio=null,soundFailure='',returnFocus=null;
@@ -16,8 +17,9 @@ export function createScreenController({getState,getConfig,getData,domain,persis
  function refresh(){persist();render();}
  function finish(){
   const f=flow();if(f.phase!=='task-building')return;
+  const scene=sourceScene(getData().sceneConfig,f.task?.id);if(scene&&!canCommitScene(f.task,scene)){f.phase='task-story';return;}
   const result=domain('quest-finish');
-  if(result.ok)finishTaskScene(state(),config());else{f.phase='task-story';soundFailure=result.message;}
+  if(result.ok){if(scene)commitSceneChoices(f,f.task,scene);finishTaskScene(state(),config());}else{f.phase='task-story';soundFailure=result.message;}
  }
  function handle(action,value){
   const s=state(),f=flow();
@@ -44,8 +46,19 @@ export function createScreenController({getState,getConfig,getData,domain,persis
    if(f.phase==='map')beginTaskScene(s,config());return true;
   }
   if(action==='game-task-build'){
-   if(f.phase==='task-story'&&s.pendingQuest?.id===f.task?.id){f.phase='task-building';sound('renovate');}return true;
+   const scene=sourceScene(getData().sceneConfig,f.task?.id);
+   if(f.phase==='task-story'&&s.pendingQuest?.id===f.task?.id&&(!scene||canCommitScene(f.task,scene))){f.phase='task-building';sound('renovate');}return true;
   }
+  if(action==='game-scene-choice'||action==='game-scene-next'){
+   const scene=sourceScene(getData().sceneConfig,f.task?.id);if(f.phase!=='task-story'||!scene)return true;
+   if(action==='game-scene-choice'){chooseSceneVariant(f.task,scene,String(value));returnFocus=`[data-play="game-scene-choice"][data-value="${['1','2','3'].includes(String(value))?value:'1'}"]`;}
+   else if(advanceScene(f.task,scene)){sound('dialogue-pop');returnFocus='#game-scene-heading';}return true;
+  }
+  if(action==='game-decor-open'){if(f.phase==='map')f.phase='decor';return true;}
+  if(action==='game-decor-close'){if(f.phase==='decor')f.phase='map';return true;}
+  if(action==='game-map-pan'&&f.phase==='map'){const step={left:[-5,0],right:[5,0],up:[0,-5],down:[0,5]}[value];if(step){f.view.x=Math.max(-25,Math.min(25,f.view.x+step[0]));f.view.y=Math.max(-25,Math.min(25,f.view.y+step[1]));}return true;}
+  if(action==='game-map-zoom'&&f.phase==='map'){f.view.zoom=Math.max(1,Math.min(1.8,Number(value)||1));return true;}
+  if(action==='game-map-reset'&&f.phase==='map'){f.view={x:0,y:0,zoom:1};return true;}
   if(action==='game-task-finish'){finish();return true;}
   if(action==='game-task-close'){if(f.phase==='task-reward')leaveScene(s,config());return true;}
   if(action==='game-task-hold'){if(['task-story','task-building'].includes(f.phase))leaveScene(s,config());return true;}
@@ -78,7 +91,7 @@ export function createScreenController({getState,getConfig,getData,domain,persis
   else if(returnFocus)root.querySelector(returnFocus)?.focus({preventScroll:true});
   returnFocus=null;
  }
- function snapshot(){const s=state(),f=flow();return JSON.stringify([s.questsDone,s.pendingQuest?.id,f.phase,f.task?.id,f.space]);}
+ function snapshot(){const s=state(),f=flow();return JSON.stringify([s.questsDone,s.pendingQuest?.id,f.phase,f.task?.id,f.task?.script?.index,f.space]);}
  document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAudio();});
  window.addEventListener('pagehide',stopAudio);
  return {handle,blocked,beforeRender,afterMount,sound,

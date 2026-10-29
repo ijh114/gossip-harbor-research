@@ -1,0 +1,1833 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "scope": "Explicit research activities alongside the original-rule main board. Actual server seasons, pack odds, schedules and reward tables are not supplied.",
+  "scenario": {
+    "id": "research-activities-v1",
+    "label": "연구 시나리오 · 실제 시즌 아님",
+    "durationSeconds": 600,
+    "claimSeconds": 300,
+    "pass": {
+      "taskTarget": "customer",
+      "taskCount": 2,
+      "taskTokens": 1,
+      "rows": [
+        {
+          "require": 3,
+          "free": [
+            {
+              "type": "energy",
+              "count": 5
+            }
+          ],
+          "premium": [
+            {
+              "type": "gem",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "require": 5,
+          "free": [
+            {
+              "type": "gold",
+              "count": 10
+            }
+          ],
+          "premium": [
+            {
+              "type": "energy",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "require": 8,
+          "free": [
+            {
+              "type": "energy",
+              "count": 10
+            }
+          ],
+          "premium": [
+            {
+              "type": "gem",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    },
+    "album": {
+      "ordersPerPack": 3,
+      "packSize": 1,
+      "cards": [
+        {
+          "id": "research-card-1",
+          "name": "가게",
+          "setId": "research-set-1"
+        },
+        {
+          "id": "research-card-2",
+          "name": "정원",
+          "setId": "research-set-1"
+        },
+        {
+          "id": "research-card-3",
+          "name": "해변",
+          "setId": "research-set-1"
+        }
+      ],
+      "sets": [
+        {
+          "id": "research-set-1",
+          "name": "첫 공간",
+          "cards": [
+            "research-card-1",
+            "research-card-2",
+            "research-card-3"
+          ],
+          "reward": [
+            {
+              "type": "energy",
+              "count": 20
+            }
+          ]
+        }
+      ],
+      "albumReward": [
+        {
+          "type": "gold",
+          "count": 20
+        }
+      ]
+    },
+    "event": {
+      "goalMerges": 6,
+      "goalReward": [
+        {
+          "type": "gold",
+          "count": 10
+        }
+      ],
+      "starterQueue": [
+        {
+          "type": "adv_dogparkpure_tar_1",
+          "count": 2
+        }
+      ],
+      "starterBoundary": "시작 조각2개는 웹 실험 입력입니다. 서버 지급이나 원작 초기 대기열이 아닙니다."
+    }
+  },
+  "event": {
+    "id": "dogparkpure",
+    "title": "강아지 공원 · APK 보드 실험",
+    "origin": "packaged-config-projection",
+    "columns": 6,
+    "visibleRows": 8,
+    "rows": 12,
+    "board": [
+      {
+        "type": "adv_dogparkpure_feed_1",
+        "cover": "box",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "main_super_gold_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_book_5",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "main_super_energy_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "cover": "web",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "cover": "web",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_book_5",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "main_super_energy_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_3",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_book_5",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "main_super_gold_6",
+        "cover": "web",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_feed_1",
+        "cover": "box",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_3",
+        "cover": "web",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_book_2",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_book_5",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "main_super_energy_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "main_super_gold_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_feed_1",
+        "cover": "box",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_book_2",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_book_2",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "main_super_gold_5",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_feed_1",
+        "cover": "box",
+        "innerCover": null
+      },
+      {
+        "type": "main_super_energy_5",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_book_1",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_book_2",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "main_super_energy_4",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_baby_1",
+        "cover": "box",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_2",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_2",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_2",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_2",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_2",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_2",
+        "cover": "web",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_1",
+        "cover": "web",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_1",
+        "cover": "web",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_2",
+        "cover": "web",
+        "innerCover": null
+      },
+      {
+        "type": "adv_dogparkpure_tar_2",
+        "cover": "box",
+        "innerCover": "web"
+      },
+      {
+        "type": "adv_dogparkpure_tar_1",
+        "cover": "web",
+        "innerCover": null
+      },
+      null,
+      null,
+      null,
+      null,
+      {
+        "type": "adv_dogparkpure_tar_1",
+        "cover": "web",
+        "innerCover": null
+      }
+    ],
+    "items": [
+      {
+        "type": "adv_dogparkpure_tar_1",
+        "next": "adv_dogparkpure_tar_2",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_2",
+        "next": "adv_dogparkpure_tar_3",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_3",
+        "next": "adv_dogparkpure_tar_4",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "next": "adv_dogparkpure_tar_5",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_5",
+        "next": "adv_dogparkpure_tar_6",
+        "auto": true,
+        "pool": [
+          {
+            "type": "main_super_gold_1",
+            "count": 2
+          }
+        ],
+        "weightType": 2,
+        "batch": 2,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "next": "adv_dogparkpure_tar_7",
+        "auto": true,
+        "pool": [
+          {
+            "type": "main_super_gold_2",
+            "count": 1
+          },
+          {
+            "type": "main_super_energy_2",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 2,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_7",
+        "next": "adv_dogparkpure_tar_8",
+        "auto": true,
+        "pool": [
+          {
+            "type": "main_super_gold_2",
+            "count": 1
+          },
+          {
+            "type": "main_super_gold_1",
+            "count": 1
+          },
+          {
+            "type": "main_super_energy_2",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 3,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_8",
+        "next": "adv_dogparkpure_tar_9",
+        "auto": true,
+        "pool": [
+          {
+            "type": "main_super_gold_2",
+            "count": 1
+          },
+          {
+            "type": "main_super_gold_1",
+            "count": 1
+          },
+          {
+            "type": "main_super_energy_2",
+            "count": 2
+          },
+          {
+            "type": "adv_dogparkpure_book_1",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 5,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_9",
+        "next": "adv_dogparkpure_tar_10",
+        "auto": true,
+        "pool": [
+          {
+            "type": "main_super_gold_1",
+            "count": 1
+          },
+          {
+            "type": "main_super_gold_2",
+            "count": 1
+          },
+          {
+            "type": "main_super_energy_2",
+            "count": 2
+          },
+          {
+            "type": "main_gem_super_1",
+            "count": 2
+          },
+          {
+            "type": "adv_dogparkpure_book_1",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 7,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_10",
+        "next": "adv_dogparkpure_tar_11",
+        "auto": true,
+        "pool": [
+          {
+            "type": "main_super_gold_2",
+            "count": 1
+          },
+          {
+            "type": "main_super_gold_1",
+            "count": 2
+          },
+          {
+            "type": "main_super_energy_2",
+            "count": 3
+          },
+          {
+            "type": "main_gem_super_2",
+            "count": 1
+          },
+          {
+            "type": "main_gem_super_1",
+            "count": 2
+          },
+          {
+            "type": "adv_dogparkpure_book_1",
+            "count": 2
+          }
+        ],
+        "weightType": 2,
+        "batch": 11,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_11",
+        "next": "adv_dogparkpure_tar_12",
+        "auto": true,
+        "pool": [
+          {
+            "type": "main_super_gold_2",
+            "count": 2
+          },
+          {
+            "type": "main_super_gold_1",
+            "count": 4
+          },
+          {
+            "type": "main_super_energy_3",
+            "count": 1
+          },
+          {
+            "type": "main_super_energy_2",
+            "count": 1
+          },
+          {
+            "type": "main_gem_super_3",
+            "count": 1
+          },
+          {
+            "type": "main_gem_super_1",
+            "count": 2
+          },
+          {
+            "type": "adv_dogparkpure_book_1",
+            "count": 2
+          }
+        ],
+        "weightType": 2,
+        "batch": 13,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_tar_12",
+        "next": null,
+        "auto": false,
+        "pool": [
+          {
+            "type": "main_super_gold_4",
+            "count": 5
+          },
+          {
+            "type": "main_super_energy_4",
+            "count": 5
+          },
+          {
+            "type": "main_gem_super_4",
+            "count": 5
+          },
+          {
+            "type": "adv_dogparkpure_book_1",
+            "count": 3
+          }
+        ],
+        "weightType": 2,
+        "batch": 18,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_book_1",
+        "next": "adv_dogparkpure_book_2",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_book_2",
+        "next": "adv_dogparkpure_book_3",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_book_3",
+        "next": "adv_dogparkpure_book_4",
+        "auto": true,
+        "pool": [
+          {
+            "type": "adv_dogparkpure_letter_1",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 1,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_book_4",
+        "next": "adv_dogparkpure_book_5",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_book_5",
+        "next": "adv_dogparkpure_book_6",
+        "auto": true,
+        "pool": [
+          {
+            "type": "main_super_energy_2",
+            "count": 1
+          },
+          {
+            "type": "main_gem_super_1",
+            "count": 2
+          }
+        ],
+        "weightType": 2,
+        "batch": 3,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_book_6",
+        "next": "adv_dogparkpure_book_7",
+        "auto": true,
+        "pool": [
+          {
+            "type": "main_super_gold_2",
+            "count": 1
+          },
+          {
+            "type": "main_super_energy_2",
+            "count": 2
+          },
+          {
+            "type": "main_gem_super_2",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 4,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_book_7",
+        "next": "adv_dogparkpure_book_8",
+        "auto": true,
+        "pool": [
+          {
+            "type": "main_super_gold_2",
+            "count": 1
+          },
+          {
+            "type": "main_super_gold_1",
+            "count": 2
+          },
+          {
+            "type": "main_super_energy_2",
+            "count": 1
+          },
+          {
+            "type": "main_super_energy_3",
+            "count": 1
+          },
+          {
+            "type": "main_gem_super_2",
+            "count": 2
+          }
+        ],
+        "weightType": 2,
+        "batch": 7,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_book_8",
+        "next": null,
+        "auto": false,
+        "pool": [
+          {
+            "type": "main_gem_super_3",
+            "count": 4
+          },
+          {
+            "type": "main_super_energy_4",
+            "count": 1
+          },
+          {
+            "type": "main_super_energy_3",
+            "count": 2
+          },
+          {
+            "type": "main_super_gold_3",
+            "count": 6
+          }
+        ],
+        "weightType": 2,
+        "batch": 13,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_baby_1",
+        "next": null,
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [
+          {
+            "type": "adv_dogparkpure_baby_a_f_1",
+            "count": 10
+          }
+        ],
+        "feeds": [
+          {
+            "type": "adv_dogparkpure_feed_1",
+            "count": 10
+          }
+        ],
+        "feedCount": 1
+      },
+      {
+        "type": "adv_dogparkpure_baby_a_1",
+        "next": null,
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [
+          {
+            "type": "adv_dogparkpure_baby_b_f_1",
+            "count": 10
+          }
+        ],
+        "feeds": [
+          {
+            "type": "adv_dogparkpure_feed_1",
+            "count": 10
+          }
+        ],
+        "feedCount": 1
+      },
+      {
+        "type": "adv_dogparkpure_baby_a_f_1",
+        "next": null,
+        "auto": false,
+        "pool": [
+          {
+            "type": "adv_dogparkpure_tar_2",
+            "count": 5
+          },
+          {
+            "type": "adv_dogparkpure_letter_1",
+            "count": 4
+          },
+          {
+            "type": "adv_dogparkpure_score_1",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 10,
+        "cost": 0,
+        "transformAfter": 10,
+        "transforms": [
+          {
+            "type": "adv_dogparkpure_baby_a_1",
+            "count": 10
+          }
+        ],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_baby_b_1",
+        "next": null,
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [
+          {
+            "type": "adv_dogparkpure_baby_c_f_1",
+            "count": 10
+          }
+        ],
+        "feeds": [
+          {
+            "type": "adv_dogparkpure_feed_1",
+            "count": 10
+          }
+        ],
+        "feedCount": 1
+      },
+      {
+        "type": "adv_dogparkpure_baby_b_f_1",
+        "next": null,
+        "auto": false,
+        "pool": [
+          {
+            "type": "adv_dogparkpure_tar_2",
+            "count": 3
+          },
+          {
+            "type": "adv_dogparkpure_tar_3",
+            "count": 3
+          },
+          {
+            "type": "adv_dogparkpure_letter_1",
+            "count": 4
+          },
+          {
+            "type": "adv_dogparkpure_score_1",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 11,
+        "cost": 0,
+        "transformAfter": 11,
+        "transforms": [
+          {
+            "type": "adv_dogparkpure_baby_b_1",
+            "count": 10
+          }
+        ],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_baby_c_1",
+        "next": null,
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [
+          {
+            "type": "adv_dogparkpure_baby_d_1",
+            "count": 10
+          }
+        ],
+        "feeds": [
+          {
+            "type": "adv_dogparkpure_feed_1",
+            "count": 10
+          }
+        ],
+        "feedCount": 1
+      },
+      {
+        "type": "adv_dogparkpure_baby_c_f_1",
+        "next": null,
+        "auto": false,
+        "pool": [
+          {
+            "type": "adv_dogparkpure_tar_2",
+            "count": 4
+          },
+          {
+            "type": "adv_dogparkpure_tar_3",
+            "count": 4
+          },
+          {
+            "type": "adv_dogparkpure_book_1",
+            "count": 1
+          },
+          {
+            "type": "adv_dogparkpure_letter_1",
+            "count": 4
+          },
+          {
+            "type": "adv_dogparkpure_score_1",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 14,
+        "cost": 0,
+        "transformAfter": 14,
+        "transforms": [
+          {
+            "type": "adv_dogparkpure_baby_c_1",
+            "count": 10
+          }
+        ],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_baby_d_1",
+        "next": null,
+        "auto": false,
+        "pool": [
+          {
+            "type": "rb#pack_common_2",
+            "count": 1
+          },
+          {
+            "type": "adv_dogparkpure_book_1",
+            "count": 3
+          },
+          {
+            "type": "adv_dogparkpure_letter_1",
+            "count": 4
+          },
+          {
+            "type": "adv_dogparkpure_score_1",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 9,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_feed_1",
+        "next": null,
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_letter_1",
+        "next": "adv_dogparkpure_letter_2",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_letter_2",
+        "next": "adv_dogparkpure_letter_3",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_letter_3",
+        "next": null,
+        "auto": false,
+        "pool": [
+          {
+            "type": "main_pack_laser_5_1",
+            "count": 1
+          }
+        ],
+        "weightType": 2,
+        "batch": 1,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_score_1",
+        "next": "adv_dogparkpure_score_2",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_score_2",
+        "next": "adv_dogparkpure_score_3",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      },
+      {
+        "type": "adv_dogparkpure_score_3",
+        "next": null,
+        "auto": false,
+        "pool": [
+          {
+            "type": "main_super_gold_3",
+            "count": 3
+          },
+          {
+            "type": "main_super_gold_4",
+            "count": 1
+          },
+          {
+            "type": "main_super_energy_3",
+            "count": 3
+          },
+          {
+            "type": "main_super_energy_4",
+            "count": 1
+          },
+          {
+            "type": "main_gem_super_3",
+            "count": 2
+          },
+          {
+            "type": "main_gem_super_4",
+            "count": 1
+          },
+          {
+            "type": "adv_dogparkpure_book_1",
+            "count": 2
+          },
+          {
+            "type": "adv_dogparkpure_letter_1",
+            "count": 2
+          }
+        ],
+        "weightType": 2,
+        "batch": 15,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0
+      }
+    ],
+    "boundaries": [
+      "12행 배치 전체를 표시하고 실제6×8창·스크롤/포그 해금은 재현하지 않습니다.",
+      "시작 조각과 목표·완료 보상은 명시된 웹 연구 입력이며 원작 시즌표가 아닙니다.",
+      "동봉 ItemModelConfig의 합성·유한 생성 풀·먹이1개 변환만 지원합니다.",
+      "자동 생성은 한 번씩 누르는 관측 단계로 진행합니다. 원작 프레임·주기·자동 실행을 측정한 것이 아닙니다.",
+      "원본 이벤트 이미지 미연결 타입은 이름과 ID로 표시합니다.",
+      "공용 재화 체인의 동봉 합성·수집값은 별도 연구 장부에 기록합니다. 미확인 카드팩 결과를 추첨하지 않습니다."
+    ],
+    "sharedItems": [
+      {
+        "type": "main_gem_super_1",
+        "next": "main_gem_super_2",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": []
+      },
+      {
+        "type": "main_gem_super_2",
+        "next": "main_gem_super_3",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gem",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "main_gem_super_3",
+        "next": "main_gem_super_4",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gem",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "type": "main_gem_super_4",
+        "next": "main_gem_super_5",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gem",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "type": "main_gem_super_5",
+        "next": "main_gem_super_6",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gem",
+            "count": 15
+          }
+        ]
+      },
+      {
+        "type": "main_gem_super_6",
+        "next": "main_gem_super_7",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gem",
+            "count": 31
+          }
+        ]
+      },
+      {
+        "type": "main_gem_super_7",
+        "next": "main_gem_super_8",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gem",
+            "count": 65
+          }
+        ]
+      },
+      {
+        "type": "main_gem_super_8",
+        "next": null,
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gem",
+            "count": 150
+          }
+        ]
+      },
+      {
+        "type": "main_super_energy_1",
+        "next": "main_super_energy_2",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": []
+      },
+      {
+        "type": "main_super_energy_2",
+        "next": "main_super_energy_3",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "energy",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "type": "main_super_energy_3",
+        "next": "main_super_energy_4",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "energy",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "type": "main_super_energy_4",
+        "next": "main_super_energy_5",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "energy",
+            "count": 10
+          }
+        ]
+      },
+      {
+        "type": "main_super_energy_5",
+        "next": "main_super_energy_6",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "energy",
+            "count": 20
+          }
+        ]
+      },
+      {
+        "type": "main_super_energy_6",
+        "next": "main_super_energy_7",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "energy",
+            "count": 50
+          }
+        ]
+      },
+      {
+        "type": "main_super_energy_7",
+        "next": "main_super_energy_8",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "energy",
+            "count": 120
+          }
+        ]
+      },
+      {
+        "type": "main_super_energy_8",
+        "next": null,
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "energy",
+            "count": 300
+          }
+        ]
+      },
+      {
+        "type": "main_super_gold_1",
+        "next": "main_super_gold_2",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": []
+      },
+      {
+        "type": "main_super_gold_2",
+        "next": "main_super_gold_3",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gold",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "type": "main_super_gold_3",
+        "next": "main_super_gold_4",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gold",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "type": "main_super_gold_4",
+        "next": "main_super_gold_5",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gold",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "type": "main_super_gold_5",
+        "next": "main_super_gold_6",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gold",
+            "count": 15
+          }
+        ]
+      },
+      {
+        "type": "main_super_gold_6",
+        "next": "main_super_gold_7",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gold",
+            "count": 35
+          }
+        ]
+      },
+      {
+        "type": "main_super_gold_7",
+        "next": "main_super_gold_8",
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gold",
+            "count": 85
+          }
+        ]
+      },
+      {
+        "type": "main_super_gold_8",
+        "next": null,
+        "auto": false,
+        "pool": [],
+        "weightType": null,
+        "batch": 0,
+        "cost": 0,
+        "transformAfter": null,
+        "transforms": [],
+        "feeds": [],
+        "feedCount": 0,
+        "collectRewards": [
+          {
+            "type": "gold",
+            "count": 200
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "pass",
+      "path": "analysis/lua/Lua_Activity/PassActivity/Model/PassActivityModel.lua",
+      "lineStart": 37,
+      "lineEnd": 63,
+      "sha256": "3587274cf8ab4269a87f9de5b560126154c21afb5ecaeb500aa877b980b37a9f",
+      "kind": "static-code",
+      "anchors": [
+        "37–63",
+        "675–689",
+        "755–795"
+      ]
+    },
+    {
+      "id": "album",
+      "path": "analysis/lua/Lua_Activity/AlbumActivity/Model/AlbumActivityModel.lua",
+      "lineStart": 1567,
+      "lineEnd": 1655,
+      "sha256": "b103213429d85a45936769769811ff0ee3b3ef22f99815a5c3332dfb2b9d9d74",
+      "kind": "static-code"
+    },
+    {
+      "id": "event-board",
+      "path": "analysis/config-tables/AdventureBoardModelConfig_dogparkpure.json",
+      "lineStart": 1,
+      "lineEnd": 105,
+      "sha256": "167b646b0be422a82e51631c2f0f86940ec5e490a9c32d608657065ae2e182b5",
+      "kind": "packaged-config"
+    },
+    {
+      "id": "event-items",
+      "path": "analysis/config-tables/AdventureItemModelConfig_dogparkpure.json",
+      "lineStart": 1,
+      "lineEnd": 1839,
+      "sha256": "1f38f7b3193c593b892579f6ff9eb2cbe27e2ff57f68897d4ead9e20c0f40574",
+      "kind": "packaged-config"
+    },
+    {
+      "id": "event-window",
+      "path": "analysis/lua/Lua_Activity/AdventureActivity/Board/AdventureActivityBoardModel.lua",
+      "lineStart": 1,
+      "lineEnd": 58,
+      "sha256": "b2282ba6594db4db78aee086ac09210088aaecaee13412ee27b434f5a5a2be8a",
+      "kind": "static-code"
+    },
+    {
+      "id": "paper-box",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemPaperBox.lua",
+      "lineStart": 15,
+      "lineEnd": 29,
+      "sha256": "a5468609f1990ae888dfaa61f62d8c50e608b4cc9aa33bf7ef6b6f06d70d1422",
+      "kind": "static-code"
+    },
+    {
+      "id": "board-merge",
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+      "anchors": [
+        "182–260"
+      ],
+      "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+      "kind": "static-code"
+    },
+    {
+      "id": "spread-deck",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+      "anchors": [
+        "354–356",
+        "929–940"
+      ],
+      "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+      "kind": "static-code"
+    },
+    {
+      "id": "shared-rewards",
+      "path": "analysis/config-tables/ItemModelConfig.json",
+      "sha256": "9c9463a970e3097beff553cf08e0c1a37d5e83ecc18711a1d5a3928ddfc86eb7",
+      "kind": "packaged-config",
+      "selection": "main_super_gold_*, main_super_energy_*, main_gem_super_* rows; full source hash"
+    }
+  ],
+  "unknown": [
+    "실제 시즌 일정·레벨/계정 배정·패스 보상표·팩 확률·앨범 카드목록·이벤트 메인 주문 배출 비율",
+    "포그/스크롤·전체 보상 환산·특수 도구·활동 전용 모든 튜토리얼"
+  ],
+  "revision": "7468f4acc2f16e2cd5d1a8ae64b8bdedcf6c3847b88804a81287b7971aaf0c68"
+}

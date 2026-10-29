@@ -1,0 +1,1751 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "scope": "Selected representative event image availability and verified shared resource imagery. No remote downloads or inferred aliases.",
+  "summary": {
+    "eventTypes": 35,
+    "eventAvailable": 0,
+    "eventUnavailable": 35,
+    "sharedExistingVerified": 24,
+    "newImageFiles": 0,
+    "otherThemeTablesChecked": 17,
+    "otherThemeEventImagesMatched": 0
+  },
+  "entries": [],
+  "types": [
+    {
+      "type": "adv_dogparkpure_tar_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "d1e6e4f028c458e4a9ddf02bd7bcced8",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_2",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_2",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_2"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_2",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_2.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "639cbd20680b36241bb4594aa6515a6b",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_3",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_3",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_3"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_3",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_3.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "9ea2d9563ab2d2f4da55b9354a0daf3e",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_4",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_4",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_4"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_4",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_4.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "d5d3b3e41ae49634d83fa28e02af81dd",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_5",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_5",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_5"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_5",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_5.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "c67df0f45c47c64499dc13c8a01277f3",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_6",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_6",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_6"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_6",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_6.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "acdf39afbd640bd43b5f10a27ddbc0ce",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_7",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_7",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_7"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_7",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_7.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "74dfe10188c301f429cd1ae1246392de",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_8",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_8",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_8"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_8",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_8.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "a51994716fa281f44bc37ab326f990f3",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_9",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_9",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_9"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_9",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_9.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "cf0c5b4405565a147b37feea9bd51797",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_10",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_10",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_10"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_10",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_10.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "246519bc124eb4740ab78b435d9ced22",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_11",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_11",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_11"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_11",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_11.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "52895205c1f37b7458e80af8e39d5d5e",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_tar_12",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_tar_12",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_tar_12"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_tar_12",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_tar_12.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "2ef50ec92a2063f4398ac763e006b125",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_book_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_book_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_book_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_book_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_book_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "7850078364a1ba34f9d78174882e173d",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_book_2",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_book_2",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_book_2"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_book_2",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_book_2.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "c71bb18fe5a18de49bfcfd061482da81",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_book_3",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_book_3",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_book_3"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_book_3",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_book_3.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "824d55b55e39a0e44a8896bdbf6ab6bf",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_book_4",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_book_4",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_book_4"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_book_4",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_book_4.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "e3d3a0fe2db322d43b487a0d275c3765",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_book_5",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_book_5",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_book_5"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_book_5",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_book_5.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "9a3919e3a3c5f114381dbef3b1485878",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_book_6",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_book_6",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_book_6"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_book_6",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_book_6.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "06b6132e068c422459af7c2c4a537332",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_book_7",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_book_7",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_book_7"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_book_7",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_book_7.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "32cd5dbb50aed254aa7e63959c52f1a0",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_book_8",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_book_8",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_book_8"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_book_8",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_book_8.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "cacba2918aaebff4da6bd104e98d49e5",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_baby_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_baby_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_baby_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_baby_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_baby_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "ef2185f35dce4694d825e55a663bb517",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_baby_a_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_baby_a_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_baby_a_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_baby_a_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_baby_a_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "ec93c7c6d3462ac47872b5ea454cee8a",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_baby_a_f_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_baby_a_f_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_baby_a_f_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_baby_a_f_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_baby_a_f_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "195a63cc71838d044800ac102286b927",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_baby_b_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_baby_b_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_baby_b_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_baby_b_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_baby_b_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "ad26f22f28010594296a52fe294eebbd",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_baby_b_f_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_baby_b_f_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_baby_b_f_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_baby_b_f_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_baby_b_f_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "adea2cf72aa07174da894fd0c8bf4f2f",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_baby_c_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_baby_c_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_baby_c_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_baby_c_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_baby_c_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "0f97e09b757a4e843a2a2d4cf8334a7c",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_baby_c_f_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_baby_c_f_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_baby_c_f_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_baby_c_f_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_baby_c_f_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "776ebef696bdb9943abc3ea035fb81be",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_baby_d_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_baby_d_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_baby_d_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_baby_d_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_baby_d_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "2a98e8123b98c0d49b45bcc85dbd3947",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_feed_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_feed_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_feed_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_feed_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_feed_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "cec975045583bc74a97d8f17ab5d509f",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_letter_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_letter_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_letter_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_letter_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_letter_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "55f84af3db32a8d488b55fe1935c18a3",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_letter_2",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_letter_2",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_letter_2"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_letter_2",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_letter_2.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "2e62e4340451f2541bc501b8e4e24c79",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_letter_3",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_letter_3",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_letter_3"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_letter_3",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_letter_3.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "0a7480deecd4f944ab39f156e413689a",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_score_1",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_score_1",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_score_1"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_score_1",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_score_1.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "536ccb956134581419a4b8b6b14bb62f",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_score_2",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_score_2",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_score_2"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_score_2",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_score_2.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "43653b60386aa3347a9be568b77ff3ed",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    },
+    {
+      "type": "adv_dogparkpure_score_3",
+      "key": "item:AdventureItemModelConfig:adv_dogparkpure_score_3",
+      "status": "unavailable",
+      "selectionMode": "type-string-fallback",
+      "declaredImageKeys": [
+        "adv_dogparkpure_score_3"
+      ],
+      "physicalLocalSprites": 0,
+      "reasonCode": "no-local-exact-type-image",
+      "reason": "정확한 타입의 동봉 ItemView 이미지 매핑·ImageFileConfig 키·실물 Sprite를 확보하지 못했습니다. 타입 ID를 유지합니다.",
+      "relatedDeclaration": {
+        "shortName": "adv_dogpark_score_3",
+        "fileKey": "AdventureActivity/DogparkAdventure_items/adv_dogpark_score_3.png",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "assetReference": {
+          "m_AssetGUID": "05a22cea84b9e2f46969a430fa83b32e",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "physicalLocalSprites": 0,
+        "boundary": "이름이 유사한 기본 dogpark 선언입니다. dogparkpure의 실제 매핑으로 채택하지 않았습니다."
+      }
+    }
+  ],
+  "sharedResources": [
+    {
+      "type": "main_gem_super_1",
+      "key": "item:ItemModelConfig:main_gem_super_1",
+      "src": "./assets/media/apk-base-main_gem_1.png",
+      "sha256": "e8a97854365f6cdee244f01b229a293d7f42d2b913e437110a10702591887d4a",
+      "width": 90,
+      "height": 69,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3358791516616072934",
+        "type": "Sprite",
+        "name": "main_super_gem_1",
+        "object_source_sha256": "18a8fff61a62e8868c6f0cb39b712a0478bb41424675a84cc58e6c6d8340ce2a"
+      },
+      "pixelSha256": "d3391492f8fa235f54df68d9617f290db88e5ee49a22336f1786fcf1bbebd3cb",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_gem_super_2",
+      "key": "item:ItemModelConfig:main_gem_super_2",
+      "src": "./assets/media/apk-base-main_super_gem_2.png",
+      "sha256": "4ae64fe7f02f43eeb7979a5ddcdc3281c579f9ba50ce3357acdf2b925a191d2c",
+      "width": 107,
+      "height": 86,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-9118439422333175339",
+        "type": "Sprite",
+        "name": "main_super_gem_2",
+        "object_source_sha256": "6e58528b51af26ba3cae52dc7746b26ac45d1d916795783d7f2aa4ca81006ec6"
+      },
+      "pixelSha256": "afe1f4f238853ccb219ab259cbe56e3fa7b6ab18a7da915393a1f8a82e23909b",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_gem_super_3",
+      "key": "item:ItemModelConfig:main_gem_super_3",
+      "src": "./assets/media/apk-base-main_super_gem_3.png",
+      "sha256": "de5b929690c81d3befd7d75b5d07efe6871b5d2fdd5c8de6ec071e4705842614",
+      "width": 104,
+      "height": 107,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "6612716494219034121",
+        "type": "Sprite",
+        "name": "main_super_gem_3",
+        "object_source_sha256": "4d2a34feea1177c8fdf46a8cdb3e4775964d3162f439221a0c68f11465d128ff"
+      },
+      "pixelSha256": "66f2c657f5b5eb66a4da123147f16c8adec34c6f4e5360d65760b9117daebafe",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_gem_super_4",
+      "key": "item:ItemModelConfig:main_gem_super_4",
+      "src": "./assets/media/apk-base-main_super_gem_4.png",
+      "sha256": "9607a5cf92de52d4e9c4fe5948aaf801f5a9d94cf63550f5655597bedece8c87",
+      "width": 106,
+      "height": 111,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-500848508425735457",
+        "type": "Sprite",
+        "name": "main_super_gem_4",
+        "object_source_sha256": "fb580d1bcee2166475bdb84ad0bf21ff4fc232a7df677eea60decb2d50082f79"
+      },
+      "pixelSha256": "f0ec8391c4d5bf124713f540074d30c4fc6ff1b87aa747949b65d2afc10ced55",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_gem_super_5",
+      "key": "item:ItemModelConfig:main_gem_super_5",
+      "src": "./assets/media/apk-base-main_super_gem_5.png",
+      "sha256": "019eeb40c278ac79cfb9762613b0461cdcb6bf4e7b7c168e204eb53d58c3eb15",
+      "width": 131,
+      "height": 126,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4141251652741295278",
+        "type": "Sprite",
+        "name": "main_super_gem_5",
+        "object_source_sha256": "cd6a4cfb2aee2020474905ea6cf9f71013e5aa2e3489344cad3ab25e381c66ba"
+      },
+      "pixelSha256": "1468ebe580c77184fdb2448ee118f79c79586660512c18647b056e4deabde6e0",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_gem_super_6",
+      "key": "item:ItemModelConfig:main_gem_super_6",
+      "src": "./assets/media/apk-base-main_super_gem_6.png",
+      "sha256": "44ba882ea2ed8ec04678ad3aec2f58480eb45d6b7201d73ec9eba82ccae79cc9",
+      "width": 119,
+      "height": 130,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-5250997836246408336",
+        "type": "Sprite",
+        "name": "main_super_gem_6",
+        "object_source_sha256": "e53a9e49a0c78b93e01e41eb438c132763e34db9dd454973a28b8f578c45ccdc"
+      },
+      "pixelSha256": "10ed5327fb17b39935de08acad1ec23bac9260a047f8f2ccafc9508e6fc9526b",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_gem_super_7",
+      "key": "item:ItemModelConfig:main_gem_super_7",
+      "src": "./assets/media/apk-base-main_super_gem_7.png",
+      "sha256": "6a28045d1dd4b899450b5296153ba473818188ac898a604ef9ed503b2b7c666e",
+      "width": 137,
+      "height": 136,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "7054026459377138233",
+        "type": "Sprite",
+        "name": "main_super_gem_7",
+        "object_source_sha256": "635267c669a3047cd94cc3c20da1104530a35683650d58f2705274c00f8f9b3c"
+      },
+      "pixelSha256": "76ffff115dfa2b3262b5f0461931f3cd0cb3a25240227814857385397706f048",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_gem_super_8",
+      "key": "item:ItemModelConfig:main_gem_super_8",
+      "src": "./assets/media/apk-base-main_super_gem_8.png",
+      "sha256": "e1cdc6610df1b1de7dc7c3022d813aaab675e0ee8f44daa777646ddeb70a9f1d",
+      "width": 143,
+      "height": 147,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-7839255867903625163",
+        "type": "Sprite",
+        "name": "main_super_gem_8",
+        "object_source_sha256": "7e7f54c609a038f33df94fe1ed237f98c9ad6d1f4fe0c4574408f1775cb558a1"
+      },
+      "pixelSha256": "6951da5aba2537c6ae823216203a01742e5d8abd62bfd47989fc5cabe179afac",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_energy_1",
+      "key": "item:ItemModelConfig:main_super_energy_1",
+      "src": "./assets/media/apk-base-main_super_energy_1.png",
+      "sha256": "c98744ecc7b7f3aec911e4b4c6a92ec29181924f83886728cd23e6469c77274f",
+      "width": 96,
+      "height": 104,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3063931128445434722",
+        "type": "Sprite",
+        "name": "main_super_energy_1",
+        "object_source_sha256": "33076467c6bdb3249a30ac3c36c3f0b19c2c5e35be78ff68786122785b81d82a"
+      },
+      "pixelSha256": "8edc70236f2bc12f26f8f8bf4f4d291998e50c11f7c742ae31fd33c1e0a15251",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_energy_2",
+      "key": "item:ItemModelConfig:main_super_energy_2",
+      "src": "./assets/media/apk-base-main_super_energy_2.png",
+      "sha256": "f893410e6e9704104fc6c29301e5013c31e799d867adc7df7148a60a866730a4",
+      "width": 88,
+      "height": 120,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-490681610157367231",
+        "type": "Sprite",
+        "name": "main_super_energy_2",
+        "object_source_sha256": "5f80d07123d9393882ccc0df1db0591d436969bf0040c9e067b8e2c1c6b3ee7a"
+      },
+      "pixelSha256": "a7f59dd5799e7dd12c1bb673d3fff6c26a16eb06d78967971378469a64816625",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_energy_3",
+      "key": "item:ItemModelConfig:main_super_energy_3",
+      "src": "./assets/media/apk-base-main_super_energy_3.png",
+      "sha256": "691ee3d87211ee195e559d3d516fbd64c151be92024ecee01269531c0e8c3403",
+      "width": 100,
+      "height": 121,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "6808331822552130595",
+        "type": "Sprite",
+        "name": "main_super_energy_3",
+        "object_source_sha256": "581553a592898cb8475bdec49e32b29abcc2a917be152c5728d286972c903229"
+      },
+      "pixelSha256": "bf8961148a8c5b34bd29bce5bc4294ae3fb524f99e2ac120020a57ef1405f03e",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_energy_4",
+      "key": "item:ItemModelConfig:main_super_energy_4",
+      "src": "./assets/media/apk-base-main_super_energy_4.png",
+      "sha256": "8d41c931d6f035f453f2e284ca6911b40b1480807b49c4e4d6ec1ec97df9ba0c",
+      "width": 116,
+      "height": 125,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-5844501041902070774",
+        "type": "Sprite",
+        "name": "main_super_energy_4",
+        "object_source_sha256": "2c83cf7a6e84510309cb0482a8659bd8cb5a6e7f49d87349893c608bc011eadd"
+      },
+      "pixelSha256": "a88590ae03b22ea522092cc641bd1e37422d80564338cd875a6799cd89c6c84a",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_energy_5",
+      "key": "item:ItemModelConfig:main_super_energy_5",
+      "src": "./assets/media/apk-base-main_super_energy_5.png",
+      "sha256": "bbd807ac974feefaf8463d33b44bbf549bbf47a93beb439724812abbdc9e7f3b",
+      "width": 133,
+      "height": 128,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "7063454115082811793",
+        "type": "Sprite",
+        "name": "main_super_energy_5",
+        "object_source_sha256": "866d04c8e6d4cdbc968c082f8154c38f2ecf2d4fc9eb86e7fcc214d3f90f50d1"
+      },
+      "pixelSha256": "8026e654603cfdf6ba3d841989b28863d58d14bdbb011351969515c5ffa0e37a",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_energy_6",
+      "key": "item:ItemModelConfig:main_super_energy_6",
+      "src": "./assets/media/apk-base-main_super_energy_6.png",
+      "sha256": "cfba633862bae93ce3206d59ed353bfc425a610d88dae9c588f67060cee0958d",
+      "width": 131,
+      "height": 140,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "7218640889894275788",
+        "type": "Sprite",
+        "name": "main_super_energy_6",
+        "object_source_sha256": "cf9331e9b3d3da9fd8ae7d89e69172be0c26c37ed29fb9816eb52761b4c00377"
+      },
+      "pixelSha256": "579238f89fcd9e1b8cabb2d3a2cb841b1553d16ceeccc5904bbcd1e71fe85ba6",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_energy_7",
+      "key": "item:ItemModelConfig:main_super_energy_7",
+      "src": "./assets/media/apk-base-main_super_energy_7.png",
+      "sha256": "91de34645b77020b5ccf3fe7264383114a52e57139b96abccf533f499d350f59",
+      "width": 131,
+      "height": 134,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3260207228704385702",
+        "type": "Sprite",
+        "name": "main_super_energy_7",
+        "object_source_sha256": "e7c22ae9d3962d275515a771cebfb4003451a0e4fb9a153022792b73e6d43019"
+      },
+      "pixelSha256": "7e73ac18dd0697689c0be4e4c999850a1edcf0cdcbcf189c315dd71a884034e7",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_energy_8",
+      "key": "item:ItemModelConfig:main_super_energy_8",
+      "src": "./assets/media/apk-base-main_super_energy_8.png",
+      "sha256": "fd07341844183cdb05745564eb3d2351f21e3fe43977311fa1f73678aa55c846",
+      "width": 137,
+      "height": 139,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-7027030435213621957",
+        "type": "Sprite",
+        "name": "main_super_energy_8",
+        "object_source_sha256": "46e18081527d438f2f4f1ebc9aa97fe130e40c6ef7d25280296044b9c44e1524"
+      },
+      "pixelSha256": "d6c2fbc248fe098a2ee7a484bc215edf76ecd84aae6d5653b9efc160eec21ee4",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_gold_1",
+      "key": "item:ItemModelConfig:main_super_gold_1",
+      "src": "./assets/media/apk-base-main_nugget_1.png",
+      "sha256": "619d25c0d779901a2d2d7ebeff16b05d3f7d2872d10dd614d902713a811cb197",
+      "width": 97,
+      "height": 67,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "5551695032901198141",
+        "type": "Sprite",
+        "name": "main_super_gold_1",
+        "object_source_sha256": "ecf09b2fdeff2add98a0a57aaa7a56342f8f8aa606da59551fc6c268141be6ce"
+      },
+      "pixelSha256": "d01d6cbe6d3409289f1c96b77639f5eb63d23f55db54ab3f2c04733e1e3b8dff",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_gold_2",
+      "key": "item:ItemModelConfig:main_super_gold_2",
+      "src": "./assets/media/apk-base-main_super_gold_2.png",
+      "sha256": "6b7d798cd415b6f9cfd6b3f43be00833a5eef9b2b6ad24720e06288c96367947",
+      "width": 94,
+      "height": 92,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "3379191619246485055",
+        "type": "Sprite",
+        "name": "main_super_gold_2",
+        "object_source_sha256": "8701e099cadc0108c3e0dbe4bec771ab637194c405b1d79bb5782065349c90b9"
+      },
+      "pixelSha256": "d647615121276d239d425e1b5b63a078018eb107536c03b59ec5acdce86c6e9e",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_gold_3",
+      "key": "item:ItemModelConfig:main_super_gold_3",
+      "src": "./assets/media/apk-base-main_super_gold_3.png",
+      "sha256": "219559bf5fd9c574ca92b472f8b03494ae4009db52a1819d20975c0d71b2e9a8",
+      "width": 125,
+      "height": 108,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-6817210620262044572",
+        "type": "Sprite",
+        "name": "main_super_gold_3",
+        "object_source_sha256": "4882643a47d503d80d7d7cb1287d167224db297e83df3420b95397e356b7fa8f"
+      },
+      "pixelSha256": "4f13771c03401660ac7a43b8b30851cd56edb1ad3cdef9079e9cbe550bf3a2a4",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_gold_4",
+      "key": "item:ItemModelConfig:main_super_gold_4",
+      "src": "./assets/media/apk-base-main_super_gold_4.png",
+      "sha256": "c481ab6584c7011109b98bf17baf1feba6ec29b719c0ca247470d330c0960552",
+      "width": 131,
+      "height": 113,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-8591891776375875190",
+        "type": "Sprite",
+        "name": "main_super_gold_4",
+        "object_source_sha256": "dd5e6a6a4cb19d32b5da39247381fcec2fee8d959266c6bde5a8bc7cb59f072f"
+      },
+      "pixelSha256": "e549c796e4aaafa11be1028bbffc366714cc2076662c525ae4fe6e36e66b67c1",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_gold_5",
+      "key": "item:ItemModelConfig:main_super_gold_5",
+      "src": "./assets/media/apk-base-main_super_gold_5.png",
+      "sha256": "83c516fc415da0ee12d7404833420be07b614925f596d287374779fdfa0ce13b",
+      "width": 133,
+      "height": 125,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-2572562139768540235",
+        "type": "Sprite",
+        "name": "main_super_gold_5",
+        "object_source_sha256": "9a17567ad96479774f66774c5bac664fbe5ac6cf751e8dede545df430d7711dc"
+      },
+      "pixelSha256": "1531db17b9709f4628413aea6936002bfb4a35a5c32d2f2cb4e2ceaf7387b0e4",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_gold_6",
+      "key": "item:ItemModelConfig:main_super_gold_6",
+      "src": "./assets/media/apk-base-main_super_gold_6.png",
+      "sha256": "2dc34dc92b60259ade4bde5f5a29f7454282b09cad61fcc327aa00cbc8660160",
+      "width": 133,
+      "height": 131,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-4592049789097071220",
+        "type": "Sprite",
+        "name": "main_super_gold_6",
+        "object_source_sha256": "91bb6abe15f23eef533fdfeac6d0bc5acc10198052999920680b89299c86eed1"
+      },
+      "pixelSha256": "4401e87b5cb1cba3640e0cb06a8a0c9a15c46043b0a45cab818f5fbc1453da47",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_gold_7",
+      "key": "item:ItemModelConfig:main_super_gold_7",
+      "src": "./assets/media/apk-base-main_super_gold_7.png",
+      "sha256": "7667b0646926388a7a35b6405185693d034b4d2aa1eaa348b52fce0eab8236ab",
+      "width": 134,
+      "height": 141,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-2520910576230270556",
+        "type": "Sprite",
+        "name": "main_super_gold_7",
+        "object_source_sha256": "1c88dc513d7e3961bdf135351070b4242710c33c248743152a570345de3d02aa"
+      },
+      "pixelSha256": "c70d8c8e41b55e2ce3da58a6053d01699c3218e69e061a1604abf33745f223d1",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    },
+    {
+      "type": "main_super_gold_8",
+      "key": "item:ItemModelConfig:main_super_gold_8",
+      "src": "./assets/media/apk-base-main_super_gold_8.png",
+      "sha256": "ffdc22e123375c1d394aa23e4af21268c6454736c6e1501a24c3680a206aaa3c",
+      "width": 145,
+      "height": 133,
+      "identity": {
+        "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+        "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+        "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+        "path_id": "-79688067313503867",
+        "type": "Sprite",
+        "name": "main_super_gold_8",
+        "object_source_sha256": "05cdb7ba3ea70093adc7fa50de93edd47b392663ddce9a293c3c09fbca5e87ce"
+      },
+      "pixelSha256": "6090e8fef7481b7275f0a20f2a933cd2804ad7d241b50592e27cf9d48d40f5a5",
+      "verification": "bundle SHA, Sprite raw object SHA, public PNG SHA and decoded RGBA bytes match"
+    }
+  ],
+  "themeCrosscheck": {
+    "scope": "Curated config tables and verified ImageFileConfig->local Sprite inventory, exact/fallback view selection; no URL guessing or remote downloads",
+    "rows": [
+      {
+        "table": "AdventureItemModelConfig_autumnleaf",
+        "boardAvailable": true,
+        "types": 34,
+        "eventOnlyTypes": 34,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "AdventureItemModelConfig_autumnleaf_key",
+        "boardAvailable": true,
+        "types": 36,
+        "eventOnlyTypes": 36,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "AdventureItemModelConfig_autumnleaf_level",
+        "boardAvailable": true,
+        "types": 34,
+        "eventOnlyTypes": 34,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "AdventureItemModelConfig_dogpark",
+        "boardAvailable": true,
+        "types": 35,
+        "eventOnlyTypes": 35,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "AdventureItemModelConfig_dogpark_level",
+        "boardAvailable": true,
+        "types": 34,
+        "eventOnlyTypes": 34,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "AdventureItemModelConfig_dogpark_obs",
+        "boardAvailable": true,
+        "types": 36,
+        "eventOnlyTypes": 36,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "AdventureItemModelConfig_dogparkpure",
+        "boardAvailable": true,
+        "types": 35,
+        "eventOnlyTypes": 35,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "AdventureItemModelConfig_witch",
+        "boardAvailable": true,
+        "types": 33,
+        "eventOnlyTypes": 33,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "AdventureItemModelConfig_witch_level",
+        "boardAvailable": true,
+        "types": 34,
+        "eventOnlyTypes": 34,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "Dig2ItemModelConfig",
+        "boardAvailable": true,
+        "types": 134,
+        "eventOnlyTypes": 132,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "Dig2ItemModelConfig_superweb",
+        "boardAvailable": true,
+        "types": 132,
+        "eventOnlyTypes": 132,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "Dig2ItemModelConfig_wheel",
+        "boardAvailable": false,
+        "types": 134,
+        "eventOnlyTypes": 132,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "DigItemModelConfig",
+        "boardAvailable": true,
+        "types": 134,
+        "eventOnlyTypes": 132,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "DigItemModelConfig_super500",
+        "boardAvailable": false,
+        "types": 132,
+        "eventOnlyTypes": 132,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "ExploreItemModelConfig_halloweenmapexplore",
+        "boardAvailable": false,
+        "types": 38,
+        "eventOnlyTypes": 38,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "ExploreItemModelConfig_midfallmapexplore",
+        "boardAvailable": false,
+        "types": 38,
+        "eventOnlyTypes": 38,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      },
+      {
+        "table": "ExploreItemModelConfig_midfallmapexplore_test",
+        "boardAvailable": false,
+        "types": 38,
+        "eventOnlyTypes": 38,
+        "eventOnlyLocalImages": 0,
+        "localTypeExamples": []
+      }
+    ]
+  },
+  "inventoryBoundary": {
+    "imageConfigRows": 4589,
+    "physicalMappedImageKeys": 978,
+    "spriteObjects": 1820,
+    "containerRecords": 10037,
+    "dogparkSpriteObjects": 0,
+    "dogparkContainerRecords": 0
+  },
+  "boundaries": [
+    "그림을 추측해 대체하거나 이름 유사성을 실제 타입 매핑으로 채택하지 않았습니다.",
+    "원격 자산·실계정 캐시·CDN을 내려받지 않았습니다.",
+    "미확보는 게임에 해당 그림이 없다는 증거가 아닙니다. 현재 동봉 자료의 제한입니다.",
+    "공용 재화24타입은 기존 공개 PNG를 재검증해 재사용하며 이벤트 전용 그림 회수 수로 합산하지 않습니다."
+  ],
+  "sources": [
+    {
+      "path": "analysis/followup/assets/image-config-local-sprite-map.json",
+      "sha256": "3efc9adf0681c8828e9fb67c57fdf5ab7384d3115003834fca1fb26d810a66cf"
+    },
+    {
+      "path": "analysis/followup/assets/item-type-sprite-map.json",
+      "sha256": "d3f5622bec30bfa4b52d163176d5073f65073f4280336ce19a0a92cbc58e6901"
+    },
+    {
+      "path": "analysis/followup/assets/object-index.json",
+      "sha256": "9706e72ae7c732538667f42dcdcfd6be6e994be87099d5eac0cb98a02f9c1636"
+    },
+    {
+      "path": "analysis/followup/assets/asset-containers.json",
+      "sha256": "00d8f981c9631cf751d67ed157830494a02e85de9bbec26976655999f18935ce"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemDataModel.lua",
+      "sha256": "7a199a3ffea516f08a29a765cb030f630161cc4b631d8c5d773087b8d4c72a26",
+      "lineStart": 185,
+      "lineEnd": 198
+    },
+    {
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+      "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d"
+    },
+    {
+      "path": "analysis/config-tables/AdventureItemModelConfig_dogparkpure.json",
+      "sha256": "1f38f7b3193c593b892579f6ff9eb2cbe27e2ff57f68897d4ead9e20c0f40574"
+    },
+    {
+      "path": "sites/harbor-bm-lab/src/data/media.json",
+      "sha256": "f58367175e6fe6d78fb49291d59ba734731e0fde068231ecc30e8a0144f44796"
+    }
+  ]
+}
