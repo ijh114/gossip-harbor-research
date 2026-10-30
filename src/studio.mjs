@@ -1,3 +1,4 @@
+import {createCollectionStudy} from './collection-page.mjs';
 import {renderAPKMediaReview} from './apk-media-review.mjs';
 import {createTutorialCatalogWorkbench} from './tutorial-catalog-page.mjs';
 import {renderMasterChecklist} from './checklist-page.mjs';
@@ -21,14 +22,16 @@ import {renderSceneAnalysis,growthReadout} from './research-completion.mjs';
 
 export function createStudio({getData,getRoute,render,toast,download}){
  let walkthrough=createWalkthrough(),running=new Map();
- let playMode='game',interactionCleanup=()=>{};
+ let playMode='game',interactionCleanup=()=>{},lastAPKTask=null;
  const tutorials=createTutorialWorkbench({getData,render,download});
  const catalogTutorials=createTutorialCatalogWorkbench({getData,render,download});
  const moreTutorials=createTutorialWorkbench({getData,render,download,storageKey:'harbor-tutorial-more-v1',configKey:'tutorialMoreConfig',model:{create:createMoreTutorials,event:moreTutorialEvent,view:moreTutorialView,valid:validMoreTutorials},title:'추가 튜토리얼 · 두 번째 조건 실험'});
  let checklistStatus='all';
+ const motionState={role:'all',clip:''};
  let growthMetric='actions',growthSeed=42;
  let tutorialPack='first',availabilityFilter={status:'all',group:'all',query:''};
  const tutorialPage=()=>'<nav class="studio-tabs" aria-label="추가 안내 자료 묶음"><button class="button" data-tutorial-pack="first" aria-pressed="'+(tutorialPack==='first')+'">기존 추가 안내 5종</button><button class="button" data-tutorial-pack="more" aria-pressed="'+(tutorialPack==='more')+'">신규 추가 안내 5종</button><button class="button" data-tutorial-pack="catalog" aria-pressed="'+(tutorialPack==='catalog')+'">나머지 안내87종</button></nav>'+(tutorialPack==='catalog'?catalogTutorials:tutorialPack==='more'?moreTutorials:tutorials).renderPage();
+ const collection=createCollectionStudy({getData,render,download});
  const production=createProductionController({getData,render,download,toast});
  const auditFilters={query:'',category:'all',status:'all'};
  let lastAuditSource=null;
@@ -45,7 +48,7 @@ export function createStudio({getData,getRoute,render,toast,download}){
  const capturePage=()=>{const id=new URLSearchParams(location.hash.split('?')[1]||'').get('study');if(id!==lastStudySource){lastStudySource=id;if(id&&getData()?.refinement?.studies.some(s=>s.id===id)){Object.assign(studyState,{topic:'all',query:'',selected:id,region:'',frame:''});}}return renderCaptures(getData(),captureFilters,studyState);};
  const timelineFilters={entryId:null,milestoneId:null,baselineId:null};
  const mediaDialog=document.querySelector('#media-dialog'),mediaContent=document.querySelector('#media-content');
- const pages={'apk-media':()=>renderAPKMediaReview({...getData(),mediaReview:{...getData().mediaReview,selectedTask:new URLSearchParams(location.hash.split('?')[1]||'').get('task')}}),checklist:()=>renderMasterChecklist(getData(),{status:checklistStatus}),'growth-validation':()=>renderProgressionStudy(getData(),{metric:growthMetric,seed:growthSeed}),'factory-reference':()=>factoryReference.renderPage(),'tutorial-analysis':tutorialPage,'bm-observation':()=>renderBMObservationAudit(getData()),'artifact-availability':()=>'<header class="studio-intro"><h1>자산·장면 확보 현황</h1><p>등록·실물·선별 공개·연구 투영을 구분하고 필요한 추가 자료를 확인합니다.</p></header>'+renderArtifactAvailability(getData(),{filter:availabilityFilter}),'scene-analysis':scenePage,'production-assets':()=>production.renderPage(),'media-audit':auditPage,'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:capturePage,puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
+ const pages={collection:()=>collection.renderPage(),'apk-media':()=>renderAPKMediaReview({...getData(),mediaReview:{...getData().mediaReview,selectedTask:new URLSearchParams(location.hash.split('?')[1]||'').get('task')}},{motionState}),checklist:()=>renderMasterChecklist(getData(),{status:checklistStatus}),'growth-validation':()=>renderProgressionStudy(getData(),{metric:growthMetric,seed:growthSeed}),'factory-reference':()=>factoryReference.renderPage(),'tutorial-analysis':tutorialPage,'bm-observation':()=>renderBMObservationAudit(getData()),'artifact-availability':()=>'<header class="studio-intro"><h1>자산·장면 확보 현황</h1><p>등록·실물·선별 공개·연구 투영을 구분하고 필요한 추가 자료를 확인합니다.</p></header>'+renderArtifactAvailability(getData(),{filter:availabilityFilter}),'scene-analysis':scenePage,'production-assets':()=>production.renderPage(),'media-audit':auditPage,'bm-timeline':()=>renderBMTimeline(getData(),timelineFilters),research:()=>renderResearch(getData()),captures:capturePage,puzzle:()=>renderPuzzle(getData(),itemFilters),'puzzle-motion':()=>renderPuzzleMotion(getData()),'puzzle-interaction':()=>renderInteraction(getData()),'puzzle-difficulty':()=>renderDifficulty(getData()),interface:()=>renderInterface(getData(),uiFilters),'interface-structure':()=>renderStructure(getData()),'interface-motion':()=>renderUIMotion(getData()),experience:playPage};
  const renderItem=()=>{document.querySelector('#item-catalog').innerHTML=renderItemCatalog(getData(),itemFilters);};
  const renderUI=()=>{document.querySelector('#ui-registry').innerHTML=renderUIRegistry(getData(),uiFilters);};
  function preserveInput(id,update){const node=document.getElementById(id),start=node.selectionStart,end=node.selectionEnd;update();const next=document.getElementById(id);next.focus({preventScroll:true});if(next.type==='search')next.setSelectionRange(start,end);}
@@ -69,6 +72,7 @@ export function createStudio({getData,getRoute,render,toast,download}){
   else if(previousStage!==walkthrough.stage){const scene=document.querySelector('.experience-scene');scene.tabIndex=-1;scene.focus({preventScroll:true});}
  }
  document.addEventListener('click',event=>{
+  if(getRoute()==='collection'&&collection.handleClick(event))return;
   const target=event.target.closest('button,a');if(!target)return;
   if(target.dataset.studySelect){studyState.selected=target.dataset.studySelect;studyState.region='';studyState.frame='';render();document.querySelector('.study-workbench')?.scrollIntoView?.({block:'start'});document.querySelector('.study-workbench h3')?.focus({preventScroll:true});return;}
   if(target.hasAttribute('data-study-frame')||target.hasAttribute('data-study-region')){const isFrame=target.hasAttribute('data-study-frame'),origin=isFrame?'':target.classList.contains('study-hotspot')?'.study-image-plane ':'.study-region-controls ';studyState[isFrame?'frame':'region']=isFrame?target.dataset.studyFrame:target.dataset.studyRegion;render();document.querySelector(`${origin}[data-study-${isFrame?'frame':'region'}="${isFrame?studyState.frame:studyState.region}"]`)?.focus({preventScroll:true});return;}
@@ -95,7 +99,8 @@ export function createStudio({getData,getRoute,render,toast,download}){
   if(target.hasAttribute('data-ui-page')){uiFilters.page=Number(target.dataset.uiPage);renderUI();document.querySelector('#ui-registry').scrollIntoView({block:'start'});document.querySelector('#ui-query').focus({preventScroll:true});return;}
   if(target.dataset.mediaKey)openMedia(target.dataset.mediaKey);
  });
- document.addEventListener('input',event=>{const t=event.target;
+ document.addEventListener('input',event=>{
+  if(getRoute()==='collection'&&collection.handleInput(event))return;const t=event.target;
   if(t.hasAttribute('data-artifact-query')){const start=t.selectionStart,end=t.selectionEnd;availabilityFilter.query=t.value;render();const next=document.querySelector('[data-artifact-query]');next?.focus({preventScroll:true});try{next?.setSelectionRange(start,end);}catch{}return;}
   if(t.hasAttribute('data-growth-point')){const out=document.querySelector('[data-growth-readout]');if(out)out.textContent=growthReadout(getData().progressionValidation?.continuation||getData().progressExtended.late||getData().progressExtended,Number(t.value));return;}
   if(t.hasAttribute('data-audio-bin')){const r=getData()?.refinement?.audio?.recordings.find(r=>r.sourceId===t.dataset.audioBin);if(!r)return;const index=Number(t.value),output=document.querySelector(`[data-audio-readout="${r.sourceId}"]`),cursor=document.querySelector(`[data-audio-cursor="${r.sourceId}"]`);if(output)output.innerHTML=renderAudioReadout(r,index);if(cursor){const x=600*index/Math.max(1,r.timeline.peakDbfs.length-1);cursor.setAttribute('x1',String(x));cursor.setAttribute('x2',String(x));}return;}
@@ -105,7 +110,10 @@ export function createStudio({getData,getRoute,render,toast,download}){
   if(t.id==='ui-query'){uiFilters.query=t.value;uiFilters.page=1;preserveInput(t.id,renderUI);}
   if(t.hasAttribute('data-visual-depth'))document.querySelector('#difficulty-output').innerHTML=difficultyOutput(Number(t.value));
  });
- document.addEventListener('change',event=>{const t=event.target;
+ document.addEventListener('change',event=>{
+  if(getRoute()==='collection'&&collection.handleChange(event))return;const t=event.target;
+  if(t.hasAttribute('data-apk-motion-role')){motionState.role=t.value;motionState.clip='';render();document.querySelector('[data-apk-motion-role]')?.focus({preventScroll:true});return;}
+  if(t.hasAttribute('data-apk-motion-clip')){motionState.clip=t.value;render();document.querySelector('[data-apk-motion-clip]')?.focus({preventScroll:true});return;}
   if(t.hasAttribute('data-cg-select')){sourcePlay.handle('cg:select',t.value);document.querySelector('[data-cg-select]')?.focus({preventScroll:true});return;}
   if(t.hasAttribute('data-map-select')){sourcePlay.handle('map:select-map',t.value);document.querySelector('[data-map-select]')?.focus({preventScroll:true});return;}
   if(t.hasAttribute('data-map-slot-select')&&t.value){sourcePlay.handle('map:select-slot',t.value);document.querySelector('[data-map-slot-select]')?.focus({preventScroll:true});return;}
@@ -127,5 +135,5 @@ export function createStudio({getData,getRoute,render,toast,download}){
  mediaDialog.addEventListener('close',clearMedia);
  mediaDialog.addEventListener('cancel',clearMedia);
  function afterRender(){factoryReference.beforeRender();interactionCleanup();interactionCleanup=()=>{};sourcePlay.beforeRender();for(const [id,timer]of running){clearTimeout(timer);}running.clear();}
- return {renderPage:id=>pages[id]?.()||'',afterRender,afterMount(){factoryReference.afterMount();if(getRoute()==='bm-observation')interactionCleanup=mountBMObservationAudit(document.querySelector('#app-view'),getData());if(getRoute()==='apk-media')interactionCleanup=mountInteractionLoops(document,{gallerySelector:'[data-apk-loop-gallery]',cardSelector:'[data-apk-loop-card]'});if(getRoute()==='puzzle-interaction')interactionCleanup=mountInteractionLoops();if(getRoute()==='captures')interactionCleanup=mountInteractionLoops(document,{gallerySelector:'[data-study-loop-gallery]',cardSelector:'[data-study-select]',initialPaused:studyLoopsPaused,onPauseChange:value=>{studyLoopsPaused=value;}});if(getRoute()==='experience'&&playMode!=='prototype')sourcePlay.afterMount();}};
+ return {renderPage:id=>pages[id]?.()||'',afterRender,afterMount(){factoryReference.afterMount();if(getRoute()==='collection')collection.afterMount();if(getRoute()==='bm-observation')interactionCleanup=mountBMObservationAudit(document.querySelector('#app-view'),getData());if(getRoute()==='apk-media'){interactionCleanup=mountInteractionLoops(document,{gallerySelector:'[data-apk-loop-gallery]',cardSelector:'[data-apk-loop-card]'});const id=new URLSearchParams(location.hash.split('?')[1]||'').get('task');if(id!==lastAPKTask){lastAPKTask=id;const target=[...document.querySelectorAll('[data-apk-task]')].find(n=>n.dataset.apkTask===id);if(target)queueMicrotask(()=>{if(target.isConnected){target.scrollIntoView({block:'start',behavior:'instant'});target.querySelector('summary')?.focus({preventScroll:true});}});}}else lastAPKTask=null;if(getRoute()==='puzzle-interaction')interactionCleanup=mountInteractionLoops();if(getRoute()==='captures')interactionCleanup=mountInteractionLoops(document,{gallerySelector:'[data-study-loop-gallery]',cardSelector:'[data-study-select]',initialPaused:studyLoopsPaused,onPauseChange:value=>{studyLoopsPaused=value;}});if(getRoute()==='experience'&&playMode!=='prototype')sourcePlay.afterMount();}};
 }

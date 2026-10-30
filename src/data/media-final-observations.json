@@ -1,0 +1,2033 @@
+{
+  "schemaVersion": 1,
+  "targetAPKVersion": "4.10.5",
+  "reviewDate": "2026-10-30",
+  "originalRuntimeObserved": false,
+  "directRealtimePlaybackReviewed": false,
+  "mediaEntries": [
+    {
+      "sourceId": "GH-V0064",
+      "originalSha256": "400d4e67511d0177f66247e77a82a57a0804c5fed58362b5dc173558e6d90676",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:clock-queued",
+      "kind": "image",
+      "src": "./assets/media/final-observations/clock-queued.webp",
+      "alt": "GH-V0064 원본 PTS 199.376144초 · clock-queued",
+      "source": "GH-V0064 원본 PTS 199.376144초 · 크롭 x0 y430 w1080 h1910",
+      "sourceRange": {
+        "startSeconds": 199.376144,
+        "endSeconds": 199.376144
+      },
+      "sourcePTS": 199.376144,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 430,
+          "width": 1080,
+          "height": 1910
+        },
+        "outputWidth": 540,
+        "outputHeight": 955,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "085a01a891aa73ba8478f11b320045e989e6c664f736b1d607d851937954a736",
+      "bytes": 121410,
+      "width": 540,
+      "height": 955,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0064",
+      "originalSha256": "400d4e67511d0177f66247e77a82a57a0804c5fed58362b5dc173558e6d90676",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:clock-move",
+      "kind": "image",
+      "src": "./assets/media/final-observations/clock-move.webp",
+      "alt": "GH-V0064 원본 PTS 202.000678초 · clock-move",
+      "source": "GH-V0064 원본 PTS 202.000678초 · 크롭 x0 y430 w1080 h1910",
+      "sourceRange": {
+        "startSeconds": 202.000678,
+        "endSeconds": 202.000678
+      },
+      "sourcePTS": 202.000678,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 430,
+          "width": 1080,
+          "height": 1910
+        },
+        "outputWidth": 540,
+        "outputHeight": 955,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "26ae5bdd06451c57132ea962d1a4653aff69603e804dbd9ce5e185639caaf61e",
+      "bytes": 121098,
+      "width": 540,
+      "height": 955,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0064",
+      "originalSha256": "400d4e67511d0177f66247e77a82a57a0804c5fed58362b5dc173558e6d90676",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:clock-selected",
+      "kind": "image",
+      "src": "./assets/media/final-observations/clock-selected.webp",
+      "alt": "GH-V0064 원본 PTS 203.408400초 · clock-selected",
+      "source": "GH-V0064 원본 PTS 203.408400초 · 크롭 x0 y430 w1080 h1910",
+      "sourceRange": {
+        "startSeconds": 203.4084,
+        "endSeconds": 203.4084
+      },
+      "sourcePTS": 203.4084,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 430,
+          "width": 1080,
+          "height": 1910
+        },
+        "outputWidth": 540,
+        "outputHeight": 955,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "8d3b9b3157fb7426ed13d59ba447cf85bc225b8f1c39bda0be56d198a3dc401a",
+      "bytes": 121260,
+      "width": 540,
+      "height": 955,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0064",
+      "originalSha256": "400d4e67511d0177f66247e77a82a57a0804c5fed58362b5dc173558e6d90676",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:clock-return-path",
+      "kind": "image",
+      "src": "./assets/media/final-observations/clock-return-path.webp",
+      "alt": "GH-V0064 원본 PTS 203.901033초 · clock-return-path",
+      "source": "GH-V0064 원본 PTS 203.901033초 · 크롭 x0 y430 w1080 h1910",
+      "sourceRange": {
+        "startSeconds": 203.901033,
+        "endSeconds": 203.901033
+      },
+      "sourcePTS": 203.901033,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 430,
+          "width": 1080,
+          "height": 1910
+        },
+        "outputWidth": 540,
+        "outputHeight": 955,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "f873fc6fda756aecdcd15efa336720bf59f61121058c3592ab6b5d1c68da9d1e",
+      "bytes": 120184,
+      "width": 540,
+      "height": 955,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0064",
+      "originalSha256": "400d4e67511d0177f66247e77a82a57a0804c5fed58362b5dc173558e6d90676",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:clock-inventory-arrival",
+      "kind": "image",
+      "src": "./assets/media/final-observations/clock-inventory-arrival.webp",
+      "alt": "GH-V0064 원본 PTS 204.201822초 · clock-inventory-arrival",
+      "source": "GH-V0064 원본 PTS 204.201822초 · 크롭 x0 y430 w1080 h1910",
+      "sourceRange": {
+        "startSeconds": 204.201822,
+        "endSeconds": 204.201822
+      },
+      "sourcePTS": 204.201822,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 430,
+          "width": 1080,
+          "height": 1910
+        },
+        "outputWidth": 540,
+        "outputHeight": 955,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "fd714d1568bab77502c9f82c28b578a9457d1dabeb8067e38faf09326b327e44",
+      "bytes": 114550,
+      "width": 540,
+      "height": 955,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0064",
+      "originalSha256": "400d4e67511d0177f66247e77a82a57a0804c5fed58362b5dc173558e6d90676",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:clock-store:video",
+      "kind": "video",
+      "src": "./assets/media/final-observations/clock-store.mp4",
+      "poster": "./assets/media/final-observations/clock-store-poster.webp",
+      "posterSha256": "9e3aea44e8177170227d6e9246269aeb2ac76da41b49a72c5d60483e0a0bb163",
+      "alt": "clock-store · 실제 녹화 선정 구간",
+      "source": "GH-V0064 199.2–204.6초 · 1배속 무음 크롭",
+      "sourceRange": {
+        "startSeconds": 199.2,
+        "endSeconds": 204.6
+      },
+      "sha256": "fe0c2e964fc1895d090bfe2e1fe10c9d4df97e6361aace8dbb7c7319175c1c8d",
+      "bytes": 442146,
+      "width": 480,
+      "height": 848,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 430,
+          "width": 1080,
+          "height": 1910
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 24,
+        "firstIncludedSourcePTS": 199.201067,
+        "lastIncludedSourcePTS": 204.599422,
+        "sourceNativeFrames": 649
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 5.416667,
+        "frames": 130,
+        "fps": "24/1"
+      },
+      "notes": "MP4는1배속24fps 무음 파생입니다. GIF는12Hz 선택·10ms 시간 양자화이므로 원본 동작 시간 측정의 기준은 source PTS입니다. 추가 시작·끝 정지 프레임은 없습니다.",
+      "browserReview": {
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false,
+        "playbackRate": 1,
+        "ended": true,
+        "finalCurrentTimeSeconds": 5.416667,
+        "durationSeconds": 5.416667,
+        "inputLogAvailable": false,
+        "method": "Connected browser at localhost #apk-media: Space playback, rate/currentTime/ended inspection and start/end screenshots, compared with selected original stills. Not a claim of visually attending to every playback frame."
+      }
+    },
+    {
+      "sourceId": "GH-V0064",
+      "originalSha256": "400d4e67511d0177f66247e77a82a57a0804c5fed58362b5dc173558e6d90676",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:clock-store:gif",
+      "kind": "gif",
+      "src": "./assets/media/final-observations/clock-store.gif",
+      "poster": "./assets/media/final-observations/clock-store-poster.webp",
+      "posterSha256": "9e3aea44e8177170227d6e9246269aeb2ac76da41b49a72c5d60483e0a0bb163",
+      "alt": "clock-store · 실제 녹화 선정 구간",
+      "source": "GH-V0064 199.2–204.6초 · 1배속 무음 크롭",
+      "sourceRange": {
+        "startSeconds": 199.2,
+        "endSeconds": 204.6
+      },
+      "sha256": "67810aca1c94919c520cec14a4d0237b1f37e6e7ee8495c6dfa6938c15cbe642",
+      "bytes": 998221,
+      "width": 320,
+      "height": 566,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 430,
+          "width": 1080,
+          "height": 1910
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 12,
+        "firstIncludedSourcePTS": 199.201067,
+        "lastIncludedSourcePTS": 204.599422,
+        "sourceNativeFrames": 649,
+        "timingIsMeasurementSource": false,
+        "nominalHoldStartFrames": 0,
+        "nominalHoldEndFrames": 0
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 5.41,
+        "frames": 65,
+        "fps": "12Hz sample with10ms GIF quantization"
+      },
+      "notes": "MP4는1배속24fps 무음 파생입니다. GIF는12Hz 선택·10ms 시간 양자화이므로 원본 동작 시간 측정의 기준은 source PTS입니다. 추가 시작·끝 정지 프레임은 없습니다."
+    },
+    {
+      "sourceId": "GH-V0116",
+      "originalSha256": "cf0ad5c9ab9d37148cb26ade1f2b35b3c0e4a957a3b5ac2e57a76fb1eedfd6e6",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:bubble-before",
+      "kind": "image",
+      "src": "./assets/media/final-observations/bubble-before.webp",
+      "alt": "GH-V0116 원본 PTS 37.706833초 · bubble-before",
+      "source": "GH-V0116 원본 PTS 37.706833초 · 크롭 x0 y600 w1080 h1700",
+      "sourceRange": {
+        "startSeconds": 37.706833,
+        "endSeconds": 37.706833
+      },
+      "sourcePTS": 37.706833,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 600,
+          "width": 1080,
+          "height": 1700
+        },
+        "outputWidth": 540,
+        "outputHeight": 850,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "1efeb78ce28d74e2c558d5dcfd1f43f7e55010834b8eed7030e0fa2d9d2a06c9",
+      "bytes": 132002,
+      "width": 540,
+      "height": 850,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0116",
+      "originalSha256": "cf0ad5c9ab9d37148cb26ade1f2b35b3c0e4a957a3b5ac2e57a76fb1eedfd6e6",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:bubble-confirm",
+      "kind": "image",
+      "src": "./assets/media/final-observations/bubble-confirm.webp",
+      "alt": "GH-V0116 원본 PTS 38.507211초 · bubble-confirm",
+      "source": "GH-V0116 원본 PTS 38.507211초 · 크롭 x0 y600 w1080 h1700",
+      "sourceRange": {
+        "startSeconds": 38.507211,
+        "endSeconds": 38.507211
+      },
+      "sourcePTS": 38.507211,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 600,
+          "width": 1080,
+          "height": 1700
+        },
+        "outputWidth": 540,
+        "outputHeight": 850,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "14a24bc252e034dfe857962965f4f54f5f949957f36c6ef7a77a0ffd192191f0",
+      "bytes": 70274,
+      "width": 540,
+      "height": 850,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0116",
+      "originalSha256": "cf0ad5c9ab9d37148cb26ade1f2b35b3c0e4a957a3b5ac2e57a76fb1eedfd6e6",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:bubble-after",
+      "kind": "image",
+      "src": "./assets/media/final-observations/bubble-after.webp",
+      "alt": "GH-V0116 원본 PTS 39.156322초 · bubble-after",
+      "source": "GH-V0116 원본 PTS 39.156322초 · 크롭 x0 y600 w1080 h1700",
+      "sourceRange": {
+        "startSeconds": 39.156322,
+        "endSeconds": 39.156322
+      },
+      "sourcePTS": 39.156322,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 600,
+          "width": 1080,
+          "height": 1700
+        },
+        "outputWidth": 540,
+        "outputHeight": 850,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "2980bc63bd459b7b4cf664ed58d583bfde1249771bd1540d3ea550edc5a6f10c",
+      "bytes": 127474,
+      "width": 540,
+      "height": 850,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0116",
+      "originalSha256": "cf0ad5c9ab9d37148cb26ade1f2b35b3c0e4a957a3b5ac2e57a76fb1eedfd6e6",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:bubble-gold-before",
+      "kind": "image",
+      "src": "./assets/media/final-observations/bubble-gold-before.webp",
+      "alt": "GH-V0116 원본 PTS 37.706833초 · bubble-gold-before",
+      "source": "GH-V0116 원본 PTS 37.706833초 · 크롭 x450 y100 w220 h100",
+      "sourceRange": {
+        "startSeconds": 37.706833,
+        "endSeconds": 37.706833
+      },
+      "sourcePTS": 37.706833,
+      "transform": {
+        "crop": {
+          "x": 450,
+          "y": 100,
+          "width": 220,
+          "height": 100
+        },
+        "outputWidth": 220,
+        "outputHeight": 100,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "82da430c3636607dc8aacf71af06a311cb297e9f49924ed37dc7549457a4c5cb",
+      "bytes": 4574,
+      "width": 220,
+      "height": 100,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0116",
+      "originalSha256": "cf0ad5c9ab9d37148cb26ade1f2b35b3c0e4a957a3b5ac2e57a76fb1eedfd6e6",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:bubble-gold-after",
+      "kind": "image",
+      "src": "./assets/media/final-observations/bubble-gold-after.webp",
+      "alt": "GH-V0116 원본 PTS 39.156322초 · bubble-gold-after",
+      "source": "GH-V0116 원본 PTS 39.156322초 · 크롭 x450 y100 w220 h100",
+      "sourceRange": {
+        "startSeconds": 39.156322,
+        "endSeconds": 39.156322
+      },
+      "sourcePTS": 39.156322,
+      "transform": {
+        "crop": {
+          "x": 450,
+          "y": 100,
+          "width": 220,
+          "height": 100
+        },
+        "outputWidth": 220,
+        "outputHeight": 100,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "d8c97630167de218a8d8a3e0e97e8fe76f72aa6f536e979aa380209238baf69c",
+      "bytes": 4454,
+      "width": 220,
+      "height": 100,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0116",
+      "originalSha256": "cf0ad5c9ab9d37148cb26ade1f2b35b3c0e4a957a3b5ac2e57a76fb1eedfd6e6",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:v116-displayed-version",
+      "kind": "image",
+      "src": "./assets/media/final-observations/v116-displayed-version.webp",
+      "alt": "GH-V0116 원본 PTS 37.706833초 · v116-displayed-version",
+      "source": "GH-V0116 원본 PTS 37.706833초 · 크롭 x840 y4 w98 h49",
+      "sourceRange": {
+        "startSeconds": 37.706833,
+        "endSeconds": 37.706833
+      },
+      "sourcePTS": 37.706833,
+      "transform": {
+        "crop": {
+          "x": 840,
+          "y": 4,
+          "width": 98,
+          "height": 49
+        },
+        "outputWidth": 98,
+        "outputHeight": 49,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "787db4323cd23aef5a2c9ed4db7b95dad0b369f2a5b749eac611df5ba21b6ab6",
+      "bytes": 860,
+      "width": 98,
+      "height": 49,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0116",
+      "originalSha256": "cf0ad5c9ab9d37148cb26ade1f2b35b3c0e4a957a3b5ac2e57a76fb1eedfd6e6",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:bubble-confirm-replace:video",
+      "kind": "video",
+      "src": "./assets/media/final-observations/bubble-confirm-replace.mp4",
+      "poster": "./assets/media/final-observations/bubble-confirm-replace-poster.webp",
+      "posterSha256": "bacf57afdca3a736a0ef1c835f2727c802c5d1c4df215a91d15180d217f520c9",
+      "alt": "bubble-confirm-replace · 실제 녹화 선정 구간",
+      "source": "GH-V0116 37.3–39.6초 · 1배속 무음 크롭",
+      "sourceRange": {
+        "startSeconds": 37.3,
+        "endSeconds": 39.6
+      },
+      "sha256": "ef8f71518a05d54f24bb3de34ca9eeb32b5cbf873ea3e28e98e4149bf4e7f1c2",
+      "bytes": 377571,
+      "width": 480,
+      "height": 756,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 600,
+          "width": 1080,
+          "height": 1700
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 24,
+        "firstIncludedSourcePTS": 37.306967,
+        "lastIncludedSourcePTS": 39.598156,
+        "sourceNativeFrames": 270
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 2.291667,
+        "frames": 55,
+        "fps": "24/1"
+      },
+      "notes": "MP4는1배속24fps 무음 파생입니다. GIF는12Hz 선택·10ms 시간 양자화이므로 원본 동작 시간 측정의 기준은 source PTS입니다. 추가 시작·끝 정지 프레임은 없습니다.",
+      "browserReview": {
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false,
+        "playbackRate": 1,
+        "ended": true,
+        "finalCurrentTimeSeconds": 2.291667,
+        "durationSeconds": 2.291667,
+        "inputLogAvailable": false,
+        "method": "Connected browser at localhost #apk-media: Space playback, rate/currentTime/ended inspection and start/end screenshots, compared with selected original stills. Not a claim of visually attending to every playback frame."
+      }
+    },
+    {
+      "sourceId": "GH-V0116",
+      "originalSha256": "cf0ad5c9ab9d37148cb26ade1f2b35b3c0e4a957a3b5ac2e57a76fb1eedfd6e6",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:bubble-confirm-replace:gif",
+      "kind": "gif",
+      "src": "./assets/media/final-observations/bubble-confirm-replace.gif",
+      "poster": "./assets/media/final-observations/bubble-confirm-replace-poster.webp",
+      "posterSha256": "bacf57afdca3a736a0ef1c835f2727c802c5d1c4df215a91d15180d217f520c9",
+      "alt": "bubble-confirm-replace · 실제 녹화 선정 구간",
+      "source": "GH-V0116 37.3–39.6초 · 1배속 무음 크롭",
+      "sourceRange": {
+        "startSeconds": 37.3,
+        "endSeconds": 39.6
+      },
+      "sha256": "d5a6040b7d99e1663d269e27c3bed147c1de48a2c3c75df6ae8f3f73f52706d8",
+      "bytes": 809727,
+      "width": 320,
+      "height": 504,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 600,
+          "width": 1080,
+          "height": 1700
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 12,
+        "firstIncludedSourcePTS": 37.306967,
+        "lastIncludedSourcePTS": 39.598156,
+        "sourceNativeFrames": 270,
+        "timingIsMeasurementSource": false,
+        "nominalHoldStartFrames": 0,
+        "nominalHoldEndFrames": 0
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 2.33,
+        "frames": 28,
+        "fps": "12Hz sample with10ms GIF quantization"
+      },
+      "notes": "MP4는1배속24fps 무음 파생입니다. GIF는12Hz 선택·10ms 시간 양자화이므로 원본 동작 시간 측정의 기준은 source PTS입니다. 추가 시작·끝 정지 프레임은 없습니다."
+    },
+    {
+      "sourceId": "GH-V0088",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:boost-1",
+      "kind": "image",
+      "src": "./assets/media/final-observations/boost-1.webp",
+      "alt": "GH-V0088 원본 PTS 0.000000초 · boost-1",
+      "source": "GH-V0088 원본 PTS 0.000000초 · 크롭 x700 y190 w380 h420",
+      "sourceRange": {
+        "startSeconds": 0.0,
+        "endSeconds": 0.0
+      },
+      "sourcePTS": 0.0,
+      "transform": {
+        "crop": {
+          "x": 700,
+          "y": 190,
+          "width": 380,
+          "height": 420
+        },
+        "outputWidth": 380,
+        "outputHeight": 420,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "4746cf51b509859f8b3291e14c5861ec5571a8d8deff7df6627aea45b5791b35",
+      "bytes": 48682,
+      "width": 380,
+      "height": 420,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0088",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:boost-2",
+      "kind": "image",
+      "src": "./assets/media/final-observations/boost-2.webp",
+      "alt": "GH-V0088 원본 PTS 3.904256초 · boost-2",
+      "source": "GH-V0088 원본 PTS 3.904256초 · 크롭 x700 y190 w380 h420",
+      "sourceRange": {
+        "startSeconds": 3.904256,
+        "endSeconds": 3.904256
+      },
+      "sourcePTS": 3.904256,
+      "transform": {
+        "crop": {
+          "x": 700,
+          "y": 190,
+          "width": 380,
+          "height": 420
+        },
+        "outputWidth": 380,
+        "outputHeight": 420,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "943b1a996186f47924187ea3cf89b47d823be1a814626617babaff1e2be2d716",
+      "bytes": 48966,
+      "width": 380,
+      "height": 420,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0088",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:boost-3",
+      "kind": "image",
+      "src": "./assets/media/final-observations/boost-3.webp",
+      "alt": "GH-V0088 원본 PTS 5.505822초 · boost-3",
+      "source": "GH-V0088 원본 PTS 5.505822초 · 크롭 x700 y190 w380 h420",
+      "sourceRange": {
+        "startSeconds": 5.505822,
+        "endSeconds": 5.505822
+      },
+      "sourcePTS": 5.505822,
+      "transform": {
+        "crop": {
+          "x": 700,
+          "y": 190,
+          "width": 380,
+          "height": 420
+        },
+        "outputWidth": 380,
+        "outputHeight": 420,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "f412047a72e7ba6beb152f2c115e3c25a8eb863a8187247818a1c5aa445ecd1c",
+      "bytes": 49738,
+      "width": 380,
+      "height": 420,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0088",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:boost-4",
+      "kind": "image",
+      "src": "./assets/media/final-observations/boost-4.webp",
+      "alt": "GH-V0088 원본 PTS 8.504311초 · boost-4",
+      "source": "GH-V0088 원본 PTS 8.504311초 · 크롭 x700 y190 w380 h420",
+      "sourceRange": {
+        "startSeconds": 8.504311,
+        "endSeconds": 8.504311
+      },
+      "sourcePTS": 8.504311,
+      "transform": {
+        "crop": {
+          "x": 700,
+          "y": 190,
+          "width": 380,
+          "height": 420
+        },
+        "outputWidth": 380,
+        "outputHeight": 420,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "aecbb7f15c22ed4ef6d4adadc15a91fd168fea7a0911b911c77154361d1a51de",
+      "bytes": 49870,
+      "width": 380,
+      "height": 420,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0088",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:boost-wallet-before",
+      "kind": "image",
+      "src": "./assets/media/final-observations/boost-wallet-before.webp",
+      "alt": "GH-V0088 원본 PTS 0.000000초 · boost-wallet-before",
+      "source": "GH-V0088 원본 PTS 0.000000초 · 크롭 x180 y85 w745 h115",
+      "sourceRange": {
+        "startSeconds": 0.0,
+        "endSeconds": 0.0
+      },
+      "sourcePTS": 0.0,
+      "transform": {
+        "crop": {
+          "x": 180,
+          "y": 85,
+          "width": 745,
+          "height": 115
+        },
+        "outputWidth": 745,
+        "outputHeight": 115,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "6b7a4c8881b08f6f96fa8ec289718f441012eda5c4d3546e51bbfed8e6084fef",
+      "bytes": 15834,
+      "width": 745,
+      "height": 115,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0088",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:boost-wallet-after",
+      "kind": "image",
+      "src": "./assets/media/final-observations/boost-wallet-after.webp",
+      "alt": "GH-V0088 원본 PTS 10.004600초 · boost-wallet-after",
+      "source": "GH-V0088 원본 PTS 10.004600초 · 크롭 x180 y85 w745 h115",
+      "sourceRange": {
+        "startSeconds": 10.0046,
+        "endSeconds": 10.0046
+      },
+      "sourcePTS": 10.0046,
+      "transform": {
+        "crop": {
+          "x": 180,
+          "y": 85,
+          "width": 745,
+          "height": 115
+        },
+        "outputWidth": 745,
+        "outputHeight": 115,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "88dca0d8265f8bda46fab358484f2f3c4d9423607b7f20a4b66dd20f4defefe5",
+      "bytes": 15804,
+      "width": 745,
+      "height": 115,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0088",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:boost-cycle:video",
+      "kind": "video",
+      "src": "./assets/media/final-observations/boost-cycle.mp4",
+      "poster": "./assets/media/final-observations/boost-cycle-poster.webp",
+      "posterSha256": "b3195150366edf54ec0f72e18a0997d4d9057d1e69bc8b97a2357e885ef42c38",
+      "alt": "boost-cycle · 실제 녹화 선정 구간",
+      "source": "GH-V0088 0.1–9.8초 · 1배속 무음 크롭",
+      "sourceRange": {
+        "startSeconds": 0.1,
+        "endSeconds": 9.8
+      },
+      "sha256": "1759120e9d08fe277a9f750fe70fd694fdc9e8039438a6f6bae38b6f4c560fc5",
+      "bytes": 357074,
+      "width": 380,
+      "height": 420,
+      "transform": {
+        "crop": {
+          "x": 700,
+          "y": 190,
+          "width": 380,
+          "height": 420
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 24,
+        "firstIncludedSourcePTS": 0.103611,
+        "lastIncludedSourcePTS": 9.795333,
+        "sourceNativeFrames": 1163
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 9.708333,
+        "frames": 233,
+        "fps": "24/1"
+      },
+      "notes": "MP4는1배속24fps 무음 파생입니다. GIF는12Hz 선택·10ms 시간 양자화이므로 원본 동작 시간 측정의 기준은 source PTS입니다. 추가 시작·끝 정지 프레임은 없습니다.",
+      "browserReview": {
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false,
+        "playbackRate": 1,
+        "ended": true,
+        "finalCurrentTimeSeconds": 9.708333,
+        "durationSeconds": 9.708333,
+        "inputLogAvailable": false,
+        "method": "Connected browser at localhost #apk-media: Space playback, rate/currentTime/ended inspection and start/end screenshots, compared with selected original stills. Not a claim of visually attending to every playback frame."
+      }
+    },
+    {
+      "sourceId": "GH-V0088",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:boost-cycle:gif",
+      "kind": "gif",
+      "src": "./assets/media/final-observations/boost-cycle.gif",
+      "poster": "./assets/media/final-observations/boost-cycle-poster.webp",
+      "posterSha256": "b3195150366edf54ec0f72e18a0997d4d9057d1e69bc8b97a2357e885ef42c38",
+      "alt": "boost-cycle · 실제 녹화 선정 구간",
+      "source": "GH-V0088 0.1–9.8초 · 1배속 무음 크롭",
+      "sourceRange": {
+        "startSeconds": 0.1,
+        "endSeconds": 9.8
+      },
+      "sha256": "c2b67f0875d913565333645a776abb54911696109165c05869d1366c69b20ae1",
+      "bytes": 1461948,
+      "width": 320,
+      "height": 354,
+      "transform": {
+        "crop": {
+          "x": 700,
+          "y": 190,
+          "width": 380,
+          "height": 420
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 12,
+        "firstIncludedSourcePTS": 0.103611,
+        "lastIncludedSourcePTS": 9.795333,
+        "sourceNativeFrames": 1163,
+        "timingIsMeasurementSource": false,
+        "nominalHoldStartFrames": 0,
+        "nominalHoldEndFrames": 0
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 9.75,
+        "frames": 117,
+        "fps": "12Hz sample with10ms GIF quantization"
+      },
+      "notes": "MP4는1배속24fps 무음 파생입니다. GIF는12Hz 선택·10ms 시간 양자화이므로 원본 동작 시간 측정의 기준은 source PTS입니다. 추가 시작·끝 정지 프레임은 없습니다."
+    },
+    {
+      "sourceId": "GH-S0138",
+      "originalSha256": "1b0368a82713e0d642b8ef415d9eb4105b7ee58e71fd885de0d14847350ead44",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:rainbow-confirm",
+      "kind": "image",
+      "src": "./assets/media/final-observations/rainbow-confirm.webp",
+      "alt": "실제 만능 젬 대상 레벨업 확인창 · 정지 표본",
+      "source": "GH-S0138 원본 스크린샷 크롭",
+      "sha256": "fe9eb107dacd9fb60af1a2a6b27f1a265d6e042c5e3daf62d161e4707b3a4889",
+      "bytes": 45634,
+      "width": 640,
+      "height": 712,
+      "transform": {
+        "crop": {
+          "x": 100,
+          "y": 850,
+          "width": 1240,
+          "height": 1380
+        }
+      },
+      "notes": "정지 화면입니다. 확인 버튼의 실행·도구 소모·후속 결과를 관측한 자료가 아닙니다."
+    },
+    {
+      "sourceId": "GH-S0138",
+      "originalSha256": "1b0368a82713e0d642b8ef415d9eb4105b7ee58e71fd885de0d14847350ead44",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:s138-displayed-version",
+      "kind": "image",
+      "src": "./assets/media/final-observations/s138-displayed-version.webp",
+      "alt": "스크린샷 상단의 화면 표시3.83.0 · manifest 검증 아님",
+      "source": "GH-S0138 원본 스크린샷 크롭",
+      "sha256": "c6b0b125f751af0be8b1129b45d8006dc1368e2d4a220bd20358a56f2142f444",
+      "bytes": 498,
+      "width": 115,
+      "height": 55,
+      "transform": {
+        "crop": {
+          "x": 1125,
+          "y": 4,
+          "width": 115,
+          "height": 55
+        }
+      },
+      "notes": "정지 화면입니다. 확인 버튼의 실행·도구 소모·후속 결과를 관측한 자료가 아닙니다."
+    },
+    {
+      "sourceId": "GH-S0138",
+      "originalSha256": "1b0368a82713e0d642b8ef415d9eb4105b7ee58e71fd885de0d14847350ead44",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:rainbow-description",
+      "kind": "image",
+      "src": "./assets/media/final-observations/rainbow-description.webp",
+      "alt": "실제 만능 젬 설명 · 다른 아이템으로 드래그·생성기 사용 불가",
+      "source": "GH-S0138 원본 스크린샷 크롭",
+      "sha256": "36e65441c875a272e8afc13ce1b50a53b6f08dbfd433994c6d57956fee2f4b0f",
+      "bytes": 11380,
+      "width": 960,
+      "height": 240,
+      "transform": {
+        "crop": {
+          "x": 240,
+          "y": 2700,
+          "width": 960,
+          "height": 240
+        },
+        "outputWidth": 960,
+        "outputHeight": 240,
+        "interpolation": "none; original pixel crop"
+      },
+      "notes": "정지 화면입니다. 확인 버튼의 실행·도구 소모·후속 결과를 관측한 자료가 아닙니다."
+    },
+    {
+      "sourceId": "GH-V0064",
+      "originalSha256": "400d4e67511d0177f66247e77a82a57a0804c5fed58362b5dc173558e6d90676",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:v64-displayed-version",
+      "kind": "image",
+      "src": "./assets/media/final-observations/v64-displayed-version.webp",
+      "alt": "화면 표시3.87.1 · manifest 검증 아님",
+      "source": "GH-V0064 원본 PTS 203.408400초 · 숫자 버전만 크롭",
+      "sourceRange": {
+        "startSeconds": 203.4084,
+        "endSeconds": 203.4084
+      },
+      "sourcePTS": 203.4084,
+      "transform": {
+        "crop": {
+          "x": 840,
+          "y": 4,
+          "width": 98,
+          "height": 49
+        },
+        "outputWidth": 98,
+        "outputHeight": 49,
+        "interpolation": "none; original pixel crop"
+      },
+      "sha256": "5b4bafd11f5e09038e8ab1ec1d80acf487a1c4c92dd8a606ebc4eda615d6066f",
+      "bytes": 848,
+      "width": 98,
+      "height": 49,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0088",
+      "originalSha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:v88-displayed-version",
+      "kind": "image",
+      "src": "./assets/media/final-observations/v88-displayed-version.webp",
+      "alt": "화면 표시3.87.2 · manifest 검증 아님",
+      "source": "GH-V0088 원본 PTS 0.000000초 · 숫자 버전만 크롭",
+      "sourceRange": {
+        "startSeconds": 0.0,
+        "endSeconds": 0.0
+      },
+      "sourcePTS": 0.0,
+      "transform": {
+        "crop": {
+          "x": 840,
+          "y": 4,
+          "width": 98,
+          "height": 49
+        },
+        "outputWidth": 98,
+        "outputHeight": 49,
+        "interpolation": "none; original pixel crop"
+      },
+      "sha256": "c4cd781803d1ecacf3d54bbdb88aa6e165e29e6235598bb3800399c5c5a14e84",
+      "bytes": 804,
+      "width": 98,
+      "height": 49,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0120",
+      "originalSha256": "49638c1ca285ede9bda79425f5c4e85b1d33b3df3b4cee22087351bc1f1ff593",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:collection-gem-before",
+      "kind": "image",
+      "src": "./assets/media/final-observations/collection-gem-before.webp",
+      "alt": "GH-V0120 원본 PTS 0.000000초 · collection-gem-before",
+      "source": "GH-V0120 원본 PTS 0.000000초 · 크롭 x0 y80 w1080 h2160",
+      "sourceRange": {
+        "startSeconds": 0.0,
+        "endSeconds": 0.0
+      },
+      "sourcePTS": 0.0,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 80,
+          "width": 1080,
+          "height": 2160
+        },
+        "outputWidth": 540,
+        "outputHeight": 1080,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "f065b9ad9d37602730e4b237bac55dd6d71d0c1c72b5fe4988e4f98e1468d04c",
+      "bytes": 157438,
+      "width": 540,
+      "height": 1080,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0120",
+      "originalSha256": "49638c1ca285ede9bda79425f5c4e85b1d33b3df3b4cee22087351bc1f1ff593",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:collection-gem-dialog",
+      "kind": "image",
+      "src": "./assets/media/final-observations/collection-gem-dialog.webp",
+      "alt": "GH-V0120 원본 PTS 1.507533초 · collection-gem-dialog",
+      "source": "GH-V0120 원본 PTS 1.507533초 · 크롭 x0 y80 w1080 h2160",
+      "sourceRange": {
+        "startSeconds": 1.507533,
+        "endSeconds": 1.507533
+      },
+      "sourcePTS": 1.507533,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 80,
+          "width": 1080,
+          "height": 2160
+        },
+        "outputWidth": 540,
+        "outputHeight": 1080,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "18341b9799ebfceac3bf1fefb7260fa0611ea144553c3e33d281bd75670c318c",
+      "bytes": 90950,
+      "width": 540,
+      "height": 1080,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0120",
+      "originalSha256": "49638c1ca285ede9bda79425f5c4e85b1d33b3df3b4cee22087351bc1f1ff593",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:collection-gem-effect",
+      "kind": "image",
+      "src": "./assets/media/final-observations/collection-gem-effect.webp",
+      "alt": "GH-V0120 원본 PTS 2.507867초 · collection-gem-effect",
+      "source": "GH-V0120 원본 PTS 2.507867초 · 크롭 x0 y80 w1080 h2160",
+      "sourceRange": {
+        "startSeconds": 2.507867,
+        "endSeconds": 2.507867
+      },
+      "sourcePTS": 2.507867,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 80,
+          "width": 1080,
+          "height": 2160
+        },
+        "outputWidth": 540,
+        "outputHeight": 1080,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "1f884e816f4d7b7d426b25590e31e82cde92ae9fd5873b5682610acf458f5c46",
+      "bytes": 77602,
+      "width": 540,
+      "height": 1080,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0120",
+      "originalSha256": "49638c1ca285ede9bda79425f5c4e85b1d33b3df3b4cee22087351bc1f1ff593",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:collection-gem-after",
+      "kind": "image",
+      "src": "./assets/media/final-observations/collection-gem-after.webp",
+      "alt": "GH-V0120 원본 PTS 4.607900초 · collection-gem-after",
+      "source": "GH-V0120 원본 PTS 4.607900초 · 크롭 x0 y80 w1080 h2160",
+      "sourceRange": {
+        "startSeconds": 4.6079,
+        "endSeconds": 4.6079
+      },
+      "sourcePTS": 4.6079,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 80,
+          "width": 1080,
+          "height": 2160
+        },
+        "outputWidth": 540,
+        "outputHeight": 1080,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "b9c9aa68f25473eb2740b2d547e538986e05880b5e5dd230d4bfe884c41a70db",
+      "bytes": 151512,
+      "width": 540,
+      "height": 1080,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0120",
+      "originalSha256": "49638c1ca285ede9bda79425f5c4e85b1d33b3df3b4cee22087351bc1f1ff593",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:collection-gem-wallet-before",
+      "kind": "image",
+      "src": "./assets/media/final-observations/collection-gem-wallet-before.webp",
+      "alt": "GH-V0120 원본 PTS 0.000000초 · collection-gem-wallet-before",
+      "source": "GH-V0120 원본 PTS 0.000000초 · 크롭 x180 y85 w745 h115",
+      "sourceRange": {
+        "startSeconds": 0.0,
+        "endSeconds": 0.0
+      },
+      "sourcePTS": 0.0,
+      "transform": {
+        "crop": {
+          "x": 180,
+          "y": 85,
+          "width": 745,
+          "height": 115
+        },
+        "outputWidth": 745,
+        "outputHeight": 115,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "a5a0e676fac7ed0241f993c488427c24ef8b9e4a291b0e4be9e04b98a202e0fa",
+      "bytes": 16152,
+      "width": 745,
+      "height": 115,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0120",
+      "originalSha256": "49638c1ca285ede9bda79425f5c4e85b1d33b3df3b4cee22087351bc1f1ff593",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:collection-gem-wallet-after",
+      "kind": "image",
+      "src": "./assets/media/final-observations/collection-gem-wallet-after.webp",
+      "alt": "GH-V0120 원본 PTS 4.607900초 · collection-gem-wallet-after",
+      "source": "GH-V0120 원본 PTS 4.607900초 · 크롭 x180 y85 w745 h115",
+      "sourceRange": {
+        "startSeconds": 4.6079,
+        "endSeconds": 4.6079
+      },
+      "sourcePTS": 4.6079,
+      "transform": {
+        "crop": {
+          "x": 180,
+          "y": 85,
+          "width": 745,
+          "height": 115
+        },
+        "outputWidth": 745,
+        "outputHeight": 115,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "9e82a0ea6a99b55a71ae5d5e4f67b3ad56ea6f280179d5a2c57ff7c0c6004e93",
+      "bytes": 16380,
+      "width": 745,
+      "height": 115,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0120",
+      "originalSha256": "49638c1ca285ede9bda79425f5c4e85b1d33b3df3b4cee22087351bc1f1ff593",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:v120-displayed-version",
+      "kind": "image",
+      "src": "./assets/media/final-observations/v120-displayed-version.webp",
+      "alt": "GH-V0120 원본 PTS 4.607900초 · v120-displayed-version",
+      "source": "GH-V0120 원본 PTS 4.607900초 · 크롭 x650 y4 w98 h49",
+      "sourceRange": {
+        "startSeconds": 4.6079,
+        "endSeconds": 4.6079
+      },
+      "sourcePTS": 4.6079,
+      "transform": {
+        "crop": {
+          "x": 650,
+          "y": 4,
+          "width": 98,
+          "height": 49
+        },
+        "outputWidth": 98,
+        "outputHeight": 49,
+        "interpolation": "Lanczos only if resized"
+      },
+      "sha256": "8076f55bd6299a4b16d0f9d17cdc12a84d46433c06bf8a7a6b44a14d21633068",
+      "bytes": 882,
+      "width": 98,
+      "height": 49,
+      "notes": "선정된 원본 프레임. 정확한 터치 press/up 시각이나 전체 영상 직접 재생 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0120",
+      "originalSha256": "49638c1ca285ede9bda79425f5c4e85b1d33b3df3b4cee22087351bc1f1ff593",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:collection-gem-use:video",
+      "kind": "video",
+      "src": "./assets/media/final-observations/collection-gem-use.mp4",
+      "poster": "./assets/media/final-observations/collection-gem-use-poster.webp",
+      "posterSha256": "050de1eb54d409e202689722b51f969cdb1f7d3ae09a3cadc3743c4562bc0f4a",
+      "alt": "collection-gem-use · 실제 녹화 선정 구간",
+      "source": "GH-V0120 0–6초 · 1배속 무음 크롭",
+      "sourceRange": {
+        "startSeconds": 0,
+        "endSeconds": 6
+      },
+      "sha256": "86dbe3c1925f4df425ed317f5c4628bf63c5d3549cfcb38da777edd68425f343",
+      "bytes": 881175,
+      "width": 480,
+      "height": 960,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 80,
+          "width": 1080,
+          "height": 2160
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 24,
+        "firstIncludedSourcePTS": 0.0,
+        "lastIncludedSourcePTS": 5.999489,
+        "sourceNativeFrames": 714
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 6.0,
+        "frames": 144,
+        "fps": "24/1"
+      },
+      "notes": "MP4는1배속24fps 무음 파생입니다. GIF는12Hz 선택·10ms 시간 양자화이므로 원본 동작 시간 측정의 기준은 source PTS입니다. 추가 시작·끝 정지 프레임은 없습니다.",
+      "browserReview": {
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false,
+        "playbackRate": 1,
+        "ended": true,
+        "finalCurrentTimeSeconds": 6.0,
+        "durationSeconds": 6.0,
+        "inputLogAvailable": false,
+        "method": "Connected browser localhost media modal at390x844: Space playback, paused:false / rate1 / currentTime0.1916, then ended:true / currentTime6 / duration6. Start/end screenshots compared with candidate source stills. Not continuous visual review of every playback frame.",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "observedInitialCurrentTimeSeconds": 0.1916
+      }
+    },
+    {
+      "sourceId": "GH-V0120",
+      "originalSha256": "49638c1ca285ede9bda79425f5c4e85b1d33b3df3b4cee22087351bc1f1ff593",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "final-observation:collection-gem-use:gif",
+      "kind": "gif",
+      "src": "./assets/media/final-observations/collection-gem-use.gif",
+      "poster": "./assets/media/final-observations/collection-gem-use-poster.webp",
+      "posterSha256": "050de1eb54d409e202689722b51f969cdb1f7d3ae09a3cadc3743c4562bc0f4a",
+      "alt": "collection-gem-use · 실제 녹화 선정 구간",
+      "source": "GH-V0120 0–6초 · 1배속 무음 크롭",
+      "sourceRange": {
+        "startSeconds": 0,
+        "endSeconds": 6
+      },
+      "sha256": "2f4bac4f9d50f6ba7e720c1a84e0a8ec72ceac976b13dc5bebdb6dbe2aa9ebf8",
+      "bytes": 1947391,
+      "width": 320,
+      "height": 640,
+      "transform": {
+        "crop": {
+          "x": 0,
+          "y": 80,
+          "width": 1080,
+          "height": 2160
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 12,
+        "firstIncludedSourcePTS": 0.0,
+        "lastIncludedSourcePTS": 5.999489,
+        "sourceNativeFrames": 714,
+        "timingIsMeasurementSource": false,
+        "nominalHoldStartFrames": 0,
+        "nominalHoldEndFrames": 0
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 6.0,
+        "frames": 72,
+        "fps": "12Hz sample with10ms GIF quantization"
+      },
+      "notes": "MP4는1배속24fps 무음 파생입니다. GIF는12Hz 선택·10ms 시간 양자화이므로 원본 동작 시간 측정의 기준은 source PTS입니다. 추가 시작·끝 정지 프레임은 없습니다."
+    }
+  ],
+  "studies": [
+    {
+      "id": "observed-clock-storage",
+      "title": "모래시계 선택·이동·보관 · 실제 사용과 구분",
+      "topic": "puzzle",
+      "checklistIds": [
+        "4.07",
+        "4.11"
+      ],
+      "sourceId": "GH-V0064",
+      "sourceDisplayedBuildPrefix": "3.87.1",
+      "sourceRange": {
+        "startSeconds": 199.2,
+        "endSeconds": 204.6
+      },
+      "evidenceType": "actual-item-storage-not-time-skip-use",
+      "mediaKeys": [
+        "final-observation:clock-store:video",
+        "final-observation:clock-store:gif",
+        "final-observation:clock-queued",
+        "final-observation:clock-move",
+        "final-observation:clock-selected",
+        "final-observation:clock-return-path",
+        "final-observation:clock-inventory-arrival",
+        "final-observation:v64-displayed-version"
+      ],
+      "imageKey": "final-observation:clock-selected",
+      "frames": [
+        {
+          "key": "final-observation:clock-queued",
+          "timeSeconds": 199.376144,
+          "caption": "대기열의 시계 그림"
+        },
+        {
+          "key": "final-observation:clock-move",
+          "timeSeconds": 202.000678,
+          "caption": "보드 위 이동과3레벨40분 설명"
+        },
+        {
+          "key": "final-observation:clock-selected",
+          "timeSeconds": 203.4084,
+          "caption": "4행6열의 시계 선택"
+        },
+        {
+          "key": "final-observation:clock-return-path",
+          "timeSeconds": 203.901033,
+          "caption": "하단 왼쪽으로 이어지는 이동 궤적"
+        },
+        {
+          "key": "final-observation:clock-inventory-arrival",
+          "timeSeconds": 204.201822,
+          "caption": "시계가 사라지고 보관함 아이콘에 광택"
+        }
+      ],
+      "observations": [
+        "원본3레벨 모래시계와 같은 외형·40분 설명의 실제 아이템을 확인했습니다.",
+        "203.3~203.8초에는4행6열에서 선택되어 있고,203.9~204.1초 하단 왼쪽으로 이동한 뒤204.2초 보관함 아이콘의 광택과 함께 사라집니다.",
+        "이는 사용·소모가 아니라 보관함으로 이동한 장면입니다. 기존0.5초 표본에서 사라졌다는 사실만으로 사용 성공으로 판정하지 않습니다.",
+        "선정 전후에 두 과일나무의 회색/금색 충전 아이콘이 남습니다. 시간가속 파문이나 실제 타이머 단축은 확인하지 못했습니다."
+      ],
+      "boundaries": [
+        "실제 touch down/up 로그는 없습니다. 연속 화면의 아이템 궤적·접점 원표시·목적지 반응을 관측한 범위입니다.",
+        "관측 타입코드는 표시되지 않았습니다. APK time_skip_3과의 외형·레벨·40분 설명 일치이며 내부ID 자체를 읽은 결과는 아닙니다.",
+        "직접 원속도 전체 재생 검수는 별도입니다.",
+        "이 장면으로4.07의 실제 시간가속 사용 완료 조건을 충족하지 않습니다."
+      ],
+      "candidateAPKType": "time_skip_3",
+      "actualTimeSkipUseVerified": false,
+      "actualStorageTransitionObserved": true,
+      "review": {
+        "inputLogAvailable": false,
+        "nativeFrameSequenceReviewed": true,
+        "nativeRealtimePlayback": false,
+        "currentAPKRuntimeObserved": false,
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false
+      },
+      "sourceDisplayedBuildMediaKey": "final-observation:v64-displayed-version"
+    },
+    {
+      "id": "observed-bubble-replacement",
+      "title": "버블 터뜨리기 확인 → 코인1아이템",
+      "topic": "puzzle",
+      "checklistIds": [
+        "4.11"
+      ],
+      "sourceId": "GH-V0116",
+      "sourceDisplayedBuildPrefix": "3.88.3",
+      "sourceRange": {
+        "startSeconds": 37.3,
+        "endSeconds": 39.6
+      },
+      "evidenceType": "actual-confirm-and-result",
+      "mediaKeys": [
+        "final-observation:bubble-confirm-replace:video",
+        "final-observation:bubble-confirm-replace:gif",
+        "final-observation:bubble-before",
+        "final-observation:bubble-confirm",
+        "final-observation:bubble-after",
+        "final-observation:bubble-gold-before",
+        "final-observation:bubble-gold-after",
+        "final-observation:v116-displayed-version"
+      ],
+      "imageKey": "final-observation:bubble-confirm",
+      "frames": [
+        {
+          "key": "final-observation:bubble-before",
+          "timeSeconds": 37.706833,
+          "caption": "선택된 버블 안 무지개 튜브"
+        },
+        {
+          "key": "final-observation:bubble-confirm",
+          "timeSeconds": 38.507211,
+          "caption": "터트리기/취소 확인창"
+        },
+        {
+          "key": "final-observation:bubble-after",
+          "timeSeconds": 39.156322,
+          "caption": "같은 칸의 코인과2골드 설명"
+        }
+      ],
+      "observations": [
+        "팝업은 거품을 터뜨리고 골드1개를 획득한다는 문구와 빨간 터트리기/초록 취소 버튼을 표시합니다.",
+        "창 종료 뒤 같은 칸에 코인1아이템이 나타나고, 하단 설명은 누르면2골드를 획득한다고 표시합니다.",
+        "선정 전후 HUD 골드는187입니다. 아이템1개 지급을 지갑+1골드로 해석하지 않습니다.",
+        "상단에 화면 표시 버전 prefix3.88.3을 읽을 수 있습니다."
+      ],
+      "boundaries": [
+        "정확한 tap/drag 입력과 버튼 누른 순간은 로그 미확인입니다. 표시된 창→후속 결과를 관측했습니다.",
+        "버블 파괴를 만능 젬·가위 사용으로 분류하지 않습니다.",
+        "보상 아이템의 내부 타입ID는 원본 화면에서 읽지 못했습니다.",
+        "화면 표시 버전과 APK manifest 검증은 구분합니다."
+      ],
+      "counters": {
+        "beforeHUDGold": 187,
+        "afterHUDGold": 187,
+        "resultItemCount": 1,
+        "displayedCollectGold": 2
+      },
+      "sourceDisplayedBuildMediaKey": "final-observation:v116-displayed-version",
+      "review": {
+        "inputLogAvailable": false,
+        "nativeFrameSequenceReviewed": true,
+        "nativeRealtimePlayback": false,
+        "currentAPKRuntimeObserved": false,
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false
+      }
+    },
+    {
+      "id": "observed-booster-cycle",
+      "title": "배율4→1→2→4 · 전환과 소비 분리",
+      "topic": "puzzle",
+      "checklistIds": [
+        "4.11"
+      ],
+      "sourceId": "GH-V0088",
+      "sourceDisplayedBuildPrefix": "3.87.2",
+      "sourceRange": {
+        "startSeconds": 0.1,
+        "endSeconds": 9.8
+      },
+      "evidenceType": "actual-UI-state-cycle",
+      "mediaKeys": [
+        "final-observation:boost-cycle:video",
+        "final-observation:boost-cycle:gif",
+        "final-observation:boost-1",
+        "final-observation:boost-2",
+        "final-observation:boost-3",
+        "final-observation:boost-4",
+        "final-observation:boost-wallet-before",
+        "final-observation:boost-wallet-after",
+        "final-observation:v88-displayed-version"
+      ],
+      "imageKey": "final-observation:boost-1",
+      "frames": [
+        {
+          "key": "final-observation:boost-1",
+          "timeSeconds": 0.0,
+          "caption": "기존x4"
+        },
+        {
+          "key": "final-observation:boost-2",
+          "timeSeconds": 3.904256,
+          "caption": "x1과 부스터 비활성 안내"
+        },
+        {
+          "key": "final-observation:boost-3",
+          "timeSeconds": 5.505822,
+          "caption": "x2 활성 안내"
+        },
+        {
+          "key": "final-observation:boost-4",
+          "timeSeconds": 8.504311,
+          "caption": "x4 활성 안내"
+        }
+      ],
+      "observations": [
+        "선정 프레임에서 배율표시가4→1→2→4로 바뀌고 비활성/2배/4배 안내를 확인했습니다.",
+        "전환 전후 에너지230·골드28·젬1378 표시가 같습니다. 배율 전환 자체를 생성 에너지 소비로 계산하지 않습니다.",
+        "프레임 시각은 선정 PTS이며 버튼이 처음 변한 정확한 입력 시각을 뜻하지 않습니다."
+      ],
+      "boundaries": [
+        "이 구간에 생성기를 사용해2배/4배 산출·소비량을 대조한 결과는 없습니다.",
+        "x8 전환으로 잘못 일반화하지 않습니다. 이 녹화는x4에서 시작해1/2/4로 전환합니다.",
+        "입력 이벤트 로그와 실제 기기4.10.5 실행 검증은 별도입니다."
+      ],
+      "counters": {
+        "energy": 230,
+        "coins": 28,
+        "gems": 1378,
+        "unchangedAtSelectedEndpoints": true
+      },
+      "review": {
+        "inputLogAvailable": false,
+        "nativeFrameSequenceReviewed": true,
+        "nativeRealtimePlayback": false,
+        "currentAPKRuntimeObserved": false,
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false
+      },
+      "observationRange": {
+        "startSeconds": 0,
+        "endSeconds": 10.05
+      },
+      "observedBoostStates": [
+        4,
+        1,
+        2,
+        4
+      ],
+      "sourceDisplayedBuildMediaKey": "final-observation:v88-displayed-version"
+    },
+    {
+      "id": "observed-rainbow-confirm",
+      "title": "만능 젬 실제 확인창 · 도움말과 구분",
+      "topic": "ui",
+      "checklistIds": [
+        "4.11"
+      ],
+      "sourceId": "GH-S0138",
+      "sourceDisplayedBuildPrefix": "3.83.0",
+      "sourceRange": null,
+      "evidenceType": "actual-confirmation-still-not-consumption",
+      "mediaKeys": [
+        "final-observation:rainbow-confirm",
+        "final-observation:s138-displayed-version",
+        "final-observation:rainbow-description"
+      ],
+      "imageKey": "final-observation:rainbow-confirm",
+      "frames": [],
+      "observations": [
+        "실제 보드 위에 만능 젬 + 대상 조개 → 다음 형태의 확인창이 열려 있습니다. 빨간 취소/초록OK 버튼을 구분합니다.",
+        "하단 실제 아이템 설명은 다른 아이템으로 드래그하면 레벨이 향상되고 생성기에는 사용할 수 없다고 안내합니다.",
+        "버블 확인창과 같은 일반 제목이라도 실제 아이콘·본문·버튼·결과 규칙을 대조해야 합니다."
+      ],
+      "boundaries": [
+        "정지 스크린샷입니다. OK 입력·도구 소모·최종 결과는 미관측입니다.",
+        "가위/모래시계 사용을 입증한 자료가 아닙니다.",
+        "화면 표시3.83.0은 읽었으나 해당 APK manifest를 확보해 검증한 버전은 아닙니다."
+      ],
+      "sourceDisplayedBuildMediaKey": "final-observation:s138-displayed-version",
+      "review": {
+        "inputLogAvailable": false,
+        "nativeFrameSequenceReviewed": false,
+        "nativeRealtimePlayback": false,
+        "currentAPKRuntimeObserved": false
+      },
+      "actualConsumptionObserved": false
+    },
+    {
+      "id": "observed-board-gem-use",
+      "title": "소량의 젬 사용 → 10젬 지급",
+      "topic": "board-reward-consumable",
+      "checklistIds": [
+        "4.11"
+      ],
+      "sourceId": "GH-V0120",
+      "sourceDisplayedBuildPrefix": "3.96.1",
+      "sourceRange": {
+        "startSeconds": 0,
+        "endSeconds": 6
+      },
+      "evidenceType": "actual-card-dialog-consumption-and-wallet-result",
+      "mediaKeys": [
+        "final-observation:collection-gem-use:video",
+        "final-observation:collection-gem-use:gif",
+        "final-observation:collection-gem-before",
+        "final-observation:collection-gem-dialog",
+        "final-observation:collection-gem-effect",
+        "final-observation:collection-gem-after",
+        "final-observation:collection-gem-wallet-before",
+        "final-observation:collection-gem-wallet-after",
+        "final-observation:v120-displayed-version"
+      ],
+      "imageKey": "final-observation:collection-gem-dialog",
+      "frames": [
+        {
+          "key": "final-observation:collection-gem-before",
+          "timeSeconds": 0.0,
+          "caption": "보드9행2열의 보상 카드와젬3842"
+        },
+        {
+          "key": "final-observation:collection-gem-dialog",
+          "timeSeconds": 1.507533,
+          "caption": "소량의 젬·일반·사용 시10젬·사용 버튼"
+        },
+        {
+          "key": "final-observation:collection-gem-effect",
+          "timeSeconds": 2.507867,
+          "caption": "카드 사용 빛 연출"
+        },
+        {
+          "key": "final-observation:collection-gem-after",
+          "timeSeconds": 4.6079,
+          "caption": "같은칸 카드없음·젬3852"
+        }
+      ],
+      "observations": [
+        "실제 팝업 제목은 소량의 젬, 표시 등급은 일반입니다. 하단 아이템 이름은 소량의 젬 (3레벨)입니다.",
+        "본문은 효과: 보석이 반짝! 사용 시10젬을 획득합니다.이며 초록 사용 버튼이 표시됩니다. 자동 지급이라는 문구로 바꾸지 않습니다.",
+        "선정 전후 지갑은 젬3842→3852(+10), 에너지3214→3214, 골드653→653입니다. 사용 빛 연출 뒤 보드9행2열의 카드가 사라집니다.",
+        "시작 장면은 카드가 이미 보드에 놓인 상태입니다. 획득 경로·컬렉션 묶음 화면을 연 이력은 이6초 구간에서 입증하지 않습니다."
+      ],
+      "boundaries": [
+        "정확한 raw tap/drag/down/up 로그는 없습니다. 표시된 사용창·후속 연출·동일칸 소실·지갑 증가를 관측했습니다.",
+        "화면 표시 빌드3.96.1은 읽었으나 manifest·촬영 연도·서버 배정은 검증하지 않았습니다. 날짜/시간처럼 보이는 상단 부가 문자열로 촬영일을 확정하지 않습니다.",
+        "카드의 내부 타입ID·컬렉션 세트ID·다른 시즌/4.10.5의 동일 규칙은 이 화면으로 확정하지 않습니다.",
+        "가위는 같은 구간 상단셀에 남습니다. 이 보상 카드 소비를 가위·모래시계 사용으로 계산하지 않습니다.",
+        "카드 형태의 보드 보상 소모품 관측입니다. 카드앨범 수집카드와 동일한 자산·기능인지, 앨범 진입·팩 개봉·세트 완료와 직접 이어지는지는 미확정입니다."
+      ],
+      "counters": {
+        "beforeGems": 3842,
+        "afterGems": 3852,
+        "gemDelta": 10,
+        "beforeEnergy": 3214,
+        "afterEnergy": 3214,
+        "beforeCoins": 653,
+        "afterCoins": 653
+      },
+      "displayedCardName": "소량의 젬",
+      "displayedCardLevel": 3,
+      "displayedRarityLabel": "일반",
+      "displayedUseRewardGems": 10,
+      "sourceDisplayedBuildMediaKey": "final-observation:v120-displayed-version",
+      "actualRewardCardUseResultObserved": true,
+      "internalItemTypeId": null,
+      "acquisitionPathObserved": false,
+      "review": {
+        "inputLogAvailable": false,
+        "nativeFrameSequenceReviewed": true,
+        "nativeRealtimePlayback": false,
+        "currentAPKRuntimeObserved": false,
+        "browserOneSpeedPlaybackChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false,
+        "browserStartEndFramesChecked": true
+      },
+      "albumCollectionRelationshipVerified": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "GH-V0064",
+      "kind": "video",
+      "sha256": "400d4e67511d0177f66247e77a82a57a0804c5fed58362b5dc173558e6d90676",
+      "sourceManifestVersion": null,
+      "sourceDisplayedBuildPrefix": "3.87.1"
+    },
+    {
+      "id": "GH-V0088",
+      "kind": "video",
+      "sha256": "69c37fb6aca3d874906ed525f3d7cf1724e9df6ef137957002a6927dc44dc987",
+      "sourceManifestVersion": null,
+      "sourceDisplayedBuildPrefix": "3.87.2"
+    },
+    {
+      "id": "GH-V0116",
+      "kind": "video",
+      "sha256": "cf0ad5c9ab9d37148cb26ade1f2b35b3c0e4a957a3b5ac2e57a76fb1eedfd6e6",
+      "sourceManifestVersion": null,
+      "sourceDisplayedBuildPrefix": "3.88.3"
+    },
+    {
+      "id": "GH-S0138",
+      "kind": "image",
+      "sha256": "1b0368a82713e0d642b8ef415d9eb4105b7ee58e71fd885de0d14847350ead44",
+      "sourceManifestVersion": null,
+      "sourceDisplayedBuildPrefix": "3.83.0"
+    },
+    {
+      "id": "GH-V0120",
+      "kind": "video",
+      "sha256": "49638c1ca285ede9bda79425f5c4e85b1d33b3df3b4cee22087351bc1f1ff593",
+      "sourceManifestVersion": null,
+      "sourceDisplayedBuildPrefix": "3.96.1"
+    }
+  ],
+  "coverage": [
+    {
+      "checklistId": "4.06",
+      "status": "actual-main-seal-and-automatic-hint-not-yet-proven",
+      "confirmed": [
+        "코드 재현과 제공 영상의 실제 입력/전이는 구분"
+      ],
+      "remaining": [
+        "메인 상자→거미줄→해제 실제 성공 전이",
+        "입력 없는 자동 힌트의 실제 발생·반복 입증"
+      ]
+    },
+    {
+      "checklistId": "4.07",
+      "status": "selection-and-storage-proven-use-not-proven",
+      "confirmed": [
+        "실제 모래시계3레벨40분 설명",
+        "선택/이동/보관함 전이"
+      ],
+      "remaining": [
+        "가위 선택→소모→분할 결과의 연속 장면",
+        "모래시계 소모→가속/타이머 감소의 실제 장면"
+      ]
+    },
+    {
+      "checklistId": "4.08",
+      "status": "actual-factory-window-and-operation-unresolved",
+      "confirmed": [
+        "신규 기능 안내 후보V0081은 요리 부스터·시즌 임무였음"
+      ],
+      "remaining": [
+        "실제 공장 창·점수/조각 소비·보상 전이"
+      ]
+    },
+    {
+      "checklistId": "4.11",
+      "status": "selected-source-frames-and-bounded-browser-one-speed-checked",
+      "confirmed": [
+        "실제 버블 확인→보드 코인",
+        "실제 배율 순환",
+        "실제 시계 보관",
+        "실제 만능 젬 확인창",
+        "선정 녹화별 화면 빌드 prefix",
+        "실제 소량의 젬 사용창→보드 소실→지갑10 증가의 원본 프레임 대조 (카드앨범 연결은 미확정)",
+        "선정 MP4 4개 브라우저 1배속·종료 상태·시작/끝 화면 대조"
+      ],
+      "remaining": [
+        "미기록 raw 입력 down/up/거절 이벤트",
+        "제공 영상 전체 원속도/전프레임 육안 검수와 구분",
+        "선정 재생의 매 프레임 연속 육안 검수는 미수행"
+      ]
+    }
+  ],
+  "searchAudit": {
+    "originalFolderFiles": 453,
+    "catalogFiles": 453,
+    "newOriginalFiles": 0,
+    "templateSearch": {
+      "videos": 110,
+      "sampleFrames": 11167,
+      "sourceTemplates": 6,
+      "scales": [
+        18,
+        23
+      ],
+      "method": "masked RGB normalized cross correlation at180px sampled width, alpha>0.6 mask, exploratory candidate retrieval",
+      "elapsedSeconds": 335.174,
+      "humanReview": "six top-template sheets, up to24 distinct-video representatives per template; six additional scissors sheets covering all110 video maxima; selected extra source-native frames and contextual checks",
+      "falsePositiveExamples": [
+        "time_skip_1 highest candidate was external social UI",
+        "time_skip_3 actual hourglass was a queue→board→inventory transition, not consumption",
+        "other high clock candidates included reward/generator/UI shapes"
+      ],
+      "confidenceBoundary": "NCC is neither a calibrated probability nor proof of type/version/use; missing detections are not proof of absence.",
+      "additionalScissorsRepresentativeVideosReviewed": 110,
+      "additionalNativeScissorsContextChecks": [
+        "GH-V0122",
+        "GH-V0120",
+        "GH-V0028"
+      ]
+    },
+    "stableWindowRetrieval": {
+      "videos": 110,
+      "sampleFrames": 11167,
+      "regionFractions": {
+        "left": 0,
+        "right": 0.84,
+        "top": 0.3,
+        "bottom": 0.85
+      },
+      "adjacentRGBMeanAbsoluteDifferenceThreshold": 2,
+      "minimumSamples": 9,
+      "candidateWindows": 38,
+      "representativeFramesReviewed": 38,
+      "nativeContextSourceId": "GH-V0024",
+      "nativeContextRange": {
+        "startSeconds": 52.5,
+        "endSeconds": 56.5
+      },
+      "actualAutomaticMergeHintConfirmed": false,
+      "boundary": "Low image change does not prove no physical input, a valid merge pair, or enabled hint preference. Most candidates are modal/external waits, not idle main-board play."
+    }
+  },
+  "boundaries": [
+    "원본 영상·스크린샷·검토용 시트·원본 음향은 공개하지 않습니다.",
+    "새 공개 MP4는 명시 구간의1배속 무음 크롭이며 실제 직접 재생 검수 여부는 별도입니다.",
+    "화면 표시 build prefix와 manifest 확인, 촬영일, raw 입력 로그를 구분합니다.",
+    "중요 미확인 항목은 같은4.06/07/08/11 번호에 남깁니다."
+  ],
+  "directRealtimePlaybackReviewedScope": "Complete original recordings; bounded selected derivative checks below do not imply full original review.",
+  "browserPlaybackReview": {
+    "reviewDate": "2026-10-30",
+    "scope": "Four selected silent 1x MP4 derivatives",
+    "checks": [
+      {
+        "mediaKey": "final-observation:clock-store:video",
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false,
+        "playbackRate": 1,
+        "ended": true,
+        "finalCurrentTimeSeconds": 5.416667,
+        "durationSeconds": 5.416667,
+        "inputLogAvailable": false,
+        "method": "Connected browser at localhost #apk-media: Space playback, rate/currentTime/ended inspection and start/end screenshots, compared with selected original stills. Not a claim of visually attending to every playback frame."
+      },
+      {
+        "mediaKey": "final-observation:bubble-confirm-replace:video",
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false,
+        "playbackRate": 1,
+        "ended": true,
+        "finalCurrentTimeSeconds": 2.291667,
+        "durationSeconds": 2.291667,
+        "inputLogAvailable": false,
+        "method": "Connected browser at localhost #apk-media: Space playback, rate/currentTime/ended inspection and start/end screenshots, compared with selected original stills. Not a claim of visually attending to every playback frame."
+      },
+      {
+        "mediaKey": "final-observation:boost-cycle:video",
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false,
+        "playbackRate": 1,
+        "ended": true,
+        "finalCurrentTimeSeconds": 9.708333,
+        "durationSeconds": 9.708333,
+        "inputLogAvailable": false,
+        "method": "Connected browser at localhost #apk-media: Space playback, rate/currentTime/ended inspection and start/end screenshots, compared with selected original stills. Not a claim of visually attending to every playback frame."
+      },
+      {
+        "mediaKey": "final-observation:collection-gem-use:video",
+        "browserOneSpeedPlaybackChecked": true,
+        "browserStartEndFramesChecked": true,
+        "everyPlaybackFrameVisuallyReviewed": false,
+        "playbackRate": 1,
+        "ended": true,
+        "finalCurrentTimeSeconds": 6.0,
+        "durationSeconds": 6.0,
+        "inputLogAvailable": false,
+        "method": "Connected browser localhost media modal at390x844: Space playback, paused:false / rate1 / currentTime0.1916, then ended:true / currentTime6 / duration6. Start/end screenshots compared with candidate source stills. Not continuous visual review of every playback frame.",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "observedInitialCurrentTimeSeconds": 0.1916
+      }
+    ],
+    "completeOriginalRecordingsReviewed": false,
+    "everyPlaybackFrameVisuallyReviewed": false
+  },
+  "revision": "abe1f2c0f0fd6913c1de876cfd25c8b9568a3093d5bc42bd44cac5e3e92454f9"
+}

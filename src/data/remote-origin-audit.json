@@ -1,0 +1,127 @@
+{
+  "id": "remote-default-origin-arm32",
+  "reviewDate": "2026-10-30",
+  "targetVersion": "4.10.5",
+  "method": "REA IL2CPP metadata identity plus private ELF32 ARM static pointer/GOT/literal tracing; exact public static GET and UnityFS object verification",
+  "reaMetadataParentEvidenceId": "ev_e835903124536e331be91e150e47988f2a5eabf2507b221d29a5f36a472f61fe",
+  "binarySha256": "c016f7e0ed6f497184b0f01485b478fea461b41d2fee96d05e8e8fe2f383208f",
+  "metadataSha256": "b9508e449ced7f4642bf0cab83b17199b311165e9bf55b12880cc70c7383b049",
+  "codegenModuleName": "Assembly-CSharp.dll",
+  "moduleMethodCount": 11432,
+  "allMethodTokensMatched": 11432,
+  "allNonzeroPointersInExecutableSegment": true,
+  "methods": [
+    {
+      "index": 125,
+      "name": "get_REMOTE_HOTFIX_FOLDER",
+      "typeIndex": 25,
+      "token": "0x600007e",
+      "pointer": "0x88b298",
+      "bodySha256": "990ab5fc6ebd5b9c0464b1752d2d86904174c6b78bbe5787af7170a7b9db395d"
+    },
+    {
+      "index": 128,
+      "name": ".cctor",
+      "typeIndex": 25,
+      "token": "0x6000081",
+      "pointer": "0x88b768",
+      "bodySha256": "2fa861c704de4a9506238317f1d0c268c9aa27a3996aa364826e1990c3aad20c"
+    },
+    {
+      "index": 353,
+      "name": "get_remoteLoadFolder",
+      "typeIndex": 85,
+      "token": "0x6000162",
+      "pointer": "0x89e4dc",
+      "bodySha256": "a8aa754b9fc284565c64be06f8b55e6e596bc80fdc093e72739dc1aa36caf75c"
+    },
+    {
+      "index": 358,
+      "name": "GetHotfixUrlWithVersion",
+      "typeIndex": 85,
+      "token": "0x6000167",
+      "pointer": "0x89f3fc",
+      "bodySha256": "9ffdf40da20c6351a797eb3346b5956367182ba65767c8e715c1524ad73c85eb"
+    },
+    {
+      "index": 392,
+      "name": ".cctor",
+      "typeIndex": 85,
+      "token": "0x6000189",
+      "pointer": "0x8a4ef0",
+      "bodySha256": "f7b7dd4721895c1affb4aa846cba65ca890dc51d43fdd712302a81be916e6756"
+    },
+    {
+      "index": 1205,
+      "name": "GetHotfixUrl",
+      "typeIndex": 201,
+      "token": "0x60004b6",
+      "pointer": "0xc356ec",
+      "bodySha256": "5ae637e8fecc5a349514f6f8588b57c0ef800b8aa2b1918403be94b299838617"
+    },
+    {
+      "index": 1206,
+      "name": "GetHotfixUrls",
+      "typeIndex": 201,
+      "token": "0x60004b7",
+      "pointer": "0xc357c8",
+      "bodySha256": "1670b4c9debf512b2da925d01a785792eca491543ba820c577b952de92e83eb2"
+    },
+    {
+      "index": 1158,
+      "name": "GetGlobalOnline",
+      "typeIndex": 200,
+      "token": "0x6000487",
+      "pointer": "0xc32a74"
+    },
+    {
+      "index": 1202,
+      "name": "GetHotfixUrlPath",
+      "typeIndex": 201,
+      "token": "0x60004b3",
+      "pointer": "0xc353c0"
+    },
+    {
+      "index": 1203,
+      "name": "AppendHotfixPath",
+      "typeIndex": 201,
+      "token": "0x60004b4",
+      "pointer": "0xc354ac"
+    }
+  ],
+  "defaultDerivation": [
+    {
+      "condition": "shipped IS_TEST_MODE=false",
+      "result": "/hotfix"
+    },
+    {
+      "condition": "GetGlobalOnline initial S3/HT first origin",
+      "result": "https://diary.cdn.mergesigma.com"
+    },
+    {
+      "condition": "REMOTE_HOTFIX_FOLDER cached preference absent/invalid",
+      "result": "CLIENT_INPACK_VERSION fallback4.10.5"
+    },
+    {
+      "condition": "exact APK catalog android path",
+      "result": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/"
+    }
+  ],
+  "verifiedExample": {
+    "bundleFile": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+    "url": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+    "httpStatus": 200,
+    "bytes": 4594453,
+    "expectedCatalogBytes": 4594453,
+    "sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+    "etagMD5Verified": true,
+    "format": "UnityFS"
+  },
+  "boundaries": [
+    "기본 정적 경로의 실제 배포 자산이 응답함을 검증했습니다. 현재 계정의 캐시·전송 후보 선택·서버 배정은 관측하지 않았습니다.",
+    "REA는 메타데이터 식별 근거입니다. ARM32 함수 매핑/분석은 별도의 Capstone·ELF 정적 분석이며 REA 네이티브 디컴파일 결과로 표시하지 않습니다.",
+    "파일명의 Hash128과 바이트 MD5/SHA는 같은 알고리즘이라고 가정하지 않습니다. 응답 크기·UnityFS·내부 객체 연결·관측 SHA를 기록했습니다.",
+    "APK·번들·복원 코드·스켈레톤 원본은 비공개로 유지합니다. 사용자 계정·게임 서버·결제 API는 호출하지 않았습니다."
+  ],
+  "originalRuntimeObserved": false
+}

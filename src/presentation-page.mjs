@@ -7,7 +7,7 @@ export function renderSourceMap(s,c,d,options={}){
  if(!v.map)return '';
  if(options.checkSurface&&v.settings.surface!=='geometry')return '';
  const base=presentationMedia(d,v.map.baseMediaKey);if(!base)return '';
- const layers=v.layers.map(layer=>{const m=presentationMedia(d,layer.mediaKey),b=layer.boundsNormalized;if(!m||!bounds(b))return '';return `<img class="source-map-layer${layer.isPreview?' is-preview':''}" src="${e(m.src)}" alt="${e('슬롯 '+layer.slotId+' · 디자인 '+layer.variant+(layer.isPreview?' · 미리보기':''))}" data-map-slot="${e(layer.slotId)}" data-map-variant="${e(layer.variant)}" style="left:${b.x*100}%;top:${b.y*100}%;width:${b.width*100}%;height:${b.height*100}%" draggable="false">`;}).join('');
+ const layers=v.layers.map(layer=>{const m=presentationMedia(d,layer.mediaKey),b=layer.boundsNormalized;if(!m||!bounds(b))return '';return `<img class="source-map-layer${layer.isPreview?' is-preview':''}" src="${e(m.src)}" alt="${e('슬롯 '+layer.slotId+' · 디자인 '+layer.variant+(layer.isPreview?' · 미리보기':'')+(layer.blendMode==='plus-lighter'?' · 가산 발광 투영':''))}" data-map-slot="${e(layer.slotId)}" data-map-variant="${e(layer.variant)}" style="left:${b.x*100}%;top:${b.y*100}%;width:${b.width*100}%;height:${b.height*100}%${layer.blendMode==='plus-lighter'?';mix-blend-mode:plus-lighter':''}" draggable="false">`;}).join('');
  return `<div class="source-map-world" data-map-id="${e(v.map.id)}" aria-label="원본 맵 기하의 웹 투영"><div class="source-map-plane" style="--map-ratio:${base.width}/${base.height}"><img class="source-map-base" src="${e(base.src)}" width="${base.width}" height="${base.height}" alt="${e(base.alt)}" draggable="false">${layers}</div></div>`;
 }
 export function renderSourceMapControls(s,c,d){

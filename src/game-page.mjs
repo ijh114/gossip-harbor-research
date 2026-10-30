@@ -100,7 +100,7 @@ export function renderGamePlay(s,c,d,{loading=false,notice='',entry=false,taskLi
  else if(flow.phase==='factory')content=renderFactoryPage(s,d.factoryConfig,d,factoryPresentation);
  else if(flow.phase==='recap'){const q=c.quests[s.questsDone];content=renderStoryRecap(s,d,{mainTask:q?{day:q.day,id:q.taskId}:null});}
  else if(flow.phase==='cg')content=renderCGPresentation(s,d);
- else if(flow.phase==='skins')content=renderSkinLab(s.skinLab===undefined?(d.skinConfig?createSkinLab(d.skinConfig):null):s.skinLab,d.skinConfig,d);
+ else if(flow.phase==='skins')content=renderSkinLab(s.skinLab===undefined?(d.skinConfig?createSkinLab(d.skinConfig):null):s.skinLab,d.skinConfig,d,s);
  else if(s.stage==='home')content=renderMap(s,c,d,hud(s,c,d),tutorial(s,c,d));
  else content=`<div class="game-phone" data-game-screen="board" aria-label="APK 기반 게임형 플레이">${hud(s,c,d)}${orders(s,c,d)}${tutorial(s,c,d)}${board(s,c,d)}${selected(s,c,d)}<p class="game-control-hint">드래그로 이동·합성 · 두 칸 탭도 가능</p></div>`;
  const prompt=newPrompt?`<dialog id="game-new-dialog" class="source-play-dialog" aria-labelledby="game-new-title"><div class="source-dialog-heading"><h2 id="game-new-title">새 게임을 시작할까요?</h2>${button('game-new-cancel','취소')}</div><div class="source-dialog-content"><p>현재 저장을 이전 저장으로 백업한 뒤 초기 배치에서 시작합니다. 보관할 플레이는 상태 JSON으로 내려받으세요.</p>${button('export','현재 상태 JSON')}${button('new-game','백업하고 새 게임 시작',{cls:'game-start'})}</div></dialog>`:'';

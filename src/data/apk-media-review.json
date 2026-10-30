@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetVersion": "4.10.5",
-  "reviewDate": "2026-10-29",
+  "reviewDate": "2026-10-30",
   "originalRuntimeObserved": false,
   "listenedSeconds": 0,
   "mediaEntries": [
@@ -8562,8 +8562,8 @@
     {
       "id": "4.03",
       "shortTitle": "Area4 장식",
-      "result": "정확 GUID·원격 의존 bundle·크기·해시를12후보 모두 연결했습니다.",
-      "remaining": "실제12후보 객체/그림이 없어 도감·플레이에 정확한 외형을 적용하는 완료 조건은 남습니다.",
+      "result": "Area4 정확12프리팹·메시/재질/텍스처 회수·후보 PNG12·공통맵 레이어·시뮬레이션 연결",
+      "remaining": "이 행의 자산 회수/연결 기준 충족. 원작 최종 렌더·실행 대조는4.10의 기존 조건에 유지.",
       "studyIds": [
         "area4-exact-catalog"
       ],
@@ -8572,13 +8572,14 @@
           "href": "#scene-analysis",
           "label": "장면·장식 분석"
         }
-      ]
+      ],
+      "status": "완료"
     },
     {
       "id": "4.04",
       "shortTitle": "이벤트35타입",
-      "result": "native137직렬화 파일의 Sprite100·Texture191까지 확장 조사하고 exact 타입 키·catalog를 대조했습니다.",
-      "remaining": "전용35그림0/35. 정확 배포표/실물 연결이 필요합니다. 공용24개는 전용 그림으로 세지 않습니다.",
+      "result": "기존 대표 이벤트35타입의 그림 연결·범위 정정: 정상 등록이 선택하지 않는 연구 fixture이며35개 exact 이미지 GUID/별칭 미확보",
+      "remaining": "35타입을 실제 사용하도록 연결한 버전의 exact 그림 GUID/별칭 근거가 필요합니다. 현재 출하 기본 경로는 이 fixture를 선택하지 않습니다.",
       "studyIds": [
         "representation-exceptions"
       ],
@@ -8591,13 +8592,14 @@
           "href": "#experience",
           "label": "이벤트 플레이"
         }
-      ]
+      ],
+      "status": "자료 필요"
     },
     {
       "id": "4.05",
       "shortTitle": "기본 예외8타입",
-      "result": "Bubble 외곽1PNG를 회수하고 source 컴포넌트 합성 및8타입별 판정표를 연결했습니다.",
-      "remaining": "Bubble·locked의 독립 PNG 회수는 불필요. temp+선물4 실물5개와 property 용도1개, 즉시버블 BubbleInstant의 정확 외곽과 실제 활성 프레임은 아직 남습니다.",
+      "result": "기본8타입 표현 규칙7/8. item_temp·공유 선물2/3 실물3종 회수, property_bubble_1 용도1개 및 즉시 버블 외곽 미확정",
+      "remaining": "property_bubble_1 용도·표현, 즉시 버블 외곽의 정확 실물/등록은 미확정입니다.",
       "studyIds": [
         "representation-exceptions"
       ],
@@ -8606,13 +8608,14 @@
           "href": "#puzzle",
           "label": "기본 타입 도감"
         }
-      ]
+      ],
+      "status": "부분"
     },
     {
       "id": "4.06",
       "shortTitle": "힌트·봉인",
-      "result": "합성 힌트와 상자/거미줄의 source 순서·시간·입력 경계를 분석하고3반복 GIF를 추가했습니다.",
-      "remaining": "힌트 자동 발생 및 메인 봉인 전이의 실제 성공 영상은 미확보입니다. 코드 재현으로 실제 관측을 대체하지 않습니다.",
+      "result": "자동 합성 힌트·메인 봉인 실제 성공 전이는 미확정. 코드 재현과110녹화 표본·실제 발생을 구분",
+      "remaining": "메인 봉인 해제와 입력 없는 자동 힌트의 실제 성공 전후 구간이 필요합니다.",
       "studyIds": [
         "motion-hint",
         "motion-unlock-web",
@@ -8623,13 +8626,14 @@
           "href": "#puzzle-interaction",
           "label": "상호작용 GIF"
         }
-      ]
+      ],
+      "status": "자료 필요"
     },
     {
       "id": "4.07",
       "shortTitle": "가위·모래시계",
-      "result": "확인→소비→분해 결과, 즉시 가속→거리별 파문의 순서를2반복 GIF와 시간표로 보강했습니다.",
-      "remaining": "도움말 이후 실제 대상 선택·횟수 감소·적용 결과가 이어지는 원본 녹화 구간이 필요합니다.",
+      "result": "모래시계 선택→보관함 이동은 실제 관측. 가위 분할·모래시계 소비/시간가속 성공 연속 구간은 미확보",
+      "remaining": "가위 선택→소모→분할, 모래시계 소모→가속/타이머 감소의 실제 연속 구간이 필요합니다.",
       "studyIds": [
         "motion-scissors",
         "motion-hourglass"
@@ -8639,13 +8643,14 @@
           "href": "#puzzle-interaction",
           "label": "도구 GIF"
         }
-      ]
+      ],
+      "status": "자료 필요"
     },
     {
       "id": "4.08",
       "shortTitle": "공장 동작",
-      "result": "3실제 클립에서7곡선/24키프레임, 점수 비행·임계 보상·잠금 counter를 확보하고3GIF를 연결했습니다.",
-      "remaining": "실제 게임의 공장 창·조각 사용·점수 및 보상 영상은 미확보. 원본 메타데이터 검색0을 영상 전체 부재로 단정하지 않습니다.",
+      "result": "공장 소스·조각/보상 재현 자료와 실제 공장 화면·사용 성공 전이를 구분. 전체 녹화의 후보 검색은 부재 증명이 아님",
+      "remaining": "공장 실제 창·점수/조각 소비·보상 전이의 실제 표본이 필요합니다.",
       "studyIds": [
         "motion-factory-flight",
         "motion-factory-threshold",
@@ -8656,13 +8661,14 @@
           "href": "#factory-reference",
           "label": "공장 도감"
         }
-      ]
+      ],
+      "status": "자료 필요"
     },
     {
       "id": "4.09",
       "shortTitle": "13_1 이후",
-      "result": "기본 Timeline13과13~292의 정확 등록을 추적하고 Story13의137행/15그룹 메타데이터를 확인했습니다.",
-      "remaining": "Timeline 명령 실물이 없어13_1부터 순서·대사·장면을 시뮬레이션에 임의 삽입하지 않았습니다.",
+      "result": "기본 Timeline13~292의280파일/56,250명령 복원·Story/GameText560파일 대조·107번째13_1~13_10 최소 투영10개·13_2 실물3후보/맵 연결. 원본77일차8키 불일치 명시",
+      "remaining": "이 행의 명령/대사 확보·최소 투영 연결 기준 충족. 후기 전체 원작 최종 화면 완료로 해석하지 않습니다. 원본77일차8키 불일치를 명시합니다.",
       "studyIds": [
         "timeline13-boundary"
       ],
@@ -8671,13 +8677,14 @@
           "href": "#scene-analysis",
           "label": "현재 동봉 장면"
         }
-      ]
+      ],
+      "status": "완료"
     },
     {
       "id": "4.10",
       "shortTitle": "CG·Skin·맵",
-      "result": "CG41클립과 맵캐릭터15명의 대표 모션14GIF/정적포즈1PNG를 추가했습니다. 원본 맵캐릭터410클립의 이름·기간도 확보했습니다.",
-      "remaining": "등록만 있는 맵캐릭터29종, 동봉 모션395개의 미시연 구간, 긴CG클립 뒤 구간, Skin26 실물과 원작 전체CG/캐릭터제어·전이·shader/particle/마스크/빛·최종맵 검증이 남습니다.",
+      "result": "역할44종 실물·888모션과CG41클립의 전체 source-time 파생, Skin26 실물·선택 레이어 확보. 최종 원작 셰이더/캐릭터 배치/입자/음향 동기·실행 대조 미완료",
+      "remaining": "최종 원작 카메라·셰이더·캐릭터 배치/전이·입자·음향 동기화와 실기 대조는 남습니다.",
       "studyIds": [
         "cg-scene1_shadow",
         "cg-scene1_curtain",
@@ -8742,13 +8749,14 @@
           "href": "#experience",
           "label": "현재 시뮬레이션"
         }
-      ]
+      ],
+      "status": "부분"
     },
     {
       "id": "4.11",
       "shortTitle": "프레임·입력 검수",
-      "result": "GH-V0089의 짧은 구간326원본 프레임을6시트로 순차 대조하고 선정6프레임과 무음 짧은 영상/GIF를 추가했습니다.",
-      "remaining": "110개 전체 원속도 재생, 중요 동작의 실제 입력 종류/잠금·프레임 시작/종료 대조는 남습니다.",
+      "result": "추가 실제 관측5개·선정 프레임/버전 크롭·1배속 무음 MP4 4개의 브라우저 시작/끝·종료 검수. raw입력/거절·미확인 중요 전이/전체 원속도 육안 검수는 남음",
+      "remaining": "중요 미확인 전이의 실제 입력/차단 상태·원속도 검수가 남습니다. 선정4개 파생물 재생 검수를 전체 원본의 연속 육안 검수로 확대하지 않습니다.",
       "studyIds": [
         "frame-audio-alignment"
       ],
@@ -8757,13 +8765,14 @@
           "href": "#media-audit",
           "label": "110영상 검토 장부"
         }
-      ]
+      ],
+      "status": "부분"
     },
     {
       "id": "4.12",
       "shortTitle": "음향·동기",
-      "result": "APK 음원 신호 후보와 같은 시각의 실제 프레임을 연결했습니다.",
-      "remaining": "직접 청취0초. 소리의 확정 식별·동작 대응·체감 동기 검수는 완료하지 않았습니다.",
+      "result": "음원/영상 정량 분석과 신호 후보·원본 PTS 연결은 확보. 직접 청취와 실제 동작·장면 동기화 확정은 미실시",
+      "remaining": "실제 직접 청취와 해당 동작·장면의 대응/동기화 검수가 필요합니다.",
       "studyIds": [
         "frame-audio-alignment"
       ],
@@ -8772,13 +8781,14 @@
           "href": "#captures",
           "label": "동봉14음원·측정 자료"
         }
-      ]
+      ],
+      "status": "미완료"
     },
     {
       "id": "4.13",
       "shortTitle": "페이지 시각 자료",
-      "result": "새8규칙 GIF·CG 모션·실제 프레임·자료 필요 장부를 관련 퍼즐/UI/맵/BM/성장 연구 페이지에 연결했습니다.",
-      "remaining": "기능·출처/파일·DOM 검사는 수행합니다. 로컬 브라우저가 비활성이라 PC·모바일 실제 렌더·터치 직접 검수는 남습니다.",
+      "result": "새 자산·모션/CG 전체구간·실제 관측을 퍼즐/UI/맵/BM/성장 관련 페이지에 연결. 컬렉션 별도 탭, 원본/축소/투영 구분·확대/재생·PC/모바일 검수",
+      "remaining": "이번 자료 연결·표시·확대/재생·PC/모바일 검수 기준 충족. 각 행의 자료 필요 상태는 그대로 유지합니다.",
       "studyIds": [],
       "links": [
         {
@@ -8789,7 +8799,8 @@
           "href": "#checklist",
           "label": "동일 ID 완료 기준"
         }
-      ]
+      ],
+      "status": "완료"
     }
   ],
   "boundaries": [
@@ -8798,5 +8809,5 @@
     "동봉하지 않은 원격 자료나 현재 서버·계정 상태를 추정하지 않습니다.",
     "새 정적 시연은 실제 플레이/직접 청취 검수의 미완료 상태를 변경하지 않습니다."
   ],
-  "revision": "83b865161ebc0218e0e448189f11dfa5e1b6439a61db52f59af5785361451691"
+  "revision": "9784800fd121c2edaf690554b8a4160a186053f774a6d50f002d8a243ef009d3"
 }

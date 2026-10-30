@@ -6,3 +6,11 @@
 .apk-source-chart{margin:1rem 0;font-size:.82rem}.apk-source-chart figcaption{font-weight:700;margin-bottom:.7rem}.apk-source-chart>div{display:grid;grid-template-columns:minmax(80px,1fr) minmax(70px,1.3fr) auto;gap:.5rem;align-items:center;margin:.6rem 0}.apk-source-chart>div>span{overflow-wrap:anywhere}.apk-source-chart i{height:9px;background:#dce6d8;border-radius:3px}.apk-source-chart b{display:block;height:9px;background:#18564c;border-radius:3px}.apk-source-chart small{font-variant-numeric:tabular-nums}.apk-source-chart>p{color:#526158;line-height:1.7}
 
 .apk-registration{margin:1.2rem 0}.apk-registration>summary{min-height:44px;cursor:pointer;color:#18564c;font-weight:650}.apk-registration td,.apk-registration code{overflow-wrap:anywhere}.apk-registration .table-wrap{max-height:36rem;overflow:auto}.apk-registration table{min-width:600px}.apk-character-scope>p{max-width:75ch}
+
+.apk-motion-browser{margin:2rem 0}.apk-motion-segments{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,240px));gap:1rem}.apk-motion-segments figure{margin:0}.apk-motion-segments figcaption{font-size:.85rem;color:#526158;padding:.6rem 0;overflow-wrap:anywhere}.apk-motion-browser>details>summary{min-height:44px;cursor:pointer;color:#18564c}
+
+.completion-domain-links{margin:2rem 0;padding:1.4rem 0;border-block:1px solid #d4ded2}.completion-feature{max-width:360px;margin:1rem 0}.completion-feature figcaption{font-size:.88rem;color:#526158;padding:.6rem 0}
+
+.checklist-current-release{margin:2rem 0;padding:1.5rem 0;border-block:1px solid #d4ded2}.checklist-release-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.6rem 1rem;list-style:none;padding:0}.checklist-release-grid li{display:flex;align-items:center;justify-content:space-between;gap:.6rem}.checklist-release-grid a{min-height:44px;display:inline-flex;align-items:center;font-weight:700;color:#18564c}
+
+.item-representation-audit,.ui-evidence-audit{min-width:0;overflow-wrap:anywhere}.item-representation-audit .evidence-table-wrap{max-width:100%;min-width:0;overflow-x:auto}.item-representation-audit .evidence-table-wrap table{min-width:600px}.item-representation-audit .scene-variant-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr))}.item-representation-audit li,.ui-evidence-audit li{overflow-wrap:anywhere;word-break:normal}

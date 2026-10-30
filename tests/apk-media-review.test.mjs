@@ -18,7 +18,7 @@ test('4.03–4.13 keep eleven fixed identities and original acceptance criteria 
  assert.equal(new Set(mediaReview.studies.map(s=>s.id)).size,mediaReview.studies.length);
  const dom=new JSDOM(renderAPKMediaReview(data)),doc=dom.window.document;
  assert.equal(doc.querySelectorAll('[data-apk-task]').length,11);
- for(const row of mediaReview.tasks){const canonical=masterChecklist.tasks.find(t=>t.id===row.id);assert.ok(canonical);assert.ok(doc.querySelector(`[data-apk-task="${row.id}"]`).textContent.includes(canonical.acceptance));assert.notEqual(canonical.status,'완료');}
+ for(const row of mediaReview.tasks){const canonical=masterChecklist.tasks.find(t=>t.id===row.id);assert.ok(canonical);assert.ok(doc.querySelector(`[data-apk-task="${row.id}"]`).textContent.includes(canonical.acceptance));if(['4.03','4.09','4.13'].includes(row.id))assert.equal(canonical.status,'완료');else assert.notEqual(canonical.status,'완료');}
  assert.equal(revealAPKTask(doc,'4.10'),true);assert.equal(doc.querySelector('[data-apk-task="4.10"]').open,true);assert.equal(revealAPKTask(doc,'4.99'),false);dom.window.close();
 });
 test('every added derivative and poster matches its published hash; no guessed fallback or private recording audio',async()=>{

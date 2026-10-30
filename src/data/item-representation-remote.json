@@ -1,0 +1,1256 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "reviewDate": "2026-10-30",
+  "originalRuntimeObserved": false,
+  "mediaEntries": [
+    {
+      "key": "item-remote:item_temp",
+      "kind": "image",
+      "src": "./assets/media/item-representation-remote/item_temp.png",
+      "alt": "item_temp · APK catalog와 일치하는 실제 Sprite",
+      "source": "Assets/TempItem/item_temp.png · exact catalog container → Sprite → Texture2D",
+      "origin": "apk-catalog-external-static-asset",
+      "version": "4.10.5",
+      "originalRuntimeObserved": false,
+      "sha256": "50b515f80629daf9fa17cba59bb2aa91fc29d8039ceca215bbe90fb475934e2f",
+      "bytes": 29432,
+      "width": 157,
+      "height": 157,
+      "transform": {
+        "operation": "UnityPy Sprite extraction; decoded alpha preserved; no invented art",
+        "sourceSpriteIdentity": {
+          "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+          "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+          "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+          "path_id": "1440413259782920206",
+          "type": "Sprite",
+          "object_source_sha256": "23ccbd90e43869e72e61e36690f85cb4f6ec4666ca482cdb4294415abd7291f4",
+          "authority": "external-service"
+        },
+        "sourceTextureIdentity": {
+          "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+          "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+          "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+          "path_id": "1261881968274837914",
+          "type": "Texture2D",
+          "object_source_sha256": "4625cf07e40dc54658042d2fe1bae9410c8b18e85d2cadbd30526eca6b2a7052",
+          "authority": "external-service"
+        }
+      },
+      "pixelsToUnits": 1.0,
+      "sourceSpriteRect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 171.0,
+        "height": 171.0
+      },
+      "sourceTextureRect": {
+        "x": 14.01291275024414,
+        "y": 2.0267510414123535,
+        "width": 156.98709106445312,
+        "height": 156.94650268554688
+      },
+      "textureRectOffset": {
+        "x": 14.01291275024414,
+        "y": 2.0267510414123535
+      },
+      "sourcePivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "key": "item-remote:EventActivityGift2",
+      "kind": "image",
+      "src": "./assets/media/item-representation-remote/EventActivityGift2.png",
+      "alt": "EventActivityGift2 · APK catalog와 일치하는 실제 Sprite",
+      "source": "Assets/MainDecorActivity/Common/UI/EventActivityGift2.png · exact catalog container → Sprite → Texture2D",
+      "origin": "apk-catalog-external-static-asset",
+      "version": "4.10.5",
+      "originalRuntimeObserved": false,
+      "sha256": "be68dca44b932f5cab2d5b5066ed922e86d5934c4d732dc4902dc2f0e4fbd033",
+      "bytes": 24655,
+      "width": 140,
+      "height": 144,
+      "transform": {
+        "operation": "UnityPy Sprite extraction; decoded alpha preserved; no invented art",
+        "sourceSpriteIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "-5135985269261530072",
+          "type": "Sprite",
+          "object_source_sha256": "b57a7f9588abeb2df22d654064dfab4ff4ef4f68b6f415a92af628faabc5b3b7",
+          "authority": "external-service"
+        },
+        "sourceTextureIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "7275682862182945481",
+          "type": "Texture2D",
+          "object_source_sha256": "3a99ba8090a451f725bd7806f2edb59f313085559791f2554e72a32095ba3438",
+          "authority": "external-service"
+        }
+      },
+      "pixelsToUnits": 1.0,
+      "sourceSpriteRect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 140.0,
+        "height": 144.0
+      },
+      "sourceTextureRect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 140.0,
+        "height": 144.0
+      },
+      "textureRectOffset": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "sourcePivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "key": "item-remote:EventActivityGift3",
+      "kind": "image",
+      "src": "./assets/media/item-representation-remote/EventActivityGift3.png",
+      "alt": "EventActivityGift3 · APK catalog와 일치하는 실제 Sprite",
+      "source": "Assets/MainDecorActivity/Common/UI/EventActivityGift3.png · exact catalog container → Sprite → Texture2D",
+      "origin": "apk-catalog-external-static-asset",
+      "version": "4.10.5",
+      "originalRuntimeObserved": false,
+      "sha256": "f2ce4c8d1593fef6e95dfcd6eff59c2b000d7e5198dd5118a9292e771b847b81",
+      "bytes": 29909,
+      "width": 147,
+      "height": 155,
+      "transform": {
+        "operation": "UnityPy Sprite extraction; decoded alpha preserved; no invented art",
+        "sourceSpriteIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "-3482113622180486501",
+          "type": "Sprite",
+          "object_source_sha256": "5c99f1150ebf8516b20e17af87eb5ca8722bce6416069d5a158c51aeb609376c",
+          "authority": "external-service"
+        },
+        "sourceTextureIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "-7821082394077283992",
+          "type": "Texture2D",
+          "object_source_sha256": "100412943d167021b6b4e4ba00c322a8ea96197b4f11326617e69b24f2babe8a",
+          "authority": "external-service"
+        }
+      },
+      "pixelsToUnits": 1.0,
+      "sourceSpriteRect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 147.0,
+        "height": 155.0
+      },
+      "sourceTextureRect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 147.0,
+        "height": 155.0
+      },
+      "textureRectOffset": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "sourcePivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "imageKey": "item_temp",
+      "fileKey": "TempItem/item_temp.png",
+      "assetGuid": "3ee3a70b181c6e54693939f2bdd6e94d",
+      "catalogAssetEntries": [
+        {
+          "index": 21321,
+          "internalId": "Assets/TempItem/item_temp.png",
+          "dependencyKey": 26206
+        }
+      ],
+      "spriteIdentity": {
+        "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+        "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+        "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+        "path_id": "1440413259782920206",
+        "type": "Sprite",
+        "object_source_sha256": "23ccbd90e43869e72e61e36690f85cb4f6ec4666ca482cdb4294415abd7291f4",
+        "authority": "external-service"
+      },
+      "textureIdentity": {
+        "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+        "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+        "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+        "path_id": "1261881968274837914",
+        "type": "Texture2D",
+        "object_source_sha256": "4625cf07e40dc54658042d2fe1bae9410c8b18e85d2cadbd30526eca6b2a7052",
+        "authority": "external-service"
+      },
+      "decodedSpriteSize": [
+        157,
+        157
+      ],
+      "alphaBounds": [
+        2,
+        2,
+        157,
+        155
+      ],
+      "mediaKey": "item-remote:item_temp",
+      "containerPath": "Assets/TempItem/item_temp.png",
+      "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+      "httpStatus": 200,
+      "expectedCatalogBytes": 433395,
+      "etagMD5Verified": true,
+      "registeredAndExactContainerResolved": true,
+      "originalRuntimeObserved": false,
+      "sourceSpriteRect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 171.0,
+        "height": 171.0
+      },
+      "pixelsToUnits": 1.0,
+      "sourcePivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "sourceTextureRect": {
+        "x": 14.01291275024414,
+        "y": 2.0267510414123535,
+        "width": 156.98709106445312,
+        "height": 156.94650268554688
+      },
+      "textureRectOffset": {
+        "x": 14.01291275024414,
+        "y": 2.0267510414123535
+      },
+      "sourcePackingSettingsRaw": 64
+    },
+    {
+      "imageKey": "EventActivityGift2",
+      "fileKey": "MainDecorActivity/Common/UI/EventActivityGift2.png",
+      "assetGuid": "bcb587415244b4fe2a97aebd6e560620",
+      "catalogAssetEntries": [
+        {
+          "index": 9485,
+          "internalId": "Assets/MainDecorActivity/Common/UI/EventActivityGift2.png",
+          "dependencyKey": 25674
+        }
+      ],
+      "spriteIdentity": {
+        "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+        "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+        "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+        "path_id": "-5135985269261530072",
+        "type": "Sprite",
+        "object_source_sha256": "b57a7f9588abeb2df22d654064dfab4ff4ef4f68b6f415a92af628faabc5b3b7",
+        "authority": "external-service"
+      },
+      "textureIdentity": {
+        "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+        "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+        "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+        "path_id": "7275682862182945481",
+        "type": "Texture2D",
+        "object_source_sha256": "3a99ba8090a451f725bd7806f2edb59f313085559791f2554e72a32095ba3438",
+        "authority": "external-service"
+      },
+      "decodedSpriteSize": [
+        140,
+        144
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        140,
+        144
+      ],
+      "mediaKey": "item-remote:EventActivityGift2",
+      "containerPath": "Assets/MainDecorActivity/Common/UI/EventActivityGift2.png",
+      "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+      "httpStatus": 200,
+      "expectedCatalogBytes": 82852,
+      "etagMD5Verified": true,
+      "registeredAndExactContainerResolved": true,
+      "originalRuntimeObserved": false,
+      "sourceSpriteRect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 140.0,
+        "height": 144.0
+      },
+      "pixelsToUnits": 1.0,
+      "sourcePivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "sourceTextureRect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 140.0,
+        "height": 144.0
+      },
+      "textureRectOffset": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "sourcePackingSettingsRaw": 64
+    },
+    {
+      "imageKey": "EventActivityGift3",
+      "fileKey": "MainDecorActivity/Common/UI/EventActivityGift3.png",
+      "assetGuid": "360092508ea7347359bbd980d51201db",
+      "catalogAssetEntries": [
+        {
+          "index": 9486,
+          "internalId": "Assets/MainDecorActivity/Common/UI/EventActivityGift3.png",
+          "dependencyKey": 25674
+        }
+      ],
+      "spriteIdentity": {
+        "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+        "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+        "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+        "path_id": "-3482113622180486501",
+        "type": "Sprite",
+        "object_source_sha256": "5c99f1150ebf8516b20e17af87eb5ca8722bce6416069d5a158c51aeb609376c",
+        "authority": "external-service"
+      },
+      "textureIdentity": {
+        "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+        "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+        "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+        "path_id": "-7821082394077283992",
+        "type": "Texture2D",
+        "object_source_sha256": "100412943d167021b6b4e4ba00c322a8ea96197b4f11326617e69b24f2babe8a",
+        "authority": "external-service"
+      },
+      "decodedSpriteSize": [
+        147,
+        155
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        147,
+        155
+      ],
+      "mediaKey": "item-remote:EventActivityGift3",
+      "containerPath": "Assets/MainDecorActivity/Common/UI/EventActivityGift3.png",
+      "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+      "httpStatus": 200,
+      "expectedCatalogBytes": 82852,
+      "etagMD5Verified": true,
+      "registeredAndExactContainerResolved": true,
+      "originalRuntimeObserved": false,
+      "sourceSpriteRect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 147.0,
+        "height": 155.0
+      },
+      "pixelsToUnits": 1.0,
+      "sourcePivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "sourceTextureRect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 147.0,
+        "height": 155.0
+      },
+      "textureRectOffset": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "sourcePackingSettingsRaw": 64
+    }
+  ],
+  "entries": [
+    {
+      "type": "3401",
+      "group": "base-exception",
+      "checklistId": "4.05",
+      "runtimeObserved": false,
+      "standaloneImageResolved": false,
+      "newStandaloneTypePNG": false,
+      "sourceRefs": [
+        "item-sprite-selection",
+        "item-component-rendering",
+        "item-model-components",
+        "item-rendering-scale",
+        "bubble-sprite-selection"
+      ],
+      "unknown": [
+        "실제 게임의 활성 프레임·연출",
+        "즉시 버블 BubbleInstant 등록/실물"
+      ],
+      "kind": "component-composite",
+      "decision": "independent-type-image-unnecessary",
+      "representationResolved": true,
+      "label": "일반 버블 외곽 + 실제 내부 아이템",
+      "standaloneImageRequired": false,
+      "outer": {
+        "imageKey": "Bubble",
+        "mediaKey": "representation:bubble-outer",
+        "available": true
+      },
+      "inner": {
+        "required": true,
+        "selector": "inner item code → ItemDataModel:GetSpriteName",
+        "scaleXY": 0.8
+      },
+      "instantOuter": {
+        "imageKey": "BubbleInstant",
+        "registered": false
+      },
+      "boundary": "3401은 helper 모델입니다. 일반 버블의 외곽 실물과 내부0.8배 source합성을 제공하며 즉시 버블을 일반 외곽으로 대체하지 않습니다."
+    },
+    {
+      "type": "md_hw_gift_1",
+      "group": "base-exception",
+      "checklistId": "4.05",
+      "runtimeObserved": false,
+      "standaloneImageResolved": true,
+      "newStandaloneTypePNG": false,
+      "sourceRefs": [
+        "item-sprite-selection",
+        "item-component-rendering",
+        "item-model-components",
+        "item-view-registration",
+        "model-definitions"
+      ],
+      "unknown": [
+        "원작 활성 이벤트 지급/획득 배정"
+      ],
+      "kind": "registered-sprite",
+      "decision": "exact-catalog-sprite-recovered",
+      "representationResolved": true,
+      "label": "명시된 이벤트 선물 이미지",
+      "standaloneImageRequired": true,
+      "image": {
+        "imageKey": "EventActivityGift2",
+        "registered": true,
+        "fileKey": "MainDecorActivity/Common/UI/EventActivityGift2.png",
+        "assetGuid": "bcb587415244b4fe2a97aebd6e560620",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "catalogAssetEntries": [
+          {
+            "index": 9485,
+            "internalId": "Assets/MainDecorActivity/Common/UI/EventActivityGift2.png",
+            "dependencyKey": 25674
+          }
+        ],
+        "available": true,
+        "mediaKey": "item-remote:EventActivityGift2",
+        "remoteResolved": true,
+        "spriteIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "-5135985269261530072",
+          "type": "Sprite",
+          "object_source_sha256": "b57a7f9588abeb2df22d654064dfab4ff4ef4f68b6f415a92af628faabc5b3b7",
+          "authority": "external-service"
+        },
+        "textureIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "7275682862182945481",
+          "type": "Texture2D",
+          "object_source_sha256": "3a99ba8090a451f725bd7806f2edb59f313085559791f2554e72a32095ba3438",
+          "authority": "external-service"
+        }
+      },
+      "modelSummary": {
+        "spreadCost": 0,
+        "spreadWeightType": 1,
+        "spreadItemMaxNumber": 6,
+        "spreadPoolTypes": [
+          "2602",
+          "2603",
+          "2604",
+          "2401",
+          "2402",
+          "2501",
+          "2502"
+        ]
+      },
+      "boundary": "정확 ImageFileConfig GUID→catalog→다운로드 번들→동일 container Sprite를 회수했습니다. 공유 Sprite를 타입별 별도 신규 그림으로 중복 집계하지 않습니다.",
+      "mediaKey": "item-remote:EventActivityGift2"
+    },
+    {
+      "type": "md_hw_gift_2",
+      "group": "base-exception",
+      "checklistId": "4.05",
+      "runtimeObserved": false,
+      "standaloneImageResolved": true,
+      "newStandaloneTypePNG": false,
+      "sourceRefs": [
+        "item-sprite-selection",
+        "item-component-rendering",
+        "item-model-components",
+        "item-view-registration",
+        "model-definitions"
+      ],
+      "unknown": [
+        "원작 활성 이벤트 지급/획득 배정"
+      ],
+      "kind": "registered-sprite",
+      "decision": "exact-catalog-sprite-recovered",
+      "representationResolved": true,
+      "label": "명시된 이벤트 선물 이미지",
+      "standaloneImageRequired": true,
+      "image": {
+        "imageKey": "EventActivityGift3",
+        "registered": true,
+        "fileKey": "MainDecorActivity/Common/UI/EventActivityGift3.png",
+        "assetGuid": "360092508ea7347359bbd980d51201db",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "catalogAssetEntries": [
+          {
+            "index": 9486,
+            "internalId": "Assets/MainDecorActivity/Common/UI/EventActivityGift3.png",
+            "dependencyKey": 25674
+          }
+        ],
+        "available": true,
+        "mediaKey": "item-remote:EventActivityGift3",
+        "remoteResolved": true,
+        "spriteIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "-3482113622180486501",
+          "type": "Sprite",
+          "object_source_sha256": "5c99f1150ebf8516b20e17af87eb5ca8722bce6416069d5a158c51aeb609376c",
+          "authority": "external-service"
+        },
+        "textureIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "-7821082394077283992",
+          "type": "Texture2D",
+          "object_source_sha256": "100412943d167021b6b4e4ba00c322a8ea96197b4f11326617e69b24f2babe8a",
+          "authority": "external-service"
+        }
+      },
+      "modelSummary": {
+        "spreadCost": 0,
+        "spreadWeightType": 1,
+        "spreadItemMaxNumber": 7,
+        "spreadPoolTypes": [
+          "2603",
+          "2604",
+          "2402",
+          "2403",
+          "2404",
+          "2502",
+          "2503"
+        ]
+      },
+      "boundary": "정확 ImageFileConfig GUID→catalog→다운로드 번들→동일 container Sprite를 회수했습니다. 공유 Sprite를 타입별 별도 신규 그림으로 중복 집계하지 않습니다.",
+      "mediaKey": "item-remote:EventActivityGift3"
+    },
+    {
+      "type": "deco_event_gift_s_1",
+      "group": "base-exception",
+      "checklistId": "4.05",
+      "runtimeObserved": false,
+      "standaloneImageResolved": true,
+      "newStandaloneTypePNG": false,
+      "sourceRefs": [
+        "item-sprite-selection",
+        "item-component-rendering",
+        "item-model-components",
+        "item-view-registration",
+        "model-definitions"
+      ],
+      "unknown": [
+        "원작 활성 이벤트 지급/획득 배정"
+      ],
+      "kind": "registered-sprite",
+      "decision": "exact-catalog-sprite-recovered",
+      "representationResolved": true,
+      "label": "명시된 이벤트 선물 이미지",
+      "standaloneImageRequired": true,
+      "image": {
+        "imageKey": "EventActivityGift2",
+        "registered": true,
+        "fileKey": "MainDecorActivity/Common/UI/EventActivityGift2.png",
+        "assetGuid": "bcb587415244b4fe2a97aebd6e560620",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "catalogAssetEntries": [
+          {
+            "index": 9485,
+            "internalId": "Assets/MainDecorActivity/Common/UI/EventActivityGift2.png",
+            "dependencyKey": 25674
+          }
+        ],
+        "available": true,
+        "mediaKey": "item-remote:EventActivityGift2",
+        "remoteResolved": true,
+        "spriteIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "-5135985269261530072",
+          "type": "Sprite",
+          "object_source_sha256": "b57a7f9588abeb2df22d654064dfab4ff4ef4f68b6f415a92af628faabc5b3b7",
+          "authority": "external-service"
+        },
+        "textureIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "7275682862182945481",
+          "type": "Texture2D",
+          "object_source_sha256": "3a99ba8090a451f725bd7806f2edb59f313085559791f2554e72a32095ba3438",
+          "authority": "external-service"
+        }
+      },
+      "modelSummary": {
+        "spreadCost": 0,
+        "spreadWeightType": 1,
+        "spreadItemMaxNumber": 6,
+        "spreadPoolTypes": [
+          "2602",
+          "2603",
+          "2604",
+          "2401",
+          "2402",
+          "2501",
+          "2502"
+        ]
+      },
+      "boundary": "정확 ImageFileConfig GUID→catalog→다운로드 번들→동일 container Sprite를 회수했습니다. 공유 Sprite를 타입별 별도 신규 그림으로 중복 집계하지 않습니다.",
+      "mediaKey": "item-remote:EventActivityGift2"
+    },
+    {
+      "type": "deco_event_gift_b_1",
+      "group": "base-exception",
+      "checklistId": "4.05",
+      "runtimeObserved": false,
+      "standaloneImageResolved": true,
+      "newStandaloneTypePNG": false,
+      "sourceRefs": [
+        "item-sprite-selection",
+        "item-component-rendering",
+        "item-model-components",
+        "item-view-registration",
+        "model-definitions"
+      ],
+      "unknown": [
+        "원작 활성 이벤트 지급/획득 배정"
+      ],
+      "kind": "registered-sprite",
+      "decision": "exact-catalog-sprite-recovered",
+      "representationResolved": true,
+      "label": "명시된 이벤트 선물 이미지",
+      "standaloneImageRequired": true,
+      "image": {
+        "imageKey": "EventActivityGift3",
+        "registered": true,
+        "fileKey": "MainDecorActivity/Common/UI/EventActivityGift3.png",
+        "assetGuid": "360092508ea7347359bbd980d51201db",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "catalogAssetEntries": [
+          {
+            "index": 9486,
+            "internalId": "Assets/MainDecorActivity/Common/UI/EventActivityGift3.png",
+            "dependencyKey": 25674
+          }
+        ],
+        "available": true,
+        "mediaKey": "item-remote:EventActivityGift3",
+        "remoteResolved": true,
+        "spriteIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "-3482113622180486501",
+          "type": "Sprite",
+          "object_source_sha256": "5c99f1150ebf8516b20e17af87eb5ca8722bce6416069d5a158c51aeb609376c",
+          "authority": "external-service"
+        },
+        "textureIdentity": {
+          "bundle": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+          "bundle_sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+          "serialized_file": "CAB-cbd93587ec66b472856d2c43ad4c1253",
+          "path_id": "-7821082394077283992",
+          "type": "Texture2D",
+          "object_source_sha256": "100412943d167021b6b4e4ba00c322a8ea96197b4f11326617e69b24f2babe8a",
+          "authority": "external-service"
+        }
+      },
+      "modelSummary": {
+        "spreadCost": 0,
+        "spreadWeightType": 1,
+        "spreadItemMaxNumber": 7,
+        "spreadPoolTypes": [
+          "2603",
+          "2604",
+          "2402",
+          "2403",
+          "2404",
+          "2502",
+          "2503"
+        ]
+      },
+      "boundary": "정확 ImageFileConfig GUID→catalog→다운로드 번들→동일 container Sprite를 회수했습니다. 공유 Sprite를 타입별 별도 신규 그림으로 중복 집계하지 않습니다.",
+      "mediaKey": "item-remote:EventActivityGift3"
+    },
+    {
+      "type": "temp_1",
+      "group": "base-exception",
+      "checklistId": "4.05",
+      "runtimeObserved": false,
+      "standaloneImageResolved": false,
+      "newStandaloneTypePNG": false,
+      "sourceRefs": [
+        "item-sprite-selection",
+        "item-component-rendering",
+        "item-model-components",
+        "temp-component-lifecycle",
+        "temp-server-config",
+        "temp-countdown",
+        "item-rendering-scale"
+      ],
+      "unknown": [
+        "원작 활성 기간·대상·변환 서버표"
+      ],
+      "kind": "component-composite",
+      "decision": "component-composite-outer-recovered",
+      "representationResolved": true,
+      "label": "한시 아이템 외곽 + 내부 아이템 + 만료 게이지",
+      "standaloneImageRequired": false,
+      "outer": {
+        "imageKey": "item_temp",
+        "registered": true,
+        "fileKey": "TempItem/item_temp.png",
+        "assetGuid": "3ee3a70b181c6e54693939f2bdd6e94d",
+        "imageConfigIdentity": {
+          "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+          "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+          "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+          "path_id": "-5540980183981676075",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "bf28f509cf47e432d463fce6f43efa819c6c3e4e2927f724584db6ffc558c19b"
+        },
+        "catalogAssetEntries": [
+          {
+            "index": 21321,
+            "internalId": "Assets/TempItem/item_temp.png",
+            "dependencyKey": 26206
+          }
+        ],
+        "available": true,
+        "mediaKey": "item-remote:item_temp",
+        "remoteResolved": true,
+        "spriteIdentity": {
+          "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+          "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+          "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+          "path_id": "1440413259782920206",
+          "type": "Sprite",
+          "object_source_sha256": "23ccbd90e43869e72e61e36690f85cb4f6ec4666ca482cdb4294415abd7291f4",
+          "authority": "external-service"
+        }
+      },
+      "inner": {
+        "required": true,
+        "selector": "inner item code → ItemDataModel:GetSpriteName",
+        "scaleXY": 0.8
+      },
+      "boundary": "temp_1 전용 단일 PNG가 아니라 실제 얼음 외곽 item_temp + 내부 아이템 0.8배 + ItemTempView의 만료 게이지를 조합합니다. 정확 외곽 Sprite와 prefab Image binding을 회수했습니다.",
+      "mediaKey": "item-remote:item_temp",
+      "nativeComponent": {
+        "containerPath": "Assets/TempItem/ItemTempView.prefab",
+        "gameObjectIdentity": {
+          "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+          "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+          "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+          "path_id": "-8966561404762615915",
+          "type": "GameObject",
+          "object_source_sha256": "e268a18f22e9fb3552d45df223f25121d35f1aee36eaa8b19743a8e3e88f0872",
+          "authority": "external-service"
+        },
+        "componentIdentity": {
+          "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+          "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+          "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+          "path_id": "-2804676281325207592",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "b5b938600a08365a91268da8f582fb5488a4cb54df739dc2106da0c280633cfc",
+          "authority": "external-service"
+        },
+        "componentType": "ItemTempView",
+        "countdownBindingName": "m_countdownImage",
+        "countdownImageIdentity": {
+          "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+          "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+          "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+          "path_id": "-4622167026794291099",
+          "type": "MonoBehaviour",
+          "object_source_sha256": "cea95180df91c6f2ae04375cf14c4f0534f9dd2f39450bcabfcf49980e075862",
+          "authority": "external-service"
+        },
+        "countdownSpriteIdentity": {
+          "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+          "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+          "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+          "path_id": "-4996329519542324436",
+          "type": "Sprite",
+          "object_source_sha256": "2f436091cd7e3f0bc80a77a0ca289087e25e646a5b9847cf3446bc18ac186551",
+          "authority": "shipped-artifact"
+        },
+        "countdownSpriteName": "starwish_time_icon1",
+        "serializedImageType": 3,
+        "serializedFillMethod": 1,
+        "serializedFillOrigin": 0,
+        "serializedFillAmount": 1.0,
+        "runtimeFillExpression": "1 - itemTempModel:GetTimerAmount()",
+        "outerImageKey": "item_temp",
+        "innerSelector": "inner item code → GetSpriteName",
+        "innerScaleXY": 0.8,
+        "prefabParticleSystems": 3,
+        "tempBundleParticleSystemObjects": 12,
+        "originalRuntimeObserved": false
+      }
+    },
+    {
+      "type": "property_bubble_1",
+      "group": "base-exception",
+      "checklistId": "4.05",
+      "runtimeObserved": false,
+      "standaloneImageResolved": false,
+      "newStandaloneTypePNG": false,
+      "sourceRefs": [
+        "model-definitions",
+        "item-sprite-selection"
+      ],
+      "unknown": [
+        "실제 소비하는 코드/활성 설정",
+        "실제 표현 또는 명시 이미지 연결"
+      ],
+      "kind": "unknown-purpose",
+      "decision": "usage-and-mapping-required",
+      "representationResolved": false,
+      "label": "빈 모델 선언 · 실제 사용/표현 미확정",
+      "standaloneImageRequired": null,
+      "boundary": "빈 모델 선언은 확인했으나 독립 이미지 불필요·일반 버블과 동일·실제 소비 기능으로 확정할 수 없습니다. 현재 제작 요청서에서 용도 미확정으로 남기고 가상의 그림을 만들지 않습니다.",
+      "searchResult": {
+        "type": "property_bubble_1",
+        "status": "usage-and-representation-still-unconfirmed",
+        "luaFilesSearched": 2495,
+        "exactTokenHits": [
+          {
+            "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+            "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+            "line": 4462,
+            "lineText": "Type = \"property_bubble_1\"",
+            "role": "empty-model-declaration"
+          },
+          {
+            "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_carditem2.lua",
+            "sha256": "caeba9433106482fff245b62079bd53a28999b12741a52b00fdd5559859781eb",
+            "line": 4462,
+            "lineText": "Type = \"property_bubble_1\"",
+            "role": "empty-model-declaration"
+          },
+          {
+            "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_extracust.lua",
+            "sha256": "91d63905f67db1877e0a5adaec8935f4c452bc1b3b737252041792ed584c04c3",
+            "line": 4482,
+            "lineText": "Type = \"property_bubble_1\"",
+            "role": "empty-model-declaration"
+          },
+          {
+            "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_shell.lua",
+            "sha256": "5e19cc0070ef830748f00582c8f8786dce6303d68dbf538aec352f4fceee8b71",
+            "line": 4540,
+            "lineText": "Type = \"property_bubble_1\"",
+            "role": "empty-model-declaration"
+          }
+        ],
+        "executableReferencesBeyondDeclarations": 0,
+        "imageFileConfigMatches": 0,
+        "catalogExactKeyMatches": 0,
+        "catalogExactPNGBaseMatches": 0,
+        "shippedObjectInventoryExactMatches": 0,
+        "nativeSpriteInventoryExactMatches": 0,
+        "normalBubbleModelType": "3401",
+        "normalBubblePrefix": "b#",
+        "instantBubblePrefix": "ib#",
+        "normalBubbleFactoryComponent": "ItemBubble",
+        "fallbackRendererRequest": "property_bubble_1",
+        "fallbackBoundary": "No explicit view mapping falls back to the type string. The recovered ImageFileConfig does not register this key; ResourceLoader rejects a nil config. This is not proof that a future or server-assigned resource can never exist.",
+        "interpretation": "빈 모델 선언은 확인했으나 독립 이미지 불필요·일반 버블과 동일·실제 소비 기능으로 확정할 수 없습니다. 현재 제작 요청서에서 용도 미확정으로 남기고 가상의 그림을 만들지 않습니다."
+      }
+    },
+    {
+      "type": "locked_1",
+      "group": "base-exception",
+      "checklistId": "4.05",
+      "runtimeObserved": false,
+      "standaloneImageResolved": false,
+      "newStandaloneTypePNG": false,
+      "sourceRefs": [
+        "item-sprite-selection",
+        "item-component-rendering",
+        "item-model-components",
+        "locked-component"
+      ],
+      "unknown": [
+        "원작 활성 잠금 배경·레이어·전이 프레임"
+      ],
+      "kind": "no-direct-sprite",
+      "decision": "independent-type-image-unnecessary",
+      "representationResolved": true,
+      "label": "잠금 컴포넌트 · 직접 타입 Sprite 요청 없음",
+      "standaloneImageRequired": false,
+      "boundary": "ItemView의 ItemLocked 분기는 비어 있으며 inner sprite를 임의 표시하지 않습니다. 잠금 모양을 새 PNG나 일반 아이템으로 가정하지 않습니다."
+    }
+  ],
+  "tempPrefab": {
+    "containerPath": "Assets/TempItem/ItemTempView.prefab",
+    "gameObjectIdentity": {
+      "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+      "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+      "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+      "path_id": "-8966561404762615915",
+      "type": "GameObject",
+      "object_source_sha256": "e268a18f22e9fb3552d45df223f25121d35f1aee36eaa8b19743a8e3e88f0872",
+      "authority": "external-service"
+    },
+    "componentIdentity": {
+      "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+      "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+      "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+      "path_id": "-2804676281325207592",
+      "type": "MonoBehaviour",
+      "object_source_sha256": "b5b938600a08365a91268da8f582fb5488a4cb54df739dc2106da0c280633cfc",
+      "authority": "external-service"
+    },
+    "componentType": "ItemTempView",
+    "countdownBindingName": "m_countdownImage",
+    "countdownImageIdentity": {
+      "bundle": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+      "bundle_sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+      "serialized_file": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+      "path_id": "-4622167026794291099",
+      "type": "MonoBehaviour",
+      "object_source_sha256": "cea95180df91c6f2ae04375cf14c4f0534f9dd2f39450bcabfcf49980e075862",
+      "authority": "external-service"
+    },
+    "countdownSpriteIdentity": {
+      "bundle": "board_assets_all_99300e5e317f6b383a48aacec7dbaa6f.bundle",
+      "bundle_sha256": "00e0a56ff97123eb91bc1f7c5a8e72caeb66302afe601e7b7b61aedb7349a895",
+      "serialized_file": "CAB-5131fa4d1e0e61bd301be411e4e3383d",
+      "path_id": "-4996329519542324436",
+      "type": "Sprite",
+      "object_source_sha256": "2f436091cd7e3f0bc80a77a0ca289087e25e646a5b9847cf3446bc18ac186551",
+      "authority": "shipped-artifact"
+    },
+    "countdownSpriteName": "starwish_time_icon1",
+    "serializedImageType": 3,
+    "serializedFillMethod": 1,
+    "serializedFillOrigin": 0,
+    "serializedFillAmount": 1.0,
+    "runtimeFillExpression": "1 - itemTempModel:GetTimerAmount()",
+    "outerImageKey": "item_temp",
+    "innerSelector": "inner item code → GetSpriteName",
+    "innerScaleXY": 0.8,
+    "prefabParticleSystems": 3,
+    "tempBundleParticleSystemObjects": 12,
+    "originalRuntimeObserved": false
+  },
+  "propertyBubbleUsage": {
+    "type": "property_bubble_1",
+    "status": "usage-and-representation-still-unconfirmed",
+    "luaFilesSearched": 2495,
+    "exactTokenHits": [
+      {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+        "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+        "line": 4462,
+        "lineText": "Type = \"property_bubble_1\"",
+        "role": "empty-model-declaration"
+      },
+      {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_carditem2.lua",
+        "sha256": "caeba9433106482fff245b62079bd53a28999b12741a52b00fdd5559859781eb",
+        "line": 4462,
+        "lineText": "Type = \"property_bubble_1\"",
+        "role": "empty-model-declaration"
+      },
+      {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_extracust.lua",
+        "sha256": "91d63905f67db1877e0a5adaec8935f4c452bc1b3b737252041792ed584c04c3",
+        "line": 4482,
+        "lineText": "Type = \"property_bubble_1\"",
+        "role": "empty-model-declaration"
+      },
+      {
+        "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_shell.lua",
+        "sha256": "5e19cc0070ef830748f00582c8f8786dce6303d68dbf538aec352f4fceee8b71",
+        "line": 4540,
+        "lineText": "Type = \"property_bubble_1\"",
+        "role": "empty-model-declaration"
+      }
+    ],
+    "executableReferencesBeyondDeclarations": 0,
+    "imageFileConfigMatches": 0,
+    "catalogExactKeyMatches": 0,
+    "catalogExactPNGBaseMatches": 0,
+    "shippedObjectInventoryExactMatches": 0,
+    "nativeSpriteInventoryExactMatches": 0,
+    "normalBubbleModelType": "3401",
+    "normalBubblePrefix": "b#",
+    "instantBubblePrefix": "ib#",
+    "normalBubbleFactoryComponent": "ItemBubble",
+    "fallbackRendererRequest": "property_bubble_1",
+    "fallbackBoundary": "No explicit view mapping falls back to the type string. The recovered ImageFileConfig does not register this key; ResourceLoader rejects a nil config. This is not proof that a future or server-assigned resource can never exist.",
+    "interpretation": "빈 모델 선언은 확인했으나 독립 이미지 불필요·일반 버블과 동일·실제 소비 기능으로 확정할 수 없습니다. 현재 제작 요청서에서 용도 미확정으로 남기고 가상의 그림을 만들지 않습니다."
+  },
+  "giftNameAudit": {
+    "imageFileConfigRegisteredKeys": [
+      "EventActivityGift1",
+      "EventActivityGift2",
+      "EventActivityGift3"
+    ],
+    "exactCommonBundleContainerNames": [
+      "EventActivityGift1",
+      "EventActivityGift2",
+      "EventActivityGift3"
+    ],
+    "EventActivityGift4Registered": false,
+    "EventActivityGift4ExactContainerPresent": false,
+    "requiredGiftImagesForBaseFourTypes": [
+      "EventActivityGift2",
+      "EventActivityGift3"
+    ],
+    "boundary": "base4개 선물 타입은2개 Sprite를 공유합니다. 숫자4를 새로운 이미지 키로 추정하지 않습니다."
+  },
+  "coverage": {
+    "baseExceptions": 8,
+    "baseRepresentationRulesResolved": 7,
+    "baseExactRemoteImagesRecovered": 5,
+    "baseUsageStillUnknown": 1,
+    "curatedDistinctSpriteFiles": 3,
+    "standaloneTypeImageUnnecessary": [
+      "3401",
+      "temp_1",
+      "locked_1"
+    ],
+    "allBaseExceptionsComplete": false,
+    "newPNGFiles": 3,
+    "base544MappingsChanged": 0
+  },
+  "downloads": [
+    {
+      "url": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+      "bundleFile": "tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+      "bytes": 433395,
+      "expectedCatalogBytes": 433395,
+      "sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+      "md5": "c8f8b72ffdb507153feb1cf9ab184469",
+      "etag": "c8f8b72ffdb507153feb1cf9ab184469",
+      "etagMD5Verified": true,
+      "format": "UnityFS",
+      "httpStatus": 200,
+      "downloadedAtUTC": "2026-10-30T02:27:12.228650+00:00",
+      "lastModified": "Thu, 22 Oct 2026 07:26:12 GMT",
+      "pathDerivation": "ProjectConfig default false IS_TEST_MODE → NetworkModule GetHotfixUrlPath=/hotfix; GetGlobalOnline S3/HT first=https://diary.cdn.mergesigma.com; ProjectConfig REMOTE_HOTFIX_FOLDER uncached fallback=4.10.5; exact APK catalog filename/hash and size",
+      "runtimeTransferOrPreferenceObserved": false,
+      "accountAPICalled": false,
+      "catalogFilenameHashIsByteMD5": false
+    },
+    {
+      "url": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+      "bundleFile": "maindecoractivity_assets_assets/maindecoractivity/common_fa2699a841843309eb482f2abfde7cb7.bundle",
+      "bytes": 82852,
+      "expectedCatalogBytes": 82852,
+      "sha256": "79d97917bf5abeb9a5a0282a225305aa99f5177dd906db26680e35145ff82696",
+      "md5": "c8732f52b1169c6dca95e2fe9989bf41",
+      "etag": "c8732f52b1169c6dca95e2fe9989bf41",
+      "etagMD5Verified": true,
+      "format": "UnityFS",
+      "httpStatus": 200,
+      "downloadedAtUTC": "2026-10-30T02:27:12.992199+00:00",
+      "lastModified": "Thu, 22 Oct 2026 07:22:25 GMT",
+      "pathDerivation": "ProjectConfig default false IS_TEST_MODE → NetworkModule GetHotfixUrlPath=/hotfix; GetGlobalOnline S3/HT first=https://diary.cdn.mergesigma.com; ProjectConfig REMOTE_HOTFIX_FOLDER uncached fallback=4.10.5; exact APK catalog filename/hash and size",
+      "runtimeTransferOrPreferenceObserved": false,
+      "accountAPICalled": false,
+      "catalogFilenameHashIsByteMD5": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "item-sprite-selection",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemDataModel.lua",
+      "sha256": "7a199a3ffea516f08a29a765cb030f630161cc4b631d8c5d773087b8d4c72a26",
+      "kind": "static-code",
+      "lineStart": 185,
+      "lineEnd": 198
+    },
+    {
+      "id": "item-component-rendering",
+      "path": "analysis/lua/Lua_Core/Board/View/Item/ItemView.lua",
+      "sha256": "176ca4e46ae0bacc287577ff0853ff010ff644231f3de884c3f5c22ad45f4aa7",
+      "kind": "static-code",
+      "lineStart": 76,
+      "lineEnd": 112
+    },
+    {
+      "id": "item-rendering-scale",
+      "path": "analysis/lua/Lua_Core/Board/View/Item/ItemView.lua",
+      "sha256": "176ca4e46ae0bacc287577ff0853ff010ff644231f3de884c3f5c22ad45f4aa7",
+      "kind": "static-code",
+      "lineStart": 222,
+      "lineEnd": 236
+    },
+    {
+      "id": "item-model-components",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemModelFactory.lua",
+      "sha256": "b22cf7c302bc5092e28461749bffe4f5541d4d745190d2976d386e85a98549f2",
+      "kind": "static-code",
+      "lineStart": 77,
+      "lineEnd": 157
+    },
+    {
+      "id": "item-view-registration",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemViewConfig.lua",
+      "sha256": "13fc62fe8620bfe915837ed40076169c53ff59fdbc008811f4099bb37bdab02d",
+      "kind": "static-code",
+      "lineStart": 1120,
+      "lineEnd": 1275
+    },
+    {
+      "id": "temp-component-lifecycle",
+      "path": "analysis/lua/Lua_Activity/TempItem/Board/ItemTemp.lua",
+      "sha256": "74c298fef3b7328628bf8e77c39dff780014372ca7cca1372a60761e013441e8",
+      "kind": "static-code",
+      "lineStart": 1,
+      "lineEnd": 80
+    },
+    {
+      "id": "temp-server-config",
+      "path": "analysis/lua/Lua_Activity/TempItem/Model/TempItemModel.lua",
+      "sha256": "7c4553466436b42399563d90f69274c7822fcb318fb15338886be1408ae0c540",
+      "kind": "static-code",
+      "lineStart": 19,
+      "lineEnd": 45
+    },
+    {
+      "id": "temp-countdown",
+      "path": "analysis/lua/Lua_Activity/TempItem/Board/ItemTempView.lua",
+      "sha256": "0defd3d355f943d65fcf7dde392e1c9d941cd3f26e5e362004daec364b4f71bb",
+      "kind": "static-code",
+      "lineStart": 1,
+      "lineEnd": 19
+    },
+    {
+      "id": "sprite-loader",
+      "path": "analysis/lua/Lua_Base/Common/Utility/SpriteUtil.lua",
+      "sha256": "287bd820f703363b58ebbb0e2478aec23b43484456582cbf8cf396f306981d12",
+      "kind": "static-code",
+      "lineStart": 55,
+      "lineEnd": 81
+    },
+    {
+      "id": "resource-loader",
+      "path": "analysis/lua/Lua_Core/Model/Resource/ResourceLoader.lua",
+      "sha256": "429d38e9cce928430a66b6e02f7b40d6a5ac93ba3ca89f3d265273d412400880",
+      "kind": "static-code",
+      "lineStart": 147,
+      "lineEnd": 163
+    },
+    {
+      "id": "type-prefixes",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemDefinition.lua",
+      "sha256": "af977ea7680b82cbffc5ae392de2fc47158e9cb570031a498ff6d316f8844051",
+      "kind": "static-code",
+      "lineStart": 1791,
+      "lineEnd": 1806
+    },
+    {
+      "id": "model-definitions",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+      "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+      "kind": "static-code",
+      "lineStart": 2987,
+      "lineEnd": 4654
+    },
+    {
+      "id": "catalog",
+      "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/catalog.json",
+      "sha256": "28eb3fae74549e6bf23de58d029499da0e62d9cb714a123c22205da2919dc5ae",
+      "kind": "packaged-config"
+    },
+    {
+      "id": "normal-bubble-type",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemDefinition.lua",
+      "sha256": "af977ea7680b82cbffc5ae392de2fc47158e9cb570031a498ff6d316f8844051",
+      "kind": "static-code",
+      "lineStart": 240,
+      "lineEnd": 240
+    }
+  ],
+  "boundaries": [
+    "공개 자산은선별 Sprite3개이며 원격 번들·전체Texture·Lua는 비공개입니다.",
+    "코드 유도 기본 CDN의 정적 public asset GET입니다. 계정/게임 API 또는 실제 클라이언트 전송을 관측한 결과가 아닙니다.",
+    "원격 실물을 확보해도 활성 이벤트 배정·현재 서버표는 별도입니다.",
+    "property_bubble_1은 용도와 표현을 미확정으로 유지합니다. 이름만으로3401 버블과 합치지 않습니다."
+  ],
+  "revision": "78367927bdc4cf66b9a9814a0a9282dde2b5a322739cca3436a64b26cabb4b7e"
+}

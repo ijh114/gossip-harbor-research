@@ -1,0 +1,16 @@
+import {mediaFor,validMedia} from './visual-model.mjs';
+const e=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function sourceMotionExpansion(data){
+ if(!data.apkExpansion)return null;
+ return {...data.apkExpansion,studies:[...data.apkExpansion.studies,...(data.remoteCharacters?.motionStudies||[]),...(data.cgExpansion?.studies||[])]};
+}
+export function selectSourceMotion(expansion,{role='all',clip=''}={}){
+ const roles=[...new Set((expansion?.studies||[]).map(s=>s.role))];
+ const rows=(expansion?.studies||[]).filter(s=>role==='all'||s.role===role);
+ return {roles,rows,selected:rows.find(s=>s.id===clip)||rows[0]};
+}
+export function renderAPKMotionGallery(data,state={}){
+ const expansion=sourceMotionExpansion(data);if(!expansion)return '';
+ const {roles,rows,selected:s}=selectSourceMotion(expansion,state),summary=expansion.summary;
+ return `<section class="apk-motion-browser"><h3>캐릭터·CG 모션 전체 비교</h3><p>동봉 ${summary.locallyAvailableAnimations}모션${data.remoteCharacters?.motionStudies?` · 정적 원격 ${data.remoteCharacters.motionStudies.length}모션`:''}${data.cgExpansion?` · CG ${data.cgExpansion.studies.length}클립`:''}, 현재 ${expansion.studies.length}개를 선택할 수 있습니다. 새 파생 구간은 2초 이하로 나누고 기존 대표 시연은 원래 구간을 보존했습니다. 모든 모션의 원본 시간 범위를 포함합니다. 아래는 8Hz 기술 투영이며 원작 셰이더·런타임의 최종 재생이 아닙니다.</p><div class="collection-filters"><label>역할·CG<select data-apk-motion-role><option value="all">전체 역할·CG</option>${roles.map(r=>`<option${state.role===r?' selected':''}>${e(r)}</option>`).join('')}</select></label><label>원본 모션<select data-apk-motion-clip>${rows.map(r=>`<option value="${e(r.id)}"${r.id===s?.id?' selected':''}>${e(r.declaredAnimation)} · ${Number(r.declaredDuration).toFixed(3)}초</option>`).join('')}</select></label></div>${s?`<h4>${e(s.role)} · ${e(s.declaredAnimation)}</h4><p>원본 선언 ${Number(s.declaredDuration).toFixed(3)}초 · ${(s.segments||[]).length}구간 · ${s.sourceTimelineRangeCovered?'전체 원본 시간 범위 포함':'범위 확인 필요'}</p><div class="apk-motion-segments">${(s.segments||[]).map((seg,i)=>{const key=seg.previewMediaKey||seg.posterMediaKey,m=mediaFor(data,key);if(!validMedia(m))return '<p>연결된 파생 자료가 없습니다.</p>';return `<figure data-apk-loop-card><button type="button" class="apk-review-preview" data-media-key="${e(key)}" aria-label="${e(s.declaredAnimation)} 구간${i+1} 확대"><img src="${e(m.poster||m.src)}"${m.kind==='gif'?` data-loop-src="${e(m.src)}" data-loop-poster="${e(m.poster)}"`:''} alt="${e(m.alt)}" width="240" height="240" loading="lazy"></button><figcaption>구간 ${i+1} · ${Number(seg.sourceRange.start).toFixed(3)}–${Number(seg.sourceRange.end).toFixed(3)}초<br>${m.kind==='gif'?`GIF ${seg.encodedDurationMs}ms`:'선정 프레임 변화 없음 · 포스터'} · 출처 ${e((s.sourceRefs||[]).join(', '))}</figcaption></figure>`;}).join('')}</div>${s.fullSourceKeyPoseMediaKey?`<button type="button" class="button" data-media-key="${e(s.fullSourceKeyPoseMediaKey)}">원본 전체 0·25·50·75·100% 포즈 비교</button>`:''}<details><summary>기술 투영의 제한</summary>${(s.boundaries||expansion.boundaries||[]).map(b=>`<p>${e(b)}</p>`).join('')}</details>`:'<p>조건에 맞는 모션이 없습니다.</p>'}<p>${data.remoteCharacters?'등록 역할44종의 동봉·정적 원격 실물을 모두 확보했습니다. 건설 변형·차량을 포함하며 고유 인물44명을 뜻하지 않습니다.':`원격 등록만 확인된 ${summary.registeredOnlyMapCharacters}종은 동봉 실물과 구분합니다.`} 전 구간을 덮는 표본과 원작의 모든 프레임·최종 렌더 검증은 서로 다릅니다.</p></section>`;
+}

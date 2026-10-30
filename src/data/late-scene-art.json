@@ -1,0 +1,1771 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "reviewDate": "2026-10-30",
+  "scope": "13th-day minimal scene13_2 isolated choice art; no common-map recentering",
+  "checklistIds": [
+    "4.03",
+    "4.09"
+  ],
+  "originalRuntimeObserved": false,
+  "mediaEntries": [
+    {
+      "key": "late-scene-art:13_2_1",
+      "kind": "image",
+      "src": "./assets/media/late-scene-art/13_2_1.png",
+      "width": 400,
+      "height": 308,
+      "bytes": 95432,
+      "sha256": "c089c4636367e12315c7edacf4a53332cb9d5e0a17495977b238230faee6e26e",
+      "alt": "13_2_1 · 정확 원본 prefab의 mesh/UV/material 정적 기술 미리보기",
+      "origin": "catalog-linked-downloaded-mesh-projection",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-7791353263825344137",
+        "type": "GameObject",
+        "object_source_sha256": "a8e246fea907389599c87745e87d294699320e09e432093500bbed344422783c",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "sourceRefs": [
+        "late-scene:object:13_2_1",
+        "late-scene:map-config"
+      ],
+      "originalRuntimeObserved": false,
+      "originalFinalRenderingVerified": false,
+      "transform": "Exact prefab hierarchy and original MapView Slot TRS; three variants use identical analyst40degree projection and framing;400px maximum extent; unlit selected base texture/color; original shader/light/camera/animation not verified",
+      "source": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle · exact prefab -7791353263825344137 · late-scene:object:13_2_1, late-scene:map-config"
+    },
+    {
+      "key": "late-scene-art:13_2_2",
+      "kind": "image",
+      "src": "./assets/media/late-scene-art/13_2_2.png",
+      "width": 400,
+      "height": 308,
+      "bytes": 98034,
+      "sha256": "2132968c8a0b9a448cd0bae2e4b41f5988f6c372abbbb6d73d732d9733c96023",
+      "alt": "13_2_2 · 정확 원본 prefab의 mesh/UV/material 정적 기술 미리보기",
+      "origin": "catalog-linked-downloaded-mesh-projection",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-6147907987396771826",
+        "type": "GameObject",
+        "object_source_sha256": "58b37f94b8bef0ca3979e6110f8657efc9ad9091a996a258343a1f7fb11b8182",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "sourceRefs": [
+        "late-scene:object:13_2_2",
+        "late-scene:map-config"
+      ],
+      "originalRuntimeObserved": false,
+      "originalFinalRenderingVerified": false,
+      "transform": "Exact prefab hierarchy and original MapView Slot TRS; three variants use identical analyst40degree projection and framing;400px maximum extent; unlit selected base texture/color; original shader/light/camera/animation not verified",
+      "source": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle · exact prefab -6147907987396771826 · late-scene:object:13_2_2, late-scene:map-config"
+    },
+    {
+      "key": "late-scene-art:13_2_3",
+      "kind": "image",
+      "src": "./assets/media/late-scene-art/13_2_3.png",
+      "width": 400,
+      "height": 308,
+      "bytes": 88253,
+      "sha256": "8e5ecca08d6c58b9f64d0c608fe94bf82f562168b34ce8a6854dc9ce5b6e6a39",
+      "alt": "13_2_3 · 정확 원본 prefab의 mesh/UV/material 정적 기술 미리보기",
+      "origin": "catalog-linked-downloaded-mesh-projection",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-5563987172282559964",
+        "type": "GameObject",
+        "object_source_sha256": "48ed53443a62430bad4a7e27c05803e6350509988b8e16a30ceb3509e888c889",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "sourceRefs": [
+        "late-scene:object:13_2_3",
+        "late-scene:map-config"
+      ],
+      "originalRuntimeObserved": false,
+      "originalFinalRenderingVerified": false,
+      "transform": "Exact prefab hierarchy and original MapView Slot TRS; three variants use identical analyst40degree projection and framing;400px maximum extent; unlit selected base texture/color; original shader/light/camera/animation not verified",
+      "source": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle · exact prefab -5563987172282559964 · late-scene:object:13_2_3, late-scene:map-config"
+    },
+    {
+      "key": "late-scene-art:map:13_2_1",
+      "kind": "image",
+      "src": "./assets/media/late-scene-art/13_2_1--map-layer.png",
+      "width": 198,
+      "height": 140,
+      "bytes": 37731,
+      "sha256": "f69dbbd305f9cd6c09863314e9857f4a38aafc21986c016286a02d8735438292",
+      "alt": "13_2_1 · 기존 확장공통맵의 원본좌표 정적 선택레이어",
+      "origin": "catalog-linked-downloaded-mesh-projection",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-7791353263825344137",
+        "type": "GameObject",
+        "object_source_sha256": "a8e246fea907389599c87745e87d294699320e09e432093500bbed344422783c",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "sourceRefs": [
+        "late-scene:object:13_2_1",
+        "late-scene:map-config"
+      ],
+      "originalRuntimeObserved": false,
+      "originalFinalRenderingVerified": false,
+      "transform": "Exact prefab/Slot world TRS, existing2455x1705 map bounds/pixelScale without recentering, static base-depth occlusion; native final shader/lighting/camera unverified",
+      "source": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle · exact prefab -7791353263825344137 · late-scene:object:13_2_1, late-scene:map-config"
+    },
+    {
+      "key": "late-scene-art:map:13_2_2",
+      "kind": "image",
+      "src": "./assets/media/late-scene-art/13_2_2--map-layer.png",
+      "width": 198,
+      "height": 143,
+      "bytes": 39528,
+      "sha256": "826f28cbba7685c8f06150b3af5603860640dbef054baa7abf17b0f661d8e6a5",
+      "alt": "13_2_2 · 기존 확장공통맵의 원본좌표 정적 선택레이어",
+      "origin": "catalog-linked-downloaded-mesh-projection",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-6147907987396771826",
+        "type": "GameObject",
+        "object_source_sha256": "58b37f94b8bef0ca3979e6110f8657efc9ad9091a996a258343a1f7fb11b8182",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "sourceRefs": [
+        "late-scene:object:13_2_2",
+        "late-scene:map-config"
+      ],
+      "originalRuntimeObserved": false,
+      "originalFinalRenderingVerified": false,
+      "transform": "Exact prefab/Slot world TRS, existing2455x1705 map bounds/pixelScale without recentering, static base-depth occlusion; native final shader/lighting/camera unverified",
+      "source": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle · exact prefab -6147907987396771826 · late-scene:object:13_2_2, late-scene:map-config"
+    },
+    {
+      "key": "late-scene-art:map:13_2_3",
+      "kind": "image",
+      "src": "./assets/media/late-scene-art/13_2_3--map-layer.png",
+      "width": 198,
+      "height": 144,
+      "bytes": 34614,
+      "sha256": "164dc77cef69da259efb4ad464095334350f40444fcc696712441fc6d606bb42",
+      "alt": "13_2_3 · 기존 확장공통맵의 원본좌표 정적 선택레이어",
+      "origin": "catalog-linked-downloaded-mesh-projection",
+      "version": "4.10.5",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-5563987172282559964",
+        "type": "GameObject",
+        "object_source_sha256": "48ed53443a62430bad4a7e27c05803e6350509988b8e16a30ceb3509e888c889",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "sourceRefs": [
+        "late-scene:object:13_2_3",
+        "late-scene:map-config"
+      ],
+      "originalRuntimeObserved": false,
+      "originalFinalRenderingVerified": false,
+      "transform": "Exact prefab/Slot world TRS, existing2455x1705 map bounds/pixelScale without recentering, static base-depth occlusion; native final shader/lighting/camera unverified",
+      "source": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle · exact prefab -5563987172282559964 · late-scene:object:13_2_3, late-scene:map-config"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "13_2_1",
+      "group": "late-scene",
+      "resourceKey": "13_2_1",
+      "slot": "13_2",
+      "variant": "1",
+      "prefab": "Assets/Map/Area4/13_2_1.prefab",
+      "mapConfigIndex1Based": 178,
+      "assetGuid": "effe2820d0f3143f2bd26243b7841e13",
+      "catalog": {
+        "assetPath": "Assets/Map/Area4/13_2_1.prefab",
+        "exactKeyFound": true,
+        "catalogAssetEntries": [
+          {
+            "index": 14508,
+            "internalId": "Assets/Map/Area4/13_2_1.prefab",
+            "internalIdIndex": 14435,
+            "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+            "providerIndex": 1,
+            "dependencyKeyIndex": 25819,
+            "dependencyHashCode": -778809707,
+            "extraDataOffset": -1,
+            "primaryKeyIndex": 17996,
+            "resourceTypeIndex": 1
+          }
+        ],
+        "bundles": [
+          {
+            "catalogEntryIndex": 1134,
+            "internalIdIndex": 1134,
+            "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundleFile": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "hashFromFilename": "ae46dd524586585b278cfcc9841c9414",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "97f11c929303ee045da735d30e0a35d990a3a138d99c467332569ad5bcba9f40",
+            "optionsBytes": 92,
+            "resolvedURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "resolutionStatus": "code-derived-default-GET-verified",
+            "sizeBytes": 4594453,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/followup/media403413-final/remote-bundles/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bytesSha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1848,
+            "internalIdIndex": 1848,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "bundleFile": "builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "hashFromFilename": "387aa8a8b1b6a1f7532a0d6857c9fa61",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "66d854247a4a234ad55e70e381aaecc54bfa8b747eadaebb4b572e22bedd2392",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 3774882,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "bytesSha256": "e9bd153ce586efa73a22522f449885289d4e241dce636256bb5ea763f601517a",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1908,
+            "internalIdIndex": 1908,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/map-main_assets_all_464b0d3c7361b92eb4a7fba13d72ac1d.bundle",
+            "bundleFile": "map-main_assets_all_464b0d3c7361b92eb4a7fba13d72ac1d.bundle",
+            "hashFromFilename": "464b0d3c7361b92eb4a7fba13d72ac1d",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "257c263218768fb5f6fb61499e19ff6ab68426078285ff922ce2e613991ea876",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 5120729,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/map-main_assets_all_464b0d3c7361b92eb4a7fba13d72ac1d.bundle",
+            "bytesSha256": "02af179f0857ee7a7390eb54f73d0d51a64ff0b71461cccb54d7b1ca7384739b",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1845,
+            "internalIdIndex": 1845,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "hashFromFilename": "45a1151fae1ae68b033775f4df8c742a",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "23549806047c3857efb73ca6a9f7f1bf09dca4c96d368ee5d332fde63f42a1a1",
+            "optionsBytes": 104,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 6811,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "bytesSha256": "29ea9425471d8dcd994c247f4a672730bb06c9b263bf94f4ecc415bda7f72433",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1846,
+            "internalIdIndex": 1846,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "hashFromFilename": "3de25122f950a97eed35b094cd9649d6",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "8c586776cf117524147420fead7a780ca4ea187889aa6034b05d383223f4c21e",
+            "optionsBytes": 112,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 421015,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "bytesSha256": "71bdf8a3016f0943c4dcd5d61fb313d8cab4d4f1564ef5f306080f9ca1f7ff79",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1888,
+            "internalIdIndex": 1888,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "bundleFile": "effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "hashFromFilename": "4e78c1e63b9e732d9b0245fd9bc8d416",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "2f1d146191d6f00349ed4ae7e2594372dfbf037f432d0713d226ab71eae3b15d",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 9635908,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "bytesSha256": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1892,
+            "internalIdIndex": 1892,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "bundleFile": "font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "hashFromFilename": "5dafffdb9db0165aa02e86cc1eee9a0f",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "a0904bfee37c81508695421f82c47c1245af9edc9a35254f56c81571b4db95b7",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 279126,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "bytesSha256": "88c4325df7317cd507728e5ed8a076b579dc6397b2bc137a8ad86747b613b344",
+            "runtimeTransferOrPreferenceObserved": false
+          }
+        ]
+      },
+      "sourceRefs": [
+        "late-scene:map-config"
+      ],
+      "originalRuntimeObserved": false,
+      "mediaKey": "late-scene-art:13_2_1",
+      "status": "exact-prefab-and-textures-recovered-static-projection",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-7791353263825344137",
+        "type": "GameObject",
+        "object_source_sha256": "a8e246fea907389599c87745e87d294699320e09e432093500bbed344422783c",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "actualContainerPath": "Assets/Map/Area4/13_2_1.prefab",
+      "meshParts": 2,
+      "triangleCount": 88,
+      "componentCounts": {
+        "Transform": 5,
+        "MeshFilter": 2,
+        "MeshRenderer": 2
+      },
+      "textureSpecs": [
+        {
+          "identity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "-3183773800234888079",
+            "type": "Texture2D",
+            "object_source_sha256": "6aca36ba64eb48c59394abcb00a4d32d16e5082e2d01ef1af8a578287594b6aa",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "name": "yardlandscape_1",
+          "width": 512,
+          "height": 512,
+          "format": 50
+        },
+        {
+          "identity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "3819649819708236020",
+            "type": "Texture2D",
+            "object_source_sha256": "8b61ac1379e24db0ae98315ac45056bc5d65f4fd4ec6c05cb815c04568138add",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "name": "yardbrick_1_a",
+          "width": 256,
+          "height": 32,
+          "format": 50
+        }
+      ],
+      "slotTransform": {
+        "id": "13_2",
+        "transformChain": [
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              -0.9238795638084412,
+              0,
+              0.3826834261417389
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "slotTransformPathId": "-6154310872802136479",
+        "slotRootPathId": "-6154310872802136479"
+      },
+      "serializedRootActive": true,
+      "sourceRootTransform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "sourceSelectionActivation": "Root made active as Slot:_UpdateViewVisible selected item; inactive child nodes remain excluded",
+      "sourceAssetKind": "Unity GameObject3D mesh/material; this isolated technical projection is not a source2D Sprite",
+      "finalNativeRenderingVerified": false,
+      "mapLayerMediaKey": "late-scene-art:map:13_2_1",
+      "mapVariant": {
+        "id": "1",
+        "resourceKey": "13_2_1",
+        "mediaKey": "late-scene-art:map:13_2_1",
+        "boundsNormalized": {
+          "x": 0.22036659877800407,
+          "y": 0.4029325513196481,
+          "width": 0.08065173116089613,
+          "height": 0.08211143695014662
+        },
+        "cropPixels": [
+          541,
+          687,
+          739,
+          827
+        ],
+        "depth": 12.487993744121352,
+        "status": "curated-downloaded-static-projection",
+        "identity": {
+          "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+          "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+          "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+          "path_id": "-7791353263825344137",
+          "type": "GameObject",
+          "object_source_sha256": "a8e246fea907389599c87745e87d294699320e09e432093500bbed344422783c",
+          "authority": "external-service",
+          "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+        },
+        "prefab": "Assets/Map/Area4/13_2_1.prefab",
+        "sourceRefs": [
+          "late-scene:object:13_2_1",
+          "late-scene:map-config"
+        ]
+      }
+    },
+    {
+      "id": "13_2_2",
+      "group": "late-scene",
+      "resourceKey": "13_2_2",
+      "slot": "13_2",
+      "variant": "2",
+      "prefab": "Assets/Map/Area4/13_2_2.prefab",
+      "mapConfigIndex1Based": 179,
+      "assetGuid": "034dd2f2ce7f346e697813e6167648a1",
+      "catalog": {
+        "assetPath": "Assets/Map/Area4/13_2_2.prefab",
+        "exactKeyFound": true,
+        "catalogAssetEntries": [
+          {
+            "index": 14509,
+            "internalId": "Assets/Map/Area4/13_2_2.prefab",
+            "internalIdIndex": 14436,
+            "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+            "providerIndex": 1,
+            "dependencyKeyIndex": 25819,
+            "dependencyHashCode": -778809707,
+            "extraDataOffset": -1,
+            "primaryKeyIndex": 17997,
+            "resourceTypeIndex": 1
+          }
+        ],
+        "bundles": [
+          {
+            "catalogEntryIndex": 1134,
+            "internalIdIndex": 1134,
+            "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundleFile": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "hashFromFilename": "ae46dd524586585b278cfcc9841c9414",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "97f11c929303ee045da735d30e0a35d990a3a138d99c467332569ad5bcba9f40",
+            "optionsBytes": 92,
+            "resolvedURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "resolutionStatus": "code-derived-default-GET-verified",
+            "sizeBytes": 4594453,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/followup/media403413-final/remote-bundles/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bytesSha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1848,
+            "internalIdIndex": 1848,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "bundleFile": "builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "hashFromFilename": "387aa8a8b1b6a1f7532a0d6857c9fa61",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "66d854247a4a234ad55e70e381aaecc54bfa8b747eadaebb4b572e22bedd2392",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 3774882,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "bytesSha256": "e9bd153ce586efa73a22522f449885289d4e241dce636256bb5ea763f601517a",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1908,
+            "internalIdIndex": 1908,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/map-main_assets_all_464b0d3c7361b92eb4a7fba13d72ac1d.bundle",
+            "bundleFile": "map-main_assets_all_464b0d3c7361b92eb4a7fba13d72ac1d.bundle",
+            "hashFromFilename": "464b0d3c7361b92eb4a7fba13d72ac1d",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "257c263218768fb5f6fb61499e19ff6ab68426078285ff922ce2e613991ea876",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 5120729,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/map-main_assets_all_464b0d3c7361b92eb4a7fba13d72ac1d.bundle",
+            "bytesSha256": "02af179f0857ee7a7390eb54f73d0d51a64ff0b71461cccb54d7b1ca7384739b",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1845,
+            "internalIdIndex": 1845,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "hashFromFilename": "45a1151fae1ae68b033775f4df8c742a",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "23549806047c3857efb73ca6a9f7f1bf09dca4c96d368ee5d332fde63f42a1a1",
+            "optionsBytes": 104,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 6811,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "bytesSha256": "29ea9425471d8dcd994c247f4a672730bb06c9b263bf94f4ecc415bda7f72433",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1846,
+            "internalIdIndex": 1846,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "hashFromFilename": "3de25122f950a97eed35b094cd9649d6",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "8c586776cf117524147420fead7a780ca4ea187889aa6034b05d383223f4c21e",
+            "optionsBytes": 112,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 421015,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "bytesSha256": "71bdf8a3016f0943c4dcd5d61fb313d8cab4d4f1564ef5f306080f9ca1f7ff79",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1888,
+            "internalIdIndex": 1888,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "bundleFile": "effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "hashFromFilename": "4e78c1e63b9e732d9b0245fd9bc8d416",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "2f1d146191d6f00349ed4ae7e2594372dfbf037f432d0713d226ab71eae3b15d",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 9635908,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "bytesSha256": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1892,
+            "internalIdIndex": 1892,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "bundleFile": "font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "hashFromFilename": "5dafffdb9db0165aa02e86cc1eee9a0f",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "a0904bfee37c81508695421f82c47c1245af9edc9a35254f56c81571b4db95b7",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 279126,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "bytesSha256": "88c4325df7317cd507728e5ed8a076b579dc6397b2bc137a8ad86747b613b344",
+            "runtimeTransferOrPreferenceObserved": false
+          }
+        ]
+      },
+      "sourceRefs": [
+        "late-scene:map-config"
+      ],
+      "originalRuntimeObserved": false,
+      "mediaKey": "late-scene-art:13_2_2",
+      "status": "exact-prefab-and-textures-recovered-static-projection",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-6147907987396771826",
+        "type": "GameObject",
+        "object_source_sha256": "58b37f94b8bef0ca3979e6110f8657efc9ad9091a996a258343a1f7fb11b8182",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "actualContainerPath": "Assets/Map/Area4/13_2_2.prefab",
+      "meshParts": 2,
+      "triangleCount": 88,
+      "componentCounts": {
+        "Transform": 5,
+        "MeshFilter": 2,
+        "MeshRenderer": 2
+      },
+      "textureSpecs": [
+        {
+          "identity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "-1441693867822064622",
+            "type": "Texture2D",
+            "object_source_sha256": "c897d45c38dda4c079bee32901c9512499259ad057bfb3066600f295f51072e2",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "name": "yardlandscape_2",
+          "width": 512,
+          "height": 512,
+          "format": 50
+        },
+        {
+          "identity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "3819649819708236020",
+            "type": "Texture2D",
+            "object_source_sha256": "8b61ac1379e24db0ae98315ac45056bc5d65f4fd4ec6c05cb815c04568138add",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "name": "yardbrick_1_a",
+          "width": 256,
+          "height": 32,
+          "format": 50
+        }
+      ],
+      "slotTransform": {
+        "id": "13_2",
+        "transformChain": [
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              -0.9238795638084412,
+              0,
+              0.3826834261417389
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "slotTransformPathId": "-6154310872802136479",
+        "slotRootPathId": "-6154310872802136479"
+      },
+      "serializedRootActive": true,
+      "sourceRootTransform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "sourceSelectionActivation": "Root made active as Slot:_UpdateViewVisible selected item; inactive child nodes remain excluded",
+      "sourceAssetKind": "Unity GameObject3D mesh/material; this isolated technical projection is not a source2D Sprite",
+      "finalNativeRenderingVerified": false,
+      "mapLayerMediaKey": "late-scene-art:map:13_2_2",
+      "mapVariant": {
+        "id": "2",
+        "resourceKey": "13_2_2",
+        "mediaKey": "late-scene-art:map:13_2_2",
+        "boundsNormalized": {
+          "x": 0.22036659877800407,
+          "y": 0.40117302052785925,
+          "width": 0.08065173116089613,
+          "height": 0.08387096774193549
+        },
+        "cropPixels": [
+          541,
+          684,
+          739,
+          827
+        ],
+        "depth": 12.50373547899935,
+        "status": "curated-downloaded-static-projection",
+        "identity": {
+          "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+          "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+          "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+          "path_id": "-6147907987396771826",
+          "type": "GameObject",
+          "object_source_sha256": "58b37f94b8bef0ca3979e6110f8657efc9ad9091a996a258343a1f7fb11b8182",
+          "authority": "external-service",
+          "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+        },
+        "prefab": "Assets/Map/Area4/13_2_2.prefab",
+        "sourceRefs": [
+          "late-scene:object:13_2_2",
+          "late-scene:map-config"
+        ]
+      }
+    },
+    {
+      "id": "13_2_3",
+      "group": "late-scene",
+      "resourceKey": "13_2_3",
+      "slot": "13_2",
+      "variant": "3",
+      "prefab": "Assets/Map/Area4/13_2_3.prefab",
+      "mapConfigIndex1Based": 180,
+      "assetGuid": "64952d6b135fc45deb2b57d323b90f7d",
+      "catalog": {
+        "assetPath": "Assets/Map/Area4/13_2_3.prefab",
+        "exactKeyFound": true,
+        "catalogAssetEntries": [
+          {
+            "index": 14510,
+            "internalId": "Assets/Map/Area4/13_2_3.prefab",
+            "internalIdIndex": 14437,
+            "provider": "UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider",
+            "providerIndex": 1,
+            "dependencyKeyIndex": 25819,
+            "dependencyHashCode": -778809707,
+            "extraDataOffset": -1,
+            "primaryKeyIndex": 17998,
+            "resourceTypeIndex": 1
+          }
+        ],
+        "bundles": [
+          {
+            "catalogEntryIndex": 1134,
+            "internalIdIndex": 1134,
+            "uriTemplate": "{AddressableManager.remoteLoadPathPrefix}/{AddressableManager.remoteLoadFolder}/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundleFile": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "hashFromFilename": "ae46dd524586585b278cfcc9841c9414",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "97f11c929303ee045da735d30e0a35d990a3a138d99c467332569ad5bcba9f40",
+            "optionsBytes": 92,
+            "resolvedURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "resolutionStatus": "code-derived-default-GET-verified",
+            "sizeBytes": 4594453,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/followup/media403413-final/remote-bundles/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bytesSha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1848,
+            "internalIdIndex": 1848,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "bundleFile": "builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "hashFromFilename": "387aa8a8b1b6a1f7532a0d6857c9fa61",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "66d854247a4a234ad55e70e381aaecc54bfa8b747eadaebb4b572e22bedd2392",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 3774882,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+            "bytesSha256": "e9bd153ce586efa73a22522f449885289d4e241dce636256bb5ea763f601517a",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1908,
+            "internalIdIndex": 1908,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/map-main_assets_all_464b0d3c7361b92eb4a7fba13d72ac1d.bundle",
+            "bundleFile": "map-main_assets_all_464b0d3c7361b92eb4a7fba13d72ac1d.bundle",
+            "hashFromFilename": "464b0d3c7361b92eb4a7fba13d72ac1d",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "257c263218768fb5f6fb61499e19ff6ab68426078285ff922ce2e613991ea876",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 5120729,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/map-main_assets_all_464b0d3c7361b92eb4a7fba13d72ac1d.bundle",
+            "bytesSha256": "02af179f0857ee7a7390eb54f73d0d51a64ff0b71461cccb54d7b1ca7384739b",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1845,
+            "internalIdIndex": 1845,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "hashFromFilename": "45a1151fae1ae68b033775f4df8c742a",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "23549806047c3857efb73ca6a9f7f1bf09dca4c96d368ee5d332fde63f42a1a1",
+            "optionsBytes": 104,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 6811,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+            "bytesSha256": "29ea9425471d8dcd994c247f4a672730bb06c9b263bf94f4ecc415bda7f72433",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1846,
+            "internalIdIndex": 1846,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "bundleFile": "be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "hashFromFilename": "3de25122f950a97eed35b094cd9649d6",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "8c586776cf117524147420fead7a780ca4ea187889aa6034b05d383223f4c21e",
+            "optionsBytes": 112,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 421015,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+            "bytesSha256": "71bdf8a3016f0943c4dcd5d61fb313d8cab4d4f1564ef5f306080f9ca1f7ff79",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1888,
+            "internalIdIndex": 1888,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "bundleFile": "effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "hashFromFilename": "4e78c1e63b9e732d9b0245fd9bc8d416",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "2f1d146191d6f00349ed4ae7e2594372dfbf037f432d0713d226ab71eae3b15d",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 9635908,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+            "bytesSha256": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39",
+            "runtimeTransferOrPreferenceObserved": false
+          },
+          {
+            "catalogEntryIndex": 1892,
+            "internalIdIndex": 1892,
+            "uriTemplate": "{UnityEngine.AddressableAssets.Addressables.RuntimePath}/android/font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "bundleFile": "font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "hashFromFilename": "5dafffdb9db0165aa02e86cc1eee9a0f",
+            "hashAlsoPresentInSerializedOptions": true,
+            "optionsRawSha256": "a0904bfee37c81508695421f82c47c1245af9edc9a35254f56c81571b4db95b7",
+            "optionsBytes": 92,
+            "resolvedURL": null,
+            "resolutionStatus": "shipped-local-runtime-path",
+            "sizeBytes": 279126,
+            "sizeEvidence": "uint32 after two length-prefixed ASCII fields; empirically validated against all245 physical local bundle byte sizes, mismatches0",
+            "crc": null,
+            "optionsStatus": "Exact catalog size/hash linked to physical UnityFS bytes; CRC meaning not asserted",
+            "resolvedLocalPath": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+            "bytesSha256": "88c4325df7317cd507728e5ed8a076b579dc6397b2bc137a8ad86747b613b344",
+            "runtimeTransferOrPreferenceObserved": false
+          }
+        ]
+      },
+      "sourceRefs": [
+        "late-scene:map-config"
+      ],
+      "originalRuntimeObserved": false,
+      "mediaKey": "late-scene-art:13_2_3",
+      "status": "exact-prefab-and-textures-recovered-static-projection",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-5563987172282559964",
+        "type": "GameObject",
+        "object_source_sha256": "48ed53443a62430bad4a7e27c05803e6350509988b8e16a30ceb3509e888c889",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "actualContainerPath": "Assets/Map/Area4/13_2_3.prefab",
+      "meshParts": 2,
+      "triangleCount": 88,
+      "componentCounts": {
+        "Transform": 5,
+        "MeshFilter": 2,
+        "MeshRenderer": 2
+      },
+      "textureSpecs": [
+        {
+          "identity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "2970895101234347854",
+            "type": "Texture2D",
+            "object_source_sha256": "aff3dfcdb1c50aae64dd9881b9316ba83f67be3efe8938da8775a0277775f5b1",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "name": "yardlandscape_3",
+          "width": 512,
+          "height": 512,
+          "format": 50
+        },
+        {
+          "identity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "3819649819708236020",
+            "type": "Texture2D",
+            "object_source_sha256": "8b61ac1379e24db0ae98315ac45056bc5d65f4fd4ec6c05cb815c04568138add",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "name": "yardbrick_1_a",
+          "width": 256,
+          "height": 32,
+          "format": 50
+        }
+      ],
+      "slotTransform": {
+        "id": "13_2",
+        "transformChain": [
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              -0.9238795638084412,
+              0,
+              0.3826834261417389
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "slotTransformPathId": "-6154310872802136479",
+        "slotRootPathId": "-6154310872802136479"
+      },
+      "serializedRootActive": true,
+      "sourceRootTransform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "sourceSelectionActivation": "Root made active as Slot:_UpdateViewVisible selected item; inactive child nodes remain excluded",
+      "sourceAssetKind": "Unity GameObject3D mesh/material; this isolated technical projection is not a source2D Sprite",
+      "finalNativeRenderingVerified": false,
+      "mapLayerMediaKey": "late-scene-art:map:13_2_3",
+      "mapVariant": {
+        "id": "3",
+        "resourceKey": "13_2_3",
+        "mediaKey": "late-scene-art:map:13_2_3",
+        "boundsNormalized": {
+          "x": 0.22036659877800407,
+          "y": 0.4005865102639296,
+          "width": 0.08065173116089613,
+          "height": 0.0844574780058651
+        },
+        "cropPixels": [
+          541,
+          683,
+          739,
+          827
+        ],
+        "depth": 12.503735478762138,
+        "status": "curated-downloaded-static-projection",
+        "identity": {
+          "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+          "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+          "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+          "path_id": "-5563987172282559964",
+          "type": "GameObject",
+          "object_source_sha256": "48ed53443a62430bad4a7e27c05803e6350509988b8e16a30ceb3509e888c889",
+          "authority": "external-service",
+          "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+        },
+        "prefab": "Assets/Map/Area4/13_2_3.prefab",
+        "sourceRefs": [
+          "late-scene:object:13_2_3",
+          "late-scene:map-config"
+        ]
+      }
+    }
+  ],
+  "mapsPatch": {
+    "mapId": "main-map-early",
+    "width": 2455,
+    "height": 1705,
+    "baseMediaKey": "remote-presentation:map:base",
+    "projectionRevision": "a15caebfff188b4a3a6b383250ae3847e07186d72aaddb0b32d0642503cb75d0",
+    "slots": [
+      {
+        "id": "13_2",
+        "depth": 12.498488233960947,
+        "variants": [
+          {
+            "id": "1",
+            "resourceKey": "13_2_1",
+            "mediaKey": "late-scene-art:map:13_2_1",
+            "boundsNormalized": {
+              "x": 0.22036659877800407,
+              "y": 0.4029325513196481,
+              "width": 0.08065173116089613,
+              "height": 0.08211143695014662
+            },
+            "cropPixels": [
+              541,
+              687,
+              739,
+              827
+            ],
+            "depth": 12.487993744121352,
+            "status": "curated-downloaded-static-projection",
+            "identity": {
+              "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+              "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+              "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+              "path_id": "-7791353263825344137",
+              "type": "GameObject",
+              "object_source_sha256": "a8e246fea907389599c87745e87d294699320e09e432093500bbed344422783c",
+              "authority": "external-service",
+              "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+            },
+            "prefab": "Assets/Map/Area4/13_2_1.prefab",
+            "sourceRefs": [
+              "late-scene:object:13_2_1",
+              "late-scene:map-config"
+            ]
+          },
+          {
+            "id": "2",
+            "resourceKey": "13_2_2",
+            "mediaKey": "late-scene-art:map:13_2_2",
+            "boundsNormalized": {
+              "x": 0.22036659877800407,
+              "y": 0.40117302052785925,
+              "width": 0.08065173116089613,
+              "height": 0.08387096774193549
+            },
+            "cropPixels": [
+              541,
+              684,
+              739,
+              827
+            ],
+            "depth": 12.50373547899935,
+            "status": "curated-downloaded-static-projection",
+            "identity": {
+              "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+              "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+              "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+              "path_id": "-6147907987396771826",
+              "type": "GameObject",
+              "object_source_sha256": "58b37f94b8bef0ca3979e6110f8657efc9ad9091a996a258343a1f7fb11b8182",
+              "authority": "external-service",
+              "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+            },
+            "prefab": "Assets/Map/Area4/13_2_2.prefab",
+            "sourceRefs": [
+              "late-scene:object:13_2_2",
+              "late-scene:map-config"
+            ]
+          },
+          {
+            "id": "3",
+            "resourceKey": "13_2_3",
+            "mediaKey": "late-scene-art:map:13_2_3",
+            "boundsNormalized": {
+              "x": 0.22036659877800407,
+              "y": 0.4005865102639296,
+              "width": 0.08065173116089613,
+              "height": 0.0844574780058651
+            },
+            "cropPixels": [
+              541,
+              683,
+              739,
+              827
+            ],
+            "depth": 12.503735478762138,
+            "status": "curated-downloaded-static-projection",
+            "identity": {
+              "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+              "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+              "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+              "path_id": "-5563987172282559964",
+              "type": "GameObject",
+              "object_source_sha256": "48ed53443a62430bad4a7e27c05803e6350509988b8e16a30ceb3509e888c889",
+              "authority": "external-service",
+              "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+            },
+            "prefab": "Assets/Map/Area4/13_2_3.prefab",
+            "sourceRefs": [
+              "late-scene:object:13_2_3",
+              "late-scene:map-config"
+            ]
+          }
+        ],
+        "variantMediaKeys": {
+          "1": "late-scene-art:map:13_2_1",
+          "2": "late-scene-art:map:13_2_2",
+          "3": "late-scene-art:map:13_2_3"
+        },
+        "transformChain": [
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              -0.9238795638084412,
+              0,
+              0.3826834261417389
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        ],
+        "slotTransformPathId": "-6154310872802136479",
+        "slotRootPathId": "-6154310872802136479",
+        "sourceRefs": [
+          "late-scene:map-config"
+        ]
+      }
+    ],
+    "baseRecentered": false
+  },
+  "materials": [
+    {
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-3422088745243473893",
+        "type": "Material",
+        "object_source_sha256": "83ce7b8c9b008742b2aa789ec9944992c514906432ab9181a695e77ce20d9df9",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "name": "yardlandscape_1",
+      "colorProperty": "_BaseColor",
+      "textureProperty": "_BaseMap",
+      "textureIdentity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-3183773800234888079",
+        "type": "Texture2D",
+        "object_source_sha256": "6aca36ba64eb48c59394abcb00a4d32d16e5082e2d01ef1af8a578287594b6aa",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "otherTextureProperties": [
+        "_BaseMap"
+      ],
+      "shaderName": "Cookie/Transparent",
+      "blendProperties": {
+        "_SrcBlend": 5,
+        "_DstBlend": 10,
+        "_Surface": 0,
+        "_Blend": 0,
+        "_ZWrite": 1
+      },
+      "renderQueue": -1
+    },
+    {
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-3797402364736649026",
+        "type": "Material",
+        "object_source_sha256": "5f5e84f744ce7fe31f585c85a8726ba18eb1871b446df06fe3e9d3493d589c40",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "name": "yardbrick_1_base",
+      "colorProperty": "_BaseColor",
+      "textureProperty": "_BaseMap",
+      "textureIdentity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "3819649819708236020",
+        "type": "Texture2D",
+        "object_source_sha256": "8b61ac1379e24db0ae98315ac45056bc5d65f4fd4ec6c05cb815c04568138add",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "otherTextureProperties": [
+        "_AOMap",
+        "_BaseMap"
+      ],
+      "shaderName": "Cookie/Unlit",
+      "blendProperties": {
+        "_SrcBlend": 1,
+        "_DstBlend": 0,
+        "_Surface": 0,
+        "_Blend": 0,
+        "_ZWrite": 1
+      },
+      "renderQueue": -1
+    },
+    {
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-4448508175771122398",
+        "type": "Material",
+        "object_source_sha256": "cbad2a925a79829aded715811a93a12ff0cd302998336a3f8bc5982a54842f7e",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "name": "yardlandscape_2",
+      "colorProperty": "_BaseColor",
+      "textureProperty": "_BaseMap",
+      "textureIdentity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-1441693867822064622",
+        "type": "Texture2D",
+        "object_source_sha256": "c897d45c38dda4c079bee32901c9512499259ad057bfb3066600f295f51072e2",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "otherTextureProperties": [
+        "_BaseMap"
+      ],
+      "shaderName": "Cookie/Transparent",
+      "blendProperties": {
+        "_SrcBlend": 5,
+        "_DstBlend": 10,
+        "_Surface": 0,
+        "_Blend": 0,
+        "_ZWrite": 1
+      },
+      "renderQueue": -1
+    },
+    {
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-4197080993196300673",
+        "type": "Material",
+        "object_source_sha256": "715e2765141877dbf63b6e5b113b9809777e35abf3ddd87cc6f5bc241537856a",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "name": "yardlandscape_3",
+      "colorProperty": "_BaseColor",
+      "textureProperty": "_BaseMap",
+      "textureIdentity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "2970895101234347854",
+        "type": "Texture2D",
+        "object_source_sha256": "aff3dfcdb1c50aae64dd9881b9316ba83f67be3efe8938da8775a0277775f5b1",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "otherTextureProperties": [
+        "_BaseMap"
+      ],
+      "shaderName": "Cookie/Transparent",
+      "blendProperties": {
+        "_SrcBlend": 5,
+        "_DstBlend": 10,
+        "_Surface": 0,
+        "_Blend": 0,
+        "_ZWrite": 1
+      },
+      "renderQueue": -1
+    }
+  ],
+  "sources": [
+    {
+      "id": "late-scene:object:13_2_1",
+      "path": "Assets/Map/Area4/13_2_1.prefab",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-7791353263825344137",
+        "type": "GameObject",
+        "object_source_sha256": "a8e246fea907389599c87745e87d294699320e09e432093500bbed344422783c",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "catalogAssetGuid": "effe2820d0f3143f2bd26243b7841e13",
+      "kind": "exact-catalog-container-prefab",
+      "authority": "external-service"
+    },
+    {
+      "id": "late-scene:object:13_2_2",
+      "path": "Assets/Map/Area4/13_2_2.prefab",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-6147907987396771826",
+        "type": "GameObject",
+        "object_source_sha256": "58b37f94b8bef0ca3979e6110f8657efc9ad9091a996a258343a1f7fb11b8182",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "catalogAssetGuid": "034dd2f2ce7f346e697813e6167648a1",
+      "kind": "exact-catalog-container-prefab",
+      "authority": "external-service"
+    },
+    {
+      "id": "late-scene:object:13_2_3",
+      "path": "Assets/Map/Area4/13_2_3.prefab",
+      "identity": {
+        "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+        "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+        "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+        "path_id": "-5563987172282559964",
+        "type": "GameObject",
+        "object_source_sha256": "48ed53443a62430bad4a7e27c05803e6350509988b8e16a30ceb3509e888c889",
+        "authority": "external-service",
+        "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+      },
+      "catalogAssetGuid": "64952d6b135fc45deb2b57d323b90f7d",
+      "kind": "exact-catalog-container-prefab",
+      "authority": "external-service"
+    },
+    {
+      "id": "late-scene:map-config",
+      "kind": "shipped-exact-map-config",
+      "identity": {
+        "bundle": "data_assets_assets/dataconfig_6e0d2c169df8b96afd4dedefc258930c.bundle",
+        "bundle_sha256": "80273eef54c95cc535d4feefff1112a5143569cbc91351ca1ee936232282d7ec",
+        "serialized_file": "CAB-8606d1fb03ffce370c84e92b857ce42d",
+        "path_id": "2857910251648523867",
+        "type": "MonoBehaviour",
+        "object_source_sha256": "b3abac208d3be2ad60c88c7a819522fef16fab1c6bdd5b7328a63a5e7f9dc81d"
+      },
+      "entries": [
+        {
+          "resourceKey": "13_2_1",
+          "configIndex1Based": 178,
+          "assetGuid": "effe2820d0f3143f2bd26243b7841e13",
+          "prefab": "Assets/Map/Area4/13_2_1.prefab"
+        },
+        {
+          "resourceKey": "13_2_2",
+          "configIndex1Based": 179,
+          "assetGuid": "034dd2f2ce7f346e697813e6167648a1",
+          "prefab": "Assets/Map/Area4/13_2_2.prefab"
+        },
+        {
+          "resourceKey": "13_2_3",
+          "configIndex1Based": 180,
+          "assetGuid": "64952d6b135fc45deb2b57d323b90f7d",
+          "prefab": "Assets/Map/Area4/13_2_3.prefab"
+        }
+      ]
+    },
+    {
+      "id": "late-scene:bundle:dbdeb2fa3cad37f1",
+      "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/builtinassets_assets_all_387aa8a8b1b6a1f7532a0d6857c9fa61.bundle",
+      "sha256": "e9bd153ce586efa73a22522f449885289d4e241dce636256bb5ea763f601517a",
+      "kind": "shipped-exact-catalog-dependency",
+      "authority": "shipped-artifact",
+      "url": null,
+      "httpStatus": null,
+      "bytes": 3774882,
+      "catalogBytes": 3774882,
+      "etagMD5Verified": null,
+      "originalAccountRuntimeObserved": false
+    },
+    {
+      "id": "late-scene:bundle:914aca0eb4b75e3e",
+      "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/map-main_assets_all_464b0d3c7361b92eb4a7fba13d72ac1d.bundle",
+      "sha256": "02af179f0857ee7a7390eb54f73d0d51a64ff0b71461cccb54d7b1ca7384739b",
+      "kind": "shipped-exact-catalog-dependency",
+      "authority": "shipped-artifact",
+      "url": null,
+      "httpStatus": null,
+      "bytes": 5120729,
+      "catalogBytes": 5120729,
+      "etagMD5Verified": null,
+      "originalAccountRuntimeObserved": false
+    },
+    {
+      "id": "late-scene:bundle:1f1d08dbc38e1607",
+      "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/be9e4d904692f945f3910b57349aeb09_monoscripts_45a1151fae1ae68b033775f4df8c742a.bundle",
+      "sha256": "29ea9425471d8dcd994c247f4a672730bb06c9b263bf94f4ecc415bda7f72433",
+      "kind": "shipped-exact-catalog-dependency",
+      "authority": "shipped-artifact",
+      "url": null,
+      "httpStatus": null,
+      "bytes": 6811,
+      "catalogBytes": 6811,
+      "etagMD5Verified": null,
+      "originalAccountRuntimeObserved": false
+    },
+    {
+      "id": "late-scene:bundle:2e9f1b960139406f",
+      "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/effects_assets_all_4e78c1e63b9e732d9b0245fd9bc8d416.bundle",
+      "sha256": "53828b2e46ce40f1f88cdf82324cb90898f50e078473b29e358af2744148be39",
+      "kind": "shipped-exact-catalog-dependency",
+      "authority": "shipped-artifact",
+      "url": null,
+      "httpStatus": null,
+      "bytes": 9635908,
+      "catalogBytes": 9635908,
+      "etagMD5Verified": null,
+      "originalAccountRuntimeObserved": false
+    },
+    {
+      "id": "late-scene:bundle:0f74c686e329d7ce",
+      "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/font-poetsenone_assets_all_5dafffdb9db0165aa02e86cc1eee9a0f.bundle",
+      "sha256": "88c4325df7317cd507728e5ed8a076b579dc6397b2bc137a8ad86747b613b344",
+      "kind": "shipped-exact-catalog-dependency",
+      "authority": "shipped-artifact",
+      "url": null,
+      "httpStatus": null,
+      "bytes": 279126,
+      "catalogBytes": 279126,
+      "etagMD5Verified": null,
+      "originalAccountRuntimeObserved": false
+    },
+    {
+      "id": "late-scene:bundle:66a4395aa7228f50",
+      "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/be9e4d904692f945f3910b57349aeb09_unitybuiltinshaders_3de25122f950a97eed35b094cd9649d6.bundle",
+      "sha256": "71bdf8a3016f0943c4dcd5d61fb313d8cab4d4f1564ef5f306080f9ca1f7ff79",
+      "kind": "shipped-exact-catalog-dependency",
+      "authority": "shipped-artifact",
+      "url": null,
+      "httpStatus": null,
+      "bytes": 421015,
+      "catalogBytes": 421015,
+      "etagMD5Verified": null,
+      "originalAccountRuntimeObserved": false
+    },
+    {
+      "id": "late-scene:bundle:a79323e8899b7625",
+      "path": "analysis/followup/media403413-final/remote-bundles/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+      "sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+      "kind": "downloaded-exact-catalog-bundle",
+      "authority": "external-service",
+      "url": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+      "httpStatus": 200,
+      "bytes": 4594453,
+      "catalogBytes": 4594453,
+      "etagMD5Verified": true,
+      "originalAccountRuntimeObserved": false
+    }
+  ],
+  "projection": {
+    "basis": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        -0.766044443118978,
+        0.6427876096865393
+      ],
+      [
+        0,
+        -0.6427876096865393,
+        -0.766044443118978
+      ]
+    ],
+    "projectedBounds": [
+      -86.55666845274887,
+      -12.465669392228737,
+      -47.7988666352345,
+      17.326005951108954
+    ],
+    "width": 400,
+    "height": 308,
+    "sharedAcrossAllThreeChoices": true,
+    "originalCameraVerified": false
+  },
+  "summary": {
+    "candidates": 3,
+    "exactContainerLinks": 3,
+    "newMediaEntries": 6,
+    "newMediaBytes": 393592,
+    "meshPartsRecovered": 6,
+    "materialObjects": 4,
+    "textureObjects": 4,
+    "sharedDependenciesVerified": 7,
+    "originalRuntimeObserved": false,
+    "finalNativeRenderingVerified": false
+  },
+  "boundaries": [
+    "MapConfig13_2_1/2/3의 정확 GUID/catalog 의존성과 공개 정적 bundle GET 실물을 연결했습니다. 현재 계정의 실제전송·자원선택은 관측하지않았습니다.",
+    "원본mesh/UV/texture/material/TRS를 같은40도 연구투영으로 비교한400px 선정PNG입니다. 원작2DSprite·최종셰이더·조명·파티클·Animator·실제카메라 렌더 일치는 미검증입니다.",
+    "기존공통지도·151개기존PNG·Area4/Skin80개자료는변경하지않고13_2세선택의격리미리보기와기존2455x1705프레임정규좌표레이어3개만추가합니다.재중앙정렬하지않았습니다.",
+    "원본bundle/전체Mesh·UV/textureatlas/복원코드는공개하지않습니다."
+  ],
+  "revision": "6a6bb6c0583dfa47759f64072ea78feb78522c91cd40a7f4920a379de017fa17"
+}

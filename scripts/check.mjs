@@ -126,3 +126,4 @@ for(const m of apkReview.mediaEntries){
  for(const [file,sha]of [[m.src,m.sha256],...(m.poster?[[m.poster,m.posterSha256]]:[])]){const bytes=await readFile(path.join('dist',file));if(createHash('sha256').update(bytes).digest('hex')!==sha)throw Error('APK review derivative mismatch '+m.key);}
 }
 console.log(`Verified11 fixed APK-media checklist identities and${apkReview.mediaEntries.length}curated entries; original runtime, source-missing assets and zero audition remain explicit.`);
+await import('./check-completion.mjs');
