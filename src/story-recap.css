@@ -3,3 +3,5 @@
 .tutorial-runtime-inline{padding:14px 0;margin:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.tutorial-runtime-inline p{font-size:.875rem;line-height:1.8}.tutorial-runtime-inline .game-button{margin:5px 8px 5px 0;min-height:44px}
 
 .recap-book-cover{display:block;max-width:100%;width:130px;height:180px;object-fit:contain;margin:0 auto .6rem}.recap-slot .game-button{width:100%;white-space:normal}.recap-slot .game-button>span{display:block}
+
+.source-scene-stage__content.has-reading-content{pointer-events:auto;overflow:auto;background:transparent;overscroll-behavior:contain}.source-scene-stage__content.has-reading-content .recap-page-body{margin:0;padding:8px;font-size:.875rem;line-height:1.75;max-width:100%}.source-scene-stage__content.has-reading-content .recap-page-body img{max-width:100%;height:auto}

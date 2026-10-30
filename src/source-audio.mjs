@@ -1,0 +1,42 @@
+import {sourceBoardCue} from './source-audio-routing.mjs';
+// Source-directed audio with separate effect/music channels. Playback is a web
+// compatibility layer; enabling a saved preference never grants a fresh gesture.
+const e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function sourceMusicCue({serverSwitch=null,newUserFinished=null,mode}={}){
+ if(typeof serverSwitch!=='boolean'||newUserFinished!==true||!['Map','Main'].includes(mode))return null;
+ return serverSwitch&&mode==='Main'?'main-bgm-excerpt':'map-bgm-excerpt';
+}
+export const sourceActionCue=sourceBoardCue;
+export const sourceAudioClips=data=>[...(data?.sourceAudio?.clips||[]),...(data?.refinement?.audio?.clips||[]),...(data?.sourceSceneStage?.audio?.clips||[]).filter(c=>!c.isMusicExcerpt).map(c=>({id:c.id,assetName:c.id,...c.media,kind:'effect',excerptSeconds:c.media.duration}))].filter((c,i,a)=>a.findIndex(x=>x.id===c.id)===i);
+const safeClip=c=>c&&typeof c.src==='string'&&!c.src.includes('..')&&(/^\.\/assets\/media\/(?:source-audio|refinement\/audio|source-scene-stage)\/[\w-]+\.mp3$/.test(c.src)||['audio','effect'].includes(c.kind)&&c.duration>0&&c.duration<=4.2&&/^\.\/assets\/media\/(?:story-recap|source-scene-stage)\/[\w-]+\.wav$/.test(c.src));
+export function createSourceAudio({getData,getEnabled=()=>false,onNotice=()=>{},AudioClass=globalThis.Audio,now=()=>Date.now(),setTick=(f,n)=>setInterval(f,n),clearTick=id=>clearInterval(id),setTimer=(f,n)=>setTimeout(f,n),clearTimer=id=>clearTimeout(id)}={}){
+ let activated=false,hidden=false,music=null,previousMusic=null,fade=null,epoch=0,mode=null;
+ const voices=new Set(),voiceScopes=new WeakMap(),timers=new Set(),timerScopes=new Map(),loops=new Map(),settings={serverSwitch:null,newUserFinished:null,effectsMuted:false,musicMuted:false,effectGain:.3,musicGain:1,loopExcerpt:false};
+ const stopVoice=v=>{try{v.pause();}catch{}};
+ function dropVoice(v){voices.delete(v);for(const [key,a]of loops)if(a===v)loops.delete(key);}
+ function clearFade(){if(fade!==null)clearTick(fade);fade=null;}
+ function stopMusic(){clearFade();if(music)stopVoice(music.audio);if(previousMusic)stopVoice(previousMusic);music=null;previousMusic=null;}
+ function stopEffects(scope=null){for(const v of [...voices])if(scope===null||voiceScopes.get(v)===scope){stopVoice(v);voices.delete(v);for(const [k,a]of loops)if(a===v)loops.delete(k);}for(const t of [...timers])if(scope===null||timerScopes.get(t)===scope){clearTimer(t);timers.delete(t);timerScopes.delete(t);}}
+ function stop(){epoch++;stopEffects();stopMusic();}
+ function create(clip,gain){if(!safeClip(clip)||typeof AudioClass!=='function')return null;try{const a=new AudioClass(clip.src);a.volume=gain;return a;}catch{onNotice('이 환경에서는 음향을 재생할 수 없습니다.');return null;}}
+ function start(audio,expected){try{const p=audio.play();p?.then?.(()=>{if(epoch!==expected||!voices.has(audio)&&music?.audio!==audio&&previousMusic!==audio)stopVoice(audio);},()=>{stopVoice(audio);dropVoice(audio);if(music?.audio===audio)stopMusic();onNotice('브라우저가 음향 재생을 허용하지 않았습니다. 음향 켜기를 다시 선택하세요.');});}catch{stopVoice(audio);dropVoice(audio);if(music?.audio===audio)stopMusic();onNotice('음향 재생을 시작하지 못했습니다.');}}
+ const available=()=>activated&&getEnabled()&&!hidden;
+ function effect(id,explicitClip=null,scope='main'){if(!available()||settings.effectsMuted||!id)return false;const clip=explicitClip||sourceAudioClips(getData()).find(c=>c.id===id||c.assetName===id);if(clip?.kind==='music')return false;const a=create(clip,settings.effectGain);if(!a)return false;while(voices.size>=8){const oldest=voices.values().next().value;stopVoice(oldest);dropVoice(oldest);}voices.add(a);voiceScopes.set(a,scope);a.onended=()=>dropVoice(a);a.onerror=()=>{dropVoice(a);stopVoice(a);onNotice('음향 파일을 불러오지 못했습니다.');};start(a,epoch);return true;}
+ function sync(nextMode=mode){mode=nextMode;const id=sourceMusicCue({...settings,mode});if(!available()||settings.musicMuted||!id){stopMusic();return false;}if(music?.id===id)return true;
+  const clip=sourceAudioClips(getData()).find(c=>c.id===id),a=create(clip,.3*settings.musicGain);if(!a)return false;
+  clearFade();if(previousMusic)stopVoice(previousMusic);previousMusic=music?.audio||null;const from=previousMusic?.volume||0,at=now(),expected=epoch;a.loop=settings.loopExcerpt;music={id,audio:a,finished:false};
+  a.onended=()=>{if(music?.audio===a)music.finished=true;};a.onerror=()=>{if(music?.audio===a)stopMusic();onNotice('BGM 발췌 파일을 불러오지 못했습니다.');};start(a,expected);
+  if(music?.audio!==a)return false;
+  fade=setTick(()=>{if(!available()||epoch!==expected||music?.audio!==a){stopMusic();return;}const t=Math.min(1,Math.max(0,(now()-at)/800));a.volume=(.3+.7*t)*settings.musicGain;if(previousMusic)previousMusic.volume=(1-t)*from;if(t>=1){if(previousMusic)stopVoice(previousMusic);previousMusic=null;clearFade();}},40);return true;
+ }
+ function configure(key,value){if(!Object.hasOwn(settings,key))return false;
+  if(['serverSwitch','newUserFinished'].includes(key)){if(value!==null&&typeof value!=='boolean')return false;}
+  else if(['effectGain','musicGain'].includes(key)){if(!Number.isFinite(value)||value<0||value>1)return false;}
+  else if(typeof value!=='boolean')return false;
+  settings[key]=value;if(key==='effectsMuted'&&value)stopEffects();if(key==='effectGain')for(const a of voices)a.volume=value;if(music&&key==='loopExcerpt')music.audio.loop=value;sync();return true;
+ }
+ function loopEffect(id,scope){const key=scope+':'+id;if(loops.has(key))return true;if(!available()||settings.effectsMuted)return false;const clip=sourceAudioClips(getData()).find(c=>c.id===id);if(!clip||clip.requiresLoopLifecycle!==true||clip.completeSourceDurationPublished!==true||!Number.isFinite(clip.packagedDurationSeconds)||!Number.isFinite(clip.excerptSeconds)||clip.packagedDurationSeconds>clip.excerptSeconds+1e-4)return false;const a=create(clip,settings.effectGain);if(!a)return false;a.loop=true;voices.add(a);voiceScopes.set(a,scope);loops.set(key,a);a.onerror=()=>{stopEffects(scope);onNotice('반복 효과음을 불러오지 못했습니다.');};start(a,epoch);return true;}
+ const view=()=>({activated,hidden,settings:{...settings},effects:voices.size,loops:loops.size,music:music?{id:music.id,finished:music.finished}:null,scheduledEffects:timers.size});
+ function renderControls(){return `<details class="source-audio-controls"><summary>음악·효과음과 원본 호출 조건</summary><p>${activated?'현재 탭에서 음향 시작을 허용했습니다.':'저장한 음향 설정이 있어도 새 탭에서는 자동 재생하지 않습니다.'} 전체 음향 ${getEnabled()?'켜짐':'꺼짐'} · 추가 효과음 ${getData()?.sourceAudio?.clips?.length||0}개 · 직접 청취 검수 0초</p><button class="button" data-play="game-audio-enable">이 탭에서 음향 켜기</button><button class="button" data-play="game-audio-stop">음향 끄기</button><div class="source-audio-fields">${[['effectsMuted','효과음 음소거'],['musicMuted','음악 음소거'],['loopExcerpt','6초 BGM 발췌 반복 · 연구 재생']].map(([key,title])=>`<label><input type="checkbox" data-source-audio-setting="${key}"${settings[key]?' checked':''}>${title}</label>`).join('')}${[['serverSwitch','BGM 전환 서버 스위치 가정'],['newUserFinished','신규 유저 안내 종료 가정']].map(([key,title])=>`<label>${title}<select data-source-audio-setting="${key}">${[[null,'미확보'],[true,'명시 연구 입력 · true'],[false,'명시 연구 입력 · false']].map(([v,label])=>`<option value="${v}"${settings[key]===v?' selected':''}>${label}</option>`).join('')}</select></label>`).join('')}${[['effectGain','효과음 음량'],['musicGain','음악 음량']].map(([key,title])=>`<label>${title}<input type="range" min="0" max="1" step="0.05" value="${settings[key]}" data-source-audio-setting="${key}"></label>`).join('')}</div><p>Music와Effect를 별도로 제어하고 모드 전환은 원본 선언 0.8초/시작 0.3을 웹에서 투영합니다. 두 조건이 미확보면 음악을 재생하지 않습니다. 발췌 반복은 원곡 루프 지점 검증이 아닙니다. 이탈·숨김 시 모두 중단하며 다시 켜야 합니다.</p><a href="#apk-media?task=4.12">파일별 수동 청취 기록</a></details>`;}
+ return {effect,loopEffect,sync,configure,view,renderControls,stop,stopScope:scope=>stopEffects(scope),activate(){activated=true;hidden=false;sync();},leave(){activated=false;mode=null;stop();},setHidden(value){hidden=Boolean(value);if(hidden){activated=false;stop();}},scheduleEffect(id,delaySeconds,scope='main',guard=()=>true){if(!available()||settings.effectsMuted||!Number.isFinite(delaySeconds)||delaySeconds<0||delaySeconds>60)return false;const expected=epoch,t=setTimer(()=>{timers.delete(t);timerScopes.delete(t);if(expected===epoch&&guard())effect(id,null,scope);},delaySeconds*1000);timers.add(t);timerScopes.set(t,scope);return true;}};
+}

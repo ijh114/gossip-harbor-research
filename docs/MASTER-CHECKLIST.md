@@ -1,6 +1,6 @@
 # 전체 작업·완료 기준 장부 v1
 
-기준일: 2026-10-30. 직전 배포 기준 커밋: `38f769b364cf2fe12e38cee12a134adadd967d63`. 이번 반영: 4.04~4.12 자료 재검증과3.05~3.23 시뮬레이션 연결. 원래100개 ID를 유지하며 완료된 세부 조건과 남은 원작 실행/운영값을 같은 행에서 관리한다. 최초 요청 범위는 로컬 requested-scope.json에 보존한다.
+기준일: 2026-10-30. 직전 배포 기준 커밋: `a39081d2820f99417701fbdbb931da250013c72f`. 이번 반영: 3·4번39항목의 현재 자료 구현, 잔여4분류·이번 작업 태그와 변경 내용. 원래100개 ID를 유지하며 완료된 세부 조건과 남은 원작 실행/운영값을 같은 행에서 관리한다. 최초 요청 범위는 로컬 requested-scope.json에 보존한다.
 
 **정정: 이전에 보고한 “2~5번 완료”는 잘못된 상위 완료 판정이었다. 아래 2·3·4·5번은 모두 부분 완료다.** 시간순 실험을 실제 관측 완료로, 추가 연구 안내를 전체 튜토리얼 완료로, 이미지 재분류를 미확보 자산 회수 완료로, Lv26 실행을 전체 제작 구간 검증 완료로 취급하면 안 된다.
 
@@ -22,134 +22,618 @@
 <!-- checklist-current-work:start -->
 ```json
 {
-  "id": "2026-10-30-media-and-simulation",
+  "id": "2026-10-30-current-materials-34",
   "date": "2026-10-30",
-  "title": "4.04~4.12 자료 검증과3.05~3.23 시뮬레이션",
+  "title": "3·4번 현재 자료 구현과 잔여 조건4분류",
   "items": [
     {
       "taskId": "0.05",
-      "summary": "현재 작업 태그의 개수를 고정했던 검사를 회차 교체 fixture 기반으로 수정하고 같은100개 ID 장부를 갱신했습니다."
+      "summary": "기존100개ID를 유지하며3·4번39항목의 잔여를 구현·원작검증·운영값·기획결정으로 분류. 필터/근거와 이번작업 태그 교체를 연결."
     },
     {
       "taskId": "3.05",
-      "summary": "자동 안내에 실제 대상의 유일한 마스크 콜백과 강제 생성/비용 소비기를 연결했습니다. 54개 원본 컴포넌트·2개 모델은 여전히 미연결입니다."
+      "summary": "85외부효과 전수 대조: 기존29+독립수신기53, 정확 Fiirework_show native곡선·팀/무료교환모델·별도 저장 구현. West3미확정 유지."
     },
     {
       "taskId": "3.06",
-      "summary": "등록 이벤트 보드의 독립 저장/수명주기를 추가하고, 연구 모드가 실제 활동 identity로 승격되지 않도록 분리했습니다."
+      "summary": "튜토리얼 컴포넌트 모드와 정확 identity·명시 연구 스냅샷·마운트/이탈 수명주기 연결. 메인 활동 자동 alias 방지."
     },
     {
       "taskId": "3.07",
-      "summary": "강제 생성 타입·가속/버블 비용(0 포함)을 실제 엔진에 scoped 적용하고, 오류·중첩 해제·RNG/무소모 보존을 검사했습니다."
+      "summary": "실제 유일 대상의 구멍/강조·외부입력 잠금과 resize/scroll/stale UID 재검증 추가. 다중/미확정 대상은 강조하지 않음."
     },
     {
       "taskId": "3.08",
-      "summary": "대상 콜백과 원래 버튼 동작의 이중 실행을 차단했습니다. 경쟁/중복/복귀의 기존 검사를 다시 실행했습니다."
-    },
-    {
-      "taskId": "3.09",
-      "summary": "기존6대상·23조각 입고/점수/임계/반환 원자 거래와 실패 무소모 검사를 다시 실행했습니다. 새 서버 운영값은 만들지 않았습니다."
-    },
-    {
-      "taskId": "3.10",
-      "summary": "3400 Lua 전체 대조에서 출하 fallback90/10 표를 확보하고, 명시 ID부재 가정·현재UID·두 난수를 기존 공장 설정에 불러오는 기능을 추가했습니다."
-    },
-    {
-      "taskId": "3.11",
-      "summary": "기존 session/LateInit/장면/LoginFinished·미확정 gate 보존·재시도·1회 보상 검사를 다시 실행했습니다."
-    },
-    {
-      "taskId": "3.12",
-      "summary": "공장 비행/잠금/점수/보상/이탈 정산과 중복 방지 검사를 다시 실행했습니다. 그래픽이 원작 프레임이라는 판정은 추가하지 않았습니다."
+      "summary": "새 독립 수신기의 scope 격리와 원본 마스크 콜백·잠금/일반행동 중복 차단·취소 회귀 검사."
     },
     {
       "taskId": "3.13",
-      "summary": "회상 UI→Lily/페이지 Spine2개·6모션과 native yoyo 곡선을 연결했습니다. 모션 시계와 입력 잠금을 분리하고 이탈 시 모션 취소 정책을 명시했습니다."
+      "summary": "회상 책의 원본 UI계층·Lily몸/손·페이지/호환큐를 현재 책장/본문 합성에 연결. 새 책에는 넘김모션 없음, 이탈/재렌더 시계 분리."
     },
     {
       "taskId": "3.14",
-      "summary": "조커 순서/금카드 제한·라운드 전환·명시 laser 보너스·Royal 세트/시간/왕관 종료를 선택형 연구 설정에 추가했습니다."
-    },
-    {
-      "taskId": "3.15",
-      "summary": "실제 등록7×10 보드와35그림·5초기대기열·먹이변환·유한생성·3행 이동·전용 저장/가져오기를 추가했습니다. 기존 미등록 fixture와 분리했습니다."
+      "summary": "슈퍼 패스 해금 시 max(현재토큰,기본단계합)·명시 반복표 순환·다음단계1회수령·만료/상태/영수증 검사 추가."
     },
     {
       "taskId": "3.16",
-      "summary": "고급 앨범 보상을 기존 pending/settle 경계에 붙이고 지급 실패·에너지 상한·왕관 종료 실패의 전체 롤백을 검사했습니다."
-    },
-    {
-      "taskId": "3.17",
-      "summary": "기존116선정 과제/intro의 source cursor와 새 전신 모션 참조를 같은 order로 대조했습니다. 기존 과제 선택·비용/보상 완료 기준을 유지합니다."
+      "summary": "반복 패스 보상을 기존 메인 모의 경제 영수증/지갑/Type2 대기열 원자 거래에 연결. 알 수 없는 보상 목적지에서 전체 롤백."
     },
     {
       "taskId": "3.18",
-      "summary": "정확 CG3 prefab의41클립과 intro source 지시를 수동 플레이어에 연결했습니다. 근거 없는 CG 자동 순서는 만들지 않았습니다."
+      "summary": "CG3 원본계층·exact native7선정명령/완료콜백·관련음향을 수동 합성. Timeline_intro 자동 연결과 전체 CG 완성으로 승격하지 않음."
     },
     {
       "taskId": "3.19",
-      "summary": "원본 FOV/회전+과제 edit_pos의3시점·11선택레이어를 생성하고 기존40°투영과 비교·픽셀/연구평면 계산을 추가했습니다."
-    },
-    {
-      "taskId": "3.20",
-      "summary": "검증된 Skin 구매 영수증을 기존26장식의 소유/슬롯 편집에 연결했습니다. 기존 연구 소유를 거래 이력으로 바꾸지 않습니다."
-    },
-    {
-      "taskId": "3.21",
-      "summary": "구/신형 상점의 원본 획득 경로와 연구 가격 입력→구매→CAS저장→영수증 재검증→맵 소유권 동기화를 구현했습니다. 실제 가격 배정은 미확보입니다."
+      "summary": "55원본편집시점·167변형·222PNG 및5SpriteRenderer 확보. 카메라 projector 최적화와0.2+1.2초 편집 진행 연구·취소/루프 중단 연결."
     },
     {
       "taskId": "3.22",
-      "summary": "117장면의1332개 전신 참조·171고유클립/9후속후보·CG41을 연결하고 현재 과제의 order/speaker별 비교창을 추가했습니다."
+      "summary": "117장면13역할을 원본 TRS/flip/지연/반복의 같은 무대로 합성.285투명모션/4201프레임·호환mix/queue·동일탭 시계 복원."
     },
     {
       "taskId": "3.23",
-      "summary": "source-time 시작/중간/끝 시크·회상 잠금과 모션 시간표·3시점 카메라·PTS 후보를 비교할 수 있게 했습니다. 실제 입력/음향 대응은 남습니다."
+      "summary": "실제 PTS추가4클립·3020프레임 장부와 합성무대·55시점 비교/웹입력 경계 연결. 미확인 원작 성공전이는 유지."
     },
     {
-      "taskId": "4.04",
-      "summary": "실제 등록35+35타입의70 Sprite/PPtr·원본 RGBA를 검증하고 도감/플레이에 연결했습니다. 고유 PNG내용32종이며 이전 미등록 fixture는 별도로 보존했습니다."
+      "taskId": "3.24",
+      "summary": "기본164음향/696호출 감사·추가38SFX와 무대16음향 연결. 우선분기·분리BGM/효과음·서버가정·지연·scope/루프/음소거/중단 구현, 청취0초."
     },
     {
       "taskId": "4.05",
-      "summary": "출하 이름표와 bytecode의 두 번째 TEST로 즉시 버블도 Bubble 외곽을 선택함을 확정했습니다. property_bubble_1 용도는 여전히 미확정입니다."
+      "summary": "property_bubble_1의 생성/보상/sprite경로 추가 조사와 근거·미확정 이유를 새 자료 페이지에 연결. 용도 확정하지 않음."
     },
     {
       "taskId": "4.06",
-      "summary": "현재 녹화의 추가 후보/PTS를 재검수해 자동 힌트·메인 봉인 성공을 확정할 수 없다는 판정과 이유를 공개했습니다."
-    },
-    {
-      "taskId": "4.07",
-      "summary": "가위·모래시계 후보를1배속 무음 영상과 원본 PTS로 비교했습니다. 이동/선택을 성공 사용으로 계산하지 않았습니다."
-    },
-    {
-      "taskId": "4.08",
-      "summary": "공장 후보 문맥과 source 재현의 범위를 다시 검토했습니다. 실제 공장 성공 전이를 확보했다는 판정은 추가하지 않았습니다."
-    },
-    {
-      "taskId": "4.09",
-      "summary": "기존13_1~13_10 선정 연결과 native13_2 실물/카메라 참조를 대조했습니다. 기존 원본77일차8키 불일치는 유지합니다."
+      "summary": "선택박스·합성·버블·에너지팝업의 신규4클립/26초/3020 PTS/육안108프레임을 추가. 자동힌트/메인봉인 성공은 미확정 유지."
     },
     {
       "taskId": "4.10",
-      "summary": "654개 전체 파싱·694모션의662투영/32미지원 도감과 장면 캐릭터/회상/카메라 파생을 추가했습니다."
+      "summary": "기존 미지원32개 RGBA blend 보강으로694전체투영(687영상/7정적).285투명모션의 실제 무대·회상/CG와55맵시점 연결."
     },
     {
       "taskId": "4.11",
-      "summary": "추가3 MP4·원본 PTS 스크러버와 판정 이유를 연결했습니다. 선정 클립의 재생/시크·PC/모바일 화면을 검수합니다."
+      "summary": "신규4클립 원속도/앞뒤/PTS시크/정지샷·CSV/재시도 추가와108프레임 육안 판정 기록. 전체110영상 검수로 확대하지 않음."
     },
     {
       "taskId": "4.12",
-      "summary": "14동봉 음원의 수동 청취 기록·메모/판정·JSON 내보내기를 추가했습니다. 직접 청취0·실제 동기 미확정 상태를 유지합니다."
+      "summary": "추가38SFX·무대16음향의 해시/출처/수동 청취 장부와 정적가설9개 연결. 재생으로 청취를 자동 인정하지 않으며 직접 청취0초 유지."
     },
     {
       "taskId": "4.13",
-      "summary": "새 도감과 등록 이벤트/Skin/앨범/캐릭터·CG/회상/카메라 비교를 기존 위키와 시뮬레이션에서 찾도록 연결했습니다."
+      "summary": "자료/실제시뮬레이션/위키/같은 체크리스트 연결과 새4분류·이번작업 변경 내용을 반영해 두 호스트 배포."
     }
   ]
 }
 ```
 <!-- checklist-current-work:end -->
+
+<!-- checklist-remainders:start -->
+```json
+{
+  "schemaVersion": 1,
+  "assessedAt": "2026-10-30",
+  "tasks": [
+    {
+      "taskId": "3.01",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "3.02",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "3.03",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "3.04",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "3.05",
+      "implementation": [],
+      "originalVerification": [
+        "WestSearch 정의에 없는 Fireworks 창·Animator·Tip 3호출의 실제 수신기와87개 안내의 원작 자연 플레이 대조"
+      ],
+      "missingOperations": [
+        "계정별 활동 ID, 활성·발동 전제와 서버표"
+      ],
+      "planningDecision": [],
+      "evidence": [
+        "src/tutorial-surfaces.mjs",
+        "src/data/tutorial-surfaces.json",
+        "tests/tutorial-surfaces.test.mjs"
+      ]
+    },
+    {
+      "taskId": "3.06",
+      "implementation": [],
+      "originalVerification": [
+        "원작 활동창과 웹 사건의 입력·수명주기 대조. 독립 연구 수신기53건을 메인 활동으로 자동 배정하지 않음"
+      ],
+      "missingOperations": [
+        "실제 활동 identity·배정과 시즌·팀 대결 스냅샷"
+      ],
+      "planningDecision": [],
+      "evidence": [
+        "src/tutorial-runtime.mjs",
+        "src/tutorial-surfaces.mjs"
+      ]
+    },
+    {
+      "taskId": "3.07",
+      "implementation": [],
+      "originalVerification": [
+        "원작 마스크 좌표·포인터 전달·입력 거절과 웹의 유일 대상 강조·잠금 대조"
+      ],
+      "missingOperations": [
+        "미연결 WestSearch 및 운영 활동의 대상 배정"
+      ],
+      "planningDecision": [],
+      "evidence": [
+        "src/tutorial-focus.mjs",
+        "src/tutorial-economy.mjs",
+        "tests/tutorial-focus.test.mjs"
+      ]
+    },
+    {
+      "taskId": "3.08",
+      "implementation": [],
+      "originalVerification": [
+        "Lua pairs·동시각 scheduler 실행 순서와 안내 경쟁·복귀를 원작 로그로 대조"
+      ],
+      "missingOperations": [
+        "동시에 활성화되는 실제 안내·활동 전제"
+      ],
+      "planningDecision": [],
+      "evidence": [
+        "src/tutorial-runtime.mjs",
+        "tests/tutorial-runtime.test.mjs"
+      ]
+    },
+    {
+      "taskId": "3.09",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "3.10",
+      "implementation": [],
+      "originalVerification": [
+        "원작 난수·UID 선정과 서버표 선택을 같은 실행 조건에서 대조"
+      ],
+      "missingOperations": [
+        "실제 요청 ID에 응답한 랜덤 보상표·확률·배정"
+      ],
+      "planningDecision": [],
+      "evidence": [
+        "src/random-reward-study.mjs",
+        "src/factory-random-reward.mjs"
+      ]
+    },
+    {
+      "taskId": "3.11",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "3.12",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "3.13",
+      "implementation": [],
+      "originalVerification": [
+        "합성한 UI 계층·Lily 몸/손·페이지 큐를 원작 Canvas·소프트 마스크·혼합·화면/소리 타이밍과 대조"
+      ],
+      "missingOperations": [
+        "StoryRecap 계정 활성 플래그와 실제 과제 배정"
+      ],
+      "planningDecision": [],
+      "evidence": [
+        "src/source-scene-stage.mjs",
+        "src/source-stage-bridge.mjs",
+        "src/story-recap-page.mjs"
+      ]
+    },
+    {
+      "taskId": "3.14",
+      "implementation": [],
+      "originalVerification": [
+        "패스 반복·조커·round·Royal의 원작 UI·팩 노출/비행·카드 공개 연출 대조"
+      ],
+      "missingOperations": [
+        "활성 패스·앨범 시즌, 실제 battlePassExtraReward·가격·확률/pity·종료표"
+      ],
+      "planningDecision": [
+        "신규 게임의 패스·앨범 단계, 카드 세트·보상·가격 확정"
+      ],
+      "evidence": [
+        "src/pass-unlimited.mjs",
+        "src/album-variants.mjs",
+        "tests/pass-unlimited.test.mjs"
+      ]
+    },
+    {
+      "taskId": "3.15",
+      "implementation": [],
+      "originalVerification": [
+        "등록 PureBoard의 원작 입력·표현·캐시 동률 순서를 독립7×10 보드와 대조"
+      ],
+      "missingOperations": [
+        "대표 이벤트의 실제 주문·목표·레벨·보상·상점·에너지·종료표"
+      ],
+      "planningDecision": [
+        "출시 대표 이벤트의 범위와 레벨·보상·보드·상점 사양 확정"
+      ],
+      "evidence": [
+        "src/registered-activity.mjs",
+        "src/data/registered-activity.json"
+      ]
+    },
+    {
+      "taskId": "3.16",
+      "implementation": [],
+      "originalVerification": [
+        "원작 실제 지급·만료·보상 비행·목적지를 웹 원자 거래·거절/복구와 대조"
+      ],
+      "missingOperations": [
+        "실제 시즌 보상, 특수 범주·활동 identity 매핑과 이벤트 경제표"
+      ],
+      "planningDecision": [
+        "신규 게임의 보상 범주·경제·밸런스·확정 프로필과 종료 범위"
+      ],
+      "evidence": [
+        "src/activity-transaction.mjs",
+        "src/pass-unlimited.mjs",
+        "tests/pass-unlimited.test.mjs"
+      ]
+    },
+    {
+      "taskId": "3.17",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "3.18",
+      "implementation": [],
+      "originalVerification": [
+        "CG 선정7개 native 명령 외 Async·tween·dialog·선택 분기의 의미/시간, 원작 타이틀·인트로 연결과 실제 픽셀·청취 대조. 수동 CG를 Timeline_intro로 자동 연결하지 않음"
+      ],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "src/source-scene-stage.mjs",
+        "src/data/source-scene-stage.json",
+        "src/cg-presentation.mjs"
+      ]
+    },
+    {
+      "taskId": "3.19",
+      "implementation": [],
+      "originalVerification": [
+        "55개 편집 시점의 동적 카메라·aspect·shader·광원·물·가림·Sprite UV/정렬 대조. 편집 연구 버튼의0.2+1.2초와 원작 world hit·이동 취소 거리 대조"
+      ],
+      "missingOperations": [
+        "현재 계정의 활성 맵·장식 배정"
+      ],
+      "planningDecision": [],
+      "evidence": [
+        "src/native-map-study.mjs",
+        "src/data/native-map-study.json",
+        "src/decor-hold.mjs",
+        "tests/decor-hold.test.mjs"
+      ]
+    },
+    {
+      "taskId": "3.20",
+      "implementation": [],
+      "originalVerification": [
+        "Skin26의 원작 최종 shader·입자·획득·적용 연출 대조"
+      ],
+      "missingOperations": [
+        "계정별 Skin 배정·획득 원인과 시즌·상품 활성"
+      ],
+      "planningDecision": [
+        "신규 테마의 Skin 종류·세트와 출시·후속 제작 범위"
+      ],
+      "evidence": [
+        "src/skin-lab.mjs",
+        "src/skin-shop-controller.mjs"
+      ]
+    },
+    {
+      "taskId": "3.21",
+      "implementation": [],
+      "originalVerification": [
+        "원작 상품 구매·소유 복구·시즌 전환·적용 연출 대조"
+      ],
+      "missingOperations": [
+        "실제 상품 목록·가격/통화·할인·한도·활성 배정"
+      ],
+      "planningDecision": [
+        "신규 Skin 가격·획득 조건·판매 범위 확정"
+      ],
+      "evidence": [
+        "src/skin-acquisition.mjs",
+        "src/skin-shop-controller.mjs"
+      ]
+    },
+    {
+      "taskId": "3.22",
+      "implementation": [],
+      "originalVerification": [
+        "117개 Timeline의 합성 무대·원본 위치/scale/flip·지연·반복·호환 Spine 큐를 native 혼합·카메라·이동·대사·음향과 대조"
+      ],
+      "missingOperations": [],
+      "planningDecision": [
+        "신규 캐릭터·CG 콘텐츠와 최종 연출 사양 확정"
+      ],
+      "evidence": [
+        "src/source-scene-stage.mjs",
+        "src/source-stage-bridge.mjs",
+        "tests/source-scene-stage.test.mjs"
+      ]
+    },
+    {
+      "taskId": "3.23",
+      "implementation": [],
+      "originalVerification": [
+        "실제 입력·거절 로그, 미확인 자동 힌트·봉인·가위·모래시계·공장 성공 전이, UI·보상 비행·원작 타이밍·음향 직접 대조. 선정 PTS 검수를110개 원본 영상 전수 검수로 확대하지 않음"
+      ],
+      "missingOperations": [
+        "실제 시즌의 보상·상품·팝업 배정 조건"
+      ],
+      "planningDecision": [],
+      "evidence": [
+        "src/current-material-review.mjs",
+        "src/capture-followup-study.mjs"
+      ]
+    },
+    {
+      "taskId": "3.24",
+      "implementation": [],
+      "originalVerification": [
+        "기본164개 음향·선정 큐의 직접 청취, 실제 입력·장면 대응·루프 경계·혼합·볼륨·동기 검수. 전체 vault327개 클립을 전부 청취했다는 뜻이 아님"
+      ],
+      "missingOperations": [
+        "실제 IsBGMSwitchOpen, 신규 유저 상태와 MapExplore 음악 override 배정"
+      ],
+      "planningDecision": [
+        "신규 게임의 효과음·BGM·음성 목록, 음향 방향과 연출 사양 확정"
+      ],
+      "evidence": [
+        "src/source-audio.mjs",
+        "src/source-audio-routing.mjs",
+        "src/data/source-audio.json",
+        "tests/source-audio.test.mjs"
+      ]
+    },
+    {
+      "taskId": "3.25",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "3.26",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [
+        "MVP부터 출시형 패스·앨범·대표 이벤트의 최종 구간과 이후 모든 역대 활동·서버 변형 포함 여부 확정. 기존87개 안내의 미검증은 해당 ID에 유지"
+      ],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md",
+        "src/production-controller.mjs"
+      ]
+    },
+    {
+      "taskId": "4.01",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "4.02",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "4.03",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "4.04",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "4.05",
+      "implementation": [],
+      "originalVerification": [
+        "property_bubble_1의4개 Type-only 설정이 실제로 소비·표현되는 경로와 활성 프레임 확인. 추가 소비 경로 조사로도 용도 미확정"
+      ],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "src/data/current-material-review.json",
+        "src/item-resolution-followup.mjs"
+      ]
+    },
+    {
+      "taskId": "4.06",
+      "implementation": [],
+      "originalVerification": [
+        "자동 합성 힌트·메인 봉인 해제의 성공 전후와 입력 상태를 확정할 원작 표본. 새26초 선정 구간에서도 성공을 확정하지 않음"
+      ],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "src/current-material-review.mjs",
+        "src/capture-followup-study.mjs"
+      ]
+    },
+    {
+      "taskId": "4.07",
+      "implementation": [],
+      "originalVerification": [
+        "가위 분할·소비 및 모래시계 소비·가속의 성공 연속 구간과 실제 입력 확인. 이동·도움말 후보를 성공으로 승격하지 않음"
+      ],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "src/current-material-review.mjs",
+        "src/capture-followup-study.mjs"
+      ]
+    },
+    {
+      "taskId": "4.08",
+      "implementation": [],
+      "originalVerification": [
+        "공장 입고·투입·해금·반환·임계 보상의 원작 성공 연속 구간. 코드·자산 재현으로 실제 관측을 대신하지 않음"
+      ],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "src/current-material-review.mjs",
+        "src/factory-reference.mjs"
+      ]
+    },
+    {
+      "taskId": "4.09",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    },
+    {
+      "taskId": "4.10",
+      "implementation": [],
+      "originalVerification": [
+        "Spine694개 호환 투영을 원작 shader·PMA·528건 atlas/PNG 치수 차이·부모 TRS·동적 카메라·가림·입자와 대조. 별도 ani567개의 실제 사용도 미검증"
+      ],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "src/spine-motion-study.mjs",
+        "src/source-scene-stage.mjs",
+        "src/native-map-study.mjs"
+      ]
+    },
+    {
+      "taskId": "4.11",
+      "implementation": [],
+      "originalVerification": [
+        "원시 입력·거절 로그와 미확인 핵심 성공 전이,110개 영상의 연속 원속도 육안 검수. 추가4클립·3020 PTS·육안108프레임은 선정 표본"
+      ],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "src/current-material-review.mjs",
+        "src/data/current-material-review.json"
+      ]
+    },
+    {
+      "taskId": "4.12",
+      "implementation": [],
+      "originalVerification": [
+        "직접 청취0초: 실제 게임 영상·동봉 발췌를 듣고 입력·장면·동기·음향 가설과 대조. 브라우저 play/ended를 청취 증명으로 자동 인정하지 않음"
+      ],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "src/media-audition.mjs",
+        "src/data/source-audio.json",
+        "src/current-material-review.mjs"
+      ]
+    },
+    {
+      "taskId": "4.13",
+      "implementation": [],
+      "originalVerification": [],
+      "missingOperations": [],
+      "planningDecision": [],
+      "evidence": [
+        "docs/MASTER-CHECKLIST.md"
+      ]
+    }
+  ]
+}
+```
+<!-- checklist-remainders:end -->
 
 ## 상위 상태
 
@@ -158,8 +642,8 @@
 | 0 APK/REA·위키·상태 관리 | 부분 | Native339전체/3부분 해석. 0.04 미해석3개와 실제 활성 UI 좌표/폰트/연출 실행 대조 자료 필요 |
 | 1 PC·모바일 직접 검수 | 부분 | 관련15페이지 PC/모바일 배치 및 신규 재생/확대 점검 완료. 전체 시뮬레이션의 실제 입력·음향·저장 동선 직접 검수는 남음 |
 | 2 BM 분석·실제 관측 대조 | 부분 | 실제 원인/재등장/만료/경쟁과 운영값, 모델 차이 6건 |
-| 3 웹 시뮬레이션 | 부분 | 54원본 컴포넌트·2모델/실제 활동 배정·운영표·확정 출시 경제와 원작 회상/맵/CG/음향 실행 대조 |
-| 4 이미지·영상·위키 | 부분 | 실제 등록70타입 그림/플레이 연결 완료. property bubble 용도·실제 힌트/봉인/도구/공장 전이·원작 최종 표현·입력/청취 검수 |
+| 3 웹 시뮬레이션 | 부분 | 확정된 현재 자료 구현은 보강. West3 수신기/원작 실행·운영표·출시 기획 결정은 아래39항목의4분류에 유지 |
+| 4 이미지·영상·위키 | 부분 | 694모션·55시점/167변형·추가 PTS 검수 연결. property 용도·원작 핵심 성공 전이·전수 육안/청취 대조는 해당ID에 유지 |
 | 5 난이도·재화·성장 검증 | 부분 | 제작 범위 전체, 병목 해석, 활동 포함 밸런스와 반복 시나리오 검증 |
 | 6 제작 리소스·신규 자산 | 부분 | 최종 사양·수량·담당자·실제 제작/검수/납품 |
 | 7 Unity 신규 게임 | 부분 | 초기 규칙 패키지 이후의 최신 전체 규칙·화면·자산 이식과 기기 검증 |
@@ -217,26 +701,26 @@
 | 3.02 | 완료 | 고정16/일반랜덤5종 주문·복수 슬롯·해금/필터/보상·보관함/확장·생산 보정 | 현재 지원한 일반 규칙. 실제 계정/특수 creator/서버 변형은 확정 자료 필요 |
 | 3.03 | 완료 | 로딩→타이틀→두 안내→맵↔퍼즐→과제 시작/확정/보상/집 복귀와 저장 | 기본 동선의 구현·DOM/모델 검사. 원작 CG와 최신 직접 검수는 미완료 |
 | 3.04 | 완료 | 추가 안내10종의 두 연구 묶음, 저장·전환·웹 사건 어댑터 | 명시 연구 조건에서 실행 가능. 자동 발동·경쟁·전체 안내 완료를 뜻하지 않음 |
-| 3.05 | 부분 | 기존87개 소스 투영·29곳 외부 handler 유지. 실제 대상 버튼의 유일한 source mask callback과 강제 생성/비용 consumer를 추가 | 원본 컴포넌트54곳·팀/무료교환 모델2곳 및 실제 활동 identity·전제가 남음. 원작 전체87종 자연 플레이 완료로 계산하지 않음 |
-| 3.06 | 부분 | 실제 웹 레벨/과제/보드/창/회상·공장 사건과 마운트 수명주기 유지. 등록 이벤트는 독립 보드로 분리 | 미구현 원본 활동·창과 서버 배정은 unknown. 출하 보드 또는 연구 시즌을 원작 활성 활동 identity로 자동 승격하지 않음 |
-| 3.07 | 부분 | 강제 위치·드래그·소유자 잠금에 scoped 강제 생성타입·버블/가속 비용을 연결. 0비용·오류 복구·단일 대상 callback 검증 | 강제 생성/비용 엔진 연결은 추가했으나 전체 원작 마스크 좌표·전달·미구현 컴포넌트는 남음. 알려지지 않은 타입/대상은 무소모 보존 |
-| 3.08 | 부분 | 기존 전역 경쟁/대기·중복/복귀 원자 처리 유지. 실제 대상 콜백과 일반 동작의 이중 실행을 차단 | 원작 Lua pairs·동시각 scheduler 순서와 미구현 활동/전체 핵심 안내 간 경쟁의 원작 관측 대조는 남음 |
+| 3.05 | 부분 | 87안내·85외부연산 전수판정. 기존29+독립수신기53(모델2·정확 native곡선 포함), West Fireworks3미확정 | 현재 자료의 수신기/모델·강제콜백 구현을 보강했다. West TC-S023:152/167/168의 정확 창·컴포넌트·서버 identity와87종 자연플레이는 미확정. 독립 연구 UI를 실제 활성 활동으로 자동 배정하지 않는다. |
+| 3.06 | 부분 | 기존 메인 레벨·과제·보드·창·회상·공장 사건 유지. 독립 튜토리얼 컴포넌트와 모델 스냅샷을 별도 모드/저장으로 연결 | 현재 자료로 구현할 수 있는 웹 사건·독립 수신기 수명주기 연결. 실제 운영 활동 identity·배정·창의 자동 발동 대조는 남으며 연구 패널을 메인 활동으로 alias하지 않음. |
+| 3.07 | 부분 | 유일한 실제 웹 대상에 마스크 구멍·강조/외부 입력 잠금·resize/scroll/UID 재검증과 기존 강제타입/비용 consumer 연결 | 원작 마스크 좌표/포인터 전달·거절 대조는 별도. 다중·미확정·미마운트·stale UID 대상은 구멍을 임의로 고르지 않음. 알려지지 않은 대상·타입은 무소모 보존. |
+| 3.08 | 부분 | 전역 경쟁/대기·복귀 원자처리 유지. 새 수신기의 연구 scope/정확 identity·실제 잠금과 단일 콜백/일반동작 중복 차단 검사 | 현재 확보 규칙의 경쟁·잠금·복구를 검사했다. Lua pairs·동시각 scheduler 순서와 원작 계정의 동시 활성 안내/활동 전수 대조는 남음. |
 | 3.09 | 완료 | 공장6대상/23조각 실제 보드 탭·UID 입고·점수·임계 보상·닫힘 반환 | 현재 실제 웹의 단일 저장 거래·대상 탭·실패 무소모·중복 방지 검증. 서버 활성/해금은 명시 입력으로 유지 |
 | 3.10 | 부분 | 공장 랜덤 보상 입력에 출하 rdm_rwd_chest_default의 조건부 fallback 표·정확 현재UID/명시 난수 불러오기 추가 | 실제 요청ID의 서버표와 원작 난수는 미확보. fallback은 서버 요청ID 부재를 명시한 연구 가정에서만 사용. 입력 없는 상자는 전체 보존 |
 | 3.11 | 완료 | session-start→LateInit→장면 준비→LoginFinished와 보드 복귀/합성 시 해금·반환을 실제 웹 저장/진입에 연결 | 미확정 gate에서도 준비 플래그만 초기화하고 LateInit 무지급·보존, 조건 적용 후 재시도·보상1회 검증. 네이티브 실행 관측은0.04/1번과 구분 |
 | 3.12 | 완료 | 원작 선언 비행0.4초·임계 잠금0.5초·슬라이더/후속콜백과 실제 웹 타이머·점수/보상·이탈 정산 연결 | 모델 경계·실제 웹 동선·닫기/중지/저장/재접속을 검사. 비행 경로·그래픽은 웹 표현이며 원작 프레임/easing/좌표 직접 검수는1번/3.23에 남음 |
-| 3.13 | 부분 | 5권22페이지·45그림 유지. 정확한 UI3 prefab→Spine2개와6모션 연결, 다음/이전 source시간·입력 잠금 분리, native yoyo cubic 연결 | 실제 계정 배정·최종 Canvas/손·몸 합성·queue mix·원작 화면·청취/음향동기 검증은 남음. 화면 이탈 시 자동 모션 취소·논리 잔여시간 복원은 웹 정책 |
-| 3.14 | 부분 | 설정형 패스/앨범에 조커 장부·일반/금카드 제한·다음 라운드·명시 laser 보너스·Royal 별도 세트/시간/왕관 종료를 추가 | 실제 활성 시즌/배정·운영표/확률·pity·무한패스 전체와 원작 고급 변형의 실기 대조는 남음. 고급 분기는 명시 연구 설정일 때만 동작 |
+| 3.13 | 부분 | 5권22페이지·45그림과 원본6 UI계층의 회상부분·Lily몸/손/페이지·호환 큐를 실제 책장/본문에 합성 | 정확 UI 계층·Rect·선정 원본 모션을 웹 Canvas에 합성. 계정 활성, 원작 소프트 마스크/최종 shader·혼합·화면/청취 대조는 남음. 같은 탭 시계만 유지하며 재접속 시 원작 시각을 발명하지 않음. |
+| 3.14 | 부분 | 조커·일반/금카드·round·laser·Royal 유지. 슈퍼 패스 해금 토큰 기준과 단계표 순환·중복 방지·만료/롤백 구현 | 명시 연구표에서 무한 패스의 규칙·영수증을 추가했다. 실제 battlePassExtraReward·시즌/가격·확률/pity·고급 UI의 원작 실기 대조와 신규게임 확정 사양은 남음. |
 | 3.15 | 부분 | 기존6×8 연구 fixture 보존. 실제 등록 dogparkPureBoard의7×10창/13원본행·35그림·5초기대기열·합성/교환/먹이/유한생성/3행이동·독립저장 추가 | 실제 서버 주문/목표·레벨·보상/상점/종료표와 native 연출·캐시 동률 순서 미확인. 레벨12 스크롤은 명시 활동레벨이며 합성 횟수로 해금하지 않음 |
-| 3.16 | 부분 | 기존 메인 옵트인 outbox·원자 거래에 조커/round/Royal 보상 차분·만료 처리·실패 롤백 추가. Skin은 별도 연구 장부로 연결 | 신규 게임 출시용 밸런스·전체 보상 목적지/카테고리와 사용자 확정 설정은 남음. 연구 예제를 원작 서버 경제 또는 출시 확정값으로 취급하지 않음 |
+| 3.16 | 부분 | 기존 메인 outbox·원자 거래·조커/round/Royal/Skin 연결 유지. 패스 반복 보상을 기존 지급 영수증/지갑/Type2 대기열 거래에 연결 | 알 수 없는 지급 목적지·실패 시 전체 보존과 중복 수령을 검사했다. 실제 계정의 전체 보상 범주/운영표와 신규게임 확정 경제·밸런스·목적지 사양은 남음. |
 | 3.17 | 완료 | 기존106과제 명령·선정 대사·장식41슬롯/123등록후보를 보존. 4.09에서13일차10선정 과제와13_2 실물3후보 추가 | 원작 명령의 현재 웹 투영 범위. 완성 장면 렌더는 별도이며107번째 이후 최소 연결은4.09에 반영 |
-| 3.18 | 부분 | 기존 loading/intro 흐름 유지. CG3 prefab의 정확 Skeleton 참조와41모션,117 Timeline의1332개 인물 참조를 수동 비교창에 연결 | 독립 원작 타이틀·CG C#자동 시퀀스·전체 음향/실제 프레임은 남음. CG와Timeline_intro 자동 연결은 미확정이며 수동 비교를 완성 인트로라 부르지 않음 |
-| 3.19 | 부분 | 55슬롯/165선택의 기존 공통맵 유지. 원본 Camera FOV/회전·출하 edit_pos로1_4/12_5/13_2의3원근시점/11레이어·14PNG 비교 추가 | 9:16은 연구 aspect이며3슬롯의 정적 편집 시점이다. 전체 원작 카메라·광원·shader·물·가림·캐릭터·다른 구역·현재 활성 장면 대조는 남음 |
+| 3.18 | 부분 | 기존 로딩/인트로·CG3 정적 비교 유지. exact native 수신기와 선정7명령·완료콜백, CG UI/Spine/정확 음향을 수동 합성 | native 전체 Async/tween/dialog/선택 분기의 의미·시간과 독립 타이틀/Timeline_intro 연결은 미확정이다. 확인한7명령의 수동 실행을 원작 전체 CG 자동 흐름의 완성으로 계산하지 않음. |
+| 3.19 | 부분 | 원본 Camera/부모TRS·34 task edit_pos+21직렬화 fallback으로55시점·167변형·222PNG, SpriteRenderer5개와 편집 진행 연구 연결 | 55개 정적 편집 시점과 원본 레이어를 확보했다. 9:16은 연구 aspect, Sprite UV는 source 기하/crop의 연구 파생이다. 실제 동적 카메라·shader/광원/물·가림·활성 맵과 world hit/이동 취소 거리 대조는 남음. |
 | 3.20 | 부분 | Skin26 실물·소유·연동 슬롯 미리보기/취소/확정 유지. 검증된 거래 영수증의 획득ID를 기존 소유권에 중복 없이 연결 | 실제 계정 배정·최종 셰이더/입자/연출 대조는 남음. 연구 소유 명시를 거래 영수증으로 역입력하지 않으며 미리보기는 별도 유지 |
 | 3.21 | 부분 | 정확 skin_rwd→RewardApi→MapDataModel 획득 경로와 구/신형 상점 조건을 확인. 명시 연구 가격/잔액·CAS 저장·영수증 재검증·소유권 동기화 구현 | 실제 상품 가격·활성 배정은0건. 신규 게임 확정 사양도 미정. 단순 연구 지급 버튼과 구매 영수증을 분리하며 이 구현을 원작 상품 완성으로 계산하지 않음 |
-| 3.22 | 부분 | 117장면의 source roleAction/appear/list/wait1332참조와13역할의171고유클립·후속후보9개·CG41을 연결. 현재 과제 order/speaker별 비교창·수동 CG 재생 추가 | 전신 source 모션은 연결했으나 원작 맵 부모TRS/배치·이동/동시 활성·native queue/mix·표정/대사/CG 전체 동기화와 확정 콘텐츠 적용은 남음 |
-| 3.23 | 부분 | 원작 조작·전환·보상 시간표에694모션 source-time 시크·회상0.533초모션/0.25·0.5초잠금 분리·3시점 카메라·실제 PTS 후보 비교 추가 | 실제 입력/거절 로그·미확인 힌트/봉인/도구/공장 성공 전이·원작 UI/카메라/보상 비행/음향의 직접 대응과 최종 차이 검증은 남음 |
-| 3.24 | 부분 | 전체 소리·장면 동기화 | 현재 opt-in 발췌 외 확정 BGM/SFX·모션/이벤트 타이밍·중단/재개/음소거 연결과 직접 청취 |
+| 3.22 | 부분 | 117장면·13역할 원본 위치/scale/flip·지연/반복을 같은 Canvas에 합성.285투명모션·4201프레임·호환51mix/4queue·회상몸/손2queue 연결 | 동일 탭/장면 재렌더 시 directive 시계를 유지한다. 실제 native 큐·혼합·동적 카메라/이동·표정/대사/CG/음향 동기와 신규 최종 콘텐츠 대조는 남음. 호환 Spine 계산은 원작 실행이 아님. |
+| 3.23 | 부분 | 694모션 source-time·55카메라시점·실제 PTS 추가4클립/3020프레임 장부와 실제 시뮬레이션 합성/입력 경계를 연결 | 원시 입력/거절 로그·미확인 자동힌트/봉인·도구/공장 성공전이·원작 UI/보상비행/음향의 직접 대응은 남음. 선정 표본·웹 검사를 원작 전수 검증으로 확대하지 않음. |
+| 3.24 | 부분 | 기본164음향 목록/직접호출696건 감사. 추가38SFX+기존14발췌+무대16음향, 분리 Music/Effect·실제 분기/지연·scope/중단 연결 | 현재 자료의 확정 분기·BGM 연구조건·볼륨/음소거·선정 source 지연과 루프 수명주기를 구현했다. 실제 IsBGMSwitchOpen/신규유저·원작 청취/장면·loop경계/혼합/전체 동기와 신규 음향 사양은 미확정. 직접 청취0초. |
 | 3.25 | 완료 | 현재 단일 브라우저 저장·구버전 이전·손상 보존·백업·JSON 이동 | 현재 지원 기능의 모델/DOM 검사. 실제 파일 선택/입출력 동선은 1.04 |
 | 3.26 | 결정 필요 | 웹에서 재현할 후반/추가 활동의 종료 범위 | 기본 게임+패스+앨범+대표 이벤트 외 모든 역대 활동/서버 변형을 포함할지 명시. 필요한87안내를 조용히 제외하지 않음 |
 
@@ -248,15 +732,15 @@
 | 4.02 | 완료 | 기존18항목가용성장부에전체2087번들·717395객체·출처별PNG31044·초기미연결1020항목전수판정과출처를연결. 회상책45그림실물확보 | 원본수집/등록/실물/선별/해석/재생을구분. Spine654연결,Native339전체/3부분,GUID경로실물5/배포범위미실물19를보존. GUID24미등록자체를변경하지않음 |
 | 4.03 | 완료 | Area4 정확12프리팹·메시/재질/텍스처 회수·후보 PNG12·공통맵 레이어·시뮬레이션 연결 | 12_5/12_8/12_9/12_11 각3후보의 실제 연결 객체/그림과 출처 확보·공개 파생·도감/시뮬레이션 연결 |
 | 4.04 | 완료 | 잘못 선정했던 미등록35 fixture를 별도로 보존하고 실제 등록 Adventure35+PureBoard35의 exact GUID/catalog/Sprite·RGBA 검증·70카드·등록 보드 플레이 연결 | 실제 등록 타입 실물·파생·해시·도감/플레이 연결 기준 충족.70 Sprite객체는 PNG 내용32종을 공유한다. 기존 미등록 fixture를 실제 타입의 별칭으로 만들지 않음 |
-| 4.05 | 부분 | 기본8타입 표현7/8와외곽/공유선물 유지. 출하 이름표·원본 bytecode로 ib#의 nil→Bubble fallback 확정 | property_bubble_1은4개 Type-only 설정 외에 용도/소비 경로 미확정. 실제 활성 프레임은 별도. 독립 타입 PNG를 전부 만드는 과제로 취급하지 않음 |
-| 4.06 | 자료 필요 | 110녹화 기존 조사에4구간465초/930표본·원본 PTS 후보를 추가검수. 자동 힌트·메인 봉인 실제 성공 전이는 여전히 미확정 | 성공 전후 프레임과 입력 상태가 현재 자료에서 확정되지 않음. 코드 재현은 유지하며 명시 판정/탈락 이유를 후보 검수 장부에 연결 |
+| 4.05 | 부분 | 기본8타입 표현7/8·외곽/공유선물·nil→Bubble fallback 유지. property_bubble_1의 생성/보상/sprite 소비 경로 추가 대조 | property_bubble_1의4개 Type-only 설정 외 최종 용도/소비·표현 경로는 미확정. 생성 경로 추가 조사로도 확정하지 못했다. 원작 활성 프레임은 별도이며 독립 PNG를 무조건 만드는 과제로 취급하지 않음. |
+| 4.06 | 자료 필요 | 기존 후보 검수에 원속도4클립/26초·native PTS3020·육안108프레임 추가. 선택박스/합성/버블/에너지팝업 표본과 판정 근거 공개 | 현재 자료에서 자동 합성 힌트·메인 봉인의 성공 연속 전이와 입력 상태는 미확정이다. 선별한 자료의 관측과 탈락/미확정 이유를 유지하며 코드 재현으로 대체 완료하지 않음. |
 | 4.07 | 자료 필요 | 가위 같은 칸 후보·모래시계 이동 후보를 원본 PTS와 문맥으로 비교. 분할/소비/시간가속의 성공 연속 구간은 미확보 | 도움말/이동과 실제 도구 소비/결과를 구분한다. 현재 자료에서 성공을 확정할 수 없으며 source 재현으로 관측 완료를 대신하지 않음 |
 | 4.08 | 자료 필요 | 공장 코드/조각/점수/보상 재현과 기존 녹화의 후보 문맥을 재검수. 실제 공장 성공 전이는 미확정 | 현재 자료만 사용하는 요청을 반영. 표본/후보 미발견을 전체 영상 또는 원작에 화면이 없다는 증명으로 취급하지 않음 |
 | 4.09 | 완료 | 기본 Timeline13~292의280파일/56,250명령 복원·Story/GameText560파일 대조·107번째13_1~13_10 최소 투영10개·13_2 실물3후보/맵 연결. 원본77일차8키 불일치 명시 | 기본13_1 이후 정확한 분기/명령 자료 확보·최소 투영·출처·시뮬레이션 연결. named/fire 변형으로 임의 대체 금지 |
-| 4.10 | 부분 | 654/654 전체바이트 파싱·694모션:662투영(655영상/7정적),32미지원 보존.117장면 캐릭터·회상6모션·3출하 카메라 시점 추가 | 전체 원작 shader·부모맵TRS·카메라·입자·음향/실행 대조는 남음.528 atlas/PNG 치수 차이와32개 미지원 blend를 보존하며567별도ani 전역사용과 구분 |
-| 4.11 | 부분 | 후보3개1배속 무음 MP4·PTS 프레임/시각 스크러버·판정 이유 추가. 현재 클립의 native 재생/시크와 PC·모바일 가독성 점검 | raw입력/거절·미확인 중요 성공 전이·전체110영상의 연속 원속도 육안 검수는 남음. 선정 표본 검수를 전체 원본 검수로 확대하지 않음 |
-| 4.12 | 미완료 | 기존 정량 분석·14동봉 발췌에 수동 청취 장부·파일해시·메모/판정·JSON 내보내기 추가. play/ended로 청취를 자동 인정하지 않음 | 직접 청취와 실제 입력/장면 대응·음향 동기 검수는 미실시. AI 청취0 유지. 브라우저의 개인 판정은 전체 원작 검수 완료로 자동 승격하지 않음 |
-| 4.13 | 완료 | 694모션 도감·70타입/등록보드·117장면 캐릭터/CG·Skin 획득·회상/카메라 비교를 위키/시뮬레이션/같은 체크리스트에 연결 | 선별 파생·원본·최종 재생을 구분. 신규 검색/분류/시크/거래/저장·PC/모바일 검수. 기존 미완료 원작 검증은 해당ID에 유지 |
+| 4.10 | 부분 | 654전체바이트·694/694모션 투영(영상687·정적7). 기존32blend 보강·285투명모션/117장면 합성·55맵시점/167변형 연결 | 독립 RGBA blend와 호환 Spine/Canvas 계산을 추가했다. 원작 shader/PMA·528 atlas/PNG 치수 차이·부모TRS·동적 카메라/가림·입자/음향·별도567ani의 실제 사용·실행 대조는 남음. |
+| 4.11 | 부분 | 기존 PTS후보3개에 신규4클립26초/3020native프레임/육안108프레임과 앞뒤/시크/정지샷/원속도/CSV·오류 복구 추가 | 원시 입력/거절과 미확인 중요 성공 전이·전체110영상의 연속 원속도 육안 검수는 남음. 선정108프레임의 검수를 전체110녹화 전수 검수로 승격하지 않음. |
+| 4.12 | 미완료 | 기존 수동 청취 장부에 추가38SFX·무대16음향과 정적 가설9개/정확 파일 해시·출처/메모/판정·JSON 보관 연결 | 원작 영상/발췌 직접 청취와 실제 입력·장면 대응/동기 검수는 미실시. AI 청취0초 유지. 개인 판정은 명시 수동 기록만 저장하며 play/ended로 자동 완료하거나 전체 검수로 승격하지 않음. |
+| 4.13 | 완료 | 694모션·등록70타입/보드·117장면/CG·Skin/회상·55맵시점을 위키/실제 시뮬레이션에 연결하고39항목 잔여4분류/이번 작업 표시 유지 | 선별 파생·원본·최종 원작 재생을 구분한다. 자료/시뮬레이션/같은100ID 체크리스트의 검색·분류·재생·시크·거래·저장·PC/모바일 동선을 검사하며 미완료 원작 검증을 해당ID에 유지. |
 
 ## 5. 난이도·재화·성장 검증
 
@@ -676,3 +1160,18 @@
 - 4.12: 수동 청취 장부는 추가했으나 AI 직접청취0과 미완료 판정은 유지한다.
 
 최신 변경 태그는 위 단일 current-work 블록에서 생성하며 다음 새 작업에서 일괄 교체한다. 기존 완료3.09/3.11/3.12/3.17/4.09는 새 기능으로 포장하지 않고 재검증으로 표시한다.
+
+## 현재 자료 구현과 잔여 4분류 · 2026-10-30
+
+3.01~3.26·4.01~4.13의39개 기존 항목을 전부 판정했다. 현재 확보한 자료에서 동작·수신기·조건을 확정할 수 있는 구현과 연구 대조 도구를 보강했다. 완료 기준은 축소하지 않으며 **현재 확정 범위의 구현 잔여 없음**과 **원작 전체 재현 완료**는 다른 판정이다. 새로운 정적 근거가 발견되면 같은 ID의 해당 분류에 추가하고 변경 이유를 기록한다.
+
+- **구현 잔여**: 확보·해석된 조건으로 구현/검사할 작업. 이 배포의39항목에서 확정된 구현 잔여는0이며 회귀·화면/배포 검사를 통과한 뒤 반영한다.
+- **원작 검증**: 원본 입력·최종 렌더·직접 청취·프레임 대조와, 정확 수신기·분기 의미가 해석되지 않은 정적 근거. West3·property_bubble_1·CG전체native흐름을 성공으로 대신하지 않는다.
+- **운영값 미확보**: 계정/서버의 실제 활동identity·활성·상품/가격·확률/pity·목표/보상/종료표. 명시 연구 예제로 채워진 값은 원작 운영값이 아니다.
+- **기획 결정**: 신규게임의 출시 구간·패스/앨범/대표이벤트·재화/가격·리소스/연출 확정. Unity 제작 자체의 미착수를3·4번 웹 구현에 몰래 포함하지 않는다.
+
+주요 새 근거는 `src/data/tutorial-surfaces.json`, `src/data/source-scene-stage.json`, `src/data/native-map-study.json`, `src/data/source-audio.json`, `src/data/current-material-review.json`에 source object·PPtr·SHA·행/기간·미확정을 보존했다. 미디어는 선별 파생만 공개하며 원본 APK/번들·전체 Lua·원시 메시/전체 녹화는 게시하지 않는다.
+
+슈퍼 패스는 PassActivityModel.lua726~735/842~900의 해금/반복/수령 규칙이다. 반복 보상표를 발명하지 않고 require/reward를 명시 입력받는다. 미확정 지급 목적지는 거래 전체를 보존한다. 장식 진행음은 MapInput.lua358~378의 hold>0.2초와 EditHud.lua195~207/248~252의1.2초 선형 진행→루프 중단을 분리했다. 기존 즉시 편집 버튼은 유지하고 별도 길게 누르기 연구 버튼에만 적용한다. 7px 이동 취소 거리는 웹 정책이다.
+
+일반 합성/생성 효과음은 새 아이템 UID·실제 버블/가속·정확 타입/사건을 기준으로 고른다. Card/Temp 컴포넌트와 Lucky세부종류를 이름으로 추정하지 않는다. 납품 성공은sfxOrderServe, 주문Ready 알림sfxOrderCompleteNew는 다른 조건이다. 보상창 표시음0.3초·공장진행0.4초/후속0.7초를 현재 웹 화면/취소 scope와 연결했다. 직접 청취는0초다.

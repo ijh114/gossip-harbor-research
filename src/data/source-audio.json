@@ -1,0 +1,1921 @@
+{
+  "schemaVersion": 1,
+  "summary": {
+    "additionalEffects": 38,
+    "listenedSeconds": 0,
+    "baseAPKAudioObjects": 164,
+    "baseAudioBundleObjects": 146,
+    "baseCGOtherBundleObjects": 18,
+    "additionalTempItemAudioObjects": 2
+  },
+  "clips": [
+    {
+      "id": "merge-level-2",
+      "assetName": "SfxMergelv2",
+      "title": "2단계 합성 분기",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "AudioUtil의 결과 체인 레벨 분기. 2이하와 9이상은 경계 자산을 재생한다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/merge-level-2.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.07102,
+      "packagedDurationSeconds": 1.0710203647613525,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "6926655603330451779",
+          "objectSha256": "594358b62feefb9abea1e9a824568820524735c73ab3cdd6b08307d6b3c790f5",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Common/Utility/AudioUtil.lua",
+          "lineStart": 4,
+          "lineEnd": 15,
+          "sha256": "8185426d88c595ba1df9ecf70b7312ec3c3004d78086c553087bee9df4567fec",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 381,
+          "lineEnd": 394,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "e0c6f80c9fb9c1c36c7155fc27aa2a375ce038c5a48e3551b398ccb6afbb60d9",
+        "bytes": 8532
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "merge-level-3",
+      "assetName": "SfxMergelv3",
+      "title": "3단계 합성 분기",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "AudioUtil의 결과 체인 레벨 분기. 2이하와 9이상은 경계 자산을 재생한다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/merge-level-3.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.07102,
+      "packagedDurationSeconds": 1.0710203647613525,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "1776249463107149840",
+          "objectSha256": "d1b230c5b6da120ce6518909f5431cc6c7ce79d00fc51e5445f439f789160fca",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Common/Utility/AudioUtil.lua",
+          "lineStart": 4,
+          "lineEnd": 15,
+          "sha256": "8185426d88c595ba1df9ecf70b7312ec3c3004d78086c553087bee9df4567fec",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 381,
+          "lineEnd": 394,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "51cee86e748f1fff7c2b62e8fe572b5c4a52d5cf15e258e49639301cb8cd80d9",
+        "bytes": 8036
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "merge-level-5",
+      "assetName": "SfxMergelv5",
+      "title": "5단계 합성 분기",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "AudioUtil의 결과 체인 레벨 분기. 2이하와 9이상은 경계 자산을 재생한다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/merge-level-5.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.07102,
+      "packagedDurationSeconds": 1.0710203647613525,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-4857402091402964058",
+          "objectSha256": "96c66864363995ebfb994be1e3329c1144d47437d41a71722e55d4ac24779355",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Common/Utility/AudioUtil.lua",
+          "lineStart": 4,
+          "lineEnd": 15,
+          "sha256": "8185426d88c595ba1df9ecf70b7312ec3c3004d78086c553087bee9df4567fec",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 381,
+          "lineEnd": 394,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "d7e21bb5676f8bc792f94e3457a88860a9ed96cc6901dfd7e5389cfe9363761d",
+        "bytes": 8063
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "merge-level-6",
+      "assetName": "SfxMergelv6",
+      "title": "6단계 합성 분기",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "AudioUtil의 결과 체인 레벨 분기. 2이하와 9이상은 경계 자산을 재생한다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/merge-level-6.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.07102,
+      "packagedDurationSeconds": 1.0710203647613525,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-7022542126920370342",
+          "objectSha256": "4b71482ff1b4531272426b56130ae01da8e414c79107c57d89a45f8440320931",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Common/Utility/AudioUtil.lua",
+          "lineStart": 4,
+          "lineEnd": 15,
+          "sha256": "8185426d88c595ba1df9ecf70b7312ec3c3004d78086c553087bee9df4567fec",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 381,
+          "lineEnd": 394,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "b76429e4c495b00bb1c58cc69548a6ed816a98450f3e9ab9f9753cf5d06757b6",
+        "bytes": 8192
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "merge-level-7",
+      "assetName": "SfxMergelv7",
+      "title": "7단계 합성 분기",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "AudioUtil의 결과 체인 레벨 분기. 2이하와 9이상은 경계 자산을 재생한다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/merge-level-7.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.07102,
+      "packagedDurationSeconds": 1.0710203647613525,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "2041602829915855465",
+          "objectSha256": "b7d9ab3711fbcf6eb87f0e22c4aa2c2ef5f38f50108bb0b9f505d9f9c054461d",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Common/Utility/AudioUtil.lua",
+          "lineStart": 4,
+          "lineEnd": 15,
+          "sha256": "8185426d88c595ba1df9ecf70b7312ec3c3004d78086c553087bee9df4567fec",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 381,
+          "lineEnd": 394,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "e85eb21375f445d0e630fa3c8be1bacc9102dba746593a55b2e108c208909512",
+        "bytes": 8403
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "merge-level-8",
+      "assetName": "SfxMergelv8",
+      "title": "8단계 합성 분기",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "AudioUtil의 결과 체인 레벨 분기. 2이하와 9이상은 경계 자산을 재생한다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/merge-level-8.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.07102,
+      "packagedDurationSeconds": 1.0710203647613525,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "8425328724653516491",
+          "objectSha256": "dad58d497ac225697c5252582c81924ec13071dd65ac929d3be1c7c4ad1db130",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Common/Utility/AudioUtil.lua",
+          "lineStart": 4,
+          "lineEnd": 15,
+          "sha256": "8185426d88c595ba1df9ecf70b7312ec3c3004d78086c553087bee9df4567fec",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 381,
+          "lineEnd": 394,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "23451dc22cae1e017c08560b235f2861a038fb9dd11e68499176635f4726c13d",
+        "bytes": 7880
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "merge-level-9",
+      "assetName": "SfxMergelv9",
+      "title": "9단계 합성 분기",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "AudioUtil의 결과 체인 레벨 분기. 2이하와 9이상은 경계 자산을 재생한다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/merge-level-9.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.07102,
+      "packagedDurationSeconds": 1.0710203647613525,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "8706665436803545739",
+          "objectSha256": "510d72b90ef928b7be8bc283ea712665d8386a7a34456820c3df0a353e2f3bcd",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Base/Common/Utility/AudioUtil.lua",
+          "lineStart": 4,
+          "lineEnd": 15,
+          "sha256": "8185426d88c595ba1df9ecf70b7312ec3c3004d78086c553087bee9df4567fec",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 381,
+          "lineEnd": 394,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "6f4efebd3270f56e3d8e6b154529b3ab18ee18b48011960576af197939e7f65f",
+        "bytes": 8270
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "manual-generate-alternate",
+      "assetName": "SfxMergeSpawnManual2",
+      "title": "수동 생성 두 번째 후보",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "수동 생성 70/30 가중치의 두 번째 이름.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/manual-generate-alternate.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.470204,
+      "packagedDurationSeconds": 0.47020408511161804,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-4947318785429521786",
+          "objectSha256": "2ec0b3dd86628822bd15ab3ea799efbe816efe50844f72c28b0c00d2730fb5d5",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseBoardView.lua",
+          "lineStart": 247,
+          "lineEnd": 272,
+          "sha256": "7f3a0c2265ff17ffa78006d3be39a8a6e49c0e99e834a20033866f556032ec6c",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "087ebeadd59865eeb951ec1b43e1047874b661069acad602f44d6b5df82086dd",
+        "bytes": 4578
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "bubble-open",
+      "assetName": "SfxMergeBubbleOpen",
+      "title": "버블 구매·열기",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "_OnBubbleBreak의 이름. 자동 사라짐 SfxMergeBubbleBreak와 구분.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/bubble-open.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.567347,
+      "packagedDurationSeconds": 1.5673469305038452,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-7645145693080518523",
+          "objectSha256": "64177ab83a3851dfe45d10e0a642b62cc97d083e3330583c1de39ca2053a7391",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1654,
+          "lineEnd": 1701,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "84a0e1371cb27c8afbd290403678a15ccf5c8a700bee1f6200f728b4a07fb5f1",
+        "bytes": 14276
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "collect-gems",
+      "assetName": "SfxMergeCollectDiamond",
+      "title": "Gem 수집",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "첫 보상 종류를 확인한 수집 분기.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/collect-gems.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.828571,
+      "packagedDurationSeconds": 1.8285714387893677,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "2120699616452621468",
+          "objectSha256": "db4f83ab1af89dfbeeab6f65f9cb69d0706c08192a0c6bbe963b5a103695dc33",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 479,
+          "lineEnd": 502,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "b105204aab5847996da3af46a50bca233a620207079b4c3fc7e9c638f4400081",
+        "bytes": 17053
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "collect-experience",
+      "assetName": "SfxMergeCollectExperience",
+      "title": "Experience 수집",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "첫 보상 종류를 확인한 수집 분기.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/collect-experience.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.888163,
+      "packagedDurationSeconds": 0.8881632685661316,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "2540621793553083079",
+          "objectSha256": "2379c159838e64abdf8b96ac22dc4e5932561bf4040b3aaf1a1d21e2d0ed6a63",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 479,
+          "lineEnd": 502,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "a7710d62f54934f12f9f740f479ab500f4df4d84ab8826debbe950c752ccb0de",
+        "bytes": 7887
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "collect-energy",
+      "assetName": "SfxMergeCollectEnergy",
+      "title": "Energy 수집",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "첫 보상 종류를 확인한 수집 분기.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/collect-energy.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.940408,
+      "packagedDurationSeconds": 0.9404081702232361,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-5146402236727581341",
+          "objectSha256": "6e25250a49ea1811d07b6e9b5c2dc61e45b538995317c3756d14e1036f876710",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 479,
+          "lineEnd": 502,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "c80898deb689b47a2a6849957e17185f022f736eed75ba5341ac7ba40e9b14f5",
+        "bytes": 7388
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "dog-merge-1",
+      "assetName": "sfxDogBark1",
+      "title": "Dog 합성 분기 1",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "MainBoard 결과 타입 Dog02~10의 명시 범위 분기.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/dog-merge-1.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.365714,
+      "packagedDurationSeconds": 0.36571428179740906,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "853147429969416071",
+          "objectSha256": "a2d2ae12bc728672fd017efff200c8b10ecf2d3e69291cc290c8b876f50ba860",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1244,
+          "lineEnd": 1264,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "153af9dce44a638e784c2979198bdbbfdbb71d5a60cefd65da19e52febfe5b52",
+        "bytes": 3641
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "dog-merge-2",
+      "assetName": "sfxDogBark2",
+      "title": "Dog 합성 분기 2",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "MainBoard 결과 타입 Dog02~10의 명시 범위 분기.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/dog-merge-2.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.261224,
+      "packagedDurationSeconds": 0.2612244784832001,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-6047040266356173878",
+          "objectSha256": "c9f343206fe634bc8126026dcd42caa271e59b46eac86bfc002dc3c038b662b0",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1244,
+          "lineEnd": 1264,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "766f48e74941f28dac79d9a1fbce16804487f602d36228b0fc3ec831a8576c99",
+        "bytes": 2990
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "dog-merge-3",
+      "assetName": "sfxDogBark3",
+      "title": "Dog 합성 분기 3",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "MainBoard 결과 타입 Dog02~10의 명시 범위 분기.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/dog-merge-3.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.626939,
+      "packagedDurationSeconds": 0.6269387602806091,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-4735182732527868648",
+          "objectSha256": "d20c6416bc335bcecec4600e297cd86874daf2df7a44e9ed4eb3b54db09b56fc",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1244,
+          "lineEnd": 1264,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "3cfd81ddf64ea82b76134082efd06fd40770d65a8d1f79490e76674ea1031c6c",
+        "bytes": 4966
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "store-item",
+      "assetName": "sfxMoveToTepository",
+      "title": "보관함 입고",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "_OnStoreItem 처리 시점.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/store-item.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.862041,
+      "packagedDurationSeconds": 0.8620408177375793,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-3346249862860482159",
+          "objectSha256": "c7a9764b253894f8e4d61ab5b96645c3778fec4758717f958e093b383ed71a20",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 825,
+          "lineEnd": 833,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "c088bb99d26c5f759d284d13b289bcc853f74e2a377abfd4613452163289d9b0",
+        "bytes": 7707
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "factory-card-fly",
+      "assetName": "sfxCardFly",
+      "title": "공장 점수 투입 시작",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "아이템 비행 시작 시점.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/factory-card-fly.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.600816,
+      "packagedDurationSeconds": 0.6008163094520569,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-6187833336312025740",
+          "objectSha256": "1f493f066cdc82a9748d2b49a3116dcfe730ca32ad688f5b7a539fe45a1576fb",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1028,
+          "lineEnd": 1053,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "1b1df2ab915adcfc888db00d6c3c1c3c1c0e3182480563fd7f52f77e446f4236",
+        "bytes": 4967
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "factory-energy-crush",
+      "assetName": "SfxEnergyCrush",
+      "title": "공장 점수 투입 후속",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-decompiled-call-route",
+      "routeSummary": "원본 투입 후속 0.7초 callback. 에너지 수집으로 일반화하지 않는다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/factory-energy-crush.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.496327,
+      "packagedDurationSeconds": 0.4963265359401703,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sources": [
+        {
+          "path": "analysis/extracted/com.mergegames.gossipharbor/assets/aa/android/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "4744695630701059089",
+          "objectSha256": "394ac155e008244ea5a4af7b9909b734ecef688748cc7863b09f92c821555ff0",
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1028,
+          "lineEnd": 1053,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "3dee374ca5a35a8bce64d38b85783b6be6ebe3003938259fca3a60b1598b23ad",
+        "bytes": 3168
+      },
+      "boundaries": [
+        "녹화본 음향이 아니라 APK 동봉 AudioClip의 짧은 연구용 발췌다.",
+        "이름과 정적 호출 경로로 분류했으며 음색·악기·대사·실제 촬영본의 소리는 직접 듣지 못했다.",
+        "새 게임 제작에 재사용하는 자산이나 완성 사운드 납품물은 아니다."
+      ]
+    },
+    {
+      "id": "card-item-merge",
+      "assetName": "sfxCardItemMerge",
+      "title": "CardItem 최대 레벨 합성",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "CardItem 모델의 IsCardItemAndMaxLevel=true인 실제 결과에만 우선 적용. 타입 이름이나 숫자로 추정하지 않음.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/card-item-merge.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 2.925714,
+      "packagedDurationSeconds": 2.9257142543792725,
+      "sourceChannels": 2,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "d876ce3ff42880a5e5a357018e16348f",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-4330319912558791420",
+          "objectSha256": "250d09c873580283941256c329333859d43ed37be4c2e800eff4b85aae405dd3",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1245,
+          "lineEnd": 1263,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "4c6efb1535d0bab2a08d1bde63426e24ddfd255241292615e4b2407845c7fc76",
+        "bytes": 43459
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "temp-item-merge",
+      "assetName": "SfxIceBreak",
+      "title": "ItemTemp 포함 합성",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "실제 Source 또는 Target에 ItemTemp 컴포넌트가 있는 합성. 기본audio146에는 없고 exact tempitem bundle에서 확보.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/temp-item-merge.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.044898,
+      "packagedDurationSeconds": 1.0448979139328003,
+      "sourceChannels": 1,
+      "sourceSampleRate": 22050,
+      "gainNormalizationApplied": false,
+      "sourceScope": "exact-tempitem-supplement",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+          "sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+          "objectId": "552cebf09f7bd459ee8b77de4bb7d75b",
+          "serializedFile": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+          "pathId": "-5423534055816761115",
+          "objectSha256": "de0fe682ad422974fc48306645771efd956b2f0319dc7691a341adc3a02d8e9e",
+          "sourceBytes": 164,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1245,
+          "lineEnd": 1263,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "30489258e0234e9df56b6ab0a9d23f54a1410c27a21086ee735a7870492d356d",
+        "bytes": 6395
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "card-item-generate",
+      "assetName": "sfxCardItemGenerate",
+      "title": "CardItem 생성",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "_GetSpreadAudio의 우선 분기. 실제 source event/생성 결과 컴포넌트/적용 boostRatio로 입증된 경우에만 연결.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/card-item-generate.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 2.66449,
+      "packagedDurationSeconds": 2.66448974609375,
+      "sourceChannels": 2,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "8623abe93b2af73d4c3a83bb76825be9",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-5032692450558497168",
+          "objectSha256": "8e288375943b9dc885d8020291b48dd46d2b6ef337e2712a37fce8471e6597f3",
+          "sourceBytes": 172,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1402,
+          "lineEnd": 1405,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "cf0bc4d370f9e7902314d228ce70b34579a07cab6cc08b56bf64a47ec0e7cf4f",
+        "bytes": 40182
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "bubble-spawn",
+      "assetName": "SfxMergeBubbleSpawn",
+      "title": "생성 결과 Bubble",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "_GetSpreadAudio의 우선 분기. 실제 source event/생성 결과 컴포넌트/적용 boostRatio로 입증된 경우에만 연결.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/bubble-spawn.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.626939,
+      "packagedDurationSeconds": 0.6269387602806091,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "35a86361599dc8096f50175a8d41b142",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "7146772472021563740",
+          "objectSha256": "eeec1aba605727140f6b95906031d4379074ff9bca8dda230884aa202329e947",
+          "sourceBytes": 172,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1406,
+          "lineEnd": 1408,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "a9d94560726fd5501c95b8656cab84dfba36692b3553d19ff27616e02a7b7c61",
+        "bytes": 4758
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "temp-item-appear",
+      "assetName": "sfxTempItemAppear",
+      "title": "생성 결과 ItemTemp",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "_GetSpreadAudio의 우선 분기. 실제 source event/생성 결과 컴포넌트/적용 boostRatio로 입증된 경우에만 연결.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/temp-item-appear.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 2.063673,
+      "packagedDurationSeconds": 2.063673496246338,
+      "sourceChannels": 2,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "exact-tempitem-supplement",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/tempitem_assets_all_6c9a2272d0bf8fa38564ba962ee5109c.bundle",
+          "sha256": "ee93f5f0f44c79b362a2125d61b40fd9a3894cdff6252cbf27f33d52fd48cf1d",
+          "objectId": "9708335394ed5ce7a0eca2ec3bb984b8",
+          "serializedFile": "CAB-b7b5c33de9e0aef6cbe82056ca99bf70",
+          "pathId": "-855298159524263919",
+          "objectSha256": "0766ef18505980e047f716d7537812331f441a1481f4a3deb864ccca26ced902",
+          "sourceBytes": 172,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1409,
+          "lineEnd": 1411,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "2d56ddc58b6aeca6e9bfd74348e28ebb13aff415de58305b467f4c263c2a9092",
+        "bytes": 35198
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "boost-generate",
+      "assetName": "SfxMergeSpawnManualEnergyBoost",
+      "title": "실제 부스트 생성",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "_GetSpreadAudio의 우선 분기. 실제 source event/생성 결과 컴포넌트/적용 boostRatio로 입증된 경우에만 연결.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/boost-generate.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.496327,
+      "packagedDurationSeconds": 0.4963265359401703,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "8be0cd9ec541c3b8beb9bedef7d91efb",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-2061212057706328291",
+          "objectSha256": "e228026fb1acc8ad2727f415987c450ef3c1ce85e144d104b7b7fe274f99b06a",
+          "sourceBytes": 184,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1424,
+          "lineEnd": 1427,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "cb55121e1709ff69ffa9b82d94f48b954bff2efa721e3cb57a0e66bc7398dcbd",
+        "bytes": 5128
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "lucky-generate-1",
+      "assetName": "sfxLuckyProduce1",
+      "title": "Lucky 생성 1",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "BoardSpreadType의 정확 Lucky/FreeLucky·Super/FreeSuper·Double/Triple1·Triple2 분기를 구분. broad lucky-external만으로 고르지 않음.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/lucky-generate-1.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 2.66449,
+      "packagedDurationSeconds": 2.66448974609375,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "3d9beb2a0d5a1aa455b281dbff1f2b6c",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "1382672226631015191",
+          "objectSha256": "2d49df31cb17e6ad9f4dcc5391dde6f54704d6784af11168d00139fa7bc13633",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1415,
+          "lineEnd": 1423,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "8ddf2c4045d561990815b59877e71d737fa53f6a50762cbd6e56ae39a266628a",
+        "bytes": 25722
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "lucky-generate-2",
+      "assetName": "sfxLuckyProduce2",
+      "title": "Lucky 생성 2",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "BoardSpreadType의 정확 Lucky/FreeLucky·Super/FreeSuper·Double/Triple1·Triple2 분기를 구분. broad lucky-external만으로 고르지 않음.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/lucky-generate-2.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 3.892245,
+      "packagedDurationSeconds": 3.892244815826416,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "a92e30c495e779b0c08258cf4322458c",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-916110180986384265",
+          "objectSha256": "fb480ae237507aa581833929297031bea716152987fdc56ba9ab73021ce42384",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1415,
+          "lineEnd": 1423,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "67b69d5ab78bf3c539890401f1ed9639003b73d3e49b978b0e38a62db4da6bfe",
+        "bytes": 37991
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "lucky-generate-3",
+      "assetName": "sfxLuckyProduce3",
+      "title": "Lucky 생성 3",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "BoardSpreadType의 정확 Lucky/FreeLucky·Super/FreeSuper·Double/Triple1·Triple2 분기를 구분. broad lucky-external만으로 고르지 않음.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/lucky-generate-3.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 4.15347,
+      "packagedDurationSeconds": 4.153469562530518,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "1b1aeea1217860c3a6df875f8ac63757",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-6035934746618666979",
+          "objectSha256": "35cc07e59e0b3805c6eb0f6056fe0412f98c55442729ad06598fc9f0fa23afc4",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1415,
+          "lineEnd": 1423,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "495c88d2d186e5638faa3064d23dca050d111050301b12ef1db6f56685fbe2af",
+        "bytes": 37487
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "lucky-generate-4",
+      "assetName": "sfxLuckyProduce4",
+      "title": "Lucky 생성 4",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "BoardSpreadType의 정확 Lucky/FreeLucky·Super/FreeSuper·Double/Triple1·Triple2 분기를 구분. broad lucky-external만으로 고르지 않음.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/lucky-generate-4.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 4.2,
+      "packagedDurationSeconds": 5.224489688873291,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "7c7df5aa8b0caebb46e2d160294565be",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-7434480750746612889",
+          "objectSha256": "0f5ea22072adb638c5cc4e63ee85e28ae43b803628fea2977e6d30bb187fa1eb",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1415,
+          "lineEnd": 1423,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "6cca7829d5c75b7bb26f00b5c53f21b5ddce172a610e888e2d1dfcaaaea0dae9",
+        "bytes": 42207
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "factory-progress-arrive",
+      "assetName": "SfxProgressCrush",
+      "title": "공장 상세 비행 도착",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "PlayFlyItemAni의 실제 0.4초 MoveToTarget 완료에서 재생. 메인보드 투입 후0.7초 SfxEnergyCrush와 다른 수신기.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/factory-progress-arrive.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.261224,
+      "packagedDurationSeconds": 0.2612244784832001,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "af78a3f0056e22f26b66169ab0b3f9af",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-6934082487710314775",
+          "objectSha256": "3ca6cb6afad38db00a21a9156446b130238eae74bc9fd593fe29462813a0b6a4",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/Window/Inventory/GeneratorFactoryDetailCell.lua",
+          "lineStart": 133,
+          "lineEnd": 159,
+          "sha256": "91eee6a53b01027f337227c2aafc0910d1d5688e58b477afce92d65dc903c823",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "352f0d48bab6de7d229442864aaddc4bffe669ea0c1ed92158b440fca5762211",
+        "bytes": 3094
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "decor-bar",
+      "assetName": "sfxDecorationBar",
+      "title": "장식 편집바 루프",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "MapInput의 hold>0.2초·미이동·screenPos 있음·Timeline/Preview/DragLock 없음·!IsEdit에서 루프 시작. EditHud 선형 progress1.2초 완료 뒤 _ShowPanel에서 정지하며 편집 패널 전체 기간에 재생하지 않습니다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/decor-bar.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.593469,
+      "packagedDurationSeconds": 1.5934693813323975,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "1190bd343e62a69c2d81923285ec5a32",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-4118560524221921",
+          "objectSha256": "3a77ddf8fb30b7b3d52f2e40bfaa03a67cb2cb7e13c6f832b40f64d1faa42e3c",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Map/MapInput.lua",
+          "lineStart": 365,
+          "lineEnd": 379,
+          "sha256": "9c87cb83d233fdeaf25dbb43fc3209e96f9afa96661e76aa0170e30cc22885a6",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/SceneView/EditHud.lua",
+          "lineStart": 195,
+          "lineEnd": 207,
+          "sha256": "852ba3aa30c7de81f6c9036025bde732b8e1ca145b5bdd7a8245ad1c2d7ccd9f",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/SceneView/EditHud.lua",
+          "lineStart": 248,
+          "lineEnd": 252,
+          "sha256": "852ba3aa30c7de81f6c9036025bde732b8e1ca145b5bdd7a8245ad1c2d7ccd9f",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/SceneView/EditHud.lua",
+          "lineStart": 176,
+          "lineEnd": 180,
+          "sha256": "852ba3aa30c7de81f6c9036025bde732b8e1ca145b5bdd7a8245ad1c2d7ccd9f",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "576de9510f5b8a250d8d226dac4900ca485dc2a43ba3e0144e0e8417d0a08dc6",
+        "bytes": 15901
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ],
+      "requiresLoopLifecycle": true,
+      "completeSourceDurationPublished": true
+    },
+    {
+      "id": "decor-change",
+      "assetName": "sfxDecorationChange",
+      "title": "장식 선택 변경",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "EditHud.OnConfirmClick의 SkinOne이 아닌 분기에서 curId != IDBeforeChange일 때 즉시 1회. 미리보기마다 재생하지 않습니다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/decor-change.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 2.037551,
+      "packagedDurationSeconds": 2.037550926208496,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "5c5e1f168a1484dc1cecb3b41e45c2e4",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "5034476192409694492",
+          "objectSha256": "4ed117079dc2df690fd4a1c9b0fedda924cd193230f5e343d5585104b20c0b70",
+          "sourceBytes": 172,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/SceneView/EditHud.lua",
+          "lineStart": 65,
+          "lineEnd": 110,
+          "sha256": "852ba3aa30c7de81f6c9036025bde732b8e1ca145b5bdd7a8245ad1c2d7ccd9f",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "7b6e23e9b71e637837c5e003ae6cc670b7b793e6f59ad0d7364ac22489c93c86",
+        "bytes": 17341
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "order-serve",
+      "assetName": "sfxOrderServe",
+      "title": "주문 버튼 입력",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "BaseOrderCell.OnGoButtonClicked의 입력 사운드. 납품가능 상태 전환 sfxOrderCompleteNew와 구분.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/order-serve.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.462857,
+      "packagedDurationSeconds": 1.4628571271896362,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "00bc4d19998e1b7f6b4b5dead1a5e8ca",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-5471970604947060419",
+          "objectSha256": "cc5e3d2b9c05aa3a7c3091d503467e602180e31c4e715c78ca90054736d8b81e",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/Order/BaseOrderCell.lua",
+          "lineStart": 19,
+          "lineEnd": 30,
+          "sha256": "052429be6760b5fc9c74903257f8827d1d689c01aff22b55dea62ca7355a6460",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "f2849f0309bb8cba117a9a79830eb17bc7a31b88806d07540a5a87ea59495905",
+        "bytes": 14015
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "reward-collect",
+      "assetName": "sfxRewardCollect",
+      "title": "보상 수집",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "RewardContent.PlayRewardAnimation 시작에서 재생. RewardWindow.OnCloseView가 이 실제 연출을 호출하는 경우에만 연결하며 simpleCollect 분기는 확대하지 않습니다.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/reward-collect.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.123265,
+      "packagedDurationSeconds": 1.123265266418457,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "26afcf7abe087b812991f0071342808a",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-3228264378789847474",
+          "objectSha256": "256b1b873467c14c62c89fe23485568d4de9faac0d6df1a6121fd7048fa8f6dd",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/SubView/RewardContent.lua",
+          "lineStart": 42,
+          "lineEnd": 57,
+          "sha256": "48e060584ec99d603713fa9bcfb96e54e977392d535f06d403ee5245b9da694f",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "1f071e52abedf7dba8b71490994b8f08beb8ac251543de662c3fc049be78341f",
+        "bytes": 10786
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "rainbow-card-reveal",
+      "assetName": "sfxRevealNewCard",
+      "title": "Rainbow 카드 공개",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "AcquireRainbowCardWindow의 공개 이벤트. 일반 카드팩 모든 공개로 확대하지 않음.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/rainbow-card-reveal.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 2.716735,
+      "packagedDurationSeconds": 2.7167346477508545,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "5918663a6aea49626bf27c0c69cba800",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-2547663608799477612",
+          "objectSha256": "e16737cb4e0f364eb58cf17958e61fe4adb0b9e64603d01f68f9189dc2b8eede",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Activity/AlbumActivity/View/AlbumActivityAcquireRainbowCardWindow.lua",
+          "lineStart": 48,
+          "lineEnd": 60,
+          "sha256": "69a8e7c7f88bf767411ea29e8cd6c6cc57b50d45f10b48da5964c9b6e74e9a24",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "66d86381b15a97f9aa26b48bc0b32134868fb7604712c627157d56619c625df9",
+        "bytes": 25778
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "item-land",
+      "assetName": "sfxItemLanding",
+      "title": "선택 아이템 배치",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "_OnChooseItem의 실제 새 ItemView를 만든 경우. 일반 드래그 이동 사운드로 확대하지 않음.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/item-land.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.444082,
+      "packagedDurationSeconds": 0.4440816342830658,
+      "sourceChannels": 2,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "92a7004b01bc777ce6c969f00a08ee64",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "1419092427889819625",
+          "objectSha256": "268d91801399a7463265f8edd350e09d6fbec58cd2c2f7a1158b138d568eaa5a",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/MainBoardView.lua",
+          "lineStart": 1588,
+          "lineEnd": 1598,
+          "sha256": "34a9cbe7422e2d2d99da6711bbefc242b83667e8f2403d28708aeddcfba1ae99",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "1521aa9a6d9264a3cb994743c782a7cc6d7c5798c02b7a1b7497e22edb054473",
+        "bytes": 4999
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "paper-break",
+      "assetName": "sfxSandBreak",
+      "title": "PaperBox 외곽 해제",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "m_hasCollapsedPaperBox가 있는 Update 프레임에 한번. 모든 합성마다 재생하지 않음.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/paper-break.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 1.619592,
+      "packagedDurationSeconds": 1.6195918321609497,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "bb543001b7ea638497a88425976a0514",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "-7630151457453030533",
+          "objectSha256": "89204d8a5e322ccced7fadf31f1108670ac93bca026673cb1b2ed736db2de214",
+          "sourceBytes": 164,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BaseActionBoardView.lua",
+          "lineStart": 10,
+          "lineEnd": 18,
+          "sha256": "df3202dea2b6d6bc54083fb7b7eee79680ac558c49e1e9182036d9ae29d12b7b",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "4d9dba78a246abac3d3e758fd1220e50cdca5c1150ff40efdee99be6703937b7",
+        "bytes": 16133
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "item-delete",
+      "assetName": "sfxCommonDelete",
+      "title": "아이템 삭제 버튼",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "BoardInfoBar 삭제 버튼 처리의 사운드. 판매 코인 수집과 다름.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/item-delete.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.496327,
+      "packagedDurationSeconds": 0.4963265359401703,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "b9b896e53f89fb49a6b60389a69bbba9",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "1942373289566394056",
+          "objectSha256": "5fc74c511f5628aa6ed7edd4cfa7e7e805061d8476b007db838e2f53dbeeddfc",
+          "sourceBytes": 168,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BoardInfoBar.lua",
+          "lineStart": 556,
+          "lineEnd": 568,
+          "sha256": "57ea2530907a6166a2180f35f911bcc2b045eb35c0ded8c5a03fe3f126f3bb8a",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "91c259129bfa2f77e45aaaa2cc7028c6cd747f2821b838a5457c77da2b4cf8df",
+        "bytes": 4578
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    },
+    {
+      "id": "item-open-box",
+      "assetName": "SfxOpenBox",
+      "title": "상자 열기 버튼",
+      "kind": "effect",
+      "classificationBasis": "static-name-and-exact-decompiled-call-route",
+      "routeSummary": "BoardInfoBar의 상자 열기 처리. 일반 생성 70/30으로 대체하지 않음.",
+      "listeningStatus": "unsupported-model-audio-input",
+      "listenedSeconds": 0,
+      "src": "./assets/media/source-audio/item-open-box.mp3",
+      "mime": "audio/mpeg",
+      "fromSeconds": 0,
+      "excerptSeconds": 0.835918,
+      "packagedDurationSeconds": 0.8359183669090271,
+      "sourceChannels": 1,
+      "sourceSampleRate": 44100,
+      "gainNormalizationApplied": false,
+      "sourceScope": "base-audio-bundle",
+      "sources": [
+        {
+          "path": "가십하버_리소스_4.10.5/raw/bundles/audio_assets_all_66fe8d13b3e429b0e1eb0c43cb78818b.bundle",
+          "sha256": "e3dea62f4d4fd3d8d7f32d40b76163e89f10105084a633b97ee4b136182f38d4",
+          "objectId": "31c04d68b916539b20ac41ec30902907",
+          "serializedFile": "CAB-235cc430e7de96a522c5da5452135b83",
+          "pathId": "8737112898334387777",
+          "objectSha256": "4d16923c5f6f55341a05a22e02806d5c20a6090cb31acad52a5fb717e1416262",
+          "sourceBytes": 164,
+          "evidenceType": "packaged-AudioClip-object"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Board/View/BoardInfoBar.lua",
+          "lineStart": 570,
+          "lineEnd": 578,
+          "sha256": "57ea2530907a6166a2180f35f911bcc2b045eb35c0ded8c5a03fe3f126f3bb8a",
+          "evidenceType": "static-decompiled-code"
+        }
+      ],
+      "output": {
+        "sha256": "b1e08291f166149dbd4fd89a17724934be6e7ceae0e09238e3a528031493db96",
+        "bytes": 8753
+      },
+      "boundaries": [
+        "직접 청취 0초. 정적 호출과 파일 identity만 검증했습니다.",
+        "실제 구현 모델이 해당 source event·컴포넌트·입력 시점을 입증한 경우에만 재생합니다.",
+        "원작 음량·음향 장치·장면 동기화 관측은 미확인입니다."
+      ]
+    }
+  ],
+  "routingFacts": [
+    {
+      "id": "music-switch",
+      "summary": "서버 설정에 연결된 BGM 전환 스위치가 있고 Map/Main 모드별 선택, 0.8초 전환 시간과 0.3 시작 음량 선언이 확인된다. 실제 전환 시간·볼륨을 청취 측정한 것은 아니다.",
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Audio/AudioModel.lua",
+          "lineStart": 17,
+          "lineEnd": 30,
+          "sha256": "a9247867bee711de3b7a05a8f0b88b34287f66aa657fe892e1c1382783a31f75",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/UI/UIFramework/ModeViewController.lua",
+          "lineStart": 348,
+          "lineEnd": 405,
+          "sha256": "9846017ef09e0c8636d4e5aff4c2cb02fc4120316184f260e8ed370f986be3ca",
+          "evidenceType": "static-decompiled-code"
+        }
+      ]
+    },
+    {
+      "id": "music-effect-mute",
+      "summary": "Music/Effect가 별도 음소거 키와 재생 제어를 사용한다. 스토리 말풍선 효과와 대사 음성은 동일하다고 볼 수 없다.",
+      "sources": [
+        {
+          "path": "analysis/lua/Lua_Core/Model/Audio/AudioModel.lua",
+          "lineStart": 6,
+          "lineEnd": 17,
+          "sha256": "a9247867bee711de3b7a05a8f0b88b34287f66aa657fe892e1c1382783a31f75",
+          "evidenceType": "static-decompiled-code"
+        },
+        {
+          "path": "analysis/lua/Lua_Core/Model/Audio/AudioModel.lua",
+          "lineStart": 57,
+          "lineEnd": 73,
+          "sha256": "a9247867bee711de3b7a05a8f0b88b34287f66aa657fe892e1c1382783a31f75",
+          "evidenceType": "static-decompiled-code"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "analysis/lua/Lua_Core/Model/Audio/AudioModel.lua",
+      "lineStart": 6,
+      "lineEnd": 73,
+      "sha256": "a9247867bee711de3b7a05a8f0b88b34287f66aa657fe892e1c1382783a31f75",
+      "evidenceType": "static-decompiled-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/UIFramework/ModeViewController.lua",
+      "lineStart": 358,
+      "lineEnd": 405,
+      "sha256": "9846017ef09e0c8636d4e5aff4c2cb02fc4120316184f260e8ed370f986be3ca",
+      "evidenceType": "static-decompiled-code"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/Map/MapInput.lua",
+      "lineStart": 358,
+      "lineEnd": 378,
+      "sha256": "9c87cb83d233fdeaf25dbb43fc3209e96f9afa96661e76aa0170e30cc22885a6",
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/SceneView/EditHud.lua",
+      "lineStart": 65,
+      "lineEnd": 110,
+      "sha256": "852ba3aa30c7de81f6c9036025bde732b8e1ca145b5bdd7a8245ad1c2d7ccd9f",
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "path": "analysis/lua/Lua_Core/UI/SceneView/EditHud.lua",
+      "lineStart": 169,
+      "lineEnd": 252,
+      "sha256": "852ba3aa30c7de81f6c9036025bde732b8e1ca145b5bdd7a8245ad1c2d7ccd9f",
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "path": "analysis/lua/Lua_Activity/PassActivity/Model/PassActivityModel.lua",
+      "lineStart": 726,
+      "lineEnd": 735,
+      "sha256": "3587274cf8ab4269a87f9de5b560126154c21afb5ecaeb500aa877b980b37a9f",
+      "evidenceType": "packaged-static-source-not-runtime"
+    },
+    {
+      "path": "analysis/lua/Lua_Activity/PassActivity/Model/PassActivityModel.lua",
+      "lineStart": 842,
+      "lineEnd": 900,
+      "sha256": "3587274cf8ab4269a87f9de5b560126154c21afb5ecaeb500aa877b980b37a9f",
+      "evidenceType": "packaged-static-source-not-runtime"
+    }
+  ],
+  "rules": {
+    "manualWeights": [
+      70,
+      30
+    ],
+    "musicFadeSeconds": 0.8,
+    "musicStartGain": 0.3,
+    "musicGate": "explicit-server-switch-and-new-user-finished-snapshot",
+    "publishedMusicIsSixSecondExcerpt": true
+  },
+  "selectionBoundary": "메인 기본범위와 정확한 tempitem 호출만 선별. 전체 vault327 AudioClip 전수 공개/청취 아님."
+}

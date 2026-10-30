@@ -1,0 +1,3007 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "revision": "tutorial-surfaces-20261030",
+  "scope": "원본 외부 효과 85건 전수 / 기존 UI 54·모델 2건의 독립 수신기",
+  "originalRuntimeObserved": false,
+  "baselineCounts": {
+    "native-target-unavailable": 54,
+    "native-model-unimplemented": 2,
+    "source-owner-lock-cleanup": 6,
+    "mounted-factory-ui": 4,
+    "finite-web-misc-db": 9,
+    "finite-web-activity-flag": 10
+  },
+  "counts": {
+    "existing-adapter": 29,
+    "independent-native-curve-receiver": 1,
+    "independent-research-receiver": 52,
+    "west-definition-and-binding-pending": 3
+  },
+  "families": [
+    {
+      "id": "bakeout",
+      "name": "무료 교환·주문 입력",
+      "sourceWindow": "BakeOutCoinExchangeWindow"
+    },
+    {
+      "id": "intimacy",
+      "name": "친밀도 셀 이동",
+      "sourceWindow": "CharacterIntimacyListWindow"
+    },
+    {
+      "id": "wipeout",
+      "name": "Harrison 등장",
+      "sourceWindow": "WipeOutMainWindow"
+    },
+    {
+      "id": "triggerplane",
+      "name": "튜토리얼 마스크",
+      "sourceWindow": "TriggerPlaneMainWindow"
+    },
+    {
+      "id": "checkin",
+      "name": "출석 효과",
+      "sourceWindow": "CheckInMainWindow"
+    },
+    {
+      "id": "hitbricks",
+      "name": "탐색 슬라이더·불꽃",
+      "sourceWindow": "HitBricksActivityMainWindow"
+    },
+    {
+      "id": "album",
+      "name": "앨범 팩 드래그",
+      "sourceWindow": "AlbumActivityPackWindow"
+    },
+    {
+      "id": "transform",
+      "name": "아이템 변환 버튼",
+      "sourceWindow": "BoardInfoBar"
+    },
+    {
+      "id": "bingo",
+      "name": "빙고 도움말",
+      "sourceWindow": "BingoActivityMainWindow"
+    },
+    {
+      "id": "mission",
+      "name": "미션 스크롤",
+      "sourceWindow": "MissionActivityMainWindow"
+    },
+    {
+      "id": "puzzle",
+      "name": "퍼즐 조각 발광",
+      "sourceWindow": "PuzzlePiece"
+    },
+    {
+      "id": "wheel",
+      "name": "휠 입력",
+      "sourceWindow": "WheelMainWindow"
+    },
+    {
+      "id": "orders",
+      "name": "주문·활동 입구 이동",
+      "sourceWindow": "MainBoard"
+    },
+    {
+      "id": "room",
+      "name": "방 카운트다운 등장",
+      "sourceWindow": "RoomMainWindow"
+    },
+    {
+      "id": "reward-tip",
+      "name": "보상 팁 닫기",
+      "sourceWindow": "AdaptiveTipBubble"
+    },
+    {
+      "id": "avatar",
+      "name": "아바타 프레임 탭",
+      "sourceWindow": "SettingUserInfoWindow"
+    },
+    {
+      "id": "team",
+      "name": "팀 경기 시작",
+      "sourceWindow": "TeamActivityModel"
+    }
+  ],
+  "rows": [
+    {
+      "guideId": "tutorial_bakeout_2",
+      "id": "effect@TC-S009:50:8",
+      "sourceId": "TC-S009",
+      "callee": "self.m_highlightOrderCell:SetOrderIconClickEnabled",
+      "method": "SetOrderIconClickEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBakeOut2.lua",
+        "sha256": "26d5b0a3e6c3c82c43ce94fce98db8d284e799da0e420b79072626ab323df82c",
+        "lineStart": 50,
+        "lineEnd": 50
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "bakeout",
+      "originalRuntimeObserved": false,
+      "capability": "orderIconEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/Board/View/Order/BaseOrderCell.lua",
+        "sha256": "052429be6760b5fc9c74903257f8827d1d689c01aff22b55dea62ca7355a6460",
+        "lineStart": 505,
+        "lineEnd": 510
+      }
+    },
+    {
+      "guideId": "tutorial_bakeout_2",
+      "id": "effect@TC-S009:53:8",
+      "sourceId": "TC-S009",
+      "callee": "self.m_highlightOrderCell:SetGoButtonEnabled",
+      "method": "SetGoButtonEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBakeOut2.lua",
+        "sha256": "26d5b0a3e6c3c82c43ce94fce98db8d284e799da0e420b79072626ab323df82c",
+        "lineStart": 53,
+        "lineEnd": 53
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "bakeout",
+      "originalRuntimeObserved": false,
+      "capability": "goButtonEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/Board/View/Order/BaseOrderCell.lua",
+        "sha256": "052429be6760b5fc9c74903257f8827d1d689c01aff22b55dea62ca7355a6460",
+        "lineStart": 511,
+        "lineEnd": 514
+      }
+    },
+    {
+      "guideId": "tutorial_bakeout_2",
+      "id": "effect@TC-S009:181:4",
+      "sourceId": "TC-S009",
+      "callee": "GM.ActivityManager:GetModel():SetExchangeCoinFree",
+      "method": "SetExchangeCoinFree",
+      "baselineCategory": "native-model-unimplemented",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBakeOut2.lua",
+        "sha256": "26d5b0a3e6c3c82c43ce94fce98db8d284e799da0e420b79072626ab323df82c",
+        "lineStart": 181,
+        "lineEnd": 181
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "bakeout",
+      "originalRuntimeObserved": false,
+      "capability": "bakeout-model",
+      "disposition": "independent-research-receiver",
+      "remaining": "별도 연구 금고에서 1회 무료·토큰 20×배수·횟수 비증가·무료 해제·사건을 구현합니다. 운영 비용표와 계정 잔고는 미확인입니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/BakeOut/Model/BakeOutModel.lua",
+        "sha256": "ba840d215a08fd87a393b6361f29214279657dbcb590a6ed6f1ea9c8656c1e9a",
+        "lineStart": 848,
+        "lineEnd": 850
+      }
+    },
+    {
+      "guideId": "tutorial_bakeout_2",
+      "id": "effect@TC-S009:182:4",
+      "sourceId": "TC-S009",
+      "callee": "exchangeWindow:UpdateContent",
+      "method": "UpdateContent",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBakeOut2.lua",
+        "sha256": "26d5b0a3e6c3c82c43ce94fce98db8d284e799da0e420b79072626ab323df82c",
+        "lineStart": 182,
+        "lineEnd": 182
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "bakeout",
+      "originalRuntimeObserved": false,
+      "capability": "refresh",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/BakeOut/View/BakeOutCoinExchangeWindow.lua",
+        "sha256": "c154c52b6f1466e0d624c0683077f70a6864509f2c6a8cecb7a0192a681f755e",
+        "lineStart": 37,
+        "lineEnd": 42
+      }
+    },
+    {
+      "guideId": "tutorial_character_intimacy_entry",
+      "id": "effect@TC-S011:138:2",
+      "sourceId": "TC-S011",
+      "callee": "window:JumpToCell",
+      "method": "JumpToCell",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCharacterIntimacyEntry.lua",
+        "sha256": "0c7eacbc70ab73944bd605370bf00420f572e1a40cbe8d1c2e6772fc1825f856",
+        "lineStart": 138,
+        "lineEnd": 138
+      },
+      "arguments": [
+        {
+          "v": 1
+        },
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "1",
+        "true"
+      ],
+      "family": "intimacy",
+      "originalRuntimeObserved": false,
+      "capability": "viewport",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/CharacterIntimacy/View/Window/CharacterIntimacyListWindow.lua",
+        "sha256": "75f65c88b6fcbdd2eb513cdd8e67d68daa8074b42d500e0780239b892f9402b9",
+        "lineStart": 134,
+        "lineEnd": 163
+      }
+    },
+    {
+      "guideId": "tutorial_character_intimacy_entry",
+      "id": "effect@TC-S011:139:2",
+      "sourceId": "TC-S011",
+      "callee": "window:SetScrollEnabled",
+      "method": "SetScrollEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCharacterIntimacyEntry.lua",
+        "sha256": "0c7eacbc70ab73944bd605370bf00420f572e1a40cbe8d1c2e6772fc1825f856",
+        "lineStart": 139,
+        "lineEnd": 139
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "intimacy",
+      "originalRuntimeObserved": false,
+      "capability": "scrollEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/CharacterIntimacy/View/Window/CharacterIntimacyListWindow.lua",
+        "sha256": "75f65c88b6fcbdd2eb513cdd8e67d68daa8074b42d500e0780239b892f9402b9",
+        "lineStart": 124,
+        "lineEnd": 127
+      }
+    },
+    {
+      "guideId": "tutorial_character_intimacy_entry",
+      "id": "effect@TC-S011:151:2",
+      "sourceId": "TC-S011",
+      "callee": "window:SetScrollEnabled",
+      "method": "SetScrollEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCharacterIntimacyEntry.lua",
+        "sha256": "0c7eacbc70ab73944bd605370bf00420f572e1a40cbe8d1c2e6772fc1825f856",
+        "lineStart": 151,
+        "lineEnd": 151
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "intimacy",
+      "originalRuntimeObserved": false,
+      "capability": "scrollEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/CharacterIntimacy/View/Window/CharacterIntimacyListWindow.lua",
+        "sha256": "75f65c88b6fcbdd2eb513cdd8e67d68daa8074b42d500e0780239b892f9402b9",
+        "lineStart": 124,
+        "lineEnd": 127
+      }
+    },
+    {
+      "guideId": "tutorial_wipeout_first_main_window",
+      "id": "effect@TC-S014:78:4",
+      "sourceId": "TC-S014",
+      "callee": "window:ShowHarrison",
+      "method": "ShowHarrison",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWipeOut2.lua",
+        "sha256": "04bf279ba1f396e6a1d41d96288b38ed78bf9a5b1ab45395066b8bf446128460",
+        "lineStart": 78,
+        "lineEnd": 78
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "wipeout",
+      "originalRuntimeObserved": false,
+      "capability": "harrison-motion",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/RaceActivity/WipeOut/View/WipeOutMainWindow.lua",
+        "sha256": "dc944694f05a4b93a07dcb784dde9c79f06390b7b73706904b22c208fcd1e845",
+        "lineStart": 190,
+        "lineEnd": 200
+      }
+    },
+    {
+      "guideId": "tutorial_wipeout_second_main_window",
+      "id": "effect@TC-S015:54:4",
+      "sourceId": "TC-S015",
+      "callee": "window:ShowHarrison",
+      "method": "ShowHarrison",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWipeOut3.lua",
+        "sha256": "b7a022cc5355d70552434e632a4dd8750162887d27eecbf5d7409cc99de1e48d",
+        "lineStart": 54,
+        "lineEnd": 54
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "wipeout",
+      "originalRuntimeObserved": false,
+      "capability": "harrison-motion",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/RaceActivity/WipeOut/View/WipeOutMainWindow.lua",
+        "sha256": "dc944694f05a4b93a07dcb784dde9c79f06390b7b73706904b22c208fcd1e845",
+        "lineStart": 190,
+        "lineEnd": 200
+      }
+    },
+    {
+      "guideId": "tutorial_triggerplane",
+      "id": "effect@TC-S017:43:2",
+      "sourceId": "TC-S017",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "method": "RemoveAllEventLocks",
+      "baselineCategory": "source-owner-lock-cleanup",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTriggerPlane.lua",
+        "sha256": "b2e723c653690a55e221a20f3e9aee1d2086d3626f04efe8f21d32c26c9bd9cf",
+        "lineStart": 43,
+        "lineEnd": 43
+      },
+      "arguments": [
+        {
+          "ref": "self"
+        }
+      ],
+      "argumentExpressions": [
+        "self"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다."
+    },
+    {
+      "guideId": "tutorial_triggerplane",
+      "id": "effect@TC-S017:79:2",
+      "sourceId": "TC-S017",
+      "callee": "mainwindow:SetTutorialMaskStatus",
+      "method": "SetTutorialMaskStatus",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTriggerPlane.lua",
+        "sha256": "b2e723c653690a55e221a20f3e9aee1d2086d3626f04efe8f21d32c26c9bd9cf",
+        "lineStart": 79,
+        "lineEnd": 79
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "triggerplane",
+      "originalRuntimeObserved": false,
+      "capability": "maskVisible",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/TriggerPlane/View/TriggerPlaneMainWindow.lua",
+        "sha256": "46a9c1f4b5ed90011d8a59e9d08b8dce018a56033dfd9314450fd1b227c2ba00",
+        "lineStart": 123,
+        "lineEnd": 126
+      }
+    },
+    {
+      "guideId": "tutorial_triggerplane",
+      "id": "effect@TC-S017:92:2",
+      "sourceId": "TC-S017",
+      "callee": "mainwindow:SetTutorialMaskStatus",
+      "method": "SetTutorialMaskStatus",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTriggerPlane.lua",
+        "sha256": "b2e723c653690a55e221a20f3e9aee1d2086d3626f04efe8f21d32c26c9bd9cf",
+        "lineStart": 92,
+        "lineEnd": 92
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "triggerplane",
+      "originalRuntimeObserved": false,
+      "capability": "maskVisible",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/TriggerPlane/View/TriggerPlaneMainWindow.lua",
+        "sha256": "46a9c1f4b5ed90011d8a59e9d08b8dce018a56033dfd9314450fd1b227c2ba00",
+        "lineStart": 123,
+        "lineEnd": 126
+      }
+    },
+    {
+      "guideId": "tutorial_checkin_start",
+      "id": "effect@TC-S020:75:2",
+      "sourceId": "TC-S020",
+      "callee": "window:SetEffectVisible",
+      "method": "SetEffectVisible",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCheckInStart.lua",
+        "sha256": "916f32f7d6ac0243465080290a8a6d06623825b57fefe3ecc6d24900b4a6f804",
+        "lineStart": 75,
+        "lineEnd": 75
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "checkin",
+      "originalRuntimeObserved": false,
+      "capability": "effectVisible",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/CheckIn/View/CheckInMainWindow.lua",
+        "sha256": "619fc70cd8088b59afead3ff6a289092eb3cf5450149f6487bb80ca6086021af",
+        "lineStart": 112,
+        "lineEnd": 115
+      }
+    },
+    {
+      "guideId": "tutorial_checkin_start",
+      "id": "effect@TC-S020:91:2",
+      "sourceId": "TC-S020",
+      "callee": "window:SetEffectVisible",
+      "method": "SetEffectVisible",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterCheckInStart.lua",
+        "sha256": "916f32f7d6ac0243465080290a8a6d06623825b57fefe3ecc6d24900b4a6f804",
+        "lineStart": 91,
+        "lineEnd": 91
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "checkin",
+      "originalRuntimeObserved": false,
+      "capability": "effectVisible",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/CheckIn/View/CheckInMainWindow.lua",
+        "sha256": "619fc70cd8088b59afead3ff6a289092eb3cf5450149f6487bb80ca6086021af",
+        "lineStart": 112,
+        "lineEnd": 115
+      }
+    },
+    {
+      "guideId": "tutorial_generator_factory",
+      "id": "effect@TC-S021:102:2",
+      "sourceId": "TC-S021",
+      "callee": "inventoryBtn:SetClickActive",
+      "method": "SetClickActive",
+      "baselineCategory": "mounted-factory-ui",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+        "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+        "lineStart": 102,
+        "lineEnd": 102
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "현재 마운트한 보관함·공장 대상에서만 적용합니다. 네이티브 픽셀·연출 검증은 미확인입니다."
+    },
+    {
+      "guideId": "tutorial_generator_factory",
+      "id": "effect@TC-S021:121:2",
+      "sourceId": "TC-S021",
+      "callee": "window:StopPrompt",
+      "method": "StopPrompt",
+      "baselineCategory": "mounted-factory-ui",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+        "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+        "lineStart": 121,
+        "lineEnd": 121
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "현재 마운트한 보관함·공장 대상에서만 적용합니다. 네이티브 픽셀·연출 검증은 미확인입니다."
+    },
+    {
+      "guideId": "tutorial_generator_factory",
+      "id": "effect@TC-S021:141:4",
+      "sourceId": "TC-S021",
+      "callee": "window:RestartPrompt",
+      "method": "RestartPrompt",
+      "baselineCategory": "mounted-factory-ui",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+        "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+        "lineStart": 141,
+        "lineEnd": 141
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "현재 마운트한 보관함·공장 대상에서만 적용합니다. 네이티브 픽셀·연출 검증은 미확인입니다."
+    },
+    {
+      "guideId": "tutorial_generator_factory",
+      "id": "effect@TC-S021:142:4",
+      "sourceId": "TC-S021",
+      "callee": "window:StartPrompt",
+      "method": "StartPrompt",
+      "baselineCategory": "mounted-factory-ui",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterInventoryGeneratorFactory.lua",
+        "sha256": "fd8362deb70e700a98c5f94cdc5028c7f4519d7b4007258fb70ea1a3ce4538a1",
+        "lineStart": 142,
+        "lineEnd": 142
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "현재 마운트한 보관함·공장 대상에서만 적용합니다. 네이티브 픽셀·연출 검증은 미확인입니다."
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:73:8",
+      "sourceId": "TC-S023",
+      "callee": "self.m_mainWindow:SetSliderBtnEnable",
+      "method": "SetSliderBtnEnable",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 73,
+        "lineEnd": 73
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "hitbricks",
+      "originalRuntimeObserved": false,
+      "capability": "sliderEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/HitBricksActivity/View/HitBricksActivityMainWindow.lua",
+        "sha256": "f0331906cbb1a71ec2f2f28095afb394c795447428a38b0f40e80ce0675d1529",
+        "lineStart": 710,
+        "lineEnd": 715
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:103:4",
+      "sourceId": "TC-S023",
+      "callee": "GM.MiscModel:SetHitBricksTutorial",
+      "method": "SetHitBricksTutorial",
+      "baselineCategory": "finite-web-misc-db",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 103,
+        "lineEnd": 103
+      },
+      "arguments": [
+        {
+          "get": {
+            "ref": "tutorialState"
+          },
+          "key": "Hammer",
+          "method": false
+        }
+      ],
+      "argumentExpressions": [
+        "tutorialState.Hammer"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다."
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:136:6",
+      "sourceId": "TC-S023",
+      "callee": "topView:SetSliderBtnEnable",
+      "method": "SetSliderBtnEnable",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 136,
+        "lineEnd": 136
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "hitbricks",
+      "originalRuntimeObserved": false,
+      "capability": "sliderEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/HitBricksActivity/View/HitBricksActivityMainWindow.lua",
+        "sha256": "f0331906cbb1a71ec2f2f28095afb394c795447428a38b0f40e80ce0675d1529",
+        "lineStart": 710,
+        "lineEnd": 715
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:150:6",
+      "sourceId": "TC-S023",
+      "callee": "GM.MiscModel:SetHitBricksTutorial",
+      "method": "SetHitBricksTutorial",
+      "baselineCategory": "finite-web-misc-db",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 150,
+        "lineEnd": 150
+      },
+      "arguments": [
+        {
+          "get": {
+            "ref": "tutorialState"
+          },
+          "key": "Fireworks",
+          "method": false
+        }
+      ],
+      "argumentExpressions": [
+        "tutorialState.Fireworks"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다."
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:152:6",
+      "sourceId": "TC-S023",
+      "callee": "GM.UIManager:OpenView",
+      "method": "OpenView",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 152,
+        "lineEnd": 152
+      },
+      "arguments": [
+        {
+          "get": {
+            "ref": "activityDefinition"
+          },
+          "key": "FireworksWindowPrefabName",
+          "method": false
+        },
+        {
+          "ref": "activityType"
+        }
+      ],
+      "argumentExpressions": [
+        "activityDefinition.FireworksWindowPrefabName",
+        "activityType"
+      ],
+      "family": "hitbricks",
+      "originalRuntimeObserved": false,
+      "capability": "openWindow",
+      "disposition": "west-definition-and-binding-pending",
+      "remaining": "WestSearch 등록에는 FireworksWindowPrefabName이 없고 실제 출하 prefab LuaComponent에도 Fireworks 수신 필드가 없습니다. 분기 개방은 서버 hitBricks_firework_config에 달립니다. Crystal2Search 수신기로 치환하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:167:6",
+      "sourceId": "TC-S023",
+      "callee": "mainWindow:GetFireworksAni():Play",
+      "method": "Play",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 167,
+        "lineEnd": 167
+      },
+      "arguments": [
+        {
+          "v": "Fiirework_show"
+        }
+      ],
+      "argumentExpressions": [
+        "\"Fiirework_show\""
+      ],
+      "family": "hitbricks",
+      "originalRuntimeObserved": false,
+      "capability": "native-clip-pending",
+      "disposition": "west-definition-and-binding-pending",
+      "remaining": "WestSearch 등록에는 FireworksWindowPrefabName이 없고 실제 출하 prefab LuaComponent에도 Fireworks 수신 필드가 없습니다. 분기 개방은 서버 hitBricks_firework_config에 달립니다. Crystal2Search 수신기로 치환하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_hitbricks_west",
+      "id": "effect@TC-S023:168:6",
+      "sourceId": "TC-S023",
+      "callee": "mainWindow:FireworksTipShow",
+      "method": "FireworksTipShow",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 168,
+        "lineEnd": 168
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "hitbricks",
+      "originalRuntimeObserved": false,
+      "capability": "timed-tip",
+      "disposition": "west-definition-and-binding-pending",
+      "remaining": "WestSearch 등록에는 FireworksWindowPrefabName이 없고 실제 출하 prefab LuaComponent에도 Fireworks 수신 필드가 없습니다. 분기 개방은 서버 hitBricks_firework_config에 달립니다. Crystal2Search 수신기로 치환하지 않습니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/HitBricksActivity/View/HitBricksActivityMainWindow.lua",
+        "sha256": "f0331906cbb1a71ec2f2f28095afb394c795447428a38b0f40e80ce0675d1529",
+        "lineStart": 337,
+        "lineEnd": 346
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:73:8",
+      "sourceId": "TC-S023",
+      "callee": "self.m_mainWindow:SetSliderBtnEnable",
+      "method": "SetSliderBtnEnable",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 73,
+        "lineEnd": 73
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "hitbricks",
+      "originalRuntimeObserved": false,
+      "capability": "sliderEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/HitBricksActivity/View/HitBricksActivityMainWindow.lua",
+        "sha256": "f0331906cbb1a71ec2f2f28095afb394c795447428a38b0f40e80ce0675d1529",
+        "lineStart": 710,
+        "lineEnd": 715
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:103:4",
+      "sourceId": "TC-S023",
+      "callee": "GM.MiscModel:SetHitBricksTutorial",
+      "method": "SetHitBricksTutorial",
+      "baselineCategory": "finite-web-misc-db",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 103,
+        "lineEnd": 103
+      },
+      "arguments": [
+        {
+          "get": {
+            "ref": "tutorialState"
+          },
+          "key": "Hammer",
+          "method": false
+        }
+      ],
+      "argumentExpressions": [
+        "tutorialState.Hammer"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다."
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:136:6",
+      "sourceId": "TC-S023",
+      "callee": "topView:SetSliderBtnEnable",
+      "method": "SetSliderBtnEnable",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 136,
+        "lineEnd": 136
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "hitbricks",
+      "originalRuntimeObserved": false,
+      "capability": "sliderEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/HitBricksActivity/View/HitBricksActivityMainWindow.lua",
+        "sha256": "f0331906cbb1a71ec2f2f28095afb394c795447428a38b0f40e80ce0675d1529",
+        "lineStart": 710,
+        "lineEnd": 715
+      }
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:150:6",
+      "sourceId": "TC-S023",
+      "callee": "GM.MiscModel:SetHitBricksTutorial",
+      "method": "SetHitBricksTutorial",
+      "baselineCategory": "finite-web-misc-db",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 150,
+        "lineEnd": 150
+      },
+      "arguments": [
+        {
+          "get": {
+            "ref": "tutorialState"
+          },
+          "key": "Fireworks",
+          "method": false
+        }
+      ],
+      "argumentExpressions": [
+        "tutorialState.Fireworks"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다."
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:152:6",
+      "sourceId": "TC-S023",
+      "callee": "GM.UIManager:OpenView",
+      "method": "OpenView",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 152,
+        "lineEnd": 152
+      },
+      "arguments": [
+        {
+          "get": {
+            "ref": "activityDefinition"
+          },
+          "key": "FireworksWindowPrefabName",
+          "method": false
+        },
+        {
+          "ref": "activityType"
+        }
+      ],
+      "argumentExpressions": [
+        "activityDefinition.FireworksWindowPrefabName",
+        "activityType"
+      ],
+      "family": "hitbricks",
+      "originalRuntimeObserved": false,
+      "capability": "openWindow",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다."
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:167:6",
+      "sourceId": "TC-S023",
+      "callee": "mainWindow:GetFireworksAni():Play",
+      "method": "Play",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 167,
+        "lineEnd": 167
+      },
+      "arguments": [
+        {
+          "v": "Fiirework_show"
+        }
+      ],
+      "argumentExpressions": [
+        "\"Fiirework_show\""
+      ],
+      "family": "hitbricks",
+      "originalRuntimeObserved": false,
+      "capability": "native-clip-pending",
+      "disposition": "independent-native-curve-receiver",
+      "remaining": "정확 Animator→controller state Fiirework_show→clip과 7채널을 복원해 구조 계측 도형에 적용합니다. 원작 particle·shader·픽셀 및 Unity 재생 관측은 별도입니다."
+    },
+    {
+      "guideId": "tutorial_hitbricks_crystal2search",
+      "id": "effect@TC-S023:168:6",
+      "sourceId": "TC-S023",
+      "callee": "mainWindow:FireworksTipShow",
+      "method": "FireworksTipShow",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterHitBricks.lua",
+        "sha256": "06e586709564447eeed408a689f7bfff261b3e901223debce24957e404fa1e47",
+        "lineStart": 168,
+        "lineEnd": 168
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "hitbricks",
+      "originalRuntimeObserved": false,
+      "capability": "timed-tip",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/HitBricksActivity/View/HitBricksActivityMainWindow.lua",
+        "sha256": "f0331906cbb1a71ec2f2f28095afb394c795447428a38b0f40e80ce0675d1529",
+        "lineStart": 337,
+        "lineEnd": 346
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:29:8",
+      "sourceId": "TC-S026",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "method": "SetDragEnableOnTutorial",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 29,
+        "lineEnd": 29
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "album",
+      "originalRuntimeObserved": false,
+      "capability": "dragEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/AlbumActivity/View/AlbumActivityPackWindow.lua",
+        "sha256": "234f16b596c5c80c4fe5b105585a71a51cb2814f0aeb4660d9dfa8691faadd21",
+        "lineStart": 663,
+        "lineEnd": 665
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:43:8",
+      "sourceId": "TC-S026",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "method": "SetDragEnableOnTutorial",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 43,
+        "lineEnd": 43
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "album",
+      "originalRuntimeObserved": false,
+      "capability": "dragEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/AlbumActivity/View/AlbumActivityPackWindow.lua",
+        "sha256": "234f16b596c5c80c4fe5b105585a71a51cb2814f0aeb4660d9dfa8691faadd21",
+        "lineStart": 663,
+        "lineEnd": 665
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:79:6",
+      "sourceId": "TC-S026",
+      "callee": "GM.MiscModel:SetAlbumActivityTutorial",
+      "method": "SetAlbumActivityTutorial",
+      "baselineCategory": "finite-web-misc-db",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 79,
+        "lineEnd": 79
+      },
+      "arguments": [
+        {
+          "op": "or",
+          "a": {
+            "op": "and",
+            "a": {
+              "get": {
+                "ref": "self"
+              },
+              "key": "m_lasercardMode",
+              "method": false
+            },
+            "b": {
+              "get": {
+                "ref": "TutorialStatus"
+              },
+              "key": "AlreadyPlayed",
+              "method": false
+            }
+          },
+          "b": {
+            "get": {
+              "ref": "TutorialStatus"
+            },
+            "key": "NormalPlayedExceptLaser",
+            "method": false
+          }
+        }
+      ],
+      "argumentExpressions": [
+        "self.m_lasercardMode and TutorialStatus.AlreadyPlayed or TutorialStatus.NormalPlayedExceptLaser"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다."
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:82:6",
+      "sourceId": "TC-S026",
+      "callee": "GM.MiscModel:SetAlbumActivityTutorial",
+      "method": "SetAlbumActivityTutorial",
+      "baselineCategory": "finite-web-misc-db",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 82,
+        "lineEnd": 82
+      },
+      "arguments": [
+        {
+          "get": {
+            "ref": "TutorialStatus"
+          },
+          "key": "AlreadyPlayed",
+          "method": false
+        }
+      ],
+      "argumentExpressions": [
+        "TutorialStatus.AlreadyPlayed"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다."
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:120:8",
+      "sourceId": "TC-S026",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "method": "SetDragEnableOnTutorial",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 120,
+        "lineEnd": 120
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "album",
+      "originalRuntimeObserved": false,
+      "capability": "dragEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/AlbumActivity/View/AlbumActivityPackWindow.lua",
+        "sha256": "234f16b596c5c80c4fe5b105585a71a51cb2814f0aeb4660d9dfa8691faadd21",
+        "lineStart": 663,
+        "lineEnd": 665
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:232:6",
+      "sourceId": "TC-S026",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "method": "SetDragEnableOnTutorial",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 232,
+        "lineEnd": 232
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "album",
+      "originalRuntimeObserved": false,
+      "capability": "dragEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/AlbumActivity/View/AlbumActivityPackWindow.lua",
+        "sha256": "234f16b596c5c80c4fe5b105585a71a51cb2814f0aeb4660d9dfa8691faadd21",
+        "lineStart": 663,
+        "lineEnd": 665
+      }
+    },
+    {
+      "guideId": "tutorial_album_moon_start",
+      "id": "effect@TC-S026:242:4",
+      "sourceId": "TC-S026",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "method": "RemoveAllEventLocks",
+      "baselineCategory": "source-owner-lock-cleanup",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 242,
+        "lineEnd": 242
+      },
+      "arguments": [
+        {
+          "ref": "self"
+        }
+      ],
+      "argumentExpressions": [
+        "self"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다."
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:29:8",
+      "sourceId": "TC-S026",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "method": "SetDragEnableOnTutorial",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 29,
+        "lineEnd": 29
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "album",
+      "originalRuntimeObserved": false,
+      "capability": "dragEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/AlbumActivity/View/AlbumActivityPackWindow.lua",
+        "sha256": "234f16b596c5c80c4fe5b105585a71a51cb2814f0aeb4660d9dfa8691faadd21",
+        "lineStart": 663,
+        "lineEnd": 665
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:43:8",
+      "sourceId": "TC-S026",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "method": "SetDragEnableOnTutorial",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 43,
+        "lineEnd": 43
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "album",
+      "originalRuntimeObserved": false,
+      "capability": "dragEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/AlbumActivity/View/AlbumActivityPackWindow.lua",
+        "sha256": "234f16b596c5c80c4fe5b105585a71a51cb2814f0aeb4660d9dfa8691faadd21",
+        "lineStart": 663,
+        "lineEnd": 665
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:79:6",
+      "sourceId": "TC-S026",
+      "callee": "GM.MiscModel:SetAlbumActivityTutorial",
+      "method": "SetAlbumActivityTutorial",
+      "baselineCategory": "finite-web-misc-db",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 79,
+        "lineEnd": 79
+      },
+      "arguments": [
+        {
+          "op": "or",
+          "a": {
+            "op": "and",
+            "a": {
+              "get": {
+                "ref": "self"
+              },
+              "key": "m_lasercardMode",
+              "method": false
+            },
+            "b": {
+              "get": {
+                "ref": "TutorialStatus"
+              },
+              "key": "AlreadyPlayed",
+              "method": false
+            }
+          },
+          "b": {
+            "get": {
+              "ref": "TutorialStatus"
+            },
+            "key": "NormalPlayedExceptLaser",
+            "method": false
+          }
+        }
+      ],
+      "argumentExpressions": [
+        "self.m_lasercardMode and TutorialStatus.AlreadyPlayed or TutorialStatus.NormalPlayedExceptLaser"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다."
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:82:6",
+      "sourceId": "TC-S026",
+      "callee": "GM.MiscModel:SetAlbumActivityTutorial",
+      "method": "SetAlbumActivityTutorial",
+      "baselineCategory": "finite-web-misc-db",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 82,
+        "lineEnd": 82
+      },
+      "arguments": [
+        {
+          "get": {
+            "ref": "TutorialStatus"
+          },
+          "key": "AlreadyPlayed",
+          "method": false
+        }
+      ],
+      "argumentExpressions": [
+        "TutorialStatus.AlreadyPlayed"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다."
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:120:8",
+      "sourceId": "TC-S026",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "method": "SetDragEnableOnTutorial",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 120,
+        "lineEnd": 120
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "album",
+      "originalRuntimeObserved": false,
+      "capability": "dragEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/AlbumActivity/View/AlbumActivityPackWindow.lua",
+        "sha256": "234f16b596c5c80c4fe5b105585a71a51cb2814f0aeb4660d9dfa8691faadd21",
+        "lineStart": 663,
+        "lineEnd": 665
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:232:6",
+      "sourceId": "TC-S026",
+      "callee": "self.m_packWindow:SetDragEnableOnTutorial",
+      "method": "SetDragEnableOnTutorial",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 232,
+        "lineEnd": 232
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "album",
+      "originalRuntimeObserved": false,
+      "capability": "dragEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/AlbumActivity/View/AlbumActivityPackWindow.lua",
+        "sha256": "234f16b596c5c80c4fe5b105585a71a51cb2814f0aeb4660d9dfa8691faadd21",
+        "lineStart": 663,
+        "lineEnd": 665
+      }
+    },
+    {
+      "guideId": "tutorial_album_halloween_start",
+      "id": "effect@TC-S026:242:4",
+      "sourceId": "TC-S026",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "method": "RemoveAllEventLocks",
+      "baselineCategory": "source-owner-lock-cleanup",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAlbumBase.lua",
+        "sha256": "36a23bb2c41d46eadeba8b8cbf4ead0c5ef0cf4f3d649a5030bfacddd1cf9d40",
+        "lineStart": 242,
+        "lineEnd": 242
+      },
+      "arguments": [
+        {
+          "ref": "self"
+        }
+      ],
+      "argumentExpressions": [
+        "self"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다."
+    },
+    {
+      "guideId": "tutorial_temp",
+      "id": "effect@TC-S031:89:2",
+      "sourceId": "TC-S031",
+      "callee": "self.m_boardInfoBar:SetTransformButtonEnabled",
+      "method": "SetTransformButtonEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTemp.lua",
+        "sha256": "3f9ddc965d0a658be30f948da557b54a7639eb827536ecb135a159c93eacbba9",
+        "lineStart": 89,
+        "lineEnd": 89
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "transform",
+      "originalRuntimeObserved": false,
+      "capability": "transformEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/Board/View/BoardInfoBar.lua",
+        "sha256": "57ea2530907a6166a2180f35f911bcc2b045eb35c0ded8c5a03fe3f126f3bb8a",
+        "lineStart": 59,
+        "lineEnd": 62
+      }
+    },
+    {
+      "guideId": "tutorial_temp",
+      "id": "effect@TC-S031:102:4",
+      "sourceId": "TC-S031",
+      "callee": "self.m_boardInfoBar:SetTransformButtonEnabled",
+      "method": "SetTransformButtonEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTemp.lua",
+        "sha256": "3f9ddc965d0a658be30f948da557b54a7639eb827536ecb135a159c93eacbba9",
+        "lineStart": 102,
+        "lineEnd": 102
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "transform",
+      "originalRuntimeObserved": false,
+      "capability": "transformEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/Board/View/BoardInfoBar.lua",
+        "sha256": "57ea2530907a6166a2180f35f911bcc2b045eb35c0ded8c5a03fe3f126f3bb8a",
+        "lineStart": 59,
+        "lineEnd": 62
+      }
+    },
+    {
+      "guideId": "tutorial_bingo_start",
+      "id": "effect@TC-S032:47:2",
+      "sourceId": "TC-S032",
+      "callee": "view:OpenHelpWindw",
+      "method": "OpenHelpWindw",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterBingoStart.lua",
+        "sha256": "95a35da2c2b45356c15e16eeb53f896d763ac457e840acd1eeeff445ad6bbab1",
+        "lineStart": 47,
+        "lineEnd": 47
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "bingo",
+      "originalRuntimeObserved": false,
+      "capability": "help",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/Bingo/View/BingoActivityMainWindow.lua",
+        "sha256": "2251f40530f85a2cb3d39c2b6af7317a798e880aca4cc141a9774f4be71d5660",
+        "lineStart": 393,
+        "lineEnd": 398
+      }
+    },
+    {
+      "guideId": "tutorial_dig_collect",
+      "id": "effect@TC-S039:99:2",
+      "sourceId": "TC-S039",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "method": "RemoveAllEventLocks",
+      "baselineCategory": "source-owner-lock-cleanup",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterDigCollect.lua",
+        "sha256": "a97aac4fb80bb4250490a566169cce2172b0acb0dac7e488c46278cb6f27eebf",
+        "lineStart": 99,
+        "lineEnd": 99
+      },
+      "arguments": [
+        {
+          "ref": "self"
+        }
+      ],
+      "argumentExpressions": [
+        "self"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다."
+    },
+    {
+      "guideId": "tutorial_mission_open",
+      "id": "effect@TC-S042:62:2",
+      "sourceId": "TC-S042",
+      "callee": "window:SetScrollRectEnabled",
+      "method": "SetScrollRectEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMissionOpen.lua",
+        "sha256": "0b315af3406615fc8134f53d6a082426faa7206520f8e9f2e1ebbf3c5c20d9a6",
+        "lineStart": 62,
+        "lineEnd": 62
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "mission",
+      "originalRuntimeObserved": false,
+      "capability": "scrollEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/MissionActivity/View/MissionActivityMainWindow.lua",
+        "sha256": "04db7d313c51f937bc58262f62949c273c16cdb95c87745cc02ef5e0a7830174",
+        "lineStart": 247,
+        "lineEnd": 250
+      }
+    },
+    {
+      "guideId": "tutorial_mission_open",
+      "id": "effect@TC-S042:77:2",
+      "sourceId": "TC-S042",
+      "callee": "window:SetScrollRectEnabled",
+      "method": "SetScrollRectEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMissionOpen.lua",
+        "sha256": "0b315af3406615fc8134f53d6a082426faa7206520f8e9f2e1ebbf3c5c20d9a6",
+        "lineStart": 77,
+        "lineEnd": 77
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "mission",
+      "originalRuntimeObserved": false,
+      "capability": "scrollEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/MissionActivity/View/MissionActivityMainWindow.lua",
+        "sha256": "04db7d313c51f937bc58262f62949c273c16cdb95c87745cc02ef5e0a7830174",
+        "lineStart": 247,
+        "lineEnd": 250
+      }
+    },
+    {
+      "guideId": "tutorial_mission_open",
+      "id": "effect@TC-S042:103:4",
+      "sourceId": "TC-S042",
+      "callee": "window:SetScrollRectEnabled",
+      "method": "SetScrollRectEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMissionOpen.lua",
+        "sha256": "0b315af3406615fc8134f53d6a082426faa7206520f8e9f2e1ebbf3c5c20d9a6",
+        "lineStart": 103,
+        "lineEnd": 103
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "mission",
+      "originalRuntimeObserved": false,
+      "capability": "scrollEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/MissionActivity/View/MissionActivityMainWindow.lua",
+        "sha256": "04db7d313c51f937bc58262f62949c273c16cdb95c87745cc02ef5e0a7830174",
+        "lineStart": 247,
+        "lineEnd": 250
+      }
+    },
+    {
+      "guideId": "tutorial_puzzle",
+      "id": "effect@TC-S044:55:2",
+      "sourceId": "TC-S044",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "method": "RemoveAllEventLocks",
+      "baselineCategory": "source-owner-lock-cleanup",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPuzzle.lua",
+        "sha256": "181976702ce646159ae7bc779a0c7e3e732b51be260c8b107da0ef5ded3b3f53",
+        "lineStart": 55,
+        "lineEnd": 55
+      },
+      "arguments": [
+        {
+          "ref": "self"
+        }
+      ],
+      "argumentExpressions": [
+        "self"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다."
+    },
+    {
+      "guideId": "tutorial_puzzle",
+      "id": "effect@TC-S044:87:2",
+      "sourceId": "TC-S044",
+      "callee": "rightTopPiece:SetGlow",
+      "method": "SetGlow",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPuzzle.lua",
+        "sha256": "181976702ce646159ae7bc779a0c7e3e732b51be260c8b107da0ef5ded3b3f53",
+        "lineStart": 87,
+        "lineEnd": 87
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "puzzle",
+      "originalRuntimeObserved": false,
+      "capability": "glow",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/Puzzle/View/PuzzlePiece.lua",
+        "sha256": "d8e6e86bc418fa9ce05bd183047b685b8fc55f22eda87142c00ccecc8c150663",
+        "lineStart": 30,
+        "lineEnd": 33
+      }
+    },
+    {
+      "guideId": "tutorial_wheel",
+      "id": "effect@TC-S051:47:4",
+      "sourceId": "TC-S051",
+      "callee": "window:SetBtnEnabledForTutorial",
+      "method": "SetBtnEnabledForTutorial",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWheel.lua",
+        "sha256": "11b05f32eb932f256b0dace41bdbbdbd609fa976e8d3d457e1328b2ca2b97b53",
+        "lineStart": 47,
+        "lineEnd": 47
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "wheel",
+      "originalRuntimeObserved": false,
+      "capability": "buttonsEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/Wheel/View/WheelMainWindow.lua",
+        "sha256": "66a6afdfa34d99579f3c838df712edb113c50b5efe100c010a68de0fb3d32ffb",
+        "lineStart": 418,
+        "lineEnd": 425
+      }
+    },
+    {
+      "guideId": "tutorial_wheel",
+      "id": "effect@TC-S051:53:2",
+      "sourceId": "TC-S051",
+      "callee": "GM.MiscModel:SetWheelTutorial",
+      "method": "SetWheelTutorial",
+      "baselineCategory": "finite-web-misc-db",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWheel.lua",
+        "sha256": "11b05f32eb932f256b0dace41bdbbdbd609fa976e8d3d457e1328b2ca2b97b53",
+        "lineStart": 53,
+        "lineEnd": 53
+      },
+      "arguments": [
+        {
+          "v": 1
+        }
+      ],
+      "argumentExpressions": [
+        "1"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원작 계정 저장이 아닌 별도 웹 튜토리얼 DB입니다. 해당 원본 시작 전제는 별도 확인합니다."
+    },
+    {
+      "guideId": "tutorial_wheel",
+      "id": "effect@TC-S051:59:2",
+      "sourceId": "TC-S051",
+      "callee": "window:SetBtnEnabledForTutorial",
+      "method": "SetBtnEnabledForTutorial",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWheel.lua",
+        "sha256": "11b05f32eb932f256b0dace41bdbbdbd609fa976e8d3d457e1328b2ca2b97b53",
+        "lineStart": 59,
+        "lineEnd": 59
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "wheel",
+      "originalRuntimeObserved": false,
+      "capability": "buttonsEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/Wheel/View/WheelMainWindow.lua",
+        "sha256": "66a6afdfa34d99579f3c838df712edb113c50b5efe100c010a68de0fb3d32ffb",
+        "lineStart": 418,
+        "lineEnd": 425
+      }
+    },
+    {
+      "guideId": "tutorial_floatrace_entry",
+      "id": "effect@TC-S056:74:6",
+      "sourceId": "TC-S056",
+      "callee": "MainBoardView.GetInstance():GetOrderArea():ScrollToFloatRaceBoardEntry",
+      "method": "ScrollToFloatRaceBoardEntry",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterFloatRaceEntry.lua",
+        "sha256": "e97de0bf167d03f8db05cd7014b13d891531828025faeadab72bfaebbafd0074",
+        "lineStart": 74,
+        "lineEnd": 74
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "orders",
+      "originalRuntimeObserved": false,
+      "capability": "viewport",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다."
+    },
+    {
+      "guideId": "tutorial_upward_entry",
+      "id": "effect@TC-S058:96:8",
+      "sourceId": "TC-S058",
+      "callee": "MainBoardView.GetInstance():GetOrderArea():ScrollToUpwardBoardEntry",
+      "method": "ScrollToUpwardBoardEntry",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterUpwardEntry.lua",
+        "sha256": "44cb9d66e122240dae8dcc4d83f35a795b5ac32758b56b278fb738ee07f661e9",
+        "lineStart": 96,
+        "lineEnd": 96
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "orders",
+      "originalRuntimeObserved": false,
+      "capability": "viewport",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다."
+    },
+    {
+      "guideId": "tutorial_gomeroom_game",
+      "id": "effect@TC-S061:47:2",
+      "sourceId": "TC-S061",
+      "callee": "self.m_activityModel:SetGameTutorial",
+      "method": "SetGameTutorial",
+      "baselineCategory": "finite-web-activity-flag",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGnomeRoomGame.lua",
+        "sha256": "b844a2e9b8b4c6feeb6ddb5ccf83a00b10221f06d81d935fc8d5b30b8fe0cd1f",
+        "lineStart": 47,
+        "lineEnd": 47
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_gomeroom_game",
+      "id": "effect@TC-S061:73:4",
+      "sourceId": "TC-S061",
+      "callee": "openView:ShowTimeView",
+      "method": "ShowTimeView",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterGnomeRoomGame.lua",
+        "sha256": "b844a2e9b8b4c6feeb6ddb5ccf83a00b10221f06d81d935fc8d5b30b8fe0cd1f",
+        "lineStart": 73,
+        "lineEnd": 73
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "room",
+      "originalRuntimeObserved": false,
+      "capability": "room-timeline",
+      "disposition": "independent-research-receiver",
+      "remaining": "원본 1초 지연·입력 잠금·Animator Show 요청·연구 unlock 표식 제거·추가 0.25초 음향 요청 절차입니다. 원작 Animator 클립·음원 출력·계정 Room DB 수명주기는 검증되지 않았습니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/Room/View/RoomMainWindow.lua",
+        "sha256": "69c8113b61f59bb1685f367326bf51b827af670e6a9e1d1b056bf35e406c0626",
+        "lineStart": 138,
+        "lineEnd": 151
+      }
+    },
+    {
+      "guideId": "tutorial_weekly_quest_star_reward",
+      "id": "effect@TC-S063:53:6",
+      "sourceId": "TC-S063",
+      "callee": "self.m_randomRewardTip:SetCanTouchClose",
+      "method": "SetCanTouchClose",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestStarReward.lua",
+        "sha256": "8b67db7d14c71d5bbc28c8b579ac3f4cbf512b43e348bc6095acb4e9c5fd4530",
+        "lineStart": 53,
+        "lineEnd": 53
+      },
+      "arguments": [
+        {
+          "get": {
+            "ref": "self"
+          },
+          "key": "m_randomRewardTipCanTouchClose",
+          "method": false
+        }
+      ],
+      "argumentExpressions": [
+        "self.m_randomRewardTipCanTouchClose"
+      ],
+      "family": "reward-tip",
+      "originalRuntimeObserved": false,
+      "capability": "touchCloseEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/UI/SubView/AdaptiveTipBubble.lua",
+        "sha256": "14c37466630cfd5ebeab9d198da5cde2b4e077ab0fe14bbbb8765f1d303a67ab",
+        "lineStart": 161,
+        "lineEnd": 164
+      }
+    },
+    {
+      "guideId": "tutorial_weekly_quest_star_reward",
+      "id": "effect@TC-S063:107:2",
+      "sourceId": "TC-S063",
+      "callee": "randomRewardTip:SetCanTouchClose",
+      "method": "SetCanTouchClose",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestStarReward.lua",
+        "sha256": "8b67db7d14c71d5bbc28c8b579ac3f4cbf512b43e348bc6095acb4e9c5fd4530",
+        "lineStart": 107,
+        "lineEnd": 107
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "reward-tip",
+      "originalRuntimeObserved": false,
+      "capability": "touchCloseEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/UI/SubView/AdaptiveTipBubble.lua",
+        "sha256": "14c37466630cfd5ebeab9d198da5cde2b4e077ab0fe14bbbb8765f1d303a67ab",
+        "lineStart": 161,
+        "lineEnd": 164
+      }
+    },
+    {
+      "guideId": "tutorial_weekly_quest_star_reward",
+      "id": "effect@TC-S063:115:6",
+      "sourceId": "TC-S063",
+      "callee": "randomRewardTip:SetCanTouchClose",
+      "method": "SetCanTouchClose",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestStarReward.lua",
+        "sha256": "8b67db7d14c71d5bbc28c8b579ac3f4cbf512b43e348bc6095acb4e9c5fd4530",
+        "lineStart": 115,
+        "lineEnd": 115
+      },
+      "arguments": [
+        {
+          "ref": "canTouchClose"
+        }
+      ],
+      "argumentExpressions": [
+        "canTouchClose"
+      ],
+      "family": "reward-tip",
+      "originalRuntimeObserved": false,
+      "capability": "touchCloseEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/UI/SubView/AdaptiveTipBubble.lua",
+        "sha256": "14c37466630cfd5ebeab9d198da5cde2b4e077ab0fe14bbbb8765f1d303a67ab",
+        "lineStart": 161,
+        "lineEnd": 164
+      }
+    },
+    {
+      "guideId": "tutorial_weekly_quest_star_reward",
+      "id": "effect@TC-S063:120:6",
+      "sourceId": "TC-S063",
+      "callee": "randomRewardTip:SetCanTouchClose",
+      "method": "SetCanTouchClose",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterWeeklyActiveQuestStarReward.lua",
+        "sha256": "8b67db7d14c71d5bbc28c8b579ac3f4cbf512b43e348bc6095acb4e9c5fd4530",
+        "lineStart": 120,
+        "lineEnd": 120
+      },
+      "arguments": [
+        {
+          "ref": "canTouchClose"
+        }
+      ],
+      "argumentExpressions": [
+        "canTouchClose"
+      ],
+      "family": "reward-tip",
+      "originalRuntimeObserved": false,
+      "capability": "touchCloseEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/UI/SubView/AdaptiveTipBubble.lua",
+        "sha256": "14c37466630cfd5ebeab9d198da5cde2b4e077ab0fe14bbbb8765f1d303a67ab",
+        "lineStart": 161,
+        "lineEnd": 164
+      }
+    },
+    {
+      "guideId": "tutorial_chest_custom_order_start",
+      "id": "effect@TC-S065:46:2",
+      "sourceId": "TC-S065",
+      "callee": "MainBoardView.GetInstance():GetOrderArea():ScrollToMiddle",
+      "method": "ScrollToMiddle",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterChestCustomOrderStart.lua",
+        "sha256": "aa90ffe9144b262ad9fa7fe58b1d1b649df676d710f1423e862b57ba63707089",
+        "lineStart": 46,
+        "lineEnd": 46
+      },
+      "arguments": [
+        {
+          "get": {
+            "get": {
+              "ref": "self"
+            },
+            "key": "m_orderCell"
+          },
+          "key": "transform"
+        }
+      ],
+      "argumentExpressions": [
+        "self.m_orderCell.transform"
+      ],
+      "family": "orders",
+      "originalRuntimeObserved": false,
+      "capability": "viewport",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/Board/View/Order/BaseOrderArea.lua",
+        "sha256": "06aadb6f80078e6197882b8bbdaf75e8811f811d48809f044c090c77a2d94332",
+        "lineStart": 350,
+        "lineEnd": 353
+      }
+    },
+    {
+      "guideId": "tutorial_acquire_avatar_frame",
+      "id": "effect@TC-S072:45:4",
+      "sourceId": "TC-S072",
+      "callee": "window:ChangeToAvatarFrameTap",
+      "method": "ChangeToAvatarFrameTap",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAcquireAvatarFrame.lua",
+        "sha256": "587679ce5bcd7cd5775366f4bca5b1ac31ad4507709ccba89367288ca89ee8e2",
+        "lineStart": 45,
+        "lineEnd": 45
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "avatar",
+      "originalRuntimeObserved": false,
+      "capability": "tabs",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/UI/Window/SetUserInfo/SettingUserInfoWindow.lua",
+        "sha256": "8125c7f58f4a18c2a5bf08c556485169693bc1d69feee46a66a152c5bbedca77",
+        "lineStart": 264,
+        "lineEnd": 274
+      }
+    },
+    {
+      "guideId": "tutorial_acquire_avatar_frame",
+      "id": "effect@TC-S072:50:8",
+      "sourceId": "TC-S072",
+      "callee": "window:SkipToNewAvatarFrame",
+      "method": "SkipToNewAvatarFrame",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAcquireAvatarFrame.lua",
+        "sha256": "587679ce5bcd7cd5775366f4bca5b1ac31ad4507709ccba89367288ca89ee8e2",
+        "lineStart": 50,
+        "lineEnd": 50
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "avatar",
+      "originalRuntimeObserved": false,
+      "capability": "viewport",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/UI/Window/SetUserInfo/SettingUserInfoWindow.lua",
+        "sha256": "8125c7f58f4a18c2a5bf08c556485169693bc1d69feee46a66a152c5bbedca77",
+        "lineStart": 244,
+        "lineEnd": 255
+      }
+    },
+    {
+      "guideId": "tutorial_acquire_avatar_frame",
+      "id": "effect@TC-S072:51:8",
+      "sourceId": "TC-S072",
+      "callee": "window:ScrollViewEnabled",
+      "method": "ScrollViewEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAcquireAvatarFrame.lua",
+        "sha256": "587679ce5bcd7cd5775366f4bca5b1ac31ad4507709ccba89367288ca89ee8e2",
+        "lineStart": 51,
+        "lineEnd": 51
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "avatar",
+      "originalRuntimeObserved": false,
+      "capability": "scrollEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/UI/Window/SetUserInfo/SettingUserInfoWindow.lua",
+        "sha256": "8125c7f58f4a18c2a5bf08c556485169693bc1d69feee46a66a152c5bbedca77",
+        "lineStart": 256,
+        "lineEnd": 259
+      }
+    },
+    {
+      "guideId": "tutorial_acquire_avatar_frame",
+      "id": "effect@TC-S072:73:2",
+      "sourceId": "TC-S072",
+      "callee": "window:ScrollViewEnabled",
+      "method": "ScrollViewEnabled",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterAcquireAvatarFrame.lua",
+        "sha256": "587679ce5bcd7cd5775366f4bca5b1ac31ad4507709ccba89367288ca89ee8e2",
+        "lineStart": 73,
+        "lineEnd": 73
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": "avatar",
+      "originalRuntimeObserved": false,
+      "capability": "scrollEnabled",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/UI/Window/SetUserInfo/SettingUserInfoWindow.lua",
+        "sha256": "8125c7f58f4a18c2a5bf08c556485169693bc1d69feee46a66a152c5bbedca77",
+        "lineStart": 256,
+        "lineEnd": 259
+      }
+    },
+    {
+      "guideId": "tutorial_seafood_tutorial_order",
+      "id": "effect@TC-S074:33:2",
+      "sourceId": "TC-S074",
+      "callee": "MainBoardView.GetInstance():GetOrderArea():ScrollToMiddle",
+      "method": "ScrollToMiddle",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterSeafoodTutorialOrder.lua",
+        "sha256": "97e1bd82976211a45b147e5d03c048c75f60223c3177d078d5c2c8835f7b6668",
+        "lineStart": 33,
+        "lineEnd": 33
+      },
+      "arguments": [
+        {
+          "get": {
+            "get": {
+              "ref": "self"
+            },
+            "key": "m_orderCell"
+          },
+          "key": "transform"
+        }
+      ],
+      "argumentExpressions": [
+        "self.m_orderCell.transform"
+      ],
+      "family": "orders",
+      "originalRuntimeObserved": false,
+      "capability": "viewport",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/Board/View/Order/BaseOrderArea.lua",
+        "sha256": "06aadb6f80078e6197882b8bbdaf75e8811f811d48809f044c090c77a2d94332",
+        "lineStart": 350,
+        "lineEnd": 353
+      }
+    },
+    {
+      "guideId": "tutorial_midfallMapExplore_map",
+      "id": "effect@TC-S081:65:4",
+      "sourceId": "TC-S081",
+      "callee": "self.m_activityModel:SetPlayFirstShowBubble",
+      "method": "SetPlayFirstShowBubble",
+      "baselineCategory": "finite-web-activity-flag",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_mapNewBase.lua",
+        "sha256": "741f6dd9c93376ac20e28c0b04b3ba51a819cd0db6af9f7d7f503b94559edf37",
+        "lineStart": 65,
+        "lineEnd": 65
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_midfallMapExplore_map",
+      "id": "effect@TC-S081:70:6",
+      "sourceId": "TC-S081",
+      "callee": "model:SetTutorialStartFinish",
+      "method": "SetTutorialStartFinish",
+      "baselineCategory": "finite-web-activity-flag",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_mapNewBase.lua",
+        "sha256": "741f6dd9c93376ac20e28c0b04b3ba51a819cd0db6af9f7d7f503b94559edf37",
+        "lineStart": 70,
+        "lineEnd": 70
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_midfallMapExplore_board",
+      "id": "effect@TC-S083:35:8",
+      "sourceId": "TC-S083",
+      "callee": "model:SetTutorialBoardFinish",
+      "method": "SetTutorialBoardFinish",
+      "baselineCategory": "finite-web-activity-flag",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_boardbase.lua",
+        "sha256": "36e6e3184dc351e9887df2e63926b3fa0724b57599c2949284bb6710988eab5d",
+        "lineStart": 35,
+        "lineEnd": 35
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_midfallMapExplore_board",
+      "id": "effect@TC-S083:66:4",
+      "sourceId": "TC-S083",
+      "callee": "model:SetTutorialBoardFinish",
+      "method": "SetTutorialBoardFinish",
+      "baselineCategory": "finite-web-activity-flag",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_boardbase.lua",
+        "sha256": "36e6e3184dc351e9887df2e63926b3fa0724b57599c2949284bb6710988eab5d",
+        "lineStart": 66,
+        "lineEnd": 66
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_halloweenMapExplore_map",
+      "id": "effect@TC-S081:65:4",
+      "sourceId": "TC-S081",
+      "callee": "self.m_activityModel:SetPlayFirstShowBubble",
+      "method": "SetPlayFirstShowBubble",
+      "baselineCategory": "finite-web-activity-flag",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_mapNewBase.lua",
+        "sha256": "741f6dd9c93376ac20e28c0b04b3ba51a819cd0db6af9f7d7f503b94559edf37",
+        "lineStart": 65,
+        "lineEnd": 65
+      },
+      "arguments": [
+        {
+          "v": true
+        }
+      ],
+      "argumentExpressions": [
+        "true"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_halloweenMapExplore_map",
+      "id": "effect@TC-S081:70:6",
+      "sourceId": "TC-S081",
+      "callee": "model:SetTutorialStartFinish",
+      "method": "SetTutorialStartFinish",
+      "baselineCategory": "finite-web-activity-flag",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_mapNewBase.lua",
+        "sha256": "741f6dd9c93376ac20e28c0b04b3ba51a819cd0db6af9f7d7f503b94559edf37",
+        "lineStart": 70,
+        "lineEnd": 70
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_halloweenMapExplore_board",
+      "id": "effect@TC-S083:35:8",
+      "sourceId": "TC-S083",
+      "callee": "model:SetTutorialBoardFinish",
+      "method": "SetTutorialBoardFinish",
+      "baselineCategory": "finite-web-activity-flag",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_boardbase.lua",
+        "sha256": "36e6e3184dc351e9887df2e63926b3fa0724b57599c2949284bb6710988eab5d",
+        "lineStart": 35,
+        "lineEnd": 35
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_halloweenMapExplore_board",
+      "id": "effect@TC-S083:66:4",
+      "sourceId": "TC-S083",
+      "callee": "model:SetTutorialBoardFinish",
+      "method": "SetTutorialBoardFinish",
+      "baselineCategory": "finite-web-activity-flag",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterMapExplore_boardbase.lua",
+        "sha256": "36e6e3184dc351e9887df2e63926b3fa0724b57599c2949284bb6710988eab5d",
+        "lineStart": 66,
+        "lineEnd": 66
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다."
+    },
+    {
+      "guideId": "tutorial_team_window",
+      "id": "effect@TC-S087:100:4",
+      "sourceId": "TC-S087",
+      "callee": "teamModel:SetCurState",
+      "method": "SetCurState",
+      "baselineCategory": "native-model-unimplemented",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTeamWindow.lua",
+        "sha256": "da3a2b7c396628bd0af5646c33d81e6c44b4007dbf351e96dc7199a522ffac53",
+        "lineStart": 100,
+        "lineEnd": 100
+      },
+      "arguments": [
+        {
+          "get": {
+            "ref": "TeamActivityState"
+          },
+          "key": "OnGoing",
+          "method": false
+        }
+      ],
+      "argumentExpressions": [
+        "TeamActivityState.OnGoing"
+      ],
+      "family": "team",
+      "originalRuntimeObserved": false,
+      "capability": "team-model",
+      "disposition": "independent-research-receiver",
+      "remaining": "HasRival·Started·명시 시각·점수·목표점수로 즉시 시작/비종료 분기만 구현합니다. 운영 속도표·종료 보상·나중 점수 진행은 미확보입니다.",
+      "receiverSource": {
+        "path": "Lua_Activity/TeamActivity/Model/TeamActivityModel.lua",
+        "sha256": "a4678ae9711fb69b04bf0cdb99fb3fa79f04b2d6a8a5bf1dd31d1e4a1524c955",
+        "lineStart": 868,
+        "lineEnd": 878
+      }
+    },
+    {
+      "guideId": "tutorial_taskLimitTimeReward_start",
+      "id": "effect@TC-S090:101:2",
+      "sourceId": "TC-S090",
+      "callee": "GM.UIManager:RemoveAllEventLocks",
+      "method": "RemoveAllEventLocks",
+      "baselineCategory": "source-owner-lock-cleanup",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterTaskLimitTimeStart.lua",
+        "sha256": "37aa52bef4753ad2d216a596a79b068c5a33fd84966cba8f166001152aba5409",
+        "lineStart": 101,
+        "lineEnd": 101
+      },
+      "arguments": [
+        {
+          "ref": "self"
+        }
+      ],
+      "argumentExpressions": [
+        "self"
+      ],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "실제 소유자 identity가 확인된 입력 잠금만 해제합니다."
+    },
+    {
+      "guideId": "tutorial_exped_entry",
+      "id": "effect@TC-S093:96:8",
+      "sourceId": "TC-S093",
+      "callee": "MainBoardView.GetInstance():GetOrderArea():ScrollToExpedBoardEntry",
+      "method": "ScrollToExpedBoardEntry",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterExpedEntry.lua",
+        "sha256": "5c2aec2fd72e7f14fcae7da5ec10667dd78f11aae1446d4673512470f188261c",
+        "lineStart": 96,
+        "lineEnd": 96
+      },
+      "arguments": [
+        {
+          "v": false
+        }
+      ],
+      "argumentExpressions": [
+        "false"
+      ],
+      "family": "orders",
+      "originalRuntimeObserved": false,
+      "capability": "viewport",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다."
+    },
+    {
+      "guideId": "tutorial_extra_customer",
+      "id": "effect@TC-S095:82:6",
+      "sourceId": "TC-S095",
+      "callee": "self.m_cell:ScrollToOrder",
+      "method": "ScrollToOrder",
+      "baselineCategory": "native-target-unavailable",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterExtraCustomer.lua",
+        "sha256": "ab1678e0ca8a13b1e86c599e751a5ddd8e66f26702c3e52587678b6d4cf9822b",
+        "lineStart": 82,
+        "lineEnd": 82
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": "orders",
+      "originalRuntimeObserved": false,
+      "capability": "viewport",
+      "disposition": "independent-research-receiver",
+      "remaining": "원작 활동 배정·계정 상태·화면 픽셀 검증은 별도입니다. 독립 연구 수신기만 적용합니다.",
+      "receiverSource": {
+        "path": "Lua_Core/Board/View/Order/BaseOrderCell.lua",
+        "sha256": "052429be6760b5fc9c74903257f8827d1d689c01aff22b55dea62ca7355a6460",
+        "lineStart": 563,
+        "lineEnd": 566
+      }
+    },
+    {
+      "guideId": "tutorial_dailyRating_piggyBank_start",
+      "id": "effect@TC-S098:64:4",
+      "sourceId": "TC-S098",
+      "callee": "self.m_activityModel:SetPiggyTutorialStart",
+      "method": "SetPiggyTutorialStart",
+      "baselineCategory": "finite-web-activity-flag",
+      "source": {
+        "path": "analysis/lua/Lua_Core/Model/Tutorial/Executer/TutorialExecuterPiggyBankStart.lua",
+        "sha256": "d0ea4c4649581c9035096754d6c8992455036d8e47e00b0d9018fcf7114c4a10",
+        "lineStart": 64,
+        "lineEnd": 64
+      },
+      "arguments": [],
+      "argumentExpressions": [],
+      "family": null,
+      "originalRuntimeObserved": false,
+      "disposition": "existing-adapter",
+      "remaining": "원본 활동 종류·ID·시작 전제가 필요합니다. 연구 모의 시즌을 원작 활동으로 자동 연결하지 않습니다."
+    }
+  ],
+  "fireworks": {
+    "stateName": "Fiirework_show",
+    "stateIndex": 2,
+    "clipIndex": 2,
+    "duration": 1.0,
+    "startTime": 0.0,
+    "sampleRate": 60.0,
+    "speed": 1.0,
+    "loop": false,
+    "eventCount": 0,
+    "channels": [
+      {
+        "index": 0,
+        "nodePath": "",
+        "nodePathCRC32": 0,
+        "property": "localScale",
+        "axis": 0,
+        "initialValue": 0.0,
+        "keys": [
+          {
+            "time": 0.0,
+            "coefficients": [
+              -453.5999755859375,
+              113.39999389648438,
+              0.0,
+              0.0
+            ],
+            "value": 0.0
+          },
+          {
+            "time": 0.1666666716337204,
+            "coefficients": [
+              21.599979400634766,
+              -5.399994850158691,
+              0.0,
+              1.0499999523162842
+            ],
+            "value": 1.0499999523162842
+          },
+          {
+            "time": 0.3333333432674408,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "value": 1.0
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "nodePath": "",
+        "nodePathCRC32": 0,
+        "property": "localScale",
+        "axis": 1,
+        "initialValue": 0.0,
+        "keys": [
+          {
+            "time": 0.0,
+            "coefficients": [
+              -453.5999755859375,
+              113.39999389648438,
+              0.0,
+              0.0
+            ],
+            "value": 0.0
+          },
+          {
+            "time": 0.1666666716337204,
+            "coefficients": [
+              21.599979400634766,
+              -5.399994850158691,
+              0.0,
+              1.0499999523162842
+            ],
+            "value": 1.0499999523162842
+          },
+          {
+            "time": 0.3333333432674408,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "value": 1.0
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "nodePath": "",
+        "nodePathCRC32": 0,
+        "property": "localScale",
+        "axis": 2,
+        "initialValue": 1.0,
+        "keys": [
+          {
+            "time": 0.0,
+            "coefficients": [
+              -21.599979400634766,
+              5.399994850158691,
+              0.0,
+              1.0
+            ],
+            "value": 1.0
+          },
+          {
+            "time": 0.1666666716337204,
+            "coefficients": [
+              21.599979400634766,
+              -5.399994850158691,
+              0.0,
+              1.0499999523162842
+            ],
+            "value": 1.0499999523162842
+          },
+          {
+            "time": 0.3333333432674408,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "value": 1.0
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "nodePath": "icon",
+        "nodePathCRC32": 1704208859,
+        "property": "localScale",
+        "axis": 0,
+        "initialValue": 0.0,
+        "keys": [
+          {
+            "time": 0.0833333358168602,
+            "coefficients": [
+              -518.4002075195312,
+              129.60003662109375,
+              0.0,
+              0.0
+            ],
+            "value": 0.0
+          },
+          {
+            "time": 0.25,
+            "coefficients": [
+              86.4000473022461,
+              -21.60000991821289,
+              0.0,
+              1.2000000476837158
+            ],
+            "value": 1.2000000476837158
+          },
+          {
+            "time": 0.4166666567325592,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "value": 1.0
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "nodePath": "icon",
+        "nodePathCRC32": 1704208859,
+        "property": "localScale",
+        "axis": 1,
+        "initialValue": 0.0,
+        "keys": [
+          {
+            "time": 0.0833333358168602,
+            "coefficients": [
+              -518.4002075195312,
+              129.60003662109375,
+              0.0,
+              0.0
+            ],
+            "value": 0.0
+          },
+          {
+            "time": 0.25,
+            "coefficients": [
+              86.4000473022461,
+              -21.60000991821289,
+              0.0,
+              1.2000000476837158
+            ],
+            "value": 1.2000000476837158
+          },
+          {
+            "time": 0.4166666567325592,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "value": 1.0
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "nodePath": "icon",
+        "nodePathCRC32": 1704208859,
+        "property": "localScale",
+        "axis": 2,
+        "initialValue": 1.0,
+        "keys": [
+          {
+            "time": 0.0833333358168602,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "value": 1.0
+          },
+          {
+            "time": 0.25,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "value": 1.0
+          },
+          {
+            "time": 0.4166666567325592,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "value": 1.0
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "nodePath": "icon/effect_huojian_sweep",
+        "nodePathCRC32": 3505696242,
+        "property": "activeSelf",
+        "axis": 0,
+        "initialValue": 0.0,
+        "keys": [
+          {
+            "time": 0.0,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "value": 0.0
+          },
+          {
+            "time": 0.5,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "value": 1.0
+          },
+          {
+            "time": 1.0,
+            "coefficients": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "value": 0.0
+          }
+        ]
+      }
+    ],
+    "luaComponent": {
+      "id": "6a18345a23a484aea082011b1c23fdee",
+      "bundleFile": "hitbricks_assets_assets/hitbricks/crystal2search_prefab_a88ea2367612489719b96bfe938e0af2.bundle",
+      "serializedFile": "CAB-66fc3ba09f0305f22fbf21260d295f25",
+      "pathId": "5292104789405491535",
+      "type": "MonoBehaviour",
+      "sourceSHA256": "7b541f12658aaf7a4f91c139288f139467e65717238904fd71589e368f82efbd",
+      "sourceBytes": 1964
+    },
+    "animator": {
+      "id": "605495bf81e0f2ea778b424f6f91ab6c",
+      "bundleFile": "hitbricks_assets_assets/hitbricks/crystal2search_prefab_a88ea2367612489719b96bfe938e0af2.bundle",
+      "serializedFile": "CAB-66fc3ba09f0305f22fbf21260d295f25",
+      "pathId": "-500541314131036915",
+      "type": "Animator",
+      "sourceSHA256": "5ea129d89c3e0cfeec73fe8d05ead82686259995f4e454eeb099dd52e12c300c",
+      "sourceBytes": 56
+    },
+    "controller": {
+      "id": "41ad12806855256334d13a4ae16aedaa",
+      "bundleFile": "hitbricks_assets_assets/hitbricks/crystal2search_others_930fe8bf8037c96173d5e3c2cce016a6.bundle",
+      "serializedFile": "CAB-cff1448997d9876a48ffdf1c65ed68e2",
+      "pathId": "4858040548769716515",
+      "type": "AnimatorController",
+      "sourceSHA256": "6799d5d8029f3597b8fae71bf2df2c42eeee10439e219c898473d158579d7b8b",
+      "sourceBytes": 828
+    },
+    "clip": {
+      "id": "96d9da24ba78b0d0cd57c4b344837849",
+      "bundleFile": "hitbricks_assets_assets/hitbricks/crystal2search_others_930fe8bf8037c96173d5e3c2cce016a6.bundle",
+      "serializedFile": "CAB-cff1448997d9876a48ffdf1c65ed68e2",
+      "pathId": "-5904896653711550423",
+      "type": "AnimationClip",
+      "sourceSHA256": "bede5d73b767f9df04d60cf047fb35fa1e84d69bac00b729935d8fe44d4e20c4",
+      "sourceBytes": 3024
+    },
+    "westLuaComponent": {
+      "id": "3f2ccaa6d85e977d834d1103d2537c6f",
+      "bundleFile": "hitbricks_assets_assets/hitbricks/westsearch_prefab_0645244f91f8daae5970f3d073a13c97.bundle",
+      "serializedFile": "CAB-42e2aa40270a8523ae85330c984883d0",
+      "pathId": "3525944761030287905",
+      "type": "MonoBehaviour",
+      "sourceSHA256": "d9af29c488fb1618adb3f7a3e730aac7650070227935865c95763ea9ed3e50c0",
+      "sourceBytes": 1528
+    },
+    "westSerializedFireworksFields": [],
+    "completeStreamBytes": 640,
+    "maximumScaleCubicEndpointError": 8.83032957865737e-09,
+    "originalRuntimeObserved": false,
+    "presentationBoundary": "7채널의 원본 곡선을 구조 계측 미리보기의 대리 도형에 적용합니다. 실제 UI 그림·particle·shader·Unity Animator 스케줄링 검증은 별도입니다."
+  },
+  "boundaries": [
+    "독립 연구 UI이며 실제 원작 활동이나 메인 계정 상태가 아닙니다.",
+    "WestSearch의 출하 정의·prefab에 없는 Fireworks 수신기를 Crystal2Search 수신기로 치환하지 않습니다.",
+    "서버 활동 배정·비용·점수표·보상표·실기 좌표/연출 검증은 구현과 구분합니다.",
+    "새 연구 surface의 UI 크기와 색은 웹 표시용입니다. 원작 픽셀 재현을 주장하지 않습니다.",
+    "독립 수신기 재마운트·재접속 시 표시 연출의 시계는 다시 시작합니다. 원작 진행 중 네이티브 애니메이션의 이어재생을 주장하지 않습니다.",
+    "Harrison의 총 이동 490·기간 0.3초는 원본이며 웹 중간 보간/픽셀 단위는 연구 표시입니다."
+  ]
+}

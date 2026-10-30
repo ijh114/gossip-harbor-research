@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {JSDOM} from 'jsdom';
+import {tutorialFocusTargets,mountTutorialFocus} from '../src/tutorial-focus.mjs';
+const view={valid:true,enabled:true,ambiguity:null,active:[{id:'guide',strong:true,binding:{origin:'verified-web-adapter',kind:'cell',uid:'42',index:1,selector:'[data-play="game-cell"][data-value="1"]'}}]};
+function dom(){return new JSDOM('<section id="root"><button data-play="game-cell" data-value="1">원본 대상</button><button data-play="game-cell" data-value="2">다른 칸</button></section>',{pretendToBeVisual:true});}
+test('only one source-bound mounted target is highlighted, and unresolved/ambiguous/stale UID bindings do not invent targets',()=>{
+ const d=dom();try{const root=d.window.document.getElementById('root');assert.equal(tutorialFocusTargets(root,view).length,1);assert.equal(tutorialFocusTargets(root,{...view,ambiguity:{reason:'order'}}).length,0);assert.equal(tutorialFocusTargets(root,view,{validateBinding:()=>false}).length,0);const bad=structuredClone(view);bad.active[0].binding.origin='guessed';assert.equal(tutorialFocusTargets(root,bad).length,0);root.append(root.firstElementChild.cloneNode(true));assert.equal(tutorialFocusTargets(root,view).length,0);}finally{d.window.close();}
+});
+test('web mask leaves the actual action intact, blocks outside pointer input and releases geometry/listeners on cleanup',()=>{
+ const d=dom();try{const w=d.window,root=w.document.getElementById('root'),button=root.firstElementChild;root.style.position='static';root.getBoundingClientRect=()=>({left:10,top:20,width:300,height:500});button.getBoundingClientRect=()=>({left:60,top:100,right:110,bottom:150,width:50,height:50});let actions=0,blocked=0;button.addEventListener('click',()=>actions++);const cleanup=mountTutorialFocus(root,view,{onBlocked:()=>blocked++});assert.equal(root.querySelectorAll('.tutorial-focus-ring').length,1);const panels=[...root.querySelectorAll('.tutorial-focus-panel')];assert.equal(panels.filter(x=>!x.hidden).length,4);button.click();assert.equal(actions,1);const event=new w.Event('pointerdown',{cancelable:true,bubbles:true});panels[0].dispatchEvent(event);assert.equal(event.defaultPrevented,true);assert.equal(blocked,1);assert.equal(actions,1);cleanup();assert.equal(root.querySelector('[data-tutorial-focus]'),null);assert.equal(root.style.position,'static');cleanup();}finally{d.window.close();}
+});

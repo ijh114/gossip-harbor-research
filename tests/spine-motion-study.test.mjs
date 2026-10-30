@@ -11,7 +11,7 @@ test('all654 source skeletons and694 declared animations remain represented incl
  assert.equal(study.summary.sourceSkeletons,654);assert.equal(study.summary.fullByteParses,654);assert.equal(study.summary.prefixOnlyParses,0);assert.equal(study.summary.parseErrors,0);
  assert.equal(study.clips.length,694);assert.equal(new Set(study.clips.map(c=>c.id)).size,694);assert.equal(new Set(study.clips.map(c=>c.atlasId)).size,654);
  assert.equal(study.clips.filter(c=>c.status.startsWith('projected-')).length,study.summary.projectedAnimations);
- assert.equal(study.clips.filter(c=>c.status==='omitted-unsupported-features').length,32);assert.equal(study.summary.projectedAnimations,662);
+ assert.equal(study.clips.filter(c=>c.status==='omitted-unsupported-features').length,0);assert.equal(study.summary.projectedAnimations,694);
  assert.equal(study.summary.sourceDimensionMismatches,528);assert.equal(study.summary.originalRuntimeObserved,false);
  const clone={...study};delete clone.revision;assert.equal(createHash('sha256').update(JSON.stringify(clone)).digest('hex'),study.revision);
 });
@@ -49,10 +49,10 @@ test('published reduced files physically match recorded hashes and stay inside t
  assert.equal(total,study.summary.publicMediaBytes);assert.ok(total<=180*1024*1024);assert.equal(study.mediaEntries.length,study.summary.publicMediaFiles);
 });
 test('filtering, paging andCSV coverevery matching row instead of exporting only thevisiblepage',()=>{
- assert.equal(selectSpineMotions(study,{status:'omitted-unsupported-features'}).total,32);
+ assert.equal(selectSpineMotions(study,{status:'omitted-unsupported-features'}).total,0);
  assert.equal(selectSpineMotions(study,{query:'공작'}).total,2);assert.equal(selectSpineMotions(study,{query:'definitely-no-source-like-this'}).total,0);
  const page=selectSpineMotions(study,{page:999999});assert.equal(page.page,page.pages);assert.ok(page.rows.length<=12);
- const csv=spineMotionCSV(study,{status:'omitted-unsupported-features'});assert.ok(csv.startsWith('\ufeff'));assert.equal(csv.split('\r\n').length,33);
+ const csv=spineMotionCSV(study,{status:'omitted-unsupported-features'});assert.ok(csv.startsWith('\ufeff'));assert.equal(csv.split('\r\n').length,1);
  const probe={clips:[{id:'a',atlasId:'b',sourceName:'=HYPERLINK("bad")',animation:'x',status:'projection-error',source:{}}]};assert.ok(spineMotionCSV(probe).includes("'=HYPERLINK"));
 });
 test('HTML uses real native media controls, visible evidence limits and source-text escaping',()=>{
