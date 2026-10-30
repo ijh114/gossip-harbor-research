@@ -3,7 +3,7 @@
   "targetVersion": "4.10.5",
   "reviewDate": "2026-10-29",
   "title": "자료 가용성 · 필요한 추가 근거",
-  "scope": "기존 자산 감사와 후속 가설 확인, 생성기 공장 재분류 및 회상 책 exact alias 실물 회수",
+  "scope": "All2087 registered catalog bundles acquired; original18ledgeritems retained. Static source availability and runtime observation are separate.",
   "statuses": [
     {
       "id": "missing",
@@ -35,9 +35,9 @@
       "curated": 5,
       "research-projection": 4
     },
-    "sourceBundles": 245,
-    "sourceObjects": 110632,
-    "sourceContainers": 10037,
+    "sourceBundles": 2087,
+    "sourceObjects": 717395,
+    "sourceContainers": 51572,
     "sceneTasksProjected": 106,
     "sceneLastTask": "12_11",
     "nextMissingTimelineTask": "13_1",
@@ -54,13 +54,19 @@
     "eventSharedImagesVerified": 24,
     "factoryImageTypesCurated": 29,
     "factoryDirectTaggedVideoCandidates": 0,
-    "storyRecapImagesCurated": 11,
-    "storyRecapBodyImagesMissing": 29,
-    "storyRecapCoversMissing": 5,
+    "storyRecapImagesCurated": 40,
+    "storyRecapBodyImagesMissing": 0,
+    "storyRecapCoversMissing": 0,
     "commonProjectionImages": 125,
     "cgUniqueImages": 22,
     "nativeLoadingImages": 4,
-    "recapPageTurnAudio": 1
+    "recapPageTurnAudio": 1,
+    "storyRecapCoverImagesCurated": 5,
+    "allCatalogBundlesAcquired": 2087,
+    "allCatalogUnityObjects": 717395,
+    "newlyCuratedImageEntries": 39,
+    "curatedRecapMediaEntries": 43,
+    "newlyRecoveredAssetsScope": "Original245bundle audit history; current selected-image count is newlyCuratedImageEntries and current recap entries are curatedRecapMediaEntries."
   },
   "entries": [
     {
@@ -950,8 +956,8 @@
       "count": 11,
       "unit": "본문 고유 그림",
       "group": "scene",
-      "claim": "동봉 회상 책5권22페이지의 본문40고유키 중11그림을 연결했습니다. 기존2그림과 새로 exact alias/원본PPtr로 회수한9PNG를 구분합니다. 표지5개와 본문29키는 등록을 확인했으나 제공 번들의 실물은 확보하지 못했습니다. 정확한 catalog GUID→의존bundle을 확인하고 sfxStoryIn 페이지 효과음을 별도 선별했습니다.",
-      "impact": "책 기능·선정 본문 발췌·실물 그림의 확보 상태를 분리합니다.",
+      "claim": "표지5개·본문40개 모두 정확한Sprite 실물로 연결했습니다.",
+      "impact": "기존 미확보34키를 추가 회수하고 공개용 축소 PNG34개를 더했습니다.",
       "sourceRefs": [
         "recap-art-recap-source-1",
         "recap-art-recap-source-2",
@@ -960,7 +966,8 @@
         "recap-art-recap-source-5",
         "recap-art-recap-source-6",
         "recap-art-recap-source-7",
-        "recap-art-recap-source-8"
+        "recap-art-recap-source-8",
+        "recap-complete-art-binding"
       ],
       "targets": [
         {
@@ -970,11 +977,14 @@
         {
           "label": "전체 작업3.13",
           "href": "#checklist"
+        },
+        {
+          "href": "#resource-audit",
+          "label": "전체리소스연결판정"
         }
       ],
       "neededEvidence": [
-        "본문29키·표지5키의 실제 그림과 정확한CDN runtime origin/folder",
-        "회상 책 Spine 재생·실제 화면·페이지 효과음 청취/동기화"
+        "실제 계정의활성배정·책UI의최종Spine/음향·실행대조"
       ],
       "subjectIds": [
         "story_book_face_1",
@@ -1032,10 +1042,45 @@
         "recap:image:story_A2D7_7_7",
         "recap:image:story_A3D8_8_8_begin",
         "recap:image:story_A3D11_11_5",
-        "recap:image:story_A2D7_7_2_end"
+        "recap:image:story_A2D7_7_2_end",
+        "recap:image:story_book_face_1",
+        "recap:image:story_book_face_2",
+        "recap:image:story_book_face_3",
+        "recap:image:story_book_face_4",
+        "recap:image:story_book_face_5",
+        "recap:image:story_A4D12_12_2_end",
+        "recap:image:story_A4D12_12_6",
+        "recap:image:story_A4D14_14_5",
+        "recap:image:story_A7D22_22_4",
+        "recap:image:story_A5D16_16_3",
+        "recap:image:story_A5D16_16_4_2",
+        "recap:image:story_A5D17_17_7_1",
+        "recap:image:story_A5D18_18_4",
+        "recap:image:story_A6D19_19_2",
+        "recap:image:story_A6D19_19_3_end",
+        "recap:image:story_A6D20_20_2",
+        "recap:image:story_A7D21_21_6_end",
+        "recap:image:story_A8D24_24_1_begin",
+        "recap:image:story_A8D24_24_2",
+        "recap:image:story_A8D26_26_6",
+        "recap:image:story_A8D26_26_11_end_1",
+        "recap:image:story_A9D27_27_1_end",
+        "recap:image:story_A9D27_27_2_end",
+        "recap:image:story_A10D33_33_11",
+        "recap:image:story_A11D35_35_6_begin",
+        "recap:image:story_A11D37_37_2_end",
+        "recap:image:story_A12D43_43_2_end",
+        "recap:image:story_A13D44_44_begin",
+        "recap:image:story_A13D47_47_6",
+        "recap:image:story_A14D48_48_1_end",
+        "recap:image:story_A14D49_49_1_end",
+        "recap:image:story_A14D50_50_6_end",
+        "recap:image:story_A14D51_51_1_end",
+        "recap:image:story_A14D52_52_8_end"
       ],
       "newlyRecoveredAssets": 9,
-      "originalRuntimeObserved": false
+      "originalRuntimeObserved": false,
+      "boundary": "정확파일의회수·그림연결과실제게임재생검증을구분합니다."
     }
   ],
   "sources": [
@@ -1667,6 +1712,14 @@
       "lineStart": 1,
       "lineEnd": 12762,
       "anchorScope": "entire existing decoded UTF-8 source by raw SHA; no original body published"
+    },
+    {
+      "id": "recap-complete-art-binding",
+      "kind": "exact catalog/registered key/container/Sprite and curated PNG audit",
+      "path": "sites/harbor-bm-lab/src/data/story-recap.json",
+      "sha256": "a2460e0c5080f2308e73060486979fc7d6684517b858587f9088517bfccd2ab2",
+      "lineStart": 1,
+      "lineEnd": 9106
     }
   ],
   "hypotheses": [
@@ -1728,7 +1781,8 @@
     "공급된 APK 4.10.5의 기존 정적 인벤토리·리터럴 해석·선별 파생본만 사용했습니다. 원격 서버와 원작 실행에는 접근하지 않았습니다.",
     "미확보는 제공 자료 안에서 연결하지 못했다는 뜻입니다. 게임 전체에 자료가 존재하지 않는다는 증거가 아닙니다.",
     "등록·실물 객체·공개 파생본·연구용 규칙 투영·실제 플레이 관측을 서로 구분합니다.",
-    "원본 APK·Lua 전문·전체 서사·원본 메시·전체 맵·개인 플레이 데이터는 공개하지 않습니다."
+    "원본 APK·Lua 전문·전체 서사·원본 메시·전체 맵·개인 플레이 데이터는 공개하지 않습니다.",
+    "2026-10-30 전체2087번들회수후기존회상책미확보34개해소. 신규Spine/native/GUID전수판정은리소스확보·연결페이지에별도연결하며기존과제ID를유지한다."
   ],
   "factoryObservationSearch": {
     "status": "metadata-only-no-direct-candidate",
@@ -1736,5 +1790,10 @@
     "nativeFramesReviewed": 0,
     "scope": "기존110영상 시간순 장부와 자료 정리의 직접 공장/보관함 태그 검색. 직접 후보가 없어 추정 영상 세 개를 임의로 선정하지 않았다.",
     "boundary": "전체 영상에 공장 장면이 없다는 판정이 아니며, 새 원작 사용 표본은 미확인이다."
+  },
+  "initialSourceInventory": {
+    "bundles": 245,
+    "objects": 110632,
+    "containers": 10037
   }
 }

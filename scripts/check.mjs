@@ -105,9 +105,18 @@ const uiAudit=JSON.parse(await readFile('dist/data/ui-evidence-audit.json','utf8
 const recap=JSON.parse(await readFile('dist/data/story-recap.json','utf8'));
 const tutorials87=JSON.parse(await readFile('dist/data/tutorial-catalog.json','utf8'));
 if(master.tasks.length!==100||new Set(master.tasks.map(t=>t.id)).size!==100||master.groups.find(g=>g.id===3).status!=='부분')throw Error('Checklist identity or parent completion drift');
-if(uiAudit.summary.comparisonRows!==8||uiAudit.originalRuntimeObserved!==false||recap.books.length!==5||recap.summary.pages!==22||recap.mediaEntries.length!==9||tutorials87.guides.length!==87)throw Error('Invalid requested0/3 coverage');
+if(uiAudit.summary.comparisonRows!==8||uiAudit.originalRuntimeObserved!==false||recap.books.length!==5||recap.summary.pages!==22||recap.mediaEntries.length!==43||recap.summary.imageReferencesWithCuratedMedia!==40||recap.summary.coverImagesAvailable!==5||tutorials87.guides.length!==87)throw Error('Invalid requested0/3 coverage');
 for(const m of recap.mediaEntries){if(!validMedia(m))throw Error('Invalid recap media '+m.key);const bytes=await readFile(path.join('dist',m.src));if(createHash('sha256').update(bytes).digest('hex')!==m.sha256)throw Error('Recap image hash mismatch '+m.key);}
-console.log('Verified fixed100 checklist, UI8 bounded comparisons,87 source executers,5 recap books/22pages and9 new exact Sprite PNGs; runtime completeness remains separately classified.');
+console.log('Verified fixed100 checklist, UI8 bounded comparisons,87 source executers,5 recap books/22pages and45 exact recap images (43 recap entries plus2 shared scenes); runtime completeness remains separately classified.');
+
+const resolution=JSON.parse(await readFile('dist/data/resource-resolution.json','utf8'));
+if(resolution.records.length!==1020||new Set(resolution.records.map(r=>r.id)).size!==1020)throw Error('Resource investigation identity drift');
+for(const [kind,total,resolved,partial,unavailable]of [['spine',654,654,0,0],['native',342,339,3,0],['guid',24,5,0,19]]){
+ const rows=resolution.records.filter(r=>r.kind===kind);
+ if(rows.length!==total||rows.filter(r=>r.status==='resolved').length!==resolved||rows.filter(r=>r.status==='partial').length!==partial||rows.filter(r=>r.status==='unavailable').length!==unavailable)throw Error('Resource investigation status drift '+kind);
+}
+for(const m of resolution.mediaEntries){if(!validMedia(m))throw Error('Invalid curated resource image '+m.key);const bytes=await readFile(path.join('dist',m.src));if(createHash('sha256').update(bytes).digest('hex')!==m.sha256)throw Error('Curated resource image hash mismatch '+m.key);}
+console.log('Verified1020 resource rows: Spine654 linked, native339 full/3 partial, GUID5 exact-path targets/19 bounded missing;5 setup-pose images with exact hashes.');
 
 const presentation=JSON.parse(await readFile('dist/data/presentation-assets.json','utf8'));
 const season=JSON.parse(await readFile('dist/data/activity-season.json','utf8'));

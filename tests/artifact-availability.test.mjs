@@ -12,7 +12,7 @@ const entry = id => data.entries.find(r => r.id === id);
 test('availability ledger keeps current artifact boundaries and typed counts consistent with published source projections', async () => {
   const s = data.summary, base = visual.items.filter(r => r.table === 'ItemModelConfig'), keys = new Set(media.entries.map(r => r.key));
   const missingBase = base.filter(r => !keys.has(`item:${r.key}`));
-  const recap=JSON.parse(await readFile(new URL('../src/data/story-recap.json',import.meta.url),'utf8'));assert.equal(s.newlyRecoveredAssets,recap.mediaEntries.length);assert.equal(s.storyRecapImagesCurated,recap.summary.uniqueCuratedImages);
+  const recap=JSON.parse(await readFile(new URL('../src/data/story-recap.json',import.meta.url),'utf8'));assert.equal(s.curatedRecapMediaEntries,recap.mediaEntries.length);assert.equal(s.newlyCuratedImageEntries,39);assert.equal(s.storyRecapImagesCurated,recap.summary.uniqueCuratedImages);
   assert.equal(s.sceneTasksProjected,scene.tasks.length);
   assert.equal(s.sceneLastTask,scene.tasks.at(-1).id);
   assert.equal(s.nextMissingTimelineTask,'13_1');
