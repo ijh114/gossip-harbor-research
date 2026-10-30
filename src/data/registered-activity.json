@@ -1,0 +1,2782 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "scenarioId": "shipped-dogpark-pureboard-4105-v1",
+  "activityType": "dogparkPureBoard",
+  "title": "공원 순수 보드 · 출하 등록 시나리오",
+  "columns": 7,
+  "visibleRows": 10,
+  "sourceRows": 13,
+  "sourceBoard": [
+    [
+      "pb#c#pb_dogpark_book_4",
+      "pb#c#pb_dogpark_tar_8",
+      "pb#c#pb_dogpark_tar_8",
+      "pb#c#pb_dogpark_tar_8",
+      "pb#c#pb_dogpark_tar_8",
+      "pb#c#pb_dogpark_book_4",
+      "pb#c#pb_dogpark_tar_8"
+    ],
+    [
+      "pb#c#pb_dogpark_tar_8",
+      "pb#c#pb_dogpark_book_2",
+      "pb#c#pb_dogpark_tar_6",
+      "pb#c#pb_dogpark_book_2",
+      "pb#c#pb_dogpark_tar_8",
+      "pb#pb_dogpark_feed_1",
+      "pb#c#pb_dogpark_tar_8"
+    ],
+    [
+      "pb#c#pb_dogpark_tar_6",
+      "pb#c#pb_dogpark_tar_6",
+      "c#pb_dogpark_tar_4",
+      "c#pb_dogpark_tar_4",
+      "c#pb_dogpark_tar_4",
+      "pb#c#pb_dogpark_tar_6",
+      "pb#c#pb_dogpark_book_4"
+    ],
+    [
+      "c#main_super_gold_6",
+      "c#main_super_gold_6",
+      "c#main_super_gold_6",
+      "c#main_super_gold_6",
+      "c#main_super_gold_6",
+      "c#main_super_gold_6",
+      "c#main_super_gold_6"
+    ],
+    [
+      "c#main_super_energy_6",
+      "c#main_super_energy_6",
+      "c#main_super_energy_6",
+      "c#main_super_energy_6",
+      "c#main_super_energy_6",
+      "c#main_super_energy_6",
+      "c#main_super_energy_6"
+    ],
+    [
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#pb_dogpark_book_4",
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#pb_dogpark_book_2",
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#pb_dogpark_book_4"
+    ],
+    [
+      "pb#pb_dogpark_feed_1",
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#main_super_gold_4",
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#pb_dogpark_tar_7"
+    ],
+    [
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#pb_dogpark_tar_5",
+      "pb#c#pb_dogpark_tar_5",
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#main_super_energy_5",
+      "pb#c#pb_dogpark_book_2"
+    ],
+    [
+      "pb#c#pb_dogpark_tar_7",
+      "pb#c#pb_dogpark_tar_5",
+      "pb#c#pb_dogpark_book_2",
+      "pb#c#pb_dogpark_tar_5",
+      "pb#c#main_super_energy_4",
+      "pb#c#pb_dogpark_tar_5",
+      "pb#c#pb_dogpark_tar_5"
+    ],
+    [
+      "pb#c#pb_dogpark_tar_5",
+      "pb#c#pb_dogpark_tar_4",
+      "c#pb_dogpark_tar_2",
+      "c#pb_dogpark_tar_2",
+      "c#pb_dogpark_tar_2",
+      "pb#c#pb_dogpark_tar_4",
+      "pb#c#pb_dogpark_tar_5"
+    ],
+    [
+      "pb#c#pb_dogpark_tar_4",
+      "pb#c#pb_dogpark_tar_4",
+      "0",
+      "0",
+      "0",
+      "pb#c#pb_dogpark_tar_4",
+      "pb#c#pb_dogpark_tar_4"
+    ],
+    [
+      "pb#c#pb_dogpark_tar_2",
+      "pb#c#pb_dogpark_tar_1",
+      "c#pb_dogpark_tar_1",
+      "c#pb_dogpark_tar_1",
+      "c#pb_dogpark_tar_1",
+      "pb#c#pb_dogpark_tar_1",
+      "pb#c#pb_dogpark_tar_2"
+    ],
+    [
+      "pb#pb_dogpark_baby_1",
+      "pb#c#pb_dogpark_tar_5",
+      "pb#c#main_super_energy_4",
+      "pb#c#pb_dogpark_book_4",
+      "pb#c#main_super_gold_4",
+      "pb#c#pb_dogpark_tar_5",
+      "pb#c#pb_dogpark_book_2"
+    ]
+  ],
+  "initialSourceXY": [
+    {
+      "x": 1,
+      "y": 1,
+      "sourceRow": 4,
+      "code": "c#main_super_gold_6"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "sourceRow": 4,
+      "code": "c#main_super_gold_6"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "sourceRow": 4,
+      "code": "c#main_super_gold_6"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "sourceRow": 4,
+      "code": "c#main_super_gold_6"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "sourceRow": 4,
+      "code": "c#main_super_gold_6"
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "sourceRow": 4,
+      "code": "c#main_super_gold_6"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "sourceRow": 4,
+      "code": "c#main_super_gold_6"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "sourceRow": 5,
+      "code": "c#main_super_energy_6"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "sourceRow": 5,
+      "code": "c#main_super_energy_6"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "sourceRow": 5,
+      "code": "c#main_super_energy_6"
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "sourceRow": 5,
+      "code": "c#main_super_energy_6"
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "sourceRow": 5,
+      "code": "c#main_super_energy_6"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "sourceRow": 5,
+      "code": "c#main_super_energy_6"
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "sourceRow": 5,
+      "code": "c#main_super_energy_6"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "sourceRow": 6,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "sourceRow": 6,
+      "code": "pb#c#pb_dogpark_book_4"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "sourceRow": 6,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "sourceRow": 6,
+      "code": "pb#c#pb_dogpark_book_2"
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "sourceRow": 6,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "sourceRow": 6,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "sourceRow": 6,
+      "code": "pb#c#pb_dogpark_book_4"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "sourceRow": 7,
+      "code": "pb#pb_dogpark_feed_1"
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "sourceRow": 7,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "sourceRow": 7,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "sourceRow": 7,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "sourceRow": 7,
+      "code": "pb#c#main_super_gold_4"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "sourceRow": 7,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "sourceRow": 7,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "sourceRow": 8,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "sourceRow": 8,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "sourceRow": 8,
+      "code": "pb#c#pb_dogpark_tar_5"
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "sourceRow": 8,
+      "code": "pb#c#pb_dogpark_tar_5"
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "sourceRow": 8,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "sourceRow": 8,
+      "code": "pb#c#main_super_energy_5"
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "sourceRow": 8,
+      "code": "pb#c#pb_dogpark_book_2"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "sourceRow": 9,
+      "code": "pb#c#pb_dogpark_tar_7"
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "sourceRow": 9,
+      "code": "pb#c#pb_dogpark_tar_5"
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "sourceRow": 9,
+      "code": "pb#c#pb_dogpark_book_2"
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "sourceRow": 9,
+      "code": "pb#c#pb_dogpark_tar_5"
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "sourceRow": 9,
+      "code": "pb#c#main_super_energy_4"
+    },
+    {
+      "x": 6,
+      "y": 6,
+      "sourceRow": 9,
+      "code": "pb#c#pb_dogpark_tar_5"
+    },
+    {
+      "x": 7,
+      "y": 6,
+      "sourceRow": 9,
+      "code": "pb#c#pb_dogpark_tar_5"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "sourceRow": 10,
+      "code": "pb#c#pb_dogpark_tar_5"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "sourceRow": 10,
+      "code": "pb#c#pb_dogpark_tar_4"
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "sourceRow": 10,
+      "code": "c#pb_dogpark_tar_2"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "sourceRow": 10,
+      "code": "c#pb_dogpark_tar_2"
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "sourceRow": 10,
+      "code": "c#pb_dogpark_tar_2"
+    },
+    {
+      "x": 6,
+      "y": 7,
+      "sourceRow": 10,
+      "code": "pb#c#pb_dogpark_tar_4"
+    },
+    {
+      "x": 7,
+      "y": 7,
+      "sourceRow": 10,
+      "code": "pb#c#pb_dogpark_tar_5"
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "sourceRow": 11,
+      "code": "pb#c#pb_dogpark_tar_4"
+    },
+    {
+      "x": 2,
+      "y": 8,
+      "sourceRow": 11,
+      "code": "pb#c#pb_dogpark_tar_4"
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "sourceRow": 11,
+      "code": "0"
+    },
+    {
+      "x": 4,
+      "y": 8,
+      "sourceRow": 11,
+      "code": "0"
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "sourceRow": 11,
+      "code": "0"
+    },
+    {
+      "x": 6,
+      "y": 8,
+      "sourceRow": 11,
+      "code": "pb#c#pb_dogpark_tar_4"
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "sourceRow": 11,
+      "code": "pb#c#pb_dogpark_tar_4"
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "sourceRow": 12,
+      "code": "pb#c#pb_dogpark_tar_2"
+    },
+    {
+      "x": 2,
+      "y": 9,
+      "sourceRow": 12,
+      "code": "pb#c#pb_dogpark_tar_1"
+    },
+    {
+      "x": 3,
+      "y": 9,
+      "sourceRow": 12,
+      "code": "c#pb_dogpark_tar_1"
+    },
+    {
+      "x": 4,
+      "y": 9,
+      "sourceRow": 12,
+      "code": "c#pb_dogpark_tar_1"
+    },
+    {
+      "x": 5,
+      "y": 9,
+      "sourceRow": 12,
+      "code": "c#pb_dogpark_tar_1"
+    },
+    {
+      "x": 6,
+      "y": 9,
+      "sourceRow": 12,
+      "code": "pb#c#pb_dogpark_tar_1"
+    },
+    {
+      "x": 7,
+      "y": 9,
+      "sourceRow": 12,
+      "code": "pb#c#pb_dogpark_tar_2"
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "sourceRow": 13,
+      "code": "pb#pb_dogpark_baby_1"
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "sourceRow": 13,
+      "code": "pb#c#pb_dogpark_tar_5"
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "sourceRow": 13,
+      "code": "pb#c#main_super_energy_4"
+    },
+    {
+      "x": 4,
+      "y": 10,
+      "sourceRow": 13,
+      "code": "pb#c#pb_dogpark_book_4"
+    },
+    {
+      "x": 5,
+      "y": 10,
+      "sourceRow": 13,
+      "code": "pb#c#main_super_gold_4"
+    },
+    {
+      "x": 6,
+      "y": 10,
+      "sourceRow": 13,
+      "code": "pb#c#pb_dogpark_tar_5"
+    },
+    {
+      "x": 7,
+      "y": 10,
+      "sourceRow": 13,
+      "code": "pb#c#pb_dogpark_book_2"
+    }
+  ],
+  "initialCache": {
+    "type": "pb_dogpark_tar_1",
+    "count": 5
+  },
+  "scroll": [
+    {
+      "level": 12,
+      "scrollRows": 3
+    }
+  ],
+  "paperRewardsAllZero": true,
+  "items": [
+    {
+      "type": "pb_dogpark_tar_1",
+      "next": "pb_dogpark_tar_2",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_1"
+    },
+    {
+      "type": "pb_dogpark_tar_2",
+      "next": "pb_dogpark_tar_3",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_2"
+    },
+    {
+      "type": "pb_dogpark_tar_3",
+      "next": "pb_dogpark_tar_4",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_3"
+    },
+    {
+      "type": "pb_dogpark_tar_4",
+      "next": "pb_dogpark_tar_5",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_4"
+    },
+    {
+      "type": "pb_dogpark_tar_5",
+      "next": "pb_dogpark_tar_6",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_5"
+    },
+    {
+      "type": "pb_dogpark_tar_6",
+      "next": "pb_dogpark_tar_7",
+      "auto": true,
+      "pool": [
+        {
+          "type": "main_super_gold_1",
+          "count": 2
+        }
+      ],
+      "weightType": 2,
+      "batch": 2,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_6"
+    },
+    {
+      "type": "pb_dogpark_tar_7",
+      "next": "pb_dogpark_tar_8",
+      "auto": true,
+      "pool": [
+        {
+          "type": "main_super_gold_1",
+          "count": 2
+        },
+        {
+          "type": "main_super_energy_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 3,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_7"
+    },
+    {
+      "type": "pb_dogpark_tar_8",
+      "next": "pb_dogpark_tar_9",
+      "auto": true,
+      "pool": [
+        {
+          "type": "main_super_gold_1",
+          "count": 2
+        },
+        {
+          "type": "main_super_energy_1",
+          "count": 2
+        },
+        {
+          "type": "pb_dogpark_book_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 5,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_8"
+    },
+    {
+      "type": "pb_dogpark_tar_9",
+      "next": "pb_dogpark_tar_10",
+      "auto": true,
+      "pool": [
+        {
+          "type": "main_super_gold_1",
+          "count": 1
+        },
+        {
+          "type": "main_super_gold_2",
+          "count": 1
+        },
+        {
+          "type": "main_super_energy_1",
+          "count": 1
+        },
+        {
+          "type": "main_super_energy_2",
+          "count": 1
+        },
+        {
+          "type": "main_gem_super_1",
+          "count": 2
+        },
+        {
+          "type": "pb_dogpark_book_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 7,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_9"
+    },
+    {
+      "type": "pb_dogpark_tar_10",
+      "next": "pb_dogpark_tar_11",
+      "auto": true,
+      "pool": [
+        {
+          "type": "main_super_gold_2",
+          "count": 1
+        },
+        {
+          "type": "main_super_gold_1",
+          "count": 2
+        },
+        {
+          "type": "main_super_energy_2",
+          "count": 2
+        },
+        {
+          "type": "main_gem_super_2",
+          "count": 1
+        },
+        {
+          "type": "main_gem_super_1",
+          "count": 2
+        },
+        {
+          "type": "pb_dogpark_book_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 9,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_10"
+    },
+    {
+      "type": "pb_dogpark_tar_11",
+      "next": "pb_dogpark_tar_12",
+      "auto": true,
+      "pool": [
+        {
+          "type": "main_super_gold_2",
+          "count": 2
+        },
+        {
+          "type": "main_super_gold_1",
+          "count": 4
+        },
+        {
+          "type": "main_super_energy_3",
+          "count": 2
+        },
+        {
+          "type": "main_gem_super_3",
+          "count": 1
+        },
+        {
+          "type": "main_gem_super_2",
+          "count": 2
+        },
+        {
+          "type": "pb_dogpark_book_1",
+          "count": 2
+        },
+        {
+          "type": "main_level_up_piece_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 14,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_11"
+    },
+    {
+      "type": "pb_dogpark_tar_12",
+      "next": null,
+      "auto": false,
+      "pool": [
+        {
+          "type": "main_super_gold_4",
+          "count": 5
+        },
+        {
+          "type": "main_super_energy_4",
+          "count": 4
+        },
+        {
+          "type": "main_gem_super_3",
+          "count": 4
+        },
+        {
+          "type": "pb_dogpark_book_1",
+          "count": 4
+        }
+      ],
+      "weightType": 2,
+      "batch": 17,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_tar_12"
+    },
+    {
+      "type": "pb_dogpark_book_1",
+      "next": "pb_dogpark_book_2",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_book_1"
+    },
+    {
+      "type": "pb_dogpark_book_2",
+      "next": "pb_dogpark_book_3",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_book_2"
+    },
+    {
+      "type": "pb_dogpark_book_3",
+      "next": "pb_dogpark_book_4",
+      "auto": true,
+      "pool": [
+        {
+          "type": "pb_dogpark_letter_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 1,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_book_3"
+    },
+    {
+      "type": "pb_dogpark_book_4",
+      "next": "pb_dogpark_book_5",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_book_4"
+    },
+    {
+      "type": "pb_dogpark_book_5",
+      "next": "pb_dogpark_book_6",
+      "auto": true,
+      "pool": [
+        {
+          "type": "main_super_energy_1",
+          "count": 2
+        }
+      ],
+      "weightType": 2,
+      "batch": 2,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_book_5"
+    },
+    {
+      "type": "pb_dogpark_book_6",
+      "next": "pb_dogpark_book_7",
+      "auto": true,
+      "pool": [
+        {
+          "type": "main_super_gold_2",
+          "count": 1
+        },
+        {
+          "type": "main_super_energy_2",
+          "count": 2
+        },
+        {
+          "type": "main_gem_super_2",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 4,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_book_6"
+    },
+    {
+      "type": "pb_dogpark_book_7",
+      "next": "pb_dogpark_book_8",
+      "auto": true,
+      "pool": [
+        {
+          "type": "main_super_gold_2",
+          "count": 1
+        },
+        {
+          "type": "main_super_gold_1",
+          "count": 2
+        },
+        {
+          "type": "main_super_energy_2",
+          "count": 2
+        },
+        {
+          "type": "main_gem_super_2",
+          "count": 2
+        }
+      ],
+      "weightType": 2,
+      "batch": 7,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_book_7"
+    },
+    {
+      "type": "pb_dogpark_book_8",
+      "next": null,
+      "auto": false,
+      "pool": [
+        {
+          "type": "main_gem_super_3",
+          "count": 4
+        },
+        {
+          "type": "main_super_energy_4",
+          "count": 1
+        },
+        {
+          "type": "main_super_energy_3",
+          "count": 2
+        },
+        {
+          "type": "main_super_gold_3",
+          "count": 6
+        }
+      ],
+      "weightType": 2,
+      "batch": 13,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_book_8"
+    },
+    {
+      "type": "pb_dogpark_baby_1",
+      "next": null,
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [
+        {
+          "type": "pb_dogpark_baby_a_f_1",
+          "count": 10
+        }
+      ],
+      "feeds": [
+        {
+          "type": "pb_dogpark_feed_1",
+          "count": 10
+        }
+      ],
+      "feedCount": 1,
+      "collectRewards": [],
+      "protectLevel": 2,
+      "sourceImageType": "pb_dogpark_baby_1"
+    },
+    {
+      "type": "pb_dogpark_baby_a_1",
+      "next": null,
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [
+        {
+          "type": "pb_dogpark_baby_b_f_1",
+          "count": 10
+        }
+      ],
+      "feeds": [
+        {
+          "type": "pb_dogpark_feed_1",
+          "count": 10
+        }
+      ],
+      "feedCount": 1,
+      "collectRewards": [],
+      "protectLevel": 2,
+      "sourceImageType": "pb_dogpark_baby_a_1"
+    },
+    {
+      "type": "pb_dogpark_baby_a_f_1",
+      "next": null,
+      "auto": false,
+      "pool": [
+        {
+          "type": "pb_dogpark_tar_2",
+          "count": 5
+        },
+        {
+          "type": "pb_dogpark_letter_1",
+          "count": 2
+        },
+        {
+          "type": "pb_dogpark_score_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 8,
+      "cost": 0,
+      "transformAfter": 8,
+      "transforms": [
+        {
+          "type": "pb_dogpark_baby_a_1",
+          "count": 10
+        }
+      ],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": 2,
+      "sourceImageType": "pb_dogpark_baby_a_f_1"
+    },
+    {
+      "type": "pb_dogpark_baby_b_1",
+      "next": null,
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [
+        {
+          "type": "pb_dogpark_baby_c_f_1",
+          "count": 10
+        }
+      ],
+      "feeds": [
+        {
+          "type": "pb_dogpark_feed_1",
+          "count": 10
+        }
+      ],
+      "feedCount": 1,
+      "collectRewards": [],
+      "protectLevel": 2,
+      "sourceImageType": "pb_dogpark_baby_b_1"
+    },
+    {
+      "type": "pb_dogpark_baby_b_f_1",
+      "next": null,
+      "auto": false,
+      "pool": [
+        {
+          "type": "pb_dogpark_tar_2",
+          "count": 3
+        },
+        {
+          "type": "pb_dogpark_tar_3",
+          "count": 3
+        },
+        {
+          "type": "pb_dogpark_letter_1",
+          "count": 2
+        },
+        {
+          "type": "pb_dogpark_book_1",
+          "count": 2
+        },
+        {
+          "type": "pb_dogpark_score_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 11,
+      "cost": 0,
+      "transformAfter": 11,
+      "transforms": [
+        {
+          "type": "pb_dogpark_baby_b_1",
+          "count": 10
+        }
+      ],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": 2,
+      "sourceImageType": "pb_dogpark_baby_b_f_1"
+    },
+    {
+      "type": "pb_dogpark_baby_c_1",
+      "next": null,
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [
+        {
+          "type": "pb_dogpark_baby_d_1",
+          "count": 10
+        }
+      ],
+      "feeds": [
+        {
+          "type": "pb_dogpark_feed_1",
+          "count": 10
+        }
+      ],
+      "feedCount": 1,
+      "collectRewards": [],
+      "protectLevel": 2,
+      "sourceImageType": "pb_dogpark_baby_c_1"
+    },
+    {
+      "type": "pb_dogpark_baby_c_f_1",
+      "next": null,
+      "auto": false,
+      "pool": [
+        {
+          "type": "pb_dogpark_tar_2",
+          "count": 4
+        },
+        {
+          "type": "pb_dogpark_tar_3",
+          "count": 4
+        },
+        {
+          "type": "pb_dogpark_book_1",
+          "count": 2
+        },
+        {
+          "type": "pb_dogpark_letter_1",
+          "count": 2
+        },
+        {
+          "type": "pb_dogpark_score_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 13,
+      "cost": 0,
+      "transformAfter": 13,
+      "transforms": [
+        {
+          "type": "pb_dogpark_baby_c_1",
+          "count": 10
+        }
+      ],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": 2,
+      "sourceImageType": "pb_dogpark_baby_c_f_1"
+    },
+    {
+      "type": "pb_dogpark_baby_d_1",
+      "next": null,
+      "auto": false,
+      "pool": [
+        {
+          "type": "rb#pack_common_2",
+          "count": 1
+        },
+        {
+          "type": "pb_dogpark_book_1",
+          "count": 4
+        },
+        {
+          "type": "pb_dogpark_letter_1",
+          "count": 4
+        },
+        {
+          "type": "pb_dogpark_score_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 10,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": 2,
+      "sourceImageType": "pb_dogpark_baby_d_1"
+    },
+    {
+      "type": "pb_dogpark_feed_1",
+      "next": null,
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": 2,
+      "sourceImageType": "pb_dogpark_feed_1"
+    },
+    {
+      "type": "pb_dogpark_letter_1",
+      "next": "pb_dogpark_letter_2",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": 4,
+      "sourceImageType": "pb_dogpark_letter_1"
+    },
+    {
+      "type": "pb_dogpark_letter_2",
+      "next": "pb_dogpark_letter_3",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": 4,
+      "sourceImageType": "pb_dogpark_letter_2"
+    },
+    {
+      "type": "pb_dogpark_letter_3",
+      "next": null,
+      "auto": false,
+      "pool": [
+        {
+          "type": "main_pack_laser_5_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 1,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": 4,
+      "sourceImageType": "pb_dogpark_letter_3"
+    },
+    {
+      "type": "pb_dogpark_score_1",
+      "next": "pb_dogpark_score_2",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_score_1"
+    },
+    {
+      "type": "pb_dogpark_score_2",
+      "next": "pb_dogpark_score_3",
+      "auto": true,
+      "pool": [
+        {
+          "type": "main_super_gold_3",
+          "count": 2
+        },
+        {
+          "type": "main_super_energy_3",
+          "count": 2
+        },
+        {
+          "type": "main_gem_super_2",
+          "count": 2
+        },
+        {
+          "type": "pb_dogpark_book_2",
+          "count": 1
+        },
+        {
+          "type": "main_level_up_piece_1",
+          "count": 1
+        }
+      ],
+      "weightType": 2,
+      "batch": 8,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_score_2"
+    },
+    {
+      "type": "pb_dogpark_score_3",
+      "next": null,
+      "auto": false,
+      "pool": [
+        {
+          "type": "main_super_gold_3",
+          "count": 2
+        },
+        {
+          "type": "main_super_gold_4",
+          "count": 1
+        },
+        {
+          "type": "main_super_energy_3",
+          "count": 2
+        },
+        {
+          "type": "main_super_energy_4",
+          "count": 1
+        },
+        {
+          "type": "main_gem_super_3",
+          "count": 1
+        },
+        {
+          "type": "main_gem_super_2",
+          "count": 2
+        }
+      ],
+      "weightType": 2,
+      "batch": 9,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [],
+      "protectLevel": null,
+      "sourceImageType": "pb_dogpark_score_3"
+    }
+  ],
+  "sharedItems": [
+    {
+      "type": "main_gem_super_1",
+      "next": "main_gem_super_2",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": []
+    },
+    {
+      "type": "main_gem_super_2",
+      "next": "main_gem_super_3",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gem",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "main_gem_super_3",
+      "next": "main_gem_super_4",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gem",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "type": "main_gem_super_4",
+      "next": "main_gem_super_5",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gem",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "type": "main_gem_super_5",
+      "next": "main_gem_super_6",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gem",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "type": "main_gem_super_6",
+      "next": "main_gem_super_7",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gem",
+          "count": 31
+        }
+      ]
+    },
+    {
+      "type": "main_gem_super_7",
+      "next": "main_gem_super_8",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gem",
+          "count": 65
+        }
+      ]
+    },
+    {
+      "type": "main_gem_super_8",
+      "next": null,
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gem",
+          "count": 150
+        }
+      ]
+    },
+    {
+      "type": "main_super_energy_1",
+      "next": "main_super_energy_2",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": []
+    },
+    {
+      "type": "main_super_energy_2",
+      "next": "main_super_energy_3",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "energy",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "type": "main_super_energy_3",
+      "next": "main_super_energy_4",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "energy",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "type": "main_super_energy_4",
+      "next": "main_super_energy_5",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "energy",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "type": "main_super_energy_5",
+      "next": "main_super_energy_6",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "energy",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "type": "main_super_energy_6",
+      "next": "main_super_energy_7",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "energy",
+          "count": 50
+        }
+      ]
+    },
+    {
+      "type": "main_super_energy_7",
+      "next": "main_super_energy_8",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "energy",
+          "count": 120
+        }
+      ]
+    },
+    {
+      "type": "main_super_energy_8",
+      "next": null,
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "energy",
+          "count": 300
+        }
+      ]
+    },
+    {
+      "type": "main_super_gold_1",
+      "next": "main_super_gold_2",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": []
+    },
+    {
+      "type": "main_super_gold_2",
+      "next": "main_super_gold_3",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gold",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "type": "main_super_gold_3",
+      "next": "main_super_gold_4",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gold",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "type": "main_super_gold_4",
+      "next": "main_super_gold_5",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gold",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "type": "main_super_gold_5",
+      "next": "main_super_gold_6",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gold",
+          "count": 15
+        }
+      ]
+    },
+    {
+      "type": "main_super_gold_6",
+      "next": "main_super_gold_7",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gold",
+          "count": 35
+        }
+      ]
+    },
+    {
+      "type": "main_super_gold_7",
+      "next": "main_super_gold_8",
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gold",
+          "count": 85
+        }
+      ]
+    },
+    {
+      "type": "main_super_gold_8",
+      "next": null,
+      "auto": false,
+      "pool": [],
+      "weightType": null,
+      "batch": 0,
+      "cost": 0,
+      "transformAfter": null,
+      "transforms": [],
+      "feeds": [],
+      "feedCount": 0,
+      "collectRewards": [
+        {
+          "type": "gold",
+          "count": 200
+        }
+      ]
+    }
+  ],
+  "opaqueOutputTypes": [
+    "main_level_up_piece_1",
+    "main_pack_laser_5_1",
+    "rb#pack_common_2"
+  ],
+  "media": [
+    {
+      "type": "pb_dogpark_tar_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_1.png",
+      "sha256": "963ab649dd82bd5c4b020a447ddf9dd3ebc092075c8b46b7ef093962c65c50c8",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "2685323636219153657",
+        "object_source_sha256": "d6271639d8f61d1010dc7bebd800e4c4dc1ad1c890d3a7adf6dabf337e97d5aa"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_2",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_2.png",
+      "sha256": "6fec4737718c0dc9e415c627f38f9e33620d6cf9296ba55adab6f9b8a1d86c6a",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-3945127575716307634",
+        "object_source_sha256": "30e81c3aee04d89a8c09cf62b10e65b5a30c807e12632838c1141312335ba430"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_3",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_3.png",
+      "sha256": "4774b50acc34cd62af070e33fde2e311f720f4555492245b74cc40201bf33692",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-7776370882755422011",
+        "object_source_sha256": "9165df40df549dc1428762e1eed062d7fa30d3b92a3a623f0beeebe4d9463896"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_4",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_4.png",
+      "sha256": "1b3b687be2c408c34e97e9590c6a5ac36d7b54ae0861415f99e03643f45a4f6f",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "1408660556970336220",
+        "object_source_sha256": "67b9ed51786246b8a5535d5ca30250f45f934fffcc8aa575c15607d71e5b346b"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_5",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_5.png",
+      "sha256": "4ae19fae5328fca42620097b1812166d857a602239465e42bb964fae97e12fe6",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "4450965244276962076",
+        "object_source_sha256": "6808392bc1c92aa8abc622a9b00bed43ebd0fb4c9c0d6d3d701064b64143dd71"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_6",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_6.png",
+      "sha256": "bedea77d877eb1611feea6d2b36e1925c0bbbe4c1775293f5a37e5101f524a01",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "6081337395611938469",
+        "object_source_sha256": "565ad6b532cefa2f07d98d1751f8e707c9cd6728f3e6568d80871f97d64f3820"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_7",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_7.png",
+      "sha256": "f838655e8a96e397fad30a310bc991ac3382675f7e377bdbe00dd97abe85590c",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-5154950177534638427",
+        "object_source_sha256": "0266a4ebc6cb7eac2f58812bfb8673472e3b484ff68fe503d0d39848c19f1903"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_8",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_8.png",
+      "sha256": "520ce66fc6d2524b43b1e8f007cefca8457669c34f78e3fb6e2c6d338ca3a963",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-2573683683045862510",
+        "object_source_sha256": "ff205c3f311ad063f302d7ef604cf0864752e7ad64fdf73ad21d0a0ce35d395d"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_9",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_9.png",
+      "sha256": "95602c2506e1477698059c356d92b71129c73f1ac95729db8eb3f2c29b255d47",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-1454895466675170625",
+        "object_source_sha256": "106e1dba0fc8ff07a0d5ace859ac0d7351a6869149ce532df54dd4cc044c4ca0"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_10",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_10.png",
+      "sha256": "a5c781ebdb90b66ca05f94cac47098e7f2fea81082f62560a727ebd181ef852b",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "5969121388877870493",
+        "object_source_sha256": "59044baf6527fbe80d9c25ab659f5ae676af212f3fed0ee25863ff5896ec4943"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_11",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_11.png",
+      "sha256": "4671263c9ab268d286fe5419155b483bc2958ce63f85bec6c51fd07d33e47153",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-5515679173416578043",
+        "object_source_sha256": "99516d991b49d7fd3a68b9f1c5b1ca75dce02c65f44213fff6812a34a2e0e2f0"
+      }
+    },
+    {
+      "type": "pb_dogpark_tar_12",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_12.png",
+      "sha256": "da818868b4a9ae9790712b20bc30f394819dd8b31b831caefc28448f522604e1",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "1046028032295916766",
+        "object_source_sha256": "20507b7de31545af69448879e46dae7859d81b7881b25301149d49a2a895d747"
+      }
+    },
+    {
+      "type": "pb_dogpark_book_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_book_1.png",
+      "sha256": "fea109af59c700274aadbf55a63e48d1f23c74674d53a5daed34969b064fef0e",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "5393178466827504926",
+        "object_source_sha256": "39ee46a234b2086d65314c499727cabec05e51a55f813122c0c25aebc42b0e0f"
+      }
+    },
+    {
+      "type": "pb_dogpark_book_2",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_book_2.png",
+      "sha256": "f22c573b84c1a5a7b5842425280d61dc696c48054be74187308a005d38a23e9d",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "7301498619909456699",
+        "object_source_sha256": "864a03ba480aaf93ce98b564b9dada97221b34236dd1adf524d0a5afa197845d"
+      }
+    },
+    {
+      "type": "pb_dogpark_book_3",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_book_3.png",
+      "sha256": "56bcc42a590ed43fc4a28b7fb8eb99bb69aed227b9634182300235719e928596",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "436726840066015441",
+        "object_source_sha256": "94b3de19858c30c548e04f46233518d83d7f1389c05bf368c85b8ecf0bc4cb36"
+      }
+    },
+    {
+      "type": "pb_dogpark_book_4",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_book_4.png",
+      "sha256": "26224c454cd7cc787a220ebfc5d0929dbf5d5cc465c66c3de58cf24e850ab78a",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-616502364258075540",
+        "object_source_sha256": "91ba705e058fbb836f65254536f57247415b366294e9989bfdd830d9848101e0"
+      }
+    },
+    {
+      "type": "pb_dogpark_book_5",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_book_5.png",
+      "sha256": "4b31eaa4ff6bb8906b86e429ed52d346a8e09d5d5f468254da43d51ca9ec9118",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-1031754570249902754",
+        "object_source_sha256": "6bbb019a925dc0fd08d06b8b31003d1e0b701b91234a9904ca80edd350864b0a"
+      }
+    },
+    {
+      "type": "pb_dogpark_book_6",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_book_6.png",
+      "sha256": "ca5cfc68fbf1812b15b9d1d02ae30e3f1659c2680bd3a2a6c9afef5c356ba4b2",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "6276645216571762175",
+        "object_source_sha256": "1f39fa5887ca2b754d472a9106259381f9fc365950355e5befa164f669887996"
+      }
+    },
+    {
+      "type": "pb_dogpark_book_7",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_book_7.png",
+      "sha256": "612b5563c8f3bf82d95418222159b563f228f491e807a4c1595ade757dbd5b7e",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "451341244532489275",
+        "object_source_sha256": "9a8106cb8d39da020a8ab391e8426c6114f90983184bd642a7f37f64c8187bb6"
+      }
+    },
+    {
+      "type": "pb_dogpark_book_8",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_book_8.png",
+      "sha256": "84e27a34c9b6436357ca0095aefca175eef5a25f2c95cb990a369c0cf874399e",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-4882398754807100688",
+        "object_source_sha256": "595eb52b2c3dde7f09862e7fc8abf2c2aed9ecd682b1092da9190fabe168c972"
+      }
+    },
+    {
+      "type": "pb_dogpark_baby_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_1.png",
+      "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "8341245032131703483",
+        "object_source_sha256": "768791d7d1aaf0c237e72cd13e502b32c24a52f74a689638dda846b04b9c82de"
+      }
+    },
+    {
+      "type": "pb_dogpark_baby_a_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_a_1.png",
+      "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "3424274434531880326",
+        "object_source_sha256": "f7ab72b09de576c1acbd9399bab71f53dce18b7436fa83318c8fba3d53c11ba6"
+      }
+    },
+    {
+      "type": "pb_dogpark_baby_a_f_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_a_f_1.png",
+      "sha256": "28b8ba7e947fd4fbad40581d8b20319a4b7f7eb9045cb827f8aa2a2ac3355e07",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-155636913889783515",
+        "object_source_sha256": "55883709e3d37b6b727371224b529936c7be921c213eec20bb4fe786aad5a244"
+      }
+    },
+    {
+      "type": "pb_dogpark_baby_b_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_b_1.png",
+      "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-8450131314005338162",
+        "object_source_sha256": "181e15c989d39ecf60cb7b92b52cefffd09343aab83b99a255d51753d55ce85a"
+      }
+    },
+    {
+      "type": "pb_dogpark_baby_b_f_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_b_f_1.png",
+      "sha256": "992012ee2cc0f241a3ded22586ad788931b2411370ae9a83d08ffaaa237a6c1d",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-6934222505191073373",
+        "object_source_sha256": "d526a25caf4ad72f3840d1df1583a466fe93ff35f6d1b7a73d1dc81445641377"
+      }
+    },
+    {
+      "type": "pb_dogpark_baby_c_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_c_1.png",
+      "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-4887244946045337567",
+        "object_source_sha256": "7d977236351cd0271f8e44ff66099903dbebc5d4966e28cd98ee918ae50cf4b7"
+      }
+    },
+    {
+      "type": "pb_dogpark_baby_c_f_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_c_f_1.png",
+      "sha256": "c802edc076bdeb3d06998ad37fb103f556839f064f08836f4d6cad8f1a1e7f9d",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "7870350255505753539",
+        "object_source_sha256": "8168ac9d81d30f5551b8d3f167d289aed8824cd1ec03629be3745fe748497bf9"
+      }
+    },
+    {
+      "type": "pb_dogpark_baby_d_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_d_1.png",
+      "sha256": "92c4c8b1f1654759b8813e52e3e9086ee832ca6a831d49755093877dde6e7246",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "4934936333657357016",
+        "object_source_sha256": "ef33ce78eda776b48ee05a50af00b1be87ba888670d91cbe64c9377bf24afd2c"
+      }
+    },
+    {
+      "type": "pb_dogpark_feed_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_feed_1.png",
+      "sha256": "7c92dc58856dc22ab7fae3f7bf1ab6187a044f3db02ea1f503551302bedfa4ac",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-7868485338104260717",
+        "object_source_sha256": "4b1e86d6e7ea0a1e74e8120f04eed5e4c301b9e2ea49cf418c3028dbd4798830"
+      }
+    },
+    {
+      "type": "pb_dogpark_letter_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_letter_1.png",
+      "sha256": "fcd758383de588789631795d0343b5ccbd84b47c68802fc956bc87f0edad6c1b",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "6679251499032104318",
+        "object_source_sha256": "da992eaafbe9733eaccb41c8d159601b218e28fedcc89d5aae5fd7a875007ebe"
+      }
+    },
+    {
+      "type": "pb_dogpark_letter_2",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_letter_2.png",
+      "sha256": "af1e2cd251530dcf0f944b65d7ce70c2767f4a47d2beff322137cdbb6a7514a9",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-472293397692249290",
+        "object_source_sha256": "7e8a69d5bd443b8a89985cda6bdc4cc3f383382acfc6e100bedbe4d8466bfc9b"
+      }
+    },
+    {
+      "type": "pb_dogpark_letter_3",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_letter_3.png",
+      "sha256": "a799014ad52a8a58479eed0ae10262d4f8e6b06e12965f094ec55367615df68f",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "1327146279665686099",
+        "object_source_sha256": "c8ade150a859ba683f0313b76d8889a63d9873c0dbce2ea04c8ec34c052360d2"
+      }
+    },
+    {
+      "type": "pb_dogpark_score_1",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_score_1.png",
+      "sha256": "5ad45c296556e1311e7d934cac9b822f58b3d379ab79a594d79e5795fbd0b3c7",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "6873039801898318976",
+        "object_source_sha256": "53864a52a268d53c5c3ff833a7922ab79d47adc6ca3269ec153237b0c879550c"
+      }
+    },
+    {
+      "type": "pb_dogpark_score_2",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_score_2.png",
+      "sha256": "e65a823622a2dec097d3c0014b5c26a4ec27ea352e45740dbe1c9f09de38e399",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "4863345822427411714",
+        "object_source_sha256": "39f3bfe4f3d019ded9fa71175b02b303c06211df019291413c56acc645bf93bc"
+      }
+    },
+    {
+      "type": "pb_dogpark_score_3",
+      "src": "./assets/media/item-resolution-followup/pb_dogpark_score_3.png",
+      "sha256": "2ca35ded3934b901d32cde8800a8bcf949de91849a59bca841576645d686f289",
+      "identity": {
+        "type": "Sprite",
+        "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+        "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+        "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+        "path_id": "-8457739575738403852",
+        "object_source_sha256": "2a87f61150dd31e3add14021a22b6168d7315b2a4e82dd877799e838e6053622"
+      }
+    },
+    {
+      "type": "main_gem_super_1",
+      "src": "./assets/media/apk-base-main_gem_1.png",
+      "sha256": "e8a97854365f6cdee244f01b229a293d7f42d2b913e437110a10702591887d4a",
+      "sourceMediaKey": "item:ItemModelConfig:main_gem_super_1"
+    },
+    {
+      "type": "main_gem_super_2",
+      "src": "./assets/media/apk-base-main_super_gem_2.png",
+      "sha256": "4ae64fe7f02f43eeb7979a5ddcdc3281c579f9ba50ce3357acdf2b925a191d2c",
+      "sourceMediaKey": "item:ItemModelConfig:main_gem_super_2"
+    },
+    {
+      "type": "main_gem_super_3",
+      "src": "./assets/media/apk-base-main_super_gem_3.png",
+      "sha256": "de5b929690c81d3befd7d75b5d07efe6871b5d2fdd5c8de6ec071e4705842614",
+      "sourceMediaKey": "item:ItemModelConfig:main_gem_super_3"
+    },
+    {
+      "type": "main_gem_super_4",
+      "src": "./assets/media/apk-base-main_super_gem_4.png",
+      "sha256": "9607a5cf92de52d4e9c4fe5948aaf801f5a9d94cf63550f5655597bedece8c87",
+      "sourceMediaKey": "item:ItemModelConfig:main_gem_super_4"
+    },
+    {
+      "type": "main_gem_super_5",
+      "src": "./assets/media/apk-base-main_super_gem_5.png",
+      "sha256": "019eeb40c278ac79cfb9762613b0461cdcb6bf4e7b7c168e204eb53d58c3eb15",
+      "sourceMediaKey": "item:ItemModelConfig:main_gem_super_5"
+    },
+    {
+      "type": "main_gem_super_6",
+      "src": "./assets/media/apk-base-main_super_gem_6.png",
+      "sha256": "44ba882ea2ed8ec04678ad3aec2f58480eb45d6b7201d73ec9eba82ccae79cc9",
+      "sourceMediaKey": "item:ItemModelConfig:main_gem_super_6"
+    },
+    {
+      "type": "main_gem_super_7",
+      "src": "./assets/media/apk-base-main_super_gem_7.png",
+      "sha256": "6a28045d1dd4b899450b5296153ba473818188ac898a604ef9ed503b2b7c666e",
+      "sourceMediaKey": "item:ItemModelConfig:main_gem_super_7"
+    },
+    {
+      "type": "main_gem_super_8",
+      "src": "./assets/media/apk-base-main_super_gem_8.png",
+      "sha256": "e1cdc6610df1b1de7dc7c3022d813aaab675e0ee8f44daa777646ddeb70a9f1d",
+      "sourceMediaKey": "item:ItemModelConfig:main_gem_super_8"
+    },
+    {
+      "type": "main_super_energy_1",
+      "src": "./assets/media/apk-base-main_super_energy_1.png",
+      "sha256": "c98744ecc7b7f3aec911e4b4c6a92ec29181924f83886728cd23e6469c77274f",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_energy_1"
+    },
+    {
+      "type": "main_super_energy_2",
+      "src": "./assets/media/apk-base-main_super_energy_2.png",
+      "sha256": "f893410e6e9704104fc6c29301e5013c31e799d867adc7df7148a60a866730a4",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_energy_2"
+    },
+    {
+      "type": "main_super_energy_3",
+      "src": "./assets/media/apk-base-main_super_energy_3.png",
+      "sha256": "691ee3d87211ee195e559d3d516fbd64c151be92024ecee01269531c0e8c3403",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_energy_3"
+    },
+    {
+      "type": "main_super_energy_4",
+      "src": "./assets/media/apk-base-main_super_energy_4.png",
+      "sha256": "8d41c931d6f035f453f2e284ca6911b40b1480807b49c4e4d6ec1ec97df9ba0c",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_energy_4"
+    },
+    {
+      "type": "main_super_energy_5",
+      "src": "./assets/media/apk-base-main_super_energy_5.png",
+      "sha256": "bbd807ac974feefaf8463d33b44bbf549bbf47a93beb439724812abbdc9e7f3b",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_energy_5"
+    },
+    {
+      "type": "main_super_energy_6",
+      "src": "./assets/media/apk-base-main_super_energy_6.png",
+      "sha256": "cfba633862bae93ce3206d59ed353bfc425a610d88dae9c588f67060cee0958d",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_energy_6"
+    },
+    {
+      "type": "main_super_energy_7",
+      "src": "./assets/media/apk-base-main_super_energy_7.png",
+      "sha256": "91de34645b77020b5ccf3fe7264383114a52e57139b96abccf533f499d350f59",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_energy_7"
+    },
+    {
+      "type": "main_super_energy_8",
+      "src": "./assets/media/apk-base-main_super_energy_8.png",
+      "sha256": "fd07341844183cdb05745564eb3d2351f21e3fe43977311fa1f73678aa55c846",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_energy_8"
+    },
+    {
+      "type": "main_super_gold_1",
+      "src": "./assets/media/apk-base-main_nugget_1.png",
+      "sha256": "619d25c0d779901a2d2d7ebeff16b05d3f7d2872d10dd614d902713a811cb197",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_gold_1"
+    },
+    {
+      "type": "main_super_gold_2",
+      "src": "./assets/media/apk-base-main_super_gold_2.png",
+      "sha256": "6b7d798cd415b6f9cfd6b3f43be00833a5eef9b2b6ad24720e06288c96367947",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_gold_2"
+    },
+    {
+      "type": "main_super_gold_3",
+      "src": "./assets/media/apk-base-main_super_gold_3.png",
+      "sha256": "219559bf5fd9c574ca92b472f8b03494ae4009db52a1819d20975c0d71b2e9a8",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_gold_3"
+    },
+    {
+      "type": "main_super_gold_4",
+      "src": "./assets/media/apk-base-main_super_gold_4.png",
+      "sha256": "c481ab6584c7011109b98bf17baf1feba6ec29b719c0ca247470d330c0960552",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_gold_4"
+    },
+    {
+      "type": "main_super_gold_5",
+      "src": "./assets/media/apk-base-main_super_gold_5.png",
+      "sha256": "83c516fc415da0ee12d7404833420be07b614925f596d287374779fdfa0ce13b",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_gold_5"
+    },
+    {
+      "type": "main_super_gold_6",
+      "src": "./assets/media/apk-base-main_super_gold_6.png",
+      "sha256": "2dc34dc92b60259ade4bde5f5a29f7454282b09cad61fcc327aa00cbc8660160",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_gold_6"
+    },
+    {
+      "type": "main_super_gold_7",
+      "src": "./assets/media/apk-base-main_super_gold_7.png",
+      "sha256": "7667b0646926388a7a35b6405185693d034b4d2aa1eaa348b52fce0eab8236ab",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_gold_7"
+    },
+    {
+      "type": "main_super_gold_8",
+      "src": "./assets/media/apk-base-main_super_gold_8.png",
+      "sha256": "ffdc22e123375c1d394aa23e4af21268c6454736c6e1501a24c3680a206aaa3c",
+      "sourceMediaKey": "item:ItemModelConfig:main_super_gold_8"
+    }
+  ],
+  "cacheSortPrefixes": [
+    "pb_dogpark_tar",
+    "pb_dogpark_book",
+    "main_cloud"
+  ],
+  "sources": [
+    {
+      "id": "bubble-code",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemBubble.lua",
+      "sha256": "64538f4f1f56aec6b4b52e2479e93eb27375996c1ac22810dabeb29eef690e0c",
+      "lineStart": 135,
+      "lineEnd": 152
+    },
+    {
+      "id": "bubble-bytecode",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemBubble.luac",
+      "sha256": "5993d881250c00e04214ada9ec57459f8d8a011f8c33eff637ea6702f1e750b6",
+      "lineStart": null,
+      "lineEnd": null
+    },
+    {
+      "id": "name-table",
+      "path": "analysis/lua/Lua_Base/Data/AssetName/ImageFileConfigName.lua",
+      "sha256": "c4e9cb413d2aad5338e00865b1e980178442d4908c485098ae5b4fe737c2c58e",
+      "lineStart": 4592,
+      "lineEnd": 4606
+    },
+    {
+      "id": "name-bytecode",
+      "path": "analysis/lua/Lua_Base/Data/AssetName/ImageFileConfigName.luac",
+      "sha256": "f05f76ba8ea64f3d025aed9e5a73bf0bd6538c5df8fa1c9409d0789e92528381",
+      "lineStart": null,
+      "lineEnd": null
+    },
+    {
+      "id": "item-factory",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemModelFactory.lua",
+      "sha256": "b22cf7c302bc5092e28461749bffe4f5541d4d745190d2976d386e85a98549f2",
+      "lineStart": 69,
+      "lineEnd": 125
+    },
+    {
+      "id": "item-definition",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemDefinition.lua",
+      "sha256": "af977ea7680b82cbffc5ae392de2fc47158e9cb570031a498ff6d316f8844051",
+      "lineStart": 1797,
+      "lineEnd": 1808
+    },
+    {
+      "id": "item-data-model",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemDataModel.lua",
+      "sha256": "7a199a3ffea516f08a29a765cb030f630161cc4b631d8c5d773087b8d4c72a26",
+      "lineStart": 174,
+      "lineEnd": 201
+    },
+    {
+      "id": "sprite-util",
+      "path": "analysis/lua/Lua_Base/Common/Utility/SpriteUtil.lua",
+      "sha256": "287bd820f703363b58ebbb0e2478aec23b43484456582cbf8cf396f306981d12",
+      "lineStart": 1,
+      "lineEnd": 49
+    },
+    {
+      "id": "adventure-definition",
+      "path": "analysis/lua/Lua_Activity/AdventureActivity/AdventureActivityDefinition.lua",
+      "sha256": "a2a0d6337120f295f7735231e39f0a99f1957fcbc6f3474877cc808455103ccf",
+      "lineStart": 1,
+      "lineEnd": 68
+    },
+    {
+      "id": "pureboard-definition",
+      "path": "analysis/lua/Lua_Activity/PureBoardActivity/PureBoardActivityDefinition.lua",
+      "sha256": "d53c1d6e84ccca162edede07c62f3fccc8d529cb4460c5ebc265959355b61acb",
+      "lineStart": 1,
+      "lineEnd": 55
+    },
+    {
+      "id": "AdventureItemModelConfig_dogparkpure",
+      "path": "analysis/lua/Lua_Config/Data/Config/AdventureItemModelConfig_dogparkpure.lua",
+      "sha256": "1909f7f58131f5591ba39443f585d98bcc65aad51eed49d8841c956b9e578987",
+      "lineStart": null,
+      "lineEnd": null
+    },
+    {
+      "id": "AdventureItemModelConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/AdventureItemModelConfig_dogpark.lua",
+      "sha256": "bb5e37a443194af878ec2ce5cafec41d7a817571f1eb91acd781a222d0385366",
+      "lineStart": null,
+      "lineEnd": null
+    },
+    {
+      "id": "PureboardItemModelConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/PureboardItemModelConfig_dogpark.lua",
+      "sha256": "adb0a70a5187516425daa5a9880a0213e3688ac351e422d019cf757b657117a1",
+      "lineStart": null,
+      "lineEnd": null
+    },
+    {
+      "id": "property-ItemModelConfig",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+      "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+      "lineStart": 4461,
+      "lineEnd": 4463
+    },
+    {
+      "id": "property-ItemModelConfig_shell",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_shell.lua",
+      "sha256": "5e19cc0070ef830748f00582c8f8786dce6303d68dbf538aec352f4fceee8b71",
+      "lineStart": 4539,
+      "lineEnd": 4541
+    },
+    {
+      "id": "property-ItemModelConfig_carditem2",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_carditem2.lua",
+      "sha256": "caeba9433106482fff245b62079bd53a28999b12741a52b00fdd5559859781eb",
+      "lineStart": 4461,
+      "lineEnd": 4463
+    },
+    {
+      "id": "property-ItemModelConfig_extracust",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_extracust.lua",
+      "sha256": "91d63905f67db1877e0a5adaec8935f4c452bc1b3b737252041792ed584c04c3",
+      "lineStart": 4481,
+      "lineEnd": 4483
+    },
+    {
+      "id": "config-model-load",
+      "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+      "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+      "lineStart": 261,
+      "lineEnd": 298
+    },
+    {
+      "id": "pureboard-model",
+      "path": "analysis/lua/Lua_Activity/PureBoardActivity/Model/PureBoardActivityModel.lua",
+      "sha256": "5bcf24881269efa8712563f02b64b4dbee1cf2017591835dceb70bb424f6e547",
+      "lineStart": 34,
+      "lineEnd": 176
+    },
+    {
+      "id": "pureboard-board-model",
+      "path": "analysis/lua/Lua_Activity/PureBoardActivity/Board/PureBoardActivityBoardModel.lua",
+      "sha256": "3c4b2dd0790693d59836f66d5e660c40a25aa740261cce5dd685acfa83fb7833",
+      "lineStart": 1,
+      "lineEnd": 59
+    },
+    {
+      "id": "base-ui-board-init",
+      "path": "analysis/lua/Lua_Core/Board/Model/UIBoard/BaseUIBoardModel.lua",
+      "sha256": "1cddeb1b7477322bcac273676e791b26ad210a0a3588c632bdf935041cc79f4a",
+      "lineStart": 38,
+      "lineEnd": 99
+    },
+    {
+      "id": "base-ui-layer-load",
+      "path": "analysis/lua/Lua_Core/Board/Model/UIBoard/BaseUIItemLayerModel.lua",
+      "sha256": "92b21f43bdb4cf17c133efaf3ccd46882dfb3ebaf506d5941f29be74dc0eb432",
+      "lineStart": 38,
+      "lineEnd": 68
+    },
+    {
+      "id": "base-ui-board-scroll",
+      "path": "analysis/lua/Lua_Core/Board/Model/UIBoard/BaseUIBoardModel.lua",
+      "sha256": "1cddeb1b7477322bcac273676e791b26ad210a0a3588c632bdf935041cc79f4a",
+      "lineStart": 249,
+      "lineEnd": 325
+    },
+    {
+      "id": "property-factory-components",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemModelFactory.lua",
+      "sha256": "b22cf7c302bc5092e28461749bffe4f5541d4d745190d2976d386e85a98549f2",
+      "lineStart": 165,
+      "lineEnd": 256
+    },
+    {
+      "id": "pureboard-view-wrappers",
+      "path": "analysis/lua/Lua_Activity/PureBoardActivity/Board/PureBoardActivityBoardView.lua",
+      "sha256": "9bcde08c1ad5bb3cfa3779784ef7689a23727c6e5299a5fbbd4f7de07e8fa3c1",
+      "lineStart": 4,
+      "lineEnd": 15
+    },
+    {
+      "id": "PureboardBoardModelConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/PureboardBoardModelConfig_dogpark.lua",
+      "sha256": "379dd9cf50a913cb96285867259424486530d090362666e6ff73154e2dc4e3c0",
+      "lineStart": 1,
+      "lineEnd": 119
+    },
+    {
+      "id": "PureboardBoardScrollConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/PureboardBoardScrollConfig_dogpark.lua",
+      "sha256": "cc1b2d869dea966fb536993e619f01cf887a5e017618b8be99ee88f74056ca8d",
+      "lineStart": 1,
+      "lineEnd": 3
+    },
+    {
+      "id": "PureboardFogModelConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/PureboardFogModelConfig_dogpark.lua",
+      "sha256": "91d968cb191d306da58f037c6d77a34080f0b07153b96c0a10a10e0033591859",
+      "lineStart": 1,
+      "lineEnd": 1
+    },
+    {
+      "id": "PureboardBoardPaperRewardConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/PureboardBoardPaperRewardConfig_dogpark.lua",
+      "sha256": "49ffcaf4c1d350d07a95118d92f4920b535831dd10b11a92d37f19e1061dc82e",
+      "lineStart": 1,
+      "lineEnd": 119
+    },
+    {
+      "id": "registered-spread",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSpread.lua",
+      "sha256": "5f402cab292182cb28d2a03ab2840d3440e1f5ac1ae311a3213c62fb505eaaec",
+      "lineStart": 311,
+      "lineEnd": 321
+    },
+    {
+      "id": "registered-drag",
+      "path": "analysis/lua/Lua_Core/Board/Model/UIBoard/BaseUIBoardModel.lua",
+      "sha256": "1cddeb1b7477322bcac273676e791b26ad210a0a3588c632bdf935041cc79f4a",
+      "lineStart": 166,
+      "lineEnd": 228
+    },
+    {
+      "id": "registered-merge",
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/BaseBoardModel.lua",
+      "sha256": "696f34660a9ba456e33ec0e3b0ddeeb0f8b8272e4ce2d3aed094a02d977537e0",
+      "lineStart": 182,
+      "lineEnd": 351
+    },
+    {
+      "id": "registered-swallow",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemSwallow.lua",
+      "sha256": "7e8a5c5bc83d77921b92a7cacc71a7e3770f915cb61bff91bf1c56cc326af541",
+      "lineStart": 60,
+      "lineEnd": 108
+    }
+  ],
+  "sourceProposalSHA256": "5612496c62e51763988fab1b7019d4e2a7d2bf1af934b74e2f96b5013eee8c91",
+  "runtimeObserved": false,
+  "boundaries": [
+    "실제 서버 활동 배정·운영 일정은 미관측",
+    "활동 레벨은 서버 pureBoardItems 값이 필요하며 합성 횟수·아이템 suffix로 증가시키지 않음",
+    "주문 공급·단계 보상·도감·종료 보상표는 미확정이므로 지급하지 않음",
+    "생성 결과는 출하 유한 풀을 따르되 난수와 빈칸 배치·동률 캐시 순서는 명시한 웹 정책",
+    "rb#pack_common_2·main_pack_laser_5_1·main_level_up_piece_1 후속 개봉·전환은 이 보드에서 해석하지 않음",
+    "가위·레벨업은 MainBoardModel에만 별도 분기가 있고 PureBoard DragItem에는 없으므로 성공 동작으로 제공하지 않음",
+    "봉인 표시는 웹 도형이며 원작의 외곽·입자·음향 타이밍 재현과 구분",
+    "이전 dogparkpure 연구 fixture·메인 플레이 저장·지갑은 읽거나 변경하지 않음"
+  ],
+  "revision": "08e491059216081b25ec4e661f10b8ea9b82db949fe9c37365218cf579c2b359"
+}

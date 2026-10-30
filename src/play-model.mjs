@@ -1,3 +1,4 @@
+import {tutorialEconomyFor} from './tutorial-economy.mjs';
 import {createState,advanceTime,buyEnergy,energyCost,traceOffers} from './engine.mjs';
 import {reconcileOrders,submitOrder,orderStatus,validOrderState} from './order-model.mjs';
 import {createInventory,storeItem,withdrawItem,buyInventorySlot,validInventory} from './inventory-model.mjs';
@@ -20,6 +21,7 @@ const currentTutorial=(s,config)=>s.tutorialStep===undefined?null:config.tutoria
 const tutorialAllows=(step,kind,from,to)=>!step||(step.kind===kind&&(kind==='generate'?step.index===from:step.from===from&&step.to===to));
 const event=(s,ok,message,cells=[])=>{s.message=message;s.lastAction={ok,cells};s.log.unshift({time:s.wallet.time,message,ok});s.log=s.log.slice(0,60);return {ok,message};};
 const guideContext=s=>({eventLocked:Boolean(s.toolPending),paperBoxExtraRewardAnimationPlaying:false});
+const economicGuide=(s,c)=>tutorialEconomyFor(s,s.tutorialStep!==undefined&&!s.guidanceSkipped?onboardingConstraints(s,c):{});
 function makeCell(s,config,type,cover=null){
  const wrapper=describeRewardWrapper(String(type),config);
  const cell={uid:s.nextUid++,type:wrapper?.type||String(type),cover,...(wrapper?{rewardType:wrapper.rewardType,rewardCount:wrapper.rewardCount}:{})};
@@ -65,7 +67,7 @@ export function migratePlayState(s,config){
  return s;
 }
 const spreadContext=(s,c)=>({orders:s.orders?.slots||[],boostRatio:s.boostRatio||0,
- ...(s.tutorialStep!==undefined&&!s.guidanceSkipped&&onboardingConstraints(s,c).forcedSpreadType?{forceCode:onboardingConstraints(s,c).forcedSpreadType}:{})});
+ ...(economicGuide(s,c).forcedSpreadType!==undefined?{forceCode:economicGuide(s,c).forcedSpreadType}:{})});
 const spreadHooks=(s,c)=>({makeCell:type=>makeCell(s,c,type),removeCell:index=>removeCell(s,index),findSlot:index=>spreadSlot(s,index),
  resolveSmart:snapshot=>resolveSmartReward(snapshot,c,{random:snapshot.random}),allocatePack:payload=>allocatePack(s,payload,c)});
 function skipCooldownUid(s,uid,c){
@@ -113,8 +115,9 @@ function bubbleInputs(s,c){
  return input;
 }
 export function currentBubbleQuote(s,c,b){
- if(b?.kind!=='natural')return {status:'known',price:b?.price,expiresAt:b?.expiresAt,durationSeconds:c.specialRules?.bubble.defaultDurationSeconds};
- const guide=s.tutorialStep!==undefined&&!s.guidanceSkipped?onboardingConstraints(s,c):{},inputs=bubbleInputs(s,c);
+ const guide=economicGuide(s,c);
+ if(b?.kind!=='natural')return {status:'known',price:guide.forcedBubbleCost??b?.price,expiresAt:b?.expiresAt,durationSeconds:c.specialRules?.bubble.defaultDurationSeconds};
+ const inputs=bubbleInputs(s,c);
  if(guide.forcedBubbleCost!==undefined)inputs.tutorialCost=guide.forcedBubbleCost;
  const quote=bubbleQuote(s,c,b.innerType,inputs);
  return {...quote,...(quote.status==='known'?{expiresAt:b.source.createdAt+quote.durationSeconds}:{})};
@@ -175,7 +178,8 @@ export function generateFrom(s,index,config){
  if(s.toolPending)return event(s,false,'도구 사용을 확인하거나 취소하세요.');
  const tutorial=currentTutorial(s,config);
  if(!tutorialAllows(tutorial,'generate',index))return event(s,false,'튜토리얼에서 안내한 생성기를 사용하세요.');
- const cell=s.board[index],g=generatorFor(config,cell);
+ const cell=s.board[index],g=generatorFor(config,cell),directive=economicGuide(s,config);
+ if(directive.forcedSpreadType!==undefined&&!itemFor(config,directive.forcedSpreadType))return event(s,false,'안내의 강제 생성 타입이 출하 아이템 목록에 없어 상태와 난수를 보존했습니다.');
  if(!g)return event(s,false,'선택한 타입은 이번 실험의 생성기 범위가 아닙니다.');
  if(cell.cover||bubbleFor(s,cell))return event(s,false,'덮개·거미줄·버블을 먼저 해제하세요.');
  refreshGenerator(s,cell,config);
@@ -189,7 +193,7 @@ export function generateFrom(s,index,config){
  if(r.charges===0)return event(s,false,`충전 대기 · ${Math.max(0,r.readyAt-s.wallet.time)}초 뒤 회복`);
  const slot=spreadSlot(s,index);if(slot<0)return event(s,false,'보드가 가득 찼습니다. 합성·주문·판매로 공간을 확보하세요.');
  if(s.wallet.energy<g.cost){s.energyFromLack=true;const early=eligibleTrace(s,config,false);s.offer=early;s.modal=early.earlyBundle?'offer':'energy';return event(s,false,'에너지 부족 · 현재 재화로 충전/오퍼 조건을 평가합니다.');}
- const forced=s.tutorialStep!==undefined&&!s.guidanceSkipped?onboardingConstraints(s,config).forcedSpreadType:null;
+ const forced=economicGuide(s,config).forcedSpreadType;
  const type=forced&&itemFor(config,forced)?forced:fixedDraw(s,cell.type,g);
  s.wallet.energy-=g.cost;s.wallet.generated++;r.charges--;
  if(r.timerStart===null)r.timerStart=s.wallet.time;
@@ -462,7 +466,7 @@ function applyPlayAction(s,action,value,config){
   return event(s,true,active?'앨범과4종 팩 지원을 연구 가정으로 입력했습니다. 카드 추첨은 하지 않습니다.':'앨범 미연결의 원본 대체 보상 분기를 사용합니다.');
  }
  if(action==='open-item'||action==='speedup-item'){
-  const index=value===undefined?s.selected:Number(value),guide=s.tutorialStep!==undefined&&!s.guidanceSkipped?onboardingConstraints(s,config):{};
+  const index=value===undefined?s.selected:Number(value),guide=economicGuide(s,config);
   const result=action==='open-item'?openSpreadItem(s,index,config):speedUpSpread(s,index,config,{forcedCost:guide.forcedSkipCost});
   return event(s,result.ok,result.message,result.cells||[]);
  }
@@ -500,7 +504,7 @@ function applyPlayAction(s,action,value,config){
   if(!b)return event(s,false,'구매할 연구 버블을 선택하세요.');
   const quote=currentBubbleQuote(s,config,b);if(quote.status!=='known')return event(s,false,'현재 버블 가격·기간의 명시 조건을 확인하세요.');
   if(s.wallet.time>=quote.expiresAt&&s.selected!==index)return event(s,false,'만료된 버블입니다. 시간 갱신 후 확인하세요.');
-  const price=s.tutorialStep!==undefined&&!s.guidanceSkipped?(onboardingConstraints(s,config).forcedBubbleCost??quote.price):quote.price;
+  const price=economicGuide(s,config).forcedBubbleCost??quote.price;
   if(s.wallet.gems<price)return event(s,false,`버블 구매에 젬 ${price}개 필요 · 부족 ${price-s.wallet.gems}개`);
   s.wallet.gems-=price;replaceCell(s,index,b.innerType,config);
   return event(s,true,`버블 구매 · 젬 −${price} · ${b.innerType} 해제${quote.sale?' · 명시 할인 일정 가정 적용':''}`,[index]);

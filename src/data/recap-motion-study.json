@@ -1,0 +1,3898 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "reviewDate": "2026-10-30",
+  "checklistId": "3.13",
+  "prefabs": [
+    {
+      "resourceKey": "StoryRecapBookContentWindow",
+      "assetPath": "Assets/StoryRecap/Prefab/StoryRecapBookContentWindow.prefab",
+      "assetGuid": "151931e800f53a84da3d733d0dce73da",
+      "identity": {
+        "id": "4aea623e0fd8c64f3e4c6cdc8e6b4882",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "4016088606123655275",
+        "unityType": "GameObject",
+        "sourceSHA256": "507e57d9a3a57ed56fb71eaaa6570ff1c0a671fba7b24a1b63119aba8a6f8fe5"
+      },
+      "nodes": 43
+    },
+    {
+      "resourceKey": "StoryRecapEntry",
+      "assetPath": "Assets/StoryRecap/Prefab/StoryRecapEntry.prefab",
+      "assetGuid": "b104941e8d2225c40aafa3b4e514ab67",
+      "identity": {
+        "id": "61319de2477ff6694cb9b320eb6733f1",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "-5287188894669099842",
+        "unityType": "GameObject",
+        "sourceSHA256": "7fe5dfac6001741006a4ef86ab5669d4683efbeb40135c0bb27f4c1797b42169"
+      },
+      "nodes": 8
+    },
+    {
+      "resourceKey": "StoryRecapMainWindow",
+      "assetPath": "Assets/StoryRecap/Prefab/StoryRecapMainWindow.prefab",
+      "assetGuid": "f84efeb7364d304409cf76d283ce85fe",
+      "identity": {
+        "id": "5d3fe8c0255c8c914fa06a461afe9395",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "4006453537952424018",
+        "unityType": "GameObject",
+        "sourceSHA256": "da1d158d388f78cb3e6462b0754e2525434798e2e0bdb37955b17976dfe6578e"
+      },
+      "nodes": 38
+    }
+  ],
+  "bindings": [
+    {
+      "id": "StoryRecapBookContentWindow:m_rollPageSpine",
+      "prefab": "StoryRecapBookContentWindow",
+      "field": "m_rollPageSpine",
+      "nodePath": "/StoryRecapBookContentWindow/scaleRoot/content/rollPageSpine",
+      "serializedActive": true,
+      "transformChain": [
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0,
+            "y": 0
+          },
+          "m_AnchorMax": {
+            "x": 1,
+            "y": 1
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 979,
+            "y": 1236
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchoredPosition": {
+            "x": -495.8999938964844,
+            "y": -785
+          },
+          "m_SizeDelta": {
+            "x": 100,
+            "y": 100
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "component": {
+        "id": "704ff5ff655223c62f1190ec0a7bae9c",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "-9171945434478733556",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "831e7d165fcebcc987f20e7157b5dfe994fe30cb310234a04f4223f85cda263e"
+      },
+      "luaComponent": {
+        "id": "f049bddc97c248b24480c9f898ead63d",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "3557110140744760324",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "4b879ea84c676e4fa94ec3d5e085fd3ea6a8fc6311b3e3160f6bb8514cdfa545"
+      },
+      "skeletonDataAsset": {
+        "id": "abd7200f9813e21fdab46308c50f4887",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "-1803897465412481387",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "e378cf8d2f60d3f0f5c74df96d1bacb9cb100a089ee76997f714a6b4d969ae63"
+      },
+      "skeletonSource": {
+        "id": "a859db352863ea20ed6c1df81f05e17c",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "-5776745463861097222",
+        "unityType": "TextAsset",
+        "sourceSHA256": "914ee9833615ee49d87afeba330b99da86e0998110739763c2ab4a313265e04b"
+      },
+      "atlasAsset": {
+        "id": "01a3b4a95edcfa4a58bc29ca39b89642",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "-1197142889274311180",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "d257a5872ef6ca6991052d51a26eeede2cbc0e7650b3549564e272f2b20e7bf9"
+      },
+      "atlasSource": {
+        "id": "08e4aa8c7b4f57e95c6f6f8f0a63df2b",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "-3365255346183620909",
+        "unityType": "TextAsset",
+        "sourceSHA256": "76c960126282194cc33d7ee498bc04375e3b032452ae116d81465a4591e12cd2"
+      },
+      "materials": [
+        {
+          "source": {
+            "id": "d2375e37399ef15eeefe3b2f92a7d142",
+            "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+            "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+            "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+            "pathId": "-9019980765057286447",
+            "unityType": "Material",
+            "sourceSHA256": "072b3a4903ef6fdc0cbb601148d045745b34beacc577a56d6ada3f2c9a7661af"
+          },
+          "texture": {
+            "id": "b9acbff44a05eacd67b0d805a46ad6e9",
+            "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+            "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+            "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+            "pathId": "-8866916353938390449",
+            "unityType": "Texture2D",
+            "sourceSHA256": "dec32cec0fcbed465114078f74fb60afb84dbbb6a4aafacde8a75569ba9db984"
+          }
+        }
+      ],
+      "packageId": "08e4aa8c7b4f57e95c6f6f8f0a63df2b",
+      "page": {
+        "name": "StoryReview.png",
+        "declaredSize": [
+          2019,
+          1022
+        ],
+        "actualPNGSize": [
+          2048,
+          1024
+        ],
+        "sizeMatchesAtlas": false
+      },
+      "componentSettings": {
+        "initialSkinName": "",
+        "initialFlipX": 0,
+        "initialFlipY": 0,
+        "startingAnimation": "",
+        "startingLoop": 0,
+        "timeScale": 1,
+        "freeze": 0,
+        "m_Color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "m_Maskable": 1
+      },
+      "skeletonScale": 1,
+      "defaultMix": 0,
+      "originalRuntimeObserved": false,
+      "originalRenderingVerified": false
+    },
+    {
+      "id": "StoryRecapMainWindow:m_avatarHandSpine",
+      "prefab": "StoryRecapMainWindow",
+      "field": "m_avatarHandSpine",
+      "nodePath": "/StoryRecapMainWindow/scaleRoot/content/bg/avatarHand",
+      "serializedActive": true,
+      "transformChain": [
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0,
+            "y": 0
+          },
+          "m_AnchorMax": {
+            "x": 1,
+            "y": 1
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 979,
+            "y": 1236
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0,
+            "y": 0
+          },
+          "m_AnchorMax": {
+            "x": 1,
+            "y": 1
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 0.38499999046325684,
+            "y": 0.38499999046325684,
+            "z": 0.38499999046325684
+          },
+          "m_AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchoredPosition": {
+            "x": 136.80999755859375,
+            "y": 380
+          },
+          "m_SizeDelta": {
+            "x": 100,
+            "y": 100
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "component": {
+        "id": "a5b0efa2272b1e0f9bcb8f12a3e9f40a",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "56612981099200645",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "be803a722cb0a4d5a3279ed2d222ce68be4f4d0ae7bd5cbfab56c75d0f9874cc"
+      },
+      "luaComponent": {
+        "id": "9cd04ae33fd233918be5b0d5b623994a",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "3378236633498861659",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "3dadcfdeb8f9e57eaf3425cb5f9f5b1df9f3de0efa01f492504246ee4d450dc1"
+      },
+      "skeletonDataAsset": {
+        "id": "fbcbd3fd9bf305504561379236bde09f",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "-3860414119274228808",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "8d509549b1fcd1761ddfee8bcfb2dbaebc2a739fe44b6ac8170560cc02b61ede"
+      },
+      "skeletonSource": {
+        "id": "b34c2aa4983664af59091438da6d0156",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "-8111221050588722052",
+        "unityType": "TextAsset",
+        "sourceSHA256": "0b1fbaa788dcb2c95ea9f4c9410d87c2484b24730cf054b011e931aeee9dc6fa"
+      },
+      "atlasAsset": {
+        "id": "b7408ce8b18fb47148a565963b135500",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "4662737566501323249",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "8665514bfa9b802371fcb3cc92a1f1cbb5a8963066096302ba2357de8d0f6b9f"
+      },
+      "atlasSource": {
+        "id": "0a2aba6f39d295eae5a5484406f6ec27",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "2097585204026204072",
+        "unityType": "TextAsset",
+        "sourceSHA256": "87ab4114811fcedcfdfb0a06302b3b5d06c7bbe7ec7681cc0ec0ef84f77f9b19"
+      },
+      "materials": [
+        {
+          "source": {
+            "id": "fefd38353b098c71ff153d6d3edf558b",
+            "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+            "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+            "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+            "pathId": "-2977238470457537450",
+            "unityType": "Material",
+            "sourceSHA256": "5c702fa2ebab9eb3ad1e5777a3f3db59cffdaedc07f197bad917176a6ea5135f"
+          },
+          "texture": {
+            "id": "de9300c1f1060d7b33eb005426cd0877",
+            "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+            "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+            "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+            "pathId": "-5599493756906175474",
+            "unityType": "Texture2D",
+            "sourceSHA256": "7000ac7114ba2a61efbc00e5ba8bb9c28bc4c2a0d99251da4bc1f3f7cd3c42c1"
+          }
+        }
+      ],
+      "packageId": "0a2aba6f39d295eae5a5484406f6ec27",
+      "page": {
+        "name": "Lily.png",
+        "declaredSize": [
+          991,
+          962
+        ],
+        "actualPNGSize": [
+          1024,
+          1024
+        ],
+        "sizeMatchesAtlas": false
+      },
+      "componentSettings": {
+        "initialSkinName": "",
+        "initialFlipX": 1,
+        "initialFlipY": 0,
+        "startingAnimation": "Lily_story_finished_repeat2",
+        "startingLoop": 0,
+        "timeScale": 1,
+        "freeze": 0,
+        "m_Color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "m_Maskable": 1
+      },
+      "skeletonScale": 1,
+      "defaultMix": 0.20000000298023224,
+      "originalRuntimeObserved": false,
+      "originalRenderingVerified": false
+    },
+    {
+      "id": "StoryRecapMainWindow:m_avatarBodySpine",
+      "prefab": "StoryRecapMainWindow",
+      "field": "m_avatarBodySpine",
+      "nodePath": "/StoryRecapMainWindow/scaleRoot/content/bg/avatarBody",
+      "serializedActive": true,
+      "transformChain": [
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0,
+            "y": 0
+          },
+          "m_AnchorMax": {
+            "x": 1,
+            "y": 1
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 979,
+            "y": 1236
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "m_AnchorMin": {
+            "x": 0,
+            "y": 0
+          },
+          "m_AnchorMax": {
+            "x": 1,
+            "y": 1
+          },
+          "m_AnchoredPosition": {
+            "x": 0,
+            "y": 0
+          },
+          "m_SizeDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "m_LocalPosition": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "m_LocalRotation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "m_LocalScale": {
+            "x": 0.38499999046325684,
+            "y": 0.38499999046325684,
+            "z": 0.38499999046325684
+          },
+          "m_AnchorMin": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchorMax": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "m_AnchoredPosition": {
+            "x": 136.80999755859375,
+            "y": 380
+          },
+          "m_SizeDelta": {
+            "x": 100,
+            "y": 100
+          },
+          "m_Pivot": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ],
+      "component": {
+        "id": "e2259a6b2efca845c846dd82b85ffbdb",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "-2467809908297581421",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "d4bf1e295d64585e419b8db07631d8ac1bb459aa048246cf326e6ef9dbcf5a56"
+      },
+      "luaComponent": {
+        "id": "9cd04ae33fd233918be5b0d5b623994a",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "3378236633498861659",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "3dadcfdeb8f9e57eaf3425cb5f9f5b1df9f3de0efa01f492504246ee4d450dc1"
+      },
+      "skeletonDataAsset": {
+        "id": "fbcbd3fd9bf305504561379236bde09f",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "-3860414119274228808",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "8d509549b1fcd1761ddfee8bcfb2dbaebc2a739fe44b6ac8170560cc02b61ede"
+      },
+      "skeletonSource": {
+        "id": "b34c2aa4983664af59091438da6d0156",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "-8111221050588722052",
+        "unityType": "TextAsset",
+        "sourceSHA256": "0b1fbaa788dcb2c95ea9f4c9410d87c2484b24730cf054b011e931aeee9dc6fa"
+      },
+      "atlasAsset": {
+        "id": "b7408ce8b18fb47148a565963b135500",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "4662737566501323249",
+        "unityType": "MonoBehaviour",
+        "sourceSHA256": "8665514bfa9b802371fcb3cc92a1f1cbb5a8963066096302ba2357de8d0f6b9f"
+      },
+      "atlasSource": {
+        "id": "0a2aba6f39d295eae5a5484406f6ec27",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "2097585204026204072",
+        "unityType": "TextAsset",
+        "sourceSHA256": "87ab4114811fcedcfdfb0a06302b3b5d06c7bbe7ec7681cc0ec0ef84f77f9b19"
+      },
+      "materials": [
+        {
+          "source": {
+            "id": "fefd38353b098c71ff153d6d3edf558b",
+            "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+            "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+            "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+            "pathId": "-2977238470457537450",
+            "unityType": "Material",
+            "sourceSHA256": "5c702fa2ebab9eb3ad1e5777a3f3db59cffdaedc07f197bad917176a6ea5135f"
+          },
+          "texture": {
+            "id": "de9300c1f1060d7b33eb005426cd0877",
+            "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+            "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+            "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+            "pathId": "-5599493756906175474",
+            "unityType": "Texture2D",
+            "sourceSHA256": "7000ac7114ba2a61efbc00e5ba8bb9c28bc4c2a0d99251da4bc1f3f7cd3c42c1"
+          }
+        }
+      ],
+      "packageId": "0a2aba6f39d295eae5a5484406f6ec27",
+      "page": {
+        "name": "Lily.png",
+        "declaredSize": [
+          991,
+          962
+        ],
+        "actualPNGSize": [
+          1024,
+          1024
+        ],
+        "sizeMatchesAtlas": false
+      },
+      "componentSettings": {
+        "initialSkinName": "",
+        "initialFlipX": 1,
+        "initialFlipY": 0,
+        "startingAnimation": "Lily_story_appear_repeat",
+        "startingLoop": 0,
+        "timeScale": 1,
+        "freeze": 0,
+        "m_Color": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "m_Maskable": 1
+      },
+      "skeletonScale": 1,
+      "defaultMix": 0.20000000298023224,
+      "originalRuntimeObserved": false,
+      "originalRenderingVerified": false
+    }
+  ],
+  "skeletons": [
+    {
+      "source": {
+        "id": "a859db352863ea20ed6c1df81f05e17c",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "-5776745463861097222",
+        "unityType": "TextAsset",
+        "sourceSHA256": "914ee9833615ee49d87afeba330b99da86e0998110739763c2ab4a313265e04b"
+      },
+      "parser": {
+        "format": "source-named-skel",
+        "binaryBytes": 6008,
+        "bytesConsumed": 6008,
+        "fullBytesConsumed": true,
+        "error": null,
+        "prefixAnimationEntry": null,
+        "prefixEntryOffset": null
+      },
+      "version": "3.8.99",
+      "bones": 3,
+      "slots": 7,
+      "skins": [
+        "default"
+      ],
+      "attachmentTypeCounts": {
+        "2": 7
+      },
+      "constraints": {
+        "ik": 0,
+        "transform": 0,
+        "path": 0
+      },
+      "animations": [
+        {
+          "name": "lastPage",
+          "duration": 0.5333333611488342,
+          "timelineCount": 11,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "DrawOrderTimeline"
+          ]
+        },
+        {
+          "name": "nextPage",
+          "duration": 0.5333333611488342,
+          "timelineCount": 12,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "DrawOrderTimeline",
+            "ScaleTimeline"
+          ]
+        }
+      ],
+      "sourceEventDefinitions": [],
+      "unsupportedDarkTintSlots": []
+    },
+    {
+      "source": {
+        "id": "b34c2aa4983664af59091438da6d0156",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "-8111221050588722052",
+        "unityType": "TextAsset",
+        "sourceSHA256": "0b1fbaa788dcb2c95ea9f4c9410d87c2484b24730cf054b011e931aeee9dc6fa"
+      },
+      "parser": {
+        "format": "source-named-skel",
+        "binaryBytes": 82373,
+        "bytesConsumed": 82373,
+        "fullBytesConsumed": true,
+        "error": null,
+        "prefixAnimationEntry": null,
+        "prefixEntryOffset": null
+      },
+      "version": "3.8.99",
+      "bones": 39,
+      "slots": 27,
+      "skins": [
+        "default"
+      ],
+      "attachmentTypeCounts": {
+        "2": 42
+      },
+      "constraints": {
+        "ik": 2,
+        "transform": 0,
+        "path": 0
+      },
+      "animations": [
+        {
+          "name": "Lily_appear",
+          "duration": 4.766666889190674,
+          "timelineCount": 40,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_appear_repeat",
+          "duration": 4.0333333015441895,
+          "timelineCount": 24,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_finished",
+          "duration": 3.4666666984558105,
+          "timelineCount": 52,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_finished_repeat",
+          "duration": 2.6666667461395264,
+          "timelineCount": 44,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_leave",
+          "duration": 0.800000011920929,
+          "timelineCount": 52,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_progress",
+          "duration": 0.800000011920929,
+          "timelineCount": 52,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_progress_repeat",
+          "duration": 2.6666667461395264,
+          "timelineCount": 44,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_story_appear_repeat",
+          "duration": 4.0333333015441895,
+          "timelineCount": 27,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_story_appear_repeat2",
+          "duration": 4.0333333015441895,
+          "timelineCount": 45,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_story_finished",
+          "duration": 0.800000011920929,
+          "timelineCount": 55,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_story_finished2",
+          "duration": 0.800000011920929,
+          "timelineCount": 58,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_story_finished_repeat",
+          "duration": 2.6666667461395264,
+          "timelineCount": 47,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_story_finished_repeat2",
+          "duration": 2.6666667461395264,
+          "timelineCount": 50,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_story_leave",
+          "duration": 0.800000011920929,
+          "timelineCount": 55,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        },
+        {
+          "name": "Lily_story_leave2",
+          "duration": 0.800000011920929,
+          "timelineCount": 58,
+          "timelineTypes": [
+            "AttachmentTimeline",
+            "DeformTimeline",
+            "ScaleTimeline",
+            "_RotateTimeline",
+            "_TranslateTimeline"
+          ]
+        }
+      ],
+      "sourceEventDefinitions": [],
+      "unsupportedDarkTintSlots": []
+    }
+  ],
+  "motions": [
+    {
+      "id": "Lily_story_finished2",
+      "title": "책장 Lily 손 · 진입",
+      "animation": "Lily_story_finished2",
+      "bindingId": "StoryRecapMainWindow:m_avatarHandSpine",
+      "duration": 0.800000011920929,
+      "sampleFPS": 30,
+      "sourceSampleTimes": [
+        0,
+        0.03333333333333333,
+        0.06666666666666667,
+        0.1,
+        0.13333333333333333,
+        0.16666666666666666,
+        0.2,
+        0.23333333333333334,
+        0.26666666666666666,
+        0.3,
+        0.3333333333333333,
+        0.36666666666666664,
+        0.4,
+        0.43333333333333335,
+        0.4666666666666667,
+        0.5,
+        0.5333333333333333,
+        0.5666666666666667,
+        0.6,
+        0.6333333333333333,
+        0.6666666666666666,
+        0.7,
+        0.7333333333333333,
+        0.7666666666666667,
+        0.800000011920929
+      ],
+      "posterSourceTime": 0.3333333333333333,
+      "encoded": {
+        "durationSeconds": 0.833333,
+        "frameCount": 25,
+        "framePTS": [
+          0,
+          0.033333,
+          0.066666,
+          0.1,
+          0.133333,
+          0.166666,
+          0.2,
+          0.233333,
+          0.266666,
+          0.3,
+          0.333333,
+          0.366666,
+          0.4,
+          0.433333,
+          0.466666,
+          0.5,
+          0.533333,
+          0.566666,
+          0.6,
+          0.633333,
+          0.666666,
+          0.7,
+          0.733333,
+          0.766666,
+          0.8
+        ],
+        "sourceTimePTSMaximumErrorSeconds": 6.66666666759852e-7,
+        "exactSourceStartIncluded": true,
+        "exactSourceEndIncludedWithin10us": true,
+        "finalPoseHoldSeconds": 0.033332999999999946,
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioTracks": 0,
+        "fpsMode": "variable final source endpoint /8Hz interior",
+        "colorCompression": "H264 CRF29/yuv420p/maxrate160k; this is a reduced research projection, not original pixel output"
+      },
+      "fullSourceRange": true,
+      "fixedWholeClipBounds": true,
+      "componentInitialFlipApplied": {
+        "x": true,
+        "y": false
+      },
+      "timelineInfo": {
+        "index": 10,
+        "name": "Lily_story_finished2",
+        "duration": 0.800000011920929,
+        "timelineCount": 58,
+        "timelineTypes": [
+          "AttachmentTimeline",
+          "DeformTimeline",
+          "ScaleTimeline",
+          "_RotateTimeline",
+          "_TranslateTimeline"
+        ],
+        "eventNames": [],
+        "eventTimes": [],
+        "attachmentTimelineKeys": [
+          {
+            "slotIndex": 3,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 2,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 13,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_earing_l"
+            ]
+          },
+          {
+            "slotIndex": 7,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_earing_r"
+            ]
+          },
+          {
+            "slotIndex": 11,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyeball_l"
+            ]
+          },
+          {
+            "slotIndex": 9,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyeball_r"
+            ]
+          },
+          {
+            "slotIndex": 22,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyebrow_l"
+            ]
+          },
+          {
+            "slotIndex": 23,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyebrow_r"
+            ]
+          },
+          {
+            "slotIndex": 21,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyelash_l"
+            ]
+          },
+          {
+            "slotIndex": 17,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyelash_r"
+            ]
+          },
+          {
+            "slotIndex": 19,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyelid_down_l"
+            ]
+          },
+          {
+            "slotIndex": 15,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyelid_down_r"
+            ]
+          },
+          {
+            "slotIndex": 20,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyelid_up_l"
+            ]
+          },
+          {
+            "slotIndex": 16,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyelid_up_r"
+            ]
+          },
+          {
+            "slotIndex": 10,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyewhite_l"
+            ]
+          },
+          {
+            "slotIndex": 8,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_eyewhite_r"
+            ]
+          },
+          {
+            "slotIndex": 25,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 24,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 1,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 12,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_head"
+            ]
+          },
+          {
+            "slotIndex": 14,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_mouth"
+            ]
+          },
+          {
+            "slotIndex": 18,
+            "times": [
+              0,
+              0.800000011920929
+            ],
+            "names": [
+              null,
+              "lily_h_nose"
+            ]
+          }
+        ]
+      },
+      "unsupported": [],
+      "media": {
+        "poster": {
+          "key": "recap-motion:266819fac76e957212292d20:poster",
+          "kind": "image",
+          "src": "./assets/media/recap-motion-study/266819fac76e957212292d20.png",
+          "width": 320,
+          "height": 320,
+          "bytes": 10017,
+          "sha256": "d66223be18c82048fbe5a8e75261ab81bb6237842e8d909436e137cfe9c647e2"
+        },
+        "video": {
+          "key": "recap-motion:266819fac76e957212292d20:video",
+          "kind": "video",
+          "src": "./assets/media/recap-motion-study/266819fac76e957212292d20.mp4",
+          "width": 320,
+          "height": 320,
+          "bytes": 6850,
+          "sha256": "7865fde685cbe46eb1e70521ff169a6430c1ff0207315baf1402905a14dac1a0"
+        }
+      },
+      "source": {
+        "id": "b34c2aa4983664af59091438da6d0156",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "-8111221050588722052",
+        "unityType": "TextAsset",
+        "sourceSHA256": "0b1fbaa788dcb2c95ea9f4c9410d87c2484b24730cf054b011e931aeee9dc6fa"
+      },
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false
+    },
+    {
+      "id": "Lily_story_finished",
+      "title": "책장 Lily 몸 · 진입",
+      "animation": "Lily_story_finished",
+      "bindingId": "StoryRecapMainWindow:m_avatarBodySpine",
+      "duration": 0.800000011920929,
+      "sampleFPS": 30,
+      "sourceSampleTimes": [
+        0,
+        0.03333333333333333,
+        0.06666666666666667,
+        0.1,
+        0.13333333333333333,
+        0.16666666666666666,
+        0.2,
+        0.23333333333333334,
+        0.26666666666666666,
+        0.3,
+        0.3333333333333333,
+        0.36666666666666664,
+        0.4,
+        0.43333333333333335,
+        0.4666666666666667,
+        0.5,
+        0.5333333333333333,
+        0.5666666666666667,
+        0.6,
+        0.6333333333333333,
+        0.6666666666666666,
+        0.7,
+        0.7333333333333333,
+        0.7666666666666667,
+        0.800000011920929
+      ],
+      "posterSourceTime": 0.3333333333333333,
+      "encoded": {
+        "durationSeconds": 0.833333,
+        "frameCount": 25,
+        "framePTS": [
+          0,
+          0.033333,
+          0.066666,
+          0.1,
+          0.133333,
+          0.166666,
+          0.2,
+          0.233333,
+          0.266666,
+          0.3,
+          0.333333,
+          0.366666,
+          0.4,
+          0.433333,
+          0.466666,
+          0.5,
+          0.533333,
+          0.566666,
+          0.6,
+          0.633333,
+          0.666666,
+          0.7,
+          0.733333,
+          0.766666,
+          0.8
+        ],
+        "sourceTimePTSMaximumErrorSeconds": 6.66666666759852e-7,
+        "exactSourceStartIncluded": true,
+        "exactSourceEndIncludedWithin10us": true,
+        "finalPoseHoldSeconds": 0.033332999999999946,
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioTracks": 0,
+        "fpsMode": "variable final source endpoint /8Hz interior",
+        "colorCompression": "H264 CRF29/yuv420p/maxrate160k; this is a reduced research projection, not original pixel output"
+      },
+      "fullSourceRange": true,
+      "fixedWholeClipBounds": true,
+      "componentInitialFlipApplied": {
+        "x": true,
+        "y": false
+      },
+      "timelineInfo": {
+        "index": 9,
+        "name": "Lily_story_finished",
+        "duration": 0.800000011920929,
+        "timelineCount": 55,
+        "timelineTypes": [
+          "AttachmentTimeline",
+          "DeformTimeline",
+          "ScaleTimeline",
+          "_RotateTimeline",
+          "_TranslateTimeline"
+        ],
+        "eventNames": [],
+        "eventTimes": [],
+        "attachmentTimelineKeys": [
+          {
+            "slotIndex": 5,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 6,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 13,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_earing_l"
+            ]
+          },
+          {
+            "slotIndex": 7,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_earing_r"
+            ]
+          },
+          {
+            "slotIndex": 11,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyeball_l"
+            ]
+          },
+          {
+            "slotIndex": 9,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyeball_r"
+            ]
+          },
+          {
+            "slotIndex": 22,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyebrow_l"
+            ]
+          },
+          {
+            "slotIndex": 23,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyebrow_r"
+            ]
+          },
+          {
+            "slotIndex": 21,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelash_l"
+            ]
+          },
+          {
+            "slotIndex": 17,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelash_r"
+            ]
+          },
+          {
+            "slotIndex": 19,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelid_down_l"
+            ]
+          },
+          {
+            "slotIndex": 15,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelid_down_r"
+            ]
+          },
+          {
+            "slotIndex": 20,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelid_up_l"
+            ]
+          },
+          {
+            "slotIndex": 16,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelid_up_r"
+            ]
+          },
+          {
+            "slotIndex": 10,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyewhite_l"
+            ]
+          },
+          {
+            "slotIndex": 8,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyewhite_r"
+            ]
+          },
+          {
+            "slotIndex": 12,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_head"
+            ]
+          },
+          {
+            "slotIndex": 18,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_nose"
+            ]
+          },
+          {
+            "slotIndex": 4,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          }
+        ]
+      },
+      "unsupported": [],
+      "media": {
+        "poster": {
+          "key": "recap-motion:678a63f035964dd92b8c6839:poster",
+          "kind": "image",
+          "src": "./assets/media/recap-motion-study/678a63f035964dd92b8c6839.png",
+          "width": 320,
+          "height": 320,
+          "bytes": 37436,
+          "sha256": "4bb9d268ee9d9f1e73e216876cf3b14e6dd9d3604d01ab10ff6082eceb88b256"
+        },
+        "video": {
+          "key": "recap-motion:678a63f035964dd92b8c6839:video",
+          "kind": "video",
+          "src": "./assets/media/recap-motion-study/678a63f035964dd92b8c6839.mp4",
+          "width": 320,
+          "height": 320,
+          "bytes": 14227,
+          "sha256": "6c7a9800582da9c558891b90e157eafdd305df777b702cf5c9b95ab32401db34"
+        }
+      },
+      "source": {
+        "id": "b34c2aa4983664af59091438da6d0156",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "-8111221050588722052",
+        "unityType": "TextAsset",
+        "sourceSHA256": "0b1fbaa788dcb2c95ea9f4c9410d87c2484b24730cf054b011e931aeee9dc6fa"
+      },
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false
+    },
+    {
+      "id": "Lily_story_finished_repeat",
+      "title": "책장 Lily 몸 · 반복 대상",
+      "animation": "Lily_story_finished_repeat",
+      "bindingId": "StoryRecapMainWindow:m_avatarBodySpine",
+      "duration": 2.6666667461395264,
+      "sampleFPS": 30,
+      "sourceSampleTimes": [
+        0,
+        0.03333333333333333,
+        0.06666666666666667,
+        0.1,
+        0.13333333333333333,
+        0.16666666666666666,
+        0.2,
+        0.23333333333333334,
+        0.26666666666666666,
+        0.3,
+        0.3333333333333333,
+        0.36666666666666664,
+        0.4,
+        0.43333333333333335,
+        0.4666666666666667,
+        0.5,
+        0.5333333333333333,
+        0.5666666666666667,
+        0.6,
+        0.6333333333333333,
+        0.6666666666666666,
+        0.7,
+        0.7333333333333333,
+        0.7666666666666667,
+        0.8,
+        0.8333333333333334,
+        0.8666666666666667,
+        0.9,
+        0.9333333333333333,
+        0.9666666666666667,
+        1,
+        1.0333333333333334,
+        1.0666666666666667,
+        1.1,
+        1.1333333333333333,
+        1.1666666666666667,
+        1.2,
+        1.2333333333333334,
+        1.2666666666666666,
+        1.3,
+        1.3333333333333333,
+        1.3666666666666667,
+        1.4,
+        1.4333333333333333,
+        1.4666666666666666,
+        1.5,
+        1.5333333333333334,
+        1.5666666666666667,
+        1.6,
+        1.6333333333333333,
+        1.6666666666666667,
+        1.7,
+        1.7333333333333334,
+        1.7666666666666666,
+        1.8,
+        1.8333333333333333,
+        1.8666666666666667,
+        1.9,
+        1.9333333333333333,
+        1.9666666666666666,
+        2,
+        2.033333333333333,
+        2.066666666666667,
+        2.1,
+        2.1333333333333333,
+        2.1666666666666665,
+        2.2,
+        2.2333333333333334,
+        2.2666666666666666,
+        2.3,
+        2.3333333333333335,
+        2.3666666666666667,
+        2.4,
+        2.433333333333333,
+        2.466666666666667,
+        2.5,
+        2.533333333333333,
+        2.566666666666667,
+        2.6,
+        2.6333333333333333,
+        2.6666667461395264
+      ],
+      "posterSourceTime": 0.6666666666666666,
+      "encoded": {
+        "durationSeconds": 2.699999,
+        "frameCount": 81,
+        "framePTS": [
+          0,
+          0.033333,
+          0.066666,
+          0.1,
+          0.133333,
+          0.166666,
+          0.2,
+          0.233333,
+          0.266666,
+          0.3,
+          0.333333,
+          0.366666,
+          0.4,
+          0.433333,
+          0.466666,
+          0.5,
+          0.533333,
+          0.566666,
+          0.6,
+          0.633333,
+          0.666666,
+          0.7,
+          0.733333,
+          0.766666,
+          0.8,
+          0.833333,
+          0.866666,
+          0.9,
+          0.933333,
+          0.966666,
+          1,
+          1.033333,
+          1.066666,
+          1.1,
+          1.133333,
+          1.166666,
+          1.2,
+          1.233333,
+          1.266666,
+          1.3,
+          1.333333,
+          1.366666,
+          1.4,
+          1.433333,
+          1.466666,
+          1.5,
+          1.533333,
+          1.566666,
+          1.6,
+          1.633333,
+          1.666666,
+          1.7,
+          1.733333,
+          1.766666,
+          1.8,
+          1.833333,
+          1.866666,
+          1.9,
+          1.933333,
+          1.966666,
+          2,
+          2.033333,
+          2.066666,
+          2.1,
+          2.133333,
+          2.166666,
+          2.2,
+          2.233333,
+          2.266666,
+          2.3,
+          2.333333,
+          2.366666,
+          2.4,
+          2.433333,
+          2.466666,
+          2.5,
+          2.533333,
+          2.566666,
+          2.6,
+          2.633333,
+          2.666666
+        ],
+        "sourceTimePTSMaximumErrorSeconds": 7.461395261643133e-7,
+        "exactSourceStartIncluded": true,
+        "exactSourceEndIncludedWithin10us": true,
+        "finalPoseHoldSeconds": 0.033332999999999835,
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioTracks": 0,
+        "fpsMode": "variable final source endpoint /8Hz interior",
+        "colorCompression": "H264 CRF29/yuv420p/maxrate160k; this is a reduced research projection, not original pixel output"
+      },
+      "fullSourceRange": true,
+      "fixedWholeClipBounds": true,
+      "componentInitialFlipApplied": {
+        "x": true,
+        "y": false
+      },
+      "timelineInfo": {
+        "index": 11,
+        "name": "Lily_story_finished_repeat",
+        "duration": 2.6666667461395264,
+        "timelineCount": 47,
+        "timelineTypes": [
+          "AttachmentTimeline",
+          "DeformTimeline",
+          "ScaleTimeline",
+          "_RotateTimeline",
+          "_TranslateTimeline"
+        ],
+        "eventNames": [],
+        "eventTimes": [],
+        "attachmentTimelineKeys": [
+          {
+            "slotIndex": 5,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 6,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 13,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_earing_l"
+            ]
+          },
+          {
+            "slotIndex": 7,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_earing_r"
+            ]
+          },
+          {
+            "slotIndex": 11,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyeball_l"
+            ]
+          },
+          {
+            "slotIndex": 9,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyeball_r"
+            ]
+          },
+          {
+            "slotIndex": 22,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyebrow_l"
+            ]
+          },
+          {
+            "slotIndex": 23,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyebrow_r"
+            ]
+          },
+          {
+            "slotIndex": 21,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelash_l"
+            ]
+          },
+          {
+            "slotIndex": 17,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelash_r"
+            ]
+          },
+          {
+            "slotIndex": 19,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelid_down_l"
+            ]
+          },
+          {
+            "slotIndex": 15,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelid_down_r"
+            ]
+          },
+          {
+            "slotIndex": 20,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelid_up_l"
+            ]
+          },
+          {
+            "slotIndex": 16,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyelid_up_r"
+            ]
+          },
+          {
+            "slotIndex": 10,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyewhite_l"
+            ]
+          },
+          {
+            "slotIndex": 8,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_eyewhite_r"
+            ]
+          },
+          {
+            "slotIndex": 12,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_head"
+            ]
+          },
+          {
+            "slotIndex": 18,
+            "times": [
+              0
+            ],
+            "names": [
+              "lily_h_nose"
+            ]
+          },
+          {
+            "slotIndex": 4,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          }
+        ]
+      },
+      "unsupported": [],
+      "media": {
+        "poster": {
+          "key": "recap-motion:7aa0b6f403482b914c1ddb76:poster",
+          "kind": "image",
+          "src": "./assets/media/recap-motion-study/7aa0b6f403482b914c1ddb76.png",
+          "width": 320,
+          "height": 320,
+          "bytes": 43117,
+          "sha256": "af69ba5b072ab5c6665ba913f522a7674a6baef941a7890e2bd4e832173b21b9"
+        },
+        "video": {
+          "key": "recap-motion:7aa0b6f403482b914c1ddb76:video",
+          "kind": "video",
+          "src": "./assets/media/recap-motion-study/7aa0b6f403482b914c1ddb76.mp4",
+          "width": 320,
+          "height": 320,
+          "bytes": 22649,
+          "sha256": "e661813162eec7353f3e90a2b1f3a5b1125225104ecdb3a2909c73bd1ec49e5c"
+        }
+      },
+      "source": {
+        "id": "b34c2aa4983664af59091438da6d0156",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "-8111221050588722052",
+        "unityType": "TextAsset",
+        "sourceSHA256": "0b1fbaa788dcb2c95ea9f4c9410d87c2484b24730cf054b011e931aeee9dc6fa"
+      },
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false
+    },
+    {
+      "id": "nextPage",
+      "title": "다음 페이지",
+      "animation": "nextPage",
+      "bindingId": "StoryRecapBookContentWindow:m_rollPageSpine",
+      "duration": 0.5333333611488342,
+      "sampleFPS": 30,
+      "sourceSampleTimes": [
+        0,
+        0.03333333333333333,
+        0.06666666666666667,
+        0.1,
+        0.13333333333333333,
+        0.16666666666666666,
+        0.2,
+        0.23333333333333334,
+        0.26666666666666666,
+        0.3,
+        0.3333333333333333,
+        0.36666666666666664,
+        0.4,
+        0.43333333333333335,
+        0.4666666666666667,
+        0.5,
+        0.5333333611488342
+      ],
+      "posterSourceTime": 0.5333333611488342,
+      "encoded": {
+        "durationSeconds": 0.566666,
+        "frameCount": 17,
+        "framePTS": [
+          0,
+          0.033333,
+          0.066666,
+          0.1,
+          0.133333,
+          0.166666,
+          0.2,
+          0.233333,
+          0.266666,
+          0.3,
+          0.333333,
+          0.366666,
+          0.4,
+          0.433333,
+          0.466666,
+          0.5,
+          0.533333
+        ],
+        "sourceTimePTSMaximumErrorSeconds": 6.666666666627075e-7,
+        "exactSourceStartIncluded": true,
+        "exactSourceEndIncludedWithin10us": true,
+        "finalPoseHoldSeconds": 0.03333300000000006,
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioTracks": 0,
+        "fpsMode": "variable final source endpoint /8Hz interior",
+        "colorCompression": "H264 CRF29/yuv420p/maxrate160k; this is a reduced research projection, not original pixel output"
+      },
+      "fullSourceRange": true,
+      "fixedWholeClipBounds": true,
+      "componentInitialFlipApplied": {
+        "x": false,
+        "y": false
+      },
+      "timelineInfo": {
+        "index": 1,
+        "name": "nextPage",
+        "duration": 0.5333333611488342,
+        "timelineCount": 12,
+        "timelineTypes": [
+          "AttachmentTimeline",
+          "DeformTimeline",
+          "DrawOrderTimeline",
+          "ScaleTimeline"
+        ],
+        "eventNames": [],
+        "eventTimes": [],
+        "attachmentTimelineKeys": [
+          {
+            "slotIndex": 3,
+            "times": [
+              0.06666667014360428,
+              0.20000000298023224
+            ],
+            "names": [
+              "FY_0",
+              null
+            ]
+          },
+          {
+            "slotIndex": 0,
+            "times": [
+              0.4333333373069763
+            ],
+            "names": [
+              "FY_7"
+            ]
+          },
+          {
+            "slotIndex": 4,
+            "times": [
+              0.20000000298023224,
+              0.4000000059604645
+            ],
+            "names": [
+              "y1",
+              null
+            ]
+          },
+          {
+            "slotIndex": 5,
+            "times": [
+              0.4000000059604645,
+              0.46666666865348816
+            ],
+            "names": [
+              "y3",
+              null
+            ]
+          },
+          {
+            "slotIndex": 6,
+            "times": [
+              0.20000000298023224,
+              0.4333333373069763
+            ],
+            "names": [
+              "y4",
+              null
+            ]
+          }
+        ]
+      },
+      "unsupported": [],
+      "media": {
+        "poster": {
+          "key": "recap-motion:96a8ce1b7ab742aab833b1aa:poster",
+          "kind": "image",
+          "src": "./assets/media/recap-motion-study/96a8ce1b7ab742aab833b1aa.png",
+          "width": 320,
+          "height": 320,
+          "bytes": 3754,
+          "sha256": "8685b0afd24db960ea722f0d5197646574399f3f680501b86b6c8fabbf2d11db"
+        },
+        "video": {
+          "key": "recap-motion:96a8ce1b7ab742aab833b1aa:video",
+          "kind": "video",
+          "src": "./assets/media/recap-motion-study/96a8ce1b7ab742aab833b1aa.mp4",
+          "width": 320,
+          "height": 320,
+          "bytes": 4434,
+          "sha256": "5ab3afaa8fadfaa9f2402b5eb90bff18740f5592b6a875b17726024b28a0fd8b"
+        }
+      },
+      "source": {
+        "id": "a859db352863ea20ed6c1df81f05e17c",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "-5776745463861097222",
+        "unityType": "TextAsset",
+        "sourceSHA256": "914ee9833615ee49d87afeba330b99da86e0998110739763c2ab4a313265e04b"
+      },
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false
+    },
+    {
+      "id": "Lily_story_finished_repeat2",
+      "title": "책장 Lily 손 · 반복 대상",
+      "animation": "Lily_story_finished_repeat2",
+      "bindingId": "StoryRecapMainWindow:m_avatarHandSpine",
+      "duration": 2.6666667461395264,
+      "sampleFPS": 30,
+      "sourceSampleTimes": [
+        0,
+        0.03333333333333333,
+        0.06666666666666667,
+        0.1,
+        0.13333333333333333,
+        0.16666666666666666,
+        0.2,
+        0.23333333333333334,
+        0.26666666666666666,
+        0.3,
+        0.3333333333333333,
+        0.36666666666666664,
+        0.4,
+        0.43333333333333335,
+        0.4666666666666667,
+        0.5,
+        0.5333333333333333,
+        0.5666666666666667,
+        0.6,
+        0.6333333333333333,
+        0.6666666666666666,
+        0.7,
+        0.7333333333333333,
+        0.7666666666666667,
+        0.8,
+        0.8333333333333334,
+        0.8666666666666667,
+        0.9,
+        0.9333333333333333,
+        0.9666666666666667,
+        1,
+        1.0333333333333334,
+        1.0666666666666667,
+        1.1,
+        1.1333333333333333,
+        1.1666666666666667,
+        1.2,
+        1.2333333333333334,
+        1.2666666666666666,
+        1.3,
+        1.3333333333333333,
+        1.3666666666666667,
+        1.4,
+        1.4333333333333333,
+        1.4666666666666666,
+        1.5,
+        1.5333333333333334,
+        1.5666666666666667,
+        1.6,
+        1.6333333333333333,
+        1.6666666666666667,
+        1.7,
+        1.7333333333333334,
+        1.7666666666666666,
+        1.8,
+        1.8333333333333333,
+        1.8666666666666667,
+        1.9,
+        1.9333333333333333,
+        1.9666666666666666,
+        2,
+        2.033333333333333,
+        2.066666666666667,
+        2.1,
+        2.1333333333333333,
+        2.1666666666666665,
+        2.2,
+        2.2333333333333334,
+        2.2666666666666666,
+        2.3,
+        2.3333333333333335,
+        2.3666666666666667,
+        2.4,
+        2.433333333333333,
+        2.466666666666667,
+        2.5,
+        2.533333333333333,
+        2.566666666666667,
+        2.6,
+        2.6333333333333333,
+        2.6666667461395264
+      ],
+      "posterSourceTime": 0.6666666666666666,
+      "encoded": {
+        "durationSeconds": 2.699999,
+        "frameCount": 81,
+        "framePTS": [
+          0,
+          0.033333,
+          0.066666,
+          0.1,
+          0.133333,
+          0.166666,
+          0.2,
+          0.233333,
+          0.266666,
+          0.3,
+          0.333333,
+          0.366666,
+          0.4,
+          0.433333,
+          0.466666,
+          0.5,
+          0.533333,
+          0.566666,
+          0.6,
+          0.633333,
+          0.666666,
+          0.7,
+          0.733333,
+          0.766666,
+          0.8,
+          0.833333,
+          0.866666,
+          0.9,
+          0.933333,
+          0.966666,
+          1,
+          1.033333,
+          1.066666,
+          1.1,
+          1.133333,
+          1.166666,
+          1.2,
+          1.233333,
+          1.266666,
+          1.3,
+          1.333333,
+          1.366666,
+          1.4,
+          1.433333,
+          1.466666,
+          1.5,
+          1.533333,
+          1.566666,
+          1.6,
+          1.633333,
+          1.666666,
+          1.7,
+          1.733333,
+          1.766666,
+          1.8,
+          1.833333,
+          1.866666,
+          1.9,
+          1.933333,
+          1.966666,
+          2,
+          2.033333,
+          2.066666,
+          2.1,
+          2.133333,
+          2.166666,
+          2.2,
+          2.233333,
+          2.266666,
+          2.3,
+          2.333333,
+          2.366666,
+          2.4,
+          2.433333,
+          2.466666,
+          2.5,
+          2.533333,
+          2.566666,
+          2.6,
+          2.633333,
+          2.666666
+        ],
+        "sourceTimePTSMaximumErrorSeconds": 7.461395261643133e-7,
+        "exactSourceStartIncluded": true,
+        "exactSourceEndIncludedWithin10us": true,
+        "finalPoseHoldSeconds": 0.033332999999999835,
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioTracks": 0,
+        "fpsMode": "variable final source endpoint /8Hz interior",
+        "colorCompression": "H264 CRF29/yuv420p/maxrate160k; this is a reduced research projection, not original pixel output"
+      },
+      "fullSourceRange": true,
+      "fixedWholeClipBounds": true,
+      "componentInitialFlipApplied": {
+        "x": true,
+        "y": false
+      },
+      "timelineInfo": {
+        "index": 12,
+        "name": "Lily_story_finished_repeat2",
+        "duration": 2.6666667461395264,
+        "timelineCount": 50,
+        "timelineTypes": [
+          "AttachmentTimeline",
+          "DeformTimeline",
+          "ScaleTimeline",
+          "_RotateTimeline",
+          "_TranslateTimeline"
+        ],
+        "eventNames": [],
+        "eventTimes": [],
+        "attachmentTimelineKeys": [
+          {
+            "slotIndex": 3,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 2,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 13,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 7,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 11,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 9,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 22,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 23,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 21,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 17,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 19,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 15,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 20,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 16,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 10,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 8,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 25,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 24,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 1,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 12,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 14,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          },
+          {
+            "slotIndex": 18,
+            "times": [
+              0
+            ],
+            "names": [
+              null
+            ]
+          }
+        ]
+      },
+      "unsupported": [],
+      "media": {
+        "poster": {
+          "key": "recap-motion:a91331550bb1351593b91ded:poster",
+          "kind": "image",
+          "src": "./assets/media/recap-motion-study/a91331550bb1351593b91ded.png",
+          "width": 320,
+          "height": 320,
+          "bytes": 23965,
+          "sha256": "870854a1e68263ac8a66cafcf7d3096cbfb282b75dea62827025492fa3d5484b"
+        },
+        "video": {
+          "key": "recap-motion:a91331550bb1351593b91ded:video",
+          "kind": "video",
+          "src": "./assets/media/recap-motion-study/a91331550bb1351593b91ded.mp4",
+          "width": 320,
+          "height": 320,
+          "bytes": 14108,
+          "sha256": "b72fdb258935ed8938a0e6ffcb3ff7d3ce685b2adda6c666764dc74bc377f254"
+        }
+      },
+      "source": {
+        "id": "b34c2aa4983664af59091438da6d0156",
+        "bundleFile": "rolesandstorylocal_assets_assets/areares/orderexpression/area1/lily_d8a22a6f416754ad14b2d532fe9eb2f8.bundle",
+        "bundleSHA256": "1a4c6e2e4b9774a76ec8e6aa8a96f14dd5b556bfa29ee0c7adca3c24223b837d",
+        "serializedFile": "CAB-c64b2f9075108a37f040123486c43ba0",
+        "pathId": "-8111221050588722052",
+        "unityType": "TextAsset",
+        "sourceSHA256": "0b1fbaa788dcb2c95ea9f4c9410d87c2484b24730cf054b011e931aeee9dc6fa"
+      },
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false
+    },
+    {
+      "id": "lastPage",
+      "title": "이전 페이지",
+      "animation": "lastPage",
+      "bindingId": "StoryRecapBookContentWindow:m_rollPageSpine",
+      "duration": 0.5333333611488342,
+      "sampleFPS": 30,
+      "sourceSampleTimes": [
+        0,
+        0.03333333333333333,
+        0.06666666666666667,
+        0.1,
+        0.13333333333333333,
+        0.16666666666666666,
+        0.2,
+        0.23333333333333334,
+        0.26666666666666666,
+        0.3,
+        0.3333333333333333,
+        0.36666666666666664,
+        0.4,
+        0.43333333333333335,
+        0.4666666666666667,
+        0.5,
+        0.5333333611488342
+      ],
+      "posterSourceTime": 0.5333333611488342,
+      "encoded": {
+        "durationSeconds": 0.566666,
+        "frameCount": 17,
+        "framePTS": [
+          0,
+          0.033333,
+          0.066666,
+          0.1,
+          0.133333,
+          0.166666,
+          0.2,
+          0.233333,
+          0.266666,
+          0.3,
+          0.333333,
+          0.366666,
+          0.4,
+          0.433333,
+          0.466666,
+          0.5,
+          0.533333
+        ],
+        "sourceTimePTSMaximumErrorSeconds": 6.666666666627075e-7,
+        "exactSourceStartIncluded": true,
+        "exactSourceEndIncludedWithin10us": true,
+        "finalPoseHoldSeconds": 0.03333300000000006,
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "audioTracks": 0,
+        "fpsMode": "variable final source endpoint /8Hz interior",
+        "colorCompression": "H264 CRF29/yuv420p/maxrate160k; this is a reduced research projection, not original pixel output"
+      },
+      "fullSourceRange": true,
+      "fixedWholeClipBounds": true,
+      "componentInitialFlipApplied": {
+        "x": false,
+        "y": false
+      },
+      "timelineInfo": {
+        "index": 0,
+        "name": "lastPage",
+        "duration": 0.5333333611488342,
+        "timelineCount": 11,
+        "timelineTypes": [
+          "AttachmentTimeline",
+          "DeformTimeline",
+          "DrawOrderTimeline"
+        ],
+        "eventNames": [],
+        "eventTimes": [],
+        "attachmentTimelineKeys": [
+          {
+            "slotIndex": 3,
+            "times": [
+              0.06666667014360428,
+              0.20000000298023224
+            ],
+            "names": [
+              "FY_0",
+              null
+            ]
+          },
+          {
+            "slotIndex": 0,
+            "times": [
+              0.4333333373069763
+            ],
+            "names": [
+              "FY_7"
+            ]
+          },
+          {
+            "slotIndex": 4,
+            "times": [
+              0.20000000298023224,
+              0.4000000059604645
+            ],
+            "names": [
+              "y1",
+              null
+            ]
+          },
+          {
+            "slotIndex": 5,
+            "times": [
+              0.4000000059604645,
+              0.46666666865348816
+            ],
+            "names": [
+              "y3",
+              null
+            ]
+          },
+          {
+            "slotIndex": 6,
+            "times": [
+              0.20000000298023224,
+              0.4333333373069763
+            ],
+            "names": [
+              "y4",
+              null
+            ]
+          }
+        ]
+      },
+      "unsupported": [],
+      "media": {
+        "poster": {
+          "key": "recap-motion:b786041e21349f9db97ccd56:poster",
+          "kind": "image",
+          "src": "./assets/media/recap-motion-study/b786041e21349f9db97ccd56.png",
+          "width": 320,
+          "height": 320,
+          "bytes": 3836,
+          "sha256": "874b773ac87f82eb60c4474632c70095a5dd64f572f06639b7f668d16bbf7317"
+        },
+        "video": {
+          "key": "recap-motion:b786041e21349f9db97ccd56:video",
+          "kind": "video",
+          "src": "./assets/media/recap-motion-study/b786041e21349f9db97ccd56.mp4",
+          "width": 320,
+          "height": 320,
+          "bytes": 4537,
+          "sha256": "004b4537f3024bd1250e32d0d333f0e6e44b3fde8d42d7dbff5cc45be50dc462"
+        }
+      },
+      "source": {
+        "id": "a859db352863ea20ed6c1df81f05e17c",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "-5776745463861097222",
+        "unityType": "TextAsset",
+        "sourceSHA256": "914ee9833615ee49d87afeba330b99da86e0998110739763c2ab4a313265e04b"
+      },
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false
+    }
+  ],
+  "mediaEntries": [
+    {
+      "key": "recap-motion:266819fac76e957212292d20:poster",
+      "kind": "image",
+      "src": "./assets/media/recap-motion-study/266819fac76e957212292d20.png",
+      "width": 320,
+      "height": 320,
+      "bytes": 10017,
+      "sha256": "d66223be18c82048fbe5a8e75261ab81bb6237842e8d909436e137cfe9c647e2",
+      "version": "4.10.5",
+      "alt": "책장 Lily 손 · 진입 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification"
+    },
+    {
+      "key": "recap-motion:266819fac76e957212292d20:video",
+      "kind": "video",
+      "src": "./assets/media/recap-motion-study/266819fac76e957212292d20.mp4",
+      "width": 320,
+      "height": 320,
+      "bytes": 6850,
+      "sha256": "7865fde685cbe46eb1e70521ff169a6430c1ff0207315baf1402905a14dac1a0",
+      "version": "4.10.5",
+      "alt": "책장 Lily 손 · 진입 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification",
+      "mimeType": "video/mp4",
+      "audioTracks": 0,
+      "sourceSampledRange": {
+        "start": 0,
+        "end": 0.800000011920929
+      },
+      "encodedDurationSeconds": 0.833333,
+      "finalPoseHoldSeconds": 0.033332999999999946,
+      "poster": "./assets/media/recap-motion-study/266819fac76e957212292d20.png",
+      "posterSha256": "d66223be18c82048fbe5a8e75261ab81bb6237842e8d909436e137cfe9c647e2"
+    },
+    {
+      "key": "recap-motion:678a63f035964dd92b8c6839:poster",
+      "kind": "image",
+      "src": "./assets/media/recap-motion-study/678a63f035964dd92b8c6839.png",
+      "width": 320,
+      "height": 320,
+      "bytes": 37436,
+      "sha256": "4bb9d268ee9d9f1e73e216876cf3b14e6dd9d3604d01ab10ff6082eceb88b256",
+      "version": "4.10.5",
+      "alt": "책장 Lily 몸 · 진입 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification"
+    },
+    {
+      "key": "recap-motion:678a63f035964dd92b8c6839:video",
+      "kind": "video",
+      "src": "./assets/media/recap-motion-study/678a63f035964dd92b8c6839.mp4",
+      "width": 320,
+      "height": 320,
+      "bytes": 14227,
+      "sha256": "6c7a9800582da9c558891b90e157eafdd305df777b702cf5c9b95ab32401db34",
+      "version": "4.10.5",
+      "alt": "책장 Lily 몸 · 진입 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification",
+      "mimeType": "video/mp4",
+      "audioTracks": 0,
+      "sourceSampledRange": {
+        "start": 0,
+        "end": 0.800000011920929
+      },
+      "encodedDurationSeconds": 0.833333,
+      "finalPoseHoldSeconds": 0.033332999999999946,
+      "poster": "./assets/media/recap-motion-study/678a63f035964dd92b8c6839.png",
+      "posterSha256": "4bb9d268ee9d9f1e73e216876cf3b14e6dd9d3604d01ab10ff6082eceb88b256"
+    },
+    {
+      "key": "recap-motion:7aa0b6f403482b914c1ddb76:poster",
+      "kind": "image",
+      "src": "./assets/media/recap-motion-study/7aa0b6f403482b914c1ddb76.png",
+      "width": 320,
+      "height": 320,
+      "bytes": 43117,
+      "sha256": "af69ba5b072ab5c6665ba913f522a7674a6baef941a7890e2bd4e832173b21b9",
+      "version": "4.10.5",
+      "alt": "책장 Lily 몸 · 반복 대상 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification"
+    },
+    {
+      "key": "recap-motion:7aa0b6f403482b914c1ddb76:video",
+      "kind": "video",
+      "src": "./assets/media/recap-motion-study/7aa0b6f403482b914c1ddb76.mp4",
+      "width": 320,
+      "height": 320,
+      "bytes": 22649,
+      "sha256": "e661813162eec7353f3e90a2b1f3a5b1125225104ecdb3a2909c73bd1ec49e5c",
+      "version": "4.10.5",
+      "alt": "책장 Lily 몸 · 반복 대상 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification",
+      "mimeType": "video/mp4",
+      "audioTracks": 0,
+      "sourceSampledRange": {
+        "start": 0,
+        "end": 2.6666667461395264
+      },
+      "encodedDurationSeconds": 2.699999,
+      "finalPoseHoldSeconds": 0.033332999999999835,
+      "poster": "./assets/media/recap-motion-study/7aa0b6f403482b914c1ddb76.png",
+      "posterSha256": "af69ba5b072ab5c6665ba913f522a7674a6baef941a7890e2bd4e832173b21b9"
+    },
+    {
+      "key": "recap-motion:96a8ce1b7ab742aab833b1aa:poster",
+      "kind": "image",
+      "src": "./assets/media/recap-motion-study/96a8ce1b7ab742aab833b1aa.png",
+      "width": 320,
+      "height": 320,
+      "bytes": 3754,
+      "sha256": "8685b0afd24db960ea722f0d5197646574399f3f680501b86b6c8fabbf2d11db",
+      "version": "4.10.5",
+      "alt": "다음 페이지 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification"
+    },
+    {
+      "key": "recap-motion:96a8ce1b7ab742aab833b1aa:video",
+      "kind": "video",
+      "src": "./assets/media/recap-motion-study/96a8ce1b7ab742aab833b1aa.mp4",
+      "width": 320,
+      "height": 320,
+      "bytes": 4434,
+      "sha256": "5ab3afaa8fadfaa9f2402b5eb90bff18740f5592b6a875b17726024b28a0fd8b",
+      "version": "4.10.5",
+      "alt": "다음 페이지 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification",
+      "mimeType": "video/mp4",
+      "audioTracks": 0,
+      "sourceSampledRange": {
+        "start": 0,
+        "end": 0.5333333611488342
+      },
+      "encodedDurationSeconds": 0.566666,
+      "finalPoseHoldSeconds": 0.03333300000000006,
+      "poster": "./assets/media/recap-motion-study/96a8ce1b7ab742aab833b1aa.png",
+      "posterSha256": "8685b0afd24db960ea722f0d5197646574399f3f680501b86b6c8fabbf2d11db"
+    },
+    {
+      "key": "recap-motion:a91331550bb1351593b91ded:poster",
+      "kind": "image",
+      "src": "./assets/media/recap-motion-study/a91331550bb1351593b91ded.png",
+      "width": 320,
+      "height": 320,
+      "bytes": 23965,
+      "sha256": "870854a1e68263ac8a66cafcf7d3096cbfb282b75dea62827025492fa3d5484b",
+      "version": "4.10.5",
+      "alt": "책장 Lily 손 · 반복 대상 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification"
+    },
+    {
+      "key": "recap-motion:a91331550bb1351593b91ded:video",
+      "kind": "video",
+      "src": "./assets/media/recap-motion-study/a91331550bb1351593b91ded.mp4",
+      "width": 320,
+      "height": 320,
+      "bytes": 14108,
+      "sha256": "b72fdb258935ed8938a0e6ffcb3ff7d3ce685b2adda6c666764dc74bc377f254",
+      "version": "4.10.5",
+      "alt": "책장 Lily 손 · 반복 대상 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification",
+      "mimeType": "video/mp4",
+      "audioTracks": 0,
+      "sourceSampledRange": {
+        "start": 0,
+        "end": 2.6666667461395264
+      },
+      "encodedDurationSeconds": 2.699999,
+      "finalPoseHoldSeconds": 0.033332999999999835,
+      "poster": "./assets/media/recap-motion-study/a91331550bb1351593b91ded.png",
+      "posterSha256": "870854a1e68263ac8a66cafcf7d3096cbfb282b75dea62827025492fa3d5484b"
+    },
+    {
+      "key": "recap-motion:b786041e21349f9db97ccd56:poster",
+      "kind": "image",
+      "src": "./assets/media/recap-motion-study/b786041e21349f9db97ccd56.png",
+      "width": 320,
+      "height": 320,
+      "bytes": 3836,
+      "sha256": "874b773ac87f82eb60c4474632c70095a5dd64f572f06639b7f668d16bbf7317",
+      "version": "4.10.5",
+      "alt": "이전 페이지 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification"
+    },
+    {
+      "key": "recap-motion:b786041e21349f9db97ccd56:video",
+      "kind": "video",
+      "src": "./assets/media/recap-motion-study/b786041e21349f9db97ccd56.mp4",
+      "width": 320,
+      "height": 320,
+      "bytes": 4537,
+      "sha256": "004b4537f3024bd1250e32d0d333f0e6e44b3fde8d42d7dbff5cc45be50dc462",
+      "version": "4.10.5",
+      "alt": "이전 페이지 · 30Hz source-time 기술 투영 · 원작 촬영 아님",
+      "origin": "exact-StoryRecap-prefab-Spine-source-time-projection",
+      "originalRuntimeObserved": false,
+      "originalPlaybackVerified": false,
+      "sourceRefs": [
+        "recap-motion:links",
+        "recap-motion:samples",
+        "recap-motion:renders"
+      ],
+      "transform": "320px30Hz whole-source fixed bounds; source initialFlipX applied for Lily components; actual imported PNG preserved with atlas-declared UV dimensions; neutral RGB239/243/238 background; no original Canvas/shader/masking/audio verification",
+      "mimeType": "video/mp4",
+      "audioTracks": 0,
+      "sourceSampledRange": {
+        "start": 0,
+        "end": 0.5333333611488342
+      },
+      "encodedDurationSeconds": 0.566666,
+      "finalPoseHoldSeconds": 0.03333300000000006,
+      "poster": "./assets/media/recap-motion-study/b786041e21349f9db97ccd56.png",
+      "posterSha256": "874b773ac87f82eb60c4474632c70095a5dd64f572f06639b7f668d16bbf7317"
+    }
+  ],
+  "sources": [
+    {
+      "id": "recap-motion:links",
+      "path": "analysis/tasks-404-412-305-323/recap-motion/links.json",
+      "sha256": "30f1217bf3a9961c7ccf645ef6b95b808d660dc06cc107525e7530fb97a13b5f",
+      "kind": "exact-PPtr-and-independent-source-data-analysis"
+    },
+    {
+      "id": "recap-motion:samples",
+      "path": "analysis/tasks-404-412-305-323/recap-motion/sample-all.json",
+      "sha256": "35e43fe49c2936a66b5c2f92f796eb44135acd3b52fde10adec9497b2714bdc2",
+      "kind": "exact-PPtr-and-independent-source-data-analysis"
+    },
+    {
+      "id": "recap-motion:renders",
+      "path": "analysis/tasks-404-412-305-323/recap-motion/render-all.json",
+      "sha256": "dd15a1b954e8d28e425466d249fe92f61ed1cadd32c3dd9dd6d9e529bd6d780c",
+      "kind": "exact-PPtr-and-independent-source-data-analysis"
+    },
+    {
+      "id": "recap-motion:pool",
+      "path": "analysis/tasks-404-412-305-323/recap-motion/pool-animator-private.json",
+      "sha256": "a488782aa5e466c4b2c8967966834a7866d291ab45b6d3c7ce420864ea592aab",
+      "kind": "exact-PPtr-and-independent-source-data-analysis"
+    },
+    {
+      "id": "recap-motion:native",
+      "path": "analysis/tasks-404-412-305-323/recap-motion/native-curves.json",
+      "sha256": "edc8cc88066afc0fb7f12dc5c302b9a73822afaeaa7a5c7e0ace516f5ba5c6c8",
+      "kind": "exact-PPtr-and-independent-source-data-analysis"
+    },
+    {
+      "id": "recap-motion:lua:main",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapMainWindow.lua",
+      "sha256": "27b0d53b304fdf964a489a2bb9724f4f43c33fde11ecea92edfad983e1c29323",
+      "lineAnchors": [
+        54,
+        74
+      ],
+      "kind": "recovered-static-Lua-rule"
+    },
+    {
+      "id": "recap-motion:lua:content",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapBookContentWindow.lua",
+      "sha256": "b8ec7994617cca745646bc91ffa63cb4b923b668a30a6901114518df6c410a75",
+      "lineAnchors": [
+        117,
+        172
+      ],
+      "kind": "recovered-static-Lua-rule"
+    },
+    {
+      "id": "recap-motion:lua:cell",
+      "path": "analysis/lua/Lua_Activity/StoryRecap/View/StoryRecapBookCell.lua",
+      "sha256": "6ca1ba32d13c028012a1d328573bd6b3b168c8886b5988f6029bdf6c43bd6b26",
+      "lineAnchors": [
+        39,
+        46
+      ],
+      "kind": "recovered-static-Lua-rule"
+    }
+  ],
+  "nativeBookCell": {
+    "poolCells": [
+      {
+        "path": "/StoryRecapBookListRow/StoryRecapBookCell_1",
+        "poolSource": {
+          "id": "570a1ad9f25e22df2a4a85ffded00e26",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "-3790960153597574793",
+          "unityType": "GameObject",
+          "sourceSHA256": "8df21458841ddcb63c2fa8dd0e38873c030d72c30a1b005063f18ca78cc8845a"
+        },
+        "cellComponent": {
+          "id": "074155c22ef5c49ae496252940cb3e95",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "2089110349938008972",
+          "unityType": "MonoBehaviour",
+          "sourceSHA256": "98b580bd858bbad13ef77e80a0c2b0a4229a73f51e39d1c889b07115670a3cb3"
+        },
+        "animator": {
+          "id": "a46f9ab5ec2fa1d8729ae45f08b70e70",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "7647650905358142002",
+          "unityType": "Animator",
+          "sourceSHA256": "903babf9be3049790c2a2a2a34a0650e827407e407dc070946fbb44daf69c7e4"
+        },
+        "controller": {
+          "id": "9235b27da84f276c0001144ed108c84c",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "3805389070395833355",
+          "unityType": "AnimatorController",
+          "sourceSHA256": "59df29c4578e3932b6b44ebd080b961f1ea46782e30b9e17e84e4201c5bef1a2"
+        }
+      },
+      {
+        "path": "/StoryRecapBookListRow/StoryRecapBookCell_2",
+        "poolSource": {
+          "id": "570a1ad9f25e22df2a4a85ffded00e26",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "-3790960153597574793",
+          "unityType": "GameObject",
+          "sourceSHA256": "8df21458841ddcb63c2fa8dd0e38873c030d72c30a1b005063f18ca78cc8845a"
+        },
+        "cellComponent": {
+          "id": "bbafb6917d457fab6e8b65474d2c2ea1",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "9110404740191557255",
+          "unityType": "MonoBehaviour",
+          "sourceSHA256": "fef1d08993f44dbb74c3a740fcf3f36eaf5f69537910fd5bf39fd92b1b1f1f25"
+        },
+        "animator": {
+          "id": "c94971d426c2145290c06598eed0c986",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "4360805765080901711",
+          "unityType": "Animator",
+          "sourceSHA256": "85b911520b1ead1c03212976ffe6f78b833c76b6236b7dcc9ebc3eb32593c35f"
+        },
+        "controller": {
+          "id": "9235b27da84f276c0001144ed108c84c",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "3805389070395833355",
+          "unityType": "AnimatorController",
+          "sourceSHA256": "59df29c4578e3932b6b44ebd080b961f1ea46782e30b9e17e84e4201c5bef1a2"
+        }
+      },
+      {
+        "path": "/StoryRecapBookListRow/StoryRecapBookCell_3",
+        "poolSource": {
+          "id": "570a1ad9f25e22df2a4a85ffded00e26",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "-3790960153597574793",
+          "unityType": "GameObject",
+          "sourceSHA256": "8df21458841ddcb63c2fa8dd0e38873c030d72c30a1b005063f18ca78cc8845a"
+        },
+        "cellComponent": {
+          "id": "8c117c2eee5946569544d9fb329bfc77",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "9063709532318050947",
+          "unityType": "MonoBehaviour",
+          "sourceSHA256": "8dfb71018c368427c936a25298afa0f5fbfa72306a17b029f95e06a631679f71"
+        },
+        "animator": {
+          "id": "3225ab73a1309f8b49f49d5f1c43b33c",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "-5397387328439431776",
+          "unityType": "Animator",
+          "sourceSHA256": "4bef143b418ac7c2a0d57cc9d4d205c33240f142e5979186a04bbcdf743a2388"
+        },
+        "controller": {
+          "id": "9235b27da84f276c0001144ed108c84c",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "3805389070395833355",
+          "unityType": "AnimatorController",
+          "sourceSHA256": "59df29c4578e3932b6b44ebd080b961f1ea46782e30b9e17e84e4201c5bef1a2"
+        }
+      }
+    ],
+    "controller": {
+      "id": "9235b27da84f276c0001144ed108c84c",
+      "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+      "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+      "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+      "pathId": "3805389070395833355",
+      "unityType": "AnimatorController",
+      "sourceSHA256": "59df29c4578e3932b6b44ebd080b961f1ea46782e30b9e17e84e4201c5bef1a2"
+    },
+    "transitions": [
+      {
+        "conditions": [
+          {
+            "name": "yoyo",
+            "mode": 1
+          }
+        ],
+        "destinationStateIndex": 1,
+        "destinationStateName": "StoryRecapBookCell_hide",
+        "clipIndex": 0,
+        "clipName": "StoryRecapBookCell_hide",
+        "transitionDuration": 0,
+        "hasExitTime": false,
+        "stateSpeed": 1,
+        "stateLoop": false
+      },
+      {
+        "conditions": [
+          {
+            "name": "scale",
+            "mode": 1
+          }
+        ],
+        "destinationStateIndex": 2,
+        "destinationStateName": "Ani_StoryRecapBookCell 0",
+        "clipIndex": 1,
+        "clipName": "StoryRecapBookCell_show",
+        "transitionDuration": 0,
+        "hasExitTime": false,
+        "stateSpeed": 1,
+        "stateLoop": false
+      }
+    ],
+    "yoyoClip": {
+      "name": "StoryRecapBookCell_hide",
+      "identity": {
+        "id": "c42b991501eb5ec8e4b5ffb79f2cd62d",
+        "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+        "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+        "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+        "pathId": "6759163469978824378",
+        "unityType": "AnimationClip",
+        "sourceSHA256": "d8dcebd4b3fba60c22e1f45f793f24e1c27d31c8ec0d7f7d7764c0cd23db739b"
+      },
+      "start": 0,
+      "duration": 0.44999998807907104,
+      "sourceSampleRate": 60,
+      "loop": false,
+      "channels": [
+        {
+          "index": 0,
+          "nodePath": "content/bookFace",
+          "nodePathCRC32": 3139738895,
+          "typeID": 4,
+          "attribute": 3,
+          "axis": 0,
+          "initialValue": 0.5,
+          "keys": [
+            {
+              "time": 0,
+              "coefficients": [
+                24.999998092651367,
+                -7.499999523162842,
+                0,
+                0.5
+              ],
+              "value": 0.5
+            },
+            {
+              "time": 0.20000000298023224,
+              "coefficients": [
+                -12.800004005432129,
+                4.8000006675720215,
+                0,
+                0.4000000059604645
+              ],
+              "value": 0.4000000059604645
+            },
+            {
+              "time": 0.44999998807907104,
+              "coefficients": [
+                0,
+                0,
+                0,
+                0.5
+              ],
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "nodePath": "content/bookFace",
+          "nodePathCRC32": 3139738895,
+          "typeID": 4,
+          "attribute": 3,
+          "axis": 1,
+          "initialValue": 0.5,
+          "keys": [
+            {
+              "time": 0,
+              "coefficients": [
+                24.999998092651367,
+                -7.499999523162842,
+                0,
+                0.5
+              ],
+              "value": 0.5
+            },
+            {
+              "time": 0.20000000298023224,
+              "coefficients": [
+                -12.800004005432129,
+                4.8000006675720215,
+                0,
+                0.4000000059604645
+              ],
+              "value": 0.4000000059604645
+            },
+            {
+              "time": 0.44999998807907104,
+              "coefficients": [
+                0,
+                0,
+                0,
+                0.5
+              ],
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "nodePath": "content/bookFace",
+          "nodePathCRC32": 3139738895,
+          "typeID": 4,
+          "attribute": 3,
+          "axis": 2,
+          "initialValue": 0.5,
+          "keys": [
+            {
+              "time": 0,
+              "coefficients": [
+                24.999998092651367,
+                -7.499999523162842,
+                0,
+                0.5
+              ],
+              "value": 0.5
+            },
+            {
+              "time": 0.20000000298023224,
+              "coefficients": [
+                -12.800004005432129,
+                4.8000006675720215,
+                0,
+                0.4000000059604645
+              ],
+              "value": 0.4000000059604645
+            },
+            {
+              "time": 0.44999998807907104,
+              "coefficients": [
+                0,
+                0,
+                0,
+                0.5
+              ],
+              "value": 0.5
+            }
+          ]
+        }
+      ],
+      "completeStreamBytes": 280,
+      "maximumCubicEndpointError": 1.4901156031310592e-8,
+      "originalRuntimeObserved": false
+    },
+    "otherClips": [
+      {
+        "name": "StoryRecapBookCell_show",
+        "identity": {
+          "id": "f849335dce411bb74cde515f6360d94d",
+          "bundleFile": "storyrecap_assets_all_b938caf2239e76bd55d447729d08f86e.bundle",
+          "bundleSHA256": "35896b0758001fcf16e9ae668fcfb522b6c5e31ab1bf509cfee108ad2f456652",
+          "serializedFile": "CAB-0a1e4ed79b89a5f6515db187c4013c50",
+          "pathId": "7670652535696342684",
+          "unityType": "AnimationClip",
+          "sourceSHA256": "e90665029da1928d2366565520410cd69f1a28981e6d4a716e4d05331ce1bc9f"
+        },
+        "duration": 0.5,
+        "loop": false
+      }
+    ],
+    "openingAutomaticallyMappedToShowClip": false,
+    "sourcePathCRC32Match": true,
+    "originalPlaybackVerified": false
+  },
+  "rules": {
+    "shelfEnter": {
+      "visibleAt": 0.4,
+      "body": {
+        "animation": "Lily_story_finished",
+        "queuedAnimation": "Lily_story_finished_repeat",
+        "queuedLoop": true,
+        "queuedDelayArgument": 0
+      },
+      "hand": {
+        "animation": "Lily_story_finished2",
+        "queuedAnimation": "Lily_story_finished_repeat2",
+        "queuedLoop": true,
+        "queuedDelayArgument": 0
+      },
+      "originalQueueMixTimingVerified": false
+    },
+    "nextPage": {
+      "animation": "nextPage",
+      "animationStartAt": 0.1,
+      "contentUpdateAt": 0.1,
+      "fadeOut": {
+        "start": 0,
+        "duration": 0.1
+      },
+      "fadeIn": {
+        "start": 0.15,
+        "duration": 0.1
+      },
+      "inputLockUntil": 0.25,
+      "originalTweenEase": "DOTween default; global setting not resolved"
+    },
+    "lastPage": {
+      "animation": "lastPage",
+      "animationStartAt": 0,
+      "contentUpdateAt": 0.3,
+      "swapSiblingOrderAt": 0.3,
+      "fadeIn": {
+        "start": 0.4,
+        "duration": 0.1
+      },
+      "inputLockUntil": 0.5,
+      "originalTweenEase": "DOTween default; global setting not resolved"
+    },
+    "openBook": {
+      "SpineAnimation": null,
+      "source": "StoryRecapBookContentWindow.PlayStartAni",
+      "waitBeforeMove": 0.2,
+      "moveDuration": 0.15,
+      "waitAfterMove": 0.15,
+      "ease": "InQuad",
+      "targetLocalPosition": [
+        0,
+        0,
+        0
+      ],
+      "startWorldPosition": "runtime selected source bookCell transform.position; not a fixed recovered number"
+    },
+    "yoyo": {
+      "trigger": "yoyo",
+      "triggerDelay": 0.16,
+      "clip": "StoryRecapBookCell_hide",
+      "nodePath": "content/bookFace",
+      "sourceInitialScale": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "sameAsOpeningShowClip": false
+    }
+  },
+  "summary": {
+    "exactPrefabs": 3,
+    "exactSpineComponentBindings": 3,
+    "uniqueSkeletonDataAssets": 2,
+    "fullyParsedSkeletons": 2,
+    "fullInputBytes": 88381,
+    "parsedDeclaredAnimations": 17,
+    "sourceDeclaredActionsMatched": 6,
+    "projectedVideos": 6,
+    "sourceSamples": 246,
+    "sourceSampleFPS": 30,
+    "pageDimensionsMismatch": 2,
+    "nativePoolCells": 3,
+    "yoyoControllerStateClipMatched": true,
+    "newMediaFiles": 12,
+    "newMediaBytes": 188930,
+    "unsupportedFeatures": 0,
+    "originalGameExecuted": false,
+    "originalShaderCanvasMaskingAudioVerified": false
+  },
+  "boundaries": [
+    "3개 원본 prefab의 명시 참조로 책장 Lily 몸·손과 페이지 Spine을 연결했다. 같은 이름의 고객 전신 Lily로 대체하지 않았다.",
+    "Spine 2개 입력을 끝까지 호환 파싱했고 실제 선언 17모션 중 source가 지시하는 6개를 30Hz로 축소 투영했다. 원작 게임 실행이나 Unity 최종 렌더 검증은 아니다.",
+    "Lily의 initialFlipX=1을 모션의 로컬 평면에 적용했다. Canvas/부모 RectTransform·마스킹·셰이더·최종 합성·음향은 대조하지 않았다.",
+    "몸·손 시연은 별도 파트다. 두 MP4를 원작의 최종 배치로 합성하거나 원작 queue mix와 동일하게 전환했다고 표시하지 않는다.",
+    "nextPage/lastPage의 원본 길이 0.533333361초와 입력 잠금 0.25/0.5초를 구분한다. 원작은 다음 조작으로 남은 Spine을 중단할 수 있다.",
+    "책 펼침은 source DOTween 이동이며 임의의 book-open Spine을 만들어 원본이라고 표시하지 않는다. source yoyo는 별도 pool Animator의 hide clip에 정확히 연결된다.",
+    "atlas/PNG의 서로 다른 치수를 그대로 보존했다. 공개320px 축소본은 제작 원화나 납품 크기가 아니다.",
+    "원본 prefab/atlas/skel/raw geometry는 로컬에 유지하고 축소 MP4·PNG와 최소 참조/숫자 곡선만 공개한다."
+  ],
+  "revision": "a45c6ee927638692d0b1dc29203c7d4ea26e69d9f056d5e7f6b04f754c97d967"
+}

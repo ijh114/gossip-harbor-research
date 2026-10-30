@@ -99,12 +99,13 @@
       "Solver is a bounded heuristic. Failure is a model/solver investigation result, not proof the original game is blocked."
     ],
     "sourceHashes": {
-      "play-model.mjs": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+      "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+      "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e",
       "engine.mjs": "a12b859b61e544cceb41ff7985d57c912d55c897f9b2bd6d39fb6fb36f41ae19",
       "order-model.mjs": "5ec1d385ff6d23dd2edf7f76fbd06b3fb739f1be4817063800a1ba13a4a56aef",
       "inventory-model.mjs": "e40756c69517570475e3eb3dd89aad286fcf249b20f07802a16fbf50b7d5f511",
       "onboarding-model.mjs": "9ef8dec88d18cc3f3079c8a22f8331bae1ed7ac00c93f385d5a0a2a6e029c260",
-      "spread-model.mjs": "2a6b8cb6ab91dd7cccbb505acac99582b8ab856a6ee2701feaeeed17c3c2857f",
+      "spread-model.mjs": "360c77c3906ab82d35c55abcb880a88b948534af1872837ce5850a8d0e852c3d",
       "smart-reward-model.mjs": "dd80c7ccd06c7682bb5027c7b886e6cfdee459d59d85045ea7831e3a834e91cc",
       "commerce-model.mjs": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
       "production-modifiers.mjs": "79bba589780db007b118e878acf396bcffc7d36e1cc0ef8762aa3eaf50a5b544",
@@ -112,9 +113,9 @@
       "session-store.mjs": "c7485ba5561169d438e6ffd2a544b488c7f0db074ba89a6eec167cf3e03cad13"
     },
     "evidence": {
-      "path": "analysis/simulation/qa/natural-progression.json",
-      "sha256": "e862ab8fbd3ef69dac412a3232dc65e8470b0cab90a2f3a85ed1d4c787d79cd2",
-      "method": "pure model action replay, not original game runtime"
+      "path": "analysis/tasks-404-412-305-323/model-revalidation/natural-revalidation.json",
+      "sha256": "ea12ef29bedd2fd503088d6321ecee170c9117c951d0e892f4e6cf8f095567ec",
+      "method": "current model re-execution of every recorded action; all before/after snapshots, income and RNG matched"
     }
   },
   "fixed16": {
@@ -214,12 +215,13 @@
       "Solver is a bounded heuristic. Failure is a model/solver investigation result, not proof the original game is blocked."
     ],
     "sourceHashes": {
-      "play-model.mjs": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+      "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+      "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e",
       "engine.mjs": "a12b859b61e544cceb41ff7985d57c912d55c897f9b2bd6d39fb6fb36f41ae19",
       "order-model.mjs": "5ec1d385ff6d23dd2edf7f76fbd06b3fb739f1be4817063800a1ba13a4a56aef",
       "inventory-model.mjs": "e40756c69517570475e3eb3dd89aad286fcf249b20f07802a16fbf50b7d5f511",
       "onboarding-model.mjs": "9ef8dec88d18cc3f3079c8a22f8331bae1ed7ac00c93f385d5a0a2a6e029c260",
-      "spread-model.mjs": "2a6b8cb6ab91dd7cccbb505acac99582b8ab856a6ee2701feaeeed17c3c2857f",
+      "spread-model.mjs": "360c77c3906ab82d35c55abcb880a88b948534af1872837ce5850a8d0e852c3d",
       "smart-reward-model.mjs": "dd80c7ccd06c7682bb5027c7b886e6cfdee459d59d85045ea7831e3a834e91cc",
       "commerce-model.mjs": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
       "production-modifiers.mjs": "79bba589780db007b118e878acf396bcffc7d36e1cc0ef8762aa3eaf50a5b544",
@@ -227,9 +229,9 @@
       "session-store.mjs": "c7485ba5561169d438e6ffd2a544b488c7f0db074ba89a6eec167cf3e03cad13"
     },
     "evidence": {
-      "path": "analysis/simulation/qa/natural-progression-fixed16.json",
-      "sha256": "ace800f0cc915ca5e23708fd1af820a021c553a3460643dd8c96954403dcb19b",
-      "method": "pure model action replay, not original game runtime"
+      "path": "analysis/tasks-404-412-305-323/model-revalidation/fixed16-revalidation.json",
+      "sha256": "96ee663e892a72711d597b8e0271de34945ff108b2d5962e01a4d50de39c4db9",
+      "method": "current model re-execution of every recorded action; all before/after snapshots, income and RNG matched"
     }
   },
   "tutorials": {

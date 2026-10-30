@@ -24408,10 +24408,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "select"
         },
         "ruleFactIds": [
@@ -24451,7 +24451,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "선택 동작 반복 시연",
       "sha256": "72add731dc57d8392a4f3632b7d6c176fa88bcda4d215b2d4f49230da73637db",
@@ -24472,10 +24476,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "move"
         },
         "ruleFactIds": [
@@ -24515,7 +24519,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "이동 동작 반복 시연",
       "sha256": "837ade758f9c83fb8dfaccf02994f1e871f3d21a37b61c8ada7dcdd91610e20b",
@@ -24617,10 +24625,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "blocked"
         },
         "ruleFactIds": [
@@ -24660,7 +24668,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "입력 제한 동작 반복 시연",
       "sha256": "f66f835e590835da7a7391fef504ae103b855251310bd4ad4e2c1bf73430bd95",
@@ -24681,10 +24693,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "rainbow"
         },
         "ruleFactIds": [
@@ -24736,7 +24748,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "도구 효과 · 만능 젬 동작 반복 시연",
       "sha256": "c37b0392c7489425a33b2b5567a862b58ff0bb057b995a1c6a1d38f028a3a936",
@@ -24757,10 +24773,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "scissors"
         },
         "ruleFactIds": [
@@ -24812,7 +24828,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "도구 효과 · 가위 동작 반복 시연",
       "sha256": "8a9760365dcd3c9b2868a56affa67d1104cd9b729f728351c2919c62b4c86df0",
@@ -24833,10 +24853,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "hourglass"
         },
         "ruleFactIds": [
@@ -24858,7 +24878,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "도구 효과 · 모래시계 동작 반복 시연",
       "sha256": "e30c7e39a750ef5ce1f5b5ee949a082f3e5312933745924b6fbaedbbb8448df1",
@@ -24879,10 +24903,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "swap"
         },
         "ruleFactIds": [
@@ -24922,7 +24946,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "교환 동작 반복 시연",
       "sha256": "436be415e5e4df6289c4efd2ad4b2a96da5242c9e4d8ef7e3eb2acdac93ac929",
@@ -24943,10 +24971,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "drag"
         },
         "ruleFactIds": [
@@ -24986,7 +25014,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "드래그 앤 드롭 동작 반복 시연",
       "sha256": "763626e5419b040f984a1dd02d57c1c40a3461d0b13d1947f539363fc7b03595",
@@ -25007,10 +25039,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "hint"
         },
         "ruleFactIds": [
@@ -25050,7 +25082,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "합성 힌트 동작 반복 시연",
       "sha256": "7a87e3d1185c22ab59a2eb0b52d072f1ad0aa341a4b041dca593b5e5a5eae379",
@@ -25071,10 +25107,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "unlock-web"
         },
         "ruleFactIds": [
@@ -25114,7 +25150,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "봉인 해제 · 거미줄 동작 반복 시연",
       "sha256": "b2db5ebe74689d93b5563ab7c55984d1bbfa99dfc0c046b2e4918e36b14f88c9",
@@ -25135,10 +25175,10 @@
       "replay": {
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "modelPath": "src/play-model.mjs",
-        "modelSha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+        "modelSha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
         "fixtures": {
           "path": "analysis/simulation/interaction-fixtures.json",
-          "sha256": "86c56f3da17f510885d556019c53cd857e2db9e358fb50c74018dd493b096eff",
+          "sha256": "2b9e71402b96326a5148117832fefa9f8c02112e33394ad6c7f5301367020d2f",
           "id": "unlock-box"
         },
         "ruleFactIds": [
@@ -25178,7 +25218,11 @@
         ],
         "fps": 12,
         "durationMs": 4814,
-        "illustrativeTiming": true
+        "illustrativeTiming": true,
+        "modelSourceHashes": {
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e"
+        }
       },
       "alt": "봉인 해제 · 상자 동작 반복 시연",
       "sha256": "2c697e160c2bcca950acfbb4fb4dcc88cea6c53af5ab2936725829f11d0d3452",

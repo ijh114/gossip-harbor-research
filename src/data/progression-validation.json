@@ -11,12 +11,13 @@
     "success": true,
     "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
     "sourceHashes": {
-      "play-model.mjs": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+      "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+      "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e",
       "engine.mjs": "a12b859b61e544cceb41ff7985d57c912d55c897f9b2bd6d39fb6fb36f41ae19",
       "order-model.mjs": "5ec1d385ff6d23dd2edf7f76fbd06b3fb739f1be4817063800a1ba13a4a56aef",
       "inventory-model.mjs": "e40756c69517570475e3eb3dd89aad286fcf249b20f07802a16fbf50b7d5f511",
       "onboarding-model.mjs": "9ef8dec88d18cc3f3079c8a22f8331bae1ed7ac00c93f385d5a0a2a6e029c260",
-      "spread-model.mjs": "2a6b8cb6ab91dd7cccbb505acac99582b8ab856a6ee2701feaeeed17c3c2857f",
+      "spread-model.mjs": "360c77c3906ab82d35c55abcb880a88b948534af1872837ce5850a8d0e852c3d",
       "smart-reward-model.mjs": "dd80c7ccd06c7682bb5027c7b886e6cfdee459d59d85045ea7831e3a834e91cc",
       "commerce-model.mjs": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
       "production-modifiers.mjs": "79bba589780db007b118e878acf396bcffc7d36e1cc0ef8762aa3eaf50a5b544",
@@ -2641,15 +2642,22 @@
     },
     "inputReports": [
       {
-        "path": "analysis/simulation/qa/extended-late-progression.json",
-        "sha256": "971d7258f73accb5887a3b3d497959bce9fbcb33dd846ec6f9e240190cf99ec2"
+        "path": "analysis/tasks-404-412-305-323/model-revalidation/late-revalidation.json",
+        "sha256": "be3d66c8695022ddab5e0ac7529e242b7f4ae93042e1d020ef0dce336c467287",
+        "method": "current model re-execution of every recorded action; all before/after snapshots, income and RNG matched"
       },
       {
-        "path": "analysis/simulation/qa/stage5-2026-10-29/resume-lv25-42.json",
-        "sha256": "045eb977bafe70bdb99ad3f7e9eff295ac5ea720f5b4c96abc69a7f6c6185467"
+        "path": "analysis/tasks-404-412-305-323/model-revalidation/continuation-revalidation.json",
+        "sha256": "8df7329876738905f3ee2d6cde0843ee7cc413e1e235cb311080e1dacc17aee1",
+        "method": "current model re-execution of every recorded action; all before/after snapshots, income and RNG matched"
       }
     ],
-    "originalRuntimeObserved": false
+    "originalRuntimeObserved": false,
+    "revalidation": {
+      "path": "analysis/tasks-404-412-305-323/model-revalidation/combined-continuation-revalidation.json",
+      "sha256": "275564ca0e74a6bec9b2cecef93e0c0265a9daf349b7196739851e3c3bc593a1",
+      "method": "all recorded commands replayed; every before/after economy, board SHA256 and RNG matched"
+    }
   },
   "seedComparison": {
     "target": {
@@ -2665,12 +2673,13 @@
         "success": true,
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "sourceHashes": {
-          "play-model.mjs": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e",
           "engine.mjs": "a12b859b61e544cceb41ff7985d57c912d55c897f9b2bd6d39fb6fb36f41ae19",
           "order-model.mjs": "5ec1d385ff6d23dd2edf7f76fbd06b3fb739f1be4817063800a1ba13a4a56aef",
           "inventory-model.mjs": "e40756c69517570475e3eb3dd89aad286fcf249b20f07802a16fbf50b7d5f511",
           "onboarding-model.mjs": "9ef8dec88d18cc3f3079c8a22f8331bae1ed7ac00c93f385d5a0a2a6e029c260",
-          "spread-model.mjs": "2a6b8cb6ab91dd7cccbb505acac99582b8ab856a6ee2701feaeeed17c3c2857f",
+          "spread-model.mjs": "360c77c3906ab82d35c55abcb880a88b948534af1872837ce5850a8d0e852c3d",
           "smart-reward-model.mjs": "dd80c7ccd06c7682bb5027c7b886e6cfdee459d59d85045ea7831e3a834e91cc",
           "commerce-model.mjs": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
           "production-modifiers.mjs": "79bba589780db007b118e878acf396bcffc7d36e1cc0ef8762aa3eaf50a5b544",
@@ -2733,8 +2742,9 @@
           "generatedPerOrder": 59.142
         },
         "inputReport": {
-          "path": "analysis/simulation/qa/extended-late-progression.json",
-          "sha256": "971d7258f73accb5887a3b3d497959bce9fbcb33dd846ec6f9e240190cf99ec2"
+          "path": "analysis/tasks-404-412-305-323/model-revalidation/late-revalidation.json",
+          "sha256": "be3d66c8695022ddab5e0ac7529e242b7f4ae93042e1d020ef0dce336c467287",
+          "method": "current model re-execution of every recorded action; all before/after snapshots, income and RNG matched"
         }
       },
       {
@@ -2742,12 +2752,13 @@
         "success": true,
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "sourceHashes": {
-          "play-model.mjs": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e",
           "engine.mjs": "a12b859b61e544cceb41ff7985d57c912d55c897f9b2bd6d39fb6fb36f41ae19",
           "order-model.mjs": "5ec1d385ff6d23dd2edf7f76fbd06b3fb739f1be4817063800a1ba13a4a56aef",
           "inventory-model.mjs": "e40756c69517570475e3eb3dd89aad286fcf249b20f07802a16fbf50b7d5f511",
           "onboarding-model.mjs": "9ef8dec88d18cc3f3079c8a22f8331bae1ed7ac00c93f385d5a0a2a6e029c260",
-          "spread-model.mjs": "2a6b8cb6ab91dd7cccbb505acac99582b8ab856a6ee2701feaeeed17c3c2857f",
+          "spread-model.mjs": "360c77c3906ab82d35c55abcb880a88b948534af1872837ce5850a8d0e852c3d",
           "smart-reward-model.mjs": "dd80c7ccd06c7682bb5027c7b886e6cfdee459d59d85045ea7831e3a834e91cc",
           "commerce-model.mjs": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
           "production-modifiers.mjs": "79bba589780db007b118e878acf396bcffc7d36e1cc0ef8762aa3eaf50a5b544",
@@ -2821,8 +2832,9 @@
           "generatedPerOrder": 38.196
         },
         "inputReport": {
-          "path": "analysis/simulation/qa/stage5-2026-10-29/fresh-lv21-seed7.json",
-          "sha256": "1443f89ad07367e6b04b394efe75c12138335b1e2df1e79e049c40ba1885806b"
+          "path": "analysis/tasks-404-412-305-323/model-revalidation/seed7-revalidation.json",
+          "sha256": "7127c3c6c242e10b574e58079a84f3e7f63e3803195faead6f85f7ae96319281",
+          "method": "current model re-execution of every recorded action; all before/after snapshots, income and RNG matched"
         },
         "continuation": null
       },
@@ -2831,12 +2843,13 @@
         "success": true,
         "configRevision": "6290350310112e7e71b5f1b9fe3d99d0aa045adb95c1d01c45815bc558470e10",
         "sourceHashes": {
-          "play-model.mjs": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+          "play-model.mjs": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
+          "tutorial-economy.mjs": "46f2fb5f082de2c52bf4342434c873a9d4049559849ec72dfb2b5f6275241d6e",
           "engine.mjs": "a12b859b61e544cceb41ff7985d57c912d55c897f9b2bd6d39fb6fb36f41ae19",
           "order-model.mjs": "5ec1d385ff6d23dd2edf7f76fbd06b3fb739f1be4817063800a1ba13a4a56aef",
           "inventory-model.mjs": "e40756c69517570475e3eb3dd89aad286fcf249b20f07802a16fbf50b7d5f511",
           "onboarding-model.mjs": "9ef8dec88d18cc3f3079c8a22f8331bae1ed7ac00c93f385d5a0a2a6e029c260",
-          "spread-model.mjs": "2a6b8cb6ab91dd7cccbb505acac99582b8ab856a6ee2701feaeeed17c3c2857f",
+          "spread-model.mjs": "360c77c3906ab82d35c55abcb880a88b948534af1872837ce5850a8d0e852c3d",
           "smart-reward-model.mjs": "dd80c7ccd06c7682bb5027c7b886e6cfdee459d59d85045ea7831e3a834e91cc",
           "commerce-model.mjs": "9df47bb78dddc7237cd231c3c0705ef519c873acfddde30d30da7f627f0acf3b",
           "production-modifiers.mjs": "79bba589780db007b118e878acf396bcffc7d36e1cc0ef8762aa3eaf50a5b544",
@@ -2910,8 +2923,9 @@
           "generatedPerOrder": 80.416
         },
         "inputReport": {
-          "path": "analysis/simulation/qa/stage5-2026-10-29/fresh-lv21-seed83.json",
-          "sha256": "0b5411bcb0b5058172eb3dddd9863d98d4cbe9d83ec3252e18630258e49002ef"
+          "path": "analysis/tasks-404-412-305-323/model-revalidation/seed83-revalidation.json",
+          "sha256": "4e17093abafd91cdb72aadd21676a9bda6d64886c5cccc98da32052d4719c4d2",
+          "method": "current model re-execution of every recorded action; all before/after snapshots, income and RNG matched"
         },
         "continuation": null
       }

@@ -1,0 +1,979 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-30",
+  "targetAPKVersion": "4.10.5",
+  "originalRuntimeObserved": false,
+  "inputLogAvailable": false,
+  "listenedSeconds": 0,
+  "completeOriginalRecordingsReviewed": false,
+  "everyOriginalFrameVisuallyReviewed": false,
+  "title": "미확인 동작 · 실제 녹화 후보 재검수",
+  "summary": {
+    "newSourceRecordings": 0,
+    "reusedPriorSearchVideos": 110,
+    "additionalCandidateSearchVideos": 4,
+    "additionalSearchSeconds": 465,
+    "additionalSampleFrames": 930,
+    "candidatePairHits": 30,
+    "distinctCandidatePairsVisuallyReviewed": 6,
+    "additionalNativePointsVisuallyReviewed": 33,
+    "newSuccessfulTargetTransitionsConfirmed": 0,
+    "listenedSeconds": 0,
+    "originalAudioPublished": 0,
+    "additionalContextStillsVisuallyReviewed": 1
+  },
+  "mediaEntries": [
+    {
+      "sourceId": "GH-V0083",
+      "originalSha256": "0a81b8bf90518ef3a7b5d055f17a3cd828250cdf9b8980fcb84daecb7dca995c",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:coffee-before",
+      "kind": "image",
+      "src": "./assets/media/capture-followup-study/coffee-before.webp",
+      "alt": "컵 이동 후보 전 · 보드 칸과 중첩 효과",
+      "sourcePTS": 166.506278,
+      "sourceRange": {
+        "startSeconds": 166.506278,
+        "endSeconds": 166.506278
+      },
+      "sha256": "61cc1f1a46061bd235245e12aaebc84ac233be8c3a7a4472ed2d594a1441f469",
+      "bytes": 91688,
+      "width": 520,
+      "height": 675,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "outputWidth": 520,
+        "outputHeight": 675
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "caption": "컵 이동 후보 전 · 보드 칸과 중첩 효과"
+    },
+    {
+      "sourceId": "GH-V0083",
+      "originalSha256": "0a81b8bf90518ef3a7b5d055f17a3cd828250cdf9b8980fcb84daecb7dca995c",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:coffee-during",
+      "kind": "image",
+      "src": "./assets/media/capture-followup-study/coffee-during.webp",
+      "alt": "여러 컵의 이동이 겹치는 선정 프레임",
+      "sourcePTS": 167.006411,
+      "sourceRange": {
+        "startSeconds": 167.006411,
+        "endSeconds": 167.006411
+      },
+      "sha256": "bc3fe702500243c906ad859642b077b01fc396a0dd8b4ef31fe54364543673e7",
+      "bytes": 94156,
+      "width": 520,
+      "height": 675,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "outputWidth": 520,
+        "outputHeight": 675
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "caption": "여러 컵의 이동이 겹치는 선정 프레임"
+    },
+    {
+      "sourceId": "GH-V0083",
+      "originalSha256": "0a81b8bf90518ef3a7b5d055f17a3cd828250cdf9b8980fcb84daecb7dca995c",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:coffee-after",
+      "kind": "image",
+      "src": "./assets/media/capture-followup-study/coffee-after.webp",
+      "alt": "컵 추가와 보드 포화 안내 이후",
+      "sourcePTS": 168.506089,
+      "sourceRange": {
+        "startSeconds": 168.506089,
+        "endSeconds": 168.506089
+      },
+      "sha256": "90b336a8a11d0b9198e264cb7013dc7f8ccd1c24917046ffc37654a67c736fd8",
+      "bytes": 94414,
+      "width": 520,
+      "height": 675,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "outputWidth": 520,
+        "outputHeight": 675
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "caption": "컵 추가와 보드 포화 안내 이후"
+    },
+    {
+      "sourceId": "GH-V0124",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:scissors-before",
+      "kind": "image",
+      "src": "./assets/media/capture-followup-study/scissors-before.webp",
+      "alt": "상단1행2열 가위 · 보석 수령 전",
+      "sourcePTS": 74.507511,
+      "sourceRange": {
+        "startSeconds": 74.507511,
+        "endSeconds": 74.507511
+      },
+      "sha256": "2cb7e4a8467ea66d1ee59610144a9dd197025bc79b112dd68d3a964e95eed859",
+      "bytes": 80854,
+      "width": 520,
+      "height": 675,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "outputWidth": 520,
+        "outputHeight": 675
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "caption": "상단1행2열 가위 · 보석 수령 전"
+    },
+    {
+      "sourceId": "GH-V0124",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:scissors-during",
+      "kind": "image",
+      "src": "./assets/media/capture-followup-study/scissors-during.webp",
+      "alt": "가위는 같은 칸 · 다른 보상들이 보드에 추가",
+      "sourcePTS": 77.000711,
+      "sourceRange": {
+        "startSeconds": 77.000711,
+        "endSeconds": 77.000711
+      },
+      "sha256": "5f93658831b2891f052695a69eef8efbc5aa8f0426fe8ad3703c4d5739cfd578",
+      "bytes": 81198,
+      "width": 520,
+      "height": 675,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "outputWidth": 520,
+        "outputHeight": 675
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "caption": "가위는 같은 칸 · 다른 보상들이 보드에 추가"
+    },
+    {
+      "sourceId": "GH-V0124",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:scissors-after",
+      "kind": "image",
+      "src": "./assets/media/capture-followup-study/scissors-after.webp",
+      "alt": "보상 생성 이후에도 같은 상단 칸의 가위",
+      "sourcePTS": 79.500611,
+      "sourceRange": {
+        "startSeconds": 79.500611,
+        "endSeconds": 79.500611
+      },
+      "sha256": "3f862b4348872f23a7d15b1f98d7ac3b0034fa6ebe5eb1ef87a1faa4536acea3",
+      "bytes": 85588,
+      "width": 520,
+      "height": 675,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "outputWidth": 520,
+        "outputHeight": 675
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "caption": "보상 생성 이후에도 같은 상단 칸의 가위"
+    },
+    {
+      "sourceId": "GH-V0024",
+      "originalSha256": "6e6e1e2fbd0b4cfea6ccc04a6bb15608ca756b41b871fb065d1c61af7231343e",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:idle-before",
+      "kind": "image",
+      "src": "./assets/media/capture-followup-study/idle-before.webp",
+      "alt": "정지 후보 시작 · 컵케이크 선택 괄호",
+      "sourcePTS": 52.502033,
+      "sourceRange": {
+        "startSeconds": 52.502033,
+        "endSeconds": 52.502033
+      },
+      "sha256": "dabe98b846371d65b32ce4cdef5d09f27bda9c31a06d25eccf9b1d27c632a1fe",
+      "bytes": 73842,
+      "width": 520,
+      "height": 675,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "outputWidth": 520,
+        "outputHeight": 675
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "caption": "정지 후보 시작 · 컵케이크 선택 괄호"
+    },
+    {
+      "sourceId": "GH-V0024",
+      "originalSha256": "6e6e1e2fbd0b4cfea6ccc04a6bb15608ca756b41b871fb065d1c61af7231343e",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:idle-middle",
+      "kind": "image",
+      "src": "./assets/media/capture-followup-study/idle-middle.webp",
+      "alt": "정지 후보 중간 · 같은 보드 배치",
+      "sourcePTS": 54.502956,
+      "sourceRange": {
+        "startSeconds": 54.502956,
+        "endSeconds": 54.502956
+      },
+      "sha256": "8819bede9d76b76ebce1b9624ded6981fd690626f26b3564bd3709a374587a03",
+      "bytes": 73756,
+      "width": 520,
+      "height": 675,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "outputWidth": 520,
+        "outputHeight": 675
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "caption": "정지 후보 중간 · 같은 보드 배치"
+    },
+    {
+      "sourceId": "GH-V0024",
+      "originalSha256": "6e6e1e2fbd0b4cfea6ccc04a6bb15608ca756b41b871fb065d1c61af7231343e",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:idle-after",
+      "kind": "image",
+      "src": "./assets/media/capture-followup-study/idle-after.webp",
+      "alt": "정지 후보 끝 · 자동 쌍 강조 판정 보류",
+      "sourcePTS": 56.503444,
+      "sourceRange": {
+        "startSeconds": 56.503444,
+        "endSeconds": 56.503444
+      },
+      "sha256": "fac7b58f14f627a8d243081c59765780ee22431ca9be839694cac96c71fda5e5",
+      "bytes": 73934,
+      "width": 520,
+      "height": 675,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "outputWidth": 520,
+        "outputHeight": 675
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "caption": "정지 후보 끝 · 자동 쌍 강조 판정 보류"
+    },
+    {
+      "sourceId": "GH-V0083",
+      "originalSha256": "0a81b8bf90518ef3a7b5d055f17a3cd828250cdf9b8980fcb84daecb7dca995c",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:coffee-overlap:video",
+      "kind": "video",
+      "src": "./assets/media/capture-followup-study/coffee-overlap.mp4",
+      "poster": "./assets/media/capture-followup-study/coffee-overlap-poster.webp",
+      "posterSha256": "2972bccec60b8b6600bacf57aff6d0d8225e0119b446d9652a60d87aeca57a65",
+      "alt": "커피 이동·추가가 겹치는 실제 녹화 후보",
+      "sourceRange": {
+        "startSeconds": 166.25,
+        "endSeconds": 169.3
+      },
+      "sha256": "766f07e85958cdd99443c1c1ef4c9acaa38795119d11352709ff27c394b02fe7",
+      "bytes": 271438,
+      "width": 416,
+      "height": 540,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 24,
+        "firstIncludedSourcePTS": 166.257033,
+        "lastIncludedSourcePTS": 169.296389,
+        "sourceNativeFrames": 366
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 3.041667,
+        "frames": 73
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "notes": "무음 1배속 선정 크롭. GIF는12Hz 표본의10ms 시간 양자화가 있어 시간 측정은 원본 PTS를 사용합니다. 정확한 터치 원인·전체 전프레임 육안 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0083",
+      "originalSha256": "0a81b8bf90518ef3a7b5d055f17a3cd828250cdf9b8980fcb84daecb7dca995c",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:coffee-overlap:gif",
+      "kind": "gif",
+      "src": "./assets/media/capture-followup-study/coffee-overlap.gif",
+      "poster": "./assets/media/capture-followup-study/coffee-overlap-poster.webp",
+      "posterSha256": "2972bccec60b8b6600bacf57aff6d0d8225e0119b446d9652a60d87aeca57a65",
+      "alt": "커피 이동·추가가 겹치는 실제 녹화 후보",
+      "sourceRange": {
+        "startSeconds": 166.25,
+        "endSeconds": 169.3
+      },
+      "sha256": "7dafd286ac9d6786d4ad0ba02384babc4a975d276e96b10ff79df6b2de763082",
+      "bytes": 604894,
+      "width": 288,
+      "height": 374,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 12,
+        "firstIncludedSourcePTS": 166.257033,
+        "lastIncludedSourcePTS": 169.296389,
+        "sourceNativeFrames": 366
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 3.08,
+        "frames": 37
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "notes": "무음 1배속 선정 크롭. GIF는12Hz 표본의10ms 시간 양자화가 있어 시간 측정은 원본 PTS를 사용합니다. 정확한 터치 원인·전체 전프레임 육안 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0124",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:scissors-resident:video",
+      "kind": "video",
+      "src": "./assets/media/capture-followup-study/scissors-resident.mp4",
+      "poster": "./assets/media/capture-followup-study/scissors-resident-poster.webp",
+      "posterSha256": "41161d0ad5c8da98a8ecea67dfd3a0d2d197184b6ffada47bc4dbea94d264214",
+      "alt": "가위가 놓인 보드 · 실제 분할 사용과 구분",
+      "sourceRange": {
+        "startSeconds": 74.5,
+        "endSeconds": 79.6
+      },
+      "sha256": "77a719a4614ce8589efccc9738e96a8a0d4e8f72e2f3240cc12627523f0ac561",
+      "bytes": 391419,
+      "width": 416,
+      "height": 540,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 24,
+        "firstIncludedSourcePTS": 74.507511,
+        "lastIncludedSourcePTS": 79.591889,
+        "sourceNativeFrames": 603
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 5.083333,
+        "frames": 122
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "notes": "무음 1배속 선정 크롭. GIF는12Hz 표본의10ms 시간 양자화가 있어 시간 측정은 원본 PTS를 사용합니다. 정확한 터치 원인·전체 전프레임 육안 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0124",
+      "originalSha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:scissors-resident:gif",
+      "kind": "gif",
+      "src": "./assets/media/capture-followup-study/scissors-resident.gif",
+      "poster": "./assets/media/capture-followup-study/scissors-resident-poster.webp",
+      "posterSha256": "41161d0ad5c8da98a8ecea67dfd3a0d2d197184b6ffada47bc4dbea94d264214",
+      "alt": "가위가 놓인 보드 · 실제 분할 사용과 구분",
+      "sourceRange": {
+        "startSeconds": 74.5,
+        "endSeconds": 79.6
+      },
+      "sha256": "40a409d4095304db94dadc40c025111ac722388c085892786f16c8c3cac51187",
+      "bytes": 981689,
+      "width": 288,
+      "height": 374,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 12,
+        "firstIncludedSourcePTS": 74.507511,
+        "lastIncludedSourcePTS": 79.591889,
+        "sourceNativeFrames": 603
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 5.08,
+        "frames": 61
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "notes": "무음 1배속 선정 크롭. GIF는12Hz 표본의10ms 시간 양자화가 있어 시간 측정은 원본 PTS를 사용합니다. 정확한 터치 원인·전체 전프레임 육안 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0024",
+      "originalSha256": "6e6e1e2fbd0b4cfea6ccc04a6bb15608ca756b41b871fb065d1c61af7231343e",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:idle-candidate:video",
+      "kind": "video",
+      "src": "./assets/media/capture-followup-study/idle-candidate.mp4",
+      "poster": "./assets/media/capture-followup-study/idle-candidate-poster.webp",
+      "posterSha256": "4e61a198fe146ba7d5a59ffce3da0aa0486c1580ec0e37d2653a6fdafefe333e",
+      "alt": "정지 보드 후보 · 자동 힌트 판정 미확정",
+      "sourceRange": {
+        "startSeconds": 52.5,
+        "endSeconds": 56.6
+      },
+      "sha256": "b114572d90f3658f49165847df5206f31a507093fab3bf988a95a91c2c45530c",
+      "bytes": 214109,
+      "width": 416,
+      "height": 540,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 24,
+        "firstIncludedSourcePTS": 52.502033,
+        "lastIncludedSourcePTS": 56.595011,
+        "sourceNativeFrames": 489
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 4.083333,
+        "frames": 98
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "notes": "무음 1배속 선정 크롭. GIF는12Hz 표본의10ms 시간 양자화가 있어 시간 측정은 원본 PTS를 사용합니다. 정확한 터치 원인·전체 전프레임 육안 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0024",
+      "originalSha256": "6e6e1e2fbd0b4cfea6ccc04a6bb15608ca756b41b871fb065d1c61af7231343e",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:idle-candidate:gif",
+      "kind": "gif",
+      "src": "./assets/media/capture-followup-study/idle-candidate.gif",
+      "poster": "./assets/media/capture-followup-study/idle-candidate-poster.webp",
+      "posterSha256": "4e61a198fe146ba7d5a59ffce3da0aa0486c1580ec0e37d2653a6fdafefe333e",
+      "alt": "정지 보드 후보 · 자동 힌트 판정 미확정",
+      "sourceRange": {
+        "startSeconds": 52.5,
+        "endSeconds": 56.6
+      },
+      "sha256": "6a4090e2c8b79f27dad507965ea21b080401dcdb0bc03486e5174cff47753722",
+      "bytes": 484470,
+      "width": 288,
+      "height": 374,
+      "transform": {
+        "crop": {
+          "x": 20,
+          "y": 680,
+          "width": 1040,
+          "height": 1350
+        },
+        "speed": 1,
+        "audioRemoved": true,
+        "fps": 12,
+        "firstIncludedSourcePTS": 52.502033,
+        "lastIncludedSourcePTS": 56.595011,
+        "sourceNativeFrames": 489
+      },
+      "encodedVerification": {
+        "hasAudio": false,
+        "durationSeconds": 4.08,
+        "frames": 49
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "selected game-only board crop; no OS, account, payment or player identifiers"
+      },
+      "notes": "무음 1배속 선정 크롭. GIF는12Hz 표본의10ms 시간 양자화가 있어 시간 측정은 원본 PTS를 사용합니다. 정확한 터치 원인·전체 전프레임 육안 검수를 뜻하지 않습니다."
+    },
+    {
+      "sourceId": "GH-V0081",
+      "originalSha256": "86697b022d2359bc676717ee08a0043d10d52dec86c819c17af51aa8c812b62a",
+      "origin": "observed-user-capture",
+      "evidenceType": "historical-capture-observation",
+      "version": null,
+      "capturedAt": null,
+      "originalRuntimeObserved": false,
+      "sourceManifestVersionVerified": false,
+      "key": "capture-followup:season-mission-not-factory",
+      "kind": "image",
+      "src": "./assets/media/capture-followup-study/season-mission-not-factory.webp",
+      "alt": "신규 임무 해제 안내는 토끼 바구니 시즌의 코인 과제 · 공장 창과 구분",
+      "sourcePTS": 0.0,
+      "sourceRange": {
+        "startSeconds": 0.0,
+        "endSeconds": 0.0
+      },
+      "sha256": "540bfe86d2aa54dddb79706abdee64222ee0b4dd887187823cf62df3b28814c7",
+      "bytes": 56222,
+      "width": 510,
+      "height": 820,
+      "transform": {
+        "crop": {
+          "x": 30,
+          "y": 400,
+          "width": 1020,
+          "height": 1640
+        }
+      },
+      "privacyReview": {
+        "status": "reviewed",
+        "scope": "game season mission crop; no OS/account/payment identifiers"
+      }
+    }
+  ],
+  "studies": [
+    {
+      "id": "idle-not-proven-hint",
+      "title": "움직임이 적은 화면만으로 자동 힌트를 확정할 수 없다",
+      "taskIds": [
+        "4.06",
+        "4.11"
+      ],
+      "sourceId": "GH-V0024",
+      "evidenceStatus": "candidate-insufficient",
+      "sourceRange": {
+        "startSeconds": 52.5,
+        "endSeconds": 56.6
+      },
+      "mediaKeys": [
+        "capture-followup:idle-candidate:video",
+        "capture-followup:idle-candidate:gif",
+        "capture-followup:idle-before",
+        "capture-followup:idle-middle",
+        "capture-followup:idle-after"
+      ],
+      "frames": [
+        {
+          "mediaKey": "capture-followup:idle-before",
+          "sourcePTS": 52.502033,
+          "caption": "정지 후보 시작 · 컵케이크 선택 괄호"
+        },
+        {
+          "mediaKey": "capture-followup:idle-middle",
+          "sourcePTS": 54.502956,
+          "caption": "정지 후보 중간 · 같은 보드 배치"
+        },
+        {
+          "mediaKey": "capture-followup:idle-after",
+          "sourcePTS": 56.503444,
+          "caption": "정지 후보 끝 · 자동 쌍 강조 판정 보류"
+        }
+      ],
+      "observations": [
+        "선정9개 원본 프레임에서 컵케이크 선택 괄호와 같은 보드 배치가 이어집니다.",
+        "이 구간에서 같은 두 아이템을 향한3회 자동 강조를 확정하지 못했습니다."
+      ],
+      "cannotConclude": [
+        "정지 표본은 손 입력이 없었다는 증거가 아닙니다.",
+        "힌트 옵션·유효한 합성 쌍·자동 트리거 시각·메인 봉인 해제의 성공 결과는 확인되지 않았습니다."
+      ],
+      "unresolvedAcceptance": "같은 타입 두 아이템·힌트 옵션·입력 부재·3회 쌍 강조·휴지, 메인 봉인의 전후 변화와 일반 아이템 조작 가능 상태가 모두 연결되어야 합니다. 현재 자료는 이 연속 조건을 입증하지 못합니다."
+    },
+    {
+      "id": "scissors-resident-not-used",
+      "title": "보드에 놓인 가위와 실제 분할 성공은 다르다",
+      "taskIds": [
+        "4.07",
+        "4.11"
+      ],
+      "sourceId": "GH-V0124",
+      "evidenceStatus": "candidate-insufficient",
+      "sourceRange": {
+        "startSeconds": 74.5,
+        "endSeconds": 79.6
+      },
+      "mediaKeys": [
+        "capture-followup:scissors-resident:video",
+        "capture-followup:scissors-resident:gif",
+        "capture-followup:scissors-before",
+        "capture-followup:scissors-during",
+        "capture-followup:scissors-after"
+      ],
+      "frames": [
+        {
+          "mediaKey": "capture-followup:scissors-before",
+          "sourcePTS": 74.507511,
+          "caption": "상단1행2열 가위 · 보석 수령 전"
+        },
+        {
+          "mediaKey": "capture-followup:scissors-during",
+          "sourcePTS": 77.000711,
+          "caption": "가위는 같은 칸 · 다른 보상들이 보드에 추가"
+        },
+        {
+          "mediaKey": "capture-followup:scissors-after",
+          "sourcePTS": 79.500611,
+          "caption": "보상 생성 이후에도 같은 상단 칸의 가위"
+        }
+      ],
+      "observations": [
+        "선정11개 원본 프레임에서 가위가 같은1행2열에 남아 있습니다.",
+        "다른 칸에서는 보석 수령 연출과 보상 아이템 추가·합성이 이어집니다."
+      ],
+      "cannotConclude": [
+        "가위의 대상 선택→확인→소모 횟수 감소→하위2개 생성의 연속 성공은 이 표본으로 확인하지 못했습니다.",
+        "같은 그림이 보이는 사실로 가위 사용이나 전체 영상 내 미사용을 단정하지 않습니다.",
+        "기존 모래시계40분 아이템의 보관함 이동도 시간 가속 성공과 구분합니다."
+      ],
+      "unresolvedAcceptance": "가위의 사용 횟수·대상 레벨·적용/확인·횟수 감소·하위2개 결과, 모래시계의 적용 전 타이머·도구 소모·감소한 타이머가 연결되어야 합니다. 현재 자료에서 이 성공 연속 조건은 미확정입니다."
+    },
+    {
+      "id": "coffee-overlap-not-swap",
+      "title": "여러 컵의 이동이 겹친 후보는 성공 교환으로 세지 않는다",
+      "taskIds": [
+        "4.11"
+      ],
+      "sourceId": "GH-V0083",
+      "evidenceStatus": "candidate-insufficient",
+      "sourceRange": {
+        "startSeconds": 166.25,
+        "endSeconds": 169.3
+      },
+      "mediaKeys": [
+        "capture-followup:coffee-overlap:video",
+        "capture-followup:coffee-overlap:gif",
+        "capture-followup:coffee-before",
+        "capture-followup:coffee-during",
+        "capture-followup:coffee-after"
+      ],
+      "frames": [
+        {
+          "mediaKey": "capture-followup:coffee-before",
+          "sourcePTS": 166.506278,
+          "caption": "컵 이동 후보 전 · 보드 칸과 중첩 효과"
+        },
+        {
+          "mediaKey": "capture-followup:coffee-during",
+          "sourcePTS": 167.006411,
+          "caption": "여러 컵의 이동이 겹치는 선정 프레임"
+        },
+        {
+          "mediaKey": "capture-followup:coffee-after",
+          "sourcePTS": 168.506089,
+          "caption": "컵 추가와 보드 포화 안내 이후"
+        }
+      ],
+      "observations": [
+        "선정13개 원본 프레임에 여러 커피 컵의 이동·보드 추가와 보드 포화 안내가 함께 보입니다.",
+        "그림 교차 검색이 반환한 두 칸은 같은 그림의 중복과 겹친 다른 변화의 영향을 받습니다."
+      ],
+      "cannotConclude": [
+        "서로 다른 두 일반 아이템의 위치 교환이나 단독 빈칸 이동의 시작/끝을 고립하지 못했습니다.",
+        "연속 위치 변화로 손 드래그·자동 생성 비행·자동 힌트 중 하나를 확정하지 않습니다."
+      ],
+      "unresolvedAcceptance": "서로 다른 두 일반 아이템의 시작 칸·선택·이동 경로·맞바뀐 끝 칸이 고립되어야 합니다. 현재 표본은 겹친 변화를 분리하지 못하며 입력 로그·취소/거절 원인도 없습니다."
+    },
+    {
+      "id": "season-mission-not-factory",
+      "title": "신규 임무 해제 안내는 생성기 공장 화면의 근거가 아니다",
+      "taskIds": [
+        "4.08"
+      ],
+      "sourceId": "GH-V0081",
+      "evidenceStatus": "excluded-candidate",
+      "sourceRange": {
+        "startSeconds": 0.0,
+        "endSeconds": 0.0
+      },
+      "mediaKeys": [
+        "capture-followup:season-mission-not-factory"
+      ],
+      "frames": [
+        {
+          "mediaKey": "capture-followup:season-mission-not-factory",
+          "sourcePTS": 0.0,
+          "caption": "토끼 바구니 시즌의 코인 과제 안내"
+        }
+      ],
+      "observations": [
+        "제목은 토끼 바구니 시즌이며 신규 임무 해제와 코인 획득 과제를 보여 줍니다."
+      ],
+      "cannotConclude": [
+        "공장 진입·인벤토리 탭·조각 소비·점수 상승·임계 보상은 이 화면에 없습니다.",
+        "전체110개 녹화의 기존 검색이나 이번 후보 제외를 공장 화면이 모든 프레임에 없다는 증명으로 바꾸지 않습니다."
+      ],
+      "unresolvedAcceptance": "보관함/공장 탭 진입·조각 보유/입고·점수 증가·임계 생성기 보상·탭 전환/닫기·메인 복귀가 실제 화면으로 연결되어야 합니다. 현재 확보 자료에는 이 성공 연속 표본이 없습니다."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "4.06",
+      "status": "자료 필요",
+      "verified": "코드 재현과 실제 녹화 후보를 구분. 정지 후보9프레임 추가 검수.",
+      "remaining": "자동 쌍 힌트 발생·메인 봉인 해제의 실제 성공 전후 미확보.",
+      "studyIds": [
+        "idle-not-proven-hint"
+      ]
+    },
+    {
+      "id": "4.07",
+      "status": "자료 필요",
+      "verified": "기존 모래시계 선택·보관함 이동 관측 유지. 가위 상주 표본11프레임 추가 검수.",
+      "remaining": "가위 분할·모래시계 소비/시간 가속의 실제 연속 성공 미확보.",
+      "studyIds": [
+        "scissors-resident-not-used"
+      ]
+    },
+    {
+      "id": "4.08",
+      "status": "자료 필요",
+      "verified": "시즌 신규 임무 화면을 공장 후보에서 제외.",
+      "remaining": "실제 공장 화면·입고·점수/임계 보상·탭 전환 미확보.",
+      "studyIds": [
+        "season-mission-not-factory"
+      ]
+    },
+    {
+      "id": "4.11",
+      "status": "부분",
+      "verified": "새 지정 구간465초에서2fps 검색930장·후보 전후6쌍 검수, 원본 PTS33장 추가 육안 검수.",
+      "remaining": "원작 실제 입력 로그·거절 원인·미확인 중요 전이·전체 원속도 전프레임 검수는 미완료.",
+      "studyIds": [
+        "coffee-overlap-not-swap",
+        "idle-not-proven-hint",
+        "scissors-resident-not-used"
+      ]
+    },
+    {
+      "id": "4.12",
+      "status": "미완료",
+      "verified": "기존110녹화 음향 정량 분석·14동봉 짧은 발췌를 재사용.",
+      "remaining": "이 환경은 직접 청각 입력이 없어 청취0 유지. 실제 동작/장면과 소리의 대응은 확정하지 않음.",
+      "studyIds": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "GH-V0083",
+      "kind": "video",
+      "sha256": "0a81b8bf90518ef3a7b5d055f17a3cd828250cdf9b8980fcb84daecb7dca995c",
+      "sourceManifestVersion": null,
+      "capturedAt": null,
+      "sourceBytes": 364352794,
+      "sourceHashVerified": true
+    },
+    {
+      "id": "GH-V0124",
+      "kind": "video",
+      "sha256": "6beb7da4f6ef2b5b37480b966b347e1ca0342ac1b5c2f5f0755764c16e65a281",
+      "sourceManifestVersion": null,
+      "capturedAt": null,
+      "sourceBytes": 146449126,
+      "sourceHashVerified": true
+    },
+    {
+      "id": "GH-V0064",
+      "kind": "video",
+      "sha256": "400d4e67511d0177f66247e77a82a57a0804c5fed58362b5dc173558e6d90676",
+      "sourceManifestVersion": null,
+      "capturedAt": null,
+      "sourceBytes": 761683166,
+      "sourceHashVerified": true
+    },
+    {
+      "id": "GH-V0024",
+      "kind": "video",
+      "sha256": "6e6e1e2fbd0b4cfea6ccc04a6bb15608ca756b41b871fb065d1c61af7231343e",
+      "sourceManifestVersion": null,
+      "capturedAt": null,
+      "sourceBytes": 228327123,
+      "sourceHashVerified": true
+    },
+    {
+      "id": "GH-V0081",
+      "kind": "video",
+      "sha256": "86697b022d2359bc676717ee08a0043d10d52dec86c819c17af51aa8c812b62a",
+      "sourceManifestVersion": null,
+      "capturedAt": null,
+      "sourceBytes": 215079597,
+      "sourceHashVerified": true
+    }
+  ],
+  "reusedSources": [
+    {
+      "path": "src/data/media-final-observations.json",
+      "sha256": "a65627a3f2d1713005cd18eeb6fd1585c8aa0428ba16c1488aa5b2a8fd4c373f",
+      "role": "existing110-video tool/hint search and actual clock storage observations"
+    },
+    {
+      "path": "src/data/media-refinement.json",
+      "sha256": "c5cfc5dfc27d7651553cb6df4d9c11401ae6e2b56e824111350df6d15e526a5c",
+      "role": "existing110-video ordered samples and audio measurements"
+    }
+  ],
+  "boundaries": [
+    "과거 녹화의 manifest 버전·실제 촬영일·raw 입력 로그는 미확인입니다. APK4.10.5 실행과 동일시하지 않습니다.",
+    "검색930장은 시간 격자 후보 수집이며 전부를 육안 검수했다는 수가 아닙니다. 직접 본 범위는 후보 전후6쌍·원본 PTS33장입니다.",
+    "후보 부적합은 기능 부재나 전체 영상의 미사용을 증명하지 않습니다. 같은 체크리스트 ID의 완료 조건을 유지합니다.",
+    "MP4는1배속24fps 무음 크롭, GIF는12Hz 표본입니다. 측정은 원본 PTS 기준이며 전체 녹화·원본 오디오는 게시하지 않습니다.",
+    "정량 파형·재생 API·영상 종료 확인은 직접 청취가 아닙니다. 직접 청취0초, 실제 음색/효과음 동기 확정0건입니다."
+  ]
+}

@@ -136,3 +136,4 @@ for(const m of apkReview.mediaEntries){
 }
 console.log(`Verified11 fixed APK-media checklist identities and${apkReview.mediaEntries.length}curated entries; original runtime, source-missing assets and zero audition remain explicit.`);
 await import('./check-completion.mjs');
+await import('./check-current-research.mjs');

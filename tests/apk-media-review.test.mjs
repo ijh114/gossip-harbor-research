@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {validItemResolutionFollowup} from '../src/item-resolution-followup.mjs';
+import {validRegisteredActivityConfig} from '../src/registered-activity.mjs';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {JSDOM} from 'jsdom';
@@ -11,14 +13,16 @@ import {STUDIO_PAGES,RESEARCH_ROUTES,VISUAL_ROUTES,renderNavigation} from '../sr
 const read=async n=>JSON.parse(await readFile(new URL('../src/data/'+n+'.json',import.meta.url),'utf8'));
 const [mediaReview,media,presentationAssets,refinement,itemRepresentation,apkMediaAssets,masterChecklist]=await Promise.all(['apk-media-review','media','presentation-assets','media-refinement','item-representation','apk-media-assets','master-checklist'].map(read));
 const data={mediaReview,media,presentationAssets,refinement,itemRepresentation,apkMediaAssets,masterChecklist};
+const [followup,registered]=await Promise.all(['item-resolution-followup','registered-activity'].map(read));
 const sha=b=>createHash('sha256').update(b).digest('hex');
-test('4.03–4.13 keep eleven fixed identities and original acceptance criteria without a new completion claim',()=>{
+test('4.03–4.13 keep eleven fixed identities and original acceptance criteria with evidence-gated registered-item completion',()=>{
  assert.deepEqual(mediaReview.tasks.map(t=>t.id),Array.from({length:11},(_,i)=>'4.'+String(i+3).padStart(2,'0')));
  assert.equal(mediaReview.originalRuntimeObserved,false);assert.equal(mediaReview.listenedSeconds,0);
  assert.equal(new Set(mediaReview.studies.map(s=>s.id)).size,mediaReview.studies.length);
  const dom=new JSDOM(renderAPKMediaReview(data)),doc=dom.window.document;
  assert.equal(doc.querySelectorAll('[data-apk-task]').length,11);
- for(const row of mediaReview.tasks){const canonical=masterChecklist.tasks.find(t=>t.id===row.id);assert.ok(canonical);assert.ok(doc.querySelector(`[data-apk-task="${row.id}"]`).textContent.includes(canonical.acceptance));if(['4.03','4.09','4.13'].includes(row.id))assert.equal(canonical.status,'완료');else assert.notEqual(canonical.status,'완료');}
+ for(const row of mediaReview.tasks){const canonical=masterChecklist.tasks.find(t=>t.id===row.id);assert.ok(canonical);assert.ok(doc.querySelector(`[data-apk-task="${row.id}"]`).textContent.includes(canonical.acceptance));if(['4.03','4.04','4.09','4.13'].includes(row.id))assert.equal(canonical.status,'완료');else assert.notEqual(canonical.status,'완료');}
+ assert.equal(validItemResolutionFollowup(followup),true);assert.equal(validRegisteredActivityConfig(registered),true);assert.equal(followup.coverage.exactSpriteIdentities,70);assert.equal(followup.coverage.uniquePublishedPNGContents,32);
  assert.equal(revealAPKTask(doc,'4.10'),true);assert.equal(doc.querySelector('[data-apk-task="4.10"]').open,true);assert.equal(revealAPKTask(doc,'4.99'),false);dom.window.close();
 });
 test('every added derivative and poster matches its published hash; no guessed fallback or private recording audio',async()=>{

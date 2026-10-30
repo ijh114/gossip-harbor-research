@@ -1,0 +1,1391 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "kind": "source-camera-parameters-and-declared-edit-poses-static-study",
+  "runtimeObserved": false,
+  "finalNativeRenderingVerified": false,
+  "camera": {
+    "identity": {
+      "serializedFile": "level0",
+      "pathId": "374",
+      "sha256": "b93fcc92c18951fa0783d984fef1f82df39c9f54f8abbe987b82d4fba4e27d6d"
+    },
+    "projection": "perspective",
+    "projectionMatrixMode": 2,
+    "projectionMatrixModeMeaning": "PhysicalPropertiesBased (Unity2022.3 enum)",
+    "gateFitMode": 1,
+    "gateFitModeMeaning": "Vertical (Unity2022.3 enum)",
+    "fieldOfViewYDegrees": 19.455158233642578,
+    "sensorSize": {
+      "x": 24.0,
+      "y": 48.0
+    },
+    "focalLength": 140.0,
+    "focalSensorComputedFovY": 19.455157102803206,
+    "fovConsistencyAbsoluteError": 1.1308393723652443e-06,
+    "lensShift": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "near": 25.0,
+    "far": 1500.0,
+    "rotationQuaternion": [
+      0.3173046410083771,
+      -0.0,
+      -0.0,
+      0.948323667049408
+    ],
+    "normalizedRotationQuaternion": [
+      0.3173046389948425,
+      -0.0,
+      -0.0,
+      0.9483236610315872
+    ],
+    "rotationMatrix": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.7986355321447054,
+        -0.6018149938277904
+      ],
+      [
+        0.0,
+        0.6018149938277904,
+        0.7986355321447054
+      ]
+    ],
+    "parentTRS": [
+      {
+        "name": "LuaManager",
+        "identity": {
+          "pathId": "369",
+          "sha256": "ff36dde119639f7c2520b7c9353327bc2a66c6db0aae4faf9fad710d846d8322"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      },
+      {
+        "name": "GameRoot",
+        "identity": {
+          "pathId": "348",
+          "sha256": "84c634d03bd63b3b22ebc48a9e1db81a00340cad3a702a4955eff47f5648d5b5"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ],
+    "serializedEnabled": false,
+    "serializedLoadPosition": [
+      -1146.9000244140625,
+      -261.5740051269531,
+      -311.79998779296875
+    ],
+    "loadPoseVisibleBasePixels": 0,
+    "targetTexturePathId": "0",
+    "viewport": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 1.0,
+      "height": 1.0
+    },
+    "runtimeAspectObserved": false,
+    "modeBinding": {
+      "identity": {
+        "kind": "native-player-serialized-object",
+        "apk": "com.mergegames.gossipharbor.apk",
+        "serialized_file": "level0",
+        "path_id": "970",
+        "type": "MonoBehaviour",
+        "object_source_sha256": "a83d0044880cf730b9c6f77ea47534eb887304dd27c6ce372aed4673202caeed"
+      },
+      "class": "LuaComponent",
+      "luaType": "ModeViewController",
+      "field": "m_mapCam",
+      "cameraPathId": "374",
+      "templateTypeHash": "9496f3ee1ffbfaedfe142d31417dc179",
+      "mapRootTransformPathId": "350"
+    },
+    "mapParentTRS": [
+      {
+        "name": "LuaManager",
+        "identity": {
+          "pathId": "369",
+          "sha256": "ff36dde119639f7c2520b7c9353327bc2a66c6db0aae4faf9fad710d846d8322"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      },
+      {
+        "name": "GameRoot",
+        "identity": {
+          "pathId": "348",
+          "sha256": "84c634d03bd63b3b22ebc48a9e1db81a00340cad3a702a4955eff47f5648d5b5"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      },
+      {
+        "name": "mapRoot",
+        "identity": {
+          "pathId": "350",
+          "sha256": "975339d39fdd4170ef9171e29fc6543674e506c116ce561c7ed5f207b7030248"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    ]
+  },
+  "raster": {
+    "width": 540,
+    "height": 960,
+    "aspect": 0.5625,
+    "aspectOrigin": "explicit-research-viewport-9:16-not-observed-device",
+    "projectionMatrixOrigin": "computed-from-source-fields-and-explicit-research-aspect",
+    "cameraForwardAxis": "+Z Unity transform",
+    "clipPlanes": 6,
+    "perspectiveCorrectUV": true,
+    "perspectiveCorrectDepth": true,
+    "pixelDepthMeaning": "positive source-camera forward distance; units per pixel = 2*z*tan(fovY/2)/height",
+    "alphaThreshold": 40,
+    "lighting": "unlit base-texture/color/vertex-color software projection",
+    "baseSlotChildrenExcluded": true,
+    "selectedSlotLayersPerView": 1,
+    "crossSlotSceneReconstructionClaimed": false
+  },
+  "views": [
+    {
+      "slotId": "1_4",
+      "position": [
+        30.4,
+        175.0,
+        -266.0
+      ],
+      "positionSource": "MainTaskConfig.edit_pos → MainTaskData.editPos → Slot:GetEditPos → MapLayer:SetEditPos/MoveCamera",
+      "positionIsAnalystRecentering": false,
+      "base": {
+        "src": "./assets/media/native-map-study/1_4--base.png",
+        "width": 540,
+        "height": 960,
+        "sha256": "d3c2e15997fa7fb6484ed8287420a42764ac5e8bb30c6ba6840f9d000a82f4f2",
+        "bytes": 159335,
+        "role": "source-camera-base",
+        "originalRuntimeObserved": false,
+        "visiblePixels": 518400
+      },
+      "layers": [
+        {
+          "variantId": "1",
+          "resourceKey": "1_4_1",
+          "sourcePrefab": "Assets/Map/Area1/1_4_1.prefab",
+          "sourceIdentity": {
+            "bundle": "map-localslots_assets_assets/map/area1_e507b7720edec27193cc6997330e3342.bundle",
+            "bundle_sha256": "7d00e91843c2f45f5c6dd2795761b423a1585f15363c73603780635ca216a8f3",
+            "serialized_file": "CAB-69f2e6b9713cf549ae419f9ffbfd712c",
+            "path_id": "7661129543516499220",
+            "type": "GameObject",
+            "object_source_sha256": "f502e3f9af7a22814131eebbcbc5ac4ecc22a93dbdcacafeb30d7c7dac877328",
+            "name": "1_4_1",
+            "m_Layer": 8,
+            "m_IsActive": true,
+            "m_TagString": null
+          },
+          "boundsNormalized": {
+            "x": 0.09814814814814815,
+            "y": 0.24479166666666666,
+            "width": 0.5944444444444444,
+            "height": 0.434375
+          },
+          "cropPixels": [
+            53,
+            235,
+            374,
+            652
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/1_4_1--layer.png",
+            "width": 321,
+            "height": 417,
+            "sha256": "3c6371d222da8e456777d494d88b7d647bb375eeb48f53467610e2010743a968",
+            "bytes": 122364,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 68247
+          }
+        },
+        {
+          "variantId": "2",
+          "resourceKey": "1_4_2",
+          "sourcePrefab": "Assets/Map/Area1/1_4_2.prefab",
+          "sourceIdentity": {
+            "bundle": "map-localslots_assets_assets/map/area1_e507b7720edec27193cc6997330e3342.bundle",
+            "bundle_sha256": "7d00e91843c2f45f5c6dd2795761b423a1585f15363c73603780635ca216a8f3",
+            "serialized_file": "CAB-69f2e6b9713cf549ae419f9ffbfd712c",
+            "path_id": "-4943896857884152219",
+            "type": "GameObject",
+            "object_source_sha256": "4e89cc843aa7ca506d6097dce5e057eafb24bdbd9cecf3a9704d2396e525110d",
+            "name": "1_4_2",
+            "m_Layer": 8,
+            "m_IsActive": true,
+            "m_TagString": null
+          },
+          "boundsNormalized": {
+            "x": 0.09814814814814815,
+            "y": 0.24479166666666666,
+            "width": 0.5925925925925926,
+            "height": 0.43333333333333335
+          },
+          "cropPixels": [
+            53,
+            235,
+            373,
+            651
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/1_4_2--layer.png",
+            "width": 320,
+            "height": 416,
+            "sha256": "b00977bd60f7a4e095c8aca7493dffd96d9497ea533fd37397367707f0ae16ad",
+            "bytes": 119576,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 66946
+          }
+        },
+        {
+          "variantId": "3",
+          "resourceKey": "1_4_3",
+          "sourcePrefab": "Assets/Map/Area1/1_4_3.prefab",
+          "sourceIdentity": {
+            "bundle": "map-localslots_assets_assets/map/area1_e507b7720edec27193cc6997330e3342.bundle",
+            "bundle_sha256": "7d00e91843c2f45f5c6dd2795761b423a1585f15363c73603780635ca216a8f3",
+            "serialized_file": "CAB-69f2e6b9713cf549ae419f9ffbfd712c",
+            "path_id": "4478189369259782804",
+            "type": "GameObject",
+            "object_source_sha256": "651a5b7b87ad37a04d9c19b4ee7033f3d60abfe2cdaa233e706abf380432d957",
+            "name": "1_4_3",
+            "m_Layer": 8,
+            "m_IsActive": true,
+            "m_TagString": null
+          },
+          "boundsNormalized": {
+            "x": 0.09814814814814815,
+            "y": 0.24479166666666666,
+            "width": 0.5944444444444444,
+            "height": 0.43020833333333336
+          },
+          "cropPixels": [
+            53,
+            235,
+            374,
+            648
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/1_4_3--layer.png",
+            "width": 321,
+            "height": 413,
+            "sha256": "1d47cc317f46125c725d6bba8e1c27d0b4c87f53f865791b69ec618001468623",
+            "bytes": 113770,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 65990
+          }
+        },
+        {
+          "variantId": "0",
+          "resourceKey": "1_4_0",
+          "sourcePrefab": "Assets/Map/Area0Local/1_4_0.prefab",
+          "sourceIdentity": {
+            "bundle": "map-localslots_assets_assets/map/area0local_e4dc09716ca6e663c534beb219b95b25.bundle",
+            "bundle_sha256": "70292108edc0b8b6ba4e580d94f4667b679be1fa2b7825a99e099a598055eeb3",
+            "serialized_file": "CAB-6a825e05195b885316bfc2109029dedd",
+            "path_id": "-7609959933464247272",
+            "type": "GameObject",
+            "object_source_sha256": "a966b53d6e749f311721ff5adf3350d7983ac5f37eca58eeef5f423fa4391c97",
+            "name": "1_4_0",
+            "m_Layer": 8,
+            "m_IsActive": true,
+            "m_TagString": null
+          },
+          "boundsNormalized": {
+            "x": 0.11666666666666667,
+            "y": 0.284375,
+            "width": 0.7962962962962963,
+            "height": 0.3770833333333333
+          },
+          "cropPixels": [
+            63,
+            273,
+            493,
+            635
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/1_4_0--layer.png",
+            "width": 430,
+            "height": 362,
+            "sha256": "c7623ed344d671f74d81b9e800acba71644bc38b5a330fc743738f929d7b12a6",
+            "bytes": 123760,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 68135
+          }
+        }
+      ],
+      "source": {
+        "slotId": "1_4",
+        "taskEditPosition": [
+          30.4,
+          175.0,
+          -266.0
+        ],
+        "taskConfigName": "MainTaskConfig",
+        "taskDay": 1,
+        "taskId": 4,
+        "slotSerializedEditFallback": [
+          25.606290817260742,
+          180.0,
+          -261.60296630859375
+        ],
+        "slotIdentity": {
+          "serializedFile": "CAB-076251e8510d3e66e2294151b967ab98",
+          "pathId": "-4743749496276418857",
+          "type": "GameObject",
+          "sha256": "5882bbdec858e61d93af0ffc66abd71dcf3b2195e0820196561a1c17cf441a17"
+        },
+        "slotTransformIdentity": {
+          "serializedFile": "CAB-076251e8510d3e66e2294151b967ab98",
+          "pathId": "5431655638638563409",
+          "type": "Transform",
+          "sha256": "7cd40e78ff36aecb12519528eb4803841df6ec803147945c721641ea91e2ec4d"
+        },
+        "editFallbackIdentity": {
+          "serializedFile": "CAB-076251e8510d3e66e2294151b967ab98",
+          "pathId": "-3729678088120032992",
+          "type": "Transform",
+          "sha256": "28979cf824b78316279e685562d3f1c1b50badf5bb34382f9de8d3a11e6b0762"
+        },
+        "transformChain": [
+          {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              -0.9238795638084412,
+              0.0,
+              0.3826834261417389
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "position": [
+              0.0,
+              1.600000023841858,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "variantKeys": [
+          "1_4_1",
+          "1_4_2",
+          "1_4_3",
+          "1_4_0"
+        ],
+        "taskEditPositionSourceRef": "task-pose:1_4"
+      },
+      "renderStats": {
+        "base": {
+          "outsideFrustumParts": 786,
+          "sourceTriangles": 377,
+          "rasterizedTriangles": 49,
+          "visiblePixels": 518400
+        },
+        "1_4_1": {
+          "sourceTriangles": 550,
+          "rasterizedTriangles": 550,
+          "visiblePixels": 68247
+        },
+        "1_4_2": {
+          "sourceTriangles": 546,
+          "rasterizedTriangles": 546,
+          "visiblePixels": 66946
+        },
+        "1_4_3": {
+          "sourceTriangles": 546,
+          "rasterizedTriangles": 546,
+          "visiblePixels": 65990
+        },
+        "1_4_0": {
+          "sourceTriangles": 396,
+          "rasterizedTriangles": 395,
+          "visiblePixels": 68135
+        }
+      },
+      "priorComparison": {
+        "base": {
+          "src": "./assets/media/remote-presentation/map-expanded-base.png",
+          "sha256": "2374d4a6cab503c27d8a531e68fdb35dcdfd769c578c3f6cd6c232fd1aba3698",
+          "width": 2455,
+          "height": 1705
+        },
+        "width": 2455,
+        "height": 1705,
+        "layers": [
+          {
+            "variantId": "1",
+            "resourceKey": "1_4_1",
+            "boundsNormalized": {
+              "x": 0.44684317718940936,
+              "y": 0.432258064516129,
+              "width": 0.07372708757637475,
+              "height": 0.13841642228739004
+            },
+            "media": {
+              "src": "./assets/media/presentation-map/slot-1_4-1.png",
+              "sha256": "c2d64d91e75996956de40ee5ece7bc3a0b1e7694f0f9db96916dbafbce2c678a",
+              "width": 181,
+              "height": 236
+            }
+          },
+          {
+            "variantId": "2",
+            "resourceKey": "1_4_2",
+            "boundsNormalized": {
+              "x": 0.44684317718940936,
+              "y": 0.43049853372434016,
+              "width": 0.07331975560081466,
+              "height": 0.14017595307917888
+            },
+            "media": {
+              "src": "./assets/media/presentation-map/slot-1_4-2.png",
+              "sha256": "98fe81c1ae330e5a8189e17db9bb8166b40ca5bdbe10d16444edc5ee1e386185",
+              "width": 180,
+              "height": 239
+            }
+          },
+          {
+            "variantId": "3",
+            "resourceKey": "1_4_3",
+            "boundsNormalized": {
+              "x": 0.44684317718940936,
+              "y": 0.4310850439882698,
+              "width": 0.07372708757637475,
+              "height": 0.13841642228739004
+            },
+            "media": {
+              "src": "./assets/media/presentation-map/slot-1_4-3.png",
+              "sha256": "70781f82e6f8e33371b9ae628475ede72903b2a734cbc8ae5b22c721c6238319",
+              "width": 181,
+              "height": 236
+            }
+          },
+          {
+            "variantId": "0",
+            "resourceKey": "1_4_0",
+            "boundsNormalized": {
+              "x": 0.45010183299389,
+              "y": 0.44340175953079186,
+              "width": 0.10020366598778004,
+              "height": 0.1219941348973607
+            },
+            "media": {
+              "src": "./assets/media/presentation-map/slot-1_4-0.png",
+              "sha256": "9d2f8a652383a6f0e9056813fa86d863e0b33545f9ab4d582d6c0632d489c348",
+              "width": 246,
+              "height": 208
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slotId": "12_5",
+      "position": [
+        -117.62,
+        306.4,
+        -353.7
+      ],
+      "positionSource": "MainTaskConfig.edit_pos → MainTaskData.editPos → Slot:GetEditPos → MapLayer:SetEditPos/MoveCamera",
+      "positionIsAnalystRecentering": false,
+      "base": {
+        "src": "./assets/media/native-map-study/12_5--base.png",
+        "width": 540,
+        "height": 960,
+        "sha256": "b79bac41213d10197e81b8b4eb606d1e782142252ce364beeb4681821be7af6f",
+        "bytes": 130105,
+        "role": "source-camera-base",
+        "originalRuntimeObserved": false,
+        "visiblePixels": 518400
+      },
+      "layers": [
+        {
+          "variantId": "0",
+          "resourceKey": "12_5_0",
+          "sourcePrefab": "Assets/Map/Area0Local/12_5_0.prefab",
+          "sourceIdentity": {
+            "bundle": "map-localslots_assets_assets/map/area0local_e4dc09716ca6e663c534beb219b95b25.bundle",
+            "bundle_sha256": "70292108edc0b8b6ba4e580d94f4667b679be1fa2b7825a99e099a598055eeb3",
+            "serialized_file": "CAB-6a825e05195b885316bfc2109029dedd",
+            "path_id": "6554428514572867482",
+            "type": "GameObject",
+            "object_source_sha256": "5fc12434ea40ff60073c2b508a8ee1f3f97ff64cbdccf3fc72bc2aa65146f2c7",
+            "name": "12_5_0",
+            "m_Layer": 8,
+            "m_IsActive": true,
+            "m_TagString": null
+          },
+          "boundsNormalized": {
+            "x": 0.044444444444444446,
+            "y": 0.38333333333333336,
+            "width": 0.9555555555555556,
+            "height": 0.3729166666666667
+          },
+          "cropPixels": [
+            24,
+            368,
+            540,
+            726
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/12_5_0--layer.png",
+            "width": 516,
+            "height": 358,
+            "sha256": "13adb7d1e46bb2dfd2f6221a1d0f8dcd0392bc7ce575e0516f2499df8b0929c2",
+            "bytes": 135419,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 86187
+          }
+        },
+        {
+          "variantId": "1",
+          "resourceKey": "12_5_1",
+          "sourcePrefab": "Assets/Map/Area4/12_5_1.prefab",
+          "sourceIdentity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "-1838606663471178182",
+            "type": "GameObject",
+            "object_source_sha256": "205fa615e330f0a2574c97da6fb73de8f35ba4c0e145fdb44aa96159bb31b6ec",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "boundsNormalized": {
+            "x": 0.1685185185185185,
+            "y": 0.33541666666666664,
+            "width": 0.8314814814814815,
+            "height": 0.4166666666666667
+          },
+          "cropPixels": [
+            91,
+            322,
+            540,
+            722
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/12_5_1--layer.png",
+            "width": 449,
+            "height": 400,
+            "sha256": "b0428b78f4f7431807b7ddeafd2ab631ff31d87e313bea7d699a41e15802b365",
+            "bytes": 156970,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 76324
+          }
+        },
+        {
+          "variantId": "2",
+          "resourceKey": "12_5_2",
+          "sourcePrefab": "Assets/Map/Area4/12_5_2.prefab",
+          "sourceIdentity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "-4494966147833978873",
+            "type": "GameObject",
+            "object_source_sha256": "83aa1d1de0ffc9b95fa03c5733c3923567694d560ee30b48786ba34ade00b1c7",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "boundsNormalized": {
+            "x": 0.1685185185185185,
+            "y": 0.33541666666666664,
+            "width": 0.8314814814814815,
+            "height": 0.4166666666666667
+          },
+          "cropPixels": [
+            91,
+            322,
+            540,
+            722
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/12_5_2--layer.png",
+            "width": 449,
+            "height": 400,
+            "sha256": "962903366559a0d9f706229f5bf5bf9405ecb984ec02b2c0f2152baaa65c85d0",
+            "bytes": 146706,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 76324
+          }
+        },
+        {
+          "variantId": "3",
+          "resourceKey": "12_5_3",
+          "sourcePrefab": "Assets/Map/Area4/12_5_3.prefab",
+          "sourceIdentity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "-5566674327102924818",
+            "type": "GameObject",
+            "object_source_sha256": "228c0481e1ae37de943f530e344f89b01b9bd08ea5a5703a4e4c7c5f0b0ec9e4",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "boundsNormalized": {
+            "x": 0.1685185185185185,
+            "y": 0.33541666666666664,
+            "width": 0.8314814814814815,
+            "height": 0.4166666666666667
+          },
+          "cropPixels": [
+            91,
+            322,
+            540,
+            722
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/12_5_3--layer.png",
+            "width": 449,
+            "height": 400,
+            "sha256": "25b3a03ab91f995adbb418b488864f78a3966890e4947973bab9c72de7d4e2c4",
+            "bytes": 157420,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 76324
+          }
+        }
+      ],
+      "source": {
+        "slotId": "12_5",
+        "taskEditPosition": [
+          -117.62,
+          306.4,
+          -353.7
+        ],
+        "taskConfigName": "MainTaskConfig",
+        "taskDay": 12,
+        "taskId": 5,
+        "slotSerializedEditFallback": [
+          -114.67255401611328,
+          415.0,
+          -509.2967834472656
+        ],
+        "slotIdentity": {
+          "serializedFile": "CAB-076251e8510d3e66e2294151b967ab98",
+          "pathId": "-6125598570112426998",
+          "type": "GameObject",
+          "sha256": "f08da0b65e4aa7945bff420a2e4d7bb234a720f1574a6ecb50db6cfb28ae2a8c"
+        },
+        "slotTransformIdentity": {
+          "serializedFile": "CAB-076251e8510d3e66e2294151b967ab98",
+          "pathId": "-4249290983857796797",
+          "type": "Transform",
+          "sha256": "20327461d22b3978266a2b33fd6ef8754db27894c3daf2a6ddec48656336b37c"
+        },
+        "editFallbackIdentity": {
+          "serializedFile": "CAB-076251e8510d3e66e2294151b967ab98",
+          "pathId": "8268748083050687663",
+          "type": "Transform",
+          "sha256": "1a87344822694fddd5d91be3b0c6634e4f9ed993fafb90b21c8d254ed09aab26"
+        },
+        "transformChain": [
+          {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              -0.9238795638084412,
+              0.0,
+              0.3826834261417389
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "variantKeys": [
+          "12_5_0",
+          "12_5_1",
+          "12_5_2",
+          "12_5_3"
+        ],
+        "taskEditPositionSourceRef": "task-pose:12_5"
+      },
+      "renderStats": {
+        "base": {
+          "sourceTriangles": 491,
+          "rasterizedTriangles": 98,
+          "outsideFrustumParts": 761,
+          "visiblePixels": 518400
+        },
+        "12_5_0": {
+          "sourceTriangles": 44,
+          "rasterizedTriangles": 48,
+          "visiblePixels": 86187
+        },
+        "12_5_1": {
+          "sourceTriangles": 425,
+          "rasterizedTriangles": 443,
+          "visiblePixels": 76324
+        },
+        "12_5_2": {
+          "sourceTriangles": 425,
+          "rasterizedTriangles": 443,
+          "visiblePixels": 76324
+        },
+        "12_5_3": {
+          "sourceTriangles": 425,
+          "rasterizedTriangles": 443,
+          "visiblePixels": 76324
+        }
+      },
+      "priorComparison": {
+        "base": {
+          "src": "./assets/media/remote-presentation/map-expanded-base.png",
+          "sha256": "2374d4a6cab503c27d8a531e68fdb35dcdfd769c578c3f6cd6c232fd1aba3698",
+          "width": 2455,
+          "height": 1705
+        },
+        "width": 2455,
+        "height": 1705,
+        "layers": [
+          {
+            "variantId": "0",
+            "resourceKey": "12_5_0",
+            "boundsNormalized": {
+              "x": 0.09164969450101833,
+              "y": 0.23988269794721406,
+              "width": 0.16904276985743383,
+              "height": 0.224633431085044
+            },
+            "media": {
+              "src": "./assets/media/presentation-map/slot-12_5-0.png",
+              "sha256": "c1876b1662ab5a1b1720fc1b95a2c33372963a0aedde85804bfbb7b5613a97da",
+              "width": 415,
+              "height": 383
+            }
+          },
+          {
+            "variantId": "1",
+            "resourceKey": "12_5_1",
+            "boundsNormalized": {
+              "x": 0.059063136456211814,
+              "y": 0.21055718475073315,
+              "width": 0.21140529531568228,
+              "height": 0.25219941348973607
+            },
+            "media": {
+              "src": "./assets/media/remote-presentation/12_5_1--map-layer.png",
+              "sha256": "b136da3f21437bf3ebd5ce59d28995b1a71666dc0578cb5f4388612b88bcc5f8",
+              "width": 519,
+              "height": 430
+            }
+          },
+          {
+            "variantId": "2",
+            "resourceKey": "12_5_2",
+            "boundsNormalized": {
+              "x": 0.059063136456211814,
+              "y": 0.21055718475073315,
+              "width": 0.21140529531568228,
+              "height": 0.25219941348973607
+            },
+            "media": {
+              "src": "./assets/media/remote-presentation/12_5_2--map-layer.png",
+              "sha256": "ffdfeec519774c25a214fd74e8db51bb33270cf33353d5bc27b71b6f7a6f2e87",
+              "width": 519,
+              "height": 430
+            }
+          },
+          {
+            "variantId": "3",
+            "resourceKey": "12_5_3",
+            "boundsNormalized": {
+              "x": 0.059063136456211814,
+              "y": 0.21055718475073315,
+              "width": 0.21140529531568228,
+              "height": 0.25219941348973607
+            },
+            "media": {
+              "src": "./assets/media/remote-presentation/12_5_3--map-layer.png",
+              "sha256": "76ee69132fa613e6f0da9176d3829c876149d72ee2890a6d71d9062e8b2c663c",
+              "width": 519,
+              "height": 430
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slotId": "13_2",
+      "position": [
+        -69.31,
+        182.59,
+        -240.01
+      ],
+      "positionSource": "MainTaskConfig.edit_pos → MainTaskData.editPos → Slot:GetEditPos → MapLayer:SetEditPos/MoveCamera",
+      "positionIsAnalystRecentering": false,
+      "base": {
+        "src": "./assets/media/native-map-study/13_2--base.png",
+        "width": 540,
+        "height": 960,
+        "sha256": "4805f0433b7adbf18658f002124dce6d1c0215b64be57383d65c0363c32a3ad2",
+        "bytes": 216777,
+        "role": "source-camera-base",
+        "originalRuntimeObserved": false,
+        "visiblePixels": 518400
+      },
+      "layers": [
+        {
+          "variantId": "1",
+          "resourceKey": "13_2_1",
+          "sourcePrefab": "Assets/Map/Area4/13_2_1.prefab",
+          "sourceIdentity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "-7791353263825344137",
+            "type": "GameObject",
+            "object_source_sha256": "a8e246fea907389599c87745e87d294699320e09e432093500bbed344422783c",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "boundsNormalized": {
+            "x": 0.24074074074074073,
+            "y": 0.409375,
+            "width": 0.5944444444444444,
+            "height": 0.24583333333333332
+          },
+          "cropPixels": [
+            130,
+            393,
+            451,
+            629
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/13_2_1--layer.png",
+            "width": 321,
+            "height": 236,
+            "sha256": "a6dcb8e94fd13cf102f60f90a20e026960fbf2539f73b1df7434ed2bb7df8b6a",
+            "bytes": 91160,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 39257
+          }
+        },
+        {
+          "variantId": "2",
+          "resourceKey": "13_2_2",
+          "sourcePrefab": "Assets/Map/Area4/13_2_2.prefab",
+          "sourceIdentity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "-6147907987396771826",
+            "type": "GameObject",
+            "object_source_sha256": "58b37f94b8bef0ca3979e6110f8657efc9ad9091a996a258343a1f7fb11b8182",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "boundsNormalized": {
+            "x": 0.24074074074074073,
+            "y": 0.4041666666666667,
+            "width": 0.5944444444444444,
+            "height": 0.25104166666666666
+          },
+          "cropPixels": [
+            130,
+            388,
+            451,
+            629
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/13_2_2--layer.png",
+            "width": 321,
+            "height": 241,
+            "sha256": "3467b8cde40482726458b3eb89bcfacab762c18a2739502a092eb0226862b375",
+            "bytes": 94423,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 43410
+          }
+        },
+        {
+          "variantId": "3",
+          "resourceKey": "13_2_3",
+          "sourcePrefab": "Assets/Map/Area4/13_2_3.prefab",
+          "sourceIdentity": {
+            "bundle": "map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle",
+            "bundle_sha256": "75144284c98ec4df7ec9a3ac52ff819d07dbc90da540eb756485186459ba966d",
+            "serialized_file": "CAB-a77632bd7f988997f9eb1fd4f3b939d6",
+            "path_id": "-5563987172282559964",
+            "type": "GameObject",
+            "object_source_sha256": "48ed53443a62430bad4a7e27c05803e6350509988b8e16a30ceb3509e888c889",
+            "authority": "external-service",
+            "sourceURL": "https://diary.cdn.mergesigma.com/hotfix/4.10.5/android/map-remoteslots_assets_assets/map/area4_ae46dd524586585b278cfcc9841c9414.bundle"
+          },
+          "boundsNormalized": {
+            "x": 0.24074074074074073,
+            "y": 0.40208333333333335,
+            "width": 0.5944444444444444,
+            "height": 0.253125
+          },
+          "cropPixels": [
+            130,
+            386,
+            451,
+            629
+          ],
+          "media": {
+            "src": "./assets/media/native-map-study/13_2_3--layer.png",
+            "width": 321,
+            "height": 243,
+            "sha256": "5e3d1fcdf23ebb8ebe33bc4519877d6ebc674afae21b09993c8f7fd0cfb77d83",
+            "bytes": 83731,
+            "role": "source-camera-selected-layer",
+            "originalRuntimeObserved": false,
+            "visiblePixels": 35206
+          }
+        }
+      ],
+      "source": {
+        "slotId": "13_2",
+        "taskEditPosition": [
+          -69.31,
+          182.59,
+          -240.01
+        ],
+        "taskConfigName": "MainTaskConfig",
+        "taskDay": 13,
+        "taskId": 2,
+        "slotSerializedEditFallback": [
+          -72.97509002685547,
+          256.53985595703125,
+          -356.0474548339844
+        ],
+        "slotIdentity": {
+          "serializedFile": "CAB-076251e8510d3e66e2294151b967ab98",
+          "pathId": "8377787474921828448",
+          "type": "GameObject",
+          "sha256": "d63eff935dd87cf034e18972872116063b2a544a02fda6c3c37fdae52d768e51"
+        },
+        "slotTransformIdentity": {
+          "serializedFile": "CAB-076251e8510d3e66e2294151b967ab98",
+          "pathId": "-6154310872802136479",
+          "type": "Transform",
+          "sha256": "2dddd6f6901e55dbb9fd97c1ea1ff89595c3258e26b77631d708ae8ec60739f3"
+        },
+        "editFallbackIdentity": {
+          "serializedFile": "CAB-076251e8510d3e66e2294151b967ab98",
+          "pathId": "3195787438665409984",
+          "type": "Transform",
+          "sha256": "4664610cd50d71493f81acd7032fbf3cd324892b0544705f3527a68d59fc5507"
+        },
+        "transformChain": [
+          {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              -0.9238795638084412,
+              0.0,
+              0.3826834261417389
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "variantKeys": [
+          "13_2_1",
+          "13_2_2",
+          "13_2_3"
+        ],
+        "taskEditPositionSourceRef": "task-pose:13_2"
+      },
+      "renderStats": {
+        "base": {
+          "outsideFrustumParts": 769,
+          "sourceTriangles": 355,
+          "rasterizedTriangles": 51,
+          "visiblePixels": 518400
+        },
+        "13_2_1": {
+          "sourceTriangles": 88,
+          "rasterizedTriangles": 88,
+          "visiblePixels": 39257
+        },
+        "13_2_2": {
+          "sourceTriangles": 88,
+          "rasterizedTriangles": 88,
+          "visiblePixels": 43410
+        },
+        "13_2_3": {
+          "sourceTriangles": 88,
+          "rasterizedTriangles": 88,
+          "visiblePixels": 35206
+        }
+      },
+      "priorComparison": {
+        "base": {
+          "src": "./assets/media/remote-presentation/map-expanded-base.png",
+          "sha256": "2374d4a6cab503c27d8a531e68fdb35dcdfd769c578c3f6cd6c232fd1aba3698",
+          "width": 2455,
+          "height": 1705
+        },
+        "width": 2455,
+        "height": 1705,
+        "layers": [
+          {
+            "variantId": "1",
+            "resourceKey": "13_2_1",
+            "boundsNormalized": {
+              "x": 0.22036659877800407,
+              "y": 0.4029325513196481,
+              "width": 0.08065173116089613,
+              "height": 0.08211143695014662
+            },
+            "media": {
+              "src": "./assets/media/late-scene-art/13_2_1--map-layer.png",
+              "sha256": "f69dbbd305f9cd6c09863314e9857f4a38aafc21986c016286a02d8735438292",
+              "width": 198,
+              "height": 140
+            }
+          },
+          {
+            "variantId": "2",
+            "resourceKey": "13_2_2",
+            "boundsNormalized": {
+              "x": 0.22036659877800407,
+              "y": 0.40117302052785925,
+              "width": 0.08065173116089613,
+              "height": 0.08387096774193549
+            },
+            "media": {
+              "src": "./assets/media/late-scene-art/13_2_2--map-layer.png",
+              "sha256": "826f28cbba7685c8f06150b3af5603860640dbef054baa7abf17b0f661d8e6a5",
+              "width": 198,
+              "height": 143
+            }
+          },
+          {
+            "variantId": "3",
+            "resourceKey": "13_2_3",
+            "boundsNormalized": {
+              "x": 0.22036659877800407,
+              "y": 0.4005865102639296,
+              "width": 0.08065173116089613,
+              "height": 0.0844574780058651
+            },
+            "media": {
+              "src": "./assets/media/late-scene-art/13_2_3--map-layer.png",
+              "sha256": "164dc77cef69da259efb4ad464095334350f40444fcc696712441fc6d606bb42",
+              "width": 198,
+              "height": 144
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "slot-camera",
+      "path": "analysis/lua/Lua_Core/Map/Slot.lua",
+      "sha256": "30a4d4de75f4fc95d0bac473798b06ab05beeaeb5200f6e0ec032661091e1184",
+      "lineStart": 203,
+      "lineEnd": 232
+    },
+    {
+      "id": "camera-move",
+      "path": "analysis/lua/Lua_Core/Map/MapLayer.lua",
+      "sha256": "1f4f81dbd9e15c1addfdad1be5e6ca265a865aeb9b894366507bc32e2839b804",
+      "lineStart": 384,
+      "lineEnd": 469
+    },
+    {
+      "id": "camera-edit",
+      "path": "analysis/lua/Lua_Core/Map/MapLayer.lua",
+      "sha256": "1f4f81dbd9e15c1addfdad1be5e6ca265a865aeb9b894366507bc32e2839b804",
+      "lineStart": 910,
+      "lineEnd": 934
+    },
+    {
+      "id": "task-edit",
+      "path": "analysis/lua/Lua_Base/Data/Task/MainTaskData.lua",
+      "sha256": "7430cc486d2743798579ca8e515c1070225db29fe381afa482dce74c26c03b70",
+      "lineStart": 12,
+      "lineEnd": 23
+    },
+    {
+      "id": "source-task-table",
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+      "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+      "lineStart": 1,
+      "lineEnd": 57
+    },
+    {
+      "id": "map-parent",
+      "path": "analysis/lua/Lua_Core/UI/UIFramework/ModeViewController.lua",
+      "sha256": "9846017ef09e0c8636d4e5aff4c2cb02fc4120316184f260e8ed370f986be3ca",
+      "lineStart": 12,
+      "lineEnd": 58
+    },
+    {
+      "id": "task-pose:1_4",
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+      "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+      "lineStart": 31,
+      "lineEnd": 40
+    },
+    {
+      "id": "task-pose:12_5",
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+      "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+      "lineStart": 971,
+      "lineEnd": 980
+    },
+    {
+      "id": "task-pose:13_2",
+      "path": "analysis/lua/Lua_Config/Data/Config/MainTaskConfig.lua",
+      "sha256": "67b657845f576815019246ac02ed7c6f5e7ffc5acce2c764d68895e7231cadfa",
+      "lineStart": 1054,
+      "lineEnd": 1063
+    }
+  ],
+  "externalReferences": [
+    {
+      "url": "https://raw.githubusercontent.com/Unity-Technologies/UnityCsReference/2022.3/Runtime/Export/Camera/Camera.bindings.cs",
+      "purpose": "Unity2022.3 Camera fieldOfView vertical semantics and ProjectionMatrixMode/GateFitMode enum labels; not runtime matrix evidence"
+    }
+  ],
+  "coverage": {
+    "selectedSlots": 3,
+    "selectedVariantLayers": 11,
+    "sourceMeshPartsIndependentlyVerified": 854,
+    "sourceTexturesPixelCompared": 122,
+    "sourceBundlesRehashed": 4,
+    "publicPNGFiles": 14,
+    "sourceVertexColorParts": 0,
+    "partsWithoutSelectedMainTexture": 11,
+    "uniqueSourceMeshObjects": 164,
+    "uniqueSourceMaterialObjects": 137,
+    "uniqueSourceTextureObjects": 121
+  },
+  "proofSHA256": "ff0736b2c703b9a05504efa1490519ae4dba0c66ef8411fca141777228706568",
+  "boundaries": [
+    "native Camera374의 source rotation/FOV/near/far와 MapRoot/GameRoot/LuaManager 부모TRS를 대조했다. native load 위치를 임의로 재중앙 정렬하지 않았다.",
+    "렌더 위치는 출하 MainTaskConfig.edit_pos의1_4/12_5/13_2 선언값이다. Slot:GetEditPos가 이 값을 우선하므로 prefab의 m_editPos fallback과 구분한다. 현재 플레이의 활성 카메라 위치·시점은 관측하지 않았다.",
+    "Camera는 출하 scene에서 disabled이고TargetTexture0이다.9:16은 비교를 위한 명시 연구 종횡비이며 실제 기기의 aspect·화면 좌표를 확정하지 않는다.",
+    "공개PNG는 원본 기하/UV/기본 텍스처와 소스 카메라 파라미터로 계산한 정적 파생이다. 원작 shader/light/water/하늘/안개/그림자/입자/동적 camera/음향·운영 배정은 재현하지 않았다.",
+    "각 시점은 기본 지형과 선택한1개 슬롯만 합성한다. 다른 모든 슬롯의 현재 선택·상호가림·전체게임 장면을 복원한 결과가 아니다.",
+    "기존40°정사영 비교는 전체 지도 프레임이고 새 투영은 해당 과제의 상세 편집 시점이므로 확대율·프레임이 다르다. 두 이미지를 같은 픽셀 좌표의 원작 전후 프레임으로 해석하지 않는다.",
+    "원본APK·전체geometry·복원Lua·bundle은 공개하지 않고 bounded PNG와 선별 파라미터/출처만 공개한다.",
+    "선택한 기본 텍스처가 없는 재질은 기본색·일부 흰면으로 표현된다. 이 색을 원작 custom shader의 결과나 새 그래픽 자산으로 해석하지 않는다."
+  ],
+  "revision": "0072ce17f8ec80436720f973dde3d1cda14015c208713bef715289d344f933d4"
+}

@@ -653,7 +653,7 @@
       "path": "src/play-model.mjs",
       "line_start": 374,
       "line_end": 384,
-      "sha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+      "sha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
       "hashPolicy": "UTF-8/LF",
       "evidenceType": "research-implementation",
       "claim": "현재 play close-offer는 닫기만 하며 EnergyBundle 전용 후속 체인을 호출하지 않는다."
@@ -663,7 +663,7 @@
       "path": "src/play-model.mjs",
       "line_start": 142,
       "line_end": 161,
-      "sha256": "a80f1207650c07cf7a53f12963c469410ba2c4fdf33d299c2083eb97b668ba15",
+      "sha256": "ca1ddf6a61f17bb01f460a75a82b82375e28941952a912e16613b93a5047b4f4",
       "hashPolicy": "UTF-8/LF",
       "evidenceType": "research-implementation",
       "claim": "기존 advancePlay가 wallet 시간과 연결된 순수 상태를 갱신한다. harness는 이 함수를 재사용한다."

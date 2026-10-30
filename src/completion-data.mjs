@@ -1,3 +1,4 @@
+import {validItemResolutionFollowup} from './item-resolution-followup.mjs';
 // Compose research derivatives without changing the economy or persisted saves.
 const unique=rows=>[...new Map(rows.map(r=>[r.id||r.key,r])).values()];
 export function integrateCompletionData(data){
@@ -37,5 +38,20 @@ export function integrateCompletionData(data){
    const counts=Object.fromEntries(data.artifactAvailability.statuses.map(s=>[s.id,out.artifactAvailability.entries.filter(r=>r.status===s.id).length]));out.artifactAvailability.summary={...data.artifactAvailability.summary,statusRecords:counts,newlyRecoveredAssets:24,sceneTasksProjected:out.sceneConfig.tasks.length,sceneLastTask:'13_10',nextMissingTimelineTask:null,decorationRegisteredOnly:0};
   }
  }
+
+ if(validItemResolutionFollowup(data.itemResolutionFollowup)){
+  const proof=data.itemResolutionFollowup;
+  if(out.itemRepresentation)out.itemRepresentation={...out.itemRepresentation,registeredEventFollowup:true,entries:out.itemRepresentation.entries.map(row=>row.type==='3401'?{...row,label:'일반·즉시 버블 외곽 + 실제 내부 아이템',instantOuter:{...row.instantOuter,sourceFallbackImageKey:'Bubble',proofRevision:proof.revision,bytecodeSHA256:proof.bubble.bytecode.expectedFullBytecodeSHA256},unknown:row.unknown.filter(x=>!x.includes('BubbleInstant')),boundary:'출하 이름 표의 BubbleInstant는 nil이며 원본 and/or bytecode에 따라 Bubble을 선택합니다. 동적 hot-update·실제 활성 프레임은 별도입니다.'}:row)};
+  if(out.artifactAvailability)out.artifactAvailability={...out.artifactAvailability,entries:out.artifactAvailability.entries.map(row=>row.id==='event-35-images'?{...row,status:'curated',claim:'실제 등록 Adventure35·PureBoard35의 exact Sprite/PPtr를 확인했습니다. 70개 객체는 PNG 내용32종을 공유합니다.',impact:'등록된35타입 보드와 이미지 도감·조작을 연결했습니다. 기존 adv_dogparkpure fixture는 등록 타입으로 바꾸거나 별칭 처리하지 않습니다.',neededEvidence:['실제 서버 주문·레벨·보상 배정과 원작 프레임'],boundary:'타입/객체70개와 고유 그림32개를 구분하며 출하 초기표와 명시 연구 입력을 구별합니다.'}:row)};
+  if(out.mediaReview)out.mediaReview={...out.mediaReview,tasks:out.mediaReview.tasks.map(t=>t.id==='4.04'?{...t,status:'완료',result:'실제 등록35+35타입을 exact GUID·catalog·Sprite·원본RGBA로 연결하고 도감70카드와 등록 이벤트 플레이를 추가했습니다. PNG 내용은32종입니다.',remaining:'이 행의 등록타입 이미지 확보·도감·플레이 연결 기준 충족. 미등록 기존 fixture35를 실제 등록 타입으로 별칭 처리하지 않습니다.',links:[{href:'#experience?mode=registered',label:'등록 이벤트 보드'}]}:t.id==='4.05'?{...t,result:'기본8타입 표현과 정확 외곽·공유 선물 확인. 즉시 버블도 출하 nil fallback으로 Bubble 외곽을 선택함을 bytecode로 확정했습니다.',remaining:'property_bubble_1은 Type만 있는4개 설정 외에 소비·표현 용도가 미확정입니다. 실제 활성 프레임은 별도 검수입니다.'}:t)};
+ }
+ if(data.spineMotionStudy?.summary?.fullByteParses===654&&data.resourceResolution){
+  const study=data.spineMotionStudy;
+  out.resourceResolution={...data.resourceResolution,cohorts:data.resourceResolution.cohorts.map(c=>c.id==='spine'?{...c,description:'654개 명시 참조·전체 바이트 파싱과694개 모션을 확인했습니다.662개는 전 구간 기술 투영,32개는 미지원 blend로 제외하며 원작 재생 검증은 별도입니다.'}:c),boundaries:data.resourceResolution.boundaries.map(b=>b.includes('대표6종만')?'654개 스켈레톤을 전체 파싱하고694개 모션을 전수 검사했습니다.662개 전 구간 기술 투영과32개 표현 미지원 항목을 구분합니다. 원래 게임의 최종 재생 검증은 별도입니다.':b),wikiUpdates:[...data.resourceResolution.wikiUpdates,'추가654개 원본의694모션 도감과117개 Timeline의1332개 캐릭터 참조를 웹 시뮬레이션에 연결했습니다.'],records:data.resourceResolution.records.map(row=>{
+   if(row.kind!=='spine')return row;const clips=study.clips.filter(c=>c.atlasId===row.id);if(!clips.length)return row;
+   return {...row,motionStudy:true,facts:row.facts.filter(f=>f.label!=='선정 원본 파싱').concat([{label:'전체 모션 해석',value:clips.length+'개 선언 · source 첫/끝 포함 · 투영'+clips.filter(c=>c.status.startsWith('projected-')).length+'개'}]),notes:row.notes.filter(n=>!n.includes('셋업 포즈 1장')).concat(['전체 바이트 파싱 이후 모션별 투영·미지원 사유는 연결된 모션 도감에서 확인합니다.'])};
+  })};
+ }
+ if(out.artifactAvailability?.statuses)out.artifactAvailability={...out.artifactAvailability,summary:{...out.artifactAvailability.summary,statusRecords:Object.fromEntries(out.artifactAvailability.statuses.map(s=>[s.id,out.artifactAvailability.entries.filter(r=>r.status===s.id).length]))}};
  return out;
 }

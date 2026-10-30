@@ -1,3 +1,4 @@
+import {tutorialEconomyFor} from './tutorial-economy.mjs';
 // Packaged-static ItemSpread model. Event/server snapshots are explicit inputs.
 // RNG is the portable research xorshift (or an injected pure random source),
 // never a claim about original-game random sequence or live event rates.
@@ -65,7 +66,7 @@ export function openSpreadItem(s,index,c){
 export function getSpeedUpCost(s,index,c,{forcedCost}={}){
  const e=entry(s,index,c);if(!e||e.v.timerStart===null)return fail('진행 중인 타이머가 없습니다.');
  const d=duration(e.r,e.v),base=e.v.phase==='initializing'?e.r.initSpeedUpCost:e.v.phase==='opening'?e.r.openSpeedUpCost:e.v.storage===0?e.r.storageSpeedUpCost:e.r.itemSpeedUpCost;
- const cost=forcedCost??Math.max(1,Math.ceil((1-(d===0?1:Math.min((s.wallet.time-e.v.timerStart)/d,1)))*(base||0)));
+ const cost=forcedCost??tutorialEconomyFor(s).forcedSkipCost??Math.max(1,Math.ceil((1-(d===0?1:Math.min((s.wallet.time-e.v.timerStart)/d,1)))*(base||0)));
  if(!integer(cost))return fail('검증된 건너뛰기 비용이 필요합니다.');
  return ok('현재 타이머의 원본 비례 비용',{cost});
 }

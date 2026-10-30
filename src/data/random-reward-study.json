@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "status": "source-fallback-recovered-named-server-table-unavailable",
+  "runtimeObserved": false,
+  "scope": {
+    "packagedBytecodeChunks": 2494,
+    "individualBytecodeChunks": 906,
+    "bytecodeRehashed": 3400,
+    "otherTextAssetsRehashed": 34,
+    "otherTextAssetBytes": 9269410,
+    "textFormats": {
+      "utf8-text": 8,
+      "json-text": 26,
+      "xor-framed-lua-bytecode": 906,
+      "opaque-textasset-bytes": 5
+    },
+    "nativeTypedRecordsChecked": 342,
+    "gameModuleMethodsSourceSHA256": "edb0da62be3bf83177269fed65f337f657f60b8e11b037142120d03e6d87e5b3",
+    "nativeGameModuleRandomRewardTokenMatches": 0
+  },
+  "serverKey": "randomRewardContent",
+  "namedServerTableRecovered": false,
+  "namedServerRows": [],
+  "sourceFallback": {
+    "name": "rdm_rwd_chest_default",
+    "content_show": [
+      {
+        "Currency": "energy",
+        "MaxNum": 100,
+        "MinNum": 20
+      }
+    ],
+    "content_actual": [
+      {
+        "Currency": "energy",
+        "MaxNum": 70,
+        "MinNum": 20,
+        "Weight": 90
+      },
+      {
+        "Currency": "energy",
+        "MaxNum": 100,
+        "MinNum": 71,
+        "Weight": 10
+      }
+    ]
+  },
+  "sourceFallbackConfig": {
+    "schema": 1,
+    "origin": "source-provided",
+    "rows": [
+      {
+        "name": "rdm_rwd_chest_default",
+        "content_show": [
+          {
+            "Currency": "energy",
+            "MaxNum": 100,
+            "MinNum": 20
+          }
+        ],
+        "content_actual": [
+          {
+            "Currency": "energy",
+            "MaxNum": 70,
+            "MinNum": 20,
+            "Weight": 90
+          },
+          {
+            "Currency": "energy",
+            "MaxNum": 100,
+            "MinNum": 71,
+            "Weight": 10
+          }
+        ]
+      }
+    ],
+    "revision": "6198c32c1c02129681f5ae2852a303a4c3bf9ae41767d20e6a068e890e026f1f"
+  },
+  "factoryResearchConfig": {
+    "schema": 1,
+    "origin": "research-example",
+    "rows": [
+      {
+        "name": "rdm_rwd_mainboard_1",
+        "content_show": [
+          {
+            "Currency": "energy",
+            "MaxNum": 100,
+            "MinNum": 20
+          }
+        ],
+        "content_actual": [
+          {
+            "Currency": "energy",
+            "MaxNum": 70,
+            "MinNum": 20,
+            "Weight": 90
+          },
+          {
+            "Currency": "energy",
+            "MaxNum": 100,
+            "MinNum": 71,
+            "Weight": 10
+          }
+        ]
+      }
+    ],
+    "revision": "2eadcfb5becb72f686de411037171718d158c16d9b0aae116adf2796709b6fd2"
+  },
+  "fallbackCondition": "RandomRewardModel:GetRandomRewardConfig(id)에서 서버 map에 요청 ID가 없을 때만 _GetFallbackRandomReward()를 호출한다.",
+  "factoryRewardId": "rdm_rwd_mainboard_1",
+  "factoryPosition": {
+    "index": 59,
+    "x": 4,
+    "y": 9,
+    "count": 1,
+    "requiredCover": "box"
+  },
+  "factoryFragmentTypes": [
+    "101",
+    "102",
+    "103",
+    "401",
+    "402",
+    "403",
+    "701",
+    "702",
+    "703",
+    "704",
+    "1001",
+    "1002",
+    "1003",
+    "1004",
+    "1005",
+    "1201",
+    "1202",
+    "1203",
+    "1204",
+    "1701",
+    "1702",
+    "1703",
+    "1704"
+  ],
+  "staticOriginalUid": null,
+  "originalDrawsRecovered": 0,
+  "sourcePrototype": {
+    "sourceBytecodeSHA256": "25c90789f4d6ae900e9ff5920300cea2754b2ebc1140b8d11ccfe71f06885f27",
+    "prototypePath": "main/9",
+    "lineStart": 97,
+    "lineEnd": 129,
+    "literalPCStart": 5,
+    "literalPCEnd": 35,
+    "instructionsDecoded": 31
+  },
+  "constantPrototypeMatches": [
+    {
+      "name": "SpinRandomReward.Model.SpinRandomRewardData",
+      "prototypePath": "main/1",
+      "lineStart": 25,
+      "lineEnd": 42,
+      "constantsMatched": [
+        "content_actual"
+      ],
+      "bytecodeSHA256": "700b2a753bd9b71765c189ad5adb933682977936483daa576773ab043afd520a"
+    },
+    {
+      "name": "Data.Config.MainPaperboxExtraRewardConfig",
+      "prototypePath": "main",
+      "lineStart": 0,
+      "lineEnd": 0,
+      "constantsMatched": [
+        "rdm_rwd_mainboard_1-1"
+      ],
+      "bytecodeSHA256": "ed8df7a02fd4c0e7f315fa08d6c9966ad1cd9fab45c55c87916ddfb31acfabcd"
+    },
+    {
+      "name": "Model.ConfigModel",
+      "prototypePath": "main",
+      "lineStart": 0,
+      "lineEnd": 0,
+      "constantsMatched": [
+        "RandomRewardContent",
+        "randomRewardContent"
+      ],
+      "bytecodeSHA256": "5ce291ec5dbd8cb100d74f6a0972ee6f28667b99fe76c87a95d803aecd925882"
+    },
+    {
+      "name": "RandomReward.Model.RandomRewardData",
+      "prototypePath": "main/1",
+      "lineStart": 28,
+      "lineEnd": 47,
+      "constantsMatched": [
+        "content_actual"
+      ],
+      "bytecodeSHA256": "786ce7306ce6b3d070a591b3161dd363ff398cce2f81360a7f455dc61a2cc314"
+    },
+    {
+      "name": "RandomReward.Model.RandomRewardModel",
+      "prototypePath": "main/1",
+      "lineStart": 11,
+      "lineEnd": 28,
+      "constantsMatched": [
+        "RandomRewardContent"
+      ],
+      "bytecodeSHA256": "25c90789f4d6ae900e9ff5920300cea2754b2ebc1140b8d11ccfe71f06885f27"
+    },
+    {
+      "name": "RandomReward.Model.RandomRewardModel",
+      "prototypePath": "main/9",
+      "lineStart": 97,
+      "lineEnd": 129,
+      "constantsMatched": [
+        "chest_default",
+        "content_actual"
+      ],
+      "bytecodeSHA256": "25c90789f4d6ae900e9ff5920300cea2754b2ebc1140b8d11ccfe71f06885f27"
+    },
+    {
+      "name": "RandomReward.Model.RandomRewardModel",
+      "prototypePath": "main/10",
+      "lineStart": 132,
+      "lineEnd": 314,
+      "constantsMatched": [
+        "content_actual"
+      ],
+      "bytecodeSHA256": "25c90789f4d6ae900e9ff5920300cea2754b2ebc1140b8d11ccfe71f06885f27"
+    }
+  ],
+  "defaultObjectMatches": 0,
+  "defaultCatalogMatches": 0,
+  "otherTextPayloadMatches": 0,
+  "sources": [
+    {
+      "id": "model",
+      "path": "analysis/lua/Lua_Core/RandomReward/Model/RandomRewardModel.lua",
+      "sha256": "39c6851653bc93758119d06db4da99cb515fa6b3724b598c2980412ce953648d",
+      "lineStart": 8,
+      "lineEnd": 117
+    },
+    {
+      "id": "roll",
+      "path": "analysis/lua/Lua_Core/RandomReward/Model/RandomRewardData.lua",
+      "sha256": "0224ad49f8ed586994326c6c8770edba2506d8530448cfb7a0679c0302cab6f1",
+      "lineStart": 14,
+      "lineEnd": 70
+    },
+    {
+      "id": "config-init",
+      "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+      "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+      "lineStart": 249,
+      "lineEnd": 259
+    },
+    {
+      "id": "config-get",
+      "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+      "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+      "lineStart": 354,
+      "lineEnd": 385
+    },
+    {
+      "id": "position",
+      "path": "analysis/lua/Lua_Config/Data/Config/MainPaperboxExtraRewardConfig.lua",
+      "sha256": "619e1b6438715a0c4c2af9ed9c134e059fc15a9f246df0b1fc06ca1b891dadf4",
+      "lineStart": 73,
+      "lineEnd": 81
+    },
+    {
+      "id": "currency",
+      "path": "analysis/lua/Lua_Core/Model/UserData/PropertyDataDefinition.lua",
+      "sha256": "f69a37003d66e3eba29a022743ad0bcefd2e781a97eb63fcd7ce0d3f33b84a72",
+      "lineStart": 1,
+      "lineEnd": 16
+    },
+    {
+      "id": "weight",
+      "path": "analysis/lua/Lua_Base/Common/Utility/Table.lua",
+      "sha256": "3c0c6a8b533424da06be344273ccb12b6d03a87940ce4e2e9a2d750cf8146f4f",
+      "lineStart": 103,
+      "lineEnd": 123
+    },
+    {
+      "id": "math",
+      "path": "analysis/lua/Lua_Base/Common/Utility/MathUtil.lua",
+      "sha256": "6f9bdfba6cec57b4e134554957f01f77b5af3003fe781bc10871136f8c99e85a",
+      "lineStart": 25,
+      "lineEnd": 46
+    },
+    {
+      "id": "prefix",
+      "path": "analysis/lua/Lua_Core/Model/UserData/RewardApi.lua",
+      "sha256": "f08765218b68e81c8a423bcb6036fd864396135167dc98fbee608034f3290410",
+      "lineStart": 30,
+      "lineEnd": 40
+    },
+    {
+      "id": "factory-check",
+      "path": "analysis/lua/Lua_Core/Board/Model/Board/ItemGeneratorFactoryModel.lua",
+      "sha256": "bfcea52b9c5058e056679cbe12a0ee7624e6f142afd834b4b8e06609897ce5d7",
+      "lineStart": 1,
+      "lineEnd": 360
+    }
+  ],
+  "proofSHA256": "9f90889adea77a99a7edec9164ee2d0bdfa1da15429ab0badec1208a0039196b",
+  "boundaries": [
+    "본래 요청 ID의 서버표는 회수하지 못했다. 출하 fallback과 서버 운영 확률을 동일시하지 않는다.",
+    "GetServerConfig는 플레이어DB에서 복원한 m_serverConfigs의 config를 읽는다. 네이티브 이미지 GetConfig의 기본 그림 표를 읽는 경로가 아니다.",
+    "원작 UID·난수 스트림은 정적 APK 자료로 정해지지 않는다. 현재 보드의 실제 셀 UID별로 명시한 선택·수량 난수2개가 필요하다.",
+    "테스트 전용 GetTestConfig 표는 운영표로 채택하지 않는다.",
+    "서버 ID가 없다는 명시 연구 가정을 선택했을 때만 fallback을 요청 ID에 적용하는 연구용 adapter를 만든다. 기본값으로 자동 적용하지 않는다.",
+    "독립 검사 범위는 전체3400Lua bytecode·일반TextAsset34개·native해석필드342행·카탈로그정확명이다. 미관측 서버응답·플레이어DB·hot-update는 범위 밖이다."
+  ],
+  "revision": "c950bf1137ebf8cc511f47ce625343692d050c85b51d0481b8ca9d751b1a1dbc"
+}

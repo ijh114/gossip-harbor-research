@@ -1,0 +1,2300 @@
+{
+  "schemaVersion": 1,
+  "targetVersion": "4.10.5",
+  "reviewDate": "2026-10-30",
+  "revision": "6e0948e0c14dff15adec4966705b8573fb307aaece617218e8039092b51dfe52",
+  "runtimeObserved": false,
+  "scope": {
+    "packagedModules": 2494,
+    "individualStaticConfigChunks": 906,
+    "parsedBytecodeChunks": 3400,
+    "nativeFinalRecords": 342,
+    "nativeRecordStatuses": {
+      "full-metadata-schema-recovered": 125,
+      "partial-common-prefix-only": 1,
+      "full-exact-template-recovered": 214,
+      "partial-prefix-and-font-reference": 2
+    },
+    "nativeTargetStringHits": [],
+    "dynamicComputedKeyOrCurrentHotUpdateExcluded": true
+  },
+  "sources": [
+    {
+      "id": "bubble-code",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemBubble.lua",
+      "sha256": "64538f4f1f56aec6b4b52e2479e93eb27375996c1ac22810dabeb29eef690e0c",
+      "lineStart": 135,
+      "lineEnd": 152
+    },
+    {
+      "id": "bubble-bytecode",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemBubble.luac",
+      "sha256": "5993d881250c00e04214ada9ec57459f8d8a011f8c33eff637ea6702f1e750b6",
+      "lineStart": null,
+      "lineEnd": null
+    },
+    {
+      "id": "name-table",
+      "path": "analysis/lua/Lua_Base/Data/AssetName/ImageFileConfigName.lua",
+      "sha256": "c4e9cb413d2aad5338e00865b1e980178442d4908c485098ae5b4fe737c2c58e",
+      "lineStart": 4592,
+      "lineEnd": 4606
+    },
+    {
+      "id": "name-bytecode",
+      "path": "analysis/lua/Lua_Base/Data/AssetName/ImageFileConfigName.luac",
+      "sha256": "f05f76ba8ea64f3d025aed9e5a73bf0bd6538c5df8fa1c9409d0789e92528381",
+      "lineStart": null,
+      "lineEnd": null
+    },
+    {
+      "id": "item-factory",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemModelFactory.lua",
+      "sha256": "b22cf7c302bc5092e28461749bffe4f5541d4d745190d2976d386e85a98549f2",
+      "lineStart": 69,
+      "lineEnd": 125
+    },
+    {
+      "id": "item-definition",
+      "path": "analysis/lua/Lua_Core/Board/Model/Item/ItemDefinition.lua",
+      "sha256": "af977ea7680b82cbffc5ae392de2fc47158e9cb570031a498ff6d316f8844051",
+      "lineStart": 1797,
+      "lineEnd": 1808
+    },
+    {
+      "id": "item-data-model",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemDataModel.lua",
+      "sha256": "7a199a3ffea516f08a29a765cb030f630161cc4b631d8c5d773087b8d4c72a26",
+      "lineStart": 174,
+      "lineEnd": 201
+    },
+    {
+      "id": "sprite-util",
+      "path": "analysis/lua/Lua_Base/Common/Utility/SpriteUtil.lua",
+      "sha256": "287bd820f703363b58ebbb0e2478aec23b43484456582cbf8cf396f306981d12",
+      "lineStart": 1,
+      "lineEnd": 49
+    },
+    {
+      "id": "adventure-definition",
+      "path": "analysis/lua/Lua_Activity/AdventureActivity/AdventureActivityDefinition.lua",
+      "sha256": "a2a0d6337120f295f7735231e39f0a99f1957fcbc6f3474877cc808455103ccf",
+      "lineStart": 1,
+      "lineEnd": 68
+    },
+    {
+      "id": "pureboard-definition",
+      "path": "analysis/lua/Lua_Activity/PureBoardActivity/PureBoardActivityDefinition.lua",
+      "sha256": "d53c1d6e84ccca162edede07c62f3fccc8d529cb4460c5ebc265959355b61acb",
+      "lineStart": 1,
+      "lineEnd": 55
+    },
+    {
+      "id": "AdventureItemModelConfig_dogparkpure",
+      "path": "analysis/lua/Lua_Config/Data/Config/AdventureItemModelConfig_dogparkpure.lua",
+      "sha256": "1909f7f58131f5591ba39443f585d98bcc65aad51eed49d8841c956b9e578987",
+      "lineStart": null,
+      "lineEnd": null
+    },
+    {
+      "id": "AdventureItemModelConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/AdventureItemModelConfig_dogpark.lua",
+      "sha256": "bb5e37a443194af878ec2ce5cafec41d7a817571f1eb91acd781a222d0385366",
+      "lineStart": null,
+      "lineEnd": null
+    },
+    {
+      "id": "PureboardItemModelConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/PureboardItemModelConfig_dogpark.lua",
+      "sha256": "adb0a70a5187516425daa5a9880a0213e3688ac351e422d019cf757b657117a1",
+      "lineStart": null,
+      "lineEnd": null
+    },
+    {
+      "id": "property-ItemModelConfig",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig.lua",
+      "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2",
+      "lineStart": 4461,
+      "lineEnd": 4463
+    },
+    {
+      "id": "property-ItemModelConfig_shell",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_shell.lua",
+      "sha256": "5e19cc0070ef830748f00582c8f8786dce6303d68dbf538aec352f4fceee8b71",
+      "lineStart": 4539,
+      "lineEnd": 4541
+    },
+    {
+      "id": "property-ItemModelConfig_carditem2",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_carditem2.lua",
+      "sha256": "caeba9433106482fff245b62079bd53a28999b12741a52b00fdd5559859781eb",
+      "lineStart": 4461,
+      "lineEnd": 4463
+    },
+    {
+      "id": "property-ItemModelConfig_extracust",
+      "path": "analysis/lua/Lua_Config/Data/Config/ItemModelConfig_extracust.lua",
+      "sha256": "91d63905f67db1877e0a5adaec8935f4c452bc1b3b737252041792ed584c04c3",
+      "lineStart": 4481,
+      "lineEnd": 4483
+    },
+    {
+      "id": "config-model-load",
+      "path": "analysis/lua/Lua_Core/Model/ConfigModel.lua",
+      "sha256": "792ac8351fbe596b0d5719c0dd0d755b9c87359ba1747379c869f1a865910257",
+      "lineStart": 261,
+      "lineEnd": 298
+    },
+    {
+      "id": "pureboard-model",
+      "path": "analysis/lua/Lua_Activity/PureBoardActivity/Model/PureBoardActivityModel.lua",
+      "sha256": "5bcf24881269efa8712563f02b64b4dbee1cf2017591835dceb70bb424f6e547",
+      "lineStart": 34,
+      "lineEnd": 176
+    },
+    {
+      "id": "pureboard-board-model",
+      "path": "analysis/lua/Lua_Activity/PureBoardActivity/Board/PureBoardActivityBoardModel.lua",
+      "sha256": "3c4b2dd0790693d59836f66d5e660c40a25aa740261cce5dd685acfa83fb7833",
+      "lineStart": 1,
+      "lineEnd": 59
+    },
+    {
+      "id": "base-ui-board-init",
+      "path": "analysis/lua/Lua_Core/Board/Model/UIBoard/BaseUIBoardModel.lua",
+      "sha256": "1cddeb1b7477322bcac273676e791b26ad210a0a3588c632bdf935041cc79f4a",
+      "lineStart": 38,
+      "lineEnd": 99
+    },
+    {
+      "id": "base-ui-layer-load",
+      "path": "analysis/lua/Lua_Core/Board/Model/UIBoard/BaseUIItemLayerModel.lua",
+      "sha256": "92b21f43bdb4cf17c133efaf3ccd46882dfb3ebaf506d5941f29be74dc0eb432",
+      "lineStart": 38,
+      "lineEnd": 68
+    },
+    {
+      "id": "base-ui-board-scroll",
+      "path": "analysis/lua/Lua_Core/Board/Model/UIBoard/BaseUIBoardModel.lua",
+      "sha256": "1cddeb1b7477322bcac273676e791b26ad210a0a3588c632bdf935041cc79f4a",
+      "lineStart": 249,
+      "lineEnd": 325
+    },
+    {
+      "id": "property-factory-components",
+      "path": "analysis/lua/Lua_Core/Board/Model/ItemModelFactory.lua",
+      "sha256": "b22cf7c302bc5092e28461749bffe4f5541d4d745190d2976d386e85a98549f2",
+      "lineStart": 165,
+      "lineEnd": 256
+    },
+    {
+      "id": "pureboard-view-wrappers",
+      "path": "analysis/lua/Lua_Activity/PureBoardActivity/Board/PureBoardActivityBoardView.lua",
+      "sha256": "9bcde08c1ad5bb3cfa3779784ef7689a23727c6e5299a5fbbd4f7de07e8fa3c1",
+      "lineStart": 4,
+      "lineEnd": 15
+    },
+    {
+      "id": "PureboardBoardModelConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/PureboardBoardModelConfig_dogpark.lua",
+      "sha256": "379dd9cf50a913cb96285867259424486530d090362666e6ff73154e2dc4e3c0",
+      "lineStart": 1,
+      "lineEnd": 119
+    },
+    {
+      "id": "PureboardBoardScrollConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/PureboardBoardScrollConfig_dogpark.lua",
+      "sha256": "cc1b2d869dea966fb536993e619f01cf887a5e017618b8be99ee88f74056ca8d",
+      "lineStart": 1,
+      "lineEnd": 3
+    },
+    {
+      "id": "PureboardFogModelConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/PureboardFogModelConfig_dogpark.lua",
+      "sha256": "91d968cb191d306da58f037c6d77a34080f0b07153b96c0a10a10e0033591859",
+      "lineStart": 1,
+      "lineEnd": 1
+    },
+    {
+      "id": "PureboardBoardPaperRewardConfig_dogpark",
+      "path": "analysis/lua/Lua_Config/Data/Config/PureboardBoardPaperRewardConfig_dogpark.lua",
+      "sha256": "49ffcaf4c1d350d07a95118d92f4920b535831dd10b11a92d37f19e1061dc82e",
+      "lineStart": 1,
+      "lineEnd": 119
+    }
+  ],
+  "bubble": {
+    "status": "static-source-selected-normal-outer",
+    "modelType": "3401",
+    "normalPrefix": "b#",
+    "instantPrefix": "ib#",
+    "normalImageKey": "Bubble",
+    "instantRequestedConstant": "BubbleInstant",
+    "instantConstantDefined": false,
+    "literalNameTableEntries": 4589,
+    "outerSrc": "./assets/media/item-representation/bubble-outer.png",
+    "outerSHA256": "832b0ca1aa7f69016e6b832b3bef3e4a2c234f13c25519e7f840eb629dde9bee",
+    "selectionExpression": "instant and optionalInstantKey or Bubble",
+    "truthTable": [
+      {
+        "instant": false,
+        "instantKey": null,
+        "selected": "Bubble"
+      },
+      {
+        "instant": true,
+        "instantKey": null,
+        "selected": "Bubble"
+      },
+      {
+        "instant": true,
+        "instantKey": "ExampleDefinedKey",
+        "selected": "ExampleDefinedKey",
+        "counterfactual": true
+      }
+    ],
+    "bytecode": {
+      "prototypePath": "main/13",
+      "originalSource": "@ItemBubble.lua",
+      "originalSourceLineStart": 160,
+      "originalSourceLineEnd": 162,
+      "constants": [
+        "m_instant",
+        "ImageFileConfigName",
+        "BubbleInstant",
+        "Bubble"
+      ],
+      "instructions": [
+        {
+          "word": 4194375,
+          "op": 7,
+          "A": 1,
+          "B": 0,
+          "C": 256,
+          "sBx": -130815,
+          "pc": 0,
+          "sourceLine": 161,
+          "C_constant": "m_instant"
+        },
+        {
+          "word": 98,
+          "op": 34,
+          "A": 1,
+          "B": 0,
+          "C": 0,
+          "sBx": -131071,
+          "pc": 1,
+          "sourceLine": 161
+        },
+        {
+          "word": 2147532830,
+          "op": 30,
+          "A": 0,
+          "B": 256,
+          "C": 3,
+          "sBx": 4,
+          "pc": 2,
+          "sourceLine": 161
+        },
+        {
+          "word": 4210758,
+          "op": 6,
+          "A": 1,
+          "B": 0,
+          "C": 257,
+          "sBx": -130814,
+          "pc": 3,
+          "sourceLine": 161,
+          "C_constant": "ImageFileConfigName"
+        },
+        {
+          "word": 12615751,
+          "op": 7,
+          "A": 1,
+          "B": 1,
+          "C": 258,
+          "sBx": -130301,
+          "pc": 4,
+          "sourceLine": 161,
+          "C_constant": "BubbleInstant"
+        },
+        {
+          "word": 16482,
+          "op": 34,
+          "A": 1,
+          "B": 0,
+          "C": 1,
+          "sBx": -131070,
+          "pc": 5,
+          "sourceLine": 161
+        },
+        {
+          "word": 2147500062,
+          "op": 30,
+          "A": 0,
+          "B": 256,
+          "C": 1,
+          "sBx": 2,
+          "pc": 6,
+          "sourceLine": 161
+        },
+        {
+          "word": 4210758,
+          "op": 6,
+          "A": 1,
+          "B": 0,
+          "C": 257,
+          "sBx": -130814,
+          "pc": 7,
+          "sourceLine": 161,
+          "C_constant": "ImageFileConfigName"
+        },
+        {
+          "word": 12632135,
+          "op": 7,
+          "A": 1,
+          "B": 1,
+          "C": 259,
+          "sBx": -130300,
+          "pc": 8,
+          "sourceLine": 161,
+          "C_constant": "Bubble"
+        },
+        {
+          "word": 16777318,
+          "op": 38,
+          "A": 1,
+          "B": 2,
+          "C": 0,
+          "sBx": -130047,
+          "pc": 9,
+          "sourceLine": 161
+        },
+        {
+          "word": 8388646,
+          "op": 38,
+          "A": 0,
+          "B": 1,
+          "C": 0,
+          "sBx": -130559,
+          "pc": 10,
+          "sourceLine": 162
+        }
+      ],
+      "expectedFullBytecodeSHA256": "5993d881250c00e04214ada9ec57459f8d8a011f8c33eff637ea6702f1e750b6"
+    },
+    "sourceRefs": [
+      "bubble-code",
+      "bubble-bytecode",
+      "name-table",
+      "name-bytecode",
+      "item-factory"
+    ],
+    "explanation": "출하 이름 표에서 BubbleInstant는 nil이다. 원본 bytecode는 optional 키 조회 뒤 두 번째 TEST를 수행하므로 즉시 버블도 or의 Bubble을 선택한다. 임의의 대체 이미지가 아니라 코드 자체의 선택이다.",
+    "boundary": "출하 기본 코드·이름 표 기준. 동적 키 대입·현재 서버 hot-update와 실제 활성 프레임은 별도 관측 필요.",
+    "mechanicDifference": "ib#는 즉시 상태와 별도 구매 기록을 가지며 해제 후 내부 아이템을 자동 탭한다. 외곽 선택 결과가 같아도 동작이 동일하다는 뜻은 아니다."
+  },
+  "propertyBubble": {
+    "type": "property_bubble_1",
+    "status": "declared-only-purpose-unresolved",
+    "modelDeclarations": [
+      {
+        "config": "ItemModelConfig",
+        "fields": [
+          "Type"
+        ],
+        "line": 4462,
+        "sha256": "9c0e043115411b3bf9354b48c77f69e227f2f7b2d7b2fe2ba7dde15c53084ae2"
+      },
+      {
+        "config": "ItemModelConfig_shell",
+        "fields": [
+          "Type"
+        ],
+        "line": 4540,
+        "sha256": "5e19cc0070ef830748f00582c8f8786dce6303d68dbf538aec352f4fceee8b71"
+      },
+      {
+        "config": "ItemModelConfig_carditem2",
+        "fields": [
+          "Type"
+        ],
+        "line": 4462,
+        "sha256": "caeba9433106482fff245b62079bd53a28999b12741a52b00fdd5559859781eb"
+      },
+      {
+        "config": "ItemModelConfig_extracust",
+        "fields": [
+          "Type"
+        ],
+        "line": 4482,
+        "sha256": "91d63905f67db1877e0a5adaec8935f4c452bc1b3b737252041792ed584c04c3"
+      }
+    ],
+    "registeredImage": false,
+    "itemViewConfigFound": false,
+    "normalBubbleModel": "3401",
+    "factoryWrappers": [
+      "b#",
+      "ib#"
+    ],
+    "directBubbleComponent": false,
+    "explanation": "4개 모델 설정에 Type 필드만 있다. b#/ib# 래퍼와 다르게 버블 생성 분기·컴포넌트 플래그가 없어 일반 버블로 해석할 근거가 없다.",
+    "boundary": "정적 선언과 생성 체인까지 확인. 실제 획득·소비·서버 보상 용도는 미확정이며 단독 PNG 필요 여부도 단정하지 않는다.",
+    "sourceRefs": [
+      "property-factory-components",
+      "property-ItemModelConfig",
+      "property-ItemModelConfig_shell",
+      "property-ItemModelConfig_carditem2",
+      "property-ItemModelConfig_extracust"
+    ],
+    "factoryBoundary": "일반 타입 생성 경로는 모델을 생성하지만 Type-only 설정으로 ItemBubble을 붙이지 않는다. 보드별 추가 훅·동적 서버 지급까지 사용하지 않는다고 주장하지 않는다."
+  },
+  "fixture": {
+    "config": "AdventureItemModelConfig_dogparkpure",
+    "types": [
+      {
+        "type": "adv_dogparkpure_tar_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_2",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_3",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_4",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_5",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_6",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_7",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_8",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_9",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_10",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_11",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_tar_12",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_book_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_book_2",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_book_3",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_book_4",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_book_5",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_book_6",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_book_7",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_book_8",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_baby_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_baby_a_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_baby_a_f_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_baby_b_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_baby_b_f_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_baby_c_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_baby_c_f_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_baby_d_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_feed_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_letter_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_letter_2",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_letter_3",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_score_1",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_score_2",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      },
+      {
+        "type": "adv_dogparkpure_score_3",
+        "imageKeyRegistered": false,
+        "imageRegistryFound": false,
+        "itemViewConfigFound": false
+      }
+    ],
+    "registered": false,
+    "status": "unregistered-fixture-not-missing-production-art",
+    "definitionReferenceMatches": 0,
+    "explanation": "35개 모델 행은 존재하지만 출하 활동 정의가 이 모델 설정을 선택하지 않는다. exact 그림 등록도 없다. 이 fixture의 그림 부재를 실제 등록 이벤트 전체의 리소스 미회수로 집계하면 안 된다.",
+    "replacementPolicy": "아래 실제 등록 체인 중 하나를 별도 시나리오로 채택할 수 있다. fixture 타입명에 다른 테마 그림을 alias하지 않는다.",
+    "runtimeAssignmentUnknown": true
+  },
+  "registeredGroups": [
+    {
+      "id": "dogpark-adventure",
+      "activity": "DogparkAdventure",
+      "config": "AdventureItemModelConfig_dogpark",
+      "sourceRefs": [
+        "adventure-definition",
+        "AdventureItemModelConfig_dogpark",
+        "item-data-model",
+        "config-model-load"
+      ],
+      "entries": [
+        {
+          "type": "adv_dogpark_tar_1",
+          "mergedType": "adv_dogpark_tar_2",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_1.png",
+          "sha256": "963ab649dd82bd5c4b020a447ddf9dd3ebc092075c8b46b7ef093962c65c50c8",
+          "width": 107,
+          "height": 126,
+          "assetGuid": "d1e6e4f028c458e4a9ddf02bd7bcced8",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-3394454444162156993",
+            "object_source_sha256": "e2a00c68dbe043a49777729263bc3e17833e2c743647d6a770422e87cf86ea70"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_2",
+          "mergedType": "adv_dogpark_tar_3",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_2",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_2.png",
+          "sha256": "6fec4737718c0dc9e415c627f38f9e33620d6cf9296ba55adab6f9b8a1d86c6a",
+          "width": 112,
+          "height": 128,
+          "assetGuid": "639cbd20680b36241bb4594aa6515a6b",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "1500693116870890251",
+            "object_source_sha256": "6cd7f8d7780f2aeac120c121be67eb7a2e05a1228e6cccb31d88515bcdc30e0b"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_3",
+          "mergedType": "adv_dogpark_tar_4",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_3",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_3.png",
+          "sha256": "4774b50acc34cd62af070e33fde2e311f720f4555492245b74cc40201bf33692",
+          "width": 122,
+          "height": 130,
+          "assetGuid": "9ea2d9563ab2d2f4da55b9354a0daf3e",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "8959204768384622188",
+            "object_source_sha256": "9b7e183c67983d83acf314c64c5e5dcc4ff5a98b09ca0dd3a3c7cbb46735b0b1"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_4",
+          "mergedType": "adv_dogpark_tar_5",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_4",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_4.png",
+          "sha256": "1b3b687be2c408c34e97e9590c6a5ac36d7b54ae0861415f99e03643f45a4f6f",
+          "width": 119,
+          "height": 132,
+          "assetGuid": "d5d3b3e41ae49634d83fa28e02af81dd",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-29116058312614576",
+            "object_source_sha256": "c5be130fc292529227acffe490b87ad98a8205ca34d4ea70ddba215ecd4ca70b"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_5",
+          "mergedType": "adv_dogpark_tar_6",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_5",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_5.png",
+          "sha256": "4ae19fae5328fca42620097b1812166d857a602239465e42bb964fae97e12fe6",
+          "width": 132,
+          "height": 127,
+          "assetGuid": "c67df0f45c47c64499dc13c8a01277f3",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "2457886505701648438",
+            "object_source_sha256": "91fb705ce50d9bfbddc784ed5c5e045c78179f20b050977552720278bd732425"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_6",
+          "mergedType": "adv_dogpark_tar_7",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_6",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_6.png",
+          "sha256": "bedea77d877eb1611feea6d2b36e1925c0bbbe4c1775293f5a37e5101f524a01",
+          "width": 133,
+          "height": 133,
+          "assetGuid": "acdf39afbd640bd43b5f10a27ddbc0ce",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "5321205265064185064",
+            "object_source_sha256": "7c75f7fda700011fa174007cd2e82cd71c23cf07514430a9f53b4f31bda86659"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_7",
+          "mergedType": "adv_dogpark_tar_8",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_7",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_7.png",
+          "sha256": "f838655e8a96e397fad30a310bc991ac3382675f7e377bdbe00dd97abe85590c",
+          "width": 123,
+          "height": 135,
+          "assetGuid": "74dfe10188c301f429cd1ae1246392de",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "6552741570527568594",
+            "object_source_sha256": "f99b2105f0997d03b51a6a9cc4426aca20bd3e4e9f4682f02fc5d14ee9ef7892"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_8",
+          "mergedType": "adv_dogpark_tar_9",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_8",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_8.png",
+          "sha256": "520ce66fc6d2524b43b1e8f007cefca8457669c34f78e3fb6e2c6d338ca3a963",
+          "width": 135,
+          "height": 135,
+          "assetGuid": "a51994716fa281f44bc37ab326f990f3",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-330684944427976018",
+            "object_source_sha256": "daf88ab92629f37c0abb1a8ee31278d0c50cf94080f4a42dae8a7e33a284339f"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_9",
+          "mergedType": "adv_dogpark_tar_10",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_9",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_9.png",
+          "sha256": "95602c2506e1477698059c356d92b71129c73f1ac95729db8eb3f2c29b255d47",
+          "width": 143,
+          "height": 141,
+          "assetGuid": "cf0c5b4405565a147b37feea9bd51797",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-5534041115867844237",
+            "object_source_sha256": "2934d8643688d1e0428a7bf8194bc21785ce360c4dd7166aa5a6ccfc685dbe10"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_10",
+          "mergedType": "adv_dogpark_tar_11",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_10",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_10.png",
+          "sha256": "a5c781ebdb90b66ca05f94cac47098e7f2fea81082f62560a727ebd181ef852b",
+          "width": 140,
+          "height": 139,
+          "assetGuid": "246519bc124eb4740ab78b435d9ced22",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-6455811366427776719",
+            "object_source_sha256": "2c18584c4dacf88256d26181db0b19b3a292aab39bbdee359071e24c6ba9d25c"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_11",
+          "mergedType": "adv_dogpark_tar_12",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_11",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_11.png",
+          "sha256": "4671263c9ab268d286fe5419155b483bc2958ce63f85bec6c51fd07d33e47153",
+          "width": 144,
+          "height": 147,
+          "assetGuid": "52895205c1f37b7458e80af8e39d5d5e",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-4767435946244691393",
+            "object_source_sha256": "1e374a04fd0509e100c02c1c99ad05a0315bc3e55ed84c583a0408012ecc242f"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_tar_12",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_tar_12",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_tar_12.png",
+          "sha256": "da818868b4a9ae9790712b20bc30f394819dd8b31b831caefc28448f522604e1",
+          "width": 145,
+          "height": 147,
+          "assetGuid": "2ef50ec92a2063f4398ac763e006b125",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-1325598869953300383",
+            "object_source_sha256": "44e1b1cef9af72e219808fd78aefbc5ea35089e6757c9309cc62b22f5564400b"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_book_1",
+          "mergedType": "adv_dogpark_book_2",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_book_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_book_1.png",
+          "sha256": "fea109af59c700274aadbf55a63e48d1f23c74674d53a5daed34969b064fef0e",
+          "width": 117,
+          "height": 100,
+          "assetGuid": "7850078364a1ba34f9d78174882e173d",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "102586686933825666",
+            "object_source_sha256": "880814baa8f26375fe9d5d9647a02275f1245e50eb2b8eb9f7ed0b84e16886ad"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_book_2",
+          "mergedType": "adv_dogpark_book_3",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_book_2",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_book_2.png",
+          "sha256": "f22c573b84c1a5a7b5842425280d61dc696c48054be74187308a005d38a23e9d",
+          "width": 111,
+          "height": 114,
+          "assetGuid": "c71bb18fe5a18de49bfcfd061482da81",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "8278051518649297470",
+            "object_source_sha256": "cca1d51e9f8708d0b21653df0ce25cd485b2adc326c6965a80cf48b9337f72cf"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_book_3",
+          "mergedType": "adv_dogpark_book_4",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_book_3",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_book_3.png",
+          "sha256": "56bcc42a590ed43fc4a28b7fb8eb99bb69aed227b9634182300235719e928596",
+          "width": 105,
+          "height": 108,
+          "assetGuid": "824d55b55e39a0e44a8896bdbf6ab6bf",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-8238698084461986403",
+            "object_source_sha256": "dd667ee3986c247c8a5d501fe05189299404767dff9aecf528cc97f3a2553b89"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_book_4",
+          "mergedType": "adv_dogpark_book_5",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_book_4",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_book_4.png",
+          "sha256": "26224c454cd7cc787a220ebfc5d0929dbf5d5cc465c66c3de58cf24e850ab78a",
+          "width": 115,
+          "height": 116,
+          "assetGuid": "e3d3a0fe2db322d43b487a0d275c3765",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "2758992369478654905",
+            "object_source_sha256": "51dd58517e56a3da43ba0a400f6b9417ab58b143e5635ed0f1cf43911b773d2b"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_book_5",
+          "mergedType": "adv_dogpark_book_6",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_book_5",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_book_5.png",
+          "sha256": "4b31eaa4ff6bb8906b86e429ed52d346a8e09d5d5f468254da43d51ca9ec9118",
+          "width": 148,
+          "height": 116,
+          "assetGuid": "9a3919e3a3c5f114381dbef3b1485878",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-3371290534085942873",
+            "object_source_sha256": "9785ef44829a9addf4cb752048f9cdb1741eb93d9110fc14b17a3464aae951a9"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_book_6",
+          "mergedType": "adv_dogpark_book_7",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_book_6",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_book_6.png",
+          "sha256": "ca5cfc68fbf1812b15b9d1d02ae30e3f1659c2680bd3a2a6c9afef5c356ba4b2",
+          "width": 134,
+          "height": 119,
+          "assetGuid": "06b6132e068c422459af7c2c4a537332",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-8581775888287655692",
+            "object_source_sha256": "bfc22201ee2466dc84ef72ac7e6a9b4dd259561b21a808c48b120dc0abaea188"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_book_7",
+          "mergedType": "adv_dogpark_book_8",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_book_7",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_book_7.png",
+          "sha256": "612b5563c8f3bf82d95418222159b563f228f491e807a4c1595ade757dbd5b7e",
+          "width": 123,
+          "height": 133,
+          "assetGuid": "32cd5dbb50aed254aa7e63959c52f1a0",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "8796086076653871835",
+            "object_source_sha256": "865e8ebb0f72443f2a39e4ffee0583e0b249a75de32a8a1df462c303cd42e8f6"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_book_8",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_book_8",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_book_8.png",
+          "sha256": "84e27a34c9b6436357ca0095aefca175eef5a25f2c95cb990a369c0cf874399e",
+          "width": 140,
+          "height": 141,
+          "assetGuid": "cacba2918aaebff4da6bd104e98d49e5",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "8857598251034747735",
+            "object_source_sha256": "0e8f550bade46e51ef24668d4e2015d51a03d600dc7c1bb949ed9fc7ec77b3b6"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_baby_1",
+          "mergedType": null,
+          "selection": "ItemViewConfig.Image",
+          "imageKey": "adv_dogpark_baby_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_baby_1.png",
+          "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+          "width": 140,
+          "height": 141,
+          "assetGuid": "ef2185f35dce4694d825e55a663bb517",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-1072829056911044995",
+            "object_source_sha256": "fd119ca9b7a99de920e2a4d3e5d97f83c93661e463fad0acbeebd105b20b4925"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_baby_a_1",
+          "mergedType": null,
+          "selection": "ItemViewConfig.Image",
+          "imageKey": "adv_dogpark_baby_a_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_baby_a_1.png",
+          "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+          "width": 140,
+          "height": 141,
+          "assetGuid": "ec93c7c6d3462ac47872b5ea454cee8a",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "5188400010037772511",
+            "object_source_sha256": "f19c7f9191c676c2d2d48da8f35e496f1596e1a91974dc90774273eecdf4477f"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_baby_a_f_1",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_baby_a_f_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_baby_a_f_1.png",
+          "sha256": "28b8ba7e947fd4fbad40581d8b20319a4b7f7eb9045cb827f8aa2a2ac3355e07",
+          "width": 143,
+          "height": 152,
+          "assetGuid": "195a63cc71838d044800ac102286b927",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "3393217595409594291",
+            "object_source_sha256": "d6a931ea45e9f0c26dbb5732745066dec689df9963aa716185d75d70f3105125"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_baby_b_1",
+          "mergedType": null,
+          "selection": "ItemViewConfig.Image",
+          "imageKey": "adv_dogpark_baby_b_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_baby_b_1.png",
+          "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+          "width": 140,
+          "height": 141,
+          "assetGuid": "ad26f22f28010594296a52fe294eebbd",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-2303651277948703573",
+            "object_source_sha256": "f18aa000c336105254a674020e56cdbaafe8efd42556d6da655be62e8076ec74"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_baby_b_f_1",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_baby_b_f_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_baby_b_f_1.png",
+          "sha256": "992012ee2cc0f241a3ded22586ad788931b2411370ae9a83d08ffaaa237a6c1d",
+          "width": 139,
+          "height": 147,
+          "assetGuid": "adea2cf72aa07174da894fd0c8bf4f2f",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-3886520127313804430",
+            "object_source_sha256": "05bdf2711d8e4d6bc5479dcd25a17edbee97538c5c707c957c7ddc5b0491f023"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_baby_c_1",
+          "mergedType": null,
+          "selection": "ItemViewConfig.Image",
+          "imageKey": "adv_dogpark_baby_c_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_baby_c_1.png",
+          "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+          "width": 140,
+          "height": 141,
+          "assetGuid": "0f97e09b757a4e843a2a2d4cf8334a7c",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "7059401906602078325",
+            "object_source_sha256": "f41e1fdf94fe736c4f0baaa41f57fed780deaf02ec6ffe6b92e04aa50f1ee256"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_baby_c_f_1",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_baby_c_f_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_baby_c_f_1.png",
+          "sha256": "c802edc076bdeb3d06998ad37fb103f556839f064f08836f4d6cad8f1a1e7f9d",
+          "width": 140,
+          "height": 150,
+          "assetGuid": "776ebef696bdb9943abc3ea035fb81be",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-1535706592882484736",
+            "object_source_sha256": "5b04391e7067bea66a455c850ce13d2a7c4ea5063194c97475c8a8295d44f276"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_baby_d_1",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_baby_d_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_baby_d_1.png",
+          "sha256": "92c4c8b1f1654759b8813e52e3e9086ee832ca6a831d49755093877dde6e7246",
+          "width": 140,
+          "height": 149,
+          "assetGuid": "2a98e8123b98c0d49b45bcc85dbd3947",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "2250546112740805163",
+            "object_source_sha256": "aae15e0589b1fc27361c4cc2aa9944583efa132901e1fa06ce0c63c578a11be6"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_feed_1",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_feed_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_feed_1.png",
+          "sha256": "7c92dc58856dc22ab7fae3f7bf1ab6187a044f3db02ea1f503551302bedfa4ac",
+          "width": 129,
+          "height": 135,
+          "assetGuid": "cec975045583bc74a97d8f17ab5d509f",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "6829625183621497217",
+            "object_source_sha256": "a99a08b19c08b845e5da09d429e88d14dcfc7b6b8dd1dd56526fda1c5a28482c"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_letter_1",
+          "mergedType": "adv_dogpark_letter_2",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_letter_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_letter_1.png",
+          "sha256": "fcd758383de588789631795d0343b5ccbd84b47c68802fc956bc87f0edad6c1b",
+          "width": 134,
+          "height": 124,
+          "assetGuid": "55f84af3db32a8d488b55fe1935c18a3",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-2596039462681997133",
+            "object_source_sha256": "e4b605ec24ed48238d832ee93183f088d0ae8dce5e88e568dd447fe6bf07eb06"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_letter_2",
+          "mergedType": "adv_dogpark_letter_3",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_letter_2",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_letter_2.png",
+          "sha256": "af1e2cd251530dcf0f944b65d7ce70c2767f4a47d2beff322137cdbb6a7514a9",
+          "width": 154,
+          "height": 127,
+          "assetGuid": "2e62e4340451f2541bc501b8e4e24c79",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-3199703130333445099",
+            "object_source_sha256": "5f8193c11b463288b20d0c82938920083edd88536d22c5a646f4c7bb8e3901bc"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_letter_3",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_letter_3",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_letter_3.png",
+          "sha256": "a799014ad52a8a58479eed0ae10262d4f8e6b06e12965f094ec55367615df68f",
+          "width": 144,
+          "height": 138,
+          "assetGuid": "0a7480deecd4f944ab39f156e413689a",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-6913522315115058168",
+            "object_source_sha256": "34800d47e30cde750f1e3e169d31732092c464f9793cbc0a078153f70b047e94"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_score_1",
+          "mergedType": "adv_dogpark_score_2",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_score_1",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_score_1.png",
+          "sha256": "5ad45c296556e1311e7d934cac9b822f58b3d379ab79a594d79e5795fbd0b3c7",
+          "width": 105,
+          "height": 107,
+          "assetGuid": "536ccb956134581419a4b8b6b14bb62f",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "928332427788545054",
+            "object_source_sha256": "098d04a9436f08337ea9061efaa6e3f29726de3d52cfe7efc84264dc004f0c50"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_score_2",
+          "mergedType": "adv_dogpark_score_3",
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_score_2",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_score_2.png",
+          "sha256": "e65a823622a2dec097d3c0014b5c26a4ec27ea352e45740dbe1c9f09de38e399",
+          "width": 96,
+          "height": 115,
+          "assetGuid": "43653b60386aa3347a9be568b77ff3ed",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-2887435042553604922",
+            "object_source_sha256": "6213ba579c8a1048a470d281b34d90e67a902ba0538a2b05c514a5c0e19e1fec"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "adv_dogpark_score_3",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "adv_dogpark_score_3",
+          "src": "./assets/media/item-resolution-followup/adv_dogpark_score_3.png",
+          "sha256": "2ca35ded3934b901d32cde8800a8bcf949de91849a59bca841576645d686f289",
+          "width": 120,
+          "height": 121,
+          "assetGuid": "05a22cea84b9e2f46969a430fa83b32e",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "adventureactivity_assets_assets/adventureactivity/dogparkadventure_items_59257b3b68cd57488fd26f1c20518272.bundle",
+            "bundle_sha256": "d7cb469782739780147a2e8c34697ea69475ab592ac64b450a5db9dad7f1365c",
+            "serialized_file": "CAB-2cb4ebea63b807156d2a5bb628a144e8",
+            "path_id": "-7567479309783376083",
+            "object_source_sha256": "19150ea6f75290fd60ba117a91712a19a1cf9909b1e028649c29825781262b83"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        }
+      ],
+      "registered": true,
+      "runtimeObserved": false,
+      "uniquePublishedPNGContents": 32
+    },
+    {
+      "id": "dogpark-pureboard",
+      "activity": "dogparkPureBoard",
+      "config": "PureboardItemModelConfig_dogpark",
+      "sourceRefs": [
+        "pureboard-definition",
+        "PureboardItemModelConfig_dogpark",
+        "item-data-model",
+        "config-model-load"
+      ],
+      "entries": [
+        {
+          "type": "pb_dogpark_tar_1",
+          "mergedType": "pb_dogpark_tar_2",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_1.png",
+          "sha256": "963ab649dd82bd5c4b020a447ddf9dd3ebc092075c8b46b7ef093962c65c50c8",
+          "width": 107,
+          "height": 126,
+          "assetGuid": "bb50293b8ef099c479e19d536a80f366",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "2685323636219153657",
+            "object_source_sha256": "d6271639d8f61d1010dc7bebd800e4c4dc1ad1c890d3a7adf6dabf337e97d5aa"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_2",
+          "mergedType": "pb_dogpark_tar_3",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_2",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_2.png",
+          "sha256": "6fec4737718c0dc9e415c627f38f9e33620d6cf9296ba55adab6f9b8a1d86c6a",
+          "width": 112,
+          "height": 128,
+          "assetGuid": "9ff2864719bb82c4cad3d50120d18411",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-3945127575716307634",
+            "object_source_sha256": "30e81c3aee04d89a8c09cf62b10e65b5a30c807e12632838c1141312335ba430"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_3",
+          "mergedType": "pb_dogpark_tar_4",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_3",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_3.png",
+          "sha256": "4774b50acc34cd62af070e33fde2e311f720f4555492245b74cc40201bf33692",
+          "width": 122,
+          "height": 130,
+          "assetGuid": "f7077f805ecc83b42a54e2d993982992",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-7776370882755422011",
+            "object_source_sha256": "9165df40df549dc1428762e1eed062d7fa30d3b92a3a623f0beeebe4d9463896"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_4",
+          "mergedType": "pb_dogpark_tar_5",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_4",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_4.png",
+          "sha256": "1b3b687be2c408c34e97e9590c6a5ac36d7b54ae0861415f99e03643f45a4f6f",
+          "width": 119,
+          "height": 132,
+          "assetGuid": "efda58ab0a5ac4640a1705c0961e8378",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "1408660556970336220",
+            "object_source_sha256": "67b9ed51786246b8a5535d5ca30250f45f934fffcc8aa575c15607d71e5b346b"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_5",
+          "mergedType": "pb_dogpark_tar_6",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_5",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_5.png",
+          "sha256": "4ae19fae5328fca42620097b1812166d857a602239465e42bb964fae97e12fe6",
+          "width": 132,
+          "height": 127,
+          "assetGuid": "cba9d4084eca1074e9039597b2e40ab3",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "4450965244276962076",
+            "object_source_sha256": "6808392bc1c92aa8abc622a9b00bed43ebd0fb4c9c0d6d3d701064b64143dd71"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_6",
+          "mergedType": "pb_dogpark_tar_7",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_6",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_6.png",
+          "sha256": "bedea77d877eb1611feea6d2b36e1925c0bbbe4c1775293f5a37e5101f524a01",
+          "width": 133,
+          "height": 133,
+          "assetGuid": "ccced8554b2343c4ea2b75e0166bb314",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "6081337395611938469",
+            "object_source_sha256": "565ad6b532cefa2f07d98d1751f8e707c9cd6728f3e6568d80871f97d64f3820"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_7",
+          "mergedType": "pb_dogpark_tar_8",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_7",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_7.png",
+          "sha256": "f838655e8a96e397fad30a310bc991ac3382675f7e377bdbe00dd97abe85590c",
+          "width": 123,
+          "height": 135,
+          "assetGuid": "339ffa9739434784faff1ec25e8606ce",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-5154950177534638427",
+            "object_source_sha256": "0266a4ebc6cb7eac2f58812bfb8673472e3b484ff68fe503d0d39848c19f1903"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_8",
+          "mergedType": "pb_dogpark_tar_9",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_8",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_8.png",
+          "sha256": "520ce66fc6d2524b43b1e8f007cefca8457669c34f78e3fb6e2c6d338ca3a963",
+          "width": 135,
+          "height": 135,
+          "assetGuid": "c6e7a359dc4b1884593ab25fac812c11",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-2573683683045862510",
+            "object_source_sha256": "ff205c3f311ad063f302d7ef604cf0864752e7ad64fdf73ad21d0a0ce35d395d"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_9",
+          "mergedType": "pb_dogpark_tar_10",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_9",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_9.png",
+          "sha256": "95602c2506e1477698059c356d92b71129c73f1ac95729db8eb3f2c29b255d47",
+          "width": 143,
+          "height": 141,
+          "assetGuid": "f0ba3066f614d0a42ab7031cacf943ee",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-1454895466675170625",
+            "object_source_sha256": "106e1dba0fc8ff07a0d5ace859ac0d7351a6869149ce532df54dd4cc044c4ca0"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_10",
+          "mergedType": "pb_dogpark_tar_11",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_10",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_10.png",
+          "sha256": "a5c781ebdb90b66ca05f94cac47098e7f2fea81082f62560a727ebd181ef852b",
+          "width": 140,
+          "height": 139,
+          "assetGuid": "12130c7d60be3354ca0b101661eaf685",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "5969121388877870493",
+            "object_source_sha256": "59044baf6527fbe80d9c25ab659f5ae676af212f3fed0ee25863ff5896ec4943"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_11",
+          "mergedType": "pb_dogpark_tar_12",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_11",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_11.png",
+          "sha256": "4671263c9ab268d286fe5419155b483bc2958ce63f85bec6c51fd07d33e47153",
+          "width": 144,
+          "height": 147,
+          "assetGuid": "4d2a343e9c2ce6a4dacbeb47f5ef3bfc",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-5515679173416578043",
+            "object_source_sha256": "99516d991b49d7fd3a68b9f1c5b1ca75dce02c65f44213fff6812a34a2e0e2f0"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_tar_12",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_tar_12",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_tar_12.png",
+          "sha256": "da818868b4a9ae9790712b20bc30f394819dd8b31b831caefc28448f522604e1",
+          "width": 145,
+          "height": 147,
+          "assetGuid": "5a177705509a62647b72ea2966cf9c7b",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "1046028032295916766",
+            "object_source_sha256": "20507b7de31545af69448879e46dae7859d81b7881b25301149d49a2a895d747"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_book_1",
+          "mergedType": "pb_dogpark_book_2",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_book_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_book_1.png",
+          "sha256": "fea109af59c700274aadbf55a63e48d1f23c74674d53a5daed34969b064fef0e",
+          "width": 117,
+          "height": 100,
+          "assetGuid": "99d88c45e17709a40bcf87efb014c2d6",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "5393178466827504926",
+            "object_source_sha256": "39ee46a234b2086d65314c499727cabec05e51a55f813122c0c25aebc42b0e0f"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_book_2",
+          "mergedType": "pb_dogpark_book_3",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_book_2",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_book_2.png",
+          "sha256": "f22c573b84c1a5a7b5842425280d61dc696c48054be74187308a005d38a23e9d",
+          "width": 111,
+          "height": 114,
+          "assetGuid": "88980945bd2eeb346a2017a8f87ee4f8",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "7301498619909456699",
+            "object_source_sha256": "864a03ba480aaf93ce98b564b9dada97221b34236dd1adf524d0a5afa197845d"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_book_3",
+          "mergedType": "pb_dogpark_book_4",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_book_3",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_book_3.png",
+          "sha256": "56bcc42a590ed43fc4a28b7fb8eb99bb69aed227b9634182300235719e928596",
+          "width": 105,
+          "height": 108,
+          "assetGuid": "872753cdd088373429776c78bc4450ae",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "436726840066015441",
+            "object_source_sha256": "94b3de19858c30c548e04f46233518d83d7f1389c05bf368c85b8ecf0bc4cb36"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_book_4",
+          "mergedType": "pb_dogpark_book_5",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_book_4",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_book_4.png",
+          "sha256": "26224c454cd7cc787a220ebfc5d0929dbf5d5cc465c66c3de58cf24e850ab78a",
+          "width": 115,
+          "height": 116,
+          "assetGuid": "c2c7784411286de40a7839a8d27cc16e",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-616502364258075540",
+            "object_source_sha256": "91ba705e058fbb836f65254536f57247415b366294e9989bfdd830d9848101e0"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_book_5",
+          "mergedType": "pb_dogpark_book_6",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_book_5",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_book_5.png",
+          "sha256": "4b31eaa4ff6bb8906b86e429ed52d346a8e09d5d5f468254da43d51ca9ec9118",
+          "width": 148,
+          "height": 116,
+          "assetGuid": "487ea7c7618edb24d9f41bfec06457cc",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-1031754570249902754",
+            "object_source_sha256": "6bbb019a925dc0fd08d06b8b31003d1e0b701b91234a9904ca80edd350864b0a"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_book_6",
+          "mergedType": "pb_dogpark_book_7",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_book_6",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_book_6.png",
+          "sha256": "ca5cfc68fbf1812b15b9d1d02ae30e3f1659c2680bd3a2a6c9afef5c356ba4b2",
+          "width": 134,
+          "height": 119,
+          "assetGuid": "19c4faabd4fea6841b3211840cce7519",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "6276645216571762175",
+            "object_source_sha256": "1f39fa5887ca2b754d472a9106259381f9fc365950355e5befa164f669887996"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_book_7",
+          "mergedType": "pb_dogpark_book_8",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_book_7",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_book_7.png",
+          "sha256": "612b5563c8f3bf82d95418222159b563f228f491e807a4c1595ade757dbd5b7e",
+          "width": 123,
+          "height": 133,
+          "assetGuid": "a5f2c50c791b2a54b9505abcebaec879",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "451341244532489275",
+            "object_source_sha256": "9a8106cb8d39da020a8ab391e8426c6114f90983184bd642a7f37f64c8187bb6"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_book_8",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_book_8",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_book_8.png",
+          "sha256": "84e27a34c9b6436357ca0095aefca175eef5a25f2c95cb990a369c0cf874399e",
+          "width": 140,
+          "height": 141,
+          "assetGuid": "1ffc56548ed919349aa5281da5832c25",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-4882398754807100688",
+            "object_source_sha256": "595eb52b2c3dde7f09862e7fc8abf2c2aed9ecd682b1092da9190fabe168c972"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_baby_1",
+          "mergedType": null,
+          "selection": "ItemViewConfig.Image",
+          "imageKey": "pb_dogpark_baby_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_1.png",
+          "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+          "width": 140,
+          "height": 141,
+          "assetGuid": "7c7916fb9d0150b4594e1fdb1110b622",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "8341245032131703483",
+            "object_source_sha256": "768791d7d1aaf0c237e72cd13e502b32c24a52f74a689638dda846b04b9c82de"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_baby_a_1",
+          "mergedType": null,
+          "selection": "ItemViewConfig.Image",
+          "imageKey": "pb_dogpark_baby_a_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_a_1.png",
+          "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+          "width": 140,
+          "height": 141,
+          "assetGuid": "be2f0316ef457aa4bb9a49c642865456",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "3424274434531880326",
+            "object_source_sha256": "f7ab72b09de576c1acbd9399bab71f53dce18b7436fa83318c8fba3d53c11ba6"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_baby_a_f_1",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_baby_a_f_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_a_f_1.png",
+          "sha256": "28b8ba7e947fd4fbad40581d8b20319a4b7f7eb9045cb827f8aa2a2ac3355e07",
+          "width": 143,
+          "height": 152,
+          "assetGuid": "2e020910a797351418da872ba946422b",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-155636913889783515",
+            "object_source_sha256": "55883709e3d37b6b727371224b529936c7be921c213eec20bb4fe786aad5a244"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_baby_b_1",
+          "mergedType": null,
+          "selection": "ItemViewConfig.Image",
+          "imageKey": "pb_dogpark_baby_b_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_b_1.png",
+          "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+          "width": 140,
+          "height": 141,
+          "assetGuid": "363dd2986023fda459b1bfc030bb8180",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-8450131314005338162",
+            "object_source_sha256": "181e15c989d39ecf60cb7b92b52cefffd09343aab83b99a255d51753d55ce85a"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_baby_b_f_1",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_baby_b_f_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_b_f_1.png",
+          "sha256": "992012ee2cc0f241a3ded22586ad788931b2411370ae9a83d08ffaaa237a6c1d",
+          "width": 139,
+          "height": 147,
+          "assetGuid": "611fd1b3c9fb76245ae05008fbace559",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-6934222505191073373",
+            "object_source_sha256": "d526a25caf4ad72f3840d1df1583a466fe93ff35f6d1b7a73d1dc81445641377"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_baby_c_1",
+          "mergedType": null,
+          "selection": "ItemViewConfig.Image",
+          "imageKey": "pb_dogpark_baby_c_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_c_1.png",
+          "sha256": "10bfe47dcc230f5eeaa800ff3d983218cb6a4a6b8415a699872c538d7e6f6c1b",
+          "width": 140,
+          "height": 141,
+          "assetGuid": "952a32e0e9dc00342bea1c4e0cefce0c",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-4887244946045337567",
+            "object_source_sha256": "7d977236351cd0271f8e44ff66099903dbebc5d4966e28cd98ee918ae50cf4b7"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_baby_c_f_1",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_baby_c_f_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_c_f_1.png",
+          "sha256": "c802edc076bdeb3d06998ad37fb103f556839f064f08836f4d6cad8f1a1e7f9d",
+          "width": 140,
+          "height": 150,
+          "assetGuid": "ea07fdf5c7b42414a94cefb96bbe8dcb",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "7870350255505753539",
+            "object_source_sha256": "8168ac9d81d30f5551b8d3f167d289aed8824cd1ec03629be3745fe748497bf9"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_baby_d_1",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_baby_d_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_baby_d_1.png",
+          "sha256": "92c4c8b1f1654759b8813e52e3e9086ee832ca6a831d49755093877dde6e7246",
+          "width": 140,
+          "height": 149,
+          "assetGuid": "6269d4928a2072b47875e6b6fbc4ac57",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "4934936333657357016",
+            "object_source_sha256": "ef33ce78eda776b48ee05a50af00b1be87ba888670d91cbe64c9377bf24afd2c"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_feed_1",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_feed_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_feed_1.png",
+          "sha256": "7c92dc58856dc22ab7fae3f7bf1ab6187a044f3db02ea1f503551302bedfa4ac",
+          "width": 129,
+          "height": 135,
+          "assetGuid": "73dcac90562dfec429b3f2e874f34ec3",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-7868485338104260717",
+            "object_source_sha256": "4b1e86d6e7ea0a1e74e8120f04eed5e4c301b9e2ea49cf418c3028dbd4798830"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_letter_1",
+          "mergedType": "pb_dogpark_letter_2",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_letter_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_letter_1.png",
+          "sha256": "fcd758383de588789631795d0343b5ccbd84b47c68802fc956bc87f0edad6c1b",
+          "width": 134,
+          "height": 124,
+          "assetGuid": "b5f443e31432e67438f66057762939ff",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "6679251499032104318",
+            "object_source_sha256": "da992eaafbe9733eaccb41c8d159601b218e28fedcc89d5aae5fd7a875007ebe"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_letter_2",
+          "mergedType": "pb_dogpark_letter_3",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_letter_2",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_letter_2.png",
+          "sha256": "af1e2cd251530dcf0f944b65d7ce70c2767f4a47d2beff322137cdbb6a7514a9",
+          "width": 154,
+          "height": 127,
+          "assetGuid": "8b294e268f9238142a7d354910b0689d",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-472293397692249290",
+            "object_source_sha256": "7e8a69d5bd443b8a89985cda6bdc4cc3f383382acfc6e100bedbe4d8466bfc9b"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_letter_3",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_letter_3",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_letter_3.png",
+          "sha256": "a799014ad52a8a58479eed0ae10262d4f8e6b06e12965f094ec55367615df68f",
+          "width": 144,
+          "height": 138,
+          "assetGuid": "7a193ea9cb7dd6e49b81a5c41b889fda",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "1327146279665686099",
+            "object_source_sha256": "c8ade150a859ba683f0313b76d8889a63d9873c0dbce2ea04c8ec34c052360d2"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_score_1",
+          "mergedType": "pb_dogpark_score_2",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_score_1",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_score_1.png",
+          "sha256": "5ad45c296556e1311e7d934cac9b822f58b3d379ab79a594d79e5795fbd0b3c7",
+          "width": 105,
+          "height": 107,
+          "assetGuid": "bcdb413de36cb0a40aa733a4fd3d68b2",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "6873039801898318976",
+            "object_source_sha256": "53864a52a268d53c5c3ff833a7922ab79d47adc6ca3269ec153237b0c879550c"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_score_2",
+          "mergedType": "pb_dogpark_score_3",
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_score_2",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_score_2.png",
+          "sha256": "e65a823622a2dec097d3c0014b5c26a4ec27ea352e45740dbe1c9f09de38e399",
+          "width": 96,
+          "height": 115,
+          "assetGuid": "1862239cacda7db4eb7224d79bc43976",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "4863345822427411714",
+            "object_source_sha256": "39f3bfe4f3d019ded9fa71175b02b303c06211df019291413c56acc645bf93bc"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        },
+        {
+          "type": "pb_dogpark_score_3",
+          "mergedType": null,
+          "selection": "type-string fallback",
+          "imageKey": "pb_dogpark_score_3",
+          "src": "./assets/media/item-resolution-followup/pb_dogpark_score_3.png",
+          "sha256": "2ca35ded3934b901d32cde8800a8bcf949de91849a59bca841576645d686f289",
+          "width": 120,
+          "height": 121,
+          "assetGuid": "7362c054338c58547a23ee3cb37d7540",
+          "identity": {
+            "type": "Sprite",
+            "bundle": "pureboard_assets_assets/pureboardactivity/dogparkpureboard_items_fc9101fa199b80dd5cef45f0ce5b78b4.bundle",
+            "bundle_sha256": "d5e9a81d72f9a20a0fbf66bd7744dce5a6739395c38c5092df6483c6454f57ae",
+            "serialized_file": "CAB-088396ae3c7de871306e06723cbdc828",
+            "path_id": "-8457739575738403852",
+            "object_source_sha256": "2a87f61150dd31e3add14021a22b6168d7315b2a4e82dd877799e838e6053622"
+          },
+          "registrySourceSHA256": "0c08701ebff61fcee32a5ca1123dfa762ad5a7b42a3cbe7e8592d3efafef6883",
+          "bindingMethod": "exact literal item key → ImageFileConfig GUID → exact catalog dependency/container → Sprite PPtr → rehashed PNG",
+          "runtimeObserved": false
+        }
+      ],
+      "registered": true,
+      "runtimeObserved": false,
+      "boardSummary": {
+        "columns": 7,
+        "visibleRows": 10,
+        "sourceRows": 13,
+        "initialCells": 70,
+        "starterCacheItem": "pb_dogpark_tar_1",
+        "starterCacheCount": 5,
+        "scroll": [
+          {
+            "level": 12,
+            "scrollRows": 3
+          }
+        ],
+        "staticFogRows": 0,
+        "serverTablesRequired": [
+          "pureBoardItems",
+          "eventOrderScore",
+          "eventBookContents"
+        ],
+        "sourceRefs": [
+          "config-model-load",
+          "pureboard-model",
+          "pureboard-board-model",
+          "base-ui-board-init",
+          "base-ui-layer-load",
+          "base-ui-board-scroll",
+          "property-factory-components",
+          "pureboard-view-wrappers",
+          "PureboardBoardModelConfig_dogpark",
+          "PureboardBoardScrollConfig_dogpark",
+          "PureboardFogModelConfig_dogpark",
+          "PureboardBoardPaperRewardConfig_dogpark"
+        ]
+      },
+      "uniquePublishedPNGContents": 32
+    }
+  ],
+  "coverage": {
+    "fixtureTypes": 35,
+    "fixtureImageKeyRegistrations": 0,
+    "registeredGroups": 2,
+    "registeredExactTypes": 70,
+    "registeredExactImages": 70,
+    "newTypedNativeRecordsChecked": 342,
+    "currentServerObserved": false,
+    "uniquePublishedPNGContents": 32,
+    "exactSpriteIdentities": 70
+  },
+  "unknowns": [
+    "현재 서버·계정·hot-update 또는 동적으로 계산한 테이블 키는 실행 관측이 없어 미확인",
+    "property_bubble_1의 실제 획득·소비·보상 목적은 공급 코드에 직접 호출 체인이 없어 미확정",
+    "즉시 버블의 원작 활성 프레임·입자·시간 동기화는 미검수",
+    "등록된 실제 이벤트는 fixture의 alias가 아니며 현재 계정에 배정된 이벤트라는 뜻도 아님"
+  ],
+  "privateProofSHA256": "92875e1aba83d53cbf3aa30c85b203039b04f505b0e9fe5c596e7f84ab7f0f8e"
+}
