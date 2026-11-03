@@ -143,6 +143,16 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   click('[data-walk="play"]');assert.equal(w.document.querySelectorAll('.play-cell').length,63);click('[data-walk="generate"]');
   click('[data-walk="home"]');click('[data-walk="renovate"]');assert.match(w.document.querySelector('.experience-feedback').textContent,/골드 40개 필요/);
   click('[data-walk="reset"]');assert.ok(w.document.querySelector('[data-stage="loading"]'));
+  await go('world-atlas');
+  assert.equal(w.document.querySelectorAll('[data-atlas-card]').length,36);
+  assert.equal(w.document.querySelectorAll('.atlas-picture img').length,36,'loaded app data resolves the new map media');
+  const atlasMedia=w.document.querySelector('[data-atlas-card] [data-media-key]').dataset.mediaKey;
+  click(`[data-media-key="${atlasMedia}"]`);
+  assert.ok(w.document.querySelector('#media-dialog').hasAttribute('open'));
+  assert.match(w.document.querySelector('#media-content img').getAttribute('src'),/world-atlas/);
+  click('#close-media');
+  w.location.hash='world-atlas?tab=npc';await until(()=>w.document.querySelectorAll('[data-atlas-card]').length===50);
+  assert.equal(w.document.querySelectorAll('.atlas-picture img').length,50);
   media.matches=true;media.listener();
   assert.equal(w.document.querySelector('#sidebar').inert,true);
   click('#menu-toggle');assert.equal(w.document.querySelector('#menu-toggle').getAttribute('aria-expanded'),'true');
