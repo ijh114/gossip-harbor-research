@@ -3,7 +3,7 @@
   "reviewDate": "2026-11-03",
   "source": "docs/MASTER-CHECKLIST.md",
   "sourceHashPolicy": "UTF-8/LF",
-  "sourceSha256": "0ccb3dd8666195fc6a9ea4598dcbf7245e893ed938bc4cf31e1b350cc59403e4",
+  "sourceSha256": "b5a1e5e19dfb0e21c25e9bc284873df27848cc45cd79807215ba9f8ef849ee02",
   "states": [
     "완료",
     "부분",
@@ -773,25 +773,25 @@
     }
   ],
   "currentWork": {
-    "id": "2026-11-03-collection-right-outline",
+    "id": "2026-11-03-collection-visual-explorers",
     "date": "2026-11-03",
-    "title": "컬렉션 회상 버튼 삭제·우측 목차·스크롤 강조",
+    "title": "카드 도감 탭 분리·운영/루프/BM 인터랙티브 구조도",
     "items": [
       {
         "taskId": "1.01",
-        "summary": "카드 앨범 목차를 우측 sticky 열/모바일 접이식으로 변경. 현재 항목 강조·클릭 초점·상단 여백을 검사했으며 직접 브라우저 렌더 검수는 연결 비활성으로 미실시, 부분 유지."
+        "summary": "별도 카드 도감·운영 우선 목차, PC 구조도/모바일 번호 목록, 키보드·포커스·reduced-motion을 반영. 직접 브라우저 렌더 검수는 연결 비활성으로 미실시, 부분 유지."
       },
       {
         "taskId": "4.13",
-        "summary": "컬렉션 상단 회상 책 별도 기능 버튼과 중복 본문 목차 삭제. 주요6항목의 스크롤·이미지/접힘·크기 변화에 따른 현재 위치 강조와 경로 이탈 정리 구현."
+        "summary": "상단 카드 도감 탭·URL 분리와324카드 탐색 유지. 운영6단계·획득 분기·6노드 순환·483키 구성·BM4상황/결제 전후 구조도와 출처/미확정 표시 구현."
       },
       {
         "taskId": "8.01",
-        "summary": "수정된 컬렉션과 이번 작업 체크리스트를 동일 소스로 GitHub Pages·Cloudflare Git 배포에 반영."
+        "summary": "동일 소스의 신규 카드 도감 보기·시각화·이번 작업 체크리스트를 GitHub Pages와Cloudflare에 반영."
       },
       {
         "taskId": "8.02",
-        "summary": "우측 목차·스크롤 강조의 DOM/이벤트 검사, 전체 회귀·빌드·게시 경계와 양쪽 호스트 변경 파일 일치 검증. 직접 렌더 검수와 구분."
+        "summary": "탭/검색·단계/분기/루프/BM·수량 보존·스크롤·키보드 검사와 전체 회귀·빌드·게시 경계·배포 파일 대조. 직접 렌더 검수와 구분."
       }
     ]
   },

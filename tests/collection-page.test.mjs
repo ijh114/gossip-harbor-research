@@ -6,7 +6,7 @@ import {selectCollectionAssets,collectionResourceCSV,renderCollectionStudy,creat
 const collectionStudy=JSON.parse(await readFile(new URL('../src/data/collection-study.json',import.meta.url),'utf8'));
 test('collection distinguishes album, item book and recap and exposes rules, flow, sources and exact resource status',()=>{
  const dom=new JSDOM(renderCollectionStudy({collectionStudy})),doc=dom.window.document;
- assert.equal(doc.querySelector('h1').textContent,'컬렉션');assert.equal(doc.querySelectorAll('[data-collection-system]').length,2);
+ assert.equal(doc.querySelector('h1').textContent,'컬렉션');assert.equal(doc.querySelectorAll('[data-collection-system]').length,3);
  assert.ok(doc.querySelectorAll('[data-collection-step]').length>=10);assert.equal(doc.querySelectorAll('.collection-resource-table tbody tr').length,24);
  assert.ok(doc.body.textContent.includes('원격 Sprite 확보'));assert.ok(doc.body.textContent.includes('2026-08-28~2026-10-06'));
  for(const a of doc.querySelectorAll('.collection-source-links a'))assert.ok(collectionStudy.sources.some(s=>a.hash.endsWith(encodeURIComponent(s.id))));dom.window.close();

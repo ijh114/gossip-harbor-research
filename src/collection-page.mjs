@@ -1,5 +1,6 @@
 import {mediaFor,validMedia} from './visual-model.mjs';
 import {renderCollectionCards,renderCollectionOperations} from './collection-overview.mjs';
+import {normalizeCollectionVisualState,renderBMExplorer} from './collection-visuals.mjs';
 const list=x=>Array.isArray(x)?x:[];
 const e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const statusNames={'registered-only-image-needed':'그림 실물 필요','exact-local-Sprite':'APK Sprite 확보','registered-only-prefab-needed':'프리팹 실물 필요','exact-local-container':'APK 프리팹 확보','registered-only-audio-needed':'음원 실물 필요','exact-remote-Sprite':'원격 Sprite 확보','exact-remote-container':'원격 프리팹 확보','exact-remote-AudioClip':'원격 음원 확보'};
@@ -31,44 +32,64 @@ function official(data,study){
  const ref=study.officialReference;if(!ref)return '';
  return `<section class="collection-section collection-official"><h2>공식 외부 자료 · 과거 공개 기간</h2><p>APK 도움말의 확정 URL에서 읽은 공지입니다. 표기 기간은 <strong>2026-08-28~2026-10-06 UTC</strong>이며 현재 운영값·APK4.10.5의 동일 배정으로 검증하지 않았습니다.</p><a href="${e(ref.url)}" target="_blank" rel="noopener noreferrer">공식 카드 확률 안내 원문</a><div class="collection-pack-grid">${list(ref.packExamples).map(p=>`<article>${preview(data,p.mediaKey,{compact:true})}<h3>${e(p.title)}</h3><p>표기 획득 카드 ${e(p.drawCount)}장</p><details><summary>슬롯별 과거 공개 확률</summary>${list(p.draws).map(d=>`<p><strong>${e(d.positionLabel)}</strong><br>${list(d.rarityDistribution).map(r=>e(r.sourceDisplay)).join(' · ')}</p>`).join('')}<p>확률 설명 그룹 수와 실제 지급 카드 수는 다릅니다.</p></details></article>`).join('')}</div><details><summary>공식 자료의 시점·동일 버전 확인 범위</summary>${list(ref.boundaries).map(b=>`<p>${e(b)}</p>`).join('')}<p>HTML SHA-256 <code>${e(ref.htmlSha256)}</code><br>공개 script SHA-256 <code>${e(ref.scriptSha256)}</code></p></details></section>`;
 }
+export const COLLECTION_VIEWS=['album','cards','activity-book'];
+export function collectionViewFromHash(hash){
+ const params=new URLSearchParams(String(hash).split('?')[1]||''),view=params.get('view');
+ return COLLECTION_VIEWS.includes(view)?view:params.get('section')==='collection-card-gallery'?'cards':'album';
+}
 export function renderCollectionStudy(data,state={}){
  const d=data.collectionStudy;if(!d)return '<h1>컬렉션</h1><p>컬렉션 근거 자료를 준비하고 있습니다.</p>';
- state={system:'album',step:'',group:'all',status:'all',query:'',page:1,cardTheme:'moon',cardSet:'1',cardQuery:'',cardPage:1,...state};
- const system=list(d.systems).find(s=>s.id===state.system)||d.systems[0];state.system=system.id;
- const album=system.id==='album',hero=list(system.mediaKeys)[0];
- return `<section class="collection-study">
- <header class="studio-intro"><h1>컬렉션</h1><p>${e(d.summary)}</p></header>
- <nav class="collection-system-nav" aria-label="수집 콘텐츠 구분">${list(d.systems).map(s=>`<button type="button" class="button" data-collection-system="${e(s.id)}" aria-pressed="${s.id===system.id}">${e(s.title)}</button>`).join('')}</nav>
- <details class="collection-reference-details collection-capture-details"${album?'':' open'}><summary>실제 앨범 화면과 수집 콘텐츠 구분</summary><div class="collection-overview">${hero?preview(data,hero):''}<div><h2>${e(system.title)}</h2><p>${e(system.overview)}</p><dl class="collection-taxonomy">${list(d.taxonomy).map(t=>`<div><dt>${e(t.title)}</dt><dd>${e(t.description)}</dd></div>`).join('')}</dl><p class="collection-boundary">카드 앨범을 중심으로 분석합니다. 현재 계정의 시즌 배정·상품값·추첨 확률은 미확인입니다.</p></div></div></details>
- ${album?renderCollectionCards(data,state)+renderCollectionOperations(data,sourceLinks):''}
- <details class="collection-reference-details"><summary>콘텐츠 플로우 · 개봉·교환·회차의 상세 처리</summary>${flow(system,state.step)}</details>
+ state={system:'album',step:'',group:'all',status:'all',query:'',page:1,cardTheme:'moon',cardSet:'1',cardQuery:'',cardPage:1,...normalizeCollectionVisualState(),...state};
+ const mode=COLLECTION_VIEWS.includes(state.system)?state.system:'album',catalog=mode==='cards',album=mode==='album';
+ const system=list(d.systems).find(s=>s.id===(catalog?'album':mode))||d.systems[0],hero=list(system.mediaKeys)[0];
+ const labels=[['album','카드 컬렉션 · 앨범'],['cards','카드 컬렉션 도감'],['activity-book','활동 아이템 도감과의 차이']];
+ const header=`<header class="studio-intro"><h1>컬렉션</h1><p>${catalog?'두 테마의 카드 이미지를 세트별로 비교하고 이름으로 검색합니다. 운영·제작 수량·BM 분석은 카드 컬렉션 · 앨범 탭에서 확인하세요.':e(d.summary)}</p></header><nav class="collection-system-nav" aria-label="수집 콘텐츠 보기 선택">${labels.map(([id,title])=>`<button type="button" class="button" data-collection-system="${id}" aria-pressed="${id===mode}" aria-controls="collection-panel">${title}</button>`).join('')}</nav>`;
+ if(catalog)return `<section class="collection-study" data-collection-view="cards">${header}<div id="collection-panel">${renderCollectionCards(data,state)}<p class="collection-method-note">카드 성급·종류·활성 시즌은 현재 서버 배정값과 구분합니다. 아래 출처 링크는 앨범 분석 탭의 근거로 연결됩니다.</p>${sourceLinks(['image-config','localization','remote-retrieval'])}</div></section>`;
+ const capture=`<details class="collection-reference-details collection-capture-details"${album?'':' open'}><summary>실제 앨범 화면과 수집 콘텐츠 구분</summary><div class="collection-overview">${hero?preview(data,hero):''}<div><h2>${e(system.title)}</h2><p>${e(system.overview)}</p><dl class="collection-taxonomy">${list(d.taxonomy).map(t=>`<div><dt>${e(t.title)}</dt><dd>${e(t.description)}</dd></div>`).join('')}</dl><p class="collection-boundary">현재 계정의 시즌 배정·상품값·추첨 확률은 미확인입니다.</p></div></div></details>`;
+ const bmRows=list(system.monetization).map(m=>`<article class="collection-bm-row"><h3>${e(m.title)}</h3><p>${e(m.summary)}</p>${m.value?`<p><strong>구매·소비 가치</strong> · ${e(m.value)}</p>`:''}<dl><div><dt>진입·평가 조건</dt><dd>${e(m.trigger)}</dd></div><div><dt>운영값 확인 범위</dt><dd>${e(m.operationalValues)}</dd></div></dl>${m.details?`<details><summary>처리·재노출·복구 조건</summary><ul>${list(m.details).map(row=>`<li>${e(row)}</li>`).join('')}</ul></details>`:''}${sourceLinks(m.sourceRefs)}<div class="collection-small-gallery">${list(m.mediaKeys).map(k=>preview(data,k,{compact:true})).join('')}</div></article>`).join('')||'<p>카드 앨범과 다른 발견·해금·수령 기능입니다. 같은 과금 경로라고 일반화하지 않습니다.</p>';
+ return `<section class="collection-study" data-collection-view="${mode}">${header}<div id="collection-panel">
+ ${album?renderCollectionOperations(data,sourceLinks,state):''}
+ ${capture}
+ <details class="collection-reference-details"><summary>콘텐츠 플로우 · 원본 규칙의 상세 처리 순서</summary>${flow(system,state.step)}</details>
  <details class="collection-reference-details"><summary>핵심 규칙과 예외 · 정적 코드 분석</summary><section class="collection-section"><h2>핵심 규칙</h2><div class="collection-rules">${list(system.rules).map(r=>`<article><h3>${e(r.title)}</h3><p>${e(r.summary)}</p>${sourceLinks(r.sourceRefs)}</article>`).join('')}</div></section></details>
- <section class="collection-section" id="collection-bm" aria-labelledby="collection-bm-title"><h2 id="collection-bm-title" tabindex="-1">관련 BM · 구매 가치와 노출</h2><p>플레이 보상·중복 활용·선택권·완성 직전의 가치를 연결합니다. 모든 팩이 현금 전용 상품이라는 뜻은 아닙니다.</p>${list(system.monetization).map(m=>`<article class="collection-bm-row"><h3>${e(m.title)}</h3><p>${e(m.summary)}</p>${m.value?`<p><strong>구매·소비 가치</strong> · ${e(m.value)}</p>`:''}<dl><div><dt>진입·평가 조건</dt><dd>${e(m.trigger)}</dd></div><div><dt>운영값 확인 범위</dt><dd>${e(m.operationalValues)}</dd></div></dl>${m.details?`<details><summary>처리·재노출·복구 조건</summary><ul>${list(m.details).map(row=>`<li>${e(row)}</li>`).join('')}</ul></details>`:''}${sourceLinks(m.sourceRefs)}<div class="collection-small-gallery">${list(m.mediaKeys).map(k=>preview(data,k,{compact:true})).join('')}</div></article>`).join('')||'<p>카드 앨범과 다른 발견·해금·수령 기능입니다. 같은 과금 경로라고 일반화하지 않습니다.</p>'}${album&&d.operationalAnalysis?`<p class="collection-method-note">${e(d.operationalAnalysis.popupBoundary)}</p>${sourceLinks(['popup-priority','bundle-priority'])}`:''}</section>
+ <section class="collection-section" id="collection-bm" aria-labelledby="collection-bm-title"><h2 id="collection-bm-title" tabindex="-1">관련 BM · 상황에서 구매 가치까지</h2>${album?renderBMExplorer(data,state,sourceLinks):''}${album?`<details class="collection-reference-details"><summary>상품별 전체 조건·재노출·복구 분석</summary>${bmRows}</details>`:bmRows}${album&&d.operationalAnalysis?`<p class="collection-method-note">${e(d.operationalAnalysis.popupBoundary)}</p>${sourceLinks(['popup-priority','bundle-priority'])}`:''}</section>
  ${album?`<details class="collection-reference-details"><summary>팩 그림·공식 과거 확률 안내</summary>${official(data,d)}</details>`:''}
  <details class="collection-reference-details" id="collection-all-assets"><summary>전체 자산 목록 · 원본 치수·출처·CSV</summary>${resources(data,d,system,state)}</details>
  <section class="collection-section"><h2>확인 범위와 남은 자료</h2><ul>${list(system.unknowns).map(u=>`<li>${e(u)}</li>`).join('')}</ul>${list(d.boundaries).map(b=>`<p>${e(b)}</p>`).join('')}<a class="text-link" href="#checklist">전체 작업 · 동일 완료 기준 보기</a></section>
  <section class="collection-section"><h2>원본 근거</h2>${list(d.sources).map(s=>`<details class="collection-source" data-collection-source-id="${e(s.id)}"${state.source===s.id?' open':''}><summary>${e(s.id)} · ${e(s.kind)}</summary><p><code>${e(s.path||s.url)}</code>${s.lineStart?` · ${s.lineStart}~${s.lineEnd}행`:''}</p><p>SHA-256 <code>${e(s.sha256)}</code></p></details>`).join('')}</section>
- </section>`;
+ </div></section>`;
 }
 export function createCollectionStudy({getData,render,download}){
- const state={system:'album',step:'',group:'all',status:'all',query:'',page:1,cardTheme:'moon',cardSet:'1',cardQuery:'',cardPage:1};let source='';
+ const state={system:'album',step:'',group:'all',status:'all',query:'',page:1,cardTheme:'moon',cardSet:'1',cardQuery:'',cardPage:1,...normalizeCollectionVisualState()};let source='',lastSource='';
  function reveal(id){const target=document.getElementById(id);if(!target)return;if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView?.({block:'start',behavior:'instant'});(target.querySelector('h2,summary')||target).focus({preventScroll:true});}
+ function switchView(id){
+  if(!COLLECTION_VIEWS.includes(id))return;
+  Object.assign(state,{system:id,step:'',group:'all',status:'all',query:'',page:1});
+  const hash='#collection'+(id==='album'?'':'?view='+id),win=document.defaultView;
+  if(win.location.hash!==hash)win.history.pushState(null,'',hash);
+  render();document.querySelector(`[data-collection-system="${id}"]`)?.focus({preventScroll:true});
+  const nav=document.querySelector('.collection-system-nav'),rect=nav?.getBoundingClientRect();if(rect&&(rect.top<80||rect.bottom>win.innerHeight))nav.scrollIntoView?.({block:'start',behavior:'instant'});
+ }
+ function replacePreservingDetails(){const ids=[...document.querySelectorAll('.collection-study details[open][id]')].map(n=>n.id);render();for(const id of ids){const node=document.getElementById(id);if(node)node.open=true;}}
  return {
-  renderPage(){source=new URLSearchParams(location.hash.split('?')[1]||'').get('source')||'';return renderCollectionStudy(getData(),{...state,source});},
+  renderPage(){const params=new URLSearchParams(location.hash.split('?')[1]||'');source=params.get('source')||'';state.system=collectionViewFromHash(location.hash);return renderCollectionStudy(getData(),{...state,source});},
   handleClick(event){
-   const target=event.target.closest('[data-collection-system],[data-collection-step],[data-collection-page],[data-collection-export],[data-collection-card-page]');if(!target)return false;
+   const target=event.target.closest('[data-collection-system],[data-collection-step],[data-collection-page],[data-collection-export],[data-collection-card-page],[data-collection-viz]');if(!target)return false;if(target.disabled)return true;
    if(target.hasAttribute('data-collection-export')){download('gossip-harbor-collection-resources.csv',collectionResourceCSV(getData().collectionStudy),'text/csv');return true;}
-   if(target.dataset.collectionSystem)Object.assign(state,{system:target.dataset.collectionSystem,step:'',group:'all',status:'all',query:'',page:1});
-   else if(target.dataset.collectionStep)state.step=target.dataset.collectionStep;
-   else if(target.hasAttribute('data-collection-card-page'))state.cardPage=Number(target.dataset.collectionCardPage)||1;
-   else state.page=Number(target.dataset.collectionPage)||1;
-   // Preserve disclosures while replacing this route's DOM for a filter change.
-   const openIds=[...document.querySelectorAll('.collection-study details[open]')].filter(n=>n.id).map(n=>n.id);
-   const flowOpen=target.hasAttribute('data-collection-step');render();
-   for(const id of openIds){const node=document.getElementById(id);if(node)node.open=true;}
+   if(target.dataset.collectionSystem){switchView(target.dataset.collectionSystem);return true;}
+   if(target.hasAttribute('data-collection-viz')){
+    const key=target.dataset.collectionViz,value=target.dataset.value,phases=getData().collectionStudy.operationalAnalysis?.phases.length||6;
+    if(!['phase','flowPath','loopNode','bmCase','payment','resourcePart'].includes(key))return false;
+    if(key==='phase'){if(!Number.isInteger(Number(value))||Number(value)<0||Number(value)>=phases)return false;state.phase=Number(value);}
+    else {if(normalizeCollectionVisualState({[key]:value})[key]!==value)return false;state[key]=value;}
+    state.vizMotion=key;replacePreservingDetails();state.vizMotion='';
+    const controls=[...document.querySelectorAll('[data-collection-viz]')];
+    (controls.find(n=>!n.disabled&&n.dataset.collectionViz===key&&target.dataset.vizLabel&&n.dataset.vizLabel===target.dataset.vizLabel)||controls.find(n=>!n.disabled&&n.dataset.collectionViz===key&&n.dataset.value===value))?.focus({preventScroll:true});return true;
+   }
+   if(target.dataset.collectionStep)state.step=target.dataset.collectionStep;else if(target.hasAttribute('data-collection-card-page'))state.cardPage=Number(target.dataset.collectionCardPage)||1;else state.page=Number(target.dataset.collectionPage)||1;
+   const flowOpen=target.hasAttribute('data-collection-step');replacePreservingDetails();
    if(flowOpen){const button=[...document.querySelectorAll('[data-collection-step]')].find(n=>n.dataset.collectionStep===state.step);button?.closest('details')?.setAttribute('open','');button?.focus({preventScroll:true});}
-   if(target.hasAttribute('data-collection-card-page'))reveal('collection-card-gallery');
-   return true;
+   if(target.hasAttribute('data-collection-card-page'))reveal('collection-card-gallery');return true;
   },
   handleChange(event){
    const cardField=event.target.dataset.collectionCardFilter;
@@ -80,6 +101,10 @@ export function createCollectionStudy({getData,render,download}){
    const input=event.target,start=input.selectionStart,end=input.selectionEnd;state[card?'cardQuery':'query']=input.value;state[card?'cardPage':'page']=1;render();if(!card)document.getElementById('collection-all-assets').open=true;
    const next=document.querySelector(card?'[data-collection-card-query]':'[data-collection-query]');next?.focus({preventScroll:true});next?.setSelectionRange(start,end);return true;
   },
-  afterMount(){if(!source)return;const target=[...document.querySelectorAll('[data-collection-source-id]')].find(n=>n.dataset.collectionSourceId===source);if(!target)return;queueMicrotask(()=>{if(!target.isConnected)return;target.open=true;target.scrollIntoView?.({block:'start',behavior:'instant'});target.querySelector('summary')?.focus({preventScroll:true});});}
+  afterMount(){
+   const nav=document.querySelector('.collection-system-nav');
+   if(nav&&!nav.dataset.keyboardBound){nav.dataset.keyboardBound='true';nav.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;const buttons=[...nav.querySelectorAll('[data-collection-system]')],index=buttons.indexOf(event.target.closest('[data-collection-system]'));if(index<0)return;event.preventDefault();const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(index+(event.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;switchView(buttons[next].dataset.collectionSystem);});}
+   if(!source){lastSource='';return;}if(source===lastSource)return;const target=[...document.querySelectorAll('[data-collection-source-id]')].find(n=>n.dataset.collectionSourceId===source);if(!target)return;lastSource=source;queueMicrotask(()=>{if(!target.isConnected)return;target.open=true;target.scrollIntoView?.({block:'start',behavior:'instant'});target.querySelector('summary')?.focus({preventScroll:true});});
+  }
  };
 }

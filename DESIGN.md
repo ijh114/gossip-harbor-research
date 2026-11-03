@@ -1,6 +1,6 @@
 # Harbor Research reading system
 
-The collection album uses the shared reader outline with six curated section targets. At viewport widths of 1100px and above it sits in a 190px sticky right column; narrower screens use a collapsible outline above the article. Scroll position, image/layout changes and disclosure toggles keep exactly one current section highlighted. The long card gallery remains current until the next section crosses the header offset. The separate recap shortcut is omitted from the collection header.
+The collection has three views: album analysis, the separate card catalog at #collection?view=cards, and the activity item book comparison. Album analysis starts with operations and has six curated targets in the shared sticky right outline (190px at1100px+; collapsed above the article below that). The catalog keeps all324 card fronts, search and media enlargement without the analysis outline. Operations, acquisition branches, the six-node SVG loop, exact resource composition and four BM cases use keyboard-operable selectors with textual explanations and source links. Motion is limited to180ms selection feedback and honors reduced motion; diagrams do not run game rewards or imply live prices/probabilities.
 
 This is a readability refinement of the existing notebook. Retain its forest green identity, restrained warm notices, research content and interactive laboratories. Readers compare game rules with source evidence; comprehension and repeat visits take priority over decorative presentation.
 

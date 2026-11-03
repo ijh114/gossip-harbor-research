@@ -20,7 +20,7 @@ export function searchNotebook(data,query){
 export function createReader({getData,getRoute,clearQuery,render,toast}){
  const view=document.querySelector('#app-view'), search=document.querySelector('#global-search');
  const results=document.querySelector('#search-results'), outline=document.querySelector('#page-outline');
- let detailsOpen=false,lastRoute='',observer,searchTimer,collectionMode=false,collectionSpyCleanup=()=>{};
+ let detailsOpen=false,lastRoute='',observer,searchTimer,collectionMode=false,collectionSpyCleanup=()=>{},lastCollectionHash='';
  try{document.body.dataset.textSize=window.localStorage.getItem('harbor-text-size')==='large'?'large':'normal';}catch{/* Storage can be unavailable in private contexts. */}
  function closeSearch(){clearTimeout(searchTimer);results.hidden=true;search.setAttribute('aria-expanded','false');}
  function updateSearch(){
@@ -49,7 +49,7 @@ export function createReader({getData,getRoute,clearQuery,render,toast}){
  function afterRender(){
   observer?.disconnect();collectionSpyCleanup();collectionSpyCleanup=()=>{};
   const route=getRoute(),changed=route!==lastRoute;lastRoute=route;
-  const wasCollection=collectionMode;collectionMode=route==='collection'&&Boolean(view.querySelector('#collection-card-gallery'));
+  const wasCollection=collectionMode;collectionMode=route==='collection'&&Boolean(view.querySelector('[data-collection-view="album"]'));
   view.parentElement.classList.toggle('collection-reading',collectionMode);
   for(const d of view.querySelectorAll('.finding-detail'))d.open=detailsOpen;
   const headings=[...view.querySelectorAll('h2')].filter(h=>!h.closest('.domain-summary-grid,.trace-result,.activity-result'));
@@ -65,7 +65,9 @@ export function createReader({getData,getRoute,clearQuery,render,toast}){
   for(const wrap of view.querySelectorAll('.table-wrap')){wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label',wrap.querySelector('caption')?.textContent||'데이터 표. 좌우로 스크롤할 수 있습니다.');}
   document.querySelector('#reading-status').textContent=DOMAIN_DEFS.find(d=>d.id===route)?'요약 → 구조와 수치 → 규칙과 근거':'게임 시스템 연구 위키';
   if(VISUAL_ROUTES.includes(route)&&!collectionMode){outline.hidden=true;view.parentElement.classList.add('no-outline');document.querySelector('#reading-status').textContent='시각 탐색 · 웹 시연과 실제 캡처 구분';}
-  if(changed)closeSearch();followLocation();
+  if(changed)closeSearch();
+  if(route==='collection'){if(changed||lastCollectionHash!==location.hash){lastCollectionHash=location.hash;followLocation();}}
+  else {lastCollectionHash='';followLocation();}
  }
  async function copyLink(finding){
   const url=new URL(window.location.href),data=getData();
@@ -81,12 +83,12 @@ export function createReader({getData,getRoute,clearQuery,render,toast}){
   const target=event.target.closest('button,a');if(!target)return;
   if(target.hasAttribute('data-search-result')){event.preventDefault();clearQuery();closeSearch();const hash=target.getAttribute('href');if(location.hash===hash){render();followLocation();}else location.hash=hash;return;}
   if(target.hasAttribute('data-share-finding')){copyLink(target.dataset.shareFinding);return;}
-  if(target.dataset.outlineTarget){event.preventDefault();const node=document.getElementById(target.dataset.outlineTarget);if(node)readHeading(node);history.replaceState(null,'',target.getAttribute('href'));return;}
+  if(target.dataset.outlineTarget){event.preventDefault();const node=document.getElementById(target.dataset.outlineTarget);if(node)readHeading(node);history.replaceState(null,'',target.getAttribute('href'));if(getRoute()==='collection')lastCollectionHash=location.hash;return;}
   const action=target.dataset.action;
   if(action==='text-size'){document.body.dataset.textSize=document.body.dataset.textSize==='large'?'normal':'large';try{window.localStorage.setItem('harbor-text-size',document.body.dataset.textSize);}catch{}target.setAttribute('aria-pressed',String(document.body.dataset.textSize==='large'));target.textContent=document.body.dataset.textSize==='large'?'기본 글씨':'글씨 크게';}
   if(action==='toggle-details'){detailsOpen=!detailsOpen;for(const d of view.querySelectorAll('.finding-detail'))d.open=detailsOpen;target.textContent=detailsOpen?'상세 모두 접기':'상세 모두 펼치기';target.setAttribute('aria-pressed',String(detailsOpen));}
   if(action==='copy-page')copyLink();
-  if(action==='page-top'){event.preventDefault();history.replaceState(null,'','#'+getRoute());window.scrollTo({top:0});document.querySelector('#main').focus({preventScroll:true});}
+  if(action==='page-top'){event.preventDefault();history.replaceState(null,'','#'+getRoute());if(getRoute()==='collection')lastCollectionHash=location.hash;window.scrollTo({top:0});document.querySelector('#main').focus({preventScroll:true});}
   if(action==='close-search'){closeSearch();search.focus();}
   if(action==='search-all'){closeSearch();location.hash='wiki';render();}
  });

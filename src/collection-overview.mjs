@@ -1,4 +1,5 @@
 import {mediaFor,validMedia} from './visual-model.mjs';
+import {renderOperationExplorer,renderContentFlow,renderLoopExplorer,renderResourceChart} from './collection-visuals.mjs';
 
 const list=value=>Array.isArray(value)?value:[];
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -29,7 +30,7 @@ export function renderCollectionCards(data,state={}){
  const result=selectCollectionCards(data.collectionStudy,state);
  const selected=result.sets.find(s=>s.id===result.set),cover=selected&&mediaFor(data,selected.coverKey);
  return `<section class="collection-section collection-card-catalog" id="collection-card-gallery" aria-labelledby="collection-card-title">
- <h2 id="collection-card-title" tabindex="-1">카드 이미지 도감</h2>
+ <h2 id="collection-card-title" tabindex="-1">카드 컬렉션 도감</h2>
  <p>두 테마의 카드 앞면 ${result.totalAcrossThemes}개를 세트별로 비교합니다. 이미지를 누르면 확대됩니다. 원본 카탈로그에 연결해 확보한 자산이며, 현재 활성 시즌·성급 배정은 미확인입니다.</p>
  <div class="collection-card-controls">
  <label>시즌 테마<select data-collection-card-filter="cardTheme">${result.themes.map(t=>`<option value="${escape(t.id)}"${t.id===result.theme?.id?' selected':''}>${escape(t.name)}</option>`).join('')}</select></label>
@@ -51,29 +52,28 @@ export function collectionResourceSummary(study){
  });
 }
 
-export function renderCollectionOperations(data,sourceLinks){
- const study=data.collectionStudy,analysis=study.operationalAnalysis;
- if(!analysis)return '';
- const themeLabel=list(study.themes).map(t=>escape(t.name)).join(' / ');
- const shared=list(analysis.sharedResources).map(id=>list(study.resourceGroups).find(g=>g.id===id)).filter(Boolean);
+export function renderCollectionOperations(data,sourceLinks,state={}){
+ const study=data.collectionStudy,analysis=study.operationalAnalysis;if(!analysis)return '';
+ const themeLabel=list(study.themes).map(t=>escape(t.name)).join(' / '),shared=list(analysis.sharedResources).map(id=>list(study.resourceGroups).find(g=>g.id===id)).filter(Boolean);
  return `<section class="collection-section" id="collection-operation" aria-labelledby="collection-operation-title">
- <h2 id="collection-operation-title" tabindex="-1">어떻게 운용하는가</h2><p>${escape(analysis.summary)}</p>
- <ol class="collection-operation-timeline">${analysis.phases.map(p=>`<li><h3>${escape(p.title)}</h3><p>${escape(p.player)}</p><dl><dt>운영에서 조절하는 것</dt><dd>${escape(p.control)}</dd></dl></li>`).join('')}</ol>
- <p class="collection-method-note">${escape(analysis.phaseBoundary)}</p>${sourceLinks(analysis.sourceRefs)}
+ <h2 id="collection-operation-title" tabindex="-1">운영 방식 · 시즌의 한 바퀴</h2><p>${escape(analysis.summary)}</p>
+ ${renderOperationExplorer(data,state,sourceLinks)}
+ <p class="collection-method-note">${escape(analysis.phaseBoundary)}</p>
+ <details class="collection-reference-details"><summary>전체 운영 단계를 글로 비교하기</summary><ol class="collection-operation-timeline">${analysis.phases.map(p=>`<li><h3>${escape(p.title)}</h3><p>${escape(p.player)}</p><dl><dt>운영에서 조절하는 것</dt><dd>${escape(p.control)}</dd></dl></li>`).join('')}</ol></details>
+ </section>
+ ${renderContentFlow(data,state,sourceLinks)}
+ <section class="collection-section" id="collection-play-loop" aria-labelledby="collection-play-loop-title">
+ <h2 id="collection-play-loop-title" tabindex="-1">플레이 루프 · 보상이 다음 플레이로</h2><p>${escape(analysis.loopSummary)}</p>
+ ${renderLoopExplorer(data,state,sourceLinks)}
+ <details class="collection-reference-details"><summary>세트 완성·중복 활용·이벤트 연결의 작은 루프</summary><div class="collection-loop-rows">${analysis.subLoops.map(loop=>`<article><h3>${escape(loop.title)}</h3><p>${escape(loop.path)}</p><p>${escape(loop.purpose)}</p></article>`).join('')}</div></details>
+ <p class="collection-method-note">실제 보상량·무료 완성률·완성까지 걸리는 시간은 서버 운영표와 플레이 검증이 필요합니다.</p>
  </section>
  <section class="collection-section" id="collection-resource-summary" aria-labelledby="collection-resource-summary-title">
- <h2 id="collection-resource-summary-title" tabindex="-1">리소스 개수와 시즌 제작량</h2>
- <p>${themeLabel}의 확보 자산을 기준으로 계산했습니다. 등록 키 수와 실제 활성 카드 수·신규 제작 수량을 구분합니다.</p>
- <div class="table-wrap" tabindex="0" role="region" aria-label="테마별 카드 리소스 수량"><table class="collection-count-table"><thead><tr><th scope="col">리소스</th>${study.themes.map(t=>`<th scope="col">${escape(t.name)}</th>`).join('')}<th scope="col">합계</th></tr></thead><tbody>${collectionResourceSummary(study).map(r=>`<tr><th scope="row">${escape(r.title)}</th>${r.perTheme.map(n=>`<td>${n}개</td>`).join('')}<td>${r.total}개</td></tr>`).join('')}</tbody></table></div>
- <dl class="collection-shared-resources">${shared.map(g=>`<div><dt>${escape(g.title)}</dt><dd>${g.quantity} ${escape(g.unit)}</dd></div>`).join('')}</dl>
+ <h2 id="collection-resource-summary-title" tabindex="-1">리소스 수량 · 무엇을 얼마나 만드는가</h2>
+ ${renderResourceChart(data,state)}
+ <details class="collection-reference-details"><summary>테마별 원화·공용 부품 수량표</summary><p>${themeLabel}의 확보 자산입니다.</p><div class="table-wrap" tabindex="0" role="region" aria-label="테마별 카드 리소스 수량"><table class="collection-count-table"><thead><tr><th scope="col">리소스</th>${study.themes.map(t=>`<th scope="col">${escape(t.name)}</th>`).join('')}<th scope="col">합계</th></tr></thead><tbody>${collectionResourceSummary(study).map(r=>`<tr><th scope="row">${escape(r.title)}</th>${r.perTheme.map(n=>`<td>${n}개</td>`).join('')}<td>${r.total}개</td></tr>`).join('')}</tbody></table></div><dl class="collection-shared-resources">${shared.map(g=>`<div><dt>${escape(g.title)}</dt><dd>${g.quantity} ${escape(g.unit)}</dd></div>`).join('')}</dl></details>
  <p class="collection-method-note">${escape(analysis.resourceBoundary)}</p>
  <p class="collection-production-formula"><strong>신규 시즌 카드 원화 = 선택한 세트 수 × 세트당 카드 수</strong><br>세트 표지·테마 장식을 추가하고 공용 프레임·NEW·중복 수량·개봉 효과를 재사용합니다. 신규 게임의 제작 산식이며 원작 확정 발주 수량은 아닙니다.</p>
- <a class="text-link" href="#production-assets">제작 리소스 페이지에서 범위 정하기</a>${sourceLinks(['image-config','remote-retrieval'])}
- </section>
- <section class="collection-section" id="collection-play-loop" aria-labelledby="collection-play-loop-title">
- <h2 id="collection-play-loop-title" tabindex="-1">플레이 루프</h2><p>${escape(analysis.loopSummary)}</p>
- <ol class="collection-play-loop">${analysis.playLoop.map(step=>`<li>${escape(step)}</li>`).join('')}</ol>
- <div class="collection-loop-rows">${analysis.subLoops.map(loop=>`<article><h3>${escape(loop.title)}</h3><p>${escape(loop.path)}</p><p>${escape(loop.purpose)}</p></article>`).join('')}</div>
- <p class="collection-method-note">보상으로 복귀하는 흐름은 구조 분석입니다. 실제 보상량·무료 완성률·완성까지 걸리는 시간은 서버 운영표와 플레이 검증이 필요합니다.</p>${sourceLinks(['order-pack','acquire','recycle','upgrade'])}
+ <p><a class="text-link" href="#collection?view=cards">카드 컬렉션 도감에서 이미지 보기</a> · <a class="text-link" href="#production-assets">제작 범위 정하기</a></p>${sourceLinks(['image-config','remote-retrieval'])}
  </section>`;
 }

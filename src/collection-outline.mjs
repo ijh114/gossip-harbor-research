@@ -1,8 +1,8 @@
 export const COLLECTION_OUTLINE=[
- ['collection-card-gallery','카드 이미지'],
  ['collection-operation','운영 방식'],
- ['collection-resource-summary','리소스 수량'],
+ ['collection-content-flow','콘텐츠 플로우'],
  ['collection-play-loop','플레이 루프'],
+ ['collection-resource-summary','리소스 수량'],
  ['collection-bm','관련 BM'],
  ['collection-all-assets','전체 자산·CSV']
 ];

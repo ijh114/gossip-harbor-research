@@ -45,11 +45,11 @@ test('resource summary distinguishes per-theme art from shared assets and preser
 });
 
 test('gallery uses actual media keys, relative lazy images, labels and escaped card search',()=>{
- const dom=new JSDOM(renderCollectionStudy(data,{cardQuery:'"><script>alert(1)</script>'}));
+ const dom=new JSDOM(renderCollectionStudy(data,{system:'cards',cardQuery:'"><script>alert(1)</script>'}));
  assert.equal(dom.window.document.querySelector('script'),null);
  assert.match(dom.window.document.querySelector('.collection-card-catalog').textContent,/일치하는 카드가 없습니다/);
  dom.window.close();
- const real=new JSDOM(renderCollectionStudy(data));
+ const real=new JSDOM(renderCollectionStudy(data,{system:'cards'}));
  assert.equal(real.window.document.querySelectorAll('.collection-card-figure').length,9);
  for(const image of real.window.document.querySelectorAll('.collection-card-grid img')){assert.ok(image.src.startsWith('./assets/media/'));assert.equal(image.getAttribute('loading'),'lazy');assert.ok(image.alt);}
  for(const button of real.window.document.querySelectorAll('.collection-card-grid [data-media-key]'))assert.ok(collectionStudy.mediaEntries.some(m=>m.key===button.dataset.mediaKey));
@@ -62,6 +62,7 @@ test('card controls switch season, search with focus preserved, paginate and kee
  try{
   let controller;const render=()=>{dom.window.document.querySelector('main').innerHTML=controller.renderPage();};
   controller=createCollectionStudy({getData:()=>data,render,download:()=>{}});render();const doc=dom.window.document;
+  controller.handleClick({target:doc.querySelector('[data-collection-system="cards"]')});
   const theme=doc.querySelector('[data-collection-card-filter="cardTheme"]');theme.value='halloween';assert.equal(controller.handleChange({target:theme}),true);
   assert.match(doc.querySelector('.collection-card-grid [data-media-key]').dataset.mediaKey,/Ahalloween_/);
   const set=doc.querySelector('[data-collection-card-filter="cardSet"]');set.value='all';controller.handleChange({target:set});
