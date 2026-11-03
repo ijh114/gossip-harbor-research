@@ -14,6 +14,8 @@ const state=x=>({...ATLAS_DEFAULTS,...x});
 
 test('atlas inventories exact model/prefab populations and preserves no-static-image records',()=>{
  assert.equal(d.originalRuntimeObserved,false);assert.equal(d.mapEntries.length,9094);assert.equal(new Set(d.mapEntries.map(x=>x.id)).size,9094);
+ assert.equal(d.mapProjectionRevision,'depth2');
+ for(const m of d.mediaEntries)if(m.src.startsWith('./assets/media/world-atlas/map/'))assert.match(m.src,/-depth2\.webp$/,'obsolete map cache URLs must not return');
  assert.equal(d.mapEntries.filter(x=>x.format==='model').length,944);assert.equal(d.mapEntries.filter(x=>x.format==='prefab').length,8150);
  assert.equal(d.mapEntries.filter(x=>x.mediaKey).length,9030);assert.equal(d.mapEntries.filter(x=>!x.mediaKey).length,64);
  assert.ok(d.mapEntries.filter(x=>x.format==='model').every(x=>x.mediaKey));

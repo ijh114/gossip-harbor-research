@@ -11,6 +11,7 @@ if(!validItemResolutionFollowup(data['item-resolution-followup'])||!validRegiste
 const spine=data['spine-motion-study'];
 if(spine.summary.fullByteParses!==654||spine.clips.length!==694||spine.summary.projectedAnimations!==694||spine.summary.omittedUnsupported!==0||spine.summary.originalRuntimeObserved!==false)throw Error('Spine source/renderer boundary changed');
 const atlas=data['world-atlas'];
+if(atlas.mapProjectionRevision!=='depth2'||atlas.mediaEntries.some(m=>m.src.startsWith('./assets/media/world-atlas/map/')&&!m.src.endsWith('-depth2.webp')))throw Error('Stale map projection/cache revision');
 if(atlas.originalRuntimeObserved!==false||atlas.mapEntries.length!==9094||atlas.mapEntries.filter(r=>r.mediaKey).length!==9030||atlas.roles.length!==50||atlas.motions.length!==903||atlas.motions.filter(r=>r.staticOnly).length!==2)throw Error('World atlas coverage or source/runtime boundary changed');
 const files=new Map();
 function add(src,sha){if(!/^\.\/assets\/media\/[\w./-]+\.(png|jpg|jpeg|mp4|gif|webp|wav|mp3)$/.test(src)||src.includes('..')||!/^[a-f0-9]{64}$/.test(sha))throw Error('Invalid research asset identity '+src);if(files.has(src)&&files.get(src)!==sha)throw Error('Conflicting research asset hash '+src);files.set(src,sha);}
