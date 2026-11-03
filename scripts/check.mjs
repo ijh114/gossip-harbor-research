@@ -1,3 +1,4 @@
+import {estimateWorldAssets} from '../src/world-asset-plan.mjs';
 import {validActivitySeasonConfig} from '../src/activity-season.mjs';
 import {activityConfigRevision} from '../src/activity-config.mjs';
 import {readFile,readdir,stat} from 'node:fs/promises';
@@ -46,6 +47,12 @@ if(progress.natural.configRevision!==play.revision||progress.fixed16.configRevis
 if(progress.natural.assistance.aidActions!==0||progress.natural.assistance.paidEnergyPurchases!==0||progress.fixed16.final.fixedDone!==16)throw new Error('Natural growth or fixed-order replay is incomplete');
 const production=JSON.parse(await readFile('dist/data/production-assets.json','utf8'));
 const auditData=JSON.parse(await readFile('dist/data/media-audit.json','utf8'));
+const worldAssets=JSON.parse(await readFile('dist/data/world-asset-study.json','utf8'));
+if(worldAssets.originalRuntimeObserved!==false||worldAssets.originalLaunchScopeKnown!==false||worldAssets.npc.roles.length!==44||worldAssets.npc.roles.reduce((n,r)=>n+r.animations.length,0)!==888||worldAssets.map.registrations.physicallyBoundRows!==8150)throw new Error('Invalid world asset evidence boundary');
+for(const preset of worldAssets.presets)if(!estimateWorldAssets(preset.inputs).valid)throw new Error('Invalid world proposal '+preset.id);
+for(const src of Object.values(worldAssets.downloads)){if(!/^\.\/assets\/reports\/world-[\w-]+\.csv$/.test(src))throw new Error('Invalid world report path');await stat(path.join('dist',src));}
+console.log('Verified world asset counts, 44 role/888 motion references, six shared-skeleton customer forms and separate proposed production calculator.');
+
 if(production.targetVersion!==data.meta.version||production.rows.length!==43||production.meta.defaultPreset!=='launch')throw new Error('Invalid production request inventory');
 for(const row of production.rows){if(!row.observed?.summary||!row.proposal?.dimensions||!row.sources?.length)throw new Error('Missing original/proposed specification boundary: '+row.id);for(const key of row.referenceKeys)if(!media.entries.some(m=>m.key===key))throw new Error('Unknown production reference: '+key);}
 if(auditData.videos.length!==113||auditData.summary.inScopeVideos!==110||auditData.summary.excludedVideos!==3)throw new Error('Invalid video source boundary');

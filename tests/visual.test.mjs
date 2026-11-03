@@ -24,7 +24,7 @@ test('visual index covers every curated item declaration and UI mapping, with se
 test('all legacy documents are reachable under the research tree',()=>{
  const dom=new JSDOM(renderNavigation());const research=dom.window.document.querySelector('[data-nav-group="research"]');
  for(const route of RESEARCH_ROUTES)assert.ok(research.querySelector(`[data-route="${route}"]`),route);
- assert.equal(dom.window.document.querySelectorAll('[data-nav-group]').length,3);dom.window.close();
+ assert.equal(dom.window.document.querySelectorAll('[data-nav-group]').length,4);dom.window.close();
 });
 test('each motion sample and UI region links to an existing research finding',async()=>{
  const base=JSON.parse(await readFile(new URL('../src/data/research.json',import.meta.url)));
