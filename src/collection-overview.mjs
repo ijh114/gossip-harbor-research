@@ -77,7 +77,3 @@ export function renderCollectionOperations(data,sourceLinks){
  <p class="collection-method-note">보상으로 복귀하는 흐름은 구조 분석입니다. 실제 보상량·무료 완성률·완성까지 걸리는 시간은 서버 운영표와 플레이 검증이 필요합니다.</p>${sourceLinks(['order-pack','acquire','recycle','upgrade'])}
  </section>`;
 }
-
-export function renderCollectionSectionNav(){
- return `<nav class="collection-section-nav" aria-label="컬렉션 페이지 바로가기">${[['collection-card-gallery','카드 이미지'],['collection-operation','운영 방식'],['collection-resource-summary','리소스 수량'],['collection-play-loop','플레이 루프'],['collection-bm','관련 BM'],['collection-all-assets','전체 자산·CSV']].map(([id,label])=>`<button type="button" data-collection-jump="${id}">${label}</button>`).join('')}</nav>`;
-}

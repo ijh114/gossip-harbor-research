@@ -1,5 +1,7 @@
 # Harbor Research reading system
 
+The collection album uses the shared reader outline with six curated section targets. At viewport widths of 1100px and above it sits in a 190px sticky right column; narrower screens use a collapsible outline above the article. Scroll position, image/layout changes and disclosure toggles keep exactly one current section highlighted. The long card gallery remains current until the next section crosses the header offset. The separate recap shortcut is omitted from the collection header.
+
 This is a readability refinement of the existing notebook. Retain its forest green identity, restrained warm notices, research content and interactive laboratories. Readers compare game rules with source evidence; comprehension and repeat visits take priority over decorative presentation.
 
 - Surface modes: chapter/wiki pages **Read**; catalog and simulators **Operate**.

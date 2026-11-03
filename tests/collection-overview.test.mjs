@@ -73,13 +73,13 @@ test('card controls switch season, search with focus preserved, paginate and kee
  }finally{Object.assign(globalThis,previous);dom.window.close();}
 });
 
-test('asset disclosure opens on navigation and stays usable while filtering and paginating',()=>{
+test('asset disclosure stays usable while filtering and paginating',()=>{
  const dom=new JSDOM('<main></main>',{url:'https://example.test/#collection'});
  const previous={document:globalThis.document,location:globalThis.location};Object.assign(globalThis,{document:dom.window.document,location:dom.window.location});
  try{
   let controller;const render=()=>{dom.window.document.querySelector('main').innerHTML=controller.renderPage();};
   controller=createCollectionStudy({getData:()=>data,render,download:()=>{}});render();const doc=dom.window.document;
-  controller.handleClick({target:doc.querySelector('[data-collection-jump="collection-all-assets"]')});assert.equal(doc.getElementById('collection-all-assets').open,true);
+  doc.getElementById('collection-all-assets').open=true;
   controller.handleClick({target:doc.querySelector('[data-collection-page="2"]')});assert.equal(doc.getElementById('collection-all-assets').open,true);
   const field=doc.querySelector('[data-collection-filter="group"]');field.value='pack-icons';controller.handleChange({target:field});assert.equal(doc.getElementById('collection-all-assets').open,true);assert.equal(doc.querySelectorAll('.collection-resource-table tbody tr').length,24);
  }finally{Object.assign(globalThis,previous);dom.window.close();}

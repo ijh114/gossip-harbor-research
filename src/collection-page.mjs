@@ -1,5 +1,5 @@
 import {mediaFor,validMedia} from './visual-model.mjs';
-import {renderCollectionCards,renderCollectionOperations,renderCollectionSectionNav} from './collection-overview.mjs';
+import {renderCollectionCards,renderCollectionOperations} from './collection-overview.mjs';
 const list=x=>Array.isArray(x)?x:[];
 const e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const statusNames={'registered-only-image-needed':'그림 실물 필요','exact-local-Sprite':'APK Sprite 확보','registered-only-prefab-needed':'프리팹 실물 필요','exact-local-container':'APK 프리팹 확보','registered-only-audio-needed':'음원 실물 필요','exact-remote-Sprite':'원격 Sprite 확보','exact-remote-container':'원격 프리팹 확보','exact-remote-AudioClip':'원격 음원 확보'};
@@ -38,8 +38,7 @@ export function renderCollectionStudy(data,state={}){
  const album=system.id==='album',hero=list(system.mediaKeys)[0];
  return `<section class="collection-study">
  <header class="studio-intro"><h1>컬렉션</h1><p>${e(d.summary)}</p></header>
- <nav class="collection-system-nav" aria-label="수집 콘텐츠 구분">${list(d.systems).map(s=>`<button type="button" class="button" data-collection-system="${e(s.id)}" aria-pressed="${s.id===system.id}">${e(s.title)}</button>`).join('')}<a class="button" href="#experience">스토리 회상 책 · 별도 기능</a></nav>
- ${album?renderCollectionSectionNav():''}
+ <nav class="collection-system-nav" aria-label="수집 콘텐츠 구분">${list(d.systems).map(s=>`<button type="button" class="button" data-collection-system="${e(s.id)}" aria-pressed="${s.id===system.id}">${e(s.title)}</button>`).join('')}</nav>
  <details class="collection-reference-details collection-capture-details"${album?'':' open'}><summary>실제 앨범 화면과 수집 콘텐츠 구분</summary><div class="collection-overview">${hero?preview(data,hero):''}<div><h2>${e(system.title)}</h2><p>${e(system.overview)}</p><dl class="collection-taxonomy">${list(d.taxonomy).map(t=>`<div><dt>${e(t.title)}</dt><dd>${e(t.description)}</dd></div>`).join('')}</dl><p class="collection-boundary">카드 앨범을 중심으로 분석합니다. 현재 계정의 시즌 배정·상품값·추첨 확률은 미확인입니다.</p></div></div></details>
  ${album?renderCollectionCards(data,state)+renderCollectionOperations(data,sourceLinks):''}
  <details class="collection-reference-details"><summary>콘텐츠 플로우 · 개봉·교환·회차의 상세 처리</summary>${flow(system,state.step)}</details>
@@ -57,8 +56,7 @@ export function createCollectionStudy({getData,render,download}){
  return {
   renderPage(){source=new URLSearchParams(location.hash.split('?')[1]||'').get('source')||'';return renderCollectionStudy(getData(),{...state,source});},
   handleClick(event){
-   const target=event.target.closest('[data-collection-system],[data-collection-step],[data-collection-page],[data-collection-export],[data-collection-card-page],[data-collection-jump]');if(!target)return false;
-   if(target.hasAttribute('data-collection-jump')){reveal(target.dataset.collectionJump);return true;}
+   const target=event.target.closest('[data-collection-system],[data-collection-step],[data-collection-page],[data-collection-export],[data-collection-card-page]');if(!target)return false;
    if(target.hasAttribute('data-collection-export')){download('gossip-harbor-collection-resources.csv',collectionResourceCSV(getData().collectionStudy),'text/csv');return true;}
    if(target.dataset.collectionSystem)Object.assign(state,{system:target.dataset.collectionSystem,step:'',group:'all',status:'all',query:'',page:1});
    else if(target.dataset.collectionStep)state.step=target.dataset.collectionStep;

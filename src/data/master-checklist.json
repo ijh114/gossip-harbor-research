@@ -3,7 +3,7 @@
   "reviewDate": "2026-11-03",
   "source": "docs/MASTER-CHECKLIST.md",
   "sourceHashPolicy": "UTF-8/LF",
-  "sourceSha256": "a560c063bcf9c72a6e5acd12b9d636ed78aff13960aca3ee8486f05bd4040d7e",
+  "sourceSha256": "0ccb3dd8666195fc6a9ea4598dcbf7245e893ed938bc4cf31e1b350cc59403e4",
   "states": [
     "완료",
     "부분",
@@ -773,25 +773,25 @@
     }
   ],
   "currentWork": {
-    "id": "2026-11-03-collection-operation-gallery",
+    "id": "2026-11-03-collection-right-outline",
     "date": "2026-11-03",
-    "title": "컬렉션 카드 도감·운영 분석 웹 반영과 배포",
+    "title": "컬렉션 회상 버튼 삭제·우측 목차·스크롤 강조",
     "items": [
       {
         "taskId": "1.01",
-        "summary": "신규 컬렉션의 PC3열/모바일2열·표 내부 스크롤·라벨·키보드 초점·명암 토큰을 점검. 로컬 브라우저 비활성으로 직접 PC/모바일 렌더·터치 검수는 미실시이며 부분 상태 유지."
+        "summary": "카드 앨범 목차를 우측 sticky 열/모바일 접이식으로 변경. 현재 항목 강조·클릭 초점·상단 여백을 검사했으며 직접 브라우저 렌더 검수는 연결 비활성으로 미실시, 부분 유지."
       },
       {
         "taskId": "4.13",
-        "summary": "두 테마324카드의 세트/한글 검색/확대/페이지 도감과 운영·리소스 수량·콘텐츠 흐름·플레이 루프·맞춤 카드/진행 팩 BM 분석,58개 선별 출처 연결."
+        "summary": "컬렉션 상단 회상 책 별도 기능 버튼과 중복 본문 목차 삭제. 주요6항목의 스크롤·이미지/접힘·크기 변화에 따른 현재 위치 강조와 경로 이탈 정리 구현."
       },
       {
         "taskId": "8.01",
-        "summary": "같은 소스의 컬렉션 페이지와 이번 작업 체크리스트를 GitHub Pages·Cloudflare Git 배포에 반영."
+        "summary": "수정된 컬렉션과 이번 작업 체크리스트를 동일 소스로 GitHub Pages·Cloudflare Git 배포에 반영."
       },
       {
         "taskId": "8.02",
-        "summary": "전체827검사·컬렉션17검사, 정적 빌드·게시 경계·출처/이미지 검증. Windows 정적 복사를 병렬 native copy로 변경. 직접 화면 검수 미실시는1.01에 유지."
+        "summary": "우측 목차·스크롤 강조의 DOM/이벤트 검사, 전체 회귀·빌드·게시 경계와 양쪽 호스트 변경 파일 일치 검증. 직접 렌더 검수와 구분."
       }
     ]
   },

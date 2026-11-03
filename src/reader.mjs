@@ -1,5 +1,6 @@
 import {DOMAIN_DEFS, selectDomainFacts} from './domain-model.mjs';
 import {STUDIO_PAGES,VISUAL_ROUTES} from './navigation.mjs';
+import {collectionOutlineEntries,mountCollectionScrollSpy} from './collection-outline.mjs';
 
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const normalize=value=>String(value??'').normalize('NFKC').toLocaleLowerCase();
@@ -19,7 +20,7 @@ export function searchNotebook(data,query){
 export function createReader({getData,getRoute,clearQuery,render,toast}){
  const view=document.querySelector('#app-view'), search=document.querySelector('#global-search');
  const results=document.querySelector('#search-results'), outline=document.querySelector('#page-outline');
- let detailsOpen=false,lastRoute='',observer,searchTimer;
+ let detailsOpen=false,lastRoute='',observer,searchTimer,collectionMode=false,collectionSpyCleanup=()=>{};
  try{document.body.dataset.textSize=window.localStorage.getItem('harbor-text-size')==='large'?'large':'normal';}catch{/* Storage can be unavailable in private contexts. */}
  function closeSearch(){clearTimeout(searchTimer);results.hidden=true;search.setAttribute('aria-expanded','false');}
  function updateSearch(){
@@ -35,6 +36,7 @@ export function createReader({getData,getRoute,clearQuery,render,toast}){
   results.hidden=false;search.setAttribute('aria-expanded','true');
  }
  function readHeading(target){
+  for(let node=target;node&&node!==view;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;
   target.scrollIntoView({block:'start'});target.tabIndex=-1;target.focus({preventScroll:true});
  }
  function followLocation(){
@@ -45,19 +47,24 @@ export function createReader({getData,getRoute,clearQuery,render,toast}){
   if(section){const node=document.getElementById('section-'+section)||document.getElementById(section);if(node)readHeading(node);}
  }
  function afterRender(){
-  observer?.disconnect();
+  observer?.disconnect();collectionSpyCleanup();collectionSpyCleanup=()=>{};
   const route=getRoute(),changed=route!==lastRoute;lastRoute=route;
+  const wasCollection=collectionMode;collectionMode=route==='collection'&&Boolean(view.querySelector('#collection-card-gallery'));
+  view.parentElement.classList.toggle('collection-reading',collectionMode);
   for(const d of view.querySelectorAll('.finding-detail'))d.open=detailsOpen;
   const headings=[...view.querySelectorAll('h2')].filter(h=>!h.closest('.domain-summary-grid,.trace-result,.activity-result'));
-  const entries=headings.map((h,i)=>{if(!h.id)h.id='reading-section-'+i;return {id:h.closest('.domain-section')?.id||h.id,title:h.textContent.trim(),heading:h};});
+  const entries=collectionMode?collectionOutlineEntries(view):headings.map((h,i)=>{if(!h.id)h.id='reading-section-'+i;return {id:h.closest('.domain-section')?.id||h.id,title:h.textContent.trim(),heading:h};});
+  const outlineSummary=outline.querySelector('summary');outlineSummary.textContent=collectionMode?'카드 앨범 목차':'이 페이지 목차';
+  if(collectionMode){const current=document.createElement('small');current.dataset.collectionCurrent='';outlineSummary.append(current);}
   document.querySelector('#outline-links').innerHTML=entries.map(x=>`<a href="#${route}?section=${encodeURIComponent(x.id.replace(/^section-/,''))}" data-outline-target="${escape(x.id)}">${escape(x.title)}</a>`).join('')+`<a class="outline-top" href="#${route}" data-action="page-top">맨 위로</a>`;
-  outline.hidden=entries.length===0;view.parentElement.classList.toggle('no-outline',entries.length===0);if(changed)outline.open=window.innerWidth>=1280;
-  if(window.IntersectionObserver){observer=new window.IntersectionObserver(items=>{for(const item of items)if(item.isIntersecting){const entry=entries.find(x=>x.heading===item.target);for(const link of document.querySelectorAll('[data-outline-target]')){if(link.dataset.outlineTarget===entry.id)link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');}}},{rootMargin:'-100px 0px -65% 0px'});for(const entry of entries)observer.observe(entry.heading);}
+  outline.hidden=entries.length===0;view.parentElement.classList.toggle('no-outline',entries.length===0);if(changed||wasCollection!==collectionMode)outline.open=window.innerWidth>=(collectionMode?1100:1280);
+  if(collectionMode)collectionSpyCleanup=mountCollectionScrollSpy({root:view,outline,entries,win:window});
+  else if(window.IntersectionObserver){observer=new window.IntersectionObserver(items=>{for(const item of items)if(item.isIntersecting){const entry=entries.find(x=>x.heading===item.target);for(const link of document.querySelectorAll('[data-outline-target]')){if(link.dataset.outlineTarget===entry.id)link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');}}},{rootMargin:'-100px 0px -65% 0px'});for(const entry of entries)observer.observe(entry.heading);}
   const sizeButton=document.querySelector('[data-action="text-size"]');sizeButton.setAttribute('aria-pressed',String(document.body.dataset.textSize==='large'));sizeButton.textContent=document.body.dataset.textSize==='large'?'기본 글씨':'글씨 크게';
   const detailButton=document.querySelector('[data-action="toggle-details"]');detailButton.setAttribute('aria-pressed',String(detailsOpen));detailButton.textContent=detailsOpen?'상세 모두 접기':'상세 모두 펼치기';detailButton.hidden=!view.querySelector('.finding-detail');
   for(const wrap of view.querySelectorAll('.table-wrap')){wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label',wrap.querySelector('caption')?.textContent||'데이터 표. 좌우로 스크롤할 수 있습니다.');}
   document.querySelector('#reading-status').textContent=DOMAIN_DEFS.find(d=>d.id===route)?'요약 → 구조와 수치 → 규칙과 근거':'게임 시스템 연구 위키';
-  if(VISUAL_ROUTES.includes(route)){outline.hidden=true;view.parentElement.classList.add('no-outline');document.querySelector('#reading-status').textContent='시각 탐색 · 웹 시연과 실제 캡처 구분';}
+  if(VISUAL_ROUTES.includes(route)&&!collectionMode){outline.hidden=true;view.parentElement.classList.add('no-outline');document.querySelector('#reading-status').textContent='시각 탐색 · 웹 시연과 실제 캡처 구분';}
   if(changed)closeSearch();followLocation();
  }
  async function copyLink(finding){
@@ -92,6 +99,6 @@ export function createReader({getData,getRoute,clearQuery,render,toast}){
   if(event.target===search&&event.key==='ArrowDown'&&!results.hidden){event.preventDefault();results.querySelector('a')?.focus();}
   if(event.target===search&&event.key==='Enter'&&!results.hidden){event.preventDefault();results.querySelector('a')?.click();}
  });
- window.addEventListener('resize',()=>{if(window.innerWidth>=1280)outline.open=true;});
+ window.addEventListener('resize',()=>{if(collectionMode)outline.open=window.innerWidth>=1100;else if(window.innerWidth>=1280)outline.open=true;});
  return {afterRender,followLocation,closeSearch};
 }
