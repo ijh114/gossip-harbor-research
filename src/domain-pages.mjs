@@ -61,7 +61,7 @@ export function renderDomainPage(id,data,filters={}){
  <section class="domain-summary"><h2 id="chapter-summary-title">핵심 요약</h2><div class="domain-summary-grid">${def.questions.map((q,i)=>`<div><h3>${escape(q)}</h3><p>${escape((page.answers||[])[i]||'아래 정적 근거와 남은 질문을 함께 확인하세요.')}</p></div>`).join('')}</div></section>
  <div class="domain-boundary"><strong>근거 범위</strong><span>제공 APK 4.10.5: ${stats.code}개 코드 / ${stats.config}개 설정 / ${stats.text}개 설명문. 별도 근거: ${stats.capture}개 과거 캡처 / ${stats.runtime}개 실행 환경 / ${stats.inference}개 추론. 캡처 버전·현행 서버 배정은 미확인입니다. <a href="#captures">실제 화면과 관측 범위 보기 →</a></span></div>
  ${page.sections?.length?`<nav class="chapter-jumps" aria-label="이 페이지 분석 항목">${page.sections.map(s=>`<a href="#${id}?section=${encodeURIComponent(s.id)}" data-domain-jump="${escape(s.id)}">${escape(s.title)} <span>↓</span></a>`).join('')}</nav>`:''}
- ${id==='difficulty'?mergeExperiment():''}
+ ${id==='difficulty'?'<div class="ld-links"><a class="button" href="#level-design">300레벨·전체 과제·주문 변형 전수 분석</a></div>'+mergeExperiment():''}
  ${['map','map-fx'].includes(id)?renderStudyLinks(data,['map'],'실제 맵 변경과 카메라 이동 비교'):id==='events'?renderStudyLinks(data,['event'],'이벤트 전용 화면과 보드 비교'):['ui','puzzle-fx','interaction'].includes(id)?renderStudyLinks(data,id==='ui'?['ui']:['puzzle'],'원본 프레임 정밀 관측 자료'):''}
  <div class="domain-visuals">${list(page.visuals).map(v=>v.type==='day-browser'?`<section class="domain-visual panel"><div class="panel-head"><h2>${escape(v.title)}</h2>${badge('config')}</div><div class="panel-body">${renderDayBrowser(v,data)}<div class="visual-sources">${sourceLinks(v.sourceIds,data.facts)}</div></div></section>`:renderVisual(v,data.facts)).join('')}</div>
 

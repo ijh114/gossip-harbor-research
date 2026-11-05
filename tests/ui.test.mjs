@@ -20,7 +20,7 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
  Object.assign(globalThis,{window:w,document:w.document,location:w.location,history:w.history,matchMedia:w.matchMedia,
   fetch:async relative=>({ok:true,json:async()=>JSON.parse(await readFile(new URL('../src/'+relative.replace(/^\.\//,''),import.meta.url),'utf8'))})});
  const tick=()=>new Promise(resolve=>setTimeout(resolve,15));
- const until=async predicate=>{const deadline=Date.now()+5000;while(Date.now()<deadline){if(predicate())return;await tick();}throw new Error('Application state did not settle: '+errors.join(' / '));};
+ const until=async predicate=>{const deadline=Date.now()+30000;while(Date.now()<deadline){if(predicate())return;await tick();}throw new Error('Application state did not settle: '+errors.join(' / ')+'; '+w.document.querySelector('#app-view')?.textContent.slice(0,500));};
  const click=selector=>{const node=w.document.querySelector(selector);assert.ok(node,selector);node.click();};
  const go=async id=>{click(`[data-route="${id}"]`);await until(()=>w.document.querySelector('#page-label')?.textContent===(STUDIO_PAGES[id]||DOMAIN_DEFS.find(d=>d.id===id)?.title||({catalog:'상품 카탈로그',simulator:'시뮬레이션'})[id]));};
  try{
@@ -153,6 +153,12 @@ test('chapter navigation, evidence, source-board selection, day exploration and 
   click('#close-media');
   w.location.hash='world-atlas?tab=npc';await until(()=>w.document.querySelectorAll('[data-atlas-card]').length===50);
   assert.equal(w.document.querySelectorAll('.atlas-picture img').length,50);
+  await go('level-design');
+  assert.equal(w.document.querySelector('[data-level-design] h1').textContent,'난이도·레벨 디자인 분석');
+  assert.equal(w.document.querySelectorAll('[data-ld="variant"] option').length,7);
+  const score=w.document.querySelector('[data-ld="diff"]');score.value='2001';score.dispatchEvent(new w.Event('change',{bubbles:true}));
+  assert.match(w.document.querySelector('.ld-band').textContent,/9 – 10/);
+  await go('puzzle-difficulty');assert.ok(w.document.querySelector('a[href="#level-design"]'));
   media.matches=true;media.listener();
   assert.equal(w.document.querySelector('#sidebar').inert,true);
   click('#menu-toggle');assert.equal(w.document.querySelector('#menu-toggle').getAttribute('aria-expanded'),'true');

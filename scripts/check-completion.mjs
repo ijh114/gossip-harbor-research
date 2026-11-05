@@ -12,7 +12,17 @@ if(clips.length!==929||new Set(clips.map(s=>s.id)).size!==929)throw Error('Missi
 for(const s of clips){let end=0;for(const seg of s.segments){if(Math.abs(seg.sourceRange.start-end)>1e-6||!seg.isPreviouslyPreviewed&&seg.sourceRange.end-seg.sourceRange.start>2.000001)throw Error('Source-time gap '+s.id);for(const key of [seg.posterMediaKey,seg.previewMediaKey].filter(Boolean))if(!validMedia(mediaFor(d,key)))throw Error('Unplayable source segment '+key);end=seg.sourceRange.end;}if(Math.abs(end-s.declaredDuration)>1e-6)throw Error('Incomplete source tail '+s.id);}
 const extra=['apkExpansion','finalObservations','remotePresentation','lateSceneArt','remoteCharacters','cgExpansion','itemRepresentationRemote','collectionStudy'],files=new Map();
 for(const key of extra)for(const m of d[key].mediaEntries){if(!validMedia(m))throw Error('Invalid curated media '+m.key);for(const [p,hash]of [[m.src,m.sha256],...(m.poster?[[m.poster,m.posterSha256]]:[])]){if(files.has(p)&&files.get(p)!==hash)throw Error('Conflicting asset digest '+p);files.set(p,hash);}}
-let bytes=0;for(const[p,hash]of files){const b=await readFile('dist/'+p.slice(2));if(createHash('sha256').update(b).digest('hex')!==hash)throw Error('Published derivative digest mismatch '+p);if(b.length>25*1024*1024)throw Error('Cloudflare per-asset size exceeded '+p);bytes+=b.length;}
+// Bound concurrent reads while keeping every digest and per-file size check.
+const entries=[...files];let bytes=0;
+for(let start=0;start<entries.length;start+=16){
+ const sizes=await Promise.all(entries.slice(start,start+16).map(async([p,hash])=>{
+  const b=await readFile('dist/'+p.slice(2));
+  if(createHash('sha256').update(b).digest('hex')!==hash)throw Error('Published derivative digest mismatch '+p);
+  if(b.length>25*1024*1024)throw Error('Cloudflare per-asset size exceeded '+p);
+  return b.length;
+ }));
+ bytes+=sizes.reduce((sum,size)=>sum+size,0);
+}
 if(d.sceneConfig.tasks.length!==116||d.presentationAssets.maps[0].slots.length!==55||d.presentationAssets.skins.some(s=>!validMedia(mediaFor(d,s.mediaKey))))throw Error('Scene/map/Skin integration drift');
 if(!validItemRepresentationConfig(d.itemRepresentation)||d.itemRepresentation.coverage.baseUsageUnknown!==1)throw Error('Item representation boundary drift');
 if(d.collectionStudy.resourceAssets.length!==564||d.lateSceneStudy.days.length!==280||d.lateSceneStudy.storyAudit.missingTextRows!==8)throw Error('Collection/late scene source audit drift');
